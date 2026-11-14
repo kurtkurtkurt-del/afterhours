@@ -1,0 +1,134 @@
+{
+  "city": "dallas",
+  "day": "2026-11-14",
+  "nights": [
+    {
+      "id": "2e49f072-153d-44fb-b79b-c28d0e5765d0",
+      "slug": "streetlight-manifesto-the-presence-of-the-past-t-9b093038",
+      "title": "Streetlight Manifesto: The Presence of the Past Tour",
+      "name": "Streetlight Manifesto",
+      "source_url": "https://en.wikipedia.org/wiki/Streetlight_Manifesto",
+      "extract": "Streetlight Manifesto is an American ska punk band from New Brunswick, New Jersey, formed in 2002. They released their debut album, Everything Goes Numb, through Victory Records on August 26, 2003. The band headlined and sold out their first concert at Rutgers University in New Brunswick on December 9, 2003. Several members were previously involved in New Jersey's third wave ska scene, most notably Tomas Kalnoky, a founding member of Catch 22, and members of the band One Cool Guy. Kalnoky and several other members also attended Rutgers University.",
+      "en": {
+        "kicker": "american ska punk band · new brunswick, new jersey, 2002",
+        "who": "streetlight manifesto is an american ska punk band from new brunswick, new jersey, formed in 2002. the band released its debut album, Everything Goes Numb, through Victory Records in 2003. several members came out of new jersey's third wave ska scene.",
+        "facts": [
+          "released their debut album, Everything Goes Numb, through Victory Records on August 26, 2003.",
+          "band headlined and sold out their first concert at Rutgers University in New Brunswick on December 9, 2003."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische ska-punk-band · new brunswick, new jersey, 2002",
+        "who": "streetlight manifesto ist eine amerikanische ska-punk-band aus new brunswick, new jersey, die 2002 gegründet wurde. die band veröffentlichte ihr debütalbum Everything Goes Numb am 26. august 2003 bei victory records. mehrere mitglieder stammten aus der dritten ska-welle der new jersey-szene.",
+        "facts": [
+          "das debütalbum Everything Goes Numb erschien am 26. august 2003 bei victory records.",
+          "die band trat bei ihrem ersten konzert an der rutgers university in new brunswick am 9. dezember 2003 als headliner auf und war ausverkauft."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikan ska punk grubu · new brunswick, new jersey, 2002",
+        "who": "streetlight manifesto, 2002 yılında kurulan, new jersey'nin new brunswick kentinden bir amerikan ska punk grubudur. grup, debut albümü Everything Goes Numb'ı 26 ağustos 2003'te victory records ile yayımladı. üyelerin bir kısmı new jersey'nin üçüncü dalga ska sahnesinde yer almıştı.",
+        "facts": [
+          "debut albümleri Everything Goes Numb, 26 ağustos 2003'te victory records ile yayımlandı.",
+          "grup, new brunswick'teki rutgers university'de verdiği ilk konserde headliner olarak sahne aldı ve biletler tükendi, 9 aralık 2003."
+        ]
+      }
+    },
+    {
+      "id": "90fe98eb-bb44-47d5-bd33-fb322534edb6",
+      "slug": "buzzcocks-1df8b448",
+      "title": "Buzzcocks",
+      "name": "Buzzcocks",
+      "source_url": "https://en.wikipedia.org/wiki/Buzzcocks",
+      "extract": "Buzzcocks are an English punk rock band formed by singer-songwriter and guitarist Pete Shelley and singer-songwriter Howard Devoto in Bolton in 1976. They achieved commercial success with singles that fuse pop with rapid-fire punk energy, inspiring the power pop and pop punk movements; these singles were later collected on Singles Going Steady, an acclaimed compilation album music journalist and critic Ned Raggett described as a \"punk masterpiece\".",
+      "en": {
+        "kicker": "english punk rock band · bolton, 1976",
+        "who": "buzzcocks are an english punk rock band formed in bolton in 1976 by pete shelley and howard devoto. their singles fused pop with rapid-fire punk energy and helped inspire the power pop and pop punk movements. those singles were later collected on the acclaimed compilation Singles Going Steady.",
+        "facts": [
+          "achieved commercial success with singles that fuse pop with rapid-fire punk energy, inspiring the power pop and pop punk movements.",
+          "these singles were later collected on Singles Going Steady, an acclaimed compilation album music journalist and critic Ned Raggett described as a \"punk masterpiece\"."
+        ]
+      },
+      "de": {
+        "kicker": "englische punk-rock-band · bolton, 1976",
+        "who": "buzzcocks sind eine englische punk-rock-band, die 1976 in bolton von pete shelley und howard devoto gegründet wurde. ihre singles verbanden pop mit schnellem punk-tempo und trugen zur entstehung des power pop und pop punk bei. später erschienen diese singles auf dem gefeierten Sampler Singles Going Steady.",
+        "facts": [
+          "die band erzielte kommerziellen erfolg mit singles, die pop mit rasantem punk-schwung verbanden und die power-pop- und pop-punk-bewegung inspirierten.",
+          "diese singles wurden später auf Singles Going Steady gesammelt, einem gefeierten compilation-album, das der musikjournalist und kritiker Ned Raggett als \"punk masterpiece\" bezeichnete."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz punk rock grubu · bolton, 1976",
+        "who": "buzzcocks, 1976 yılında bolton'da pete shelley ve howard devoto tarafından kurulan bir ingiliz punk rock grubudur. pop ile hızlı punk enerjisini birleştiren singleları power pop ve pop punk akımlarına ilham verdi. bu singleler daha sonra beğenilen bir derleme albümü olan Singles Going Steady'de toplandı.",
+        "facts": [
+          "ticari başarıyı pop ile hızlı punk enerjisini birleştiren singlelarla elde etti ve power pop ile pop punk akımlarına ilham verdi.",
+          "bu singleler daha sonra, müzik gazetecisi ve eleştirmen Ned Raggett'in \"punk masterpiece\" olarak nitelendirdiği Singles Going Steady albümünde toplandı."
+        ]
+      }
+    },
+    {
+      "id": "7f148adc-fbaf-4460-92fe-0f46f2a477b7",
+      "slug": "paul-cauthen-ddb96ad8",
+      "title": "Paul Cauthen",
+      "name": "Paul Cauthen",
+      "source_url": "https://en.wikipedia.org/wiki/Paul_Cauthen",
+      "extract": "Paul Mark Cauthen is an American singer-songwriter from East Texas. He started his music career in an Americana/indie folk rock duo called Sons of Fathers, before turning solo. He has released five albums and an EP as a solo artist, the most recent being Book of Paul released on 3 April, 2026.",
+      "en": {
+        "kicker": "american singer-songwriter · east texas",
+        "who": "paul cauthen is an american singer-songwriter from east texas. he started his music career in the americana and indie folk rock duo sons of fathers before turning solo. as a solo artist he has released five albums and an ep, the most recent being book of paul.",
+        "facts": [
+          "has released five albums and an EP as a solo artist, the most recent being Book of Paul released on 3 April, 2026.",
+          "started his music career in an Americana/indie folk rock duo called Sons of Fathers, before turning solo."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer singer-songwriter · east texas",
+        "who": "paul cauthen ist ein amerikanischer singer-songwriter aus east texas. seine musikalische laufbahn begann er im americana- und indie-folk-rock-duo Sons of Fathers, bevor er solo weitermachte. als solokünstler hat er fünf alben und eine EP veröffentlicht, das neueste ist Book of Paul.",
+        "facts": [
+          "hat als solokünstler fünf alben und eine EP veröffentlicht, das neueste ist Book of Paul vom 3. april 2026.",
+          "begann seine musikalische laufbahn im americana- und indie-folk-rock-duo Sons of Fathers, bevor er solo weitermachte."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı şarkıcı ve söz yazarı · east texas",
+        "who": "paul cauthen, east texas'tan bir amerikalı şarkıcı ve söz yazarıdır. müzik kariyerine americana ve indie folk rock duosu Sons of Fathers ile başladı, ardından solo yoluna devam etti. solo sanatçı olarak beş albüm ve bir EP yayımladı, en son çıkan albümü Book of Paul.",
+        "facts": [
+          "solo sanatçı olarak beş albüm ve bir EP yayımladı, en son çıkan Book of Paul ise 3 nisan 2026'da yayımlandı.",
+          "müzik kariyerine Americana/indie folk rock duosu Sons of Fathers ile başladı, ardından solo olarak devam etti."
+        ]
+      }
+    },
+    {
+      "id": "f3bc76c2-b088-4646-aa53-e564a4828fc5",
+      "slug": "static-dress-injury-episode-usa-tour-169cdc10",
+      "title": "STATIC DRESS: INJURY EPISODE USA TOUR",
+      "name": "Static Dress",
+      "source_url": "https://en.wikipedia.org/wiki/Static_Dress",
+      "extract": "Static Dress are an English rock band from Leeds, West Yorkshire. Formed in 2018, Static Dress are a concept band with their material following a continuous story. They currently consist of lead vocalist Olli Appleyard, drummer Sam Ogden, guitarist Vincent Weight and bassist George Holding. They have released two full-length studio albums, three EPs and various standalone singles, as well as a comic book and three video games.",
+      "en": {
+        "kicker": "english rock band · leeds, west yorkshire, 2018",
+        "who": "static dress are an english rock band from leeds, west yorkshire. they are a concept band, with material that follows a continuous story. the current lineup is Olli Appleyard on lead vocals, Sam Ogden on drums, Vincent Weight on guitar and George Holding on bass.",
+        "facts": [
+          "formed in 2018, Static Dress are a concept band with their material following a continuous story.",
+          "have released two full-length studio albums, three EPs and various standalone singles, as well as a comic book and three video games."
+        ]
+      },
+      "de": {
+        "kicker": "englische rock-band · leeds, west yorkshire, 2018",
+        "who": "static dress sind eine englische rock-band aus leeds, west yorkshire. sie sind eine concept band, deren material einer durchgehenden geschichte folgt. die aktuelle besetzung besteht aus Olli Appleyard am gesang, Sam Ogden am schlagzeug, Vincent Weight an der gitarre und George Holding am bass.",
+        "facts": [
+          "wurde 2018 gegründet und ist eine concept band, deren material einer durchgehenden geschichte folgt.",
+          "hat zwei vollwertige studioalben, drei EPs, verschiedene einzelsingles, ein comicbuch und drei videospiele veröffentlicht."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz rock grubu · leeds, west yorkshire, 2018",
+        "who": "static dress, leeds, west yorkshire'dan bir ingiliz rock grubudur. materyalleri sürekli bir hikayeyi takip eden bir concept gruptur. grubun mevcut kadrosunda lead vokalde Olli Appleyard, davulda Sam Ogden, gitarda Vincent Weight ve basta George Holding yer alıyor.",
+        "facts": [
+          "2018'de kuruldu ve materyalleri sürekli bir hikayeyi takip eden bir concept gruptur.",
+          "iki tam uzunluklu stüdyo albümü, üç EP, çeşitli tekli şarkılar, bir çizgi roman ve üç video oyunu yayımladı."
+        ]
+      }
+    }
+  ]
+}

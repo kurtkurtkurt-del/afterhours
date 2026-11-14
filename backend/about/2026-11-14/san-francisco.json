@@ -1,0 +1,134 @@
+{
+  "city": "san-francisco",
+  "day": "2026-11-14",
+  "nights": [
+    {
+      "id": "1c90816d-44a8-4a55-b3d7-c5fa98ee5327",
+      "slug": "son-volt-55e54a5e",
+      "title": "Son Volt",
+      "name": "Son Volt",
+      "source_url": "https://en.wikipedia.org/wiki/Son_Volt",
+      "extract": "Son Volt is an American rock band formed in 1994 by Jay Farrar after the breakup of Uncle Tupelo. The band's current line-up consists of Farrar, Andrew DuPlantis, John Horton (guitar), Mark Patterson (drums), and Mark Spencer. In addition to playing alternative rock, the band is considered a staple of the alternative country rock movement of the 1990s. The band's sound also is rooted in folk rock and Americana. The band went on an indefinite hiatus in 2001, before reforming in 2004.",
+      "en": {
+        "kicker": "american rock band · formed in 1994",
+        "who": "Son Volt is an american rock band formed in 1994 by Jay Farrar after the breakup of Uncle Tupelo. the band went on an indefinite hiatus in 2001, before reforming in 2004. the band's sound also is rooted in folk rock and americana.",
+        "facts": [
+          "Son Volt is an american rock band formed in 1994 by Jay Farrar after the breakup of Uncle Tupelo.",
+          "the band went on an indefinite hiatus in 2001, before reforming in 2004."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische rockband · gegründet 1994",
+        "who": "Son Volt ist eine amerikanische rockband, die 1994 von Jay Farrar nach der auflösung von Uncle Tupelo gegründet wurde. die band pausierte 2001 auf unbestimmte zeit, bevor sie sich 2004 wieder formierte. der sound ist auch im folk rock und americana verwurzelt.",
+        "facts": [
+          "Son Volt ist eine amerikanische rockband, die 1994 von Jay Farrar nach der auflösung von Uncle Tupelo gegründet wurde.",
+          "die band pausierte 2001 auf unbestimmte zeit, bevor sie sich 2004 wieder formierte."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı rock grubu · 1994'te kuruldu",
+        "who": "Son Volt, Uncle Tupelo'nun dağılmasının ardından Jay Farrar tarafından 1994'te kurulan amerikalı bir rock grubudur. grup 2001'de süresiz bir aradan çekildi ve 2004'te yeniden bir araya geldi. müziği folk rock ve americana'da köklenir.",
+        "facts": [
+          "Son Volt, Uncle Tupelo'nun dağılmasının ardından Jay Farrar tarafından 1994'te kurulan amerikalı bir rock grubudur.",
+          "grup 2001'de süresiz bir aradan çekildi ve 2004'te yeniden bir araya geldi."
+        ]
+      }
+    },
+    {
+      "id": "ce7c036b-a49a-4ee9-a395-ecf5e039d5c9",
+      "slug": "john-carroll-kirby-2151dfcd",
+      "title": "John Carroll Kirby",
+      "name": "John Carroll Kirby",
+      "source_url": "https://en.wikipedia.org/wiki/John_Carroll_Kirby",
+      "extract": "John Carroll Kirby is an American composer based in Los Angeles, California, United States. As a musician, Kirby has collaborated with artists including Remi Wolf, Solange, Frank Ocean, Miley Cyrus, Norah Jones, Bat for Lashes, Connan Mockasin, Sébastien Tellier, Harry Styles, and others.",
+      "en": {
+        "kicker": "american composer · Los Angeles, California",
+        "who": "John Carroll Kirby is an american composer based in Los Angeles, California, United States. as a musician, Kirby has collaborated with artists including Remi Wolf, Solange, Frank Ocean, Miley Cyrus, Norah Jones, Bat for Lashes, Connan Mockasin, Sébastien Tellier, Harry Styles, and others.",
+        "facts": [
+          "John Carroll Kirby is an american composer based in Los Angeles, California, United States.",
+          "as a musician, Kirby has collaborated with artists including Remi Wolf, Solange, Frank Ocean, Miley Cyrus, Norah Jones, Bat for Lashes, Connan Mockasin, Sébastien Tellier, Harry Styles, and others."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer komponist · Los Angeles, California",
+        "who": "John Carroll Kirby ist ein amerikanischer komponist mit sitz in Los Angeles, California, United States. als musiker hat Kirby unter anderem mit Remi Wolf, Solange, Frank Ocean, Miley Cyrus, Norah Jones, Bat for Lashes, Connan Mockasin, Sébastien Tellier, Harry Styles und anderen zusammengearbeitet.",
+        "facts": [
+          "John Carroll Kirby ist ein amerikanischer komponist mit sitz in Los Angeles, California, United States.",
+          "als musiker hat Kirby unter anderem mit Remi Wolf, Solange, Frank Ocean, Miley Cyrus, Norah Jones, Bat for Lashes, Connan Mockasin, Sébastien Tellier, Harry Styles und anderen zusammengearbeitet."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı besteci · Los Angeles, California",
+        "who": "John Carroll Kirby, Los Angeles, California, United States merkezli amerikalı bir besteci. müzisyen olarak Kirby; Remi Wolf, Solange, Frank Ocean, Miley Cyrus, Norah Jones, Bat for Lashes, Connan Mockasin, Sébastien Tellier, Harry Styles ve diğer sanatçılarla çalıştı.",
+        "facts": [
+          "John Carroll Kirby, Los Angeles, California, United States merkezli amerikalı bir besteci.",
+          "müzisyen olarak Kirby; Remi Wolf, Solange, Frank Ocean, Miley Cyrus, Norah Jones, Bat for Lashes, Connan Mockasin, Sébastien Tellier, Harry Styles ve diğer sanatçılarla çalıştı."
+        ]
+      }
+    },
+    {
+      "id": "71e5cfa0-0ff9-4155-8187-64fe5ead19c8",
+      "slug": "the-mountain-goats-night-three-stump-the-band-b0414237",
+      "title": "The Mountain Goats - Night Three: Stump the Band",
+      "name": "The Mountain Goats",
+      "source_url": "https://en.wikipedia.org/wiki/The_Mountain_Goats",
+      "extract": "The Mountain Goats are an American indie folk band formed in Claremont, California, by singer-songwriter John Darnielle. Since 2003, the band has been based in Durham, North Carolina. For many years, the sole member of the Mountain Goats was Darnielle, despite the plural moniker. Although he remains the core member of the band, he has worked with a variety of collaborators over time, including bassist and vocalist Peter Hughes, drummer Jon Wurster, multi-instrumentalist Matt Douglas, singer-songwriter Franklin Bruno, bassist and vocalist Rachel Ware, singer-songwriter/producer John Vanderslice, guitarist Kaki King, and multi-instrumentalist Annie Clark.",
+      "en": {
+        "kicker": "american indie folk band · Durham, North Carolina",
+        "who": "The Mountain Goats are an american indie folk band formed in Claremont, California, by singer-songwriter John Darnielle. since 2003, the band has been based in Durham, North Carolina. for many years, the sole member of the Mountain Goats was Darnielle, despite the plural moniker.",
+        "facts": [
+          "The Mountain Goats are an american indie folk band formed in Claremont, California, by singer-songwriter John Darnielle.",
+          "since 2003, the band has been based in Durham, North Carolina."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische indie-folk-band · Durham, North Carolina",
+        "who": "The Mountain Goats sind eine amerikanische indie-folk-band, die in Claremont, California, von singer-songwriter John Darnielle gegründet wurde. seit 2003 hat die band ihren sitz in Durham, North Carolina. jahrelang war Darnielle das einzige mitglied der Mountain Goats, trotz des pluralen namens.",
+        "facts": [
+          "The Mountain Goats sind eine amerikanische indie-folk-band, die in Claremont, California, von singer-songwriter John Darnielle gegründet wurde.",
+          "seit 2003 hat die band ihren sitz in Durham, North Carolina."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı indie folk grubu · Durham, North Carolina",
+        "who": "The Mountain Goats, singer-songwriter John Darnielle tarafından Claremont, California'da kurulan amerikalı bir indie folk grubudur. 2003'ten beri grup Durham, North Carolina'da faaliyet gösteriyor. uzun yıllar, çoğul adına rağmen, grubun tek üyesi Darnielle'ydi.",
+        "facts": [
+          "The Mountain Goats, singer-songwriter John Darnielle tarafından Claremont, California'da kurulan amerikalı bir indie folk grubudur.",
+          "2003'ten beri grup Durham, North Carolina'da faaliyet gösteriyor."
+        ]
+      }
+    },
+    {
+      "id": "f9f6f9d4-fe56-497f-8c7e-37bc7d273c14",
+      "slug": "jamila-woods-10-years-of-heavn-a2ab1224",
+      "title": "Jamila Woods: 10 Years of HEAVN",
+      "name": "Jamila Woods",
+      "source_url": "https://en.wikipedia.org/wiki/Jamila_Woods",
+      "extract": "Jamila Abidemi Woods is an American singer, songwriter and poet based in Chicago, Illinois. Her work focuses on themes of Black ancestry, Black feminism, and Black identity, with recurring emphases on self-love and the City of Chicago.",
+      "en": {
+        "kicker": "american singer, songwriter and poet · Chicago, Illinois",
+        "who": "Jamila Abidemi Woods is an american singer, songwriter and poet based in Chicago, Illinois. her work focuses on themes of Black ancestry, Black feminism, and Black identity, with recurring emphases on self-love and the City of Chicago.",
+        "facts": [
+          "Jamila Abidemi Woods is an american singer, songwriter and poet based in Chicago, Illinois.",
+          "her work focuses on themes of Black ancestry, Black feminism, and Black identity, with recurring emphases on self-love and the City of Chicago."
+        ]
+      },
+      "de": {
+        "kicker": "sängerin, songwriterin und dichterin · Chicago, Illinois",
+        "who": "Jamila Abidemi Woods ist eine amerikanische sängerin, songwriterin und dichterin mit sitz in Chicago, Illinois. ihr werk kreist um themen wie schwarze abstammung, schwarzer feminismus und schwarze identität, mit wiederkehrenden schwerpunkten auf selbstliebe und der stadt Chicago.",
+        "facts": [
+          "Jamila Abidemi Woods ist eine amerikanische sängerin, songwriterin und dichterin mit sitz in Chicago, Illinois.",
+          "ihr werk kreist um themen wie schwarze abstammung, schwarzer feminismus und schwarze identität, mit wiederkehrenden schwerpunkten auf selbstliebe und der stadt Chicago."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı şarkıcı, söz yazarı ve şair · Chicago, Illinois",
+        "who": "Jamila Abidemi Woods, Chicago, Illinois merkezli amerikalı bir şarkıcı, söz yazarı ve şairdir. çalışmaları siyah soy, siyah feminizm ve siyah kimlik temalarına odaklanır; öz sevgi ve Chicago şehri üzerine tekrarlanan vurgularla.",
+        "facts": [
+          "Jamila Abidemi Woods, Chicago, Illinois merkezli amerikalı bir şarkıcı, söz yazarı ve şairdir.",
+          "çalışmaları siyah soy, siyah feminizm ve siyah kimlik temalarına odaklanır; öz sevgi ve Chicago şehri üzerine tekrarlanan vurgularla."
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "city": "wien",
+  "day": "2026-11-14",
+  "nights": [
+    {
+      "id": "00e3026e-5951-42a5-b301-f9d5b852a68d",
+      "slug": "kaleo-way-down-we-go-tour-d7d4bf51",
+      "title": "KALEO - Way Down We Go Tour",
+      "name": "Kaleo",
+      "source_url": "https://en.wikipedia.org/wiki/Kaleo_(band)",
+      "extract": "KALEO is an Icelandic blues rock band which formed in Mosfellsbær in 2012. It consists of lead vocalist and guitarist Jökull Júlíusson, drummer Davíð Antonsson, bassist Daniel Kristjánsson, lead guitarist Rubin Pollock and harmonicist Þorleifur Gaukur Davíðsson. They have released four studio albums, Kaleo (2013), A/B (2016), Surface Sounds (2021), and Mixed Emotions (2025), as well as the EP Glasshouse (2013).",
+      "en": {
+        "kicker": "blues rock band · Mosfellsbær, 2012",
+        "who": "KALEO is an Icelandic blues rock band which formed in Mosfellsbær in 2012. It consists of lead vocalist and guitarist Jökull Júlíusson, drummer Davíð Antonsson, bassist Daniel Kristjánsson, lead guitarist Rubin Pollock and harmonicist Þorleifur Gaukur Davíðsson. They have released four studio albums, Kaleo (2013), A/B (2016), Surface Sounds (2021), and Mixed Emotions (2025), as well as the EP Glasshouse (2013).",
+        "facts": [
+          "KALEO is an Icelandic blues rock band which formed in Mosfellsbær in 2012.",
+          "They have released four studio albums, Kaleo (2013), A/B (2016), Surface Sounds (2021), and Mixed Emotions (2025), as well as the EP Glasshouse (2013)."
+        ]
+      },
+      "de": {
+        "kicker": "Blues-Rock-Band · Mosfellsbær, 2012",
+        "who": "KALEO ist eine isländische Blues-Rock-Band, die 2012 in Mosfellsbær gegründet wurde. Zur Band gehören der Leadsänger und Gitarrist Jökull Júlíusson, der Schlagzeuger Davíð Antonsson, der Bassist Daniel Kristjánsson, der Leadgitarrist Rubin Pollock und der Mundharmonikaspieler Þorleifur Gaukur Davíðsson. Sie haben vier Studioalben veröffentlicht, darunter Kaleo (2013), A/B (2016), Surface Sounds (2021) und Mixed Emotions (2025), dazu die EP Glasshouse (2013).",
+        "facts": [
+          "KALEO ist eine isländische Blues-Rock-Band, die 2012 in Mosfellsbær gegründet wurde.",
+          "Sie haben vier Studioalben veröffentlicht, darunter Kaleo (2013), A/B (2016), Surface Sounds (2021) und Mixed Emotions (2025), dazu die EP Glasshouse (2013)."
+        ]
+      },
+      "tr": {
+        "kicker": "blues rock grubu · Mosfellsbær, 2012",
+        "who": "KALEO, 2012 yılında Mosfellsbær'de kurulmuş bir İzlanda blues rock grubudur. Grubun baş vokali ve gitaristi Jökull Júlíusson, davulcusu Davíð Antonsson, basçısı Daniel Kristjánsson, solo gitaristi Rubin Pollock ve mızıkacısı Þorleifur Gaukur Davíðsson'dan oluşur. Kaleo (2013), A/B (2016), Surface Sounds (2021) ve Mixed Emotions (2025) dahil dört stüdyo albümü ile Glasshouse (2013) EP'sini yayımlamışlardır.",
+        "facts": [
+          "KALEO, 2012 yılında Mosfellsbær'de kurulmuş bir İzlanda blues rock grubudur.",
+          "Kaleo (2013), A/B (2016), Surface Sounds (2021) ve Mixed Emotions (2025) dahil dört stüdyo albümü ile Glasshouse (2013) EP'sini yayımlamışlardır."
+        ]
+      }
+    }
+  ]
+}

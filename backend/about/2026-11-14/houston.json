@@ -1,0 +1,134 @@
+{
+  "city": "houston",
+  "day": "2026-11-14",
+  "nights": [
+    {
+      "id": "e1ee0d50-9899-42db-8f30-0d2802229d50",
+      "slug": "journey-e2b34c54",
+      "title": "Journey",
+      "name": "Journey",
+      "source_url": "https://en.wikipedia.org/wiki/Journey_(band)",
+      "extract": "Journey is an American rock band formed in San Francisco in 1973 by former members of Santana, the Steve Miller Band, and Frumious Bandersnatch. The band as of 2026 consists of Neal Schon on guitars and vocals; Jonathan Cain on keyboards, guitars and vocals; Deen Castronovo on drums and vocals; Arnel Pineda on lead vocals; Jason Derlatka on keyboards and vocals; and Todd Jensen on bass and vocals.",
+      "en": {
+        "kicker": "american rock band · san francisco, 1973",
+        "who": "journey is an american rock band formed in san francisco in 1973 by former members of santana, the steve miller band, and frumious bandersnatch. as of 2026 its members include neal schon, jonathan cain, deen castronovo, arnel pineda, jason derlatka and todd jensen.",
+        "facts": [
+          "Journey is an American rock band formed in San Francisco in 1973 by former members of Santana, the Steve Miller Band, and Frumious Bandersnatch.",
+          "The band as of 2026 consists of Neal Schon on guitars and vocals; Jonathan Cain on keyboards, guitars and vocals; Deen Castronovo on drums and vocals; Arnel Pineda on lead vocals; Jason Derlatka on keyboards and vocals; and Todd Jensen on bass and vocals."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische rockband · san francisco, 1973",
+        "who": "journey ist eine amerikanische rockband, die 1973 in san francisco von ehemaligen mitgliedern von santana, der steve miller band und frumious bandersnatch gegründet wurde. 2026 besteht sie aus neal schon, jonathan cain, deen castronovo, arnel pineda, jason derlatka und todd jensen.",
+        "facts": [
+          "journey ist eine amerikanische rockband, die 1973 in san francisco von ehemaligen mitgliedern von santana, der steve miller band und frumious bandersnatch gegründet wurde.",
+          "die band besteht 2026 aus neal schon (gitarre und gesang), jonathan cain (keyboards, gitarre und gesang), deen castronovo (schlagzeug und gesang), arnel pineda (lead-gesang), jason derlatka (keyboards und gesang) und todd jensen (bass und gesang)."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikan rock grubu · san francisco, 1973",
+        "who": "journey, 1973 yılında san francisco'da santana, steve miller band ve frumious bandersnatch'in eski üyeleri tarafından kurulmuş bir amerikan rock grubudur. 2026 itibarıyla grubun üyeleri neal schon, jonathan cain, deen castronovo, arnel pineda, jason derlatka ve todd jensen'dir.",
+        "facts": [
+          "journey, 1973 yılında san francisco'da santana, steve miller band ve frumious bandersnatch'in eski üyeleri tarafından kurulmuş bir amerikan rock grubudur.",
+          "2026 itibarıyla grup neal schon (gitar ve vokal), jonathan cain (klavye, gitar ve vokal), deen castronovo (davul ve vokal), arnel pineda (baş vokal), jason derlatka (klavye ve vokal) ve todd jensen (bas ve vokal) şeklinde oluşuyor."
+        ]
+      }
+    },
+    {
+      "id": "263bc2b2-4729-40dd-9363-e656b42eb56a",
+      "slug": "rawayana-donde-es-el-after-world-tour-8864aaee",
+      "title": "RAWAYANA - ¿Dónde es el after? World Tour",
+      "name": "Rawayana",
+      "source_url": "https://en.wikipedia.org/wiki/Rawayana",
+      "extract": "Rawayana is a Venezuelan band formed in Caracas in 2007. The group's music combines a variety of musical genres including reggae, psychedelic, electronic, funk and salsa, and the members describe their style as \"trippy pop\". The band consists of Alberto \"Beto\" Montenegro, Antonio \"Tony\" Casas, Andrés \"Fofo\" Story and Alejandro \"Abeja\" Abeijón.",
+      "en": {
+        "kicker": "venezuelan band · caracas, 2007",
+        "who": "rawayana is a venezuelan band formed in caracas in 2007. its music combines reggae, psychedelic, electronic, funk and salsa, and the members describe their style as \"trippy pop\". the band consists of alberto \"beto\" montenegro, antonio \"tony\" casas, andrés \"fofo\" story and alejandro \"abeja\" abeijón.",
+        "facts": [
+          "Rawayana is a Venezuelan band formed in Caracas in 2007.",
+          "The group's music combines a variety of musical genres including reggae, psychedelic, electronic, funk and salsa, and the members describe their style as \"trippy pop\"."
+        ]
+      },
+      "de": {
+        "kicker": "venezolanische band · caracas, 2007",
+        "who": "rawayana ist eine venezolanische band, die 2007 in caracas gegründet wurde. ihre musik verbindet verschiedene genres wie reggae, psychedelic, electronic, funk und salsa, und die mitglieder beschreiben ihren stil als \"trippy pop\". zur band gehören alberto \"beto\" montenegro, antonio \"tony\" casas, andrés \"fofo\" story und alejandro \"abeja\" abeijón.",
+        "facts": [
+          "rawayana ist eine venezolanische band, die 2007 in caracas gegründet wurde.",
+          "die musik der gruppe verbindet verschiedene genres wie reggae, psychedelic, electronic, funk und salsa, und die mitglieder beschreiben ihren stil als \"trippy pop\"."
+        ]
+      },
+      "tr": {
+        "kicker": "venezuelalı grup · caracas, 2007",
+        "who": "rawayana, 2007 yılında caracas'ta kurulmuş bir venezuelalı gruptur. müziği reggae, psychedelic, electronic, funk ve salsa gibi çeşitli türleri birleştirir; üyeler tarzlarını \"trippy pop\" olarak tanımlıyor. grubun üyeleri alberto \"beto\" montenegro, antonio \"tony\" casas, andrés \"fofo\" story ve alejandro \"abeja\" abeijón.",
+        "facts": [
+          "rawayana, 2007 yılında caracas'ta kurulmuş bir venezuelalı gruptur.",
+          "grubun müziği reggae, psychedelic, electronic, funk ve salsa dahil çeşitli müzik türlerini birleştirir ve üyeler tarzlarını \"trippy pop\" olarak tanımlar."
+        ]
+      }
+    },
+    {
+      "id": "208a7e7b-f241-41e9-8984-e355697b7ae4",
+      "slug": "north-mississippi-allstars-1317419b",
+      "title": "North Mississippi Allstars",
+      "name": "North Mississippi Allstars",
+      "source_url": "https://en.wikipedia.org/wiki/North_Mississippi_Allstars",
+      "extract": "North Mississippi Allstars is an American blues and southern rock band from Hernando, Mississippi, founded in 1996. The band is currently composed of brothers Luther Dickinson and Cody Dickinson. Their most recent album Still Shakin'  was released in 2025.",
+      "en": {
+        "kicker": "american blues and southern rock band · hernando, 1996",
+        "who": "north mississippi allstars is an american blues and southern rock band from hernando, mississippi, founded in 1996. the band is currently made up of brothers luther dickinson and cody dickinson, and their most recent album, still shakin', was released in 2025.",
+        "facts": [
+          "North Mississippi Allstars is an American blues and southern rock band from Hernando, Mississippi, founded in 1996.",
+          "The band is currently composed of brothers Luther Dickinson and Cody Dickinson."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische blues- und southern-rock-band · hernando, 1996",
+        "who": "north mississippi allstars ist eine amerikanische blues- und southern-rock-band aus hernando, mississippi, die 1996 gegründet wurde. die band besteht derzeit aus den brüdern luther dickinson und cody dickinson, ihr jüngstes album still shakin' erschien 2025.",
+        "facts": [
+          "north mississippi allstars ist eine amerikanische blues- und southern-rock-band aus hernando, mississippi, die 1996 gegründet wurde.",
+          "die band besteht derzeit aus den brüdern luther dickinson und cody dickinson."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikan blues ve southern rock grubu · hernando, 1996",
+        "who": "north mississippi allstars, mississippi'nin hernando kentinde 1996 yılında kurulmuş bir amerikan blues ve southern rock grubudur. grup şu anda kardeşler luther dickinson ve cody dickinson'dan oluşuyor; en son albümleri still shakin' 2025 yılında çıktı.",
+        "facts": [
+          "north mississippi allstars, mississippi'nin hernando kentinde 1996 yılında kurulmuş bir amerikan blues ve southern rock grubudur.",
+          "grup şu anda kardeşler luther dickinson ve cody dickinson'dan oluşuyor."
+        ]
+      }
+    },
+    {
+      "id": "7d346509-f3b7-46bf-bf6f-f9bf007dffad",
+      "slug": "paul-cauthen-c7e38dbe",
+      "title": "Paul Cauthen",
+      "name": "Paul Cauthen",
+      "source_url": "https://en.wikipedia.org/wiki/Paul_Cauthen",
+      "extract": "Paul Mark Cauthen is an American singer-songwriter from East Texas. He started his music career in an Americana/indie folk rock duo called Sons of Fathers, before turning solo. He has released five albums and an EP as a solo artist, the most recent being Book of Paul released on 3 April, 2026.",
+      "en": {
+        "kicker": "american singer-songwriter · east texas",
+        "who": "paul mark cauthen is an american singer-songwriter from east texas. he started his music career in the americana and indie folk rock duo sons of fathers before turning solo, and his most recent album, book of paul, was released on 3 april, 2026.",
+        "facts": [
+          "Paul Mark Cauthen is an American singer-songwriter from East Texas.",
+          "He has released five albums and an EP as a solo artist, the most recent being Book of Paul released on 3 April, 2026."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer singer-songwriter · east texas",
+        "who": "paul mark cauthen ist ein amerikanischer singer-songwriter aus east texas. seine musikalische laufbahn begann im americana- und indie-folk-rock-duo sons of fathers, bevor er solo weitermachte. sein neuestes album book of paul erschien am 3. april 2026.",
+        "facts": [
+          "paul mark cauthen ist ein amerikanischer singer-songwriter aus east texas.",
+          "als solokünstler hat er fünf alben und eine ep veröffentlicht, das neueste ist book of paul, erschienen am 3. april 2026."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikan şarkıcı-söz yazarı · east texas",
+        "who": "paul mark cauthen, east texas'tan bir amerikan şarkıcı ve söz yazarıdır. kariyerine americana ve indie folk rock ikilisi sons of fathers ile başladı, ardından solo çalışmalara yöneldi. en son albümü book of paul, 3 nisan 2026'da yayımlandı.",
+        "facts": [
+          "paul mark cauthen, east texas'tan bir amerikan şarkıcı ve söz yazarıdır.",
+          "solo sanatçı olarak beş albüm ve bir ep yayımladı; en son çıkan book of paul, 3 nisan 2026'da yayımlandı."
+        ]
+      }
+    }
+  ]
+}

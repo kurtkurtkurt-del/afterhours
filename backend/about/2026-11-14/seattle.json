@@ -1,0 +1,102 @@
+{
+  "city": "seattle",
+  "day": "2026-11-14",
+  "nights": [
+    {
+      "id": "4a80ad20-cc23-4d1d-aa27-e60e2824b026",
+      "slug": "julien-baker-9aab4c18",
+      "title": "Julien Baker",
+      "name": "Julien Baker",
+      "source_url": "https://en.wikipedia.org/wiki/Julien_Baker",
+      "extract": "Julien Rose Baker is an American indie rock singer-songwriter and guitarist. Her music is noted for its moody quality and confessional lyrical style, as well as frank explorations of topics including Christianity, addiction, mental illness, and human nature. She has received six Grammy Award nominations and three wins as a member of Boygenius.",
+      "en": {
+        "kicker": "american indie rock singer-songwriter and guitarist",
+        "who": "Julien Rose Baker is an American indie rock singer-songwriter and guitarist. her music is marked by a moody quality, confessional lyrics and frank explorations of faith, addiction, mental illness and human nature.",
+        "facts": [
+          "she has received six Grammy Award nominations and three wins as a member of Boygenius.",
+          "her music is noted for its moody quality and confessional lyrical style, as well as frank explorations of topics including Christianity, addiction, mental illness, and human nature."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische songwriterin und gitarristin",
+        "who": "Julien Rose Baker ist eine amerikanische indie-rock-singer-songwriterin und gitarristin. ihre musik ist melancholisch und bekenntnishaft im text und behandelt offen themen wie glaube, sucht, psychische erkrankungen und die menschliche natur.",
+        "facts": [
+          "sie hat sechs Grammy-nominierungen und drei siege als mitglied von Boygenius erhalten.",
+          "ihre musik ist bekannt für eine melancholische stimmung und einen bekenntnishaften lyrischen stil, dazu kommen offene auseinandersetzungen mit christentum, sucht, psychischen erkrankungen und der menschlichen natur."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı indie rock şarkıcı ve gitarist",
+        "who": "Julien Rose Baker, amerikalı bir indie rock şarkıcı, söz yazarı ve gitaristtir. müziği melankolik havası, itiraflara dayalı sözleri ve inanç, bağımlılık, zihinsel hastalıklar ile insan doğası üzerine açık sözlü incelemeleriyle öne çıkar.",
+        "facts": [
+          "boygenius üyesi olarak altı grammy ödülüne aday gösterildi ve üçünü kazandı.",
+          "müziği melankolik havası ve itiraflara dayalı lirik tarzıyla bilinir; hıristiyanlık, bağımlılık, zihinsel hastalıklar ve insan doğası gibi konuları açık sözlülükle ele alır."
+        ]
+      }
+    },
+    {
+      "id": "45181ade-ab22-4cb3-b7a6-9c0d39f040c1",
+      "slug": "lil-tracy-4b456a68",
+      "title": "Lil Tracy",
+      "name": "Lil Tracy",
+      "source_url": "https://en.wikipedia.org/wiki/Lil_Tracy",
+      "extract": "\n\nJazz Ishmael Butler, known professionally as Lil Tracy and formerly as Yung Bruh, is an American rapper, singer and songwriter. He emerged from the underground hip-hop scene associated with SoundCloud in the mid-2010s, developing a style that incorporates cloud rap, emo rap, trap and influences from punk rock and electronic music.",
+      "en": {
+        "kicker": "american rapper, singer and songwriter · mid-2010s",
+        "who": "Lil Tracy is the professional name of Jazz Ishmael Butler, an American rapper, singer and songwriter. he came out of the underground hip-hop scene linked to SoundCloud, and his style mixes cloud rap, emo rap, trap, and influences from punk rock and electronic music.",
+        "facts": [
+          "Jazz Ishmael Butler, known professionally as Lil Tracy and formerly as Yung Bruh, is an American rapper, singer and songwriter.",
+          "He emerged from the underground hip-hop scene associated with SoundCloud in the mid-2010s, developing a style that incorporates cloud rap, emo rap, trap and influences from punk rock and electronic music."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer rapper, sänger und songwriter · mitte der 2010er",
+        "who": "Lil Tracy ist der bühnenname von Jazz Ishmael Butler, einem amerikanischen rapper, sänger und songwriter, der früher als Yung Bruh auftrat. er kommt aus der underground-hip-hop-szene rund um SoundCloud und verbindet cloud rap, emo rap und trap mit einflüssen aus punkrock und elektronischer musik.",
+        "facts": [
+          "Jazz Ishmael Butler, früher als Yung Bruh bekannt und heute als Lil Tracy, ist ein amerikanischer rapper, sänger und songwriter.",
+          "er kam mitte der 2010er jahre aus der mit SoundCloud verbundenen underground-hip-hop-szene und entwickelte einen stil, der cloud rap, emo rap, trap sowie einflüsse aus punkrock und elektronischer musik vereint."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı rapçi, şarkıcı ve söz yazarı · 2010'ların ortası",
+        "who": "Lil Tracy, Jazz Ishmael Butler'ın sahne adıdır; daha önce Yung Bruh adını kullanmıştır. amerikalı bir rapçi, şarkıcı ve söz yazarıdır. 2010'ların ortasında SoundCloud ile bağlantılı underground hip-hop sahnesinden çıkmış, bulut rap, emo rap ve trap ile punk rock ve elektronik müzikten etkilenen bir tarz geliştirmiştir.",
+        "facts": [
+          "Jazz Ishmael Butler, daha önce Yung Bruh olarak tanınan ve şimdi Lil Tracy olarak bilinen amerikalı bir rapçi, şarkıcı ve söz yazarıdır.",
+          "2010'ların ortasında SoundCloud ile bağlantılı underground hip-hop sahnesinden çıkarak bulut rap, emo rap, trap ve punk rock ile elektronik müzikten etkilenen bir tarz geliştirdi."
+        ]
+      }
+    },
+    {
+      "id": "e438e16d-1344-49ab-bd6f-8a6024e1a6cc",
+      "slug": "gary-numan-6f7b580d",
+      "title": "Gary Numan",
+      "name": "Gary Numan",
+      "source_url": "https://en.wikipedia.org/wiki/Gary_Numan",
+      "extract": "Gary Anthony James Webb, known professionally as Gary Numan, is an English musician. He entered the music industry as frontman of the new wave band Tubeway Army. The band's second and final album, 1979's Replicas, reached No. 1 on the UK Albums Chart, and spawned a UK No. 1 single with \"Are 'Friends' Electric?\". Following the band's split, he released his debut solo album The Pleasure Principle later in 1979, which also reached No. 1 in the UK and produced another UK No. 1 single with \"Cars\". Although his commercial popularity peaked in the late 1970s and early 1980s, he has maintained a strong cult following since then. He has sold over 10 million records.",
+      "en": {
+        "kicker": "english musician · 1979",
+        "who": "Gary Numan is the professional name of Gary Anthony James Webb, an English musician. after the new wave band Tubeway Army split, he released a debut solo album. he has kept a strong cult following since then.",
+        "facts": [
+          "He entered the music industry as frontman of the new wave band Tubeway Army.",
+          "He has sold over 10 million records."
+        ]
+      },
+      "de": {
+        "kicker": "englischer musiker · 1979",
+        "who": "Gary Numan ist das künstlerpseudonym von Gary Anthony James Webb, einem englischen musiker. nach der auflösung der new-wave-band Tubeway Army veröffentlichte er ein solodebüt. seither hat er eine starke kultanhängerschaft.",
+        "facts": [
+          "er stieg als frontmann der new-wave-band Tubeway Army ins musikgeschäft ein.",
+          "er hat über 10 millionen tonträger verkauft."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz müzisyen · 1979",
+        "who": "Gary Numan, Gary Anthony James Webb'in sahne adıdır ve kendisi bir ingiliz müzisyendir. new wave grubu Tubeway Army'nin dağılmasının ardından solo bir albümle çıkış yaptı. o zamandan beri güçlü bir kült takipçi kitlesine sahiptir.",
+        "facts": [
+          "müzik endüstrisine new wave grubu Tubeway Army'nin ön sanatçısı olarak girdi.",
+          "10 milyondan fazla plak sattı."
+        ]
+      }
+    }
+  ]
+}

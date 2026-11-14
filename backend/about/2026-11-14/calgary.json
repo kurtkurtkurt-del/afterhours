@@ -1,0 +1,38 @@
+{
+  "city": "calgary",
+  "day": "2026-11-14",
+  "nights": [
+    {
+      "id": "a2f912be-8d37-47dd-ad58-acbbd809da61",
+      "slug": "trooper-36709da2",
+      "title": "Trooper",
+      "name": "Trooper",
+      "source_url": "https://en.wikipedia.org/wiki/Trooper_(band)",
+      "extract": "Trooper is a Canadian rock band formed by singer Ra McGuire and guitarist Brian Smith in 1975. The group is best known for their 1970s hits \"Raise a Little Hell\", \"We're Here for a Good Time \", \"The Boys in the Bright White Sports Car\", \"General Hand Grenade\", \"3 Dressed Up as a 9\", \"Janine\", \"Two for the Show\", \"Oh, Pretty Lady\", and \"Santa Maria\".",
+      "en": {
+        "kicker": "canadian rock band · formed 1975",
+        "who": "Trooper is a canadian rock band formed by singer Ra McGuire and guitarist Brian Smith in 1975. the group is best known for their 1970s hits.",
+        "facts": [
+          "Trooper is a Canadian rock band formed by singer Ra McGuire and guitarist Brian Smith in 1975.",
+          "The group is best known for their 1970s hits"
+        ]
+      },
+      "de": {
+        "kicker": "kanadische rock-band · gegründet 1975",
+        "who": "Trooper ist eine kanadische rock-band, die 1975 von sänger Ra McGuire und gitarrist Brian Smith gegründet wurde. die gruppe ist vor allem für ihre hits aus den 1970er jahren bekannt.",
+        "facts": [
+          "Trooper ist eine kanadische rock-band, die 1975 von sänger Ra McGuire und gitarrist Brian Smith gegründet wurde.",
+          "Die gruppe ist vor allem für ihre hits aus den 1970er jahren bekannt."
+        ]
+      },
+      "tr": {
+        "kicker": "kanadalı rock grubu · 1975'te kuruldu",
+        "who": "Trooper, 1975'te şarkıcı Ra McGuire ve gitarist Brian Smith tarafından kurulmuş kanadalı bir rock grubudur. grup en çok 1970'lerdeki hitleriyle tanınır.",
+        "facts": [
+          "Trooper, 1975'te şarkıcı Ra McGuire ve gitarist Brian Smith tarafından kurulmuş kanadalı bir rock grubudur.",
+          "Grup en çok 1970'lerdeki hitleriyle tanınır."
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "city": "zurich",
+  "day": "2026-11-14",
+  "nights": [
+    {
+      "id": "9ec28841-4501-4b73-b7e0-3b71bc2ce976",
+      "slug": "cleopatrick-52b4b97a",
+      "title": "cleopatrick",
+      "name": "Cleopatrick",
+      "source_url": "https://en.wikipedia.org/wiki/Cleopatrick",
+      "extract": "Cleopatrick is a Canadian rock duo based in Cobourg, Ontario. They released their debut album, Bummer, on June 4, 2021 and three EPs by their own record label, called Nowhere Special Recordings. Their second album, Fake Moon, was released on March 14, 2025.",
+      "en": {
+        "kicker": "Canadian rock duo · Cobourg, Ontario",
+        "who": "Cleopatrick is a Canadian rock duo based in Cobourg, Ontario. Cleopatrick released its debut album, Bummer, on June 4, 2021, and three EPs on its own label, Nowhere Special Recordings. Cleopatrick's second album, Fake Moon, was released on March 14, 2025.",
+        "facts": [
+          "released their debut album, Bummer, on June 4, 2021",
+          "second album, Fake Moon, was released on March 14, 2025"
+        ]
+      },
+      "de": {
+        "kicker": "kanadisches rock-duo · Cobourg, Ontario",
+        "who": "Cleopatrick ist ein kanadisches rock-duo mit sitz in Cobourg, Ontario. die band veröffentlichte ihr debütalbum Bummer am 4. juni 2021 sowie drei EPs bei ihrem eigenen label Nowhere Special Recordings. ihr zweites album Fake Moon erschien am 14. märz 2025.",
+        "facts": [
+          "veröffentlichte das debütalbum Bummer am 4. juni 2021",
+          "das zweite album Fake Moon erschien am 14. märz 2025."
+        ]
+      },
+      "tr": {
+        "kicker": "kanadalı rock ikilisi · Cobourg, Ontario",
+        "who": "cleopatrick, Cobourg, Ontario merkezli bir Kanada rock ikilisidir. grup, ilk albümü Bummer'ı 4 haziran 2021'de yayımladı ve kendi plak şirketi Nowhere Special Recordings altında üç EP çıkardı. ikinci albümü Fake Moon 14 mart 2025'te yayımlandı.",
+        "facts": [
+          "ilk albümü Bummer'ı 4 haziran 2021'de yayımladı",
+          "ikinci albümü Fake Moon 14 mart 2025'te yayımlandı"
+        ]
+      }
+    }
+  ]
+}

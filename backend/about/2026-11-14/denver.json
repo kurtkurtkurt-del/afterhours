@@ -1,0 +1,38 @@
+{
+  "city": "denver",
+  "day": "2026-11-14",
+  "nights": [
+    {
+      "id": "a350af5a-6c3a-4234-8885-125e6472ad15",
+      "slug": "ivy-queen-ages-16-aeacec1b",
+      "title": "Ivy Queen - Ages 16+",
+      "name": "Ivy Queen",
+      "source_url": "https://en.wikipedia.org/wiki/Ivy_Queen",
+      "extract": "Martha Ivelisse Pesante Rodríguez, known professionally as Ivy Queen, is a Puerto Rican rapper and singer. She is considered one of the pioneers of the reggaeton genre. Dubbed the Queen of Reggaeton, she is one of the most influential reggaeton artists of all time.",
+      "en": {
+        "kicker": "rapper and singer · Puerto Rican",
+        "who": "Martha Ivelisse Pesante Rodríguez, known professionally as Ivy Queen, is a Puerto Rican rapper and singer. She is considered one of the pioneers of the reggaeton genre. Dubbed the Queen of Reggaeton, she is one of the most influential reggaeton artists of all time.",
+        "facts": [
+          "is considered one of the pioneers of the reggaeton genre.",
+          "is one of the most influential reggaeton artists of all time."
+        ]
+      },
+      "de": {
+        "kicker": "Rapperin und Sängerin · Puerto-Ricanerin",
+        "who": "Martha Ivelisse Pesante Rodríguez, bekannt als Ivy Queen, ist eine puerto-ricanische Rapperin und Sängerin. Sie gilt als eine der Wegbereiterinnen des Reggaeton. Als Queen of Reggaeton gehört sie zu den einflussreichsten Reggaeton-Künstlerinnen aller Zeiten.",
+        "facts": [
+          "Sie gilt als eine der Wegbereiterinnen des Reggaeton.",
+          "Sie gehört zu den einflussreichsten Reggaeton-Künstlerinnen aller Zeiten."
+        ]
+      },
+      "tr": {
+        "kicker": "rapçi ve şarkıcı · Porto Rikolu",
+        "who": "Martha Ivelisse Pesante Rodríguez, Ivy Queen adıyla tanınır ve Porto Rikolu bir rapçi ve şarkıcıdır. Reggaeton türünün öncülerinden biri olarak kabul edilir. Reggaeton Kraliçesi lakabıyla anılan Ivy Queen, tüm zamanların en etkili reggaeton sanatçılarından biridir.",
+        "facts": [
+          "Reggaeton türünün öncülerinden biri olarak kabul edilir.",
+          "Tüm zamanların en etkili reggaeton sanatçılarından biridir."
+        ]
+      }
+    }
+  ]
+}
