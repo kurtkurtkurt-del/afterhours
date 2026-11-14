@@ -1,0 +1,27 @@
+{
+  "city": "sevilla",
+  "day": "2026-11-15",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": {
+        "en": "the belén fair by the cathedral, free to walk through.",
+        "de": "die belén-messe an der kathedrale, frei zugänglich.",
+        "tr": "katedral yanındaki belén fuarı, girişi ücretsiz."
+      },
+      "line": {
+        "en": "twelve artisan stalls at the feria del belén by the cathedral, listed as open 11:00 to 21:00 until 23 december, free entry. a slow sunday walk before dinner.",
+        "de": "zwölf kunsthandwerksstände bei der feria del belén neben der kathedrale, laut listung 11:00 bis 21:00 bis 23. dezember, eintritt frei. ein ruhiger sonntagsspaziergang vor dem abendessen.",
+        "tr": "katedral yanındaki feria del belén'de on iki zanaatkar standı, listeye göre 23 aralık'a kadar 11:00 ile 21:00 arası açık, giriş ücretsiz. yemekten önce sakin bir pazar yürüyüşü."
+      },
+      "place": {
+        "en": "feria del belén, catedral",
+        "de": "feria del belén, catedral",
+        "tr": "feria del belén, catedral"
+      },
+      "hour": 11,
+      "minute": 0,
+      "why": "Feria del Belén by the Cathedral, 8 Nov to 23 Dec 2026, free, twelve artisan stalls (que.es, 3 Nov 2026); hours 11:00 to 21:00 from a market listing site (mercadillos.org), not confirmed by the organiser."
+    }
+  ]
+}
