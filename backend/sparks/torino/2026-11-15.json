@@ -1,0 +1,22 @@
+{
+  "city": "torino",
+  "day": "2026-11-15",
+  "sparks": [
+    {
+      "kind": "flea",
+      "title": { "en": "vintage market at the gran madre.", "de": "vintage-markt an der gran madre.", "tr": "gran madre'de vintage pazarı." },
+      "line": { "en": "vintage market near the gran madre church on sunday 15 november. go late morning; in november a coat is worth bringing.", "de": "vintage-markt in der nähe der kirche gran madre am sonntag 15. november. am späten vormittag hingehen; im november lohnt ein mantel.", "tr": "15 kasım pazar günü gran madre kilisesinin yanında vintage pazarı. öğleye doğru git; kasım ayında mont al." },
+      "place": { "en": "piazza gran madre di dio", "de": "piazza gran madre di dio", "tr": "piazza gran madre di dio" },
+      "hour": 10, "minute": 30,
+      "why": "Vintage market at the Gran Madre, sun 15 nov 2026, per the virgilio.it Torino events list."
+    },
+    {
+      "kind": "festival",
+      "title": { "en": "daebak, korean festival at the mercato centrale.", "de": "daebak, koreanisches festival im mercato centrale.", "tr": "mercato centrale'de daebak, kore festivali." },
+      "line": { "en": "the second daebak korean culture festival runs at the mercato centrale on saturday and sunday, 14 and 15 november. go at midday; the venue is indoors.", "de": "das zweite daebak-festival zur koreanischen kultur läuft am samstag und sonntag, 14. und 15. november, im mercato centrale. am mittag hingehen; der ort ist überdacht.", "tr": "daebak'ın ikinci kore kültürü festivali 14 ve 15 kasım cumartesi ve pazar günleri mercato centrale'de. öğlen git; mekan kapalı alanda." },
+      "place": { "en": "mercato centrale", "de": "mercato centrale", "tr": "mercato centrale" },
+      "hour": 12, "minute": 0,
+      "why": "DAEBAK korean festival, second edition, at Mercato Centrale Torino on sat 14 and sun 15 nov 2026, per the virgilio.it Torino events list."
+    }
+  ]
+}
