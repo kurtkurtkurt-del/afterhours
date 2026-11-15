@@ -5,14 +5,14 @@
     {
       "kind": "derby",
       "title": {
-        "en": "red bull münchen – krefeld, on sunday.",
-        "de": "red bull münchen – krefeld, am sonntag.",
-        "tr": "red bull münchen – krefeld, pazar günü."
+        "en": "red bull münchen – krefeld, 14:00.",
+        "de": "red bull münchen – krefeld, 14:00.",
+        "tr": "red bull münchen – krefeld, 14:00."
       },
       "line": {
-        "en": "ice hockey against krefeld at the sap garden at 14:00. get there before the puck drops and have a beer in the hall first.",
-        "de": "eishockey gegen krefeld im sap garden um 14:00. vor dem bully da sein und vorher ein bier in der halle.",
-        "tr": "krefeld'e karşı sap garden'da 14:00'te buz hokeyi. puck düşmeden gel, önce salonda bir bira iç."
+        "en": "ice hockey at the sap garden, sunday afternoon. be there before the puck drops and warm up with a beer in the hall.",
+        "de": "eishockey im sap garden, sonntagnachmittag. vor dem bully da sein und sich in der halle mit einem bier aufwärmen.",
+        "tr": "pazar öğleden sonra sap garden'da buz hokeyi. puck düşmeden gel, salonda bir bira ile ısın."
       },
       "place": {
         "en": "sap garden",
@@ -21,7 +21,637 @@
       },
       "hour": 14,
       "minute": 0,
-      "why": "EHC Red Bull München vs Krefeld Pinguine, Sun 15.11 at 14:00, SAP Garden (in-muenchen.de listing; club schedule not checked)."
+      "why": "EHC Red Bull München vs Krefeld Pinguine, Sun 15.11 14:00, SAP Garden (in-muenchen.de listing). Cold day, indoors suits it."
+    },
+    {
+      "kind": "grill",
+      "title": {
+        "en": "a warm sausage at the olympiapark.",
+        "de": "eine warme wurst im olympiapark.",
+        "tr": "olympiapark'ta sıcak bir sosis."
+      },
+      "line": {
+        "en": "too cold for a long grill at 4°C: bring a thermos and sausages, grill where fires are allowed at dusk and keep it short.",
+        "de": "bei 4°c zu kalt für einen langen grillabend: thermoskanne und würstchen mit, kurz grillen, wo es erlaubt ist.",
+        "tr": "4°c'de uzun mangal olmaz: termos ve sosis getir, izin verilen yerde kısa tut."
+      },
+      "place": {
+        "en": "olympiapark",
+        "de": "olympiapark",
+        "tr": "olympiapark"
+      },
+      "hour": 16,
+      "minute": 0,
+      "why": "No special event found. Forecast for Munich Sun 15.11 (DWD-based daswetter outlook of 8.11): cold, highs around 4°C, light ground frost in the morning, weak NE-E wind; sunrise ~07:19, sunset ~16:35 (not re-confirmed on the day). Grilling shortened to dusk."
+    },
+    {
+      "kind": "hike",
+      "title": {
+        "en": "a cold, clear walk up the olympiaberg.",
+        "de": "ein kalter, klarer gang auf den olympiaberg.",
+        "tr": "olympiaberg'e soğuk, açık bir yürüyüş."
+      },
+      "line": {
+        "en": "frosty morning, dry air. wrap up and walk up for the view across the city and, with luck, the alps.",
+        "de": "frostiger morgen, trockene luft. warm einpacken und hoch für den blick über die stadt, mit glück bis zu den alpen.",
+        "tr": "dondurucu sabah, kuru hava. kalın giyin, şehir ve şansa alpler manzarası için çık."
+      },
+      "place": {
+        "en": "olympiaberg",
+        "de": "olympiaberg",
+        "tr": "olympiaberg"
+      },
+      "hour": 10,
+      "minute": 0,
+      "why": "No event needed. Forecast for Munich Sun 15.11 (DWD-based daswetter outlook of 8.11): cold, highs around 4°C, light ground frost in the morning, weak NE-E wind; sunrise ~07:19, sunset ~16:35 (not re-confirmed on the day). "
+    },
+    {
+      "kind": "sunrise",
+      "title": {
+        "en": "sunrise over the isar, after a frost.",
+        "de": "sonnenaufgang an der isar, nach dem frost.",
+        "tr": "donun ardından isar kıyısında gün doğumu."
+      },
+      "line": {
+        "en": "light ground frost, sunrise around 07:19. bring a hot drink, stand on the bank by the flaucher and watch the day start.",
+        "de": "leichter bodenfrost, sonnenaufgang gegen 07:19. heißes getränk mit, am flaucher ans ufer.",
+        "tr": "hafif don, gün doğumu 07:19 civarı. sıcak içecek al, flaucher'da kıyıda dur."
+      },
+      "place": {
+        "en": "flaucher",
+        "de": "flaucher",
+        "tr": "flaucher"
+      },
+      "hour": 6,
+      "minute": 59,
+      "why": "Sunrise ~07:19 so start 06:59; frost expected. Forecast for Munich Sun 15.11 (DWD-based daswetter outlook of 8.11): cold, highs around 4°C, light ground frost in the morning, weak NE-E wind; sunrise ~07:19, sunset ~16:35 (not re-confirmed on the day). "
+    },
+    {
+      "kind": "breakfast",
+      "title": {
+        "en": "a slow sunday breakfast at the viktualienmarkt.",
+        "de": "ein langes sonntagsfrühstück am viktualienmarkt.",
+        "tr": "viktualienmarkt'ta uzun bir pazar kahvaltısı."
+      },
+      "line": {
+        "en": "shops are shut on sunday but the cafés around the market are open. weißwurst, a pretzel, no hurry.",
+        "de": "sonntags haben die läden zu, die cafés rund um den markt nicht. weißwurst, brezn, keine eile.",
+        "tr": "pazar dükkânlar kapalı ama pazar çevresindeki kafeler açık. weißwurst, simit gibi brezel, acele yok."
+      },
+      "place": {
+        "en": "viktualienmarkt",
+        "de": "viktualienmarkt",
+        "tr": "viktualienmarkt"
+      },
+      "hour": 10,
+      "minute": 0,
+      "why": "Sunday, shops closed. A Viktualienmarkt guided tour \"Kurz & Lecker\" runs at 10:00 (regioactive listing)."
+    },
+    {
+      "kind": "rooftop",
+      "title": {
+        "en": "a rooftop for the last light, bundled up.",
+        "de": "ein rooftop fürs letzte licht, warm eingepackt.",
+        "tr": "son ışık için çatıda, kalın giyinik."
+      },
+      "line": {
+        "en": "sunset is near 16:35 and it is around 3°c. find a rooftop with blankets and heaters, a hot drink in hand.",
+        "de": "sonnenuntergang gegen 16:35, es hat um die 3°c. ein rooftop mit decken und heizstrahlern, heißes getränk in der hand.",
+        "tr": "gün batımı 16:35 civarı, hava 3°c. battaniye ve ısıtıcılı bir çatı bul, elinde sıcak içecek."
+      },
+      "place": {
+        "en": "rooftop bar",
+        "de": "rooftop bar",
+        "tr": "rooftop bar"
+      },
+      "hour": 16,
+      "minute": 0,
+      "why": "No event. Forecast for Munich Sun 15.11 (DWD-based daswetter outlook of 8.11): cold, highs around 4°C, light ground frost in the morning, weak NE-E wind; sunrise ~07:19, sunset ~16:35 (not re-confirmed on the day). Check the venue is open before going."
+    },
+    {
+      "kind": "swim",
+      "title": {
+        "en": "swim at the wassersportfestival, olympiaschwimmhalle.",
+        "de": "schwimmen beim wassersportfestival, olympiaschwimmhalle.",
+        "tr": "olympiaschwimmhalle'de su sporları festivalinde yüz."
+      },
+      "line": {
+        "en": "too cold for the lakes, so go indoors: the water sports festival fills the olympic pool hall from 10:00 to 18:00, free entry.",
+        "de": "für die seen zu kalt, also rein: das wassersportfestival füllt die olympiaschwimmhalle von 10 bis 18 uhr, eintritt frei.",
+        "tr": "göller için çok soğuk, o yüzden içeri: su sporları festivali olimpiyat yüzme salonunu 10:00–18:00 doldurur, giriş ücretsiz."
+      },
+      "place": {
+        "en": "olympiaschwimmhalle",
+        "de": "olympiaschwimmhalle",
+        "tr": "olympiaschwimmhalle"
+      },
+      "hour": 14,
+      "minute": 0,
+      "why": "Wassersportfestival, Olympiaschwimmhalle, Sun 15.11 10:00–18:00, free entry (event listing sites). Outdoor swimming off at ~4°C."
+    },
+    {
+      "kind": "quiz",
+      "title": {
+        "en": "a sunday pub quiz, somewhere warm.",
+        "de": "ein sonntags-pubquiz, irgendwo warm.",
+        "tr": "pazar pub quiz'i, sıcak bir yerde."
+      },
+      "line": {
+        "en": "sunday evening, cold outside. gather a team of four, pick a pub with a quiz night and a table near the heating.",
+        "de": "sonntagabend, draußen kalt. vierer-team, pub mit quizabend, tisch an der heizung.",
+        "tr": "pazar akşamı, dışarısı soğuk. dört kişilik takım kur, quiz gecesi olan bir pub seç, kalorifer yanında masa al."
+      },
+      "place": {
+        "en": "a pub with a quiz night",
+        "de": "a pub with a quiz night",
+        "tr": "a pub with a quiz night"
+      },
+      "hour": 19,
+      "minute": 30,
+      "why": "No specific quiz confirmed; generic warm indoor sunday plan. Forecast for Munich Sun 15.11 (DWD-based daswetter outlook of 8.11): cold, highs around 4°C, light ground frost in the morning, weak NE-E wind; sunrise ~07:19, sunset ~16:35 (not re-confirmed on the day). "
+    },
+    {
+      "kind": "newplace",
+      "title": {
+        "en": "try a place you have never been, indoors.",
+        "de": "geh an einen ort, an dem du noch nie warst, drinnen.",
+        "tr": "hiç gitmediğin bir yere git, içeride."
+      },
+      "line": {
+        "en": "cold afternoon: a new café, a bookshop or a corner of the haus der kunst. pick one nobody in the group knows.",
+        "de": "kalter nachmittag: ein neues café oder ein winkel im haus der kunst. such einen ort, den noch keiner kennt.",
+        "tr": "soğuk öğleden sonra: yeni bir kafe veya haus der kunst'ta bir köşe. grupta kimsenin bilmediği yeri seç."
+      },
+      "place": {
+        "en": "haus der kunst",
+        "de": "haus der kunst",
+        "tr": "haus der kunst"
+      },
+      "hour": 15,
+      "minute": 0,
+      "why": "A children's reading at Haus der Kunst listed for Sunday (mvp.de calendar). Otherwise generic. Forecast for Munich Sun 15.11 (DWD-based daswetter outlook of 8.11): cold, highs around 4°C, light ground frost in the morning, weak NE-E wind; sunrise ~07:19, sunset ~16:35 (not re-confirmed on the day). "
+    },
+    {
+      "kind": "camera",
+      "title": {
+        "en": "frost and low sun in the englischer garten.",
+        "de": "frost und tiefe sonne im englischen garten.",
+        "tr": "englischer garten'de don ve alçak güneş."
+      },
+      "line": {
+        "en": "low november sun, bare trees, cold light. take a camera to the monopteros before the sun drops at 16:35.",
+        "de": "tiefe novembersonne, kahle bäume, kaltes licht. kamera zum monopteros, bevor die sonne um 16:35 geht.",
+        "tr": "alçak kasım güneşi, çıplak ağaçlar, soğuk ışık. güneş 16:35'te batmadan kamerayı monopteros'a götür."
+      },
+      "place": {
+        "en": "monopteros",
+        "de": "monopteros",
+        "tr": "monopteros"
+      },
+      "hour": 15,
+      "minute": 30,
+      "why": "No event. Forecast for Munich Sun 15.11 (DWD-based daswetter outlook of 8.11): cold, highs around 4°C, light ground frost in the morning, weak NE-E wind; sunrise ~07:19, sunset ~16:35 (not re-confirmed on the day). "
+    },
+    {
+      "kind": "festival",
+      "title": {
+        "en": "fatoumata diawara live in the muffathalle.",
+        "de": "fatoumata diawara live in der muffathalle.",
+        "tr": "muffathalle'de fatoumata diawara canlı."
+      },
+      "line": {
+        "en": "an evening of malian music in a former power station. check tickets before you go.",
+        "de": "ein abend malische musik im alten kraftwerk. vorher tickets prüfen.",
+        "tr": "eski bir enerji santralinde malili müzik akşamı. gitmeden bilet durumuna bak."
+      },
+      "place": {
+        "en": "muffathalle",
+        "de": "muffathalle",
+        "tr": "muffathalle"
+      },
+      "hour": 19,
+      "minute": 0,
+      "why": "Fatoumata Diawara at Muffathalle listed for Sun 15.11 (mvp.de calendar); start time not confirmed, 19:00 is a guess for a typical door time. Christmas markets not confirmed open yet."
+    },
+    {
+      "kind": "karaoke",
+      "title": {
+        "en": "karaoke on a sunday night.",
+        "de": "karaoke am sonntagabend.",
+        "tr": "pazar gecesi karaoke."
+      },
+      "line": {
+        "en": "sunday is quiet and the cold keeps everyone inside. gather friends and find a karaoke bar open late.",
+        "de": "der sonntag ist ruhig, die kälte hält alle drinnen. freunde zusammentrommeln, karaokebar suchen.",
+        "tr": "pazar sakin, soğuk herkesi içeride tutuyor. arkadaşları topla, geç saate açık bir karaoke barı bul."
+      },
+      "place": {
+        "en": "a karaoke bar",
+        "de": "a karaoke bar",
+        "tr": "a karaoke bar"
+      },
+      "hour": 20,
+      "minute": 0,
+      "why": "No specific karaoke night confirmed; generic. Forecast for Munich Sun 15.11 (DWD-based daswetter outlook of 8.11): cold, highs around 4°C, light ground frost in the morning, weak NE-E wind; sunrise ~07:19, sunset ~16:35 (not re-confirmed on the day). "
+    },
+    {
+      "kind": "vinyl",
+      "title": {
+        "en": "crate-digging on a cold sunday.",
+        "de": "plattenstöbern an einem kalten sonntag.",
+        "tr": "soğuk bir pazarda plak karıştırmak."
+      },
+      "line": {
+        "en": "record shops are mostly shut on sunday, so make it a listening night: bring records to a friend's place and take turns.",
+        "de": "plattenläden haben sonntags meist zu, also hörabend: platten zu einem freund, reihum auflegen.",
+        "tr": "plakçılar pazar çoğunlukla kapalı, o yüzden dinleme akşamı: plaklarla bir arkadaşa git, sırayla çal."
+      },
+      "place": {
+        "en": "a friend's place",
+        "de": "a friend's place",
+        "tr": "a friend's place"
+      },
+      "hour": 16,
+      "minute": 0,
+      "why": "Sunday, shops closed in Bavaria. Generic. Forecast for Munich Sun 15.11 (DWD-based daswetter outlook of 8.11): cold, highs around 4°C, light ground frost in the morning, weak NE-E wind; sunrise ~07:19, sunset ~16:35 (not re-confirmed on the day). "
+    },
+    {
+      "kind": "openair",
+      "title": {
+        "en": "no open air today, go to a hall instead.",
+        "de": "heute kein open air, geh in eine halle.",
+        "tr": "bugün açık hava yok, bir salona git."
+      },
+      "line": {
+        "en": "4°c and frost: open-air events are off. swap for an indoor concert or the water sports festival at the olympiapark.",
+        "de": "4°c und frost: open air fällt aus. ersatz: ein konzert drinnen oder das wassersportfestival im olympiapark.",
+        "tr": "4°c ve don: açık hava etkinlikleri yok. içeride bir konsere veya olimpiyat parkındaki su sporları festivaline git."
+      },
+      "place": {
+        "en": "olympiapark",
+        "de": "olympiapark",
+        "tr": "olympiapark"
+      },
+      "hour": 12,
+      "minute": 0,
+      "why": "Cold season; no open-air event found. Forecast for Munich Sun 15.11 (DWD-based daswetter outlook of 8.11): cold, highs around 4°C, light ground frost in the morning, weak NE-E wind; sunrise ~07:19, sunset ~16:35 (not re-confirmed on the day). "
+    },
+    {
+      "kind": "bike",
+      "title": {
+        "en": "a cold ride along the isar.",
+        "de": "eine kalte radtour an der isar.",
+        "tr": "isar boyunca soğuk bir bisiklet turu."
+      },
+      "line": {
+        "en": "dry and quiet sunday, but frost: gloves, lights, and keep to the paths along the isar from the flaucher north.",
+        "de": "trockener, ruhiger sonntag, aber frost: handschuhe, licht, auf den wegen an der isar bleiben.",
+        "tr": "kuru ve sakin pazar ama don var: eldiven, ışık, flaucher'dan kuzeye isar yollarında kal."
+      },
+      "place": {
+        "en": "flaucher",
+        "de": "flaucher",
+        "tr": "flaucher"
+      },
+      "hour": 11,
+      "minute": 0,
+      "why": "No event. Forecast for Munich Sun 15.11 (DWD-based daswetter outlook of 8.11): cold, highs around 4°C, light ground frost in the morning, weak NE-E wind; sunrise ~07:19, sunset ~16:35 (not re-confirmed on the day). Watch for ice on shaded paths."
+    },
+    {
+      "kind": "cinema",
+      "title": {
+        "en": "a sunday evening at the cinema.",
+        "de": "ein sonntagabend im kino.",
+        "tr": "pazar akşamı sinemada."
+      },
+      "line": {
+        "en": "cold outside, warm seat inside. pick a late show at a neighbourhood cinema and eat afterwards.",
+        "de": "draußen kalt, drinnen ein warmer sitz. spätvorstellung im kiez-kino, danach essen.",
+        "tr": "dışarısı soğuk, içerisi sıcak koltuk. mahalle sinemasında akşam seansı seç, sonra yemek ye."
+      },
+      "place": {
+        "en": "a cinema near you",
+        "de": "a cinema near you",
+        "tr": "a cinema near you"
+      },
+      "hour": 18,
+      "minute": 0,
+      "why": "No specific screening confirmed; cinemas are open on Sundays. Forecast for Munich Sun 15.11 (DWD-based daswetter outlook of 8.11): cold, highs around 4°C, light ground frost in the morning, weak NE-E wind; sunrise ~07:19, sunset ~16:35 (not re-confirmed on the day). "
+    },
+    {
+      "kind": "boardgames",
+      "title": {
+        "en": "board games, tea, a cold evening.",
+        "de": "brettspiele, tee, ein kalter abend.",
+        "tr": "kutu oyunları, çay, soğuk bir akşam."
+      },
+      "line": {
+        "en": "a perfect indoor sunday. bring a game, find a table at a board game café or just use someone's living room.",
+        "de": "ein perfekter sonntag drinnen. spiel mitbringen, tisch im brettspielcafé oder einfach ein wohnzimmer.",
+        "tr": "tam bir kapalı alan pazarı. oyun getir, kutu oyunu kafesinde masa bul ya da birinin oturma odasını kullan."
+      },
+      "place": {
+        "en": "a board game café",
+        "de": "a board game café",
+        "tr": "a board game café"
+      },
+      "hour": 17,
+      "minute": 0,
+      "why": "Generic indoor plan. Forecast for Munich Sun 15.11 (DWD-based daswetter outlook of 8.11): cold, highs around 4°C, light ground frost in the morning, weak NE-E wind; sunrise ~07:19, sunset ~16:35 (not re-confirmed on the day). "
+    },
+    {
+      "kind": "flea",
+      "title": {
+        "en": "browse for a flea market, check it is on.",
+        "de": "flohmarkt – vorher prüfen, ob er stattfindet.",
+        "tr": "bit pazarı – açık mı diye kontrol et."
+      },
+      "line": {
+        "en": "many outdoor flea markets pause in the cold; check the olympiapark or neighbourhood ones before you go, and dress warm.",
+        "de": "viele flohmärkte pausieren in der kälte; vorher prüfen, warm anziehen.",
+        "tr": "birçok açık hava bit pazarı soğukta ara veriyor; gitmeden kontrol et, kalın giyin."
+      },
+      "place": {
+        "en": "a flea market",
+        "de": "a flea market",
+        "tr": "a flea market"
+      },
+      "hour": 10,
+      "minute": 0,
+      "why": "Could not confirm a flea market on 15.11; user should check before going. Forecast for Munich Sun 15.11 (DWD-based daswetter outlook of 8.11): cold, highs around 4°C, light ground frost in the morning, weak NE-E wind; sunrise ~07:19, sunset ~16:35 (not re-confirmed on the day). "
+    },
+    {
+      "kind": "skate",
+      "title": {
+        "en": "skating at the ice rink, not the park.",
+        "de": "schlittschuh statt skatepark.",
+        "tr": "skate parkı yerine buz pistinde."
+      },
+      "line": {
+        "en": "frost makes the skatepark treacherous. swap boards for ice skates at an indoor rink and go round together.",
+        "de": "frost macht den skatepark tückisch. brett gegen schlittschuhe tauschen, drinnen zusammen im kreis.",
+        "tr": "don skate parkı tehlikeli yapıyor. tahtayı buz patenine çevir, içeride birlikte dön."
+      },
+      "place": {
+        "en": "olympia-eisstadion",
+        "de": "olympia-eisstadion",
+        "tr": "olympia-eisstadion"
+      },
+      "hour": 15,
+      "minute": 0,
+      "why": "Frost forecast; skatepark swapped for ice. Rink opening hours not confirmed. Forecast for Munich Sun 15.11 (DWD-based daswetter outlook of 8.11): cold, highs around 4°C, light ground frost in the morning, weak NE-E wind; sunrise ~07:19, sunset ~16:35 (not re-confirmed on the day). "
+    },
+    {
+      "kind": "cook",
+      "title": {
+        "en": "cook something warm together.",
+        "de": "kocht zusammen etwas warmes.",
+        "tr": "birlikte sıcak bir şey pişirin."
+      },
+      "line": {
+        "en": "sunday shops are shut, so shop on saturday. a big pot of soup or a stew for four, everyone brings an ingredient.",
+        "de": "sonntags sind die läden zu, also samstag einkaufen. großer topf suppe oder eintopf, jeder bringt eine zutat mit.",
+        "tr": "pazar dükkânlar kapalı, o yüzden cumartesi alışveriş yap. büyük bir kazan çorba veya yahni, herkes bir malzeme getirsin."
+      },
+      "place": {
+        "en": "at home",
+        "de": "at home",
+        "tr": "at home"
+      },
+      "hour": 17,
+      "minute": 0,
+      "why": "Sunday, shops closed. Forecast for Munich Sun 15.11 (DWD-based daswetter outlook of 8.11): cold, highs around 4°C, light ground frost in the morning, weak NE-E wind; sunrise ~07:19, sunset ~16:35 (not re-confirmed on the day). "
+    },
+    {
+      "kind": "sauna",
+      "title": {
+        "en": "a sauna after the cold, therme or local.",
+        "de": "sauna nach der kälte.",
+        "tr": "soğuktan sonra sauna."
+      },
+      "line": {
+        "en": "4°c outside is the best argument for a sauna. a local pool or therme with a sauna, book ahead for sunday.",
+        "de": "4°c draußen sind das beste argument für die sauna. ein bad mit sauna, für sonntag vorher buchen.",
+        "tr": "dışarıda 4°c saunanın en iyi gerekçesi. saunalı bir havuz veya termal tesis, pazar için önceden yer ayır."
+      },
+      "place": {
+        "en": "a sauna",
+        "de": "a sauna",
+        "tr": "a sauna"
+      },
+      "hour": 17,
+      "minute": 0,
+      "why": "Cold forecast. Specific venue hours not confirmed. Forecast for Munich Sun 15.11 (DWD-based daswetter outlook of 8.11): cold, highs around 4°C, light ground frost in the morning, weak NE-E wind; sunrise ~07:19, sunset ~16:35 (not re-confirmed on the day). "
+    },
+    {
+      "kind": "openmic",
+      "title": {
+        "en": "an open mic on a sunday.",
+        "de": "ein open mic am sonntag.",
+        "tr": "pazar günü açık mikrofon."
+      },
+      "line": {
+        "en": "sunday evenings are when small bars run open mics. go to listen or to play, one song is enough.",
+        "de": "sonntagabend laufen in kleinen bars open mics. zum zuhören oder spielen, ein song genügt.",
+        "tr": "pazar akşamları küçük barlar açık mikrofon yapar. dinlemeye ya da çalmaya git, bir şarkı yeter."
+      },
+      "place": {
+        "en": "a bar with an open mic",
+        "de": "a bar with an open mic",
+        "tr": "a bar with an open mic"
+      },
+      "hour": 20,
+      "minute": 0,
+      "why": "No specific open mic confirmed. Forecast for Munich Sun 15.11 (DWD-based daswetter outlook of 8.11): cold, highs around 4°C, light ground frost in the morning, weak NE-E wind; sunrise ~07:19, sunset ~16:35 (not re-confirmed on the day). "
+    },
+    {
+      "kind": "pingpong",
+      "title": {
+        "en": "ping pong, indoors.",
+        "de": "tischtennis, drinnen.",
+        "tr": "masa tenisi, içeride."
+      },
+      "line": {
+        "en": "outdoor tables are too cold. find a bar or club with a table and play to eleven, rotating.",
+        "de": "die tische draußen sind zu kalt. bar oder verein mit platte, bis elf, reihum.",
+        "tr": "dış masalar çok soğuk. masası olan bir bar ya da kulüp bul, on bire kadar sırayla oyna."
+      },
+      "place": {
+        "en": "a ping pong bar",
+        "de": "a ping pong bar",
+        "tr": "a ping pong bar"
+      },
+      "hour": 16,
+      "minute": 0,
+      "why": "Generic indoor swap. Forecast for Munich Sun 15.11 (DWD-based daswetter outlook of 8.11): cold, highs around 4°C, light ground frost in the morning, weak NE-E wind; sunrise ~07:19, sunset ~16:35 (not re-confirmed on the day). "
+    },
+    {
+      "kind": "bouldering",
+      "title": {
+        "en": "bouldering, warm and indoors.",
+        "de": "bouldern, drinnen und warm.",
+        "tr": "bouldering, içeride ve sıcak."
+      },
+      "line": {
+        "en": "a cold sunday is a climbing-gym day. go in a group, chalk up and try the same problem together.",
+        "de": "ein kalter sonntag ist kletterhallentag. in der gruppe, magnesia, dasselbe problem zusammen probieren.",
+        "tr": "soğuk bir pazar tırmanış salonu günü. grupla git, magnezyum sür, aynı problemi birlikte dene."
+      },
+      "place": {
+        "en": "a climbing gym",
+        "de": "a climbing gym",
+        "tr": "a climbing gym"
+      },
+      "hour": 15,
+      "minute": 0,
+      "why": "Generic indoor. Hall opening hours not confirmed. Forecast for Munich Sun 15.11 (DWD-based daswetter outlook of 8.11): cold, highs around 4°C, light ground frost in the morning, weak NE-E wind; sunrise ~07:19, sunset ~16:35 (not re-confirmed on the day). "
+    },
+    {
+      "kind": "picnic",
+      "title": {
+        "en": "a picnic is a stretch, make it a thermos walk.",
+        "de": "ein picknick ist gewagt, nimm die thermoskanne.",
+        "tr": "piknik zor, termoslu yürüyüş yap."
+      },
+      "line": {
+        "en": "it will be about 4°c. if you must, bring blankets, hot tea and sandwiches to a sunny spot in the englischer garten.",
+        "de": "es hat um die 4°c. wenn, dann decken, heißer tee und brote an einem sonnigen fleck im englischen garten.",
+        "tr": "hava 4°c civarı. yapacaksan battaniye, sıcak çay ve sandviçle englischer garten'da güneşli bir yere git."
+      },
+      "place": {
+        "en": "englischer garten",
+        "de": "englischer garten",
+        "tr": "englischer garten"
+      },
+      "hour": 13,
+      "minute": 0,
+      "why": "No event. Forecast for Munich Sun 15.11 (DWD-based daswetter outlook of 8.11): cold, highs around 4°C, light ground frost in the morning, weak NE-E wind; sunrise ~07:19, sunset ~16:35 (not re-confirmed on the day). "
+    },
+    {
+      "kind": "crawl",
+      "title": {
+        "en": "a bar crawl, short hops, no long walks.",
+        "de": "eine bartour, kurze wege.",
+        "tr": "bar turu, kısa mesafeler."
+      },
+      "line": {
+        "en": "cold air makes long walks bad: pick three bars within a few minutes of each other around glockenbach and go.",
+        "de": "kalte luft macht lange wege unangenehm: drei bars im glockenbachviertel, jeweils nur ein paar minuten auseinander.",
+        "tr": "soğuk hava uzun yürüyüşü kötü yapar: glockenbach çevresinde birbirine birkaç dakika uzaklıkta üç bar seç."
+      },
+      "place": {
+        "en": "glockenbachviertel",
+        "de": "glockenbachviertel",
+        "tr": "glockenbachviertel"
+      },
+      "hour": 20,
+      "minute": 0,
+      "why": "Sunday, quiet; 15.11 is Volkstrauertag, so some venues may be low-key. Forecast for Munich Sun 15.11 (DWD-based daswetter outlook of 8.11): cold, highs around 4°C, light ground frost in the morning, weak NE-E wind; sunrise ~07:19, sunset ~16:35 (not re-confirmed on the day). "
+    },
+    {
+      "kind": "stars",
+      "title": {
+        "en": "stars after the frost, outside the city.",
+        "de": "sterne nach dem frost, vor der stadt.",
+        "tr": "dondan sonra yıldızlar, şehir dışında."
+      },
+      "line": {
+        "en": "clear and cold nights show stars. go beyond the ring road, away from the lights, and bring a flask.",
+        "de": "klare kalte nächte zeigen sterne. hinter den ring, weg vom licht, thermoskanne mit.",
+        "tr": "açık ve soğuk geceler yıldızları gösterir. çevre yolunun ötesine, ışıktan uzağa git, termos al."
+      },
+      "place": {
+        "en": "outside the city",
+        "de": "outside the city",
+        "tr": "outside the city"
+      },
+      "hour": 17,
+      "minute": 30,
+      "why": "Cloud cover for the night not confirmed; check before going. Forecast for Munich Sun 15.11 (DWD-based daswetter outlook of 8.11): cold, highs around 4°C, light ground frost in the morning, weak NE-E wind; sunrise ~07:19, sunset ~16:35 (not re-confirmed on the day). "
+    },
+    {
+      "kind": "football",
+      "title": {
+        "en": "indoor football, or watch the match.",
+        "de": "hallenfußball oder spiel schauen.",
+        "tr": "salon futbolu ya da maç izle."
+      },
+      "line": {
+        "en": "frozen pitches are hard. swap for an indoor hall or watch the hockey together; no bayern match confirmed for the day.",
+        "de": "gefrorene plätze sind hart. halle statt rasen oder gemeinsam das eishockey schauen; kein bayern-spiel bestätigt.",
+        "tr": "donmuş sahalar sert. çimen yerine salon ya da hokey maçını birlikte izle; bayern maçı doğrulanamadı."
+      },
+      "place": {
+        "en": "a hall",
+        "de": "a hall",
+        "tr": "a hall"
+      },
+      "hour": 14,
+      "minute": 0,
+      "why": "No Bayern/1860 match confirmed for 15.11; the only confirmed match is the EHC game at 14:00. Forecast for Munich Sun 15.11 (DWD-based daswetter outlook of 8.11): cold, highs around 4°C, light ground frost in the morning, weak NE-E wind; sunrise ~07:19, sunset ~16:35 (not re-confirmed on the day). "
+    },
+    {
+      "kind": "tram",
+      "title": {
+        "en": "ride the 17 tram to the end and back.",
+        "de": "mit der tram 17 bis ans ende und zurück.",
+        "tr": "17 numaralı tramvayla sona kadar ve geri."
+      },
+      "line": {
+        "en": "a cold sunday made for warm seats and window views. take a tram to a stop you do not know and get a coffee.",
+        "de": "ein kalter sonntag für warme sitze und fensterblicke. tram bis zu einer unbekannten haltestelle, dort einen kaffee.",
+        "tr": "soğuk pazar, sıcak koltuk ve cam kenarı için. bilmediğin bir durağa tramvayla git, kahve iç."
+      },
+      "place": {
+        "en": "tram 17",
+        "de": "tram 17",
+        "tr": "tram 17"
+      },
+      "hour": 15,
+      "minute": 0,
+      "why": "No event. Forecast for Munich Sun 15.11 (DWD-based daswetter outlook of 8.11): cold, highs around 4°C, light ground frost in the morning, weak NE-E wind; sunrise ~07:19, sunset ~16:35 (not re-confirmed on the day). "
+    },
+    {
+      "kind": "jazz",
+      "title": {
+        "en": "jazz in a small cellar bar.",
+        "de": "jazz in einer kleinen kellerbar.",
+        "tr": "küçük bir bodrum barında caz."
+      },
+      "line": {
+        "en": "a sunday jazz night. try the unterfahrt in haidhausen; check the programme and the door time.",
+        "de": "ein sonntäglicher jazzabend. die unterfahrt in haidhausen probieren; programm und einlass prüfen.",
+        "tr": "pazar caz akşamı. haidhausen'daki unterfahrt'a bak; program ve kapı saatini kontrol et."
+      },
+      "place": {
+        "en": "unterfahrt",
+        "de": "unterfahrt",
+        "tr": "unterfahrt"
+      },
+      "hour": 20,
+      "minute": 0,
+      "why": "Programme not confirmed for the day; generic suggestion. Forecast for Munich Sun 15.11 (DWD-based daswetter outlook of 8.11): cold, highs around 4°C, light ground frost in the morning, weak NE-E wind; sunrise ~07:19, sunset ~16:35 (not re-confirmed on the day). "
+    },
+    {
+      "kind": "walk",
+      "title": {
+        "en": "a short cold walk along the isar.",
+        "de": "ein kurzer kalter spaziergang an der isar.",
+        "tr": "isar boyunca kısa soğuk bir yürüyüş."
+      },
+      "line": {
+        "en": "dry and sunny-ish but 4°c. walk the isar from the deutsches museum to the friedensengel and have a hot drink at the end.",
+        "de": "trocken und leidlich sonnig, aber 4°c. an der isar vom deutschen museum zum friedensengel, am ende heißes getränk.",
+        "tr": "kuru ve kısmen güneşli ama 4°c. deutsches museum'dan friedensengel'e isar boyunca yürü, sonunda sıcak içecek."
+      },
+      "place": {
+        "en": "friedensengel",
+        "de": "friedensengel",
+        "tr": "friedensengel"
+      },
+      "hour": 14,
+      "minute": 0,
+      "why": "Cold, dry day. Forecast for Munich Sun 15.11 (DWD-based daswetter outlook of 8.11): cold, highs around 4°C, light ground frost in the morning, weak NE-E wind; sunrise ~07:19, sunset ~16:35 (not re-confirmed on the day). "
     }
   ]
 }
