@@ -1,0 +1,14 @@
+{
+  "city": "praha",
+  "day": "2026-11-20",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "the advent market on náměstí míru opens.", "de": "der adventsmarkt auf dem náměstí míru öffnet.", "tr": "náměstí míru'da advent pazarı açılıyor." },
+      "line": { "en": "the christmas market on náměstí míru opens for the season, daily 10:00 to 20:00 until 24 december. a mulled wine after work.", "de": "der weihnachtsmarkt auf dem náměstí míru öffnet die saison, täglich 10:00 bis 20:00 bis 24. dezember. ein glühwein nach der arbeit.", "tr": "náměstí míru'daki noel pazarı sezonu açıyor, 24 aralık'a kadar her gün 10:00 ile 20:00 arası. iş çıkışı bir sıcak şarap." },
+      "place": { "en": "náměstí míru", "de": "náměstí míru", "tr": "náměstí míru" },
+      "hour": 16, "minute": 0,
+      "why": "Vánoční trhy náměstí Míru, 20.11.–24.12.2026, 10:00–20:00 (two 2026 market calendars agree; the prague.eu page was not read for dates)."
+    }
+  ]
+}

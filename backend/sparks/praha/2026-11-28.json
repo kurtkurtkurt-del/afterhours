@@ -1,0 +1,14 @@
+{
+  "city": "praha",
+  "day": "2026-11-28",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "open art fest, the family art show at letňany.", "de": "open art fest, die familien-kunstschau in letňany.", "tr": "letňany'de open art fest, aile sanat gösterisi." },
+      "line": { "en": "a big family art show in hall 1 at pva letňany on 28 and 29 november. a day trip out to letňany.", "de": "eine große familien-kunstschau in halle 1 der pva letňany am 28. und 29. november. ein tagesausflug nach letňany.", "tr": "28 ve 29 kasım'da pva letňany 1 numaralı salonda büyük bir aile sanat gösterisi. letňany'ye gündüz bir gezi." },
+      "place": { "en": "pva letňany, hala 1", "de": "pva letňany, hala 1", "tr": "pva letňany, hala 1" },
+      "hour": 10, "minute": 0,
+      "why": "Open ART Fest 2026 at PVA Letňany hall 1, 28–29.11.2026 (goout.net listing). Opening hours not confirmed; 10:00 is a suggestion. Further-week item."
+    }
+  ]
+}
