@@ -1,0 +1,38 @@
+{
+  "city": "vancouver",
+  "day": "2026-11-15",
+  "nights": [
+    {
+      "id": "001c6118-aed9-45db-ace1-0c2574fe76b0",
+      "slug": "tiga-194d1dac",
+      "title": "Tiga",
+      "name": "Tiga",
+      "source_url": "https://en.wikipedia.org/wiki/Tiga_(musician)",
+      "extract": "Tiga James Sontag, known simply as Tiga, is a Canadian musician, DJ, record producer, and music programmer. He has released four albums: Sexor (2006), Ciao! (2009), No Fantasy Required (2016), and Hotlife (2026). With his debut album, Sexor, winning the 2007 Juno Award for Dance Recording of the Year. Tiga released a selection of compilations in the early 2000s, featuring mixes such as American Gigolo, DJ-Kicks: Tiga and, Mixed Emotions. His compilation mix, Tiga Non-Stop, was released in November 2012, and premiered Tiga's latest single \"Plush\". The mix also features tracks from artists such as Kindness, Duke Dumont and Blawan.",
+      "en": {
+        "kicker": "Canadian musician and DJ · Hotlife, 2026",
+        "who": "Tiga James Sontag, known simply as Tiga, is a Canadian musician, DJ, record producer and music programmer. his albums are Sexor, Ciao, No Fantasy Required and Hotlife. his debut album, Sexor, won the 2007 Juno Award for Dance Recording of the Year.",
+        "facts": [
+          "Tiga James Sontag, known simply as Tiga, is a Canadian musician, DJ, record producer, and music programmer.",
+          "He has released four albums: Sexor (2006), Ciao (2009), No Fantasy Required (2016), and Hotlife (2026)."
+        ]
+      },
+      "de": {
+        "kicker": "kanadischer musiker und dj · Hotlife, 2026",
+        "who": "Tiga James Sontag, einfach Tiga genannt, ist ein kanadischer musiker, dj, produzent und musikprogrammierer. seine alben sind Sexor, Ciao, No Fantasy Required und Hotlife. sein debütalbum Sexor gewann 2007 den Juno Award für Dance Recording of the Year.",
+        "facts": [
+          "Tiga James Sontag, einfach Tiga genannt, ist ein kanadischer Musiker, DJ, Produzent und Musikprogrammierer.",
+          "Er hat vier Alben veröffentlicht: Sexor (2006), Ciao (2009), No Fantasy Required (2016) und Hotlife (2026)."
+        ]
+      },
+      "tr": {
+        "kicker": "kanadalı müzisyen ve dj · Hotlife, 2026",
+        "who": "Tiga James Sontag, kısaca Tiga olarak bilinen, kanadalı bir müzisyen, dj, plak yapımcısı ve müzik programcısıdır. albümleri Sexor, Ciao, No Fantasy Required ve Hotlife'tır. ilk albümü Sexor, 2007 yılında Dance Recording of the Year dalında Juno Ödülü'nü kazandı.",
+        "facts": [
+          "Tiga James Sontag, kısaca Tiga olarak bilinen, kanadalı bir müzisyen, DJ, plak yapımcısı ve müzik programcısıdır.",
+          "Dört albüm yayımladı: Sexor (2006), Ciao (2009), No Fantasy Required (2016) ve Hotlife (2026)."
+        ]
+      }
+    }
+  ]
+}

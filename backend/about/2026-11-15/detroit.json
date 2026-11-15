@@ -1,0 +1,38 @@
+{
+  "city": "detroit",
+  "day": "2026-11-15",
+  "nights": [
+    {
+      "id": "77b80018-245c-452f-a040-6af869acaa8e",
+      "slug": "protomartyr-8d4e7e59",
+      "title": "Protomartyr",
+      "name": "Protomartyr",
+      "source_url": "https://en.wikipedia.org/wiki/Protomartyr_(band)",
+      "extract": "Protomartyr is an American post-punk band formed in Detroit, Michigan, in 2010. The band consists of Joe Casey (vocals), Greg Ahee (guitar), Alex Leonard (drums), and Scott Davidson (bass). During live performances, the band is currently joined by multi-instrumentalist Fred Thomas. Between 2020 and 2024, Kelley Deal joined the band in a touring capacity, providing additional keyboards, guitar and backing vocals.",
+      "en": {
+        "kicker": "post-punk band · detroit, 2010",
+        "who": "Protomartyr is a post-punk band from Detroit. The lineup is Joe Casey, Greg Ahee, Alex Leonard and Scott Davidson. During live performances, the band is joined by Fred Thomas.",
+        "facts": [
+          "Protomartyr is an American post-punk band formed in Detroit, Michigan, in 2010.",
+          "The band consists of Joe Casey (vocals), Greg Ahee (guitar), Alex Leonard (drums), and Scott Davidson (bass)."
+        ]
+      },
+      "de": {
+        "kicker": "Post-Punk-Band · Detroit, 2010",
+        "who": "Protomartyr ist eine Post-Punk-Band aus Detroit. Die Besetzung besteht aus Joe Casey, Greg Ahee, Alex Leonard und Scott Davidson. Bei Live-Auftritten wird die Band von Fred Thomas ergänzt.",
+        "facts": [
+          "Protomartyr ist eine amerikanische Post-Punk-Band, die 2010 in Detroit, Michigan, gegründet wurde.",
+          "Zur Band gehören Joe Casey (Gesang), Greg Ahee (Gitarre), Alex Leonard (Schlagzeug) und Scott Davidson (Bass)."
+        ]
+      },
+      "tr": {
+        "kicker": "post-punk grubu · detroit, 2010",
+        "who": "Protomartyr, Detroit'te kurulmuş bir post-punk grubudur. Grubun kadrosunda Joe Casey, Greg Ahee, Alex Leonard ve Scott Davidson yer alır. Canlı performanslarda grupta Fred Thomas da yer almaktadır.",
+        "facts": [
+          "Protomartyr, 2010 yılında Detroit, Michigan'da kurulmuş bir Amerikan post-punk grubudur.",
+          "Grubu Joe Casey (vokal), Greg Ahee (gitar), Alex Leonard (davul) ve Scott Davidson (bas) oluşturur."
+        ]
+      }
+    }
+  ]
+}

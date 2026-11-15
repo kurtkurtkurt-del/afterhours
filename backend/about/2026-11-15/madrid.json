@@ -1,0 +1,38 @@
+{
+  "city": "madrid",
+  "day": "2026-11-15",
+  "nights": [
+    {
+      "id": "ca8030f4-ac8e-4205-85f3-c1633095d975",
+      "slug": "marisela-5f03925a",
+      "title": "Marisela",
+      "name": "Marisela",
+      "source_url": "https://en.wikipedia.org/wiki/Marisela",
+      "extract": "Marisela Esqueda, known professionally as Marisela, is an American singer and songwriter. She is also referred to as \"La Dama de Hierro\". Her debut album, Sin Él, entered at No. 16 on the first Billboard Latin Albums Chart.",
+      "en": {
+        "kicker": "American singer and songwriter · debut album Sin Él",
+        "who": "Marisela is an American singer and songwriter, also referred to as “La Dama de Hierro”. Her debut album was Sin Él.",
+        "facts": [
+          "Marisela Esqueda, known professionally as Marisela, is an American singer and songwriter.",
+          "Her debut album, Sin Él, entered at No. 16 on the first Billboard Latin Albums Chart."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische sängerin · debütalbum Sin Él",
+        "who": "Marisela ist eine amerikanische sängerin und songwriterin, die auch als „La Dama de Hierro“ bezeichnet wird. Ihr debütalbum ist Sin Él.",
+        "facts": [
+          "Marisela Esqueda, unter dem künstlernamen Marisela bekannt, ist eine amerikanische sängerin und songwriterin.",
+          "Ihr debütalbum Sin Él stieg auf Platz 16 der ersten Billboard Latin Albums Chart ein."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı şarkıcı ve söz yazarı · ilk albüm Sin Él",
+        "who": "Marisela, „La Dama de Hierro“ olarak da anılan amerikalı bir şarkıcı ve söz yazarıdır. Debut albümü Sin Él'dir.",
+        "facts": [
+          "Marisela Esqueda, Marisela adıyla tanınan, amerikalı bir şarkıcı ve söz yazarıdır.",
+          "Debut albümü Sin Él, ilk Billboard Latin Albums Chart listesinde 16. sıraya girdi."
+        ]
+      }
+    }
+  ]
+}

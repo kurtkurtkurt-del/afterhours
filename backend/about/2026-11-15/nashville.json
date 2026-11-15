@@ -1,0 +1,102 @@
+{
+  "city": "nashville",
+  "day": "2026-11-15",
+  "nights": [
+    {
+      "id": "ec15fd34-e12b-40e1-a2e6-c926da184cc1",
+      "slug": "giant-rooks-e3e3f8dd",
+      "title": "Giant Rooks",
+      "name": "Giant Rooks",
+      "source_url": "https://en.wikipedia.org/wiki/Giant_Rooks",
+      "extract": "Giant Rooks are a German indie rock band from Hamm, Germany founded in 2014. They are best known for their EP Wild Stare, their album How Have You Been? and their top-100 charting cover of \"Tom's Diner\" by Suzanne Vega.",
+      "en": {
+        "kicker": "indie rock band · hamm, germany, founded 2014",
+        "who": "Giant Rooks are a German indie rock band from Hamm. They are best known for the EP Wild Stare, the album How Have You Been?, and a top-100 charting cover of Tom's Diner.",
+        "facts": [
+          "Giant Rooks are a German indie rock band from Hamm, Germany founded in 2014.",
+          "They are best known for their EP Wild Stare, their album How Have You Been? and their top-100 charting cover of \"Tom's Diner\" by Suzanne Vega."
+        ]
+      },
+      "de": {
+        "kicker": "indie-rock-band · hamm, deutschland, gegründet 2014",
+        "who": "giant rooks sind eine deutsche indie-rock-band aus hamm. bekannt sind sie vor allem für die ep Wild Stare, das album How Have You Been? und ein in den top 100 platziertes cover von Tom's Diner.",
+        "facts": [
+          "giant rooks sind eine deutsche indie-rock-band aus hamm, deutschland, die 2014 gegründet wurde.",
+          "bekannt sind sie vor allem für ihre ep Wild Stare, ihr album How Have You Been? und ihr in den top 100 platziertes cover von Tom's Diner von Suzanne Vega."
+        ]
+      },
+      "tr": {
+        "kicker": "indie rock grubu · hamm, almanya, 2014 kuruluş",
+        "who": "giant rooks, almanya'nın hamm kentinden bir indie rock grubudur. en çok wild stare ep'si, how have you been? albümü ve tom's diner'ın top 100 listesine giren cover'ı ile bilinirler.",
+        "facts": [
+          "giant rooks, 2014'te kurulan, almanya'nın hamm kentinden bir indie rock grubudur.",
+          "en çok bilinen işleri arasında wild stare ep'si, how have you been? albümü ve suzanne vega'nın tom's diner parçasının top 100 listesine giren cover'ı yer alır."
+        ]
+      }
+    },
+    {
+      "id": "013bfd1e-7a31-4d7c-99c5-6c5d78058f5a",
+      "slug": "joy-oladokun-the-heavy-things-tour-fee0b3cc",
+      "title": "Joy Oladokun: The Heavy Things Tour",
+      "name": "Joy Oladokun",
+      "source_url": "https://en.wikipedia.org/wiki/Joy_Oladokun",
+      "extract": "Olubukola Joy Oladokun is an American singer-songwriter. Oladokun's music spans the genres of folk, R&B, rock, and pop and is influenced by her identity as a queer person of color. She has released six studio albums: Carry (2016), In Defense of My Own Happiness  (2020), In Defense of My Own Happiness (2021), Proof of Life (2023), Observations from a Crowded Room (2024), and Hope is a Heavy Thing (2026).",
+      "en": {
+        "kicker": "american singer-songwriter · folk, r&b, rock, pop",
+        "who": "Joy Oladokun is an American singer-songwriter. Her music is influenced by her identity as a queer person of color and spans folk, R&B, rock, and pop.",
+        "facts": [
+          "Olubukola Joy Oladokun is an American singer-songwriter.",
+          "Oladokun's music spans the genres of folk, R&B, rock, and pop and is influenced by her identity as a queer person of color."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische singer-songwriterin · folk, r&b, rock, pop",
+        "who": "Joy Oladokun ist eine amerikanische singer-songwriterin. Ihre musik verbindet folk, r&b, rock und pop und ist von ihrer identität als queere person of color beeinflusst.",
+        "facts": [
+          "Olubukola Joy Oladokun ist eine amerikanische singer-songwriterin.",
+          "Die musik von Oladokun umfasst die genres folk, R&B, rock und pop und ist von ihrer identität als queere person of color beeinflusst."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı şarkıcı-söz yazarı · folk, r&b, rock, pop",
+        "who": "Joy Oladokun amerikalı bir şarkıcı-söz yazarıdır. müziği folk, r&b, rock ve pop türlerini kapsar ve queer bir person of color olarak kimliğinden etkilenir.",
+        "facts": [
+          "Olubukola Joy Oladokun amerikalı bir şarkıcı-söz yazarıdır.",
+          "Oladokun'un müziği folk, R&B, rock ve pop türlerini kapsar ve queer bir person of color olarak kimliğinden etkilenir."
+        ]
+      }
+    },
+    {
+      "id": "96f7e4bb-0085-4595-8508-472b4dc7f0b4",
+      "slug": "zack-fox-aa6588fa",
+      "title": "Zack Fox",
+      "name": "Zack Fox",
+      "source_url": "https://en.wikipedia.org/wiki/Zack_Fox",
+      "extract": "Zachary Channing Fox is an American stand-up comedian, rapper, actor, DJ, and internet personality from Atlanta, Georgia. He has collaborated with Kenny Beats, Flying Lotus, Thundercat, Doechii, and Bnyx. He describes his genre of art as \"Shemar-Core,\" a term that likely references actor Shemar Moore, who serves as an artistic muse for Fox.",
+      "en": {
+        "kicker": "stand-up comedian and rapper · atlanta, georgia",
+        "who": "Zack Fox works as a stand-up comedian, rapper, actor, and DJ. He describes his genre of art as \"Shemar-Core,\" a term that likely references actor Shemar Moore.",
+        "facts": [
+          "Zachary Channing Fox is an American stand-up comedian, rapper, actor, DJ, and internet personality from Atlanta, Georgia.",
+          "He has collaborated with Kenny Beats, Flying Lotus, Thundercat, Doechii, and Bnyx."
+        ]
+      },
+      "de": {
+        "kicker": "stand-up-comedian und rapper · atlanta, georgia",
+        "who": "Zack Fox arbeitet als stand-up-comedian, rapper, schauspieler und dj. Er beschreibt seine kunst als „Shemar-Core“, einen begriff, der vermutlich auf den schauspieler Shemar Moore anspielt.",
+        "facts": [
+          "Zachary Channing Fox ist ein amerikanischer stand-up-comedian, rapper, schauspieler, dj und internet-persönlichkeit aus atlanta, georgia.",
+          "Er hat mit Kenny Beats, Flying Lotus, Thundercat, Doechii und Bnyx zusammengearbeitet."
+        ]
+      },
+      "tr": {
+        "kicker": "stand-up komedyen ve rapçi · atlanta, georgia",
+        "who": "Zack Fox stand-up komedyen, rapçi, oyuncu ve DJ olarak çalışıyor. Sanatını \"Shemar-Core\" olarak tanımlıyor; bu terim muhtemelen oyuncu Shemar Moore'a gönderme yapıyor.",
+        "facts": [
+          "Zachary Channing Fox, Atlanta, Georgia'dan amerikalı bir stand-up komedyen, rapçi, oyuncu, DJ ve internet kişiliğidir.",
+          "Kenny Beats, Flying Lotus, Thundercat, Doechii ve Bnyx ile iş birliği yapmıştır."
+        ]
+      }
+    }
+  ]
+}

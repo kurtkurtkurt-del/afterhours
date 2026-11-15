@@ -1,0 +1,166 @@
+{
+  "city": "san-francisco",
+  "day": "2026-11-15",
+  "nights": [
+    {
+      "id": "5ad68c91-ea73-4a36-9ad8-81e4e908aed7",
+      "slug": "icona-pop-fe2b4df3",
+      "title": "Icona Pop",
+      "name": "Icona Pop",
+      "source_url": "https://en.wikipedia.org/wiki/Icona_Pop",
+      "extract": "Icona Pop are a Swedish synth-pop duo that formed in 2009, with electro house and indie pop music influences. Its two members, Aino Jawo and Caroline Hjelt, grew up in Stockholm and created what the Swedish press has described as music which \"you can both laugh and cry to at the same time\". They signed to TEN Music Group in 2009 and are currently also in a label deal with Ultra Music. Their biggest hit to date has been \"I Love It\".",
+      "en": {
+        "kicker": "Swedish synth-pop duo · formed 2009",
+        "who": "icona pop is a Swedish synth-pop duo with electro house and indie pop influences. its two members, Aino Jawo and Caroline Hjelt, grew up in Stockholm. they signed to TEN Music Group in 2009 and also have a label deal with Ultra Music.",
+        "facts": [
+          "Icona Pop are a Swedish synth-pop duo that formed in 2009, with electro house and indie pop music influences.",
+          "Their biggest hit to date has been \"I Love It\"."
+        ]
+      },
+      "de": {
+        "kicker": "schwedisches synth-pop-duo · gegründet 2009",
+        "who": "icona pop ist ein schwedisches synth-pop-duo mit einflüssen aus electro house und indie pop. die beiden mitglieder, aino jawo und caroline hjelt, sind in stockholm aufgewachsen. das duo unterschrieb 2009 bei TEN Music Group und hat zusätzlich einen labelvertrag mit Ultra Music.",
+        "facts": [
+          "Icona Pop ist ein schwedisches synth-pop-duo, das sich 2009 gründete und electro house sowie indie pop als einflüsse hat.",
+          "Ihr bisher größter hit ist \"I Love It\"."
+        ]
+      },
+      "tr": {
+        "kicker": "isveçli synth-pop ikilisi · 2009",
+        "who": "icona pop, electro house ve indie pop etkileri taşıyan bir isveçli synth-pop ikilisi. üyeleri aino jawo ve caroline hjelt, stockholm'de büyüdü. grup 2009'da TEN Music Group ile anlaşma imzaladı ve ayrıca Ultra Music ile bir plak anlaşması var.",
+        "facts": [
+          "Icona Pop, 2009'da kurulan, electro house ve indie pop müzik etkileri taşıyan bir isveçli synth-pop ikilisidir.",
+          "Bugüne kadarki en büyük hitleri \"I Love It\" oldu."
+        ]
+      }
+    },
+    {
+      "id": "9ebdeace-0ceb-4576-982a-61905e769107",
+      "slug": "dj-stingray-ages-21-756651ac",
+      "title": "DJ Stingray - Ages 21+",
+      "name": "DJ Stingray",
+      "source_url": "https://en.wikipedia.org/wiki/DJ_Stingray",
+      "extract": "DJ Stingray, or Sherard Ingram, is an American electronic music producer and DJ from Detroit, Michigan. He is known as a prominent figure in Detroit’s techno and electro scene. He is the founder of Urban Tribe and an associate of legendary Detroit electro duo Drexciya. As both a DJ and producer, Ingram specializes in futuristic electro, preferring fast tempos and inventive beat patterns to more accessible, club-friendly rhythms. When asked to describe his style of electronic music, he prefers to classify it as Techno.",
+      "en": {
+        "kicker": "DJ and producer · Detroit, Michigan",
+        "who": "dj stingray is an American DJ and producer known in Detroit's techno and electro scene. he founded Urban Tribe and is an associate of the Detroit electro duo Drexciya. he prefers to classify his style as techno, with futuristic electro and fast tempos.",
+        "facts": [
+          "DJ Stingray, or Sherard Ingram, is an American electronic music producer and DJ from Detroit, Michigan.",
+          "He is known as a prominent figure in Detroit’s techno and electro scene."
+        ]
+      },
+      "de": {
+        "kicker": "DJ und produzent · Detroit, Michigan",
+        "who": "dj stingray ist ein amerikanischer dj und produzent, der in der techno- und electro-szene von detroit bekannt ist. er gründete Urban Tribe und ist mit dem electro-duo Drexciya aus detroit verbunden. er bezeichnet seinen stil lieber als techno, mit futuristischem electro und schnellen tempi.",
+        "facts": [
+          "DJ Stingray, bürgerlich Sherard Ingram, ist ein amerikanischer Produzent elektronischer Musik und DJ aus Detroit, Michigan.",
+          "Er gilt als prägende Figur der Techno- und Electro-Szene in Detroit."
+        ]
+      },
+      "tr": {
+        "kicker": "dj ve yapımcı · Detroit, Michigan",
+        "who": "dj stingray, detroit'in techno ve electro sahnesinde öne çıkan amerikalı bir dj ve yapımcıdır. Urban Tribe'ın kurucusu ve efsanevi detroit electro ikilisi Drexciya ile bağlantılıdır. müziğini tercihen techno olarak tanımlar, fütüristik electro ve hızlı tempolar kullanır.",
+        "facts": [
+          "DJ Stingray, asıl adıyla Sherard Ingram, Detroit, Michigan'dan gelen amerikalı bir elektronik müzik yapımcısı ve DJ'dir.",
+          "Detroit'in techno ve electro sahnesinde öne çıkan bir figür olarak bilinir."
+        ]
+      }
+    },
+    {
+      "id": "f38d92e0-c564-4d52-b43e-46c0d4804ae9",
+      "slug": "the-mountain-goats-night-four-the-sunset-tree-665c4dfb",
+      "title": "The Mountain Goats - Night Four: The Sunset Tree",
+      "name": "The Mountain Goats",
+      "source_url": "https://en.wikipedia.org/wiki/The_Mountain_Goats",
+      "extract": "The Mountain Goats are an American indie folk band formed in Claremont, California, by singer-songwriter John Darnielle. Since 2003, the band has been based in Durham, North Carolina. For many years, the sole member of the Mountain Goats was Darnielle, despite the plural moniker. Although he remains the core member of the band, he has worked with a variety of collaborators over time, including bassist and vocalist Peter Hughes, drummer Jon Wurster, multi-instrumentalist Matt Douglas, singer-songwriter Franklin Bruno, bassist and vocalist Rachel Ware, singer-songwriter/producer John Vanderslice, guitarist Kaki King, and multi-instrumentalist Annie Clark.",
+      "en": {
+        "kicker": "American indie folk band · Claremont, California",
+        "who": "the Mountain Goats were formed by singer-songwriter John Darnielle, who remains the core member. over time he has worked with many collaborators, including Peter Hughes, Jon Wurster and Kaki King. the band has been based in Durham, North Carolina since 2003.",
+        "facts": [
+          "The Mountain Goats are an American indie folk band formed in Claremont, California, by singer-songwriter John Darnielle.",
+          "Since 2003, the band has been based in Durham, North Carolina."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische indie-folk-band · Claremont, California",
+        "who": "the Mountain Goats wurden von singer-songwriter John Darnielle gegründet, der weiterhin das kernmitglied ist. im lauf der zeit hat er mit vielen mitwirkenden gearbeitet, darunter Peter Hughes, Jon Wurster und Kaki King. seit 2003 ist die band in Durham, North Carolina, ansässig.",
+        "facts": [
+          "The Mountain Goats sind eine amerikanische indie-folk-band, die in Claremont, Kalifornien, von singer-songwriter John Darnielle gegründet wurde.",
+          "Seit 2003 ist die band in Durham, North Carolina, ansässig."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı indie folk grubu · Claremont, California",
+        "who": "the Mountain Goats, singer-songwriter John Darnielle'in kurduğu amerikalı bir indie folk grubu. Darnielle grubun temel üyesi olarak kalıyor ve zaman içinde Peter Hughes, Jon Wurster ve Kaki King dahil birçok isimle çalıştı. grup 2003'ten beri Durham, North Carolina'da yer alıyor.",
+        "facts": [
+          "The Mountain Goats, Claremont, California'da singer-songwriter John Darnielle tarafından kurulan amerikalı bir indie folk grubudur.",
+          "2003'ten beri grup Durham, North Carolina'da merkezli."
+        ]
+      }
+    },
+    {
+      "id": "611c3de7-1d96-4421-bf88-bf2f1d1a00c6",
+      "slug": "pretty-sick-02f2bb1b",
+      "title": "Pretty Sick",
+      "name": "Pretty Sick",
+      "source_url": "https://en.wikipedia.org/wiki/Pretty_Sick",
+      "extract": "Pretty Sick is an American indie rock band from New York City, New York. It currently consists of vocalist and bassist Sabrina Fuentes, drummer Eva Kaufman, and guitarist Benjamin Arauz.",
+      "en": {
+        "kicker": "American indie rock band · New York City",
+        "who": "pretty sick is an American indie rock band from New York City. its current lineup is Sabrina Fuentes on vocals and bass, Eva Kaufman on drums, and Benjamin Arauz on guitar.",
+        "facts": [
+          "Pretty Sick is an American indie rock band from New York City, New York.",
+          "It currently consists of vocalist and bassist Sabrina Fuentes, drummer Eva Kaufman, and guitarist Benjamin Arauz."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische indie-rock-band · New York City",
+        "who": "pretty sick ist eine amerikanische indie-rock-band aus New York City. die aktuelle besetzung besteht aus Sabrina Fuentes an gesang und bass, Eva Kaufman am schlagzeug und Benjamin Arauz an der gitarre.",
+        "facts": [
+          "Pretty Sick ist eine amerikanische Indie-Rock-Band aus New York City, New York.",
+          "Derzeit besteht die band aus der sängerin und bassistin Sabrina Fuentes, der schlagzeugerin Eva Kaufman und dem gitarristen Benjamin Arauz."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı indie rock grubu · New York City",
+        "who": "pretty sick, New York City'den bir amerikalı indie rock grubu. güncel kadro Sabrina Fuentes (vokal ve bas), Eva Kaufman (davul) ve Benjamin Arauz'dan (gitar) oluşuyor.",
+        "facts": [
+          "Pretty Sick, New York City, New York'tan bir amerikalı indie rock grubudur.",
+          "Grup şu anda vokalist ve basçı Sabrina Fuentes, davulcu Eva Kaufman ve gitarist Benjamin Arauz'dan oluşuyor."
+        ]
+      }
+    },
+    {
+      "id": "71aba879-4ffc-4ef2-841d-fcec09cd4c67",
+      "slug": "carl-cox-club-darc-season-2-ages-21-c8be2c65",
+      "title": "Carl Cox - Club Darc Season 2  - Ages 21+",
+      "name": "Carl Cox",
+      "source_url": "https://en.wikipedia.org/wiki/Carl_Cox",
+      "extract": "Carl Andrew Cox is a British house and techno club DJ, radio DJ, motorsport team owner and record producer. He lives in Frankston, Victoria, Australia.",
+      "en": {
+        "kicker": "British club DJ · Frankston, Victoria",
+        "who": "carl cox is a British house and techno club DJ who also works as a radio DJ, motorsport team owner and record producer. he lives in Frankston, Victoria, Australia.",
+        "facts": [
+          "Carl Andrew Cox is a British house and techno club DJ, radio DJ, motorsport team owner and record producer.",
+          "He lives in Frankston, Victoria, Australia."
+        ]
+      },
+      "de": {
+        "kicker": "britischer Club-DJ · Frankston, Victoria",
+        "who": "carl cox ist ein britischer house- und techno-club-dj, der außerdem als radio-dj, motorsport-teambesitzer und musikproduzent arbeitet. er lebt in Frankston, Victoria, Australien.",
+        "facts": [
+          "Carl Andrew Cox ist ein britischer House- und Techno-Club-DJ, Radio-DJ, Motorsport-Teambesitzer und Musikproduzent.",
+          "Er lebt in Frankston, Victoria, Australien."
+        ]
+      },
+      "tr": {
+        "kicker": "İngiliz club DJ'i · Frankston, Victoria",
+        "who": "carl cox, İngiliz bir house ve techno club DJ'i. ayrıca radyo DJ'liği, motor sporları takım sahipliği ve plak yapımcılığı yapıyor. frankston, victoria, avustralya'da yaşıyor.",
+        "facts": [
+          "Carl Andrew Cox, İngiliz bir house ve techno club DJ'i, radyo DJ'i, motor sporları takım sahibi ve plak yapımcısıdır.",
+          "Avustralya'nın Victoria eyaletindeki Frankston'da yaşıyor."
+        ]
+      }
+    }
+  ]
+}

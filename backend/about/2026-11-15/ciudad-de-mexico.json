@@ -1,0 +1,70 @@
+{
+  "city": "ciudad-de-mexico",
+  "day": "2026-11-15",
+  "nights": [
+    {
+      "id": "dddbd87d-dcf3-4dc0-b110-8eca77be6f27",
+      "slug": "babasonicos-aa06a037",
+      "title": "Babasonicos",
+      "name": "Babasónicos",
+      "source_url": "https://en.wikipedia.org/wiki/Babas%C3%B3nicos",
+      "extract": "Babasónicos is an Argentine rock band, formed in the early 1990s along with others such as Peligrosos Gorriones and Los Brujos. After emerging in the wave of Argentine New Rock bands of the late 1980s and early 1990s, Babasonicos became one of the banner groups of the \"sonic\" underground rock movement in Argentina in the late 1990s.",
+      "en": {
+        "kicker": "rock band · formed in the early 1990s",
+        "who": "a rock band from Argentina, one of the banner groups of the sonic underground rock movement there in the late 1990s. it came out of the wave of Argentine New Rock bands of the late 1980s and early 1990s.",
+        "facts": [
+          "Babasónicos is an Argentine rock band, formed in the early 1990s along with others such as Peligrosos Gorriones and Los Brujos.",
+          "After emerging in the wave of Argentine New Rock bands of the late 1980s and early 1990s, Babasonicos became one of the banner groups of the \"sonic\" underground rock movement in Argentina in the late 1990s."
+        ]
+      },
+      "de": {
+        "kicker": "rockband · gegründet anfang der 1990er",
+        "who": "eine rockband aus Argentinien, eine der führenden gruppen der sonic-underground-rockbewegung dort in den späten 1990er jahren. sie ging aus der welle argentinischer New-Rock-bands der späten 1980er und frühen 1990er jahre hervor.",
+        "facts": [
+          "Babasónicos ist eine argentinische rockband, die anfang der 1990er jahre zusammen mit anderen wie Peligrosos Gorriones und Los Brujos gegründet wurde.",
+          "nach dem aufkommen in der welle argentinischer New-Rock-bands der späten 1980er und frühen 1990er jahre wurden Babasonicos ende der 1990er jahre zu einer der führenden gruppen der „sonic“-underground-rockbewegung in Argentinien."
+        ]
+      },
+      "tr": {
+        "kicker": "rock grubu · 1990'ların başında kuruldu",
+        "who": "Arjantinli bir rock grubu; 1990'ların sonlarında Arjantin'deki \"sonic\" underground rock hareketinin öncü gruplarından biri oldu. 1980'lerin sonu ve 1990'ların başındaki Arjantin New Rock grupları dalgasından doğdu.",
+        "facts": [
+          "Babasónicos, 1990'ların başında Peligrosos Gorriones ve Los Brujos gibi diğer gruplarla birlikte kurulan bir Arjantin rock grubudur.",
+          "1980'lerin sonu ve 1990'ların başındaki Arjantin New Rock gruplarının dalgasından çıkan Babasonicos, 1990'ların sonlarında Arjantin'deki \"sonic\" underground rock hareketinin öncü gruplarından biri oldu."
+        ]
+      }
+    },
+    {
+      "id": "0564b419-a57a-43e5-8f69-08b6afb8fb44",
+      "slug": "love-of-lesbian-8f77c169",
+      "title": "Love of Lesbian",
+      "name": "Love of Lesbian",
+      "source_url": "https://en.wikipedia.org/wiki/Love_of_Lesbian",
+      "extract": "Love of Lesbian is a Spanish indie pop band. They were nominated for the MTV Europe Music Award for Best Spanish Act at the 2012 MTV Europe Music Awards. Their album La noche eterna. Los días no vividos. reached number 1 in 2012.",
+      "en": {
+        "kicker": "Spanish indie pop band · 2012",
+        "who": "Love of Lesbian is a Spanish indie pop band. They were nominated for Best Spanish Act at the 2012 MTV Europe Music Awards. Their album La noche eterna. Los días no vividos. reached number 1 in 2012.",
+        "facts": [
+          "Love of Lesbian is a Spanish indie pop band.",
+          "They were nominated for the MTV Europe Music Award for Best Spanish Act at the 2012 MTV Europe Music Awards."
+        ]
+      },
+      "de": {
+        "kicker": "spanische indie-popband · 2012",
+        "who": "Love of Lesbian ist eine spanische indie-popband. sie wurden 2012 bei den MTV Europe Music Awards für den besten spanischen act nominiert. ihr album La noche eterna. Los días no vividos. erreichte 2012 platz 1.",
+        "facts": [
+          "Love of Lesbian ist eine spanische indie-popband.",
+          "sie wurden 2012 für den MTV Europe Music Award als bester spanischer act bei den MTV Europe Music Awards nominiert."
+        ]
+      },
+      "tr": {
+        "kicker": "İspanyol indie pop grubu · 2012",
+        "who": "Love of Lesbian bir İspanyol indie pop grubudur. 2012 MTV Europe Music Awards'ta en iyi İspanyol act kategorisinde aday gösterildiler. Albümleri La noche eterna. Los días no vividos. 2012'de 1 numaraya ulaştı.",
+        "facts": [
+          "Love of Lesbian, bir İspanyol indie pop grubudur.",
+          "2012 MTV Europe Music Awards'ta en iyi İspanyol act kategorisinde aday gösterildiler."
+        ]
+      }
+    }
+  ]
+}

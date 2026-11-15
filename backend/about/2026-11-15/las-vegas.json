@@ -1,0 +1,134 @@
+{
+  "city": "las-vegas",
+  "day": "2026-11-15",
+  "nights": [
+    {
+      "id": "66c4ac4d-44a7-4157-a063-f24fc5f9f2f7",
+      "slug": "teddy-swims-1446651e",
+      "title": "Teddy Swims",
+      "name": "Teddy Swims",
+      "source_url": "https://en.wikipedia.org/wiki/Teddy_Swims",
+      "extract": "Jaten Collin Dimsdale, known professionally as Teddy Swims, is an American singer and songwriter. Known for creating genre-blending music that includes elements of R&B, soul, hip-hop, and contemporary pop, Swims originally began to attract fans by posting song covers on YouTube during 2019 and 2020. Swims' third extended play, Tough Love (2022), became his first entry on the Billboard 200.",
+      "en": {
+        "kicker": "american singer and songwriter · began on youtube in 2019",
+        "who": "Jaten Collin Dimsdale, known professionally as Teddy Swims, is an american singer and songwriter. He creates genre-blending music that draws on R&B, soul, hip-hop, and contemporary pop. His third extended play, Tough Love, was his first entry on the Billboard 200.",
+        "facts": [
+          "Known for creating genre-blending music that includes elements of R&B, soul, hip-hop, and contemporary pop, Swims originally began to attract fans by posting song covers on YouTube during 2019 and 2020.",
+          "Swims' third extended play, Tough Love (2022), became his first entry on the Billboard 200."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer sänger und songwriter · start auf youtube 2019",
+        "who": "Jaten Collin Dimsdale, besser bekannt als Teddy Swims, ist ein amerikanischer sänger und songwriter. Er macht genreübergreifende musik mit elementen aus R&B, soul, hip-hop und zeitgenössischem pop. Sein drittes extended play Tough Love war sein erster eintrag in den Billboard 200.",
+        "facts": [
+          "Bekannt für genreübergreifende Musik mit Elementen aus R&B, Soul, Hip-Hop und zeitgenössischem Pop, begann Swims Fans zu gewinnen, indem er 2019 und 2020 Songcovers auf YouTube postete.",
+          "Sein drittes Extended Play, Tough Love (2022), war sein erster Eintrag in den Billboard 200."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı şarkıcı ve söz yazarı · 2019'da youtube'a başladı",
+        "who": "Jaten Collin Dimsdale, sahne adıyla Teddy Swims, amerikalı bir şarkıcı ve söz yazarıdır. R&B, soul, hip-hop ve çağdaş pop öğelerini harmanlayan tür karıştırıcı bir müzik yapar. Üçüncü uzun çalması Tough Love, billboard 200 listesindeki ilk girişi oldu.",
+        "facts": [
+          "R&B, soul, hip-hop ve çağdaş pop unsurlarını içeren tür karıştıran müziğiyle bilinen Swims, 2019 ve 2020 yıllarında YouTube'da şarkı kapakları paylaşarak hayran kazanmaya başladı.",
+          "Swims'in üçüncü uzun çalması Tough Love (2022), Billboard 200 listesindeki ilk girişi oldu."
+        ]
+      }
+    },
+    {
+      "id": "e5f2d224-6fa0-49da-b3bc-7ff9c72bf720",
+      "slug": "gwar-ceb7be3a",
+      "title": "GWAR",
+      "name": "Gwar",
+      "source_url": "https://en.wikipedia.org/wiki/Gwar",
+      "extract": "Gwar is an American heavy metal band formed in Richmond, Virginia, in 1984, composed of and operated by a frequently rotating line-up of musicians, artists, and filmmakers collectively known as Slave Pit Inc. Since the death of frontman Dave Brockie in 2014, the collective has continued recording and performing without any of its founding artists or musicians.",
+      "en": {
+        "kicker": "american heavy metal band · richmond, virginia, 1984",
+        "who": "GWAR is an american heavy metal band formed in Richmond, Virginia. It is run by a frequently rotating line-up of musicians, artists, and filmmakers known as Slave Pit Inc. Since the death of frontman Dave Brockie in 2014, it has kept recording and performing.",
+        "facts": [
+          "Gwar is an American heavy metal band formed in Richmond, Virginia, in 1984, composed of and operated by a frequently rotating line-up of musicians, artists, and filmmakers collectively known as Slave Pit Inc.",
+          "Since the death of frontman Dave Brockie in 2014, the collective has continued recording and performing without any of its founding artists or musicians."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische heavy-metal-band · richmond, virginia, 1984",
+        "who": "GWAR ist eine amerikanische heavy-metal-band aus Richmond in Virginia. Betrieben wird sie von einem häufig wechselnden line-up aus musikern, künstlern und filmemachern, die als Slave Pit Inc. bekannt sind. Seit dem tod von frontmann Dave Brockie im jahr 2014 nimmt das kollektiv weiter auf und tritt weiter auf.",
+        "facts": [
+          "GWAR ist eine 1984 in Richmond, Virginia, gegründete amerikanische Heavy-Metal-Band, die von einem häufig wechselnden Line-up aus Musikern, Künstlern und Filmemachern betrieben wird.",
+          "Seit dem Tod von Frontmann Dave Brockie im Jahr 2014 nimmt das Kollektiv weiter auf und tritt auf, ohne seine Gründungskünstler oder Gründungsmusiker."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı heavy metal grubu · richmond, virginia, 1984",
+        "who": "GWAR, Virginia eyaletinin Richmond kentinde 1984 yılında kurulmuş amerikalı bir heavy metal grubudur. Slave Pit Inc. adıyla bilinen, sık değişen bir kadro tarafından işletilir. 2014 yılında ön vokalist Dave Brockie'nin ölümünden bu yana kolektif kayıt yapmaya ve sahne almaya devam ediyor.",
+        "facts": [
+          "GWAR, 1984 yılında Richmond, Virginia'da kurulmuş, Slave Pit Inc. olarak bilinen müzisyen, sanatçı ve film yapımcılarından oluşan sık değişen bir kadroyla işletilen amerikalı bir heavy metal grubudur.",
+          "Ön vokalist Dave Brockie'nin 2014 yılındaki ölümünden bu yana kolektif, kurucu sanatçı ve müzisyenleri olmadan kayıt yapmaya ve sahne almaya devam ediyor."
+        ]
+      }
+    },
+    {
+      "id": "1774244d-fc92-439d-a71c-48c646b9901e",
+      "slug": "barry-manilow-f4247157",
+      "title": "Barry Manilow",
+      "name": "Barry Manilow",
+      "source_url": "https://en.wikipedia.org/wiki/Barry_Manilow",
+      "extract": "Barry Manilow is an American singer, songwriter and record producer with a career spanning over 60 years. His hit recordings include \"Mandy\", \"Could It Be Magic\", \"I Write the Songs\", \"Weekend in New England\", \"Looks Like We Made It\", \"Can't Smile Without You\", \"Copacabana \", and \"Ready to Take a Chance Again\".",
+      "en": {
+        "kicker": "american singer and songwriter · career over 60 years",
+        "who": "Barry Manilow is an american singer, songwriter and record producer. His career spans over 60 years. His hit recordings include \"Mandy\", \"Could It Be Magic\", and \"I Write the Songs\".",
+        "facts": [
+          "Barry Manilow is an American singer, songwriter and record producer with a career spanning over 60 years.",
+          "His hit recordings include \"Mandy\", \"Could It Be Magic\", \"I Write the Songs\", \"Weekend in New England\", \"Looks Like We Made It\", \"Can't Smile Without You\", \"Copacabana \", and \"Ready to Take a Chance Again\"."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer sänger und songwriter · karriere über 60 jahre",
+        "who": "Barry Manilow ist ein amerikanischer sänger, songwriter und plattenproduzent. Seine karriere erstreckt sich über mehr als 60 jahre. Zu seinen hits gehören unter anderem \"Mandy\", \"Could It Be Magic\" und \"I Write the Songs\".",
+        "facts": [
+          "Barry Manilow ist ein amerikanischer Sänger, Songwriter und Musikproduzent mit einer Karriere, die sich über mehr als 60 Jahre erstreckt.",
+          "Zu seinen Hitaufnahmen zählen \"Mandy\", \"Could It Be Magic\", \"I Write the Songs\", \"Weekend in New England\", \"Looks Like We Made It\", \"Can't Smile Without You\", \"Copacabana\" und \"Ready to Take a Chance Again\"."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı şarkıcı ve söz yazarı · 60 yılı aşkın kariyer",
+        "who": "Barry Manilow, amerikalı bir şarkıcı, söz yazarı ve plak yapımcısıdır. Kariyeri 60 yılı aşkın bir süreye yayılır. Başlıca hit kayıtları arasında \"Mandy\", \"Could It Be Magic\" ve \"I Write the Songs\" yer alır.",
+        "facts": [
+          "Barry Manilow, kariyeri 60 yılı aşkın bir süreye yayılan amerikalı bir şarkıcı, söz yazarı ve plak yapımcısıdır.",
+          "Hit kayıtları arasında \"Mandy\", \"Could It Be Magic\", \"I Write the Songs\", \"Weekend in New England\", \"Looks Like We Made It\", \"Can't Smile Without You\", \"Copacabana\" ve \"Ready to Take a Chance Again\" bulunur."
+        ]
+      }
+    },
+    {
+      "id": "28d6b2c4-43db-40be-8c0f-af7fe6a55cd0",
+      "slug": "katseye-the-wildworld-tour-092bcd83",
+      "title": "KATSEYE: THE WILDWORLD TOUR",
+      "name": "Katseye",
+      "source_url": "https://en.wikipedia.org/wiki/Katseye",
+      "extract": "Katseye is a girl group formed in 2024, based in Los Angeles. The group consists of six members: Daniela Avanzini, Lara Raj, Manon Bannerman, Megan Skiendiel, Sophia Laforteza, and Yoonchae Jeung. With members from the Philippines, South Korea, Switzerland, and the United States, Katseye is often called a \"global girl group\".",
+      "en": {
+        "kicker": "los angeles girl group · formed in 2024",
+        "who": "Katseye is a girl group formed in 2024 and based in Los Angeles. The group has six members from the Philippines, South Korea, Switzerland, and the United States. It is often called a global girl group.",
+        "facts": [
+          "Katseye is a girl group formed in 2024, based in Los Angeles.",
+          "With members from the Philippines, South Korea, Switzerland, and the United States, Katseye is often called a \"global girl group\"."
+        ]
+      },
+      "de": {
+        "kicker": "girlgroup aus los angeles · gegründet 2024",
+        "who": "Katseye ist eine 2024 gegründete girlgroup mit sitz in Los Angeles. Die gruppe besteht aus sechs mitgliedern aus den Philippinen, Südkorea, der Schweiz und den Vereinigten Staaten. Oft wird katseye als globale girlgroup bezeichnet.",
+        "facts": [
+          "Katseye ist eine 2024 gegründete Girlgroup mit Sitz in Los Angeles.",
+          "Mit Mitgliedern aus den Philippinen, Südkorea, der Schweiz und den Vereinigten Staaten wird Katseye oft als \"globale Girlgroup\" bezeichnet."
+        ]
+      },
+      "tr": {
+        "kicker": "los angeles merkezli kız grubu · 2024",
+        "who": "Katseye, 2024 yılında kurulmuş ve los angeles merkezli bir kız grubudur. Grup, Filipinler, Güney Kore, İsviçre ve Birleşik Devletler'den gelen altı üyeden oluşur. Çoğu zaman küresel bir kız grubu olarak anılır.",
+        "facts": [
+          "Katseye, 2024 yılında kurulmuş, Los Angeles merkezli bir kız grubudur.",
+          "Filipinler, Güney Kore, İsviçre ve Birleşik Devletler'den üyeleri olan Katseye, sıklıkla \"küresel kız grubu\" olarak adlandırılır."
+        ]
+      }
+    }
+  ]
+}

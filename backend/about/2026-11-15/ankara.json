@@ -1,0 +1,38 @@
+{
+  "city": "ankara",
+  "day": "2026-11-15",
+  "nights": [
+    {
+      "id": "685b70c8-7138-451f-a3d4-7e9a196840dc",
+      "slug": "s-la-571f320a",
+      "title": "Sıla",
+      "name": "Sıla",
+      "source_url": "https://en.wikipedia.org/wiki/S%C4%B1la_(singer)",
+      "extract": "Sıla Gençoğlu is a Turkish singer-songwriter. She was born in Acıpayam, Denizli, and later moved to İzmir and then to Istanbul to finish her studies. She started to learn performing arts at high school. After studying jazz at Istanbul Bilgi University, she became a backing vocalist for Kenan Doğulu.",
+      "en": {
+        "kicker": "Turkish singer-songwriter · Acıpayam, Denizli",
+        "who": "Sıla Gençoğlu is a Turkish singer-songwriter. She was born in Acıpayam, Denizli, and later moved to İzmir and then to Istanbul. She started to learn performing arts at high school, and after studying jazz at Istanbul Bilgi University she became a backing vocalist for Kenan Doğulu.",
+        "facts": [
+          "Sıla Gençoğlu is a Turkish singer-songwriter.",
+          "After studying jazz at Istanbul Bilgi University, she became a backing vocalist for Kenan Doğulu."
+        ]
+      },
+      "de": {
+        "kicker": "türkische singer-songwriterin · Acıpayam, Denizli",
+        "who": "Sıla Gençoğlu ist eine türkische singer-songwriterin, geboren in Acıpayam, Denizli. Sie zog später nach İzmir und dann nach Istanbul, um ihr studium abzuschließen. Im gymnasium begann sie, darstellende künste zu lernen, und nach einem jazzstudium an der Istanbul Bilgi University wurde sie backgroundsängerin von Kenan Doğulu.",
+        "facts": [
+          "Sıla Gençoğlu ist eine türkische singer-songwriterin.",
+          "Nach einem jazzstudium an der Istanbul Bilgi University wurde sie backgroundsängerin von Kenan Doğulu."
+        ]
+      },
+      "tr": {
+        "kicker": "Türk şarkıcı ve söz yazarı · Acıpayam, Denizli",
+        "who": "Sıla Gençoğlu bir Türk şarkıcı ve söz yazarıdır. Acıpayam, Denizli'de doğdu, daha sonra İzmir'e ve ardından İstanbul'a taşındı. Lisede sahne sanatlarını öğrenmeye başladı ve İstanbul Bilgi Üniversitesi'nde caz okuduktan sonra Kenan Doğulu'nun arka plan vokalisti oldu.",
+        "facts": [
+          "Sıla Gençoğlu bir Türk şarkıcı ve söz yazarıdır.",
+          "İstanbul Bilgi Üniversitesi'nde caz okuduktan sonra Kenan Doğulu'nun arka plan vokalisti oldu."
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "city": "amsterdam",
+  "day": "2026-11-15",
+  "nights": [
+    {
+      "id": "ce70417f-9a7c-4b48-acda-88dab246bc78",
+      "slug": "flower-face-0c1b5397",
+      "title": "Flower Face",
+      "name": "Flower Face",
+      "source_url": "https://en.wikipedia.org/wiki/Flower_Face",
+      "extract": "Ruby McKinnon, known professionally as Flower Face, is a Canadian goth-folk and dreampop musician based in Montreal.",
+      "en": {
+        "kicker": "goth-folk and dreampop musician · Montreal",
+        "who": "Ruby McKinnon, known professionally as Flower Face, is a Canadian goth-folk and dreampop musician based in Montreal. The name Flower Face is the act's professional name. The musician is based in Montreal.",
+        "facts": [
+          "Flower Face is a Canadian goth-folk and dreampop musician.",
+          "Ruby McKinnon, known professionally as Flower Face, is based in Montreal."
+        ]
+      },
+      "de": {
+        "kicker": "goth-folk- und dreampop-musiker · Montreal",
+        "who": "Ruby McKinnon, bekannt als Flower Face, ist ein kanadischer goth-folk- und dreampop-musiker. Der künstlername Flower Face ist ihr berufsname. Die musikerin ist in Montreal ansässig.",
+        "facts": [
+          "Flower Face ist ein kanadischer goth-folk- und dreampop-musiker.",
+          "Ruby McKinnon, bekannt als Flower Face, ist in Montreal ansässig."
+        ]
+      },
+      "tr": {
+        "kicker": "kanadalı goth-folk ve dreampop müzisyeni · Montreal",
+        "who": "Ruby McKinnon, Flower Face adıyla tanınan, Montreal merkezli bir kanadalı goth-folk ve dreampop müzisyenidir. Flower Face, bu müzisyenin profesyonel sanat adıdır. Müzisyen Montreal'de yaşamaktadır.",
+        "facts": [
+          "Flower Face, kanadalı bir goth-folk ve dreampop müzisyenidir.",
+          "Ruby McKinnon, Flower Face adıyla tanınır ve Montreal merkezlidir."
+        ]
+      }
+    },
+    {
+      "id": "b64506fb-9c06-48e3-96da-6c23c2d960dc",
+      "slug": "bryson-tiller-wine-and-dine-ticket-not-included-03519975",
+      "title": "Bryson Tiller | Wine & Dine (TICKET NOT INCLUDED)",
+      "name": "Bryson Tiller",
+      "source_url": "https://en.wikipedia.org/wiki/Bryson_Tiller",
+      "extract": "Bryson Tiller is an American R&B singer and rapper. He began his career in 2011 with his debut mixtape, Killer Instinct Vol. 1. He gained mainstream recognition following the release of his 2015 single \"Don't\", which peaked at number 13 on the Billboard Hot 100 and received quintuple platinum certification by the Recording Industry Association of America (RIAA). Its success led to a recording contract with RCA Records, who issued \"Don't\" as the lead single for his debut studio album Trapsoul (2015), which entered the top ten of the Billboard 200.",
+      "en": {
+        "kicker": "R&B singer and rapper · 2015",
+        "who": "Bryson Tiller is an American R&B singer and rapper. He began his career in 2011 with his debut mixtape, Killer Instinct Vol. 1. His 2015 single \"Don't\" brought him mainstream recognition and led to a recording contract with RCA Records.",
+        "facts": [
+          "Bryson Tiller is an American R&B singer and rapper.",
+          "He gained mainstream recognition following the release of his 2015 single \"Don't\", which peaked at number 13 on the Billboard Hot 100."
+        ]
+      },
+      "de": {
+        "kicker": "r&b-sänger und rapper · 2015",
+        "who": "Bryson Tiller begann seine Karriere 2011 mit seinem Debüt-Mixtape Killer Instinct Vol. 1. Mit der Single \"Don't\" aus dem Jahr 2015 wurde er bekannt. Daraufhin erhielt er einen Plattenvertrag bei RCA Records.",
+        "facts": [
+          "Bryson Tiller ist ein amerikanischer R&B-Sänger und Rapper.",
+          "Er erlangte mit der Veröffentlichung seiner Single \"Don't\" aus dem Jahr 2015 breite Bekanntheit, die Platz 13 der Billboard Hot 100 erreichte."
+        ]
+      },
+      "tr": {
+        "kicker": "R&B şarkıcısı ve rapçi · 2015",
+        "who": "Bryson Tiller, kariyerine 2011'de ilk mixtape'i Killer Instinct Vol. 1 ile başladı. 2015 single'ı \"Don't\" ile ana akım tanınırlık kazandı. Bu başarının ardından RCA Records ile kayıt sözleşmesi imzaladı.",
+        "facts": [
+          "Bryson Tiller, Amerikalı bir R&B şarkıcısı ve rapçidir.",
+          "2015 yılında yayımlanan \"Don't\" single'ı ile ana akım tanınırlığa ulaştı ve bu single Billboard Hot 100'de 13. sıraya yükseldi."
+        ]
+      }
+    },
+    {
+      "id": "06af6a80-fc9d-4a01-a504-7157cf924242",
+      "slug": "kid-kapichi-acd60d52",
+      "title": "Kid Kapichi",
+      "name": "Kid Kapichi",
+      "source_url": "https://en.wikipedia.org/wiki/Kid_Kapichi",
+      "extract": "Kid Kapichi are an English punk rock band formed in Hastings in 2013. The band consists of vocalist and guitarist Jack Wilson and bassist Eddie Lewis.",
+      "en": {
+        "kicker": "English punk rock band · Hastings, 2013",
+        "who": "Kid Kapichi are an English punk rock band formed in Hastings in 2013. The band consists of vocalist and guitarist Jack Wilson and bassist Eddie Lewis.",
+        "facts": [
+          "Kid Kapichi are an English punk rock band formed in Hastings in 2013.",
+          "The band consists of vocalist and guitarist Jack Wilson and bassist Eddie Lewis."
+        ]
+      },
+      "de": {
+        "kicker": "punkrock-band · Hastings, 2013",
+        "who": "Kid Kapichi sind eine englische Punkrock-Band, die 2013 in Hastings gegründet wurde. Zur Besetzung gehören Jack Wilson als Sänger und Gitarrist sowie Eddie Lewis als Bassist.",
+        "facts": [
+          "Kid Kapichi sind eine englische Punkrock-Band, die 2013 in Hastings gegründet wurde.",
+          "Die Band besteht aus Sänger und Gitarrist Jack Wilson sowie Bassist Eddie Lewis."
+        ]
+      },
+      "tr": {
+        "kicker": "İngiliz punk rock grubu · Hastings, 2013",
+        "who": "Kid Kapichi, 2013 yılında Hastings'te kurulmuş İngiliz bir punk rock grubudur. Grup, vokalist ve gitarist Jack Wilson ile basçı Eddie Lewis'ten oluşmaktadır.",
+        "facts": [
+          "Kid Kapichi, 2013 yılında Hastings'te kurulmuş İngiliz bir punk rock grubudur.",
+          "Grubun vokal ve gitar üyesi Jack Wilson ile bas gitaristi Eddie Lewis'ten oluşur."
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "city": "dallas",
+  "day": "2026-11-15",
+  "nights": [
+    {
+      "id": "569c2d5d-4d27-4bd1-bedf-0c35c684ca29",
+      "slug": "charlie-zaa-57f25641",
+      "title": "Charlie Zaa",
+      "name": "Charlie Zaa",
+      "source_url": "https://en.wikipedia.org/wiki/Charlie_Zaa",
+      "extract": "Carlos Alberto Sánchez, known professionally as Charlie Zaa, is a Colombian singer. Zaa is the son of singer Luis Humberto Sánchez.",
+      "en": {
+        "kicker": "colombian singer · colombia",
+        "who": "Carlos Alberto Sánchez, known professionally as Charlie Zaa, is a Colombian singer. Zaa is the son of singer Luis Humberto Sánchez.",
+        "facts": [
+          "Carlos Alberto Sánchez, known professionally as Charlie Zaa, is a Colombian singer.",
+          "Zaa is the son of singer Luis Humberto Sánchez."
+        ]
+      },
+      "de": {
+        "kicker": "kolumbianischer sänger · kolumbien",
+        "who": "Carlos Alberto Sánchez, beruflich bekannt als Charlie Zaa, ist ein kolumbianischer Sänger. Zaa ist der Sohn des Sängers Luis Humberto Sánchez.",
+        "facts": [
+          "Carlos Alberto Sánchez, beruflich bekannt als Charlie Zaa, ist ein kolumbianischer Sänger.",
+          "Zaa ist der Sohn des Sängers Luis Humberto Sánchez."
+        ]
+      },
+      "tr": {
+        "kicker": "kolombiyalı şarkıcı · kolombiya",
+        "who": "Carlos Alberto Sánchez, sanatçı adıyla Charlie Zaa, bir Kolombiyalı şarkıcıdır. Zaa, şarkıcı Luis Humberto Sánchez'in oğludur.",
+        "facts": [
+          "Carlos Alberto Sánchez, sanatçı adıyla Charlie Zaa, bir Kolombiyalı şarkıcıdır.",
+          "Zaa, şarkıcı Luis Humberto Sánchez'in oğludur."
+        ]
+      }
+    },
+    {
+      "id": "54eb9d0b-2ced-49ca-80ba-cff843e20f32",
+      "slug": "deante-hitchcock-d9d54e89",
+      "title": "Deante' Hitchcock",
+      "name": "Deante' Hitchcock",
+      "source_url": "https://en.wikipedia.org/wiki/Deante'_Hitchcock",
+      "extract": "Deante' Van Hitchcock, is an American rapper from Riverdale, Georgia. He initially gained recognition as a rapper following the releases of three mixtapes: 19 Summers (2012), Wishful Thinking (2015) and Good (2016). He received widespread attention on the internet in 2016 after a weekly series of freestyles called New Atlanta Tuesday's. In 2017, he signed to ByStorm and RCA Records. His debut album Better was released on May 13, 2020.",
+      "en": {
+        "kicker": "american rapper · riverdale, georgia",
+        "who": "Deante' Van Hitchcock, is an American rapper from Riverdale, Georgia. He initially gained recognition as a rapper following the releases of three mixtapes: 19 Summers (2012), Wishful Thinking (2015) and Good (2016). His debut album Better was released on May 13, 2020.",
+        "facts": [
+          "Deante' Van Hitchcock, is an American rapper from Riverdale, Georgia.",
+          "His debut album Better was released on May 13, 2020."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer rapper · riverdale, georgia",
+        "who": "Deante' Van Hitchcock ist ein amerikanischer Rapper aus Riverdale im US-Bundesstaat Georgia. Zunächst wurde er durch drei Mixtapes bekannt: 19 Summers (2012), Wishful Thinking (2015) und Good (2016). Sein Debütalbum Better erschien am 13. Mai 2020.",
+        "facts": [
+          "Deante' Van Hitchcock ist ein amerikanischer Rapper aus Riverdale, Georgia.",
+          "Sein Debütalbum Better erschien am 13. Mai 2020."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı rapçi · riverdale, georgia",
+        "who": "Deante' Van Hitchcock, Riverdale, Georgia'dan bir Amerikalı rapçidir. Önce üç mixtape ile tanındı: 19 Summers (2012), Wishful Thinking (2015) ve Good (2016). Debut albümü Better, 13 Mayıs 2020'de yayımlandı.",
+        "facts": [
+          "Deante' Van Hitchcock, Riverdale, Georgia'dan bir Amerikalı rapçidir.",
+          "Debut albümü Better, 13 Mayıs 2020'de yayımlandı."
+        ]
+      }
+    }
+  ]
+}

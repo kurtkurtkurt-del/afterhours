@@ -1,0 +1,38 @@
+{
+  "city": "warszawa",
+  "day": "2026-11-15",
+  "nights": [
+    {
+      "id": "6b343863-52ea-4d54-b4b0-11e56b46d664",
+      "slug": "ich-troje-99bc92e7",
+      "title": "Ich Troje",
+      "name": "Ich Troje",
+      "source_url": "https://en.wikipedia.org/wiki/Ich_Troje",
+      "extract": "Ich Troje is a Polish pop band. Ich Troje was founded in 1996 by songwriter Michał Wiśniewski and composer Jacek Łągwa. Since 2000, Ich Troje has been one of the most successful Polish groups. They have sold more than 1.5 million records since June 2001. Their songs are typically about love, betrayal and break-ups. They represented Poland in the Eurovision Song Contest twice: with \"Keine Grenzen – Żadnych granic\" in 2003 and \"Follow My Heart\" in 2006.",
+      "en": {
+        "kicker": "polish pop band · founded 1996",
+        "who": "Ich Troje is a Polish pop band founded by songwriter Michał Wiśniewski and composer Jacek Łągwa. since 2000 it has been one of the most successful Polish groups. its songs are typically about love, betrayal and break-ups.",
+        "facts": [
+          "Ich Troje was founded in 1996 by songwriter Michał Wiśniewski and composer Jacek Łągwa.",
+          "They have sold more than 1.5 million records since June 2001."
+        ]
+      },
+      "de": {
+        "kicker": "polnische popband · gegründet 1996",
+        "who": "Ich Troje ist eine polnische Popband, die 1996 vom Songwriter Michał Wiśniewski und dem Komponisten Jacek Łągwa gegründet wurde. seit 2000 gehört sie zu den erfolgreichsten polnischen Gruppen. ihre songs handeln meist von liebe, verrat und trennungen.",
+        "facts": [
+          "Ich Troje wurde 1996 vom Songwriter Michał Wiśniewski und dem Komponisten Jacek Łągwa gegründet.",
+          "Seit Juni 2001 haben sie mehr als 1,5 Millionen Tonträger verkauft."
+        ]
+      },
+      "tr": {
+        "kicker": "Polonya pop grubu · 1996'da kuruldu",
+        "who": "Ich Troje, söz yazarı Michał Wiśniewski ve besteci Jacek Łągwa tarafından 1996'da kurulmuş bir Polonya pop grubudur. 2000'den beri Polonya'nın en başarılı gruplarından biridir. şarkıları genellikle aşk, ihanet ve ayrılıklar üzerinedir.",
+        "facts": [
+          "Ich Troje, 1996'da söz yazarı Michał Wiśniewski ve besteci Jacek Łągwa tarafından kuruldu.",
+          "Haziran 2001'den beri 1,5 milyondan fazla plak sattılar."
+        ]
+      }
+    }
+  ]
+}

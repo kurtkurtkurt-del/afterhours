@@ -1,0 +1,38 @@
+{
+  "city": "austin",
+  "day": "2026-11-15",
+  "nights": [
+    {
+      "id": "faa5cdf5-d252-45b8-931a-3cd830a72e71",
+      "slug": "imminence-axis-mundi-tour-north-america-2026-7e8d6392",
+      "title": "Imminence - Axis Mundi Tour: North America 2026",
+      "name": "Imminence",
+      "source_url": "https://en.wikipedia.org/wiki/Imminence_(band)",
+      "extract": "Imminence is a Swedish metalcore band formed in Trelleborg. The group consists of vocalist Eddie Berg, rhythm guitarist Harald Barrett, lead guitarist Alex Arnoldsson, and bassist Christian Höijer.",
+      "en": {
+        "kicker": "Swedish metalcore band · formed in Trelleborg",
+        "who": "Imminence is a Swedish metalcore band formed in Trelleborg. The group is made up of vocalist Eddie Berg, rhythm guitarist Harald Barrett, lead guitarist Alex Arnoldsson, and bassist Christian Höijer.",
+        "facts": [
+          "Imminence is a Swedish metalcore band formed in Trelleborg.",
+          "The group consists of vocalist Eddie Berg, rhythm guitarist Harald Barrett, lead guitarist Alex Arnoldsson, and bassist Christian Höijer."
+        ]
+      },
+      "de": {
+        "kicker": "schwedische metalcore-band · gegründet in Trelleborg",
+        "who": "Imminence ist eine schwedische metalcore-band, die in Trelleborg gegründet wurde. Die gruppe besteht aus sänger eddie berg, rhythmusgitarrist harald barrett, leadgitarist alex arnoldsson und bassist christian höijer.",
+        "facts": [
+          "Imminence ist eine schwedische metalcore-band, die in Trelleborg gegründet wurde.",
+          "Die gruppe besteht aus sänger eddie berg, rhythmusgitarrist harald barrett, leadgitarist alex arnoldsson und bassist christian höijer."
+        ]
+      },
+      "tr": {
+        "kicker": "İsveçli metalcore grubu · Trelleborg'da kuruldu",
+        "who": "Imminence, Trelleborg'da kurulmuş bir İsveçli metalcore grubudur. Grup; vokalist eddie berg, ritim gitaristi harald barrett, solo gitarist alex arnoldsson ve basçı christian höijer'den oluşuyor.",
+        "facts": [
+          "Imminence, Trelleborg'da kurulmuş bir İsveçli metalcore grubudur.",
+          "Grup; vokalist eddie berg, ritim gitaristi harald barrett, solo gitarist alex arnoldsson ve basçı christian höijer'den oluşuyor."
+        ]
+      }
+    }
+  ]
+}

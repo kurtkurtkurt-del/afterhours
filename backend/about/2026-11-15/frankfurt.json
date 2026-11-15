@@ -1,0 +1,38 @@
+{
+  "city": "frankfurt",
+  "day": "2026-11-15",
+  "nights": [
+    {
+      "id": "81145355-1a25-47f5-b5e5-55bb3f52901e",
+      "slug": "noga-erez-duck-season-tour-2027-d9db3cdc",
+      "title": "Noga Erez - Duck Season Tour 2027",
+      "name": "Noga Erez",
+      "source_url": "https://en.wikipedia.org/wiki/Noga_Erez",
+      "extract": "Noga Erez is an Israeli singer, songwriter and producer known for a mix of electronic pop, hip-hop and alternative music. She released her debut album Off the Radar in 2017. Her third album,The Vandalist, was released on Neon Gold Records/Atlantic Records in 2024. She has collaborated and performed with artists including Missy Elliott, Robbie Williams, Armani White, and Florence + the Machine, and appeared at major festivals including Coachella, Lollapalooza, Austin City Limits, and Primavera Sound.",
+      "en": {
+        "kicker": "singer, songwriter and producer · israel",
+        "who": "an Israeli singer, songwriter and producer, Noga Erez mixes electronic pop, hip-hop and alternative music. her third album, The Vandalist, was released on Neon Gold Records/Atlantic Records in 2024. she has appeared at major festivals including Coachella, Lollapalooza and Primavera Sound.",
+        "facts": [
+          "Noga Erez is an Israeli singer, songwriter and producer known for a mix of electronic pop, hip-hop and alternative music.",
+          "She released her debut album Off the Radar in 2017."
+        ]
+      },
+      "de": {
+        "kicker": "sängerin, songwriterin und produzentin · Israel",
+        "who": "eine Israelische sängerin, songwriterin und produzentin, Noga Erez verbindet electronic pop, hip-hop und alternative music. ihr drittes album The Vandalist erschien 2024 bei Neon Gold Records und Atlantic Records. sie ist bei großen festivals wie Coachella, Lollapalooza und Primavera Sound aufgetreten.",
+        "facts": [
+          "Noga Erez ist eine Israelische sängerin, songwriterin und produzentin, bekannt für eine mischung aus electronic pop, hip-hop und alternative music.",
+          "sie veröffentlichte ihr debütalbum Off the Radar im jahr 2017."
+        ]
+      },
+      "tr": {
+        "kicker": "şarkıcı, söz yazarı ve yapımcı · İsrail",
+        "who": "İsrailli bir şarkıcı, söz yazarı ve yapımcı olan Noga Erez, elektronik pop, hip-hop ve alternatif müziği harmanlıyor. üçüncü albümü The Vandalist, 2024 yılında Neon Gold Records/Atlantic Records etiketiyle yayımlandı. Coachella, Lollapalooza ve Primavera Sound gibi büyük festivallerde sahne aldı.",
+        "facts": [
+          "Noga Erez, elektronik pop, hip-hop ve alternatif müziği bir araya getiren İsrailli bir şarkıcı, söz yazarı ve yapımcıdır.",
+          "debut albümü Off the Radar'ı 2017 yılında yayımladı."
+        ]
+      }
+    }
+  ]
+}

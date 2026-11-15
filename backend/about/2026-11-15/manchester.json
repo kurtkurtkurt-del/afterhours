@@ -1,0 +1,166 @@
+{
+  "city": "manchester",
+  "day": "2026-11-15",
+  "nights": [
+    {
+      "id": "53fe6597-d668-478c-9a7d-f442afb76feb",
+      "slug": "gold-panda-7807e2e4",
+      "title": "Gold Panda",
+      "name": "Gold Panda",
+      "source_url": "https://en.wikipedia.org/wiki/Gold_Panda",
+      "extract": "Derwin Schlecker, professionally known as Gold Panda, is an English electronic music producer and songwriter.\nDerwin Dicker also performs house music as DJ Jenifa.",
+      "en": {
+        "kicker": "English electronic music producer",
+        "who": "Gold Panda is the professional name of Derwin Schlecker. Derwin Dicker also performs house music as DJ Jenifa.",
+        "facts": [
+          "Derwin Schlecker, professionally known as Gold Panda, is an English electronic music producer and songwriter.",
+          "Derwin Dicker also performs house music as DJ Jenifa."
+        ]
+      },
+      "de": {
+        "kicker": "englischer elektronischer musikproduzent",
+        "who": "Gold Panda ist der künstlername von Derwin Schlecker, einem englischen elektronischen musikproduzenten und songwriter. der künstler tritt außerdem als DJ Jenifa mit house-musik auf.",
+        "facts": [
+          "Derwin Schlecker, unter dem namen Gold Panda bekannt, ist ein englischer elektronischer musikproduzent und songwriter.",
+          "Derwin Dicker tritt außerdem als DJ Jenifa mit house-musik auf."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz elektronik müzik yapımcısı",
+        "who": "Gold Panda, Derwin Schlecker'in sahne adıdır. sanatçı ayrıca DJ Jenifa adıyla house müzik icra eder.",
+        "facts": [
+          "Gold Panda olarak bilinen Derwin Schlecker, ingiliz bir elektronik müzik yapımcısı ve söz yazarıdır.",
+          "Derwin Dicker ayrıca DJ Jenifa adıyla house müzik icra eder."
+        ]
+      }
+    },
+    {
+      "id": "f9fa8164-5b91-43c4-8442-b0bf8e002d3e",
+      "slug": "fontaines-d-c-029b20c7",
+      "title": "Fontaines D.C.",
+      "name": "Fontaines D.C.",
+      "source_url": "https://en.wikipedia.org/wiki/Fontaines_D.C.",
+      "extract": "Fontaines D.C. are an Irish rock band formed in Dublin in 2014. The band consists of Grian Chatten (vocals), Conor Curley (guitar), Conor \"Deego\" Deegan III (bass), Tom Coll (drums), and Carlos O'Connell (guitar).",
+      "en": {
+        "kicker": "Irish rock band · Dublin, 2014",
+        "who": "Fontaines D.C. are an Irish rock band formed in Dublin in 2014. the band consists of Grian Chatten (vocals), Conor Curley (guitar), Conor \"Deego\" Deegan III (bass), Tom Coll (drums), and Carlos O'Connell (guitar).",
+        "facts": [
+          "Fontaines D.C. are an Irish rock band formed in Dublin in 2014.",
+          "The band consists of Grian Chatten (vocals), Conor Curley (guitar), Conor \"Deego\" Deegan III (bass), Tom Coll (drums), and Carlos O'Connell (guitar)."
+        ]
+      },
+      "de": {
+        "kicker": "irische rock-band · Dublin, 2014",
+        "who": "Fontaines D.C. sind eine irische rock-band, die 2014 in Dublin gegründet wurde. die band besteht aus Grian Chatten (gesang), Conor Curley (gitarre), Conor \"Deego\" Deegan III (bass), Tom Coll (schlagzeug) und Carlos O'Connell (gitarre).",
+        "facts": [
+          "Fontaines D.C. sind eine irische rock-band, die 2014 in Dublin gegründet wurde.",
+          "die band besteht aus Grian Chatten (gesang), Conor Curley (gitarre), Conor \"Deego\" Deegan III (bass), Tom Coll (schlagzeug) und Carlos O'Connell (gitarre)."
+        ]
+      },
+      "tr": {
+        "kicker": "irlandalı rock grubu · Dublin, 2014",
+        "who": "Fontaines D.C., 2014'te Dublin'de kurulmuş irlandalı bir rock grubudur. grubun kadrosunda Grian Chatten (vokal), Conor Curley (gitar), Conor \"Deego\" Deegan III (bas), Tom Coll (davul) ve Carlos O'Connell (gitar) yer alır.",
+        "facts": [
+          "Fontaines D.C., 2014'te Dublin'de kurulmuş irlandalı bir rock grubudur.",
+          "grup; Grian Chatten (vokal), Conor Curley (gitar), Conor \"Deego\" Deegan III (bas), Tom Coll (davul) ve Carlos O'Connell (gitar) üyelerinden oluşur."
+        ]
+      }
+    },
+    {
+      "id": "2881b6f7-6d80-4270-afaa-5a0a6b4e9adb",
+      "slug": "gloryhammer-404a56c2",
+      "title": "Gloryhammer",
+      "name": "Gloryhammer",
+      "source_url": "https://en.wikipedia.org/wiki/Gloryhammer",
+      "extract": "Gloryhammer are a British power metal band founded by keyboardist Christopher Bowes, lead vocalist of the band Alestorm. Each member of the band represents a character in the story concept. Band members appear on stage in armour and costumes to represent their respective characters.",
+      "en": {
+        "kicker": "British power metal band",
+        "who": "Gloryhammer are a British power metal band founded by keyboardist Christopher Bowes, lead vocalist of the band Alestorm. band members appear on stage in armour and costumes to represent their respective characters.",
+        "facts": [
+          "Gloryhammer are a British power metal band founded by keyboardist Christopher Bowes, lead vocalist of the band Alestorm.",
+          "Band members appear on stage in armour and costumes to represent their respective characters."
+        ]
+      },
+      "de": {
+        "kicker": "britische power-metal-band",
+        "who": "Gloryhammer sind eine britische power-metal-band, gegründet von keyboarder Christopher Bowes, dem leadsänger der band Alestorm. bandmitglieder treten auf der bühne in rüstungen und kostümen auf, um ihre jeweiligen figuren darzustellen.",
+        "facts": [
+          "Gloryhammer sind eine britische power-metal-band, gegründet von keyboarder Christopher Bowes, dem leadsänger der band Alestorm.",
+          "bandmitglieder treten auf der bühne in rüstungen und kostümen auf, um ihre jeweiligen figuren darzustellen."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz power metal grubu",
+        "who": "Gloryhammer, Alestorm grubunun baş vokalisti olan klavyeci Christopher Bowes tarafından kurulan ingiliz bir power metal grubudur. grup üyeleri, kendi karakterlerini temsil etmek için sahnede zırh ve kostümler içinde görünür.",
+        "facts": [
+          "Gloryhammer, Alestorm grubunun baş vokalisti olan klavyeci Christopher Bowes tarafından kurulan ingiliz bir power metal grubudur.",
+          "grup üyeleri, kendi karakterlerini temsil etmek için sahnede zırh ve kostümler içinde görünür."
+        ]
+      }
+    },
+    {
+      "id": "cd14f214-5acb-4a3c-bf33-6d7bcb55f39b",
+      "slug": "drake-milligan-7a3af797",
+      "title": "Drake Milligan",
+      "name": "Drake Milligan",
+      "source_url": "https://en.wikipedia.org/wiki/Drake_Milligan",
+      "extract": "Drake Milligan is an American singer, best known for portraying Elvis Presley on the CMT series Sun Records and starring in the film Nobody where he portrayed a young teen Elvis. He has also appeared on American Idol and America's Got Talent. Milligan has charted with the singles \"Sounds Like Something I'd Do\" and \"Honky Tonkin' About\", the latter of which became his first number one when it topped the Canadian country chart. His debut album, Dallas/Fort Worth, was released on September 15, 2022.",
+      "en": {
+        "kicker": "American singer · debut album 2022",
+        "who": "Drake Milligan is an American singer, best known for portraying Elvis Presley on the CMT series Sun Records. he has also appeared on American Idol and America's Got Talent.",
+        "facts": [
+          "Drake Milligan is an American singer, best known for portraying Elvis Presley on the CMT series Sun Records and starring in the film Nobody where he portrayed a young teen Elvis.",
+          "His debut album, Dallas/Fort Worth, was released on September 15, 2022."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer sänger · debütalbum 2022",
+        "who": "Drake Milligan ist ein amerikanischer sänger, der vor allem als Elvis Presley in der CMT-serie Sun Records bekannt ist. er ist außerdem bei American Idol und America's Got Talent aufgetreten.",
+        "facts": [
+          "Drake Milligan ist ein amerikanischer sänger, der vor allem als Elvis Presley in der CMT-serie Sun Records bekannt ist und im film Nobody einen jungen teenager-Elvis verkörperte.",
+          "sein debütalbum Dallas/Fort Worth erschien am 15. september 2022."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı şarkıcı · ilk albüm 2022",
+        "who": "Drake Milligan, CMT dizisi Sun Records'ta Elvis Presley'i canlandırmasıyla en çok tanınan amerikalı bir şarkıcıdır. American Idol ve America's Got Talent'ta da yer almıştır.",
+        "facts": [
+          "Drake Milligan, CMT dizisi Sun Records'ta Elvis Presley'i canlandırmasıyla en çok tanınan amerikalı bir şarkıcıdır ve Nobody filminde genç bir Elvis'i canlandırarak da rol almıştır.",
+          "ilk albümü Dallas/Fort Worth, 15 Eylül 2022'de yayımlandı."
+        ]
+      }
+    },
+    {
+      "id": "2ad03139-9e32-4dbb-9743-b1094d856053",
+      "slug": "the-moonlandingz-d71c12a1",
+      "title": "The Moonlandingz",
+      "name": "The Moonlandingz",
+      "source_url": "https://en.wikipedia.org/wiki/The_Moonlandingz",
+      "extract": "The Moonlandingz are an English rock band, formed in 2015. The band consists of Eccentronic Research Council duo Adrian Flanagan and Dean Honer, along with Fat White Family members Saul Adamczewski and Lias Kaci Saoudi. The band was originally designed as a concept act for the Eccentronic Research Council's fifth album Johnny Rocket, Narcissist and Music Machine…I'm Your Biggest Fan, with the act's charismatic and otherworldly frontman Johnny Rocket being played by Saoudi.",
+      "en": {
+        "kicker": "English rock band · formed 2015",
+        "who": "The Moonlandingz are an English rock band, formed in 2015. the band consists of Eccentronic Research Council duo Adrian Flanagan and Dean Honer, along with Fat White Family members Saul Adamczewski and Lias Kaci Saoudi.",
+        "facts": [
+          "The Moonlandingz are an English rock band, formed in 2015.",
+          "The band was originally designed as a concept act for the Eccentronic Research Council's fifth album Johnny Rocket, Narcissist and Music Machine…I'm Your Biggest Fan, with the act's charismatic and otherworldly frontman Johnny Rocket being played by Saoudi."
+        ]
+      },
+      "de": {
+        "kicker": "englische rock-band · gegründet 2015",
+        "who": "The Moonlandingz sind eine englische rock-band, die 2015 gegründet wurde. die band besteht aus dem duo Adrian Flanagan und Dean Honer vom Eccentronic Research Council sowie den mitgliedern Saul Adamczewski und Lias Kaci Saoudi von Fat White Family.",
+        "facts": [
+          "The Moonlandingz sind eine englische rock-band, die 2015 gegründet wurde.",
+          "die band war ursprünglich als konzept-act für das fünfte album Johnny Rocket, Narcissist and Music Machine…I'm Your Biggest Fan des Eccentronic Research Council angelegt, wobei der charismatische und jenseitige frontmann Johnny Rocket von Saoudi gespielt wurde."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz rock grubu · 2015",
+        "who": "The Moonlandingz, 2015'te kurulmuş ingiliz bir rock grubudur. grup, Eccentronic Research Council ikilisi Adrian Flanagan ve Dean Honer ile Fat White Family üyeleri Saul Adamczewski ve Lias Kaci Saoudi'den oluşur.",
+        "facts": [
+          "The Moonlandingz, 2015'te kurulmuş ingiliz bir rock grubudur.",
+          "grup, başlangıçta Eccentronic Research Council'in beşinci albümü Johnny Rocket, Narcissist and Music Machine…I'm Your Biggest Fan için konsept bir act olarak tasarlandı; karizmatik ve dünyevi olmayan ön adam Johnny Rocket'ı ise Saoudi canlandırdı."
+        ]
+      }
+    }
+  ]
+}

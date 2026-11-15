@@ -1,0 +1,38 @@
+{
+  "city": "krakow",
+  "day": "2026-11-15",
+  "nights": [
+    {
+      "id": "2ff9acca-1c61-434f-acdf-5ea92ff2435d",
+      "slug": "the-ocean-55aed08d",
+      "title": "THE OCEAN",
+      "name": "The Ocean",
+      "source_url": "https://en.wikipedia.org/wiki/The_Ocean_(band)",
+      "extract": "The Ocean is a German post-metal band formed in 2001 by German guitarist Robin Staps.",
+      "en": {
+        "kicker": "german post-metal band · 2001",
+        "who": "The Ocean is a German post-metal band. It was formed in 2001 by German guitarist Robin Staps.",
+        "facts": [
+          "The Ocean is a German post-metal band.",
+          "It was formed in 2001 by German guitarist Robin Staps."
+        ]
+      },
+      "de": {
+        "kicker": "deutsche post-metal-band · 2001",
+        "who": "The Ocean ist eine deutsche post-metal-band. Sie wurde 2001 vom deutschen Gitarristen Robin Staps gegründet.",
+        "facts": [
+          "The Ocean ist eine deutsche post-metal-band.",
+          "Sie wurde 2001 vom deutschen Gitarristen Robin Staps gegründet."
+        ]
+      },
+      "tr": {
+        "kicker": "post-metal grubu · 2001, Almanya",
+        "who": "The Ocean, Almanya merkezli bir post-metal grubudur. Grup 2001 yılında Alman gitarist Robin Staps tarafından kuruldu.",
+        "facts": [
+          "The Ocean, Almanya merkezli bir post-metal grubudur.",
+          "Grup 2001 yılında Alman gitarist Robin Staps tarafından kuruldu."
+        ]
+      }
+    }
+  ]
+}

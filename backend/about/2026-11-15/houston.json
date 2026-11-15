@@ -1,0 +1,70 @@
+{
+  "city": "houston",
+  "day": "2026-11-15",
+  "nights": [
+    {
+      "id": "234f99c2-b9ac-4600-a308-2dcdd5fcd60b",
+      "slug": "george-clanton-3849fd86",
+      "title": "George Clanton",
+      "name": "George Clanton",
+      "source_url": "https://en.wikipedia.org/wiki/George_Clanton",
+      "extract": "George Wayland Clanton Jr., also known by the monikers Mirror Kisses, ESPRIT 空想, CHINA, and Kid's Garden, is an American electronic musician and singer-songwriter that emerged from the vaporwave music scene in the early 2010s. He established his independent record label 100% Electronica in 2015, and in 2019 launched the first vaporwave music festival, 100% ElectroniCON.",
+      "en": {
+        "kicker": "electronic musician · vaporwave, early 2010s",
+        "who": "american electronic musician and singer-songwriter from the vaporwave scene. he established the independent label 100% Electronica and launched the first vaporwave music festival, 100% ElectroniCON.",
+        "facts": [
+          "George Wayland Clanton Jr., also known by the monikers Mirror Kisses, ESPRIT 空想, CHINA, and Kid's Garden, is an American electronic musician and singer-songwriter that emerged from the vaporwave music scene in the early 2010s.",
+          "He established his independent record label 100% Electronica in 2015, and in 2019 launched the first vaporwave music festival, 100% ElectroniCON."
+        ]
+      },
+      "de": {
+        "kicker": "elektronischer musiker · vaporwave, frühe 2010er",
+        "who": "amerikanischer elektronischer musiker und singer-songwriter aus der vaporwave-szene. er gründete das unabhängige label 100% Electronica und startete das erste vaporwave-musikfestival, 100% ElectroniCON.",
+        "facts": [
+          "George Wayland Clanton Jr., auch bekannt unter den Pseudonymen Mirror Kisses, ESPRIT 空想, CHINA und Kid's Garden, ist ein amerikanischer elektronischer Musiker und Singer-Songwriter, der in den frühen 2010er-Jahren aus der Vaporwave-Musikszene hervorging.",
+          "Er gründete 2015 sein unabhängiges Label 100% Electronica und startete 2019 das erste Vaporwave-Musikfestival 100% ElectroniCON."
+        ]
+      },
+      "tr": {
+        "kicker": "elektronik müzisyen · vaporwave, 2010'ların başı",
+        "who": "amerikalı bir elektronik müzisyen ve şarkıcı-söz yazarı, vaporwave müzik sahnesinden çıktı. bağımsız plak şirketi 100% Electronica'yı kurdu ve ilk vaporwave müzik festivali 100% ElectroniCON'u başlattı.",
+        "facts": [
+          "George Wayland Clanton Jr., Mirror Kisses, ESPRIT 空想, CHINA ve Kid's Garden takma adlarıyla da anılan, 2010'ların başında vaporwave müzik sahnesinden çıkan amerikalı bir elektronik müzisyen ve şarkıcı-söz yazarıdır.",
+          "2015 yılında bağımsız plak şirketi 100% Electronica'yı kurdu, 2019'da ise ilk vaporwave müzik festivali 100% ElectroniCON'u başlattı."
+        ]
+      }
+    },
+    {
+      "id": "794a0a41-951c-4cee-bf7a-56e59a9ed355",
+      "slug": "pedro-fernandez-ave-fenix-two-r-c42336e0",
+      "title": "Pedro Fernández - Ave Fénix Two'r",
+      "name": "Pedro Fernández",
+      "source_url": "https://en.wikipedia.org/wiki/Pedro_Fern%C3%A1ndez_(singer)",
+      "extract": "José Martín Cuevas Cobos, known by his stage name Pedro Fernández, is a Mexican singer, songwriter, actor, and television host. Fernández began his international career as Pedrito Fernández at the age of seven. In the 1980s, he turned to be known as a scream king, thanks to his horror film starring roles in films such as Vacaciones de terror (1989), Pánico en la montaña (1989) and Trampa Infernal (1989).",
+      "en": {
+        "kicker": "mexican singer · songwriter, actor, host",
+        "who": "Pedro Fernández is a Mexican singer, songwriter, actor and television host. he began his international career as Pedrito Fernández at the age of seven.",
+        "facts": [
+          "José Martín Cuevas Cobos, known by his stage name Pedro Fernández, is a Mexican singer, songwriter, actor, and television host.",
+          "Fernández began his international career as Pedrito Fernández at the age of seven."
+        ]
+      },
+      "de": {
+        "kicker": "mexikanischer sänger · songwriter, schauspieler, moderator",
+        "who": "pedro Fernández ist ein mexikanischer sänger, songwriter, schauspieler und fernsehmoderator. seine internationale karriere begann er im alter von sieben jahren als Pedrito Fernández.",
+        "facts": [
+          "José Martín Cuevas Cobos, bekannt unter dem Künstlernamen Pedro Fernández, ist ein mexikanischer Sänger, Songwriter, Schauspieler und Fernsehmoderator.",
+          "Seine internationale Karriere begann er im Alter von sieben Jahren als Pedrito Fernández."
+        ]
+      },
+      "tr": {
+        "kicker": "meksikalı şarkıcı · söz yazarı, oyuncu, sunucu",
+        "who": "Pedro Fernández meksikalı bir şarkıcı, söz yazarı, oyuncu ve televizyon sunucusudur. uluslararası kariyerine yedi yaşında Pedrito Fernández adıyla başladı.",
+        "facts": [
+          "José Martín Cuevas Cobos, sahne adı Pedro Fernández olan, meksikalı bir şarkıcı, söz yazarı, oyuncu ve televizyon sunucusudur.",
+          "Fernández uluslararası kariyerine yedi yaşında Pedrito Fernández adıyla başladı."
+        ]
+      }
+    }
+  ]
+}

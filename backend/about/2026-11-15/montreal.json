@@ -1,0 +1,38 @@
+{
+  "city": "montreal",
+  "day": "2026-11-15",
+  "nights": [
+    {
+      "id": "a39a57b4-c2d3-4055-8948-133660e8f849",
+      "slug": "the-pineapple-thief-b0103156",
+      "title": "The Pineapple Thief",
+      "name": "The Pineapple Thief",
+      "source_url": "https://en.wikipedia.org/wiki/The_Pineapple_Thief",
+      "extract": "The Pineapple Thief are an English progressive rock band founded in 1999 by Bruce Soord in Yeovil, Somerset. As of June 2024, the group consists of Soord on vocals, guitars, and keyboards, Jon Sykes on bass, Steve Kitch on keyboards, and Gavin Harrison on drums. They have released 16 studio albums, 6 EPs, and several live and compilation albums.",
+      "en": {
+        "kicker": "English progressive rock band · founded 1999, Yeovil",
+        "who": "The band was founded in 1999 by Bruce Soord in Yeovil, Somerset. As of june 2024, the lineup is Soord on vocals, guitars and keyboards, Jon Sykes on bass, Steve Kitch on keyboards and Gavin Harrison on drums. The group has released 16 studio albums, 6 EPs and several live and compilation albums.",
+        "facts": [
+          "The Pineapple Thief are an English progressive rock band founded in 1999 by Bruce Soord in Yeovil, Somerset.",
+          "they have released 16 studio albums, 6 EPs, and several live and compilation albums."
+        ]
+      },
+      "de": {
+        "kicker": "englische progressive-rock-band · gegründet 1999, Yeovil",
+        "who": "Die Band wurde 1999 von Bruce Soord in Yeovil, Somerset gegründet. Seit juni 2024 besteht die besetzung aus Soord an gesang, gitarren und keyboards, Jon Sykes am bass, Steve Kitch an den keyboards und Gavin Harrison am schlagzeug. Die gruppe hat 16 studioalben, 6 EPs sowie mehrere live- und compilation-alben veröffentlicht.",
+        "facts": [
+          "The Pineapple Thief sind eine englische progressive-rock-band, die 1999 von Bruce Soord in Yeovil, Somerset gegründet wurde.",
+          "sie haben 16 studioalben, 6 EPs sowie mehrere live- und compilation-alben veröffentlicht."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz progresif rock grubu · 1999, Yeovil",
+        "who": "Grup 1999 yılında Bruce Soord tarafından Yeovil, Somerset'te kuruldu. Haziran 2024 itibarıyla kadro; vokal, gitar ve klavyede Soord, basta Jon Sykes, klavyede Steve Kitch ve davulda Gavin Harrison'dan oluşuyor. Grup 16 stüdyo albümü, 6 EP ve birkaç canlı ve derleme albüm yayımladı.",
+        "facts": [
+          "The Pineapple Thief, 1999 yılında Bruce Soord tarafından Yeovil, Somerset'te kurulan ingiliz bir progresif rock grubudur.",
+          "grup 16 stüdyo albümü, 6 EP ve birkaç canlı ve derleme albüm yayımladı."
+        ]
+      }
+    }
+  ]
+}

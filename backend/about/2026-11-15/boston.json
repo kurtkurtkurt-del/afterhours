@@ -1,0 +1,102 @@
+{
+  "city": "boston",
+  "day": "2026-11-15",
+  "nights": [
+    {
+      "id": "f5e09c1c-92e4-4c03-b011-86c2c82c8e8a",
+      "slug": "boston-symphony-orchestra-cb947329",
+      "title": "Boston Symphony Orchestra",
+      "name": "Boston Symphony Orchestra",
+      "source_url": "https://en.wikipedia.org/wiki/Boston_Symphony_Orchestra",
+      "extract": "The Boston Symphony Orchestra (BSO) is an American symphony orchestra based in Boston. It is the second-oldest orchestra in the United States and one of the five major American symphony orchestras commonly referred to as the \"Big Five\". Founded by Henry Lee Higginson in 1881, the BSO performs most of its concerts at Boston's Symphony Hall and in the summer performs at Tanglewood. It has an offshoot organization, The Boston Pops, founded in 1885 also by Higginson to perform \"concerts of a lighter kind of music.\" The Pops has its own schedule and musical director, and consists mostly of musicians from the ranks of the BSO.",
+      "en": {
+        "kicker": "American symphony orchestra · Boston",
+        "who": "the Boston Symphony Orchestra (BSO) is an American symphony orchestra based in Boston. it is the second-oldest orchestra in the United States. it performs most of its concerts at Boston's Symphony Hall and in summer at Tanglewood.",
+        "facts": [
+          "founded by Henry Lee Higginson in 1881, the BSO performs most of its concerts at Boston's Symphony Hall and in the summer performs at Tanglewood.",
+          "it is the second-oldest orchestra in the United States and one of the five major American symphony orchestras commonly referred to as the \"Big Five\"."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanisches symphonieorchester · Boston",
+        "who": "das Boston Symphony Orchestra (BSO) ist ein amerikanisches symphonieorchester mit sitz in Boston. es ist das zweitälteste orchester der vereinigten staaten. die meisten seiner konzerte finden in der Symphony Hall in Boston statt, im sommer in Tanglewood.",
+        "facts": [
+          "1881 von Henry Lee Higginson gegründet, spielt das BSO die meisten seiner konzerte in der Symphony Hall in Boston und im sommer in Tanglewood.",
+          "es ist das zweitälteste orchester der vereinigten staaten und eines der fünf großen amerikanischen symphonieorchester, die als „Big Five“ bezeichnet werden."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikan senfoni orkestrası · Boston",
+        "who": "Boston Senfoni Orkestrası (BSO), Boston merkezli bir amerikan senfoni orkestrasıdır. Amerika Birleşik Devletleri'nin ikinci en eski orkestrasıdır. konserlerinin çoğunu Boston'daki Symphony Hall'da, yazları ise Tanglewood'da verir.",
+        "facts": [
+          "1881'de Henry Lee Higginson tarafından kurulan BSO, konserlerinin çoğunu Boston'daki Symphony Hall'da, yazın ise Tanglewood'da verir.",
+          "Amerika Birleşik Devletleri'nin ikinci en eski orkestrası olup, „Big Five“ olarak anılan beş büyük amerikan senfoni orkestrasından biridir."
+        ]
+      }
+    },
+    {
+      "id": "dc2385dc-7a00-4598-b809-cddadab12fcd",
+      "slug": "orville-peck-man-turned-mule-tour-cc3540db",
+      "title": "Orville Peck - Man Turned Mule Tour",
+      "name": "Orville Peck",
+      "source_url": "https://en.wikipedia.org/wiki/Orville_Peck",
+      "extract": "Daniel Pitout, known professionally as Orville Peck, is a South African country musician and actor based in the United States and Canada, widely known for often wearing a mask and not showing his face publicly.",
+      "en": {
+        "kicker": "South African country musician · United States and Canada",
+        "who": "Daniel Pitout, known professionally as Orville Peck, is a South African country musician and actor based in the United States and Canada. he is widely known for often wearing a mask and not showing his face publicly.",
+        "facts": [
+          "Daniel Pitout, known professionally as Orville Peck, is a South African country musician and actor based in the United States and Canada.",
+          "he is widely known for often wearing a mask and not showing his face publicly."
+        ]
+      },
+      "de": {
+        "kicker": "südafrikanischer country-musiker · Vereinigte Staaten und Kanada",
+        "who": "Daniel Pitout, unter dem künstlernamen Orville Peck bekannt, ist ein südafrikanischer country-musiker und schauspieler mit wohnsitz in den Vereinigten Staaten und in Kanada. er ist dafür bekannt, oft eine maske zu tragen und sein gesicht nicht öffentlich zu zeigen.",
+        "facts": [
+          "Daniel Pitout, unter dem künstlernamen Orville Peck bekannt, ist ein südafrikanischer country-musiker und schauspieler mit wohnsitz in den Vereinigten Staaten und in Kanada.",
+          "er ist dafür bekannt, oft eine maske zu tragen und sein gesicht nicht öffentlich zu zeigen."
+        ]
+      },
+      "tr": {
+        "kicker": "güney afrikalı country müzisyen · Birleşik Devletler",
+        "who": "Daniel Pitout, sahne adıyla Orville Peck, Birleşik Devletler ve Kanada'da yaşayan güney afrikalı bir country müzisyeni ve oyuncudur. çoğu zaman maske takmasıyla ve yüzünü kamuya açık olarak göstermemesiyle tanınır.",
+        "facts": [
+          "Daniel Pitout, sahne adıyla Orville Peck, Birleşik Devletler ve Kanada'da yaşayan güney afrikalı bir country müzisyeni ve oyuncudur.",
+          "çoğu zaman maske takmasıyla ve yüzünü kamuya açık olarak göstermemesiyle tanınır."
+        ]
+      }
+    },
+    {
+      "id": "3413f0ea-88d7-4675-b2b3-253f8e595e94",
+      "slug": "space-laces-42fdcef2",
+      "title": "SPACE LACES",
+      "name": "Space Laces",
+      "source_url": "https://en.wikipedia.org/wiki/Space_Laces",
+      "extract": "Ian Slider, better known by his stage name Space Laces, is an American electronic musician and DJ. Slider is known for his work in bass music and his releases through British record label Never Say Die Records. Slider was a frequent collaborator of Canadian dubstep producer Excision in the 2010s, including on the dubstep group Destroid. Slider first produced music under the alias cornandbeans, which he allegedly abandoned in 2008.",
+      "en": {
+        "kicker": "American electronic musician and DJ · bass music",
+        "who": "Ian Slider, better known by his stage name Space Laces, is an American electronic musician and DJ. Slider is known for his work in bass music and his releases through British record label Never Say Die Records. Slider was a frequent collaborator of Canadian dubstep producer Excision in the 2010s.",
+        "facts": [
+          "Ian Slider, better known by his stage name Space Laces, is an American electronic musician and DJ.",
+          "Slider is known for his work in bass music and his releases through British record label Never Say Die Records."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer elektronischer musiker und DJ · bass music",
+        "who": "Ian Slider, besser bekannt unter dem künstlernamen Space Laces, ist ein amerikanischer elektronischer musiker und DJ. Slider ist für seine arbeit im bereich bass music und seine veröffentlichungen beim britischen label Never Say Die Records bekannt. In den 2010er-jahren arbeitete er häufig mit dem kanadischen dubstep-produzenten Excision zusammen.",
+        "facts": [
+          "Ian Slider, besser bekannt unter dem künstlernamen Space Laces, ist ein amerikanischer elektronischer musiker und DJ.",
+          "Slider ist für seine arbeit im bereich bass music und seine veröffentlichungen beim britischen label Never Say Die Records bekannt."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikan elektronik müzisyen ve DJ · bass music",
+        "who": "Ian Slider, sahne adı Space Laces olarak bilinen, amerikalı bir elektronik müzisyen ve DJ'dir. Slider, bass music alanındaki çalışmalarıyla ve İngiliz plak şirketi Never Say Die Records'taki yayınlarıyla tanınır. 2010'larda kanadalı dubstep yapımcısı Excision ile sık sık birlikte çalıştı.",
+        "facts": [
+          "Ian Slider, sahne adı Space Laces olarak bilinen, amerikalı bir elektronik müzisyen ve DJ'dir.",
+          "Slider, bass music alanındaki çalışmalarıyla ve İngiliz plak şirketi Never Say Die Records ile yaptığı yayınlarla tanınır."
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "city": "washington",
+  "day": "2026-11-15",
+  "nights": [
+    {
+      "id": "6ca5f1d9-2965-4f12-a394-8cdc48549567",
+      "slug": "national-symphony-orchestra-serenades-and-simple-479d24f9",
+      "title": "National Symphony Orchestra: Serenades & Simple Songs",
+      "name": "National Symphony Orchestra",
+      "source_url": "https://en.wikipedia.org/wiki/National_Symphony_Orchestra",
+      "extract": "The National Symphony Orchestra (NSO) is an American symphony orchestra based in Washington, D.C. Founded in 1930 by cellist Hans Kindler, its principal performing venue is the John F. Kennedy Center for the Performing Arts.",
+      "en": {
+        "kicker": "american symphony orchestra · washington, d.c.",
+        "who": "the National Symphony Orchestra was founded in 1930 by cellist Hans Kindler. its principal performing venue is the Kennedy Center.",
+        "facts": [
+          "The National Symphony Orchestra (NSO) is an American symphony orchestra based in Washington, D.C.",
+          "Founded in 1930 by cellist Hans Kindler, its principal performing venue is the John F. kennedy Center for the Performing Arts."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanisches sinfonieorchester · washington, d.c.",
+        "who": "das National Symphony Orchestra wurde 1930 vom cellisten Hans Kindler gegründet. sein wichtigster auftrittsort ist das Kennedy Center.",
+        "facts": [
+          "Das National Symphony Orchestra (NSO) ist ein amerikanisches Sinfonieorchester mit Sitz in Washington, D.C.",
+          "Gegründet 1930 von dem Cellisten Hans Kindler, hat es als wichtigsten Veranstaltungsort das John F. Kennedy Center for the Performing Arts."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikan senfoni orkestrası · washington, d.c.",
+        "who": "orkestra 1930'da çellist Hans Kindler tarafından kuruldu. ana konser mekânı Kennedy Center'dır.",
+        "facts": [
+          "National Symphony Orchestra (NSO), Washington, D.C.'de merkezli bir amerikan senfoni orkestrasıdır.",
+          "1930'da çellist Hans Kindler tarafından kurulan orkestranın ana konser mekânı John F. Kennedy Center for the Performing Arts'tır."
+        ]
+      }
+    },
+    {
+      "id": "a2ff291d-de64-426b-afd1-184a4d32257d",
+      "slug": "national-symphony-orchestra-the-nutcracker-and-c-b64bb792",
+      "title": "National Symphony Orchestra: The Nutcracker & Cinderella",
+      "name": "National Symphony Orchestra",
+      "source_url": "https://en.wikipedia.org/wiki/National_Symphony_Orchestra",
+      "extract": "The National Symphony Orchestra (NSO) is an American symphony orchestra based in Washington, D.C. Founded in 1930 by cellist Hans Kindler, its principal performing venue is the John F. Kennedy Center for the Performing Arts.",
+      "en": {
+        "kicker": "american symphony orchestra · washington, d.c.",
+        "who": "the National Symphony Orchestra was founded in 1930 by cellist Hans Kindler. its principal performing venue is the Kennedy Center.",
+        "facts": [
+          "The National Symphony Orchestra (NSO) is an American symphony orchestra based in Washington, D.C.",
+          "Founded in 1930 by cellist Hans Kindler, its principal performing venue is the John F. Kennedy Center for the Performing Arts."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanisches sinfonieorchester · washington, d.c.",
+        "who": "das National Symphony Orchestra wurde 1930 vom cellisten Hans Kindler gegründet. sein wichtigster auftrittsort ist das Kennedy Center.",
+        "facts": [
+          "Das National Symphony Orchestra (NSO) ist ein amerikanisches Sinfonieorchester mit Sitz in Washington, D.C.",
+          "Gegründet 1930 von dem Cellisten Hans Kindler, hat es als wichtigsten Veranstaltungsort das John F. Kennedy Center for the Performing Arts."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikan senfoni orkestrası · washington, d.c.",
+        "who": "orkestra 1930'da çellist Hans Kindler tarafından kuruldu. ana konser mekânı Kennedy Center'dır.",
+        "facts": [
+          "National Symphony Orchestra (NSO), Washington, D.C.'de merkezli bir amerikan senfoni orkestrasıdır.",
+          "1930'da çellist Hans Kindler tarafından kurulan orkestranın ana konser mekânı John F. Kennedy Center for the Performing Arts'tır."
+        ]
+      }
+    },
+    {
+      "id": "8f17bef0-25a7-4ecb-9983-b81cbc8f58d5",
+      "slug": "eric-prydz-f0495aac",
+      "title": "Eric Prydz",
+      "name": "Eric Prydz",
+      "source_url": "https://en.wikipedia.org/wiki/Eric_Prydz",
+      "extract": "Eric Sheridan Prydz, also known by his many aliases including Pryda and Cirez D, is a Swedish DJ and record producer. He rose to prominence with his 2004 hit single \"Call on Me\", and saw continued chart success with \"Proper Education\" in 2007, \"Pjanoo\" in 2008, and \"Opus\" in 2015. In 2016, he released his debut studio album, Opus.",
+      "en": {
+        "kicker": "swedish dj and record producer · debut album 2016",
+        "who": "Eric Prydz is a swedish dj and record producer who also records under aliases such as Pryda and Cirez D. his debut studio album, Opus, was released in 2016.",
+        "facts": [
+          "Eric Sheridan Prydz, also known by his many aliases including Pryda and Cirez D, is a Swedish DJ and record producer.",
+          "He rose to prominence with his 2004 hit single \"Call on Me\", and saw continued chart success with \"Proper Education\" in 2007, \"Pjanoo\" in 2008, and \"Opus\" in 2015."
+        ]
+      },
+      "de": {
+        "kicker": "schwedischer dj und produzent · debütalbum 2016",
+        "who": "Eric Prydz ist ein schwedischer dj und musikproduzent, der auch unter aliassen wie Pryda und Cirez D auftritt. sein debütalbum Opus erschien 2016.",
+        "facts": [
+          "Eric Sheridan Prydz ist ein schwedischer DJ und Musikproduzent, der auch unter zahlreichen Aliassen wie Pryda und Cirez D bekannt ist.",
+          "Er wurde mit seinem Hit \"Call on Me\" aus dem Jahr 2004 bekannt, danach folgten Chart-Erfolge mit \"Proper Education\" (2007), \"Pjanoo\" (2008) und \"Opus\" (2015)."
+        ]
+      },
+      "tr": {
+        "kicker": "isveçli dj ve yapımcı · 2016 debut albümü",
+        "who": "Eric Prydz isveçli bir dj ve plak yapımcısıdır. Pryda ve Cirez D gibi pek çok takma adla da üretim yapar. ilk stüdyo albümü Opus 2016'da yayımlandı.",
+        "facts": [
+          "Eric Sheridan Prydz, Pryda ve Cirez D gibi pek çok takma adıyla da bilinen, isveçli bir DJ ve plak yapımcısıdır.",
+          "2004 yılındaki hiti \"Call on Me\" ile öne çıktı; ardından \"Proper Education\" (2007), \"Pjanoo\" (2008) ve \"Opus\" (2015) ile listelerde başarı kazanmaya devam etti."
+        ]
+      }
+    },
+    {
+      "id": "cf3ffd04-2813-4521-accc-33150ede2e30",
+      "slug": "liana-flores-78fad7c5",
+      "title": "Liana Flores",
+      "name": "Liana Flores",
+      "source_url": "https://en.wikipedia.org/wiki/Liana_Flores",
+      "extract": "Liana Flores is a British-Brazilian singer-songwriter and guitarist. After independently releasing two extended plays The Water's Fine! (2018) and Recently (2019), her debut studio album Flower of the Soul was released under Verve and Fiction in June 2024.",
+      "en": {
+        "kicker": "british-brazilian singer-songwriter · debut album 2024",
+        "who": "Liana Flores is a british-brazilian singer-songwriter and guitarist. she first released two EPs independently, and her debut album, Flower of the Soul, came out in June 2024.",
+        "facts": [
+          "Liana Flores is a British-Brazilian singer-songwriter and guitarist.",
+          "Her debut studio album Flower of the Soul was released under Verve and Fiction in June 2024."
+        ]
+      },
+      "de": {
+        "kicker": "britisch-brasilianische singer-songwriterin · debütalbum 2024",
+        "who": "Liana Flores ist eine britisch-brasilianische singer-songwriterin und gitarristin. zuvor veröffentlichte sie zwei eps unabhängig, bevor ihr debütalbum Flower of the Soul im juni 2024 erschien.",
+        "facts": [
+          "Liana Flores ist eine britisch-brasilianische Singer-Songwriterin und Gitarristin.",
+          "Ihr Debütalbum Flower of the Soul erschien im Juni 2024 bei Verve und Fiction."
+        ]
+      },
+      "tr": {
+        "kicker": "britanyalı-brezilyalı şarkıcı-söz yazarı · 2024 debut albümü",
+        "who": "Liana Flores, britanyalı-brezilyalı bir şarkıcı, söz yazarı ve gitaristtir. önce iki mini albümü bağımsız olarak yayımladı, ardından debut stüdyo albümü Flower of the Soul haziran 2024'te Verve ve Fiction etiketiyle çıktı.",
+        "facts": [
+          "Liana Flores, britanyalı-brezilyalı bir şarkıcı-söz yazarı ve gitaristtir.",
+          "Debut stüdyo albümü Flower of the Soul, haziran 2024'te Verve ve Fiction etiketiyle yayımlandı."
+        ]
+      }
+    }
+  ]
+}

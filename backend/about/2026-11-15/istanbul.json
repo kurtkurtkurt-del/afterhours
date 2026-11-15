@@ -1,0 +1,70 @@
+{
+  "city": "istanbul",
+  "day": "2026-11-15",
+  "nights": [
+    {
+      "id": "7f2076a6-e806-4915-b69d-d73a6356d085",
+      "slug": "ufuk-beydemir-5e061ad5",
+      "title": "Ufuk Beydemir",
+      "name": "Ufuk Beydemir",
+      "source_url": "https://en.wikipedia.org/wiki/Ufuk_Beydemir",
+      "extract": "Ufuk Beydemir is a Turkish singer, songwriter and tennis coach. He became known in Turkey with the release of his song \"Ay Tenli Kadın\". In 2018, Beydemir ranked third on the list of nominees for \"Musician of the Year Award\" at the GQ Men of the Year awards by GQ Türkiye. Beydemir, who released his first album Sevda Gibi in 2018, was given the \"Most Powerful Newcomer-Singer\" award at the 2019 PowerTürk Music Awards.",
+      "en": {
+        "kicker": "singer and songwriter · Turkey",
+        "who": "Ufuk Beydemir is a Turkish singer, songwriter and tennis coach. He became known in Turkey with his song Ay Tenli Kadın. In 2018 he was among the nominees for the Musician of the Year Award at the GQ Men of the Year awards.",
+        "facts": [
+          "He became known in Turkey with the release of his song \"Ay Tenli Kadın\".",
+          "In 2018, Beydemir ranked third on the list of nominees for \"Musician of the Year Award\" at the GQ Men of the Year awards by GQ Türkiye."
+        ]
+      },
+      "de": {
+        "kicker": "Sänger und Songwriter · Türkei",
+        "who": "Ufuk Beydemir ist ein türkischer Sänger, Songwriter und Tennistrainer. In der Türkei wurde er mit seinem Lied Ay Tenli Kadın bekannt. 2018 gehörte er zu den Nominierten für den Musician of the Year Award bei den GQ Men of the Year Awards.",
+        "facts": [
+          "Er wurde in der Türkei mit der Veröffentlichung seines Liedes „Ay Tenli Kadın“ bekannt.",
+          "2018 belegte Beydemir bei den GQ Men of the Year Awards von GQ Türkiye den dritten Platz auf der Liste der Nominierten für den „Musician of the Year Award“."
+        ]
+      },
+      "tr": {
+        "kicker": "şarkıcı ve söz yazarı · Türkiye",
+        "who": "Ufuk Beydemir bir Türk şarkıcı, söz yazarı ve tenis koçudur. Şarkısı Ay Tenli Kadın ile Türkiye'de tanınmaya başladı. 2018'de GQ Men of the Year ödüllerinde Musician of the Year Award için aday olanlar arasındaydı.",
+        "facts": [
+          "Şarkısı \"Ay Tenli Kadın\" yayımlanınca Türkiye'de tanınmaya başladı.",
+          "2018'de Beydemir, GQ Türkiye'nin GQ Men of the Year ödüllerinde \"Musician of the Year Award\" için aday listesinde üçüncü sırada yer aldı."
+        ]
+      }
+    },
+    {
+      "id": "66e808c8-8580-4ebe-bc69-5a7f57c44007",
+      "slug": "bengu-b6a83256",
+      "title": "Bengü",
+      "name": "Bengü",
+      "source_url": "https://en.wikipedia.org/wiki/Beng%C3%BC",
+      "extract": "Bengü Erden is a Turkish singer. She became first familiar with music during her time at the İzmir State Symphony Orchestra. In İzmir, she was cast in a leading role in the musical \"Oliver Twist\". She later took singing lessons with İzmir State Conservatory's general manager, Müfit Bayraş. In 1998, by performing a song by Müfit Bayşara, she ranked second at the competition Pop Show '98, organized by Mü-Yap and Show TV. She then studied music at Istanbul Academy. She worked as a backing vocalist for Kenan Doğulu for three years. In 2007, Bengü became the winner of Show TV's singing competition Bak Kim Dans Ediyor. Her first album, Hoş Geldin, was produced by Kenan Doğulu and Ozan Doğulu",
+      "en": {
+        "kicker": "singer · Turkey",
+        "who": "Bengü Erden is a Turkish singer. She first became familiar with music during her time at the İzmir State Symphony Orchestra. After two years she released her third studio album, Taktik.",
+        "facts": [
+          "Her first album, Hoş Geldin, was produced by Kenan Doğulu and Ozan Doğulu and released in July 2000.",
+          "In 2007, Bengü became the winner of Show TV's singing competition Bak Kim Dans Ediyor."
+        ]
+      },
+      "de": {
+        "kicker": "Sängerin · Türkei",
+        "who": "Bengü Erden ist eine türkische Sängerin. Sie lernte die Musik während ihrer Zeit beim İzmir State Symphony Orchestra kennen. Nach zwei Jahren veröffentlichte sie ihr drittes Studioalbum Taktik.",
+        "facts": [
+          "Ihr erstes Album Hoş Geldin wurde von Kenan Doğulu und Ozan Doğulu produziert und im Juli 2000 veröffentlicht.",
+          "2007 wurde Bengü Gewinnerin des Gesangswettbewerbs Bak Kim Dans Ediyor von Show TV."
+        ]
+      },
+      "tr": {
+        "kicker": "şarkıcı · Türkiye",
+        "who": "Bengü Erden bir Türk şarkıcıdır. Müzikle ilk olarak İzmir Devlet Senfoni Orkestrası'nda çalışırken tanıştı. İki yıl sonra üçüncü stüdyo albümü Taktik'i yayımladı.",
+        "facts": [
+          "İlk albümü Hoş Geldin, Kenan Doğulu ve Ozan Doğulu tarafından üretildi ve Temmuz 2000'de yayımlandı.",
+          "2007'de Bengü, Show TV'nin şarkı yarışması Bak Kim Dans Ediyor'un birincisi oldu."
+        ]
+      }
+    }
+  ]
+}

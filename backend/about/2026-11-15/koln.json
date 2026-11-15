@@ -1,0 +1,38 @@
+{
+  "city": "koln",
+  "day": "2026-11-15",
+  "nights": [
+    {
+      "id": "c721f8a2-277a-4b32-b0c9-7b2aed12129e",
+      "slug": "cameron-whitcomb-the-kingdom-of-fear-eu-uk-tour-7adac890",
+      "title": "Cameron Whitcomb - The Kingdom Of Fear EU/UK Tour 2027",
+      "name": "Cameron Whitcomb",
+      "source_url": "https://en.wikipedia.org/wiki/Cameron_Whitcomb",
+      "extract": "Cameron Donald Whitcomb is a Canadian singer and songwriter from Nanaimo, British Columbia. He competed on season 20 of reality television show American Idol. He is currently signed to Atlantic Records. Whitcomb has charted multiple songs internationally, including \"Quitter\", \"Medusa\", \"Options\", and \"Kingdom of Fear\". His debut album The Hard Way was released on September 26, 2025.",
+      "en": {
+        "kicker": "Canadian singer and songwriter · Nanaimo, British Columbia",
+        "who": "cameron whitcomb is a singer and songwriter from Nanaimo, British Columbia. he competed on season 20 of American Idol and is currently signed to Atlantic Records. his debut album The Hard Way was released on september 26, 2025.",
+        "facts": [
+          "Cameron Donald Whitcomb is a Canadian singer and songwriter from Nanaimo, British Columbia.",
+          "He competed on season 20 of reality television show American Idol."
+        ]
+      },
+      "de": {
+        "kicker": "kanadischer singer-songwriter · Nanaimo, British Columbia",
+        "who": "cameron whitcomb ist ein singer und songwriter aus Nanaimo, British Columbia. er trat in der 20. staffel von American Idol auf und ist derzeit bei Atlantic Records unter vertrag. sein debütalbum The Hard Way erschien am 26. september 2025.",
+        "facts": [
+          "Cameron Donald Whitcomb ist ein kanadischer Singer und Songwriter aus Nanaimo, British Columbia.",
+          "Er trat in der 20. Staffel der Reality-Show American Idol auf."
+        ]
+      },
+      "tr": {
+        "kicker": "kanadalı şarkıcı ve söz yazarı · Nanaimo, British Columbia",
+        "who": "cameron whitcomb, Nanaimo, British Columbia'dan bir şarkıcı ve söz yazarıdır. American Idol'un 20. sezonunda yarıştı ve şu anda Atlantic Records ile sözleşmeli. debut albümü The Hard Way 26 eylül 2025'te yayımlandı.",
+        "facts": [
+          "Cameron Donald Whitcomb, Nanaimo, British Columbia'dan gelen kanadalı bir şarkıcı ve söz yazarıdır.",
+          "Reality televizyon programı American Idol'un 20. sezonunda yarıştı."
+        ]
+      }
+    }
+  ]
+}

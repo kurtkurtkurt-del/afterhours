@@ -1,0 +1,38 @@
+{
+  "city": "brussel",
+  "day": "2026-11-15",
+  "nights": [
+    {
+      "id": "c4958ebd-61f1-451b-a957-32b3d8d5e49f",
+      "slug": "beth-hart-4b539ce9",
+      "title": "Beth Hart",
+      "name": "Beth Hart",
+      "source_url": "https://en.wikipedia.org/wiki/Beth_Hart",
+      "extract": "Beth Hart is an American musician from Los Angeles, California. She rose to fame with the release of her 1999 single \"L.A. Song \" from her second album Screamin' for My Supper. The single was a number one hit in New Zealand, as well as reaching the top five of the US Adult Contemporary and Top 10 on the Billboard Adult Top 40 charts.",
+      "en": {
+        "kicker": "American musician · Los Angeles, California",
+        "who": "Beth Hart is an American musician from Los Angeles, California. she rose to fame with the 1999 single \"L.A. Song\" from her second album Screamin' for My Supper. the single was a number one hit in New Zealand.",
+        "facts": [
+          "Beth Hart is an American musician from Los Angeles, California.",
+          "she rose to fame with the release of her 1999 single \"L.A. Song\" from her second album Screamin' for My Supper."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische Musikerin · Los Angeles, Kalifornien",
+        "who": "Beth Hart ist eine amerikanische Musikerin aus Los Angeles, Kalifornien. sie wurde mit der single „L.A. Song“ von 1999 bekannt, die von ihrem zweiten album Screamin' for My Supper stammt. die single war ein nummer-eins-hit in Neuseeland.",
+        "facts": [
+          "Beth Hart ist eine amerikanische Musikerin aus Los Angeles, Kalifornien.",
+          "sie wurde mit der single „L.A. Song“ von 1999 bekannt, die von ihrem zweiten album Screamin' for My Supper stammt."
+        ]
+      },
+      "tr": {
+        "kicker": "Amerikalı müzisyen · Los Angeles, California",
+        "who": "Beth Hart, Los Angeles, California'dan Amerikalı bir müzisyendir. 1999 tarihli „L.A. Song“ single'ıyla ünlendi; bu single, ikinci albümü Screamin' for My Supper'dan geliyordu. single, Yeni Zelanda'da bir numara olan bir hit oldu.",
+        "facts": [
+          "Beth Hart, Los Angeles, California'dan Amerikalı bir müzisyendir.",
+          "1999 tarihli „L.A. Song“ single'ıyla ünlendi; bu single, ikinci albümü Screamin' for My Supper'dan geliyordu."
+        ]
+      }
+    }
+  ]
+}

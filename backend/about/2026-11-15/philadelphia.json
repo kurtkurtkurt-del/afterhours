@@ -1,0 +1,134 @@
+{
+  "city": "philadelphia",
+  "day": "2026-11-15",
+  "nights": [
+    {
+      "id": "252cb17a-849e-40e5-b93c-a642dddc11de",
+      "slug": "the-pineapple-thief-00259cd5",
+      "title": "The Pineapple Thief",
+      "name": "The Pineapple Thief",
+      "source_url": "https://en.wikipedia.org/wiki/The_Pineapple_Thief",
+      "extract": "The Pineapple Thief are an English progressive rock band founded in 1999 by Bruce Soord in Yeovil, Somerset. As of June 2024, the group consists of Soord on vocals, guitars, and keyboards, Jon Sykes on bass, Steve Kitch on keyboards, and Gavin Harrison on drums. They have released 16 studio albums, 6 EPs, and several live and compilation albums.",
+      "en": {
+        "kicker": "english progressive rock band · founded 1999 in yeovil",
+        "who": "The Pineapple Thief is led by Bruce Soord, who sings and plays guitar and keyboards. As of June 2024, the lineup also includes Jon Sykes on bass, Steve Kitch on keyboards, and Gavin Harrison on drums.",
+        "facts": [
+          "The Pineapple Thief are an English progressive rock band founded in 1999 by Bruce Soord in Yeovil, Somerset.",
+          "They have released 16 studio albums, 6 EPs, and several live and compilation albums."
+        ]
+      },
+      "de": {
+        "kicker": "englische progressive-rock-band · gegründet 1999 in yeovil",
+        "who": "The Pineapple Thief wird von Bruce Soord angeführt, der singt und Gitarre und Keyboard spielt. Seit Juni 2024 gehören außerdem Jon Sykes am Bass, Steve Kitch am Keyboard und Gavin Harrison am Schlagzeug zur Besetzung.",
+        "facts": [
+          "The Pineapple Thief ist eine englische Progressive-Rock-Band, die 1999 von Bruce Soord in Yeovil, Somerset, gegründet wurde.",
+          "Sie haben 16 Studioalben, 6 EPs sowie mehrere Live- und Compilation-Alben veröffentlicht."
+        ]
+      },
+      "tr": {
+        "kicker": "İngiliz progresif rock grubu · 1999, yeovil",
+        "who": "Grubun başında Bruce Soord bulunuyor; vokal, gitar ve klavye çalıyor. Haziran 2024 itibarıyla kadroda ayrıca basta Jon Sykes, klavyede Steve Kitch ve davulda Gavin Harrison yer alıyor.",
+        "facts": [
+          "The Pineapple Thief, 1999 yılında Bruce Soord tarafından Yeovil, Somerset'te kurulmuş İngiliz bir progresif rock grubudur.",
+          "Grup 16 stüdyo albümü, 6 EP ve birkaç canlı ve derleme albüm yayımladı."
+        ]
+      }
+    },
+    {
+      "id": "4e9a13a7-c092-41f8-bf2a-0ba5d9ca31a1",
+      "slug": "steve-aoki-646d4fb2",
+      "title": "Steve Aoki",
+      "name": "Steve Aoki",
+      "source_url": "https://en.wikipedia.org/wiki/Steve_Aoki",
+      "extract": "Steven Hiroyuki Aoki is an American DJ and record producer. In 2012, Pollstar designated Aoki as the highest-grossing electronic dance music artist in North America from tours. In 2024, Gold House recognized him as one of the Most Impactful Asians. He has collaborated with artists such as will.i.am, Afrojack, AJR, LMFAO, Tini, Linkin Park, Agnez Mo, Iggy Azalea, Grandson, Lil Jon, Blink-182, Taking Back Sunday, Laidback Luke, BTS, Backstreet Boys, Vini Vici, Lauren Jauregui, and Fall Out Boy and is known for his remixes of artists such as Kid Cudi.",
+      "en": {
+        "kicker": "american dj and record producer · pollstar 2012",
+        "who": "Steve Aoki is an American DJ and record producer. He has collaborated with artists such as will.i.am, Afrojack, and Linkin Park, and is known for his remixes of artists such as Kid Cudi.",
+        "facts": [
+          "Steven Hiroyuki Aoki is an American DJ and record producer.",
+          "In 2012, Pollstar designated Aoki as the highest-grossing electronic dance music artist in North America from tours."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer DJ und produzent · pollstar 2012",
+        "who": "Steve Aoki ist ein amerikanischer DJ und Produzent. Er hat unter anderem mit will.i.am, Afrojack und Linkin Park zusammengearbeitet und ist für seine Remixe von Künstlern wie Kid Cudi bekannt.",
+        "facts": [
+          "Steven Hiroyuki Aoki ist ein amerikanischer DJ und Musikproduzent.",
+          "2012 bezeichnete Pollstar Aoki als den umsatzstärksten Electronic-Dance-Music-Künstler Nordamerikas bei Tourneen."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı DJ ve plak yapımcısı · 2012 pollstar",
+        "who": "Steve Aoki, Amerikalı bir DJ ve plak yapımcısıdır. will.i.am, Afrojack ve Linkin Park gibi sanatçılarla çalıştı ve Kid Cudi gibi sanatçıların remixleriyle tanınır.",
+        "facts": [
+          "Steven Hiroyuki Aoki, Amerikalı bir DJ ve plak yapımcısıdır.",
+          "2012'de Pollstar, Aoki'yi turnelerden elde ettiği gelirle Kuzey Amerika'nın en çok kazanan elektronik dans müziği sanatçısı olarak belirledi."
+        ]
+      }
+    },
+    {
+      "id": "33723b43-311d-4edd-a02b-cd4ea4a98a8f",
+      "slug": "the-menzingers-everything-i-ever-saw-north-ameri-40ae40ee",
+      "title": "The Menzingers: Everything I Ever Saw North American Tour",
+      "name": "The Menzingers",
+      "source_url": "https://en.wikipedia.org/wiki/The_Menzingers",
+      "extract": "The Menzingers are an American punk rock band from Scranton, Pennsylvania, formed in 2006. The band consists of Greg Barnett, Tom May, Eric Keen (bass) and Joe Godino (drums). To date, the band has released eight studio albums, with their most recent, Everything I Ever Saw, released on July 17, 2026.",
+      "en": {
+        "kicker": "american punk rock band · scranton, pennsylvania, 2006",
+        "who": "The Menzingers are a punk rock band from Scranton, Pennsylvania. The band is made up of Greg Barnett, Tom May, Eric Keen on bass, and Joe Godino on drums. Their most recent studio album is Everything I Ever Saw.",
+        "facts": [
+          "The Menzingers are an American punk rock band from Scranton, Pennsylvania, formed in 2006.",
+          "To date, the band has released eight studio albums, with their most recent, Everything I Ever Saw, released on July 17, 2026."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische punkrockband · scranton, 2006",
+        "who": "The Menzingers sind eine Punkrockband aus Scranton, Pennsylvania. Zur Band gehören Greg Barnett, Tom May, Eric Keen am Bass und Joe Godino am Schlagzeug. Ihr jüngstes Studioalbum heißt Everything I Ever Saw.",
+        "facts": [
+          "The Menzingers sind eine amerikanische Punkrockband aus Scranton, Pennsylvania, die 2006 gegründet wurde.",
+          "Bisher hat die Band acht Studioalben veröffentlicht, das jüngste, Everything I Ever Saw, erschien am 17. Juli 2026."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı punk rock grubu · scranton, 2006",
+        "who": "The Menzingers, Scranton, Pennsylvania'dan bir punk rock grubudur. Kadroda Greg Barnett, Tom May, basta Eric Keen ve davulda Joe Godino yer alıyor. En yeni stüdyo albümleri Everything I Ever Saw.",
+        "facts": [
+          "The Menzingers, 2006'da kurulmuş, Pennsylvania'nın Scranton kentinden bir Amerikan punk rock grubudur.",
+          "Bugüne kadar grup sekiz stüdyo albümü yayımladı; en yenisi Everything I Ever Saw, 17 Temmuz 2026'da çıktı."
+        ]
+      }
+    },
+    {
+      "id": "a47a93fe-f4ac-4ce0-8f10-70c8563daf27",
+      "slug": "suicide-silence-reminders-of-hell-tour-2c85598b",
+      "title": "Suicide Silence: REMINDERS OF HELL TOUR",
+      "name": "Suicide Silence",
+      "source_url": "https://en.wikipedia.org/wiki/Suicide_Silence",
+      "extract": "Suicide Silence is an American deathcore band from Riverside, California. The band was established in 2002, and has released seven studio albums, three EPs, and nineteen music videos. They were awarded the Revolver Golden God award for \"Best New Talent\" in 2009. The group currently consists of guitarists Chris Garza and Mark Heylmun, bassist Dan Kenny, vocalist Hernan \"Eddie\" Hermida and drummer Ernie Iniguez.",
+      "en": {
+        "kicker": "american deathcore band · riverside, california, 2002",
+        "who": "Suicide Silence is a deathcore band from Riverside, California. The group currently includes guitarists Chris Garza and Mark Heylmun, bassist Dan Kenny, vocalist Hernan \"Eddie\" Hermida, and drummer Ernie Iniguez.",
+        "facts": [
+          "Suicide Silence is an American deathcore band from Riverside, California.",
+          "The band was established in 2002, and has released seven studio albums, three EPs, and nineteen music videos."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische deathcore-band · riverside, 2002",
+        "who": "Suicide Silence besteht derzeit aus den Gitarristen Chris Garza und Mark Heylmun, dem Bassisten Dan Kenny, dem Sänger Hernan \"Eddie\" Hermida und dem Schlagzeuger Ernie Iniguez. Die Band kommt aus Riverside in Kalifornien.",
+        "facts": [
+          "Suicide Silence ist eine amerikanische Deathcore-Band aus Riverside, Kalifornien.",
+          "Die Band wurde 2002 gegründet und hat sieben Studioalben, drei EPs und neunzehn Musikvideos veröffentlicht."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı deathcore grubu · riverside, 2002",
+        "who": "Suicide Silence, Riverside, California'dan bir deathcore grubudur. Grubun şu anki kadrosunda gitaristler Chris Garza ve Mark Heylmun, basçı Dan Kenny, vokalist Hernan \"Eddie\" Hermida ve davulcu Ernie Iniguez yer alıyor.",
+        "facts": [
+          "Suicide Silence, Riverside, California'dan bir Amerikan deathcore grubudur.",
+          "Grup 2002'de kuruldu ve yedi stüdyo albümü, üç EP ve on dokuz müzik videosu yayımladı."
+        ]
+      }
+    }
+  ]
+}

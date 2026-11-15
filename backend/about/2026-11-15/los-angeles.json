@@ -1,0 +1,166 @@
+{
+  "city": "los-angeles",
+  "day": "2026-11-15",
+  "nights": [
+    {
+      "id": "8b3d4b72-7bd3-4ea7-be4a-b6486b00c001",
+      "slug": "natanya-bd555569",
+      "title": "Natanya",
+      "name": "Natanya",
+      "source_url": "https://en.wikipedia.org/wiki/Natanya",
+      "extract": "Natanya Morayo Popoola is an English singer-songwriter from North London. She initially gained popularity in 2022 from her single \"Foolish\" and followed it the following year with an EP, Sorrow At Sunrise. Natanya ventured into dance-pop with the Feline's Return pair of EPs in 2025, and released her mixtape, Attitude Era!, in 2026.",
+      "en": {
+        "kicker": "English singer-songwriter · North London",
+        "who": "Natanya is an English singer-songwriter from North London. her mixtape Attitude Era came out in 2026.",
+        "facts": [
+          "she initially gained popularity in 2022 from her single \"Foolish\" and followed it the following year with an EP, Sorrow At Sunrise.",
+          "Natanya ventured into dance-pop with the Feline's Return pair of EPs in 2025."
+        ]
+      },
+      "de": {
+        "kicker": "englische Singer-Songwriterin · North London",
+        "who": "Natanya ist eine englische Singer-Songwriterin aus North London. Ihr Mixtape Attitude Era erschien 2026.",
+        "facts": [
+          "Sie gewann 2022 mit ihrer Single \"Foolish\" erstmals Bekanntheit und ließ im folgenden Jahr die EP Sorrow At Sunrise folgen.",
+          "Natanya wandte sich 2025 mit dem Paar aus zwei EPs Feline's Return dem Dance-Pop zu."
+        ]
+      },
+      "tr": {
+        "kicker": "İngiliz şarkıcı-söz yazarı · Kuzey Londra",
+        "who": "Natanya, Kuzey Londra'dan İngiliz bir şarkıcı-söz yazarıdır. Mixtape'i Attitude Era 2026'da yayımlandı.",
+        "facts": [
+          "2022'de \"Foolish\" adlı tek şarkısıyla ün kazandı ve ertesi yıl Sorrow At Sunrise adlı EP'yi çıkardı.",
+          "2025'te Feline's Return adlı iki EP'den oluşan seriyle dance-pop'a yöneldi."
+        ]
+      }
+    },
+    {
+      "id": "2e160990-1fda-4987-8e0c-8674e1feaeb7",
+      "slug": "half-alive-0b9412a8",
+      "title": "half alive",
+      "name": "Half Alive",
+      "source_url": "https://en.wikipedia.org/wiki/Half_Alive_(band)",
+      "extract": "Half Alive is an American rock duo formed in Long Beach, California, in 2016. It consists of vocalist Josh Taylor and bassist J. Tyler Johnson, formerly accompanied by drummer Brett Kramer. The band began recording music in 2017, and have since released three studio albums, a compilation vinyl record, three extended plays of new material, three extended plays of live recordings, and many singles.",
+      "en": {
+        "kicker": "American rock duo · Long Beach, 2016",
+        "who": "Half Alive is an American rock duo formed in Long Beach, California, in 2016. the band has released three studio albums and many singles.",
+        "facts": [
+          "The band began recording music in 2017, and have since released three studio albums, a compilation vinyl record, three extended plays of new material, three extended plays of live recordings, and many singles.",
+          "It consists of vocalist Josh Taylor and bassist J. Tyler Johnson, formerly accompanied by drummer Brett Kramer."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanisches Rock-Duo · Long Beach, 2016",
+        "who": "Half Alive ist ein amerikanisches Rock-Duo, das 2016 in Long Beach, Kalifornien, gegründet wurde. Die Band hat drei Studioalben und zahlreiche Singles veröffentlicht.",
+        "facts": [
+          "Die Band begann 2017 mit Aufnahmen und hat seitdem drei Studioalben, ein Kompilations-Vinyl, drei EPs mit neuem Material, drei EPs mit Live-Aufnahmen und zahlreiche Singles veröffentlicht.",
+          "Sie besteht aus Sänger Josh Taylor und Bassist J. Tyler Johnson und wurde früher vom Schlagzeuger Brett Kramer begleitet."
+        ]
+      },
+      "tr": {
+        "kicker": "Amerikalı rock ikilisi · Long Beach, 2016",
+        "who": "Half Alive, 2016'da Long Beach, Kaliforniya'da kurulan Amerikalı bir rock ikilisidir. Grup üç stüdyo albümü ve birçok single yayımladı.",
+        "facts": [
+          "Grup 2017'de kayıt yapmaya başladı ve o zamandan beri üç stüdyo albümü, bir derleme plak, üç yeni materyal EP'si, üç canlı kayıt EP'si ve birçok single yayımladı.",
+          "Ekip; vokalist Josh Taylor ve basçı J. Tyler Johnson'dan oluşuyor, daha önce davulcu Brett Kramer eşlik ediyordu."
+        ]
+      }
+    },
+    {
+      "id": "31d2e7e5-83ef-4e23-a039-f9bcf426f1e8",
+      "slug": "scott-helman-060087b6",
+      "title": "Scott Helman",
+      "name": "Scott Helman",
+      "source_url": "https://en.wikipedia.org/wiki/Scott_Helman",
+      "extract": "Scott Helman is a Canadian singer-songwriter from Toronto. He released his debut EP Augusta in 2014, followed by Spotify Sessions in 2016 and Hang Ups in 2018. His album Hôtel de Ville was released in 2017 by Warner Music Canada.",
+      "en": {
+        "kicker": "Canadian singer-songwriter · Toronto",
+        "who": "Scott Helman is a Canadian singer-songwriter from Toronto. he has released music since his debut EP in 2014.",
+        "facts": [
+          "He released his debut EP Augusta in 2014, followed by Spotify Sessions in 2016 and Hang Ups in 2018.",
+          "His album Hôtel de Ville was released in 2017 by Warner Music Canada."
+        ]
+      },
+      "de": {
+        "kicker": "kanadischer Singer-Songwriter · Toronto",
+        "who": "Scott Helman ist ein kanadischer Singer-Songwriter aus Toronto. Seit seiner Debüt-EP im Jahr 2014 veröffentlicht er Musik.",
+        "facts": [
+          "Er veröffentlichte seine Debüt-EP Augusta 2014, gefolgt von Spotify Sessions 2016 und Hang Ups 2018.",
+          "Sein Album Hôtel de Ville erschien 2017 bei Warner Music Canada."
+        ]
+      },
+      "tr": {
+        "kicker": "Kanadalı şarkıcı-söz yazarı · Toronto",
+        "who": "Scott Helman, Toronto'dan Kanadalı bir şarkıcı-söz yazarıdır. 2014'teki ilk EP'si Augusta'dan bu yana müzik yayımlıyor.",
+        "facts": [
+          "2014'te ilk EP'si Augusta'yı yayımladı, ardından 2016'da Spotify Sessions ve 2018'de Hang Ups geldi.",
+          "Hôtel de Ville adlı albümü 2017'de Warner Music Canada tarafından yayımlandı."
+        ]
+      }
+    },
+    {
+      "id": "3b79a700-8751-4168-998f-031d94b172fc",
+      "slug": "static-dress-injury-episode-usa-tour-3899ffb8",
+      "title": "Static Dress - Injury Episode USA Tour",
+      "name": "Static Dress",
+      "source_url": "https://en.wikipedia.org/wiki/Static_Dress",
+      "extract": "Static Dress are an English rock band from Leeds, West Yorkshire. Formed in 2018, Static Dress are a concept band with their material following a continuous story. They currently consist of lead vocalist Olli Appleyard, drummer Sam Ogden, guitarist Vincent Weight and bassist George Holding. They have released two full-length studio albums, three EPs and various standalone singles, as well as a comic book and three video games.",
+      "en": {
+        "kicker": "English rock band · Leeds, 2018",
+        "who": "Static Dress are an English rock band from Leeds, West Yorkshire. the band currently consists of lead vocalist Olli Appleyard, drummer Sam Ogden, guitarist Vincent Weight and bassist George Holding.",
+        "facts": [
+          "Formed in 2018, Static Dress are a concept band with their material following a continuous story.",
+          "They have released two full-length studio albums, three EPs and various standalone singles, as well as a comic book and three video games."
+        ]
+      },
+      "de": {
+        "kicker": "englische Rockband · Leeds, 2018",
+        "who": "Static Dress sind eine englische Rockband aus Leeds, West Yorkshire. Die aktuelle Besetzung besteht aus Leadsänger Olli Appleyard, Schlagzeuger Sam Ogden, Gitarrist Vincent Weight und Bassist George Holding.",
+        "facts": [
+          "2018 gegründet, ist Static Dress eine Konzeptband, deren Material einer durchgehenden Geschichte folgt.",
+          "Sie haben zwei Studioalben in voller Länge, drei EPs und verschiedene eigenständige Singles sowie ein Comicbuch und drei Videospiele veröffentlicht."
+        ]
+      },
+      "tr": {
+        "kicker": "İngiliz rock grubu · Leeds, 2018",
+        "who": "Static Dress, Leeds, West Yorkshire'dan İngiliz bir rock grubudur. Güncel kadro; vokalist Olli Appleyard, davulcu Sam Ogden, gitarist Vincent Weight ve basçı George Holding'den oluşuyor.",
+        "facts": [
+          "2018'de kurulan Static Dress, materyali kesintisiz bir hikayeyi izleyen bir konsept gruptur.",
+          "İki tam uzunluklu stüdyo albümü, üç EP, çeşitli bağımsız single'lar, bir çizgi roman ve üç video oyunu yayımladılar."
+        ]
+      }
+    },
+    {
+      "id": "87e98e72-72fb-4bd3-a3f9-557181c6c3c7",
+      "slug": "6lack-cde6039b",
+      "title": "6LACK",
+      "name": "6lack",
+      "source_url": "https://en.wikipedia.org/wiki/6lack",
+      "extract": "Ricardo Valdez Valentine Jr., known professionally as 6lack, is an American R&B singer, songwriter and rapper. Born in Baltimore, Maryland, and raised in Atlanta, Georgia, he gained recognition following the release of his 2016 single \"Prblms\", which marked his first entry on the Billboard Hot 100. He signed with Love Renaissance, an imprint of Interscope Records to release his debut studio album, Free 6lack (2016), which was nominated for Best Urban Contemporary Album at the 60th Annual Grammy Awards and received platinum certification by the Recording Industry Association of America (RIAA).",
+      "en": {
+        "kicker": "American R&B singer · Baltimore, Maryland",
+        "who": "6lack is the professional name of Ricardo Valdez Valentine Jr., an American R&B singer, songwriter and rapper. he was born in Baltimore, Maryland, and raised in Atlanta, Georgia.",
+        "facts": [
+          "he gained recognition following the release of his 2016 single \"Prblms\", which marked his first entry on the Billboard Hot 100.",
+          "He signed with Love Renaissance, an imprint of Interscope Records to release his debut studio album, Free 6lack (2016), which was nominated for Best Urban Contemporary Album at the 60th Annual Grammy Awards and received platinum certification by the Recording Industry Association of America (RIAA)."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer R&B-Sänger · Baltimore, Maryland",
+        "who": "6lack ist der Künstlername von Ricardo Valdez Valentine Jr., einem amerikanischen R&B-Sänger, Songwriter und Rapper. Er wurde in Baltimore, Maryland, geboren und wuchs in Atlanta, Georgia, auf.",
+        "facts": [
+          "Er erlangte Bekanntheit mit der Veröffentlichung seiner Single \"Prblms\" aus dem Jahr 2016, die seinen ersten Eintrag in die Billboard Hot 100 markierte.",
+          "Er unterschrieb bei Love Renaissance, einem Imprint von Interscope Records, um sein Debütstudioalbum Free 6lack (2016) zu veröffentlichen, das für das beste Urban-Contemporary-Album bei den 60. Annual Grammy Awards nominiert war und eine Platin-Zertifizierung der Recording Industry Association of America (RIAA) erhielt."
+        ]
+      },
+      "tr": {
+        "kicker": "Amerikalı R&B şarkıcısı · Baltimore, Maryland",
+        "who": "6lack, Ricardo Valdez Valentine Jr. adıyla bilinen Amerikalı bir R&B şarkıcısı, söz yazarı ve rapçidir. Baltimore, Maryland'de doğdu ve Atlanta, Georgia'da büyüdü.",
+        "facts": [
+          "2016 single'ı \"Prblms\" ile ün kazandı; bu şarkı Billboard Hot 100'e ilk girişini yaptı.",
+          "Interscope Records'un bir imprint'i olan Love Renaissance ile anlaşarak debut stüdyo albümü Free 6lack'i (2016) çıkardı; albüm 60. Annual Grammy Awards'ta En İyi Urban Contemporary Albüm adayı oldu ve Amerika Kayıt Endüstrisi Derneği'nden (RIAA) platin sertifika aldı."
+        ]
+      }
+    }
+  ]
+}

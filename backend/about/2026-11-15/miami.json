@@ -1,0 +1,38 @@
+{
+  "city": "miami",
+  "day": "2026-11-15",
+  "nights": [
+    {
+      "id": "0519b9a3-d799-448f-ba76-b76f29461616",
+      "slug": "dom-dolla-88db5fba",
+      "title": "Dom Dolla",
+      "name": "Dom Dolla",
+      "source_url": "https://en.wikipedia.org/wiki/Dom_Dolla",
+      "extract": "Dominic Louis Matheson, better known by his stage name Dom Dolla, is an Australian tech house producer, DJ, songwriter and remixer, acclaimed for his special house music style and high-profile collaborations. He has been nominated eight times for the ARIA Award for Best Dance Release; Including: in 2017 for \"Be Randy\", with Torren Foot and in 2019, for the song \"Take It\". He won the award at the 2020 ARIA Music Awards for the song \"San Frandisco\" and in 2023 for the song \"Rhyme Dust\".",
+      "en": {
+        "kicker": "tech house producer · aria winner, 2020 and 2023",
+        "who": "dom dolla is an australian tech house producer, dj, songwriter and remixer. the name is the stage name of dominic louis matheson. he is known for a special house music style and high-profile collaborations.",
+        "facts": [
+          "Dominic Louis Matheson, better known by his stage name Dom Dolla, is an Australian tech house producer, DJ, songwriter and remixer, acclaimed for his special house music style and high-profile collaborations.",
+          "He won the award at the 2020 ARIA Music Awards for the song \"San Frandisco\" and in 2023 for the song \"Rhyme Dust\"."
+        ]
+      },
+      "de": {
+        "kicker": "tech-house-produzent · aria-gewinner, 2020 und 2023",
+        "who": "dom dolla ist ein australischer tech-house-produzent, dj, songwriter und remixer. der name ist das künstlerpseudonym von dominic louis matheson. er ist bekannt für einen besonderen house-musikstil und hochkarätige kollaborationen.",
+        "facts": [
+          "Dominic Louis Matheson, besser bekannt unter seinem Künstlernamen Dom Dolla, ist ein australischer Tech-House-Produzent, DJ, Songwriter und Remixer, der für seinen besonderen House-Musikstil und hochkarätige Kollaborationen gefeiert wird.",
+          "Er gewann die Auszeichnung bei den ARIA Music Awards 2020 für den Song \"San Frandisco\" und 2023 für den Song \"Rhyme Dust\"."
+        ]
+      },
+      "tr": {
+        "kicker": "tech house yapımcısı · aria ödülü, 2020 ve 2023",
+        "who": "dom dolla avustralyalı bir tech house yapımcısı, dj, söz yazarı ve remixer'dır. sahne adı, dominic louis matheson'a aittir. özgün bir house müzik tarzı ve üst düzey işbirlikleriyle tanınır.",
+        "facts": [
+          "Stage adı Dom Dolla ile tanınan Dominic Louis Matheson, avustralyalı bir tech house yapımcısı, DJ, söz yazarı ve remixer'dır; özel house müzik tarzı ve üst düzey işbirlikleriyle takdir görür.",
+          "2020 ARIA Music Awards'ta \"San Frandisco\" şarkısıyla, 2023'te ise \"Rhyme Dust\" şarkısıyla ödül kazanmıştır."
+        ]
+      }
+    }
+  ]
+}
