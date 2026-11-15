@@ -1,0 +1,15 @@
+{
+  "city": "wroclaw",
+  "day": "2026-11-21",
+  "sparks": [
+    {
+      "kind": "jazz",
+      "title": { "en": "musho with hamid drake and doyeon kim at the nfm.", "de": "musho mit hamid drake und doyeon kim im nfm.", "tr": "nfm'de musho, hamid drake ve doyeon kim." },
+      "line": { "en": "jazztopad in the main hall at 19:00: musho with hamid drake, followed by the doyeon kim quartet.", "de": "jazztopad in der großen halle um 19:00: musho mit hamid drake, danach das doyeon kim quartet.", "tr": "jazztopad, ana salonda 19:00: hamid drake ile musho, ardından doyeon kim quartet." },
+      "place": { "en": "nfm", "de": "nfm", "tr": "nfm" },
+      "hour": 19,
+      "minute": 0,
+      "why": "Musho with Hamid Drake and DoYeon Kim Quartet, Sat 21 nov 19:00, NFM repertoire page (nfm.wroclaw.pl)."
+    }
+  ]
+}
