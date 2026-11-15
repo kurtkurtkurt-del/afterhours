@@ -1,0 +1,27 @@
+{
+  "city": "stockholm",
+  "day": "2026-11-22",
+  "sparks": [
+    {
+      "kind": "flea",
+      "title": {
+        "en": "tailgate flea market at kista galleria.",
+        "de": "kofferraum-flohmarkt in der kista galleria.",
+        "tr": "kista galleria'da bagaj pazarı."
+      },
+      "line": {
+        "en": "a large tailgate flea market at kista galleria on sunday from late morning. bring a bag and some cash.",
+        "de": "ein großer kofferraum-flohmarkt in der kista galleria am sonntag ab dem vormittag. tasche und etwas bargeld mitnehmen.",
+        "tr": "pazar günü öğleden önce kista galleria'da büyük bir bagaj pazarı. bir çanta ve biraz nakit al."
+      },
+      "place": {
+        "en": "kista galleria",
+        "de": "kista galleria",
+        "tr": "kista galleria"
+      },
+      "hour": 11,
+      "minute": 0,
+      "why": "Gratis i Stockholm lists a big bakluckeloppis at Kista Galleria on 22 Nov, and Stockholmsmarknader's calendar agrees; the 11:00 start is from the calendar and may change."
+    }
+  ]
+}

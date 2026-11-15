@@ -1,0 +1,27 @@
+{
+  "city": "stockholm",
+  "day": "2026-11-23",
+  "sparks": [
+    {
+      "kind": "football",
+      "title": {
+        "en": "hammarby – ifk göteborg at 3arena.",
+        "de": "hammarby – ifk göteborg im 3arena.",
+        "tr": "3arena'da hammarby – ifk göteborg."
+      },
+      "line": {
+        "en": "allsvenskan round 29 at 3arena, kick-off 19:00 on monday. tickets through 3arena.",
+        "de": "allsvenskan spieltag 29 im 3arena, anpfiff montag 19:00. karten über das 3arena.",
+        "tr": "allsvenskan 29. hafta maçı, 3arena'da, pazartesi saat 19:00'da başlıyor. biletler 3arena üzerinden."
+      },
+      "place": {
+        "en": "3arena",
+        "de": "3arena",
+        "tr": "3arena"
+      },
+      "hour": 19,
+      "minute": 0,
+      "why": "3Arena's own event page lists Hammarby IF - IFK Göteborg on Mon 23 Nov 2026 at 19:00 (Allsvenskan round 29); this is one of the extra days after the seven."
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "city": "stockholm",
+  "day": "2026-11-20",
+  "sparks": [
+    {
+      "kind": "sauna",
+      "title": {
+        "en": "sauna at hornstullsbastun.",
+        "de": "sauna in der hornstullsbastun.",
+        "tr": "hornstullsbastun'da sauna."
+      },
+      "line": {
+        "en": "the city's public sauna on bergsunds strand, open daily 06:30 to 21:30. booked through the city; a cold friday evening fits.",
+        "de": "die städtische sauna am bergsunds strand, täglich 6:30 bis 21:30 geöffnet. buchung über die stadt; ein kalter freitagabend passt.",
+        "tr": "bergsunds strand'deki şehir saunası, her gün 06:30 - 21:30 arası açık. rezervasyon şehir üzerinden; soğuk bir cuma akşamına uygun."
+      },
+      "place": {
+        "en": "hornstullsbastun",
+        "de": "hornstullsbastun",
+        "tr": "hornstullsbastun"
+      },
+      "hour": 18,
+      "minute": 30,
+      "why": "Stockholm city's Hornstullsbastun page (parker.stockholm) gives daily hours 06:30-21:30 and booking through the city; a weekday pick, not a dated event."
+    }
+  ]
+}

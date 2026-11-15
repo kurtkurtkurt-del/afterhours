@@ -1,0 +1,27 @@
+{
+  "city": "stockholm",
+  "day": "2026-11-21",
+  "sparks": [
+    {
+      "kind": "flea",
+      "title": {
+        "en": "tailgate flea market at globengaraget.",
+        "de": "kofferraum-flohmarkt im globengaraget.",
+        "tr": "globengaraget'ta bagaj pazarı."
+      },
+      "line": {
+        "en": "a tailgate flea market at globengaraget on saturday, with a second day on sunday. come late morning.",
+        "de": "ein kofferraum-flohmarkt am globengaraget am samstag, am sonntag ein zweiter tag. ab dem vormittag kommen.",
+        "tr": "globengaraget'ta cumartesi bagaj pazarı, pazar günü ikinci gün. öğleye doğru gelmek iyi olur."
+      },
+      "place": {
+        "en": "globengaraget",
+        "de": "globengaraget",
+        "tr": "globengaraget"
+      },
+      "hour": 11,
+      "minute": 0,
+      "why": "Stockholmsmarknader's loppis calendar and Facebook page list the Globengaraget market for 21-22 Nov; the 11:00 start is from the calendar and may change."
+    }
+  ]
+}
