@@ -1,0 +1,18 @@
+{
+  "city": "krakow",
+  "day": "2026-11-21",
+  "sparks": [
+    {
+      "kind": "football",
+      "title": { "en": "cracovia – jagiellonia on saturday.", "de": "cracovia – jagiellonia am samstag.", "tr": "cumartesi cracovia – jagiellonia." },
+      "line": {
+        "en": "ekstraklasa at the józef piłsudski stadium, cracovia against jagiellonia białystok. kick-off time not confirmed yet; check the club before you go.",
+        "de": "ekstraklasa im józef-piłsudski-stadion, cracovia gegen jagiellonia białystok. anstoßzeit noch nicht bestätigt; vor dem hingehen beim verein prüfen.",
+        "tr": "ekstraklasa, józef piłsudski stadyumu'nda cracovia – jagiellonia białystok. başlama saati henüz doğrulanmadı; gitmeden kulüpten kontrol edin."
+      },
+      "place": { "en": "stadion cracovii", "de": "stadion cracovii", "tr": "stadion cracovii" },
+      "hour": 20, "minute": 0,
+      "why": "Ekstraklasa fixture cracovia vs jagiellonia białystok on sat 21.11.2026 (sport-flash.com, sportsmole.co.uk); kick-off time not confirmed, so 20:00 is the kind's default."
+    }
+  ]
+}
