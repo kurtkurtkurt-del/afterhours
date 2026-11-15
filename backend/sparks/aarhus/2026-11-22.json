@@ -1,0 +1,14 @@
+{
+  "city": "aarhus",
+  "day": "2026-11-22",
+  "sparks": [
+    {
+      "kind": "openmic",
+      "title": { "en": "english stand up open mic at alberts.", "de": "english stand up open mic bei alberts.", "tr": "alberts'ta english stand up açık mikrofon." },
+      "line": { "en": "free open mic every sunday evening: doors at 18:00, show at 19:30. a good first night out for a group that wants to laugh.", "de": "kostenloser open mic jeden sonntagabend: einlass 18 uhr, show 19.30 uhr. ein guter erster abend für eine gruppe, die lachen will.", "tr": "her pazar akşamı ücretsiz açık mikrofon: kapılar 18:00, gösteri 19:30. gülmek isteyen bir grup için iyi bir ilk gece." },
+      "place": { "en": "alberts, storetorv 3", "de": "alberts, storetorv 3", "tr": "alberts, storetorv 3" },
+      "hour": 19, "minute": 30,
+      "why": "English Stand Up Comedy Aarhus open mic, every Sunday 19:30 at Alberts, Storetorv 3 (visitaarhus.com listing); the 22 Nov date is from the recurring schedule, not a dated post."
+    }
+  ]
+}

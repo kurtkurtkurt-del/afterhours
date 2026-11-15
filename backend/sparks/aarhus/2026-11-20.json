@@ -1,0 +1,27 @@
+{
+  "city": "aarhus",
+  "day": "2026-11-20",
+  "sparks": [
+    {
+      "kind": "walk",
+      "title": {
+        "en": "den gamle by in the christmas season.",
+        "de": "den gamle by in der weihnachtszeit.",
+        "tr": "noel sezonunda den gamle by."
+      },
+      "line": {
+        "en": "the open-air old town opens its christmas season on 14 november. walk the lanes before the light goes, around 16:00.",
+        "de": "das freilichtmuseum startet am 14. november in die weihnachtszeit. spaziergang durch die gassen, bevor es gegen 16 uhr dunkel wird.",
+        "tr": "açık hava eski kent 14 kasımda noel sezonunu açıyor. ışık gitmeden, 16 civarında sokaklarda yürü."
+      },
+      "place": {
+        "en": "den gamle by",
+        "de": "den gamle by",
+        "tr": "den gamle by"
+      },
+      "hour": 16,
+      "minute": 0,
+      "why": "Christmas in Den Gamle By runs 14 Nov to 31 Dec 2026 (visitdenmark.com events calendar); daily hours of 10:00 to 17:00 come from a third-party listing (excursionmania), so check the museum site."
+    }
+  ]
+}
