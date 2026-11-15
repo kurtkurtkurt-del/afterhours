@@ -1,0 +1,14 @@
+{
+  "city": "brno",
+  "day": "2026-11-25",
+  "sparks": [
+    {
+      "kind": "jazz",
+      "title": { "en": "tigran hamasyan at sono, jazzfest brno.", "de": "tigran hamasyan im sono, jazzfest brno.", "tr": "sono'da tigran hamasyan, jazzfest brno." },
+      "line": { "en": "tigran hamasyan presents his new album manifeste at 19:30 on the jazzfest brno programme. the sono club is at veveří 113.", "de": "tigran hamasyan stellt sein neues album manifeste um 19:30 im programm des jazzfest brno vor. der club sono ist in der veveří 113.", "tr": "tigran hamasyan yeni albümü manifeste'i 19:30'da jazzfest brno programında sunuyor. sono kulübü veveří 113'te." },
+      "place": { "en": "sono", "de": "sono", "tr": "sono" },
+      "hour": 19, "minute": 30,
+      "why": "JazzFestBrno 2026, Tigran Hamasyan, Manifeste, Wed 25 Nov 19:30 at Sono (goout.net and kultino.cz listings)."
+    }
+  ]
+}
