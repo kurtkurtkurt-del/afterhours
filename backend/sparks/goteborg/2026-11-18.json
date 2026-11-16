@@ -1,0 +1,27 @@
+{
+  "city": "goteborg",
+  "day": "2026-11-18",
+  "sparks": [
+    {
+      "kind": "jazz",
+      "title": {
+        "en": "nordic contemporary jazz at nefertiti.",
+        "de": "nordische zeitgenössische jazz im nefertiti.",
+        "tr": "nefertiti'de nordik çağdaş caz."
+      },
+      "line": {
+        "en": "little north from denmark with guitarist reinier baas, playing the album crossing currents. doors 17:30, music at 19:00; seats from 225 kr, and dinner in the jazz kissa bar if you book it.",
+        "de": "little north aus dänemark mit gitarrist reinier baas, das album crossing currents. einlass 17:30, musik um 19:00; plätze ab 225 kr, essen in der jazz kissa bar auf vorbestellung.",
+        "tr": "danimarka'dan little north, gitarist reinier baas ile crossing currents albümü. kapı 17:30, müzik 19:00; yerler 225 kr'den başlıyor, rezervasyonla jazz kissa bar'da yemek."
+      },
+      "place": {
+        "en": "nefertiti",
+        "de": "nefertiti",
+        "tr": "nefertiti"
+      },
+      "hour": 19,
+      "minute": 0,
+      "why": "Little North (DK) at Nefertiti, Hvitfeldtsplatsen 6, Wed 18 Nov 19:00, on goteborg.com and Tickster; doors time differs there (17:30 vs 18:00)."
+    }
+  ]
+}
