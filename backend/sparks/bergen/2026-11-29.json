@@ -1,0 +1,27 @@
+{
+  "city": "bergen",
+  "day": "2026-11-29",
+  "sparks": [
+    {
+      "kind": "football",
+      "title": {
+        "en": "brann – kristiansund at brann stadion.",
+        "de": "brann – kristiansund im brann stadion.",
+        "tr": "brann stadion'da brann – kristiansund."
+      },
+      "line": {
+        "en": "eliteserien, sunday 17:00 at brann stadion. check the ticket page first, as kickoff times differ between listings.",
+        "de": "eliteserien, sonntag 17:00 im brann stadion. vorher die ticketseite prüfen, die anstoßzeiten weichen zwischen den listen ab.",
+        "tr": "eliteserien, pazar 17:00'de brann stadion'da. önce bilet sayfasına bak; başlama saatleri listelere göre değişiyor."
+      },
+      "place": {
+        "en": "brann stadion",
+        "de": "brann stadion",
+        "tr": "brann stadion"
+      },
+      "hour": 17,
+      "minute": 0,
+      "why": "Brann vs Kristiansund, Eliteserien on sun 29 Nov 2026, 17:00 per visitnorway.com and planetsport.com; one listing gives 16:00. Days eight to fourteen of the window."
+    }
+  ]
+}
