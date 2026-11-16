@@ -1,0 +1,14 @@
+{
+  "city": "thessaloniki",
+  "day": "2026-11-17",
+  "sparks": [
+    {
+      "kind": "walk",
+      "title": { "en": "the waterfront before sunset.", "de": "die uferpromenade vor dem sonnenuntergang.", "tr": "gün batımından önce sahil yürüyüşü." },
+      "line": { "en": "tuesday is cool and calm, about 15 to 18 degrees, with cloud building later. sunset is at 17:13, so walk the nea paralia from the white tower before the light goes.", "de": "dienstag ist kühl und windstill, etwa 15 bis 18 grad, später zieht wolke auf. der sonnenuntergang ist um 17:13, also die nea paralia vom weißen turm aus gehen, bevor das licht weg ist.", "tr": "salı serin ve durgun, yaklaşık 15 ile 18 derece, akşama doğru bulut artıyor. gün batımı 17:13'te, o yüzden ışık gitmeden beyaz kule'den nea paralia boyunca yürü." },
+      "place": { "en": "nea paralia", "de": "nea paralia", "tr": "nea paralia" },
+      "hour": 16, "minute": 30,
+      "why": "Tuesday 17 nov forecast (light wind, cloud building in the evening) and sunrise 07:11 and sunset 17:13 from a weather page updated 12 nov (sunheron.com); the promenade is a standing public place, not a dated event."
+    }
+  ]
+}
