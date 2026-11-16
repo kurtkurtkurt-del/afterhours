@@ -1,0 +1,26 @@
+{
+ "city": "seattle",
+ "day": "2026-11-16",
+ "nights": [
+  {
+   "id": "9fdd08d4-631f-4600-9ec0-d6c460d26a5a",
+   "slug": "song-dongye-c635356c",
+   "title": "Song Dongye",
+   "act": "Song Dongye",
+   "name": "Song Dongye",
+   "description": "Chinese folk and ballad singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Song_Dongye",
+   "extract": "Song Dongye is a Chinese folk and ballad singer-songwriter. He was born in Haidian District, Beijing."
+  },
+  {
+   "id": "4c37dc06-1216-40a8-8c6c-5d760f7ca196",
+   "slug": "jai-wolf-420ab78b",
+   "title": "Jai Wolf",
+   "act": "Jai Wolf",
+   "name": "Jai Wolf",
+   "description": "American electronic music producer (born 1991)",
+   "source_url": "https://en.wikipedia.org/wiki/Jai_Wolf",
+   "extract": "Sajeeb Saha, known professionally as Jai Wolf, is a Bangladeshi-American DJ and producer. He is best known for his singles, \"Indian Summer\", \"Like It's Over\", and \"Starlight\". He is currently signed to Mom + Pop Music."
+  }
+ ]
+}

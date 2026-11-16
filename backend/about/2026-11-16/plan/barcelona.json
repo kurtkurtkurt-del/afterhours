@@ -1,0 +1,16 @@
+{
+ "city": "barcelona",
+ "day": "2026-11-16",
+ "nights": [
+  {
+   "id": "c61beec6-54f2-4292-9cb3-b81b3e94f1ba",
+   "slug": "the-sheepdogs-out-all-night-tour-6aa0075e",
+   "title": "THE SHEEPDOGS - Out All Night Tour",
+   "act": "THE SHEEPDOGS",
+   "name": "The Sheepdogs",
+   "description": "Canadian rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Sheepdogs",
+   "extract": "The Sheepdogs are a Canadian rock band formed in Saskatoon, Saskatchewan, in 2004. The Sheepdogs were the first unsigned band to make the cover of Rolling Stone and have gone on to a career featuring multi-platinum album sales and four Juno Awards."
+  }
+ ]
+}

@@ -1,0 +1,76 @@
+{
+ "city": "new-york",
+ "day": "2026-11-16",
+ "nights": [
+  {
+   "id": "68452ee7-8820-47c3-bf8e-0c055367a3f9",
+   "slug": "orla-gartland-0be3f5b8",
+   "title": "Orla Gartland",
+   "act": "Orla Gartland",
+   "name": "Orla Gartland",
+   "description": "Irish singer, songwriter, musician",
+   "source_url": "https://en.wikipedia.org/wiki/Orla_Gartland",
+   "extract": "Orla Joan Gartland is an Irish singer, songwriter and musician. Gartland released her debut studio album, Woman on the Internet, in 2021, which reached number 3 on the Irish album chart, number 1 on the UK Indie Chart, and number 10 on the UK Albums Chart. Her second studio album Everybody Needs a Hero came out in October 2024."
+  },
+  {
+   "id": "eed25464-51e1-4ca2-85b5-85ee5c0aaf21",
+   "slug": "stella-lefty-all-ages-under-16-with-adult-622a25e2",
+   "title": "Stella Lefty - All Ages (under 16 with adult)",
+   "act": "Stella Lefty",
+   "name": "Stella Lefty",
+   "description": "American singer-songwriter (born 2002)",
+   "source_url": "https://en.wikipedia.org/wiki/Stella_Lefty",
+   "extract": "Stella Lefkofsky, better known by her stage name Stella Lefty, is an American singer-songwriter. Her 2026 country-pop single \"Boston\" peaked at number two on the US Billboard Hot 100."
+  },
+  {
+   "id": "723c7cef-4dc5-4269-b1f1-82ab822d7395",
+   "slug": "pedro-sampaio-59897ede",
+   "title": "Pedro Sampaio",
+   "act": "Pedro Sampaio",
+   "name": "Pedro Sampaio",
+   "description": "Brazilian singer and music producer",
+   "source_url": "https://en.wikipedia.org/wiki/Pedro_Sampaio",
+   "extract": "Pedro do Espirito Santo Sampaio is a Brazilian singer, music producer and DJ, known for the songs \"Sentadão\", \"Escada do Prédio\", with Marina Sena, and \"Chama Ela\", in partnership with the singer Lexa. He is signed to Warner Music Brasil."
+  },
+  {
+   "id": "70d0f442-7736-40ec-849a-f50938b0a360",
+   "slug": "yung-gravy-the-joyrider-tour-6fb72e6a",
+   "title": "Yung Gravy: The Joyrider Tour",
+   "act": "Yung Gravy",
+   "name": "Yung Gravy",
+   "description": "American rapper (born 1996)",
+   "source_url": "https://en.wikipedia.org/wiki/Yung_Gravy",
+   "extract": "Matthew Raymond Hauri, better known by his stage name Yung Gravy, is an American rapper."
+  },
+  {
+   "id": "7fa5bf88-a6d1-4735-aa27-81b52a093016",
+   "slug": "lalah-hathaway-7bebb61c",
+   "title": "Lalah Hathaway",
+   "act": "Lalah Hathaway",
+   "name": "Lalah Hathaway",
+   "description": "American singer (born 1968)",
+   "source_url": "https://en.wikipedia.org/wiki/Lalah_Hathaway",
+   "extract": "Eulaulah Donyll \"Lalah\" Hathaway is an American singer-songwriter and music producer. Credited as the \"First Daughter of Soul\", she is the first-born daughter of musician and soul singer Donny Hathaway."
+  },
+  {
+   "id": "da5e4e3f-ea38-417e-aa6c-e43f13752d10",
+   "slug": "junko-yagami-pop-meets-jazz-on-route-66-93bb9fb9",
+   "title": "JUNKO YAGAMI: Pop Meets Jazz on Route 66",
+   "act": "JUNKO YAGAMI",
+   "name": "Junko Yagami",
+   "description": "Japanese singer-songwriter (born 1958)",
+   "source_url": "https://en.wikipedia.org/wiki/Junko_Yagami",
+   "extract": "Junko Yagami , is a Japanese singer and songwriter from Aichi Prefecture. She has released 25 albums, including six live concert albums, and is a notable figure in Japanese music of the 1970s and 1980s. Since her marriage in 1986, she has also recorded under the name \"June Stanley\"."
+  },
+  {
+   "id": "0ef3eada-33a7-4a2c-9b95-d0195489c8a8",
+   "slug": "michaela-anne-68a32fee",
+   "title": "Michaela Anne",
+   "act": "Michaela Anne",
+   "name": "Michaela Anne",
+   "description": "American musician",
+   "source_url": "https://en.wikipedia.org/wiki/Michaela_Anne",
+   "extract": "Michaela Anne is an American musician currently residing in Nashville, Tennessee. Her music incorporates elements of classic country, pop, indie rock, and honky-tonk. She has released four albums to date. Her fourth album, Oh To Be That Free, was released through Yep Roc Records on June 10, 2022."
+  }
+ ]
+}

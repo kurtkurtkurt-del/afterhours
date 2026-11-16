@@ -1,0 +1,116 @@
+{
+ "city": "london",
+ "day": "2026-11-16",
+ "nights": [
+  {
+   "id": "09f96ad1-7e70-4a5c-a513-ed8b40d4b002",
+   "slug": "muse-the-wow-signal-europa-tour-46f54f65",
+   "title": "Muse - The Wow! Signal Europa Tour",
+   "act": "Muse",
+   "name": "Muse",
+   "description": "English rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Muse_(band)",
+   "extract": "Muse are an English rock band from Teignmouth, Devon, formed in 1994. The band consists of Matt Bellamy, Chris Wolstenholme, and Dominic Howard."
+  },
+  {
+   "id": "b38bca34-16c8-454c-966b-9d131d66f828",
+   "slug": "lizz-wright-bdf21536",
+   "title": "Lizz Wright",
+   "act": "Lizz Wright",
+   "name": "Lizz Wright",
+   "description": "American jazz and gospel singer (born 1980)",
+   "source_url": "https://en.wikipedia.org/wiki/Lizz_Wright",
+   "extract": "Elizabeth LaCharla Wright professionally known as Lizz Wright, is an American jazz and gospel singer."
+  },
+  {
+   "id": "d3e881ab-50dd-45f8-9766-a2b7e0b1bb2f",
+   "slug": "bragolin-3123d1fb",
+   "title": "BRAGOLIN",
+   "act": "BRAGOLIN",
+   "name": "Bragolin",
+   "description": "Dutch post-punk and darkwave music project",
+   "source_url": "https://en.wikipedia.org/wiki/Bragolin_(band)",
+   "extract": "Bragolin is a Dutch post-punk and darkwave music project founded in Utrecht in 2013 by musician Edwin van der Velde. The project combines elements of post-punk and darkwave with melodic bass guitar, synthesizers, organ sounds and guitar textures. Its lyrics and visual imagery draw on horror and post-apocalyptic cinema."
+  },
+  {
+   "id": "e7af9877-af50-4dc6-aa62-5c51ae52cd69",
+   "slug": "kwn-wn-night-only-8fa68c4a",
+   "title": "kwn - wn night only",
+   "act": "kwn",
+   "name": "Kwn",
+   "description": "British rapper and singer-songwriter (born 2000)",
+   "source_url": "https://en.wikipedia.org/wiki/Kwn",
+   "extract": "Khyra Wilson or K. Wilson, known professionally as kwn and formerly k1, is a British singer, songwriter, rapper, and producer. She is best known for her 2024 single \"Worst Behaviour\", which entered the UK singles chart, while its remix entered the US Hot R&B/Hip-Hop Songs chart."
+  },
+  {
+   "id": "d8d67096-49e1-41e1-8372-2be9efabd357",
+   "slug": "skye-newman-9f20f009",
+   "title": "Skye Newman",
+   "act": "Skye Newman",
+   "name": "Skye Newman",
+   "description": "English singer-songwriter (born 2003)",
+   "source_url": "https://en.wikipedia.org/wiki/Skye_Newman",
+   "extract": "Skye Newman is an English singer-songwriter from south-east London."
+  },
+  {
+   "id": "33494b63-3628-43e5-96bc-e6f5de0822f0",
+   "slug": "anouar-brahem-after-the-last-sky-a8600fa2",
+   "title": "Anouar Brahem - After the Last Sky",
+   "act": "Anouar Brahem",
+   "name": "Anouar Brahem",
+   "description": "Tunisian oud player and composer",
+   "source_url": "https://en.wikipedia.org/wiki/Anouar_Brahem",
+   "extract": "Anouar Brahem is a Tunisian oud player and composer. He is widely acclaimed as an innovator in his field. Performing primarily for a jazz audience, he combines Arabic classical music, folk music and jazz and has been recording since at least 1991, after becoming prominent in his own country in the late 1980s."
+  },
+  {
+   "id": "93b62ef1-2a25-4f88-9552-24a7ff2e5496",
+   "slug": "melody-gardot-d6d490fc",
+   "title": "Melody Gardot",
+   "act": "Melody Gardot",
+   "name": "Melody Gardot",
+   "description": "American jazz singer (born 1985)",
+   "source_url": "https://en.wikipedia.org/wiki/Melody_Gardot",
+   "extract": "Melody Joy Gardot ; born February 2, 1985) is an American musician, singer, songwriter, and composer. Widely considered as one of the best jazz vocalists of her generation, she is known for her smoky contralto voice, understated vocal delivery, and a musical style that blends jazz with blues, bossa nova, folk, and pop influences. Gardot first gained attention in the mid-2000s and achieved international recognition with five studio albums: Worrisome Heart (2006), My One and Only Thrill (2009), The Absence (2012), Currency of Man (2015), and Sunset in the Blue (2020)."
+  },
+  {
+   "id": "676ada56-24bd-4d6e-b189-7564f8efc2e7",
+   "slug": "the-fray-3c868a19",
+   "title": "The Fray",
+   "act": "The Fray",
+   "name": "The Fray",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Fray",
+   "extract": "The Fray is an American rock band from Denver, Colorado, formed in 2002 by schoolmates Isaac Slade and Joe King. Their debut studio album, How to Save a Life (2005) was released by Epic Records and received quadruple platinum certification by the Recording Industry Association of America (RIAA), as well as platinum certification in Australia, Canada, New Zealand and the United Kingdom. Its release was supported by their first hit single, \"Over My Head \", which peaked at number eight on the Billboard Hot 100. The band saw their furthest success with the song's follow-up, \"How to Save a Life\", which peaked at number three on the chart and was also a hit in Australia, Canada, Ireland, Italy, Spain, Sweden and the United Kingdom. Both songs received Grammy Award nominations: Best Pop Performance by a Duo or Group with Vocals, and Best Rock Performance by a Duo or Group, respectively."
+  },
+  {
+   "id": "704baa7d-be97-403f-be68-687559aa3eb9",
+   "slug": "anna-von-hausswolff-458c829e",
+   "title": "Anna Von Hausswolff",
+   "act": "Anna Von Hausswolff",
+   "name": "Anna von Hausswolff",
+   "description": "Swedish musician (born 1986)",
+   "source_url": "https://en.wikipedia.org/wiki/Anna_von_Hausswolff",
+   "extract": "Anna Michaela Ebba Electra von Hausswolff is a Swedish singer-songwriter and composer. She is known for her gothic-styled music, usually accompanied by the pipe organ. Von Hausswolff's music has received praise from music critics, though it resulted in protests from Catholic fundamentalist groups."
+  },
+  {
+   "id": "2a352b93-9349-4f12-a3b8-cae777ef3de9",
+   "slug": "underscores-bc6b2be2",
+   "title": "underscores",
+   "act": "underscores",
+   "name": "Underscores",
+   "description": "American musician (born 2000)",
+   "source_url": "https://en.wikipedia.org/wiki/Underscores_(musician)",
+   "extract": "Devon Grey Karpf, known professionally as April Harper Grey and performing as Underscores, is an American singer-songwriter and producer. Born in San Francisco, California, Grey began releasing dubstep music on SoundCloud at the age of 13. After releasing three EPs from 2018 to 2020 that incorporated other genres such as jazz and future bass, she rose to prominence with her hyperpop and rock-influenced debut album Fishmonger in early 2021. She released its companion EP and opened for 100 Gecs on tour later that year."
+  },
+  {
+   "id": "5ef2cd12-628a-4475-b6e7-ac02021006b4",
+   "slug": "boko-yout-7a8e3983",
+   "title": "Boko Yout",
+   "act": "Boko Yout",
+   "name": "Boko Yout",
+   "description": "Swedish music group",
+   "source_url": "https://en.wikipedia.org/wiki/Boko_Yout",
+   "extract": "Boko Yout is a Swedish music group. Previously, the group's singer Paul Adamah, born 1998 in Örebro, used the name Boko Yout as a stage name for his solo project, but since 2025 Boko Yout became a group with the addition of Kevin Stierne on bass and Joel Kiviaho on drums."
+  }
+ ]
+}

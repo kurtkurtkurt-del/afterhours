@@ -1,0 +1,66 @@
+{
+ "city": "chicago",
+ "day": "2026-11-16",
+ "nights": [
+  {
+   "id": "514175de-b0dc-47f8-9072-0df2d0f2a2bc",
+   "slug": "skilla-baby-the-price-of-fame-tour-9e94dd92",
+   "title": "Skilla Baby: The Price of Fame Tour",
+   "act": "Skilla Baby",
+   "name": "Skilla Baby",
+   "description": "American rapper (born 1998)",
+   "source_url": "https://en.wikipedia.org/wiki/Skilla_Baby",
+   "extract": "Trevon Gardner, known professionally as Skilla Baby, is an American rapper from Detroit, Michigan."
+  },
+  {
+   "id": "0e680e57-349c-4c31-866e-8e8af43cb78d",
+   "slug": "burnout-syndromes-dd3b3a72",
+   "title": "BURNOUT SYNDROMES",
+   "act": "BURNOUT SYNDROMES",
+   "name": "Burnout Syndromes",
+   "description": "Japanese rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Burnout_Syndromes",
+   "extract": "Burnout Syndromes is a Japanese rock band formed on May 4, 2005, in Osaka. The band consists of guitarist and vocalist Kazuumi Kumagai (熊谷和海), bassist Taiyu Ishikawa (石川大裕), and drummer Takuya Hirose (廣瀬拓哉). They have released two albums by Epic Records Japan and were part of the original soundtrack of the anime Haikyu!! in its second season."
+  },
+  {
+   "id": "9f79fede-56b3-4529-a8db-f00c7e6a296d",
+   "slug": "hawthorne-heights-20th-anniversary-of-if-only-yo-eb4219b4",
+   "title": "Hawthorne Heights - 20th anniversary of If Only You Were Lonely",
+   "act": "Hawthorne Heights",
+   "name": "Hawthorne Heights",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Hawthorne_Heights",
+   "extract": "Hawthorne Heights is an American rock band formed in Dayton, Ohio, in 2001. Originally called A Day in the Life, their lineup consists of JT Woodruff, Matt Ridenour and Mark McMillon."
+  },
+  {
+   "id": "63d35e71-ddc8-4059-94fd-6b7f4b6b41e5",
+   "slug": "the-neighbourhood-the-wourld-tour-1d6574a0",
+   "title": "The Neighbourhood: THE WOURLD TOUR",
+   "act": "The Neighbourhood",
+   "name": "The Neighbourhood",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Neighbourhood",
+   "extract": "The Neighbourhood is an American alternative rock band formed in Newbury Park, California, in 2011. The band consists of vocalist Jesse Rutherford, guitarists Jeremy Fredman and Zach Abels, bassist Mikey Margott and drummer Brandon Fried. After releasing two EPs, I'm Sorry... and Thank You, The Neighbourhood signed with Columbia Records to release their debut studio album, I Love You. in 2013. \"Sweater Weather\", the album's third single, became the only song from the project on the Billboard Hot 100, peaking at number 14, and resurged in popularity nearly a decade later on radio airplay and Spotify. Other notable hits from the band include \"Afraid\", \"Daddy Issues\", \"Baby Come Home 2/Valentines\", \"Softcore\", \"You Get Me So High\", \"Reflections\" and \"The Beach\"."
+  },
+  {
+   "id": "dc38a1c6-7872-4b95-bd18-d7a07414ac69",
+   "slug": "victoria-monet-frequency-of-love-tour-5f7f95af",
+   "title": "Victoria Monét: Frequency Of Love Tour",
+   "act": "Victoria Monét",
+   "name": "Victoria Monét",
+   "description": "American singer-songwriter (born 1989)",
+   "source_url": "https://en.wikipedia.org/wiki/Victoria_Mon%C3%A9t",
+   "extract": "Victoria Monét McCants is an American singer-songwriter. First gaining recognition for her songwriting work, Monét pursued a recording career with the release of a series of extended plays (EPs); her fifth, Jaguar (2020) was met with critical acclaim. Her debut studio album, Jaguar II (2023), became her commercial breakthrough and was supported by the hit single \"On My Mama\", which peaked within the top 40 of the Billboard Hot 100 and earned a Grammy Award nomination for Record of the Year. The nomination was among seven she received at the 66th Annual Grammy Awards, from which she won Best New Artist, Best R&B Album and Best Engineered Album, Non-Classical."
+  },
+  {
+   "id": "de419ac7-84cd-492c-b775-7f56cefc5bf1",
+   "slug": "jackie-greene-ea4f17ae",
+   "title": "Jackie Greene",
+   "act": "Jackie Greene",
+   "name": "Jackie Greene",
+   "description": "American musician (born 1980)",
+   "source_url": "https://en.wikipedia.org/wiki/Jackie_Greene",
+   "extract": "Jackie Greene is an American singer-songwriter and musician. He has a solo career and became a member of The Black Crowes in 2013, though the band broke up in 2015 before he could contribute any studio work."
+  }
+ ]
+}

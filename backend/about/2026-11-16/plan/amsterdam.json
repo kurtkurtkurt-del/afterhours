@@ -1,0 +1,46 @@
+{
+ "city": "amsterdam",
+ "day": "2026-11-16",
+ "nights": [
+  {
+   "id": "f9ae0b19-12ee-4014-8050-7a7ddebe8b1e",
+   "slug": "conway-the-machine-bc89ab3c",
+   "title": "Conway the Machine",
+   "act": "Conway the Machine",
+   "name": "Conway the Machine",
+   "description": "American rapper (born 1982)",
+   "source_url": "https://en.wikipedia.org/wiki/Conway_the_Machine",
+   "extract": "Demond Price, known professionally as Conway the Machine, or simply Conway, is an American rapper and co-founder of the hip hop label Griselda Records, alongside his paternal half-brother Westside Gunn, and Mach-Hommy. Acclaimed for his 1990s inspired, dark and gritty lyricism, he rose to prominence following his mixtape Reject 2 (2015) and debut studio album From King to a God (2020). His second album, God Don't Make Mistakes (2022), was released by Shady Records, and met with universal acclaim."
+  },
+  {
+   "id": "210a1bd2-b17c-406e-8397-88d501574ba8",
+   "slug": "the-script-man-in-the-arena-tour-9bb6dc1e",
+   "title": "The Script: Man In The Arena Tour",
+   "act": "The Script",
+   "name": "The Script",
+   "description": "Irish rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Script",
+   "extract": "The Script are an Irish pop rock band formed in 2001 in Dublin by lead vocalist and keyboardist Danny O'Donoghue, lead guitarist Mark Sheehan and drummer Glen Power. The band currently consists of O'Donoghue, Power, Benjamin Sargeant and Ben Weaver (guitar). Sheehan was a member of the band up until his death in 2023. The band moved to London after signing to Sony Label Group imprint Phonogenic and released their first album The Script in August 2008, preceded by the debut single \"We Cry\" as well as other singles such as \"The Man Who Can't Be Moved\", \"Breakeven\" and \"Before the Worst\". The album peaked at number one in both Ireland and the UK."
+  },
+  {
+   "id": "53337189-d25c-452d-8a93-ba23b69a8723",
+   "slug": "the-script-wine-and-dine-ticket-not-included-f83e228a",
+   "title": "The Script | Wine & Dine (TICKET NOT INCLUDED)",
+   "act": "The Script",
+   "name": "The Script",
+   "description": "Irish rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Script",
+   "extract": "The Script are an Irish pop rock band formed in 2001 in Dublin by lead vocalist and keyboardist Danny O'Donoghue, lead guitarist Mark Sheehan and drummer Glen Power. The band currently consists of O'Donoghue, Power, Benjamin Sargeant and Ben Weaver (guitar). Sheehan was a member of the band up until his death in 2023. The band moved to London after signing to Sony Label Group imprint Phonogenic and released their first album The Script in August 2008, preceded by the debut single \"We Cry\" as well as other singles such as \"The Man Who Can't Be Moved\", \"Breakeven\" and \"Before the Worst\". The album peaked at number one in both Ireland and the UK."
+  },
+  {
+   "id": "ce1cb570-2703-4882-a8e8-b2fd4aa4943b",
+   "slug": "modestep-e4acc682",
+   "title": "Modestep",
+   "act": "Modestep",
+   "name": "Modestep",
+   "description": "English dubstep, drum & bass and electronic rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Modestep",
+   "extract": "Josh Friend, known by his stage name Modestep, is an English dubstep and electronic rock DJ and record producer from London. Modestep was originally a band founded in 2008, but with the band's most recent past member, Pat Lundy, leaving the band in 2022, Modestep became a solo act by Josh Friend. Their debut album Evolution Theory was released on 11 February 2013, including its five singles: \"Feel Good\", \"Sunlight\", \"To The Stars\", \"Show Me a Sign\" and \"Another Day\". Modestep's second album, London Road, was released on 25 May 2015, marking the band's first album featuring Lundy and Deek as members. Between 2017 and March 2019, the band released four singles on Canadian record label Monstercat and three EPs on Disciple Records."
+  }
+ ]
+}

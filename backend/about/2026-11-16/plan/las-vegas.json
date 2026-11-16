@@ -1,0 +1,16 @@
+{
+ "city": "las-vegas",
+ "day": "2026-11-16",
+ "nights": [
+  {
+   "id": "11442181-b764-4cef-8b13-b292d6d2217f",
+   "slug": "buzzcocks-celebrating-50-years-of-buzzcocks-779199fd",
+   "title": "Buzzcocks - Celebrating 50 Years Of Buzzcocks",
+   "act": "Buzzcocks",
+   "name": "Buzzcocks",
+   "description": "British punk rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Buzzcocks",
+   "extract": "Buzzcocks are an English punk rock band formed by singer-songwriter and guitarist Pete Shelley and singer-songwriter Howard Devoto in Bolton in 1976. They achieved commercial success with singles that fuse pop with rapid-fire punk energy, inspiring the power pop and pop punk movements; these singles were later collected on Singles Going Steady, an acclaimed compilation album music journalist and critic Ned Raggett described as a \"punk masterpiece\"."
+  }
+ ]
+}

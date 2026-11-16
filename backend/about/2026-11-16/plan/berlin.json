@@ -1,0 +1,86 @@
+{
+ "city": "berlin",
+ "day": "2026-11-16",
+ "nights": [
+  {
+   "id": "aaee7726-fc25-4e20-a601-298e350d7b8f",
+   "slug": "gutalax-shit-on-the-dancefloor-mini-tour-2026-3a5fbc0f",
+   "title": "Gutalax – \"Shit on the Dancefloor Mini Tour 2026\"",
+   "act": "Gutalax",
+   "name": "Gutalax",
+   "description": "Czech goregrind band",
+   "source_url": "https://en.wikipedia.org/wiki/Gutalax",
+   "extract": "Gutalax is a Czech goregrind band formed in 2009."
+  },
+  {
+   "id": "c5523ee1-2d58-4dae-819e-268b35ef0053",
+   "slug": "neschastny-sluchai-705a8639",
+   "title": "Neschastny Sluchai",
+   "act": "Neschastny Sluchai",
+   "name": "Neschastny Sluchai",
+   "description": "Russian rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Neschastny_Sluchai",
+   "extract": "Neschastny Sluchai is a Russian rock band that was formed by Valdis Pelsh and Alexey Kortnev in 1983, while both men were students at Moscow State University."
+  },
+  {
+   "id": "42e36441-3687-4223-9125-33ebaf0d2f8d",
+   "slug": "tiffany-day-halo-tour-europe-90eb44aa",
+   "title": "Tiffany Day - HALO TOUR EUROPE",
+   "act": "Tiffany Day",
+   "name": "Tiffany Day",
+   "description": "American singer and songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Tiffany_Day_(musician)",
+   "extract": "Tiffany Day Ruan, is a Canadian-American singer, songwriter, and record producer. Raised in Wichita, Kansas, she began independently releasing music after a 2017 video of her singing into a well in Italy went viral on Twitter. She released her debut studio album, Lover Tofu Fruit, in 2024. She signed to Broke Records the following year, through which she released her second studio album, Halo, in 2026."
+  },
+  {
+   "id": "cccf668a-634d-49a4-8b09-e9f5b6e19dca",
+   "slug": "kodaline-farewell-tour-0f677ebd",
+   "title": "Kodaline - Farewell Tour",
+   "act": "Kodaline",
+   "name": "Kodaline",
+   "description": "Irish rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Kodaline",
+   "extract": "Kodaline are an Irish rock band. Originally known as 21 Demands, the band adopted their current name in 2012 to coincide with the changing of their music. The group comprises Steve Garrigan, Vincent May, Mark Prendergast, and Jason Boland."
+  },
+  {
+   "id": "be75182b-f6db-4c77-9f5d-52f6d7121aca",
+   "slug": "elmiene-sounds-for-someone-tour-2026-eb15d456",
+   "title": "ELMIENE - Sounds For Someone Tour 2026",
+   "act": "ELMIENE",
+   "name": "Elmiene",
+   "description": "British singer-songwriter (born 2001)",
+   "source_url": "https://en.wikipedia.org/wiki/Elmiene",
+   "extract": "Abdala Elamin, known professionally as Elmiene, is a British-Sudanese singer from Oxford. He placed fifth in the BBC Sound of 2024 poll and was nominated for the Brit Award for Rising Star in 2025."
+  },
+  {
+   "id": "430f2cb7-6ada-45fd-b770-54c0ba68633e",
+   "slug": "yaeger-seasick-tour-2026-ab799d46",
+   "title": "YAEGER - Seasick Tour 2026",
+   "act": "YAEGER",
+   "name": "Yaeger",
+   "description": "Swedish singer-songwriter Yaeger",
+   "source_url": "https://en.wikipedia.org/wiki/Yaeger_(singer)",
+   "extract": "Hanna Gillian Kristina Jäger, known professionally as Yaeger, is a Swedish singer and songwriter. Based in Stockholm, Sweden, her style of popular music is described as emotional rave pop (ERP) while according to ELLE Sweden - who judged her Best Dressed Woman 2024 - her \"sense of style, courage and creativity form an expression that leaves an impression - both visually and musically.\""
+  },
+  {
+   "id": "87751806-654b-4cec-853c-616e440e6b1c",
+   "slug": "sace6-40389e12",
+   "title": "Sace6",
+   "act": "Sace6",
+   "name": "Sace6",
+   "description": "American alternative metal duo",
+   "source_url": "https://en.wikipedia.org/wiki/Sace6",
+   "extract": "Sace6 is an American alternative metal duo consisting of lead vocalist Sace and guitarist-vocalist Noah Thomas. Originally the solo project of Sace, the project developed into a duo in 2024. Sonically, their music offers contrasting melodic vocals and pop-oriented hooks with heavy guitar-driven instrumentation."
+  },
+  {
+   "id": "2129aec6-2b1f-49e4-8ec0-a18408f0241a",
+   "slug": "chloe-slater-riot-youth-tour-33f7973f",
+   "title": "CHLOE SLATER - riot youth tour",
+   "act": "CHLOE SLATER",
+   "name": "Chloe Slater",
+   "description": "English singer-songwriter (born 2003)",
+   "source_url": "https://en.wikipedia.org/wiki/Chloe_Slater",
+   "extract": "Chloe Leanne Slater is an English singer-songwriter based in Manchester. Writing about social and political issues, she has been releasing music since 2023 and has issued two extended plays: You Can't Put a Price on Fun, and Love Me Please."
+  }
+ ]
+}

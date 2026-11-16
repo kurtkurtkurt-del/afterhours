@@ -1,0 +1,26 @@
+{
+ "city": "koln",
+ "day": "2026-11-16",
+ "nights": [
+  {
+   "id": "ca11c24c-a962-4cab-90e6-719dba3bdb81",
+   "slug": "she-wants-revenge-europe-2027-78bb928b",
+   "title": "She Wants Revenge - Europe 2027",
+   "act": "She Wants Revenge",
+   "name": "She Wants Revenge",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/She_Wants_Revenge",
+   "extract": "She Wants Revenge is an American rock band, based in San Fernando Valley, California. Formed in 2004, the band is led by the duo of singer and guitarist Justin Warfield and multi-instrumentalist Adam Bravin. Their music has been influenced by post-punk, darkwave and gothic rock. The band has sold more than 300,000 records in the US."
+  },
+  {
+   "id": "8c16164c-212c-4c60-ad12-670e15e69bf5",
+   "slug": "sofia-camara-sincerely-yours-tour-62924e08",
+   "title": "Sofia Camara - Sincerely Yours, Tour",
+   "act": "Sofia Camara",
+   "name": "Sofia Camara",
+   "description": "Portuguese musician (born 2002)",
+   "source_url": "https://en.wikipedia.org/wiki/Sofia_Camara",
+   "extract": "Sofia Camara is a Portuguese and Canadian pop musician. Her debut EP, Was I(t) Worth It? was released on Universal Music Canada in 2025, followed later that year by her second EP, Hard to Love."
+  }
+ ]
+}

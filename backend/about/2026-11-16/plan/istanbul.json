@@ -1,0 +1,86 @@
+{
+ "city": "istanbul",
+ "day": "2026-11-16",
+ "nights": [
+  {
+   "id": "4b1667a7-9ef7-4d4d-b2dc-9bc87c3fde22",
+   "slug": "ersay-uner-c0c177ba",
+   "title": "Ersay Üner",
+   "act": "Ersay Üner",
+   "name": "Ersay Üner",
+   "description": "Turkish pop music singer-songwriter (born 1978)",
+   "source_url": "https://en.wikipedia.org/wiki/Ersay_%C3%9Cner",
+   "extract": "Ersay Üner, is a Turkish pop music singer-songwriter. He became known in Turkey in 2000s by writing and composing songs for Demet Akalın."
+  },
+  {
+   "id": "4d531d69-f54e-4034-a0fb-c540e55130eb",
+   "slug": "bulent-ersoy-c31cc61b",
+   "title": "Bülent Ersoy",
+   "act": "Bülent Ersoy",
+   "name": "Bülent Ersoy",
+   "description": "Turkish singer and actress (born 1952)",
+   "source_url": "https://en.wikipedia.org/wiki/B%C3%BClent_Ersoy",
+   "extract": "Bülent Ersoy is a Turkish singer, actress, and media personality. She is known as one of the most popular singers of Turkish music. Ersoy has many famous hits such as \"Ümit Hırsızı\" (Hope Thief), \"Geceler\" (Nights), \"Beddua\" (Curse), \"Maazallah\" (God Forbid), \"Biz Ayrılamayız\" (We Cannot Break Up), and \"Sefam Olsun\" (I Enjoy Myself). Ersoy has published more than thirty albums so far and has made a name for herself in Turkish music history. She remains an icon of the LGBTQ+ community in Turkey."
+  },
+  {
+   "id": "93c5317a-ac59-4265-b7f3-bc14dcea875e",
+   "slug": "ghostly-kisses-c9006a99",
+   "title": "Ghostly Kisses",
+   "act": "Ghostly Kisses",
+   "name": "Ghostly Kisses",
+   "description": "Singer",
+   "source_url": "https://en.wikipedia.org/wiki/Ghostly_Kisses",
+   "extract": "Ghostly Kisses is the musical project of French-Canadian singers Margaux Sauvé and Louis-Étienne Santais. They are based in Quebec. Sauvé is signed to the British record label Akira Records. The name 'Ghostly Kisses' was inspired by the William Faulkner poem Une ballade des dames perdues, which includes the verse \"And brush my lips with little ghostly kisses.\" Clash describes her music as having \"a weightless quality, something that transcends the ephemeral to grapple with key facets of our lives.\""
+  },
+  {
+   "id": "8cdf552a-49d8-48fd-867d-cd69a2cfe352",
+   "slug": "merve-ozbey-540ce9f8",
+   "title": "Merve Özbey",
+   "act": "Merve Özbey",
+   "name": "Merve Özbey",
+   "description": "Turkish singer and songwriter (born 1988)",
+   "source_url": "https://en.wikipedia.org/wiki/Merve_%C3%96zbey",
+   "extract": "Merve Özbey is a Turkish singer and songwriter. Due to her collaborations with Erdem Kınay in the songs \"Duman\" and \"Helal Ettim\", she became famous in Turkey."
+  },
+  {
+   "id": "85199282-2a46-4495-b87f-5ec7f904c1d7",
+   "slug": "levent-yuksel-3ffcc987",
+   "title": "Levent Yüksel",
+   "act": "Levent Yüksel",
+   "name": "Levent Yüksel",
+   "description": "Turkish musician (born 1964)",
+   "source_url": "https://en.wikipedia.org/wiki/Levent_Y%C3%BCksel",
+   "extract": "Levent Uğur Yüksel is a Turkish pop singer and multi instrumentalist. He has been active in live music industry since 1993."
+  },
+  {
+   "id": "d2dc9c94-9130-4b9a-9f42-8cbe7dcba625",
+   "slug": "erol-evgin-73b31d83",
+   "title": "Erol Evgin",
+   "act": "Erol Evgin",
+   "name": "Erol Evgin",
+   "description": "Turkish singer, composer and actor",
+   "source_url": "https://en.wikipedia.org/wiki/Erol_Evgin",
+   "extract": "Mehmet Erol Evgin is a Turkish singer, composer and film actor."
+  },
+  {
+   "id": "d89219bb-6cb9-47f2-a5b3-8066c25c5ae1",
+   "slug": "oguzhan-koc-5298c55a",
+   "title": "Oğuzhan Koç",
+   "act": "Oğuzhan Koç",
+   "name": "Oğuzhan Koç",
+   "description": "Turkish actor and singer",
+   "source_url": "https://en.wikipedia.org/wiki/O%C4%9Fuzhan_Ko%C3%A7",
+   "extract": "Oğuzhan Koç is a Turkish singer-songwriter, comedian, actor, screenwriter, TV host and music producer."
+  },
+  {
+   "id": "a644a318-1db2-4202-983e-dc50ab2115cc",
+   "slug": "shantel-partizani-super-sonic-dj-set-40d9955c",
+   "title": "Shantel - PARTIZANI SUPER SONIC - DJ Set",
+   "act": "Shantel",
+   "name": "Shantel",
+   "description": "German DJ and producer (born 1968)",
+   "source_url": "https://en.wikipedia.org/wiki/Shantel",
+   "extract": "Stefan Hantel, better known by his stage name Shantel, is a German DJ and producer based in Frankfurt. He is known for his work with Romani brass orchestras, DJing and remixing traditional Balkan music with electronic beats."
+  }
+ ]
+}

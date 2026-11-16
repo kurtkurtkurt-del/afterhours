@@ -1,0 +1,46 @@
+{
+ "city": "montreal",
+ "day": "2026-11-16",
+ "nights": [
+  {
+   "id": "8955a95e-ac00-4370-be75-7cf5d7db6588",
+   "slug": "mamas-gun-873413eb",
+   "title": "MAMAS GUN",
+   "act": "MAMAS GUN",
+   "name": "Mamas Gun",
+   "description": "British contemporary soul band",
+   "source_url": "https://en.wikipedia.org/wiki/Mamas_Gun",
+   "extract": "Mamas Gun is a British contemporary soul band. They found early international success with a radio-friendly soul pop sound. They made 5 full-length albums with evolving personnel, reaching a sound rooted in classic soul with alternative/progressive leanings. Golden Days (2018) marked a major turning point, the band having recorded and produced it themselves."
+  },
+  {
+   "id": "f2ff5c2a-fa6c-4f66-8974-bddc447b0a02",
+   "slug": "magi-merlin-b21d46ab",
+   "title": "Magi Merlin",
+   "act": "Magi Merlin",
+   "name": "Magi Merlin",
+   "description": "Canadian musician and actress",
+   "source_url": "https://en.wikipedia.org/wiki/Magi_Merlin",
+   "extract": "Magi Merlin is a Canadian musician and actress."
+  },
+  {
+   "id": "3b53e8d9-3f03-4fb3-899f-c54482e78fc3",
+   "slug": "barenaked-ladies-e8475354",
+   "title": "Barenaked Ladies",
+   "act": "Barenaked Ladies",
+   "name": "Barenaked Ladies",
+   "description": "Canadian rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Barenaked_Ladies",
+   "extract": "Barenaked Ladies are a Canadian rock band formed in Scarborough, Ontario, in 1988. The group began as a duo of singer-guitarists Ed Robertson and Steven Page and expanded to a quintet with bassist Jim Creeggan, percussionist and keyboardist Andy Creeggan and drummer Tyler Stewart. Multi-instrumentalist Kevin Hearn replaced Andy Creeggan in 1995. Page left the band in 2009; Robertson, Jim Creeggan, Stewart and Hearn have continued as a quartet."
+  },
+  {
+   "id": "68208f7e-a195-4fec-933a-9ab0704011de",
+   "slug": "yaelokre-f035cfcc",
+   "title": "Yaelokre",
+   "act": "Yaelokre",
+   "name": "Yaelokre",
+   "description": "Filipino-Icelandic singer-songwriter and multimedia artist",
+   "source_url": "https://en.wikipedia.org/wiki/Yaelokre",
+   "extract": "Christopher Kristjansson, known professionally as Keath Ósk, is a Filipino-Icelandic singer-songwriter and multimedia artist known for their folk music storytelling project under the stage name Yaelokre. Ósk began releasing music under the project name in early 2024, going viral on TikTok in July of the same year for their song \"Harpy Hare\", entering the TikTok Billboard Top 50 and topping Spotify's Global Viral Songs Chart the same year."
+  }
+ ]
+}

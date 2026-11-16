@@ -1,0 +1,56 @@
+{
+ "city": "manchester",
+ "day": "2026-11-16",
+ "nights": [
+  {
+   "id": "62955225-bfdd-42cc-a17d-2f4033f802b2",
+   "slug": "baby-lasagna-0f6bb45d",
+   "title": "Baby Lasagna",
+   "act": "Baby Lasagna",
+   "name": "Baby Lasagna",
+   "description": "Croatian singer",
+   "source_url": "https://en.wikipedia.org/wiki/Baby_Lasagna",
+   "extract": "Marko Purišić, known professionally as Baby Lasagna, is a Croatian singer-songwriter and music producer, best known as a founding member of Manntra. He represented Croatia in the Eurovision Song Contest 2024 with the song \"Rim Tim Tagi Dim\", where he finished in second place overall with 547 points and first in the public vote, becoming Croatia's highest-scoring Eurovision entrant since its debut as an independent country in 1993."
+  },
+  {
+   "id": "ac094e02-e3c5-4d1d-940a-fe83f9b58a11",
+   "slug": "don-toliver-nitrous-octane-world-tour-leg-2-e8eeaa63",
+   "title": "DON TOLIVER: NITROUS - OCTANE WORLD TOUR LEG 2",
+   "act": "DON TOLIVER",
+   "name": "Don Toliver",
+   "description": "American rapper and singer-songwriter (born 1994)",
+   "source_url": "https://en.wikipedia.org/wiki/Don_Toliver",
+   "extract": "Caleb Zackery \"Don\" Toliver is an American rapper, singer and songwriter. His debut mixtape, Donny Womack (2018), was released one day prior to fellow Houston rapper Travis Scott's album Astroworld, on which Toliver made a guest appearance. In the following week, he signed with Scott's record label, Cactus Jack Records, in a joint venture with Atlantic Records."
+  },
+  {
+   "id": "7792c377-88e5-4167-b867-c94c1e10ad25",
+   "slug": "catty-47695824",
+   "title": "CATTY",
+   "act": "CATTY",
+   "name": "Catty",
+   "description": "Welsh singer (born 1997)",
+   "source_url": "https://en.wikipedia.org/wiki/Catty_(singer)",
+   "extract": "Catrin Hopkins, known professionally as CATTY, is a Welsh singer and songwriter. She began her music career in 2016 in the musical duo Dusky Grey, before becoming a solo artist and a songwriter. Since going solo, she has released the extended plays Healing Out of Spite and Bracing for Impact, as well as supporting various artists on tour, including Dylan and Stevie Nicks."
+  },
+  {
+   "id": "9d981abf-3baa-4c85-b413-f79073d47438",
+   "slug": "the-field-4ee6974b",
+   "title": "The Field",
+   "act": "The Field",
+   "name": "The Field",
+   "description": "Swedish electronic music producer and DJ",
+   "source_url": "https://en.wikipedia.org/wiki/The_Field_(musician)",
+   "extract": "Axel Willner is a Swedish electronic music producer and DJ from Stockholm and currently based in Berlin, best known for his releases as The Field, blending micro-samples of pop songs into atmospheric minimal techno."
+  },
+  {
+   "id": "f19e4fa8-9d19-44ff-af0e-2da3d83d84d1",
+   "slug": "gabriella-cilmi-88882e6c",
+   "title": "Gabriella Cilmi",
+   "act": "Gabriella Cilmi",
+   "name": "Gabriella Cilmi",
+   "description": "Australian pop singer and songwriter (born 1991)",
+   "source_url": "https://en.wikipedia.org/wiki/Gabriella_Cilmi",
+   "extract": "Gabriella Lucia Cilmi is an Australian and Italian pop singer and songwriter. A contralto, Cilmi is known for her distinctive raspy singing voice."
+  }
+ ]
+}

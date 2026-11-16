@@ -1,0 +1,16 @@
+{
+ "city": "ankara",
+ "day": "2026-11-16",
+ "nights": [
+  {
+   "id": "902af5bc-d279-4a6c-b3c6-8dab29527cee",
+   "slug": "blackbriar-f8f73aef",
+   "title": "Blackbriar",
+   "act": "Blackbriar",
+   "name": "Blackbriar",
+   "description": "Dutch alternative metal/gothic rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Blackbriar_(band)",
+   "extract": "Blackbriar is a Dutch alternative metal band from Assen. They have released three albums, four EPs, six singles, twelve official music videos, one official lyric video and four acoustic live videos."
+  }
+ ]
+}

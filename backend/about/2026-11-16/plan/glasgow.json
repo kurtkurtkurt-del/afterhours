@@ -1,0 +1,96 @@
+{
+ "city": "glasgow",
+ "day": "2026-11-16",
+ "nights": [
+  {
+   "id": "0523670d-7452-4ea6-824f-ce89b8ba888f",
+   "slug": "ocean-colour-scene-836b30d7",
+   "title": "Ocean Colour Scene",
+   "act": "Ocean Colour Scene",
+   "name": "Ocean Colour Scene",
+   "description": "English rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Ocean_Colour_Scene",
+   "extract": "Ocean Colour Scene are an English rock band formed in Moseley, Birmingham in 1989. They have had five top 10 albums, including a number one in 1997. They have also achieved seventeen top 40 singles and six top 10 singles to date."
+  },
+  {
+   "id": "976d3f77-f149-4a12-97d2-a700b5175267",
+   "slug": "radio-free-alice-acf3cfb1",
+   "title": "Radio Free Alice",
+   "act": "Radio Free Alice",
+   "name": "Radio Free Alice",
+   "description": "Australian post-punk band",
+   "source_url": "https://en.wikipedia.org/wiki/Radio_Free_Alice",
+   "extract": "Radio Free Alice is an Australian post-punk band from Melbourne."
+  },
+  {
+   "id": "c6c1b882-dbbd-492a-8d29-c3bddabf8662",
+   "slug": "republica-30-years-of-ready-to-go-ba70d834",
+   "title": "Republica - 30 Years of Ready To Go",
+   "act": "Republica",
+   "name": "Republica",
+   "description": "English alternative rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Republica",
+   "extract": "Republica are an English alternative rock band formed in 1994. They reached the height of their popularity from 1996 to 1999. The band went on hiatus in 2001 and reunited in 2008."
+  },
+  {
+   "id": "fd92ad3a-4a76-480d-90d3-4cea24a97a28",
+   "slug": "rizzle-kicks-83c680ba",
+   "title": "Rizzle Kicks",
+   "act": "Rizzle Kicks",
+   "name": "Rizzle Kicks",
+   "description": "English hip hop duo",
+   "source_url": "https://en.wikipedia.org/wiki/Rizzle_Kicks",
+   "extract": "Rizzle Kicks are a British hip-hop duo from Brighton, England, consisting of Jordan \"Rizzle\" Stephens and Harley \"Sylvester\" Alexander-Sule. Their debut album, Stereo Typical, was released in 2011. As of May 2012, Rizzle Kicks had sold over one million singles and over 600,000 albums in the UK."
+  },
+  {
+   "id": "5513128c-f0f1-43a0-bf3a-0c68d8eb2d89",
+   "slug": "catty-280ce5bb",
+   "title": "CATTY",
+   "act": "CATTY",
+   "name": "Catty",
+   "description": "Welsh singer (born 1997)",
+   "source_url": "https://en.wikipedia.org/wiki/Catty_(singer)",
+   "extract": "Catrin Hopkins, known professionally as CATTY, is a Welsh singer and songwriter. She began her music career in 2016 in the musical duo Dusky Grey, before becoming a solo artist and a songwriter. Since going solo, she has released the extended plays Healing Out of Spite and Bracing for Impact, as well as supporting various artists on tour, including Dylan and Stevie Nicks."
+  },
+  {
+   "id": "d0340225-1e08-40e3-b0bc-355d6ba8eb9f",
+   "slug": "boko-yout-1d831a71",
+   "title": "Boko Yout",
+   "act": "Boko Yout",
+   "name": "Boko Yout",
+   "description": "Swedish music group",
+   "source_url": "https://en.wikipedia.org/wiki/Boko_Yout",
+   "extract": "Boko Yout is a Swedish music group. Previously, the group's singer Paul Adamah, born 1998 in Örebro, used the name Boko Yout as a stage name for his solo project, but since 2025 Boko Yout became a group with the addition of Kevin Stierne on bass and Joel Kiviaho on drums."
+  },
+  {
+   "id": "7f1aa26d-b7fd-4583-8bb6-fb8a69e5c786",
+   "slug": "gloryhammer-f771335c",
+   "title": "Gloryhammer",
+   "act": "Gloryhammer",
+   "name": "Gloryhammer",
+   "description": "British power metal band",
+   "source_url": "https://en.wikipedia.org/wiki/Gloryhammer",
+   "extract": "Gloryhammer are a British power metal band founded by keyboardist Christopher Bowes, lead vocalist of the band Alestorm. Each member of the band represents a character in the story concept. Band members appear on stage in armour and costumes to represent their respective characters."
+  },
+  {
+   "id": "54d7486f-73d6-4537-93c7-96e7fcd6505a",
+   "slug": "fontaines-d-c-c066d437",
+   "title": "Fontaines D.C.",
+   "act": "Fontaines D.C.",
+   "name": "Fontaines D.C.",
+   "description": "Irish rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Fontaines_D.C.",
+   "extract": "Fontaines D.C. are an Irish rock band formed in Dublin in 2014. The band consists of Grian Chatten (vocals), Conor Curley (guitar), Conor \"Deego\" Deegan III (bass), Tom Coll (drums), and Carlos O'Connell (guitar)."
+  },
+  {
+   "id": "a7c475aa-c360-4daf-9085-f7baf3d63a76",
+   "slug": "mystery-jets-1e85eb59",
+   "title": "Mystery Jets",
+   "act": "Mystery Jets",
+   "name": "Mystery Jets",
+   "description": "English indie rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Mystery_Jets",
+   "extract": "Mystery Jets are an English indie rock band, formed on Eel Pie Island in Twickenham, London. The founding members still part of the band consist of Blaine Harrison, Henry Harrison (lyrics), and Kapil Trivedi (drums)."
+  }
+ ]
+}

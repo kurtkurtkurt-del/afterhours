@@ -1,0 +1,16 @@
+{
+ "city": "hamburg",
+ "day": "2026-11-16",
+ "nights": [
+  {
+   "id": "3a9b741a-1d5f-4b8e-b65d-4df187d853ae",
+   "slug": "two-door-cinema-club-15th-anniversary-tour-76bae345",
+   "title": "Two Door Cinema Club - 15th Anniversary Tour",
+   "act": "Two Door Cinema Club",
+   "name": "Two Door Cinema Club",
+   "description": "Northern Irish rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Two_Door_Cinema_Club",
+   "extract": "Two Door Cinema Club are a Northern Irish rock band formed in Bangor, County Down, in 2007. The band consists of Alex Trimble, Sam Halliday, and Kevin Baird."
+  }
+ ]
+}

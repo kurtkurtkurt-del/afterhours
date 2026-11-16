@@ -1,0 +1,16 @@
+{
+ "city": "calgary",
+ "day": "2026-11-16",
+ "nights": [
+  {
+   "id": "4c39522e-15f1-4978-bef9-10b0e9158d3f",
+   "slug": "blue-hawaii-026f98c7",
+   "title": "Blue Hawaii",
+   "act": "Blue Hawaii",
+   "name": "Blue Hawaii",
+   "description": "Canadian electronic music duo",
+   "source_url": "https://en.wikipedia.org/wiki/Blue_Hawaii_(band)",
+   "extract": "Blue Hawaii are a Canadian electronic music duo from Montreal, Quebec, composed of Braids member Raphaelle \"Ra\" Standell-Preston and Alexander Kirby. They have released an EP, Blooming Summer (2010) and three studio albums, Untogether (2013), Tenderness (2017) and Open Reduction Internal Fixation (2019) all on Arbutus Records. The first two albums were nominated for the Juno Award for Electronic Album of the Year."
+  }
+ ]
+}

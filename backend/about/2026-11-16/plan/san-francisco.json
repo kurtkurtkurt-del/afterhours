@@ -1,0 +1,36 @@
+{
+ "city": "san-francisco",
+ "day": "2026-11-16",
+ "nights": [
+  {
+   "id": "dc22a3f5-bda8-43be-8778-3071b7f76e28",
+   "slug": "eiv-r-c039cf91",
+   "title": "Eivør",
+   "act": "Eivør",
+   "name": "Eivør",
+   "description": "Faroese singer-songwriter (born 1983)",
+   "source_url": "https://en.wikipedia.org/wiki/Eiv%C3%B8r_(singer)",
+   "extract": "Eivør Pálsdóttir, known mononymously as Eivør, is a Faroese singer-songwriter. Born and raised in Syðrugøta, she had her first televised performance at the age of 13. Over the course of her decades-long career, her musical output has spanned a wide range of genres such as folk, art pop, jazz, folk rock, classical and electronica."
+  },
+  {
+   "id": "9e505dd1-6287-4b01-bdb5-c9dea6abf3e1",
+   "slug": "the-mountain-goats-night-five-cast-of-thousands-82aade44",
+   "title": "The Mountain Goats - Night Five: Cast of Thousands",
+   "act": "The Mountain Goats",
+   "name": "The Mountain Goats",
+   "description": "American indie folk band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Mountain_Goats",
+   "extract": "The Mountain Goats are an American indie folk band formed in Claremont, California, by singer-songwriter John Darnielle. Since 2003, the band has been based in Durham, North Carolina. For many years, the sole member of the Mountain Goats was Darnielle, despite the plural moniker. Although he remains the core member of the band, he has worked with a variety of collaborators over time, including bassist and vocalist Peter Hughes, drummer Jon Wurster, multi-instrumentalist Matt Douglas, singer-songwriter Franklin Bruno, bassist and vocalist Rachel Ware, singer-songwriter/producer John Vanderslice, guitarist Kaki King, and multi-instrumentalist Annie Clark."
+  },
+  {
+   "id": "a3789e0e-d25e-43b5-b4ee-c6c457d269e9",
+   "slug": "spencer-day-e9cd4dee",
+   "title": "Spencer Day",
+   "act": "Spencer Day",
+   "name": "Spencer Day",
+   "description": "American singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Spencer_Day",
+   "extract": "Spencer Day is a modern jazz singer and songwriter best known for his hit Jazz single \"Till You Come to Me\" as well as appearing on the CBS television network show Star Search in 2002–2003."
+  }
+ ]
+}

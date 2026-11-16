@@ -1,0 +1,56 @@
+{
+ "city": "boston",
+ "day": "2026-11-16",
+ "nights": [
+  {
+   "id": "565547bf-6b20-4801-8431-1e271a52ad78",
+   "slug": "jessie-reyez-a-little-vengeance-tour-cbc06b41",
+   "title": "Jessie Reyez: A Little Vengeance Tour",
+   "act": "Jessie Reyez",
+   "name": "Jessie Reyez",
+   "description": "Canadian singer-songwriter (born 1991)",
+   "source_url": "https://en.wikipedia.org/wiki/Jessie_Reyez",
+   "extract": "Jessica Reyez is a Canadian singer-songwriter. Her 2016 single, \"Figures\", peaked at number 58 on the Canadian Hot 100 and received triple platinum certification by Music Canada (MC) and platinum by the Recording Industry Association of America (RIAA). Her debut extended play (EP), Kiddo (2017), led her to win Breakthrough Artist from four nominations at the 2018 Juno Awards. Her second EP, Being Human in Public (2018), was released the following year, won R&B/Soul Recording of the Year at the 2019 Juno Awards, and was nominated for Best Urban Contemporary Album at the 2020 Grammy Awards."
+  },
+  {
+   "id": "99d42a7e-ef78-4558-9c44-571ce48003b3",
+   "slug": "samantha-fish-paper-doll-live-world-tour-2078acec",
+   "title": "Samantha Fish: Paper Doll Live World Tour",
+   "act": "Samantha Fish",
+   "name": "Samantha Fish",
+   "description": "American blues guitarist and singer-songwriter (born 1989)",
+   "source_url": "https://en.wikipedia.org/wiki/Samantha_Fish",
+   "extract": "Samantha Fish is an American guitarist and singer-songwriter from Kansas City, Missouri. While she is often cited as a blues artist, Fish's work features and draws from multiple genres, including rock, country, funk, bluegrass, and ballads."
+  },
+  {
+   "id": "fe0560ba-62ca-48ff-a657-5f5d7c61256b",
+   "slug": "latto-ages-21-432b0c3c",
+   "title": "Latto - Ages 21+",
+   "act": "Latto",
+   "name": "Latto",
+   "description": "American rapper (born 1998)",
+   "source_url": "https://en.wikipedia.org/wiki/Latto",
+   "extract": "Alyssa Michelle Stephens, known professionally as Latto, is an American rapper and singer from Atlanta, Georgia. She first appeared on Jermaine Dupri's reality television series The Rap Game in 2016, where she was known as Miss Mulatto and won the show's first season, but rejected its award of a recording contract with Dupri's So So Def Recordings."
+  },
+  {
+   "id": "6cb01f11-15f4-4a59-81fd-d2e98f1a95c8",
+   "slug": "doja-cat-tour-ma-vie-world-tour-e22e318e",
+   "title": "Doja Cat - Tour Ma Vie World Tour",
+   "act": "Doja Cat",
+   "name": "Doja Cat",
+   "description": "American rapper (born 1995)",
+   "source_url": "https://en.wikipedia.org/wiki/Doja_Cat",
+   "extract": "Amala Ratna Zandile Dlamini, known professionally as Doja Cat, is an American rapper and singer-songwriter. Regarded as the \"Queen of Pop-Rap\", she is known for her musical versatility, live performance skills and humorous internet presence. Billboard named her \"one of the world's biggest pop stars\" and \"one of the defining pop stars of this era\", and Time listed her as one of the world's most influential people in 2023."
+  },
+  {
+   "id": "60c7c26d-040d-40e3-b153-675ab2c12f56",
+   "slug": "tyla-the-a-pop-world-tour-e99d9f68",
+   "title": "TYLA - THE A*POP WORLD TOUR",
+   "act": "TYLA",
+   "name": "Tyla",
+   "description": "South African singer-songwriter (born 2002)",
+   "source_url": "https://en.wikipedia.org/wiki/Tyla",
+   "extract": "Tyla Laura Seethal is a South African singer-songwriter. Dubbed the \"Queen of Popiano\", her musical style is characterised by a fusion of pop and amapiano."
+  }
+ ]
+}

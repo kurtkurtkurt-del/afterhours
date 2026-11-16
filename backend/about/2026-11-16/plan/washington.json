@@ -1,0 +1,36 @@
+{
+ "city": "washington",
+ "day": "2026-11-16",
+ "nights": [
+  {
+   "id": "9c4be650-0842-4c21-adae-32fbfcd819da",
+   "slug": "bedouine-78743987",
+   "title": "Bedouine",
+   "act": "Bedouine",
+   "name": "Bedouine",
+   "description": "Syrian-American musician (born 1985)",
+   "source_url": "https://en.wikipedia.org/wiki/Bedouine",
+   "extract": "Azniv Korkejian, known by her stage name Bedouine, is a Syrian-American musician. She has lived in a number of cities and countries, including Saudi Arabia, Houston, Syria, and Boston."
+  },
+  {
+   "id": "671ae079-b8a5-40fe-b499-efc137fff8a5",
+   "slug": "they-might-be-giants-two-night-pass-11-21-and-11-cccf34ec",
+   "title": "They Might Be Giants - Two Night Pass 11/21 & 11/22!",
+   "act": "They Might Be Giants",
+   "name": "They Might Be Giants",
+   "description": "American alternative rock duo",
+   "source_url": "https://en.wikipedia.org/wiki/They_Might_Be_Giants",
+   "extract": "They Might Be Giants, often abbreviated as TMBG, is an American alternative rock band formed in Brooklyn in 1982 by vocalist and guitarist John Flansburgh and vocalist and multi-instrumentalist John Linnell. During the band's early years, Flansburgh and Linnell frequently performed as a musical duo, often accompanied by a tape machine or a drum machine. In 1992, They Might Be Giants expanded to include a backing band. The group's current backing band consists of Danny Weinkauf, Dan Miller, and Marty Beller, and their horn section consists of Dan Levine, Stan Harrison, and Mark Pender."
+  },
+  {
+   "id": "b418466c-0c50-46d4-b542-7420351615d4",
+   "slug": "colby-acuff-3b0d9132",
+   "title": "Colby Acuff",
+   "act": "Colby Acuff",
+   "name": "Colby Acuff",
+   "description": "American singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Colby_Acuff",
+   "extract": "Colby Acuff is an American country singer-songwriter from Coeur d'Alene, Idaho. His major label debut album Western White Pines released just one month after signing to Sony in May 2023."
+  }
+ ]
+}

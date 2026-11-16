@@ -1,0 +1,56 @@
+{
+ "city": "houston",
+ "day": "2026-11-16",
+ "nights": [
+  {
+   "id": "9db68d00-9259-49b0-9a00-04ac04b5a768",
+   "slug": "bryan-andrews-5721b8ef",
+   "title": "Bryan Andrews",
+   "act": "Bryan Andrews",
+   "name": "Bryan Andrews",
+   "description": "American country singer and activist",
+   "source_url": "https://en.wikipedia.org/wiki/Bryan_Andrews_(singer)",
+   "extract": "Bryan Andrews is an American country music singer and activist. He is best known for his politically-themed songs, often from his own progressive left-wing viewpoint. Many of his songs have been described as protest songs."
+  },
+  {
+   "id": "5e18ad17-b018-4f0e-98ee-1f9475a87f03",
+   "slug": "aterciopelados-la-pipa-de-la-paz-30-anos-tour-ce47fed3",
+   "title": "Aterciopelados: La Pipa De La Paz 30 Años Tour",
+   "act": "Aterciopelados",
+   "name": "Aterciopelados",
+   "description": "Rock band from Colombia",
+   "source_url": "https://en.wikipedia.org/wiki/Aterciopelados",
+   "extract": "Aterciopelados, also known as Los Aterciopelados, is a rock band from Colombia, led by Andrea Echeverri and Héctor Buitrago. Their music fuses rock with a variety of Colombian and Latin American musical traditions. Aterciopelados have recorded eight albums."
+  },
+  {
+   "id": "2386479c-d91e-4ac4-adeb-76fde43309b5",
+   "slug": "chelsea-handler-the-high-and-mighty-tour-ea6a72b7",
+   "title": "CHELSEA HANDLER: THE HIGH AND MIGHTY TOUR",
+   "act": "CHELSEA HANDLER",
+   "name": "Chelsea Handler",
+   "description": "American comedian, actress, writer, and producer (born 1975)",
+   "source_url": "https://en.wikipedia.org/wiki/Chelsea_Handler",
+   "extract": "Chelsea Joy Handler is an American stand-up comedian, actress, writer, television host, and producer. She hosted the late-night talk show Chelsea Lately on the E! network from 2007 to 2014 and released a documentary series, Chelsea Does, on Netflix in January 2016. From 2016 to 2017, Handler hosted the talk show Chelsea on Netflix."
+  },
+  {
+   "id": "5a6e2241-22bc-4a96-9ab8-2c08a9810614",
+   "slug": "krewella-d9432b24",
+   "title": "Krewella",
+   "act": "Krewella",
+   "name": "Krewella",
+   "description": "American electronic dance music group",
+   "source_url": "https://en.wikipedia.org/wiki/Krewella",
+   "extract": "Krewella is an American electronic dance music group formed in Northbrook, Illinois, a suburb of Chicago in 2007. The duo consists of sisters Jahan and Yasmine Yousaf; Kristopher Trindl was a member during their commercial peak in the early 2010s, and split from the group in 2014."
+  },
+  {
+   "id": "e153ef51-c237-4082-8dc6-aefacd32f6bc",
+   "slug": "static-dress-injury-episode-usa-tour-9f1fb892",
+   "title": "Static Dress - Injury Episode USA Tour",
+   "act": "Static Dress",
+   "name": "Static Dress",
+   "description": "English rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Static_Dress",
+   "extract": "Static Dress are an English rock band from Leeds, West Yorkshire. Formed in 2018, Static Dress are a concept band with their material following a continuous story. They currently consist of lead vocalist Olli Appleyard, drummer Sam Ogden, guitarist Vincent Weight and bassist George Holding. They have released two full-length studio albums, three EPs and various standalone singles, as well as a comic book and three video games."
+  }
+ ]
+}

@@ -1,0 +1,46 @@
+{
+ "city": "detroit",
+ "day": "2026-11-16",
+ "nights": [
+  {
+   "id": "2fc27c6e-ca80-4402-bd94-d80406e1dfb8",
+   "slug": "yung-gravy-the-joyrider-tour-e5c849f9",
+   "title": "Yung Gravy: The Joyrider Tour",
+   "act": "Yung Gravy",
+   "name": "Yung Gravy",
+   "description": "American rapper (born 1996)",
+   "source_url": "https://en.wikipedia.org/wiki/Yung_Gravy",
+   "extract": "Matthew Raymond Hauri, better known by his stage name Yung Gravy, is an American rapper."
+  },
+  {
+   "id": "18a3f018-1b4e-4977-94fd-32113fcda2cf",
+   "slug": "sidepiece-ages-18-5d96a344",
+   "title": "SIDEPIECE - Ages 18+",
+   "act": "SIDEPIECE",
+   "name": "Sidepiece",
+   "description": "American DJ and production duo",
+   "source_url": "https://en.wikipedia.org/wiki/Sidepiece_(duo)",
+   "extract": "Sidepiece is an American DJ and production duo formed in 2019 by Dylan Ragland and Ricky Mears. The pair have established themselves in the electronic dance music (EDM) scene, particularly within the house and tech house genres."
+  },
+  {
+   "id": "1b79c826-9760-4201-967b-deb1bdfcaa3a",
+   "slug": "lord-huron-669f6d5d",
+   "title": "Lord Huron",
+   "act": "Lord Huron",
+   "name": "Lord Huron",
+   "description": "American indie folk band",
+   "source_url": "https://en.wikipedia.org/wiki/Lord_Huron",
+   "extract": "Lord Huron is a Los Angeles-based American indie rock band composed of Mark Barry, Miguel Briseño, Tom Renaud (guitar), and founder Ben Schneider. They released their debut album Lonesome Dreams in 2012, their second album Strange Trails in 2015, their third album Vide Noir in 2018, their fourth album Long Lost in 2021, and their fifth album The Cosmic Selector, Vol. 1 in 2025."
+  },
+  {
+   "id": "dc8acfbb-30d5-405c-a16f-c87183029109",
+   "slug": "lucy-bedroque-18c28fac",
+   "title": "Lucy Bedroque",
+   "act": "Lucy Bedroque",
+   "name": "Lucy Bedroque",
+   "description": "American rapper and producer (born 2006)",
+   "source_url": "https://en.wikipedia.org/wiki/Lucy_Bedroque",
+   "extract": "Jeremiah Jabulani Mark, known professionally as Lucy Bedroque, is an American rapper, singer and record producer based in Los Angeles. In 2025, they released their debut mixtape Unmusique."
+  }
+ ]
+}

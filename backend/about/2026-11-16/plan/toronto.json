@@ -1,0 +1,56 @@
+{
+ "city": "toronto",
+ "day": "2026-11-16",
+ "nights": [
+  {
+   "id": "23b8148c-5ef8-438d-8621-fdc4590ffba9",
+   "slug": "mamas-gun-28a7f741",
+   "title": "Mamas Gun",
+   "act": "Mamas Gun",
+   "name": "Mamas Gun",
+   "description": "British contemporary soul band",
+   "source_url": "https://en.wikipedia.org/wiki/Mamas_Gun",
+   "extract": "Mamas Gun is a British contemporary soul band. They found early international success with a radio-friendly soul pop sound. They made 5 full-length albums with evolving personnel, reaching a sound rooted in classic soul with alternative/progressive leanings. Golden Days (2018) marked a major turning point, the band having recorded and produced it themselves."
+  },
+  {
+   "id": "eadb12c2-b034-4c52-9f67-426237d8c56e",
+   "slug": "boy-golden-good-goddamn-another-tour-a0c5cffa",
+   "title": "Boy Golden - Good Goddamn Another Tour",
+   "act": "Boy Golden",
+   "name": "Boy Golden",
+   "description": "Canadian singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Boy_Golden_(musician)",
+   "extract": "Boy Golden is the stage name of Liam Duncan, a Canadian alternative country singer-songwriter based in Winnipeg, Manitoba."
+  },
+  {
+   "id": "cef762db-7500-4990-82cf-1dba5479e725",
+   "slug": "blackie-and-the-rodeo-kings-1a735e80",
+   "title": "Blackie and the Rodeo Kings",
+   "act": "Blackie and the Rodeo Kings",
+   "name": "Blackie and the Rodeo Kings",
+   "description": "Canadian folk rock/alternative country band",
+   "source_url": "https://en.wikipedia.org/wiki/Blackie_and_the_Rodeo_Kings",
+   "extract": "Blackie and the Rodeo Kings are a Canadian folk rock–alternative country band with blues and country influences. The band was formed in 1996, in Hamilton, Ontario, by Tom Wilson, Stephen Fearing, and Colin Linden."
+  },
+  {
+   "id": "7abd07fa-88c0-4236-8bf0-939562616698",
+   "slug": "keenan-te-the-afterthought-tour-698b8270",
+   "title": "Keenan Te: The Afterthought Tour",
+   "act": "Keenan Te",
+   "name": "Keenan Te",
+   "description": "Australian singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Keenan_Te",
+   "extract": "Keenan Te is an Australian singer-songwriter of Vietnamese and Cambodian heritage. He is known for piano-driven ballads and songs that gained popularity through TikTok."
+  },
+  {
+   "id": "4b3bc750-5e9a-46c4-bd55-265cb4d2cbf4",
+   "slug": "gryffin-f8360198",
+   "title": "GRYFFIN",
+   "act": "GRYFFIN",
+   "name": "Gryffin",
+   "description": "American musician and producer (born 1987)",
+   "source_url": "https://en.wikipedia.org/wiki/Gryffin",
+   "extract": "Daniel Griffith, known by his stage name Gryffin, is an American musician, DJ, and music producer. He gained recognition for remixing some well-known songs such as Tove Lo's \"Talking Body\", Maroon 5's \"Animals\" and Years & Years' \"Desire\"."
+  }
+ ]
+}

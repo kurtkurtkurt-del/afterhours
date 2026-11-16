@@ -1,0 +1,76 @@
+{
+ "city": "los-angeles",
+ "day": "2026-11-16",
+ "nights": [
+  {
+   "id": "33dfa296-89fd-40cc-b8ea-13be45566bf0",
+   "slug": "cupcakke-f8ee9952",
+   "title": "CupcakKe",
+   "act": "CupcakKe",
+   "name": "Cupcakke",
+   "description": "American rapper (born 1997)",
+   "source_url": "https://en.wikipedia.org/wiki/Cupcakke",
+   "extract": "Elizabeth Eden Harris, known professionally as Cupcakke, is an American rapper and singer-songwriter known for her hypersexualized, brazen, and often comical persona and music."
+  },
+  {
+   "id": "c112d353-9ea4-464b-b019-8fe3314e5c5f",
+   "slug": "brutalismus-3000-ages-16-65b0de75",
+   "title": "Brutalismus 3000 - Ages 16+",
+   "act": "Brutalismus 3000",
+   "name": "Brutalismus 3000",
+   "description": "German electronic music duo",
+   "source_url": "https://en.wikipedia.org/wiki/Brutalismus_3000",
+   "extract": "Brutalismus 3000 are an electronic music duo from Berlin, comprising Victoria Vassiliki Daldas and Theo Zeitner."
+  },
+  {
+   "id": "809bd078-c081-4291-af1f-85f267830361",
+   "slug": "the-obgms-heart-problems-tour-5fbb5e06",
+   "title": "The OBGMs: Heart Problems Tour",
+   "act": "The OBGMs",
+   "name": "The OBGMs",
+   "description": "Canadian punk rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_OBGMs",
+   "extract": "The OBGMs (The oOohh Baby Gimme Mores) are a Canadian punk rock band from Toronto, Ontario. They are most noted for their 2020 album The Ends, which was a shortlisted finalist for the 2021 Polaris Music Prize."
+  },
+  {
+   "id": "d64343e7-5d72-48c5-9fc5-884f98a19285",
+   "slug": "em-beihold-tales-of-a-failed-shapeshifter-tour-b97fa2eb",
+   "title": "Em Beihold: Tales Of A Failed Shapeshifter Tour",
+   "act": "Em Beihold",
+   "name": "Em Beihold",
+   "description": "American singer-songwriter (born 1999)",
+   "source_url": "https://en.wikipedia.org/wiki/Em_Beihold",
+   "extract": "Emily Mahin Beihold is an American singer-songwriter. She released her debut EP Infrared in 2017. After signing to Republic Records in 2021, she released her major-label debut single \"Numb Little Bug\" in 2022, which brought her widespread recognition. The same year, she released her second EP, Egg in the Backseat. Her debut album, Tales of a Failed Shapeshifter, was released on February 27, 2026."
+  },
+  {
+   "id": "c57d04bf-3b4f-4aeb-8ad7-11d8870dfe8d",
+   "slug": "kehlani-36e5e525",
+   "title": "Kehlani",
+   "act": "Kehlani",
+   "name": "Kehlani",
+   "description": "American singer-songwriter (born 1995)",
+   "source_url": "https://en.wikipedia.org/wiki/Kehlani",
+   "extract": "Kehlani Ashley Parrish is an American singer, songwriter and dancer. They initially started as a member of the teen pop group PopLyfe in 2011 as a contestant on America's Got Talent. After leaving the group, Parrish self-released the mixtapes Cloud 19 (2014) and You Should Be Here (2015), both of which were critically acclaimed and received gold certifications by the Recording Industry Association of America (RIAA), while the latter marked their first entry on the US Billboard 200 and was nominated for Best Urban Contemporary Album at the 58th Annual Grammy Awards."
+  },
+  {
+   "id": "cada5219-01a6-4214-8841-1caf511de0d6",
+   "slug": "dirty-honey-5b996c78",
+   "title": "Dirty Honey",
+   "act": "Dirty Honey",
+   "name": "Dirty Honey",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Dirty_Honey",
+   "extract": "Dirty Honey is an American rock band from Los Angeles, formed in 2017. It consists of singer Marc LaBelle, guitarist John Notto, bassist Justin Smolian, and drummer Jaydon Bean."
+  },
+  {
+   "id": "61d43d8b-65d3-4257-85bd-b46738d7ab12",
+   "slug": "jackson-browne-cedd3b96",
+   "title": "Jackson Browne",
+   "act": "Jackson Browne",
+   "name": "Jackson Browne",
+   "description": "American singer, songwriter and political activist (born 1948)",
+   "source_url": "https://en.wikipedia.org/wiki/Jackson_Browne",
+   "extract": "Clyde Jackson Browne is an American rock musician, singer, songwriter, and political activist who has sold over 30 million albums in the United States."
+  }
+ ]
+}
