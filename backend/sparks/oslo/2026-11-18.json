@@ -1,0 +1,14 @@
+{
+  "city": "oslo",
+  "day": "2026-11-18",
+  "sparks": [
+    {
+      "kind": "jazz",
+      "title": { "en": "richard bona and alfredo rodríguez at cosmopolite.", "de": "richard bona und alfredo rodríguez im cosmopolite.", "tr": "cosmopolite'de richard bona ve alfredo rodríguez." },
+      "line": { "en": "the trio plays the cosmopolite at 20:00, doors at 19:00, 18 and over. tickets are on sale, about 450 nok plus fees.", "de": "das trio spielt um 20:00 im cosmopolite, einlass 19:00, ab 18 jahren. tickets sind im verkauf, etwa 450 nok plus gebühren.", "tr": "trio saat 20:00'de cosmopolite'de çalıyor; kapılar 19:00'da açılır, 18 yaş ve üstü. biletler satışta, yaklaşık 450 nok artı ücret." },
+      "place": { "en": "cosmopolite", "de": "cosmopolite", "tr": "cosmopolite" },
+      "hour": 20, "minute": 0,
+      "why": "Richard Bona & Alfredo Rodriguez Trio at Cosmopolite, wed 18 Nov 2026, doors 19:00 and concert 20:00, per the Cosmopolite program page; Eventworld lists tickets."
+    }
+  ]
+}
