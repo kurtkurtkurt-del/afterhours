@@ -1,0 +1,14 @@
+{
+  "city": "athina",
+  "day": "2026-11-22",
+  "sparks": [
+    {
+      "kind": "flea",
+      "title": { "en": "the sunday flea market at monastiraki, early.", "de": "der sonntagsflohmarkt in monastiraki, früh.", "tr": "monastiraki'de pazar pire pazarı, erken." },
+      "line": { "en": "the sunday market fills the streets round monastiraki station from about 9. go early: after 11 it is packed, and bargaining is expected.", "de": "der sonntagsmarkt füllt die straßen rund um die metrostation monastiraki ab etwa 9 uhr. früh kommen: nach 11 uhr ist es voll, und handeln gehört dazu.", "tr": "pazar pazarı saat 9 civarında monastiraki metro istasyonunun çevresini doldurur. erken gelin: 11'den sonra sokaklar kalabalık olur ve pazarlık beklenir." },
+      "place": { "en": "monastiraki flea market", "de": "flohmarkt monastiraki", "tr": "monastiraki pire pazarı" },
+      "hour": 10, "minute": 0,
+      "why": "Sunday flea market at Monastiraki, peak roughly 9am to 1pm and Sunday its busiest day, per the athenstourism.org and athensguide.com guides; a weekly market, not a dated announcement for 22.11.26."
+    }
+  ]
+}
