@@ -1,0 +1,38 @@
+{
+ "city": "hamburg",
+ "day": "2026-11-16",
+ "nights": [
+  {
+   "id": "3a9b741a-1d5f-4b8e-b65d-4df187d853ae",
+   "slug": "two-door-cinema-club-15th-anniversary-tour-76bae345",
+   "title": "Two Door Cinema Club - 15th Anniversary Tour",
+   "name": "Two Door Cinema Club",
+   "source_url": "https://en.wikipedia.org/wiki/Two_Door_Cinema_Club",
+   "extract": "Two Door Cinema Club are a Northern Irish rock band formed in Bangor, County Down, in 2007. The band consists of Alex Trimble, Sam Halliday, and Kevin Baird.",
+   "en": {
+    "kicker": "northern irish rock band · bangor, 2007",
+    "who": "Two Door Cinema Club are a Northern Irish rock band. They were formed in Bangor, County Down, in 2007, and the band consists of Alex Trimble, Sam Halliday and Kevin Baird.",
+    "facts": [
+     "Two Door Cinema Club are a Northern Irish rock band formed in Bangor, County Down, in 2007.",
+     "The band consists of Alex Trimble, Sam Halliday, and Kevin Baird."
+    ]
+   },
+   "de": {
+    "kicker": "nordirische rockband · bangor, 2007",
+    "who": "Two Door Cinema Club sind eine nordirische Rockband. Sie wurde 2007 in Bangor, County Down, gegründet, und die Band besteht aus Alex Trimble, Sam Halliday und Kevin Baird.",
+    "facts": [
+     "Two Door Cinema Club sind eine nordirische Rockband, die 2007 in Bangor, County Down, gegründet wurde.",
+     "Die Band besteht aus Alex Trimble, Sam Halliday und Kevin Baird."
+    ]
+   },
+   "tr": {
+    "kicker": "kuzey irlandalı rock grubu · bangor, 2007",
+    "who": "Two Door Cinema Club, 2007'de Bangor, County Down'da kurulmuş bir Kuzey İrlanda rock grubudur. Grubun üyeleri Alex Trimble, Sam Halliday ve Kevin Baird'dür.",
+    "facts": [
+     "Two Door Cinema Club, 2007'de Bangor, County Down'da kurulmuş bir Kuzey İrlanda rock grubudur.",
+     "Grup Alex Trimble, Sam Halliday ve Kevin Baird'den oluşur."
+    ]
+   }
+  }
+ ]
+}

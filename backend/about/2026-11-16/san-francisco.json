@@ -1,0 +1,102 @@
+{
+  "city": "san-francisco",
+  "day": "2026-11-16",
+  "nights": [
+    {
+      "id": "dc22a3f5-bda8-43be-8778-3071b7f76e28",
+      "slug": "eiv-r-c039cf91",
+      "title": "Eivør",
+      "name": "Eivør",
+      "source_url": "https://en.wikipedia.org/wiki/Eiv%C3%B8r_(singer)",
+      "extract": "Eivør Pálsdóttir, known mononymously as Eivør, is a Faroese singer-songwriter. Born and raised in Syðrugøta, she had her first televised performance at the age of 13. Over the course of her decades-long career, her musical output has spanned a wide range of genres such as folk, art pop, jazz, folk rock, classical and electronica.",
+      "en": {
+        "kicker": "faroese singer-songwriter · syðrugøta",
+        "who": "Eivør Pálsdóttir, known mononymously as Eivør, is a Faroese singer-songwriter. Over a decades-long career her music has spanned many genres.",
+        "facts": [
+          "Born and raised in Syðrugøta, she had her first televised performance at the age of 13.",
+          "Her musical output has spanned genres such as folk, art pop, jazz, folk rock, classical and electronica."
+        ]
+      },
+      "de": {
+        "kicker": "färöische singer-songwriterin · syðrugøta",
+        "who": "Eivør Pálsdóttir, unter dem namen Eivør bekannt, ist eine färöische singer-songwriterin. Über eine jahrzehntelange karriere hat sich ihre musik durch viele genres bewegt.",
+        "facts": [
+          "In Syðrugøta geboren und aufgewachsen, hatte sie im alter von 13 jahren ihren ersten fernsehauftritt.",
+          "Ihre musik hat sich durch genres wie folk, art pop, jazz, folk rock, klassik und elektronik bewegt."
+        ]
+      },
+      "tr": {
+        "kicker": "faroe adalı singer-songwriter · syðrugøta",
+        "who": "Eivør Pálsdóttir, adıyla Eivør olarak bilinir, bir Faroe singer-songwriter'ıdır. Onlarca yıllık kariyeri boyunca müziği pek çok türe yayıldı.",
+        "facts": [
+          "Syðrugøta'da doğup büyüyen Eivør, 13 yaşında ilk televizyon performansını verdi.",
+          "Müziği folk, art pop, caz, folk rock, klasik ve elektronik gibi türlere yayıldı."
+        ]
+      }
+    },
+    {
+      "id": "9e505dd1-6287-4b01-bdb5-c9dea6abf3e1",
+      "slug": "the-mountain-goats-night-five-cast-of-thousands-82aade44",
+      "title": "The Mountain Goats - Night Five: Cast of Thousands",
+      "name": "The Mountain Goats",
+      "source_url": "https://en.wikipedia.org/wiki/The_Mountain_Goats",
+      "extract": "The Mountain Goats are an American indie folk band formed in Claremont, California, by singer-songwriter John Darnielle. Since 2003, the band has been based in Durham, North Carolina. For many years, the sole member of the Mountain Goats was Darnielle, despite the plural moniker. Although he remains the core member of the band, he has worked with a variety of collaborators over time, including bassist and vocalist Peter Hughes, drummer Jon Wurster, multi-instrumentalist Matt Douglas, singer-songwriter Franklin Bruno, bassist and vocalist Rachel Ware, singer-songwriter/producer John Vanderslice, guitarist Kaki King, and multi-instrumentalist Annie Clark.",
+      "en": {
+        "kicker": "american indie folk band · durham, north carolina",
+        "who": "The Mountain Goats are an American indie folk band. For many years John Darnielle was the sole member, despite the plural name. He has since worked with a variety of collaborators.",
+        "facts": [
+          "The band was formed in Claremont, California, by singer-songwriter John Darnielle.",
+          "Since 2003, the band has been based in Durham, North Carolina."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische indie-folk-band · durham, north carolina",
+        "who": "The Mountain Goats sind eine amerikanische indie-folk-band. Viele jahre war John Darnielle trotz des pluralen namens das einzige mitglied. Seither arbeitet er mit wechselnden mitarbeitern zusammen.",
+        "facts": [
+          "Die band wurde von singer-songwriter John Darnielle in Claremont, Kalifornien, gegründet.",
+          "Seit 2003 ist die band in Durham, North Carolina, ansässig."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı indie folk grubu · durham, north carolina",
+        "who": "The Mountain Goats amerikalı bir indie folk grubudur. Uzun yıllar, çoğul adına rağmen tek üyesi John Darnielle oldu. O zamandan beri çeşitli iş arkadaşlarıyla birlikte çalışıyor.",
+        "facts": [
+          "Grup, singer-songwriter John Darnielle tarafından California'nın Claremont kentinde kuruldu.",
+          "2003'ten beri grubun merkezi Durham, North Carolina'dır."
+        ]
+      }
+    },
+    {
+      "id": "a3789e0e-d25e-43b5-b4ee-c6c457d269e9",
+      "slug": "spencer-day-e9cd4dee",
+      "title": "Spencer Day",
+      "name": "Spencer Day",
+      "source_url": "https://en.wikipedia.org/wiki/Spencer_Day",
+      "extract": "Spencer Day is a modern jazz singer and songwriter best known for his hit Jazz single \"Till You Come to Me\" as well as appearing on the CBS television network show Star Search in 2002–2003.",
+      "en": {
+        "kicker": "modern jazz singer and songwriter · star search, 2002–2003",
+        "who": "Spencer Day is a modern jazz singer and songwriter. He is best known for his hit jazz single \"Till You Come to Me.\"",
+        "facts": [
+          "His best-known hit is the jazz single \"Till You Come to Me.\"",
+          "He appeared on the CBS television network show Star Search in 2002–2003."
+        ]
+      },
+      "de": {
+        "kicker": "moderner jazzsänger und songwriter · Star Search, 2002–2003",
+        "who": "Spencer Day ist ein moderner jazzsänger und songwriter. Er ist vor allem für seinen hit, die jazz-single \"Till You Come to Me\", bekannt.",
+        "facts": [
+          "Sein bekanntester hit ist die jazz-single \"Till You Come to Me\".",
+          "Er trat 2002–2003 in der CBS-fernsehshow Star Search auf."
+        ]
+      },
+      "tr": {
+        "kicker": "modern caz şarkıcısı ve söz yazarı · star search, 2002–2003",
+        "who": "Spencer Day modern bir caz şarkıcısı ve söz yazarıdır. En çok caz single'ı \"Till You Come to Me\" ile tanınır.",
+        "facts": [
+          "En bilinen hiti caz single'ı \"Till You Come to Me\"dir.",
+          "2002–2003 yıllarında CBS televizyon ağının Star Search programında yer aldı."
+        ]
+      }
+    }
+  ]
+}

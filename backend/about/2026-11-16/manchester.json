@@ -1,0 +1,102 @@
+{
+  "city": "manchester",
+  "day": "2026-11-16",
+  "nights": [
+    {
+      "id": "62955225-bfdd-42cc-a17d-2f4033f802b2",
+      "slug": "baby-lasagna-0f6bb45d",
+      "title": "Baby Lasagna",
+      "name": "Baby Lasagna",
+      "source_url": "https://en.wikipedia.org/wiki/Baby_Lasagna",
+      "extract": "Marko Purišić, known professionally as Baby Lasagna, is a Croatian singer-songwriter and music producer, best known as a founding member of Manntra. He represented Croatia in the Eurovision Song Contest 2024 with the song \"Rim Tim Tagi Dim\", where he finished in second place overall with 547 points and first in the public vote, becoming Croatia's highest-scoring Eurovision entrant since its debut as an independent country in 1993.",
+      "en": {
+        "kicker": "croatian singer-songwriter · eurovision 2024",
+        "who": "Marko Purišić, known professionally as Baby Lasagna, is a croatian singer-songwriter and music producer, best known as a founding member of Manntra. He represented Croatia in the Eurovision Song Contest 2024 with the song \"Rim Tim Tagi Dim\", where he finished in second place overall with 547 points.",
+        "facts": [
+          "He represented Croatia in the Eurovision Song Contest 2024 with the song \"Rim Tim Tagi Dim\", where he finished in second place overall with 547 points and first in the public vote.",
+          "He became Croatia's highest-scoring Eurovision entrant since its debut as an independent country in 1993."
+        ]
+      },
+      "de": {
+        "kicker": "kroatischer singer-songwriter · eurovision 2024",
+        "who": "Marko Purišić, bekannt als Baby Lasagna, ist ein kroatischer Singer-Songwriter und Musikproduzent, vor allem als Gründungsmitglied von Manntra bekannt. 2024 vertrat er Kroatien beim Eurovision Song Contest mit dem Lied „Rim Tim Tagi Dim“ und belegte insgesamt den zweiten Platz.",
+        "facts": [
+          "Er vertrat Kroatien beim Eurovision Song Contest 2024 mit dem Lied „Rim Tim Tagi Dim“, mit 547 Punkten belegte er insgesamt den zweiten Platz und beim Publikumsvoting den ersten.",
+          "Damit wurde er der punktstärkste Eurovision-Teilnehmer Kroatiens seit dem Debüt des Landes als unabhängiger Staat 1993."
+        ]
+      },
+      "tr": {
+        "kicker": "hırvat şarkıcı ve söz yazarı · eurovision 2024",
+        "who": "Marko Purišić, Baby Lasagna adıyla tanınan, hırvat bir şarkıcı, söz yazarı ve müzik yapımcısıdır; Manntra'nın kurucu üyelerinden biri olarak bilinir. 2024 Eurovision Şarkı Yarışması'nda Hırvatistan'ı „Rim Tim Tagi Dim“ şarkısıyla temsil etti ve genel sıralamada 547 puanla ikinci oldu.",
+        "facts": [
+          "Hırvatistan'ı 2024 Eurovision Şarkı Yarışması'nda „Rim Tim Tagi Dim“ şarkısıyla temsil etti, 547 puanla genel sıralamada ikinci oldu ve halk oylamasında birinci oldu.",
+          "Bu sonuçla, bağımsız bir ülke olarak 1993'teki ilk katılımından bu yana Hırvatistan'ın en yüksek puan alan Eurovision katılımcısı oldu."
+        ]
+      }
+    },
+    {
+      "id": "7792c377-88e5-4167-b867-c94c1e10ad25",
+      "slug": "catty-47695824",
+      "title": "CATTY",
+      "name": "Catty",
+      "source_url": "https://en.wikipedia.org/wiki/Catty_(singer)",
+      "extract": "Catrin Hopkins, known professionally as CATTY, is a Welsh singer and songwriter. She began her music career in 2016 in the musical duo Dusky Grey, before becoming a solo artist and a songwriter. Since going solo, she has released the extended plays Healing Out of Spite and Bracing for Impact, as well as supporting various artists on tour, including Dylan and Stevie Nicks.",
+      "en": {
+        "kicker": "welsh singer and songwriter · since 2016",
+        "who": "Catrin Hopkins, known professionally as CATTY, is a welsh singer and songwriter. She began her music career in 2016 in the musical duo Dusky Grey, before becoming a solo artist and a songwriter.",
+        "facts": [
+          "She began her music career in 2016 in the musical duo Dusky Grey, before becoming a solo artist and a songwriter.",
+          "Since going solo, she has released the extended plays Healing Out of Spite and Bracing for Impact, as well as supporting various artists on tour, including Dylan and Stevie Nicks."
+        ]
+      },
+      "de": {
+        "kicker": "walisische sängerin und songwriterin · seit 2016",
+        "who": "Catrin Hopkins, bekannt als CATTY, ist eine walisische Sängerin und Songwriterin. Sie begann ihre Musikkarriere 2016 im Duo Dusky Grey, bevor sie als Solokünstlerin und Songwriterin arbeitete.",
+        "facts": [
+          "Sie begann ihre Musikkarriere 2016 im Duo Dusky Grey, bevor sie Solokünstlerin und Songwriterin wurde.",
+          "Seit ihrer Solokarriere hat sie die EPs Healing Out of Spite und Bracing for Impact veröffentlicht und verschiedene Künstler auf Tour unterstützt, darunter Dylan und Stevie Nicks."
+        ]
+      },
+      "tr": {
+        "kicker": "galli şarkıcı ve söz yazarı · 2016'dan beri",
+        "who": "Catrin Hopkins, CATTY adıyla tanınan, galli bir şarkıcı ve söz yazarıdır. Müzik kariyerine 2016'da Dusky Grey adlı ikilide başladı, ardından solo sanatçı ve söz yazarı oldu.",
+        "facts": [
+          "Müzik kariyerine 2016'da Dusky Grey adlı ikilide başladı, ardından solo sanatçı ve söz yazarı oldu.",
+          "Solo kariyerinde Healing Out of Spite ve Bracing for Impact adlı EP'leri yayımladı ve Dylan ile Stevie Nicks dahil çeşitli sanatçıları turnelerinde destekledi."
+        ]
+      }
+    },
+    {
+      "id": "f19e4fa8-9d19-44ff-af0e-2da3d83d84d1",
+      "slug": "gabriella-cilmi-88882e6c",
+      "title": "Gabriella Cilmi",
+      "name": "Gabriella Cilmi",
+      "source_url": "https://en.wikipedia.org/wiki/Gabriella_Cilmi",
+      "extract": "Gabriella Lucia Cilmi is an Australian and Italian pop singer and songwriter. A contralto, Cilmi is known for her distinctive raspy singing voice.",
+      "en": {
+        "kicker": "australian and italian pop singer · contralto",
+        "who": "Gabriella Lucia Cilmi is an australian and italian pop singer and songwriter. A contralto, Cilmi is known for her distinctive raspy singing voice.",
+        "facts": [
+          "Gabriella Lucia Cilmi is an Australian and Italian pop singer and songwriter.",
+          "A contralto, Cilmi is known for her distinctive raspy singing voice."
+        ]
+      },
+      "de": {
+        "kicker": "australisch-italienische popsängerin · kontraalt",
+        "who": "Gabriella Lucia Cilmi ist eine australisch-italienische Popsängerin und Songwriterin. Als Kontraalt ist Cilmi für ihre markante, raue Singstimme bekannt.",
+        "facts": [
+          "Gabriella Lucia Cilmi ist eine australische und italienische Popsängerin und Songwriterin.",
+          "Als Kontraalt ist Cilmi für ihre markante, raue Singstimme bekannt."
+        ]
+      },
+      "tr": {
+        "kicker": "avustralyalı ve italyan pop şarkıcısı · kontralto",
+        "who": "Gabriella Lucia Cilmi, avustralyalı ve italyan bir pop şarkıcısı ve söz yazarıdır. Kontralto bir ses olan Cilmi, kendine özgü kısık şarkı sesiyle tanınır.",
+        "facts": [
+          "Gabriella Lucia Cilmi, avustralyalı ve italyan bir pop şarkıcısı ve söz yazarıdır.",
+          "Kontralto bir ses olan Cilmi, kendine özgü kısık şarkı sesiyle tanınır."
+        ]
+      }
+    }
+  ]
+}

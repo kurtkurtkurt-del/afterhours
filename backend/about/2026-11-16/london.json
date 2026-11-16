@@ -1,0 +1,294 @@
+{
+  "city": "london",
+  "day": "2026-11-16",
+  "nights": [
+    {
+      "id": "09f96ad1-7e70-4a5c-a513-ed8b40d4b002",
+      "slug": "muse-the-wow-signal-europa-tour-46f54f65",
+      "title": "Muse - The Wow! Signal Europa Tour",
+      "name": "Muse",
+      "source_url": "https://en.wikipedia.org/wiki/Muse_(band)",
+      "extract": "Muse are an English rock band from Teignmouth, Devon, formed in 1994. The band consists of Matt Bellamy, Chris Wolstenholme, and Dominic Howard.",
+      "en": {
+        "kicker": "english rock band · teignmouth, devon, 1994",
+        "who": "Muse are an english rock band from Teignmouth, Devon, formed in 1994. The band consists of Matt Bellamy, Chris Wolstenholme and Dominic Howard.",
+        "facts": [
+          "The band is from Teignmouth, Devon, and was formed in 1994.",
+          "The band consists of Matt Bellamy, Chris Wolstenholme and Dominic Howard."
+        ]
+      },
+      "de": {
+        "kicker": "englische rockband · teignmouth, devon, 1994",
+        "who": "Muse sind eine englische rockband aus Teignmouth, Devon, gegründet 1994. Die band besteht aus Matt Bellamy, Chris Wolstenholme und Dominic Howard.",
+        "facts": [
+          "Die band stammt aus Teignmouth, Devon, und wurde 1994 gegründet.",
+          "Die band besteht aus Matt Bellamy, Chris Wolstenholme und Dominic Howard."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz rock grubu · teignmouth, devon, 1994",
+        "who": "Muse, Devon'un Teignmouth kentinden bir ingiliz rock grubudur ve 1994 yılında kuruldu. Grubun üyeleri Matt Bellamy, Chris Wolstenholme ve Dominic Howard'dır.",
+        "facts": [
+          "Grup Teignmouth, Devon'dan çıkar ve 1994 yılında kuruldu.",
+          "Grubu Matt Bellamy, Chris Wolstenholme ve Dominic Howard oluşturur."
+        ]
+      }
+    },
+    {
+      "id": "d3e881ab-50dd-45f8-9766-a2b7e0b1bb2f",
+      "slug": "bragolin-3123d1fb",
+      "title": "BRAGOLIN",
+      "name": "Bragolin",
+      "source_url": "https://en.wikipedia.org/wiki/Bragolin_(band)",
+      "extract": "Bragolin is a Dutch post-punk and darkwave music project founded in Utrecht in 2013 by musician Edwin van der Velde. The project combines elements of post-punk and darkwave with melodic bass guitar, synthesizers, organ sounds and guitar textures. Its lyrics and visual imagery draw on horror and post-apocalyptic cinema.",
+      "en": {
+        "kicker": "dutch post-punk and darkwave project · utrecht, 2013",
+        "who": "Bragolin is a dutch post-punk and darkwave music project founded in Utrecht in 2013 by musician Edwin van der Velde. Its lyrics and visual imagery draw on horror and post-apocalyptic cinema.",
+        "facts": [
+          "The project combines elements of post-punk and darkwave with melodic bass guitar, synthesizers, organ sounds and guitar textures.",
+          "Its lyrics and visual imagery draw on horror and post-apocalyptic cinema."
+        ]
+      },
+      "de": {
+        "kicker": "niederländisches darkwave-projekt · utrecht, 2013",
+        "who": "Bragolin ist ein niederländisches post-punk- und darkwave-musikprojekt, 2013 in Utrecht vom musiker Edwin van der Velde gegründet. Seine texte und bildwelt greifen auf horror- und post-apokalyptische filme zurück.",
+        "facts": [
+          "Das projekt verbindet elemente von post-punk und darkwave mit melodischer bassgitarre, synthesizern, orgelklängen und gitarrentexturen.",
+          "Seine texte und bildwelt greifen auf horror- und post-apokalyptische filme zurück."
+        ]
+      },
+      "tr": {
+        "kicker": "hollandalı post-punk ve darkwave projesi · utrecht, 2013",
+        "who": "Bragolin, 2013 yılında Utrecht'te müzisyen Edwin van der Velde tarafından kurulan bir hollandalı post-punk ve darkwave müzik projesidir. Sözleri ve görsel dünyası korku ve post-apokaliptik sinemadan beslenir.",
+        "facts": [
+          "Proje, post-punk ve darkwave öğelerini melodik bas gitar, synthesizer, org sesleri ve gitar dokularıyla birleştirir.",
+          "Sözleri ve görsel dünyası korku ve post-apokaliptik sinemadan beslenir."
+        ]
+      }
+    },
+    {
+      "id": "e7af9877-af50-4dc6-aa62-5c51ae52cd69",
+      "slug": "kwn-wn-night-only-8fa68c4a",
+      "title": "kwn - wn night only",
+      "name": "Kwn",
+      "source_url": "https://en.wikipedia.org/wiki/Kwn",
+      "extract": "Khyra Wilson or K. Wilson, known professionally as kwn and formerly k1, is a British singer, songwriter, rapper, and producer. She is best known for her 2024 single \"Worst Behaviour\", which entered the UK singles chart, while its remix entered the US Hot R&B/Hip-Hop Songs chart.",
+      "en": {
+        "kicker": "british singer and rapper · formerly k1",
+        "who": "Khyra Wilson, known professionally as kwn and formerly k1, is a british singer, songwriter, rapper and producer. Her 2024 single \"Worst Behaviour\" entered the UK singles chart.",
+        "facts": [
+          "She is best known for her 2024 single \"Worst Behaviour\", which entered the UK singles chart.",
+          "Its remix entered the US Hot R&B/Hip-Hop Songs chart."
+        ]
+      },
+      "de": {
+        "kicker": "britische sängerin und rapperin · vormals k1",
+        "who": "Khyra Wilson, professionell als kwn und zuvor als k1 bekannt, ist eine britische sängerin, songwriterin, rapperin und produzentin. Ihre single \"Worst Behaviour\" aus dem Jahr 2024 erreichte die britischen singlecharts.",
+        "facts": [
+          "Ihre single \"Worst Behaviour\" aus dem Jahr 2024 erreichte die britischen singlecharts.",
+          "Deren remix erreichte die US-Hot-R&B/Hip-Hop-Songs-Charts."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz şarkıcı ve rapçi · eski adı k1",
+        "who": "Khyra Wilson, sanatsal adıyla kwn ve daha önce k1 olarak bilinen, bir ingiliz şarkıcı, söz yazarı, rapçi ve yapımcıdır. 2024 tarihli \"Worst Behaviour\" single'ı İngiltere single listesine girdi.",
+        "facts": [
+          "2024 tarihli \"Worst Behaviour\" single'ı İngiltere single listesine girdi.",
+          "Bu single'ın remix'i ABD Hot R&B/Hip-Hop Songs listesine girdi."
+        ]
+      }
+    },
+    {
+      "id": "33494b63-3628-43e5-96bc-e6f5de0822f0",
+      "slug": "anouar-brahem-after-the-last-sky-a8600fa2",
+      "title": "Anouar Brahem - After the Last Sky",
+      "name": "Anouar Brahem",
+      "source_url": "https://en.wikipedia.org/wiki/Anouar_Brahem",
+      "extract": "Anouar Brahem is a Tunisian oud player and composer. He is widely acclaimed as an innovator in his field. Performing primarily for a jazz audience, he combines Arabic classical music, folk music and jazz and has been recording since at least 1991, after becoming prominent in his own country in the late 1980s.",
+      "en": {
+        "kicker": "tunisian oud player · recording since at least 1991",
+        "who": "Anouar Brahem is a tunisian oud player and composer, widely acclaimed as an innovator in his field. Performing primarily for a jazz audience, he combines arabic classical music, folk music and jazz.",
+        "facts": [
+          "He combines Arabic classical music, folk music and jazz.",
+          "He has been recording since at least 1991, after becoming prominent in his own country in the late 1980s."
+        ]
+      },
+      "de": {
+        "kicker": "tunesischer oud-spieler · aufnahmen seit mindestens 1991",
+        "who": "Anouar Brahem ist ein tunesischer oud-spieler und komponist, der als innovator seines fachs breite anerkennung findet. Er tritt vor allem vor einem jazzpublikum auf und verbindet arabische klassische musik, folkmusik und jazz.",
+        "facts": [
+          "Er verbindet arabische klassische musik, folkmusik und jazz.",
+          "Er nimmt seit mindestens 1991 auf, nachdem er ende der 1980er jahre in seinem heimatland bekannt geworden war."
+        ]
+      },
+      "tr": {
+        "kicker": "tunuslu ud sanatçısı · en az 1991'den beri kayıt",
+        "who": "Anouar Brahem, tunuslu bir ud sanatçısı ve bestecisidir; alanında bir yenilikçi olarak geniş takdir görür. Ağırlıklı olarak bir caz kitlesine seslenir ve arap klasik müziğini, halk müziğini ve cazı birleştirir.",
+        "facts": [
+          "Arap klasik müziğini, halk müziğini ve cazı birleştirir.",
+          "1991'den en az beri kayıt yapmaktadır; 1980'lerin sonunda kendi ülkesinde öne çıkmıştı."
+        ]
+      }
+    },
+    {
+      "id": "93b62ef1-2a25-4f88-9552-24a7ff2e5496",
+      "slug": "melody-gardot-d6d490fc",
+      "title": "Melody Gardot",
+      "name": "Melody Gardot",
+      "source_url": "https://en.wikipedia.org/wiki/Melody_Gardot",
+      "extract": "Melody Joy Gardot ; born February 2, 1985) is an American musician, singer, songwriter, and composer. Widely considered as one of the best jazz vocalists of her generation, she is known for her smoky contralto voice, understated vocal delivery, and a musical style that blends jazz with blues, bossa nova, folk, and pop influences. Gardot first gained attention in the mid-2000s and achieved international recognition with five studio albums: Worrisome Heart (2006), My One and Only Thrill (2009), The Absence (2012), Currency of Man (2015), and Sunset in the Blue (2020).",
+      "en": {
+        "kicker": "american jazz singer · attention since mid-2000s",
+        "who": "Melody Gardot is an american musician, singer, songwriter and composer, widely considered one of the best jazz vocalists of her generation. She first gained attention in the mid-2000s.",
+        "facts": [
+          "She is known for her smoky contralto voice, understated vocal delivery, and a musical style that blends jazz with blues, bossa nova, folk, and pop influences.",
+          "She achieved international recognition with five studio albums."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische jazzsängerin · seit mitte der 2000er",
+        "who": "Melody Gardot ist eine amerikanische musikerin, sängerin, songwriterin und komponistin, die weithin als eine der besten jazzvokalistinnen ihrer generation gilt. Sie erregte ab Mitte der 2000er jahre erstmals aufmerksamkeit.",
+        "facts": [
+          "Sie ist bekannt für ihre rauchige altstimme, ihren zurückhaltenden gesangsstil und einen musikstil, der jazz mit blues, bossa nova, folk und pop verbindet.",
+          "Sie erreichte internationale anerkennung mit fünf studioalben."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı caz şarkıcısı · 2000'lerin ortasından beri",
+        "who": "Melody Gardot, kendi kuşağının en iyi caz vokalistlerinden biri sayılan bir amerikalı müzisyen, şarkıcı, söz yazarı ve bestecidir. 2000'lerin ortalarında ilk kez ilgi görmeye başladı.",
+        "facts": [
+          "Dumanlı kontralto sesi, sakin vokal üslubu ve caz ile bluesu, bossa novayı, folk ve pop etkilerini birleştiren müzik tarzıyla bilinir.",
+          "Beş stüdyo albümüyle uluslararası üne kavuştu."
+        ]
+      }
+    },
+    {
+      "id": "676ada56-24bd-4d6e-b189-7564f8efc2e7",
+      "slug": "the-fray-3c868a19",
+      "title": "The Fray",
+      "name": "The Fray",
+      "source_url": "https://en.wikipedia.org/wiki/The_Fray",
+      "extract": "The Fray is an American rock band from Denver, Colorado, formed in 2002 by schoolmates Isaac Slade and Joe King. Their debut studio album, How to Save a Life (2005) was released by Epic Records and received quadruple platinum certification by the Recording Industry Association of America (RIAA), as well as platinum certification in Australia, Canada, New Zealand and the United Kingdom. Its release was supported by their first hit single, \"Over My Head \", which peaked at number eight on the Billboard Hot 100. The band saw their furthest success with the song's follow-up, \"How to Save a Life\", which peaked at number three on the chart and was also a hit in Australia, Canada, Ireland, Italy, Sp",
+      "en": {
+        "kicker": "american rock band · denver, colorado, 2002",
+        "who": "The Fray is an american rock band from Denver, Colorado. Their first hit single, \"Over My Head\", peaked at number eight on the Billboard Hot 100.",
+        "facts": [
+          "The Fray was formed in 2002 by schoolmates Isaac Slade and Joe King.",
+          "Their debut studio album, How to Save a Life (2005), was released by Epic Records."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische rockband · denver, colorado, 2002",
+        "who": "The Fray ist eine amerikanische rockband aus Denver, Colorado. Ihre erste hitsingle \"Over My Head\" erreichte Platz acht der Billboard Hot 100.",
+        "facts": [
+          "The Fray wurde 2002 von den schulfreunden Isaac Slade und Joe King gegründet.",
+          "Ihr debütalbum How to Save a Life (2005) erschien bei Epic Records."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı rock grubu · denver, colorado, 2002",
+        "who": "The Fray, Denver, Colorado'dan bir amerikalı rock grubudur. İlk hit single'ları \"Over My Head\", Billboard Hot 100 listesinde sekizinci sıraya kadar yükseldi.",
+        "facts": [
+          "The Fray, 2002 yılında okul arkadaşları Isaac Slade ve Joe King tarafından kuruldu.",
+          "Debüt stüdyo albümü How to Save a Life (2005), Epic Records tarafından yayımlandı."
+        ]
+      }
+    },
+    {
+      "id": "704baa7d-be97-403f-be68-687559aa3eb9",
+      "slug": "anna-von-hausswolff-458c829e",
+      "title": "Anna Von Hausswolff",
+      "name": "Anna von Hausswolff",
+      "source_url": "https://en.wikipedia.org/wiki/Anna_von_Hausswolff",
+      "extract": "Anna Michaela Ebba Electra von Hausswolff is a Swedish singer-songwriter and composer. She is known for her gothic-styled music, usually accompanied by the pipe organ. Von Hausswolff's music has received praise from music critics, though it resulted in protests from Catholic fundamentalist groups.",
+      "en": {
+        "kicker": "swedish singer-songwriter and composer",
+        "who": "Anna Michaela Ebba Electra von Hausswolff is a swedish singer-songwriter and composer. She is known for her gothic-styled music, usually accompanied by the pipe organ.",
+        "facts": [
+          "Her music has received praise from music critics.",
+          "Her music has also resulted in protests from Catholic fundamentalist groups."
+        ]
+      },
+      "de": {
+        "kicker": "schwedische singer-songwriterin und komponistin",
+        "who": "Anna Michaela Ebba Electra von Hausswolff ist eine schwedische singer-songwriterin und komponistin. Sie ist bekannt für ihre gotisch geprägte musik, die meist von der pfeifenorgel begleitet wird.",
+        "facts": [
+          "Ihre musik hat lob von musikkritikern erhalten.",
+          "Ihre musik hat auch proteste katholischer fundamentalistischer gruppen ausgelöst."
+        ]
+      },
+      "tr": {
+        "kicker": "isveçli şarkıcı-söz yazarı ve bestekar",
+        "who": "Anna Michaela Ebba Electra von Hausswolff, isveçli bir şarkıcı, söz yazarı ve bestecidir. Gotik tarzdaki müziğiyle bilinir ve çoğunlukla boru orgu eşliğinde icra eder.",
+        "facts": [
+          "Müziği, genellikle boru orgu eşliğinde icra edilen gotik tarzıyla bilinir.",
+          "Müziği müzik eleştirmenlerinden övgü aldı ve katolik köktendinci gruplardan protestolara da yol açtı."
+        ]
+      }
+    },
+    {
+      "id": "2a352b93-9349-4f12-a3b8-cae777ef3de9",
+      "slug": "underscores-bc6b2be2",
+      "title": "underscores",
+      "name": "Underscores",
+      "source_url": "https://en.wikipedia.org/wiki/Underscores_(musician)",
+      "extract": "Devon Grey Karpf, known professionally as April Harper Grey and performing as Underscores, is an American singer-songwriter and producer. Born in San Francisco, California, Grey began releasing dubstep music on SoundCloud at the age of 13. After releasing three EPs from 2018 to 2020 that incorporated other genres such as jazz and future bass, she rose to prominence with her hyperpop and rock-influenced debut album Fishmonger in early 2021. She released its companion EP and opened for 100 Gecs on tour later that year.",
+      "en": {
+        "kicker": "american singer-songwriter and producer · san francisco",
+        "who": "Devon Grey Karpf, known professionally as April Harper Grey and performing as Underscores, is an american singer-songwriter and producer. She rose to prominence with her hyperpop and rock-influenced debut album Fishmonger in early 2021.",
+        "facts": [
+          "Born in San Francisco, California, Grey began releasing dubstep music on SoundCloud at the age of 13.",
+          "After releasing three EPs from 2018 to 2020, she rose to prominence with her hyperpop and rock-influenced debut album Fishmonger in early 2021."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische singer-songwriterin · san francisco",
+        "who": "Devon Grey Karpf, professionell als April Harper Grey bekannt und als Underscores auftretend, ist eine amerikanische singer-songwriterin und produzentin. Mit ihrem hyperpop- und rockgeprägten debütalbum Fishmonger kam sie Anfang 2021 zu bekanntheit.",
+        "facts": [
+          "Geboren in San Francisco, Kalifornien, begann Grey mit 13 jahren, dubstep auf SoundCloud zu veröffentlichen.",
+          "Nach drei EPs von 2018 bis 2020 wurde sie Anfang 2021 mit dem debütalbum Fishmonger bekannt."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı şarkıcı-söz yazarı ve yapımcı · san francisco",
+        "who": "Devon Grey Karpf, sanatsal adıyla April Harper Grey ve Underscores adıyla çalan, bir amerikalı şarkıcı, söz yazarı ve yapımcıdır. Hyperpop ve rock etkili ilk albümü Fishmonger ile 2021 başında öne çıktı.",
+        "facts": [
+          "San Francisco, Kaliforniya'da doğan Grey, 13 yaşında SoundCloud'da dubstep müziği yayımlamaya başladı.",
+          "2018 ile 2020 arasında üç EP çıkardıktan sonra, 2021 başında ilk albümü Fishmonger ile öne çıktı."
+        ]
+      }
+    },
+    {
+      "id": "5ef2cd12-628a-4475-b6e7-ac02021006b4",
+      "slug": "boko-yout-7a8e3983",
+      "title": "Boko Yout",
+      "name": "Boko Yout",
+      "source_url": "https://en.wikipedia.org/wiki/Boko_Yout",
+      "extract": "Boko Yout is a Swedish music group. Previously, the group's singer Paul Adamah, born 1998 in Örebro, used the name Boko Yout as a stage name for his solo project, but since 2025 Boko Yout became a group with the addition of Kevin Stierne on bass and Joel Kiviaho on drums.",
+      "en": {
+        "kicker": "swedish music group · since 2025",
+        "who": "Boko Yout is a swedish music group. Previously, the group's singer Paul Adamah used the name as a stage name for his solo project.",
+        "facts": [
+          "Since 2025 Boko Yout became a group with the addition of Kevin Stierne on bass and Joel Kiviaho on drums.",
+          "Previously Paul Adamah, born 1998 in Örebro, used the name Boko Yout as a stage name for his solo project."
+        ]
+      },
+      "de": {
+        "kicker": "schwedische musikgruppe · seit 2025",
+        "who": "Boko Yout ist eine schwedische musikgruppe. Zuvor nutzte der sänger Paul Adamah den namen als künstlernamen für sein soloprojekt.",
+        "facts": [
+          "Seit 2025 ist Boko Yout eine gruppe, mit Kevin Stierne am bass und Joel Kiviaho am schlagzeug.",
+          "Zuvor nutzte Paul Adamah, geboren 1998 in Örebro, den namen Boko Yout als künstlernamen für sein soloprojekt."
+        ]
+      },
+      "tr": {
+        "kicker": "isveçli müzik grubu · 2025'ten beri",
+        "who": "Boko Yout, isveçli bir müzik grubudur. Daha önce grubun şarkıcısı Paul Adamah, adı solo projesi için sahne adı olarak kullandı.",
+        "facts": [
+          "2025'ten beri Boko Yout bir grup oldu; bas gitarda Kevin Stierne ve davulda Joel Kiviaho katıldı.",
+          "Daha önce 1998'de Örebro'da doğan Paul Adamah, Boko Yout adını solo projesi için sahne adı olarak kullanıyordu."
+        ]
+      }
+    }
+  ]
+}

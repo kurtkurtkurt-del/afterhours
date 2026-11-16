@@ -1,0 +1,102 @@
+{
+  "city": "amsterdam",
+  "day": "2026-11-16",
+  "nights": [
+    {
+      "id": "f9ae0b19-12ee-4014-8050-7a7ddebe8b1e",
+      "slug": "conway-the-machine-bc89ab3c",
+      "title": "Conway the Machine",
+      "name": "Conway the Machine",
+      "source_url": "https://en.wikipedia.org/wiki/Conway_the_Machine",
+      "extract": "Demond Price, known professionally as Conway the Machine, or simply Conway, is an American rapper and co-founder of the hip hop label Griselda Records, alongside his paternal half-brother Westside Gunn, and Mach-Hommy. Acclaimed for his 1990s inspired, dark and gritty lyricism, he rose to prominence following his mixtape Reject 2 (2015) and debut studio album From King to a God (2020). His second album, God Don't Make Mistakes (2022), was released by Shady Records, and met with universal acclaim.",
+      "en": {
+        "kicker": "american rapper · co-founder of Griselda Records",
+        "who": "conway the machine, born Demond Price, is an american rapper and co-founder of the hip hop label Griselda Records, alongside his paternal half-brother Westside Gunn and Mach-Hommy. he rose to prominence following his mixtape Reject 2 (2015) and his debut studio album From King to a God (2020).",
+        "facts": [
+          "he is a co-founder of the hip hop label Griselda Records, alongside his paternal half-brother Westside Gunn, and Mach-Hommy.",
+          "his second album, God Don't Make Mistakes (2022), was released by Shady Records, and met with universal acclaim."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer rapper · mitbegründer von Griselda Records",
+        "who": "conway the machine, bürgerlich Demond Price, ist ein amerikanischer rapper und mitbegründer des hip-hop-labels Griselda Records, zusammen mit seinem halbbruder Westside Gunn und Mach-Hommy. bekannt wurde er nach dem mixtape Reject 2 (2015) und dem debütalbum From King to a God (2020).",
+        "facts": [
+          "er ist mitbegründer des hip-hop-labels Griselda Records, zusammen mit seinem väterlichen halbbruder Westside Gunn und Mach-Hommy.",
+          "sein zweites album God Don't Make Mistakes (2022) erschien bei Shady Records und erhielt allgemeine anerkennung."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı rapçi · Griselda Records kurucu ortağı",
+        "who": "conway the machine, asıl adıyla Demond Price, amerikalı bir rapçi ve hip hop etiketi Griselda Records'un kurucu ortağıdır; bu işi üvey kardeşi Westside Gunn ve Mach-Hommy ile birlikte kurmuştur. Reject 2 (2015) mixtape'i ve From King to a God (2020) ilk stüdyo albümüyle öne çıktı.",
+        "facts": [
+          "Griselda Records'un kurucu ortağıdır; bu işi paternal üvey kardeşi Westside Gunn ve Mach-Hommy ile birlikte kurmuştur.",
+          "ikinci albümü God Don't Make Mistakes (2022), Shady Records tarafından yayımlandı ve geniş beğeni topladı."
+        ]
+      }
+    },
+    {
+      "id": "210a1bd2-b17c-406e-8397-88d501574ba8",
+      "slug": "the-script-man-in-the-arena-tour-9bb6dc1e",
+      "title": "The Script: Man In The Arena Tour",
+      "name": "The Script",
+      "source_url": "https://en.wikipedia.org/wiki/The_Script",
+      "extract": "The Script are an Irish pop rock band formed in 2001 in Dublin by lead vocalist and keyboardist Danny O'Donoghue, lead guitarist Mark Sheehan and drummer Glen Power. The band currently consists of O'Donoghue, Power, Benjamin Sargeant and Ben Weaver (guitar). Sheehan was a member of the band up until his death in 2023. The band moved to London after signing to Sony Label Group imprint Phonogenic and released their first album The Script in August 2008, preceded by the debut single \"We Cry\" as well as other singles such as \"The Man Who Can't Be Moved\", \"Breakeven\" and \"Before the Worst\". The album peaked at number one in both Ireland and the UK.",
+      "en": {
+        "kicker": "irish pop rock band · dublin, 2001",
+        "who": "the script are an irish pop rock band formed in dublin in 2001 by Danny O'Donoghue, Mark Sheehan and Glen Power. the current line-up is O'Donoghue, Power, Benjamin Sargeant and Ben Weaver on guitar, and Sheehan was a member until his death in 2023.",
+        "facts": [
+          "the band moved to London after signing to Sony Label Group imprint Phonogenic and released their first album The Script in August 2008.",
+          "the album peaked at number one in both Ireland and the UK."
+        ]
+      },
+      "de": {
+        "kicker": "irische pop-rock-band · dublin, 2001",
+        "who": "the script sind eine irische pop-rock-band, die 2001 in Dublin von danny o'donoghue, mark sheehan und glen power gegründet wurde. heute besteht die band aus o'donoghue, power, benjamin sargeant und ben weaver an der gitarre; sheehan gehörte bis zu seinem tod 2023 zur band.",
+        "facts": [
+          "die band zog nach London, nachdem sie beim imprint Phonogenic der Sony Label Group unterschrieben hatte, und veröffentlichte im august 2008 ihr erstes album The Script.",
+          "das album erreichte in Irland und im UK jeweils platz eins."
+        ]
+      },
+      "tr": {
+        "kicker": "irlandalı pop rock grubu · dublin, 2001",
+        "who": "the script, 2001'de Dublin'de Danny O'Donoghue, Mark Sheehan ve Glen Power tarafından kurulmuş bir irlandalı pop rock grubudur. grubun bugünkü kadrosu O'Donoghue, Power, Benjamin Sargeant ve gitarda Ben Weaver'dan oluşuyor; Sheehan 2023'teki ölümüne kadar grubun üyesiydi.",
+        "facts": [
+          "grup, Sony Label Group'un Phonogenic etiketine imza attıktan sonra Londra'ya taşındı ve ilk albümü The Script'i ağustos 2008'de yayımladı.",
+          "albüm hem İrlanda'da hem de UK'de birinci sıraya yükseldi."
+        ]
+      }
+    },
+    {
+      "id": "ce1cb570-2703-4882-a8e8-b2fd4aa4943b",
+      "slug": "modestep-e4acc682",
+      "title": "Modestep",
+      "name": "Modestep",
+      "source_url": "https://en.wikipedia.org/wiki/Modestep",
+      "extract": "Josh Friend, known by his stage name Modestep, is an English dubstep and electronic rock DJ and record producer from London. Modestep was originally a band founded in 2008, but with the band's most recent past member, Pat Lundy, leaving the band in 2022, Modestep became a solo act by Josh Friend. Their debut album Evolution Theory was released on 11 February 2013, including its five singles: \"Feel Good\", \"Sunlight\", \"To The Stars\", \"Show Me a Sign\" and \"Another Day\". Modestep's second album, London Road, was released on 25 May 2015, marking the band's first album featuring Lundy and Deek as members. Between 2017 and March 2019, the band released four singles on Canadian record label Monsterc",
+      "en": {
+        "kicker": "english dubstep dj and producer · London",
+        "who": "Modestep, the stage name of Josh Friend, is an english dubstep and electronic rock dj and record producer from London. the band was founded in 2008, and since Pat Lundy left in 2022, Modestep has been a solo act by Josh Friend.",
+        "facts": [
+          "their debut album Evolution Theory was released on 11 February 2013, including its five singles.",
+          "Modestep's second album, London Road, was released on 25 May 2015, marking the band's first album featuring Lundy and Deek as members."
+        ]
+      },
+      "de": {
+        "kicker": "englischer dubstep-dj und produzent · london",
+        "who": "Josh Friend tritt unter dem künstlernamen Modestep auf; er ist ein englischer dubstep- und electronic-rock-dj und plattenproduzent aus London. die band wurde ursprünglich 2008 gegründet, und seit Pat Lundy 2022 die band verließ, ist Modestep ein solo-projekt von Josh Friend.",
+        "facts": [
+          "ihr debütalbum Evolution Theory erschien am 11. februar 2013, mit fünf singles.",
+          "das zweite album London Road erschien am 25. mai 2015 und war das erste album mit Lundy und Deek als mitgliedern."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz dubstep dj'i ve yapımcı · Londra",
+        "who": "Josh Friend'in sahne adı olan Modestep, Londra'dan ingiliz bir dubstep ve electronic rock dj'i ve plak yapımcısıdır. grup 2008'de kuruldu; 2022'de Pat Lundy'nin ayrılmasıyla Modestep, Josh Friend'in solo projesi oldu.",
+        "facts": [
+          "ilk albümleri Evolution Theory 11 şubat 2013'te yayımlandı ve beş single'ı içeriyordu.",
+          "ikinci albümleri London Road, 25 mayıs 2015'te çıktı ve Lundy ile Deek'in üye olarak yer aldığı ilk albüm oldu."
+        ]
+      }
+    }
+  ]
+}

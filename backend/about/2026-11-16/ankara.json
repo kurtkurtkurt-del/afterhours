@@ -1,0 +1,38 @@
+{
+ "city": "ankara",
+ "day": "2026-11-16",
+ "nights": [
+  {
+   "id": "902af5bc-d279-4a6c-b3c6-8dab29527cee",
+   "slug": "blackbriar-f8f73aef",
+   "title": "Blackbriar",
+   "name": "Blackbriar",
+   "source_url": "https://en.wikipedia.org/wiki/Blackbriar_(band)",
+   "extract": "Blackbriar is a Dutch alternative metal band from Assen. They have released three albums, four EPs, six singles, twelve official music videos, one official lyric video and four acoustic live videos.",
+   "en": {
+    "kicker": "dutch alternative metal band · assen",
+    "who": "Blackbriar is a Dutch alternative metal band from Assen. They have released three albums, four EPs, six singles, twelve official music videos, one official lyric video and four acoustic live videos.",
+    "facts": [
+     "Blackbriar is a Dutch alternative metal band from Assen.",
+     "They have released three albums, four EPs, six singles, twelve official music videos, one official lyric video and four acoustic live videos."
+    ]
+   },
+   "de": {
+    "kicker": "niederländische alternative-metal-band · assen",
+    "who": "Blackbriar ist eine niederländische Alternative-Metal-Band aus Assen. Sie haben drei Alben, vier EPs, sechs Singles, zwölf offizielle Musikvideos, ein offizielles Lyric-Video und vier akustische Live-Videos veröffentlicht.",
+    "facts": [
+     "Blackbriar ist eine niederländische Alternative-Metal-Band aus Assen.",
+     "Sie haben drei Alben, vier EPs, sechs Singles, zwölf offizielle Musikvideos, ein offizielles Lyric-Video und vier akustische Live-Videos veröffentlicht."
+    ]
+   },
+   "tr": {
+    "kicker": "hollanda alternatif metal grubu · assen",
+    "who": "Blackbriar, Assen'den bir Hollanda alternatif metal grubudur. Üç albüm, dört EP, altı single, on iki resmi müzik videosu, bir resmi lyric videosu ve dört akustik canlı video yayımladılar.",
+    "facts": [
+     "Blackbriar, Assen'den bir Hollanda alternatif metal grubudur.",
+     "Üç albüm, dört EP, altı single, on iki resmi müzik videosu, bir resmi lyric videosu ve dört akustik canlı video yayımladılar."
+    ]
+   }
+  }
+ ]
+}

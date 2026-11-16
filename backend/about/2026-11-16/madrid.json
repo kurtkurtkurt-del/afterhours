@@ -1,0 +1,38 @@
+{
+  "city": "madrid",
+  "day": "2026-11-16",
+  "nights": [
+    {
+      "id": "1f0e2e84-e820-4996-a792-ca9ddf7eaf91",
+      "slug": "polyphia-be-not-afraid-world-tour-424acdd4",
+      "title": "Polyphia: BE NOT AFRAID World Tour",
+      "name": "Polyphia",
+      "source_url": "https://en.wikipedia.org/wiki/Polyphia",
+      "extract": "Polyphia is an American rock band based in Plano, Texas, formed in 2010. The group consists of guitarists Tim Henson and Scott LePage, bassist Clay Gober, and drummer Clay Aeschliman. Rooted in a heavy metal sound in their early releases, the band's music evolved into a more progressive rock style in their later productions, combining elements of electronic and hip-hop music. Polyphia has released five studio albums, one live record, two EPs, and numerous singles.",
+      "en": {
+        "kicker": "american rock band · plano, texas, 2010",
+        "who": "Polyphia is an american rock band from Plano, Texas, formed in 2010. The group is built around guitarists Tim Henson and Scott LePage, with bassist Clay Gober and drummer Clay Aeschliman. Its early releases rest on a heavy metal sound, and later records move toward progressive rock, mixing in electronic and hip-hop music.",
+        "facts": [
+          "Polyphia is an American rock band based in Plano, Texas, formed in 2010.",
+          "Polyphia has released five studio albums, one live record, two EPs, and numerous singles."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische rockband · plano, texas, 2010",
+        "who": "Polyphia ist eine amerikanische Rockband aus Plano, Texas, die 2010 gegründet wurde. Die Gruppe besteht aus den Gitarristen Tim Henson und Scott LePage, dem Bassisten Clay Gober und dem Schlagzeuger Clay Aeschliman. Ihre frühen Veröffentlichungen klingen nach Heavy Metal, später bewegt sich die Musik in Richtung Progressive Rock und mischt elektronische Musik und Hip-Hop hinein.",
+        "facts": [
+          "Polyphia ist eine amerikanische Rockband aus Plano, Texas, die 2010 gegründet wurde.",
+          "Polyphia hat fünf Studioalben, ein Livealbum, zwei EPs und zahlreiche Singles veröffentlicht."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikan rock grubu · plano, teksas, 2010",
+        "who": "Polyphia, 2010 yılında kurulmuş, Teksas eyaletinin Plano kentinde merkezli bir Amerikan rock grubudur. Grup gitaristler Tim Henson ve Scott LePage, basçı Clay Gober ve davulcu Clay Aeschliman’dan oluşur. İlk yayınları heavy metal sesine dayanır, sonraki işlerinde ise elektronik ve hip-hop müziği harmanlayan progresif rocka yönelir.",
+        "facts": [
+          "Polyphia, Teksas’ın Plano kentinde merkezli, 2010’da kurulmuş bir Amerikan rock grubudur.",
+          "Polyphia beş stüdyo albümü, bir canlı kayıt, iki EP ve çok sayıda single yayımladı."
+        ]
+      }
+    }
+  ]
+}

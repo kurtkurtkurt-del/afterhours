@@ -1,0 +1,102 @@
+{
+  "city": "montreal",
+  "day": "2026-11-16",
+  "nights": [
+    {
+      "id": "8955a95e-ac00-4370-be75-7cf5d7db6588",
+      "slug": "mamas-gun-873413eb",
+      "title": "MAMAS GUN",
+      "name": "Mamas Gun",
+      "source_url": "https://en.wikipedia.org/wiki/Mamas_Gun",
+      "extract": "Mamas Gun is a British contemporary soul band. They found early international success with a radio-friendly soul pop sound. They made 5 full-length albums with evolving personnel, reaching a sound rooted in classic soul with alternative/progressive leanings. Golden Days (2018) marked a major turning point, the band having recorded and produced it themselves.",
+      "en": {
+        "kicker": "british contemporary soul band",
+        "who": "Mamas Gun is a british contemporary soul band. they found early international success with a radio-friendly soul pop sound. they made 5 full-length albums with evolving personnel, reaching a sound rooted in classic soul with alternative/progressive leanings.",
+        "facts": [
+          "they made 5 full-length albums with evolving personnel, reaching a sound rooted in classic soul with alternative/progressive leanings.",
+          "Golden Days (2018) marked a major turning point, the band having recorded and produced it themselves."
+        ]
+      },
+      "de": {
+        "kicker": "britische zeitgenössische soulband",
+        "who": "Mamas Gun ist eine britische zeitgenössische soulband. sie hatte früh internationalen erfolg mit einem radiotauglichen soul-pop-sound. sie veröffentlichte 5 vollständige alben mit wechselnder besetzung und fand zu einem sound, der im klassischen soul wurzelt und alternative und progressive einflüsse hat.",
+        "facts": [
+          "sie veröffentlichte 5 vollständige alben mit wechselnder besetzung, und der sound wurzelt im klassischen soul mit alternativen und progressiven einflüssen.",
+          "Golden Days (2018) markierte einen wendepunkt, denn die band hatte das album selbst aufgenommen und produziert."
+        ]
+      },
+      "tr": {
+        "kicker": "britanyalı çağdaş soul grubu",
+        "who": "Mamas Gun britanyalı çağdaş bir soul grubudur. erken dönemde radyo dostu bir soul pop sesiyle uluslararası başarı elde etti. kadro değişikliklerine rağmen 5 tam uzunluklu albüm yayımladı ve klasik soula dayanan, alternatif ve progresif eğilimleri olan bir sese ulaştı.",
+        "facts": [
+          "grup kadro değişikliklerine rağmen 5 tam uzunluklu albüm yayımladı; ses klasik soula dayanıyor ve alternatif ile progresif eğilimler taşıyor.",
+          "Golden Days (2018), grubun albümü kendisinin kaydetmesi ve üretmesiyle büyük bir dönüm noktası oldu."
+        ]
+      }
+    },
+    {
+      "id": "3b53e8d9-3f03-4fb3-899f-c54482e78fc3",
+      "slug": "barenaked-ladies-e8475354",
+      "title": "Barenaked Ladies",
+      "name": "Barenaked Ladies",
+      "source_url": "https://en.wikipedia.org/wiki/Barenaked_Ladies",
+      "extract": "Barenaked Ladies are a Canadian rock band formed in Scarborough, Ontario, in 1988. The group began as a duo of singer-guitarists Ed Robertson and Steven Page and expanded to a quintet with bassist Jim Creeggan, percussionist and keyboardist Andy Creeggan and drummer Tyler Stewart. Multi-instrumentalist Kevin Hearn replaced Andy Creeggan in 1995. Page left the band in 2009; Robertson, Jim Creeggan, Stewart and Hearn have continued as a quartet.",
+      "en": {
+        "kicker": "canadian rock band · scarborough, ontario, 1988",
+        "who": "Barenaked Ladies are a canadian rock band formed in Scarborough, Ontario, in 1988. multi-instrumentalist Kevin Hearn replaced Andy Creeggan in 1995.",
+        "facts": [
+          "the group began as a duo of singer-guitarists Ed Robertson and Steven Page and expanded to a quintet with bassist Jim Creeggan, percussionist and keyboardist Andy Creeggan and drummer Tyler Stewart.",
+          "Page left the band in 2009; Robertson, Jim Creeggan, Stewart and Hearn have continued as a quartet."
+        ]
+      },
+      "de": {
+        "kicker": "kanadische rockband · scarborough, ontario, 1988",
+        "who": "Barenaked Ladies sind eine kanadische rockband, die 1988 in Scarborough, Ontario, gegründet wurde. der multiinstrumentalist Kevin Hearn ersetzte 1995 Andy Creeggan.",
+        "facts": [
+          "die gruppe begann als duo der singer-gitarristen Ed Robertson und Steven Page und wuchs zu einem quintett mit dem bassisten Jim Creeggan, dem perkussionisten und keyboarder Andy Creeggan und dem schlagzeuger Tyler Stewart.",
+          "Page verließ die band 2009; Robertson, Jim Creeggan, Stewart und Hearn machen als quartett weiter."
+        ]
+      },
+      "tr": {
+        "kicker": "kanadalı rock grubu · scarborough, ontario, 1988",
+        "who": "Barenaked Ladies, 1988'de Ontario'nun Scarborough kentinde kurulmuş bir kanadalı rock grubudur. çok enstrümanlı Kevin Hearn, 1995'te Andy Creeggan'ın yerini aldı.",
+        "facts": [
+          "grup, şarkıcı-gitarist Ed Robertson ve Steven Page'in oluşturduğu bir duo olarak başladı; bas gitarist Jim Creeggan, perküsyoncu ve klavyeci Andy Creeggan ve davulcu Tyler Stewart ile beşli bir kadroya genişledi.",
+          "Page 2009'da gruptan ayrıldı; Robertson, Jim Creeggan, Stewart ve Hearn dörtlü olarak devam etti."
+        ]
+      }
+    },
+    {
+      "id": "68208f7e-a195-4fec-933a-9ab0704011de",
+      "slug": "yaelokre-f035cfcc",
+      "title": "Yaelokre",
+      "name": "Yaelokre",
+      "source_url": "https://en.wikipedia.org/wiki/Yaelokre",
+      "extract": "Christopher Kristjansson, known professionally as Keath Ósk, is a Filipino-Icelandic singer-songwriter and multimedia artist known for their folk music storytelling project under the stage name Yaelokre. Ósk began releasing music under the project name in early 2024, going viral on TikTok in July of the same year for their song \"Harpy Hare\", entering the TikTok Billboard Top 50 and topping Spotify's Global Viral Songs Chart the same year.",
+      "en": {
+        "kicker": "filipino-icelandic singer-songwriter · 2024",
+        "who": "Christopher Kristjansson, known professionally as Keath Ósk, is a filipino-icelandic singer-songwriter and multimedia artist. their folk music storytelling project goes by the stage name Yaelokre.",
+        "facts": [
+          "Ósk began releasing music under the project name in early 2024, going viral on TikTok in July of the same year for their song \"Harpy Hare\", entering the TikTok Billboard Top 50 and topping Spotify's Global Viral Songs Chart the same year.",
+          "Christopher Kristjansson, known professionally as Keath Ósk, is a Filipino-Icelandic singer-songwriter and multimedia artist."
+        ]
+      },
+      "de": {
+        "kicker": "filipino-isländischer singer-songwriter · 2024",
+        "who": "Christopher Kristjansson, professionell bekannt als Keath Ósk, ist ein filipino-isländischer singer-songwriter und multimedia-künstler. unter dem künstlernamen Yaelokre erzählt das projekt geschichten in folkmusik.",
+        "facts": [
+          "Ósk begann anfang 2024 unter dem projektnamen musik zu veröffentlichen, wurde im juli desselben jahres auf TikTok mit dem song \"Harpy Hare\" viral, stieg in die TikTok Billboard Top 50 ein und stand im selben jahr an der spitze von Spotifys globalem Viral Songs Chart.",
+          "Christopher Kristjansson, professionell bekannt als Keath Ósk, ist ein filipino-isländischer singer-songwriter und multimedia-künstler."
+        ]
+      },
+      "tr": {
+        "kicker": "filipinli-izlandalı şarkıcı-söz yazarı · 2024",
+        "who": "Christopher Kristjansson, sahne adıyla Keath Ósk, filipinli-izlandalı bir şarkıcı-söz yazarı ve multimedya sanatçısıdır. halk müziği hikâye anlatımı projesi Yaelokre sahne adını taşır.",
+        "facts": [
+          "Ósk bu proje adıyla 2024'ün başında müzik yayımlamaya başladı; aynı yılın temmuz ayında \"Harpy Hare\" şarkısıyla TikTok'ta viral oldu, TikTok Billboard Top 50'ye girdi ve aynı yıl Spotify'ın Global Viral Songs listesinde zirveye yerleşti.",
+          "Christopher Kristjansson, sahne adıyla Keath Ósk, filipinli-izlandalı bir şarkıcı-söz yazarı ve multimedya sanatçısıdır."
+        ]
+      }
+    }
+  ]
+}

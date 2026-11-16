@@ -1,0 +1,70 @@
+{
+  "city": "vancouver",
+  "day": "2026-11-16",
+  "nights": [
+    {
+      "id": "0d7ec03d-09fc-4358-91f8-880f56928b62",
+      "slug": "wolf-parade-f098455e",
+      "title": "Wolf Parade",
+      "name": "Wolf Parade",
+      "source_url": "https://en.wikipedia.org/wiki/Wolf_Parade",
+      "extract": "Wolf Parade is a Canadian indie rock band formed in Montreal, in 2003. The band consists of Spencer Krug, Dan Boeckner and Arlen Thompson (drums). During live performances, the band are currently joined by Arcade Fire's Tim Kingsbury on various instruments. Multi-instrumentalist Dante DeCaro and synth-player Hadji Bakara are both recurring former members of the band.",
+      "en": {
+        "kicker": "canadian indie rock band · montreal, 2003",
+        "who": "Wolf Parade is a Canadian indie rock band formed in Montreal. Spencer Krug, Dan Boeckner and Arlen Thompson (drums) make up the band, and Arcade Fire's Tim Kingsbury currently joins them on various instruments during live performances. Multi-instrumentalist Dante DeCaro and synth player Hadji Bakara are recurring former members.",
+        "facts": [
+          "Wolf Parade is a Canadian indie rock band formed in Montreal, in 2003.",
+          "The band consists of Spencer Krug, Dan Boeckner and Arlen Thompson (drums)."
+        ]
+      },
+      "de": {
+        "kicker": "kanadische indie-rock-band · montreal, 2003",
+        "who": "Wolf Parade ist eine kanadische indie-rock-band aus Montreal. Spencer Krug, Dan Boeckner und Arlen Thompson (schlagzeug) bilden die band, und bei live-auftritten wird sie derzeit von Tim Kingsbury von Arcade Fire an verschiedenen instrumenten unterstützt. Multiinstrumentalist Dante DeCaro und synthesizer-spieler Hadji Bakara sind wiederkehrende ehemalige mitglieder.",
+        "facts": [
+          "Wolf Parade ist eine kanadische indie-rock-band, die 2003 in Montreal gegründet wurde.",
+          "die band besteht aus Spencer Krug, Dan Boeckner und Arlen Thompson (schlagzeug)."
+        ]
+      },
+      "tr": {
+        "kicker": "kanadalı indie rock grubu · montreal, 2003",
+        "who": "Wolf Parade, Montreal'de kurulmuş kanadalı bir indie rock grubudur. Grubu Spencer Krug, Dan Boeckner ve davulda Arlen Thompson oluşturur; canlı performanslarda ise Arcade Fire'dan Tim Kingsbury çeşitli enstrümanlarda gruba eşlik ediyor. Çok enstrümanlı Dante DeCaro ve synth çalan Hadji Bakara, grubun tekrar eden eski üyeleri.",
+        "facts": [
+          "Wolf Parade, 2003'te Montreal'de kurulmuş kanadalı bir indie rock grubudur.",
+          "Grubun üyeleri Spencer Krug, Dan Boeckner ve Arlen Thompson'dır (davul)."
+        ]
+      }
+    },
+    {
+      "id": "d0e20111-8232-4179-8f77-bdd9aacfd085",
+      "slug": "steve-lacy-oh-yeah-tour-aceb2359",
+      "title": "Steve Lacy: Oh yeah? Tour",
+      "name": "Steve Lacy",
+      "source_url": "https://en.wikipedia.org/wiki/Steve_Lacy",
+      "extract": "Steve Thomas Lacy-Moya is an American singer-songwriter, guitarist and record producer. He gained recognition as the guitarist of the alternative R&B band the Internet, which he joined in 2015. His self-produced debut EP, Steve Lacy's Demo (2017), was met with critical praise and became a sleeper hit. Lacy then guest performed alongside Frank Ocean on Tyler, the Creator's 2017 single \"911 / Mr. Lonely\", which received double platinum certification by the Recording Industry Association of America (RIAA). That year, he also co-wrote songs for artists including Solange Knowles, and Kendrick Lamar on his song \"Pride\".",
+      "en": {
+        "kicker": "american singer-songwriter · demo ep, 2017",
+        "who": "Steve Lacy is an American singer-songwriter, guitarist and record producer. He gained recognition as the guitarist of the alternative R&B band the Internet, which he joined in 2015, and in 2017 he co-wrote songs for artists including Solange Knowles and Kendrick Lamar.",
+        "facts": [
+          "He gained recognition as the guitarist of the alternative R&B band the Internet, which he joined in 2015.",
+          "His self-produced debut EP, Steve Lacy's Demo (2017), was met with critical praise and became a sleeper hit."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer singer-songwriter · demo-ep, 2017",
+        "who": "Steve Lacy ist ein amerikanischer singer-songwriter, gitarrist und musikproduzent. Er wurde als gitarrist der alternativen r&b-band the Internet bekannt, der er 2015 beitrat, und 2017 schrieb er songs für künstler wie Solange Knowles und Kendrick Lamar.",
+        "facts": [
+          "Er wurde als gitarrist der alternativen r&b-band the Internet bekannt, der er 2015 beitrat.",
+          "Seine selbst produzierte debüt-ep Steve Lacy's Demo (2017) erhielt viel lob der kritik und wurde ein sleeper-hit."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı singer-songwriter · demo ep, 2017",
+        "who": "Steve Lacy, amerikalı şarkıcı, söz yazarı, gitarist ve plak yapımcısıdır. 2015'te katıldığı alternatif r&b grubu the Internet'in gitaristi olarak tanındı; 2017'de ise Solange Knowles ve Kendrick Lamar gibi sanatçılar için şarkılar yazdı.",
+        "facts": [
+          "Alternatif r&b grubu the Internet'in gitaristi olarak tanındı; 2015'te bu gruba katıldı.",
+          "Kendi prodüksiyonu olan ilk ep'i Steve Lacy's Demo (2017), eleştirmenlerden övgü topladı ve beklenmedik bir hit oldu."
+        ]
+      }
+    }
+  ]
+}

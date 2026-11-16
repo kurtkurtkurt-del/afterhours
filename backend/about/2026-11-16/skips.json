@@ -3114,6 +3114,222 @@
    "slug": "thirty-seconds-to-mars-presents-a-beautiful-lie-bf9bd7a9",
    "city": "wien",
    "why": "no page"
+  },
+  {
+   "id": "514175de-b0dc-47f8-9072-0df2d0f2a2bc",
+   "slug": "skilla-baby-the-price-of-fame-tour-9e94dd92",
+   "city": "chicago",
+   "why": "thin extract: one sentence, no second sourced fact"
+  },
+  {
+   "id": "dda297ff-56c9-4f83-91d2-53f23ed1c7de",
+   "slug": "caloncho-6fd71501",
+   "city": "ciudad-de-mexico",
+   "why": "thin extract: one sentence only"
+  },
+  {
+   "id": "2fc27c6e-ca80-4402-bd94-d80406e1dfb8",
+   "slug": "yung-gravy-the-joyrider-tour-e5c849f9",
+   "city": "detroit",
+   "why": "thin extract: one sentence, no career facts"
+  },
+  {
+   "id": "07ff004a-d472-4527-b7b8-292b9f0ad722",
+   "slug": "westside-cowboy-4db72f48",
+   "city": "birmingham",
+   "why": "thin extract: only formation and member names"
+  },
+  {
+   "id": "60c7c26d-040d-40e3-b153-675ab2c12f56",
+   "slug": "tyla-the-a-pop-world-tour-e99d9f68",
+   "city": "boston",
+   "why": "thin extract: two sentences, no career facts"
+  },
+  {
+   "id": "976d3f77-f149-4a12-97d2-a700b5175267",
+   "slug": "radio-free-alice-acf3cfb1",
+   "city": "glasgow",
+   "why": "thin extract: one sentence"
+  },
+  {
+   "id": "6b4977b6-f1fc-4932-8778-82bba0951018",
+   "slug": "karina-rykman-8ebcecd6",
+   "city": "denver",
+   "why": "thin extract: one sentence"
+  },
+  {
+   "id": "aaee7726-fc25-4e20-a601-298e350d7b8f",
+   "slug": "gutalax-shit-on-the-dancefloor-mini-tour-2026-3a5fbc0f",
+   "city": "berlin",
+   "why": "thin extract: one sentence"
+  },
+  {
+   "id": "d2dc9c94-9130-4b9a-9f42-8cbe7dcba625",
+   "slug": "erol-evgin-73b31d83",
+   "city": "istanbul",
+   "why": "thin extract: one sentence"
+  },
+  {
+   "id": "d89219bb-6cb9-47f2-a5b3-8066c25c5ae1",
+   "slug": "oguzhan-koc-5298c55a",
+   "city": "istanbul",
+   "why": "thin extract: one sentence"
+  },
+  {
+   "id": "b38bca34-16c8-454c-966b-9d131d66f828",
+   "slug": "lizz-wright-bdf21536",
+   "city": "london",
+   "why": "thin extract: one sentence"
+  },
+  {
+   "id": "d8d67096-49e1-41e1-8372-2be9efabd357",
+   "slug": "skye-newman-9f20f009",
+   "city": "london",
+   "why": "thin extract: one sentence"
+  },
+  {
+   "id": "33dfa296-89fd-40cc-b8ea-13be45566bf0",
+   "slug": "cupcakke-f8ee9952",
+   "city": "los-angeles",
+   "why": "thin extract: one sentence"
+  },
+  {
+   "id": "c112d353-9ea4-464b-b019-8fe3314e5c5f",
+   "slug": "brutalismus-3000-ages-16-65b0de75",
+   "city": "los-angeles",
+   "why": "thin extract: one sentence"
+  },
+  {
+   "id": "61d43d8b-65d3-4257-85bd-b46738d7ab12",
+   "slug": "jackson-browne-cedd3b96",
+   "city": "los-angeles",
+   "why": "thin extract: one sentence"
+  },
+  {
+   "id": "9d981abf-3baa-4c85-b413-f79073d47438",
+   "slug": "the-field-4ee6974b",
+   "city": "manchester",
+   "why": "thin extract: one sentence"
+  },
+  {
+   "id": "f2ff5c2a-fa6c-4f66-8974-bddc447b0a02",
+   "slug": "magi-merlin-b21d46ab",
+   "city": "montreal",
+   "why": "thin extract: one sentence"
+  },
+  {
+   "id": "70d0f442-7736-40ec-849a-f50938b0a360",
+   "slug": "yung-gravy-the-joyrider-tour-6fb72e6a",
+   "city": "new-york",
+   "why": "thin extract: one sentence"
+  },
+  {
+   "id": "972aceae-1144-41f9-9f13-b90c7477326d",
+   "slug": "yung-gravy-the-joyrider-tour-cd242cf0",
+   "city": "philadelphia",
+   "why": "thin extract: one sentence"
+  },
+  {
+   "id": "eadb12c2-b034-4c52-9f67-426237d8c56e",
+   "slug": "boy-golden-good-goddamn-another-tour-a0c5cffa",
+   "city": "toronto",
+   "why": "thin extract: one sentence"
+  },
+  {
+   "id": "ab9723be-b5ad-4fba-a29e-a977e3da17af",
+   "slug": "whitmer-thomas-189f9b65",
+   "city": "vancouver",
+   "why": "thin extract: one sentence"
+  },
+  {
+   "id": "33573862-e756-409a-aea4-dcd62d047377",
+   "slug": "the-ocean-e6233a23",
+   "city": "warszawa",
+   "why": "thin extract: one sentence"
+  },
+  {
+   "id": "53337189-d25c-452d-8a93-ba23b69a8723",
+   "slug": "the-script-wine-and-dine-ticket-not-included-f83e228a",
+   "city": "amsterdam",
+   "why": "check: page identity unverified: title is a dining package, not a show on this night"
+  },
+  {
+   "id": "3f1de9f9-eb3c-4c6b-bf4f-47de7ca31acd",
+   "slug": "poi-dog-pondering-8e9a5fb8",
+   "city": "austin",
+   "why": "check: who adds 'orchestral arrangements, electronic, house and soul' after the Chicago move; extract is cut off before that"
+  },
+  {
+   "id": "42e36441-3687-4223-9125-33ebaf0d2f8d",
+   "slug": "tiffany-day-halo-tour-europe-90eb44aa",
+   "city": "berlin",
+   "why": "check: en who implies 2018 for the Broke Records signing; extract and de/tr say 2025"
+  },
+  {
+   "id": "5a6e2241-22bc-4a96-9ab8-2c08a9810614",
+   "slug": "krewella-d9432b24",
+   "city": "houston",
+   "why": "check: tr says Northbrook is near Chicago; en and de say a suburb of Chicago"
+  },
+  {
+   "id": "a644a318-1db2-4202-983e-dc50ab2115cc",
+   "slug": "shantel-partizani-super-sonic-dj-set-40d9955c",
+   "city": "istanbul",
+   "why": "check: de fact drops the 'with electronic beats' qualifier that en and the extract have"
+  },
+  {
+   "id": "11442181-b764-4cef-8b13-b292d6d2217f",
+   "slug": "buzzcocks-celebrating-50-years-of-buzzcocks-779199fd",
+   "city": "las-vegas",
+   "why": "check: en facts[1] claims commercial success that de and tr drop"
+  },
+  {
+   "id": "c57d04bf-3b4f-4aeb-8ad7-11d8870dfe8d",
+   "slug": "kehlani-36e5e525",
+   "city": "los-angeles",
+   "why": "check: de gender claim not in extract"
+  },
+  {
+   "id": "ac094e02-e3c5-4d1d-940a-fe83f9b58a11",
+   "slug": "don-toliver-nitrous-octane-world-tour-leg-2-e8eeaa63",
+   "city": "manchester",
+   "why": "check: tr kicker says 2018 first album; extract says mixtape"
+  },
+  {
+   "id": "eed25464-51e1-4ca2-85b5-85ee5c0aaf21",
+   "slug": "stella-lefty-all-ages-under-16-with-adult-622a25e2",
+   "city": "new-york",
+   "why": "check: title carries ticket and age-policy text"
+  },
+  {
+   "id": "4c37dc06-1216-40a8-8c6c-5d760f7ca196",
+   "slug": "jai-wolf-420ab78b",
+   "city": "seattle",
+   "why": "check: lowercase sentence start in en and de"
+  },
+  {
+   "id": "4b3bc750-5e9a-46c4-bd55-265cb4d2cbf4",
+   "slug": "gryffin-f8360198",
+   "city": "toronto",
+   "why": "check: de misspells Tove Lo; not in en"
+  },
+  {
+   "id": "efe49a78-89eb-4455-872b-b5e0604d0012",
+   "slug": "rhye-3f1bc178",
+   "city": "vancouver",
+   "why": "check: de adds an exact release date that en and tr do not state"
+  },
+  {
+   "id": "fd109ab2-1398-4adb-9eaa-690352a83914",
+   "slug": "alex-henry-foster-defying-gravity-tour-aabe22f0",
+   "city": "warszawa",
+   "why": "check: tour unsupported by extract; kicker dates the band's founding as the performer's"
+  },
+  {
+   "id": "671ae079-b8a5-40fe-b499-efc137fff8a5",
+   "slug": "they-might-be-giants-two-night-pass-11-21-and-11-cccf34ec",
+   "city": "washington",
+   "why": "check: title is a two-night ticket listing, not the act"
   }
  ]
 }

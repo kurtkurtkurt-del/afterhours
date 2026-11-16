@@ -1,0 +1,166 @@
+{
+  "city": "istanbul",
+  "day": "2026-11-16",
+  "nights": [
+    {
+      "id": "4b1667a7-9ef7-4d4d-b2dc-9bc87c3fde22",
+      "slug": "ersay-uner-c0c177ba",
+      "title": "Ersay Üner",
+      "name": "Ersay Üner",
+      "source_url": "https://en.wikipedia.org/wiki/Ersay_%C3%9Cner",
+      "extract": "Ersay Üner, is a Turkish pop music singer-songwriter. He became known in Turkey in 2000s by writing and composing songs for Demet Akalın.",
+      "en": {
+        "kicker": "turkish pop singer-songwriter · turkey, 2000s",
+        "who": "Ersay Üner is a turkish pop music singer-songwriter. He became known in Turkey in 2000s by writing and composing songs for Demet Akalın.",
+        "facts": [
+          "Ersay Üner is a Turkish pop music singer-songwriter.",
+          "He became known in Turkey in 2000s by writing and composing songs for Demet Akalın."
+        ]
+      },
+      "de": {
+        "kicker": "türkischer popmusik-singer-songwriter · türkei, 2000er",
+        "who": "Ersay Üner ist ein türkischer popmusik-singer-songwriter. in den 2000ern wurde er in der Türkei bekannt, indem er lieder für Demet Akalın schrieb und komponierte.",
+        "facts": [
+          "Ersay Üner ist ein türkischer popmusik-singer-songwriter.",
+          "in der Türkei wurde er in den 2000ern bekannt, indem er lieder für Demet Akalın schrieb und komponierte."
+        ]
+      },
+      "tr": {
+        "kicker": "türk pop müziği şarkıcısı ve söz yazarı · türkiye, 2000'ler",
+        "who": "Ersay Üner türk pop müziği şarkıcısı ve söz yazarıdır. 2000'li yıllarda Demet Akalın için şarkı sözü ve beste yazarak Türkiye'de tanındı.",
+        "facts": [
+          "Ersay Üner türk pop müziği şarkıcısı ve söz yazarıdır.",
+          "2000'li yıllarda Demet Akalın için şarkı sözü ve beste yazarak Türkiye'de tanındı."
+        ]
+      }
+    },
+    {
+      "id": "4d531d69-f54e-4034-a0fb-c540e55130eb",
+      "slug": "bulent-ersoy-c31cc61b",
+      "title": "Bülent Ersoy",
+      "name": "Bülent Ersoy",
+      "source_url": "https://en.wikipedia.org/wiki/B%C3%BClent_Ersoy",
+      "extract": "Bülent Ersoy is a Turkish singer, actress, and media personality. She is known as one of the most popular singers of Turkish music. Ersoy has many famous hits such as \"Ümit Hırsızı\" (Hope Thief), \"Geceler\" (Nights), \"Beddua\" (Curse), \"Maazallah\" (God Forbid), \"Biz Ayrılamayız\" (We Cannot Break Up), and \"Sefam Olsun\" (I Enjoy Myself). Ersoy has published more than thirty albums so far and has made a name for herself in Turkish music history. She remains an icon of the LGBTQ+ community in Turkey.",
+      "en": {
+        "kicker": "turkish singer, actress and media figure · turkey",
+        "who": "Bülent Ersoy is a turkish singer, actress, and media personality. She is known as one of the most popular singers of turkish music. She remains an icon of the LGBTQ+ community in Turkey.",
+        "facts": [
+          "Ersoy has published more than thirty albums so far.",
+          "She remains an icon of the LGBTQ+ community in Turkey."
+        ]
+      },
+      "de": {
+        "kicker": "türkische sängerin, schauspielerin und medienfigur · türkei",
+        "who": "Bülent Ersoy ist eine türkische sängerin, schauspielerin und medienpersönlichkeit. sie gilt als eine der populärsten sängerinnen der türkischen musik. sie bleibt eine ikone der LGBTQ+-community in der Türkei.",
+        "facts": [
+          "Ersoy hat bisher mehr als dreißig alben veröffentlicht.",
+          "sie bleibt eine ikone der LGBTQ+-community in der Türkei."
+        ]
+      },
+      "tr": {
+        "kicker": "türk şarkıcı, oyuncu ve medya kişisi · türkiye",
+        "who": "Bülent Ersoy türk şarkıcı, oyuncu ve medya kişisidir. Türk müziğinin en popüler şarkıcılarından biri olarak bilinir. Türkiye'de LGBTQ+ topluluğunun bir simgesi olmayı sürdürüyor.",
+        "facts": [
+          "Ersoy şimdiye kadar otuzdan fazla albüm yayımladı.",
+          "Türkiye'de LGBTQ+ topluluğunun bir simgesi olmayı sürdürüyor."
+        ]
+      }
+    },
+    {
+      "id": "93c5317a-ac59-4265-b7f3-bc14dcea875e",
+      "slug": "ghostly-kisses-c9006a99",
+      "title": "Ghostly Kisses",
+      "name": "Ghostly Kisses",
+      "source_url": "https://en.wikipedia.org/wiki/Ghostly_Kisses",
+      "extract": "Ghostly Kisses is the musical project of French-Canadian singers Margaux Sauvé and Louis-Étienne Santais. They are based in Quebec. Sauvé is signed to the British record label Akira Records. The name 'Ghostly Kisses' was inspired by the William Faulkner poem Une ballade des dames perdues, which includes the verse \"And brush my lips with little ghostly kisses.\" Clash describes her music as having \"a weightless quality, something that transcends the ephemeral to grapple with key facets of our lives.\"",
+      "en": {
+        "kicker": "french-canadian music project · quebec",
+        "who": "Ghostly Kisses is the musical project of French-Canadian singers Margaux Sauvé and Louis-Étienne Santais. They are based in Quebec. Sauvé is signed to the British record label Akira Records.",
+        "facts": [
+          "Sauvé is signed to the British record label Akira Records.",
+          "The name Ghostly Kisses was inspired by the William Faulkner poem Une ballade des dames perdues."
+        ]
+      },
+      "de": {
+        "kicker": "französisch-kanadisches musikprojekt · quebec",
+        "who": "Ghostly Kisses ist das musikprojekt der französisch-kanadischen sänger Margaux Sauvé und Louis-Étienne Santais. sie sind in Quebec ansässig. Sauvé steht beim britischen plattenlabel Akira Records unter vertrag.",
+        "facts": [
+          "Sauvé steht beim britischen plattenlabel Akira Records unter vertrag.",
+          "der name Ghostly Kisses ist vom William-Faulkner-gedicht Une ballade des dames perdues inspiriert."
+        ]
+      },
+      "tr": {
+        "kicker": "fransız-kanadalı müzik projesi · quebec",
+        "who": "Ghostly Kisses, fransız-kanadalı şarkıcılar Margaux Sauvé ve Louis-Étienne Santais'nin müzik projesidir. Quebec'te yaşıyorlar. Sauvé, İngiliz plak şirketi Akira Records ile sözleşmeli.",
+        "facts": [
+          "Sauvé, İngiliz plak şirketi Akira Records ile sözleşmelidir.",
+          "Ghostly Kisses adı, William Faulkner'ın Une ballade des dames perdues şiirinden esinlenilerek verildi."
+        ]
+      }
+    },
+    {
+      "id": "8cdf552a-49d8-48fd-867d-cd69a2cfe352",
+      "slug": "merve-ozbey-540ce9f8",
+      "title": "Merve Özbey",
+      "name": "Merve Özbey",
+      "source_url": "https://en.wikipedia.org/wiki/Merve_%C3%96zbey",
+      "extract": "Merve Özbey is a Turkish singer and songwriter. Due to her collaborations with Erdem Kınay in the songs \"Duman\" and \"Helal Ettim\", she became famous in Turkey.",
+      "en": {
+        "kicker": "turkish singer and songwriter · turkey",
+        "who": "Merve Özbey is a turkish singer and songwriter. She became famous in Turkey through her collaborations with Erdem Kınay on the songs \"Duman\" and \"Helal Ettim\".",
+        "facts": [
+          "Merve Özbey is a Turkish singer and songwriter.",
+          "She became famous in Turkey due to her collaborations with Erdem Kınay in the songs \"Duman\" and \"Helal Ettim\"."
+        ]
+      },
+      "de": {
+        "kicker": "türkische sängerin und songwriterin · türkei",
+        "who": "Merve Özbey ist eine türkische sängerin und songwriterin. durch ihre zusammenarbeit mit Erdem Kınay bei den liedern „Duman“ und „Helal Ettim“ wurde sie in der Türkei bekannt.",
+        "facts": [
+          "Merve Özbey ist eine türkische sängerin und songwriterin.",
+          "durch ihre zusammenarbeit mit Erdem Kınay bei den liedern „Duman“ und „Helal Ettim“ wurde sie in der Türkei bekannt."
+        ]
+      },
+      "tr": {
+        "kicker": "türk şarkıcı ve söz yazarı · türkiye",
+        "who": "Merve Özbey türk şarkıcı ve söz yazarıdır. Erdem Kınay ile \"Duman\" ve \"Helal Ettim\" şarkılarındaki işbirlikleri sayesinde Türkiye'de ünlendi.",
+        "facts": [
+          "Merve Özbey türk şarkıcı ve söz yazarıdır.",
+          "Erdem Kınay ile \"Duman\" ve \"Helal Ettim\" şarkılarındaki işbirlikleri sayesinde Türkiye'de ünlendi."
+        ]
+      }
+    },
+    {
+      "id": "85199282-2a46-4495-b87f-5ec7f904c1d7",
+      "slug": "levent-yuksel-3ffcc987",
+      "title": "Levent Yüksel",
+      "name": "Levent Yüksel",
+      "source_url": "https://en.wikipedia.org/wiki/Levent_Y%C3%BCksel",
+      "extract": "Levent Uğur Yüksel is a Turkish pop singer and multi instrumentalist. He has been active in live music industry since 1993.",
+      "en": {
+        "kicker": "turkish pop singer · live music since 1993",
+        "who": "Levent Uğur Yüksel is a turkish pop singer and multi instrumentalist. He has been active in the live music industry since 1993.",
+        "facts": [
+          "Levent Uğur Yüksel is a Turkish pop singer and multi instrumentalist.",
+          "He has been active in live music industry since 1993."
+        ]
+      },
+      "de": {
+        "kicker": "türkischer popsänger und multiinstrumentalist · seit 1993",
+        "who": "Levent Uğur Yüksel ist ein türkischer popsänger und multiinstrumentalist. er ist seit 1993 in der live-musikbranche aktiv.",
+        "facts": [
+          "Levent Uğur Yüksel ist ein türkischer popsänger und multiinstrumentalist.",
+          "er ist seit 1993 in der live-musikbranche aktiv."
+        ]
+      },
+      "tr": {
+        "kicker": "türk pop şarkıcısı · canlı müzik, 1993'ten beri",
+        "who": "Levent Uğur Yüksel türk pop şarkıcısı ve çok enstrümanlı bir müzisyendir. 1993'ten beri canlı müzik endüstrisinde aktif.",
+        "facts": [
+          "Levent Uğur Yüksel türk pop şarkıcısı ve çok enstrümanlı bir müzisyendir.",
+          "1993'ten beri canlı müzik endüstrisinde aktiftir."
+        ]
+      }
+    }
+  ]
+}

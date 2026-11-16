@@ -1,0 +1,198 @@
+{
+  "city": "berlin",
+  "day": "2026-11-16",
+  "nights": [
+    {
+      "id": "c5523ee1-2d58-4dae-819e-268b35ef0053",
+      "slug": "neschastny-sluchai-705a8639",
+      "title": "Neschastny Sluchai",
+      "name": "Neschastny Sluchai",
+      "source_url": "https://en.wikipedia.org/wiki/Neschastny_Sluchai",
+      "extract": "Neschastny Sluchai is a Russian rock band that was formed by Valdis Pelsh and Alexey Kortnev in 1983, while both men were students at Moscow State University.",
+      "en": {
+        "kicker": "russian rock band · 1983",
+        "who": "Neschastny Sluchai is a Russian rock band formed by Valdis Pelsh and Alexey Kortnev. The two men formed it in 1983 while both were students at Moscow State University.",
+        "facts": [
+          "Neschastny Sluchai is a Russian rock band.",
+          "The band was formed in 1983 by Valdis Pelsh and Alexey Kortnev while both men were students at Moscow State University."
+        ]
+      },
+      "de": {
+        "kicker": "russische rockband · 1983",
+        "who": "neschastny sluchai ist eine russische rockband, die 1983 von valdis pelsh und alexey kortnev gegründet wurde. beide waren damals studenten an der Moscow State University.",
+        "facts": [
+          "neschastny sluchai ist eine russische rockband.",
+          "die band wurde 1983 gegründet, während beide männer studenten an der Moscow State University waren."
+        ]
+      },
+      "tr": {
+        "kicker": "rus rock grubu · 1983",
+        "who": "neschastny sluchai, valdis pelsh ve alexey kortnev tarafından kurulan bir rus rock grubudur. ikisi de 1983te Moscow State University öğrencisiyken grubu kurdu.",
+        "facts": [
+          "neschastny sluchai bir rus rock grubudur.",
+          "grup 1983te, ikisi de Moscow State University öğrencisiyken kuruldu."
+        ]
+      }
+    },
+    {
+      "id": "cccf668a-634d-49a4-8b09-e9f5b6e19dca",
+      "slug": "kodaline-farewell-tour-0f677ebd",
+      "title": "Kodaline - Farewell Tour",
+      "name": "Kodaline",
+      "source_url": "https://en.wikipedia.org/wiki/Kodaline",
+      "extract": "Kodaline are an Irish rock band. Originally known as 21 Demands, the band adopted their current name in 2012 to coincide with the changing of their music. The group comprises Steve Garrigan, Vincent May, Mark Prendergast, and Jason Boland.",
+      "en": {
+        "kicker": "irish rock band · renamed 2012",
+        "who": "Kodaline are an Irish rock band made up of Steve Garrigan, Vincent May, Mark Prendergast and Jason Boland. Originally known as 21 Demands, they adopted their current name in 2012 to coincide with a change in their music.",
+        "facts": [
+          "Kodaline are an Irish rock band.",
+          "Originally known as 21 Demands, the band adopted their current name in 2012 to coincide with the changing of their music."
+        ]
+      },
+      "de": {
+        "kicker": "irische rockband · 2012 umbenannt",
+        "who": "kodaline sind eine irische rockband aus steve garrigan, vincent may, mark prendergast und jason boland. ursprünglich als 21 demands bekannt, nahmen sie 2012 ihren heutigen namen an, passend zu einem wandel ihrer musik.",
+        "facts": [
+          "kodaline sind eine irische rockband.",
+          "ursprünglich als 21 demands bekannt, übernahm die band 2012 ihren heutigen namen, passend zum wandel ihrer musik."
+        ]
+      },
+      "tr": {
+        "kicker": "irlandalı rock grubu · 2012de adını değiştirdi",
+        "who": "kodaline, steve garrigan, vincent may, mark prendergast ve jason boland'dan oluşan bir irlanda rock grubudur. başlangıçta 21 demands adıyla bilinen grup, müziğindeki değişimle aynı zamana denk gelecek şekilde 2012de bugünkü adını aldı.",
+        "facts": [
+          "kodaline bir irlanda rock grubudur.",
+          "başlangıçta 21 demands adıyla bilinen grup, bugünkü adını 2012de aldı."
+        ]
+      }
+    },
+    {
+      "id": "be75182b-f6db-4c77-9f5d-52f6d7121aca",
+      "slug": "elmiene-sounds-for-someone-tour-2026-eb15d456",
+      "title": "ELMIENE - Sounds For Someone Tour 2026",
+      "name": "Elmiene",
+      "source_url": "https://en.wikipedia.org/wiki/Elmiene",
+      "extract": "Abdala Elamin, known professionally as Elmiene, is a British-Sudanese singer from Oxford. He placed fifth in the BBC Sound of 2024 poll and was nominated for the Brit Award for Rising Star in 2025.",
+      "en": {
+        "kicker": "british-sudanese singer · oxford",
+        "who": "Abdala Elamin, known professionally as Elmiene, is a British-Sudanese singer from Oxford. He placed fifth in the BBC Sound of 2024 poll and was nominated for the Brit Award for Rising Star in 2025.",
+        "facts": [
+          "He placed fifth in the BBC Sound of 2024 poll.",
+          "He was nominated for the Brit Award for Rising Star in 2025."
+        ]
+      },
+      "de": {
+        "kicker": "britisch-sudanesischer sänger · oxford",
+        "who": "abdala elamin, unter dem künstlernamen Elmiene bekannt, ist ein britisch-sudanesischer sänger aus Oxford. er belegte den fünften platz bei der BBC Sound of 2024 umfrage und war 2025 für den Brit Award als Rising Star nominiert.",
+        "facts": [
+          "er belegte den fünften platz bei der BBC Sound of 2024 umfrage.",
+          "2025 war er für den Brit Award als Rising Star nominiert."
+        ]
+      },
+      "tr": {
+        "kicker": "britanyalı-sudanlı şarkıcı · oxford",
+        "who": "abdala elamin, sanatçı adıyla Elmiene, Oxfordlu bir britanyalı-sudanlı şarkıcıdır. BBC Sound of 2024 anketinde beşinci sırada yer aldı ve 2025te Brit Award Rising Star ödülüne aday gösterildi.",
+        "facts": [
+          "BBC Sound of 2024 anketinde beşinci sırada yer aldı.",
+          "2025te Brit Award Rising Star ödülüne aday gösterildi."
+        ]
+      }
+    },
+    {
+      "id": "430f2cb7-6ada-45fd-b770-54c0ba68633e",
+      "slug": "yaeger-seasick-tour-2026-ab799d46",
+      "title": "YAEGER - Seasick Tour 2026",
+      "name": "Yaeger",
+      "source_url": "https://en.wikipedia.org/wiki/Yaeger_(singer)",
+      "extract": "Hanna Gillian Kristina Jäger, known professionally as Yaeger, is a Swedish singer and songwriter. Based in Stockholm, Sweden, her style of popular music is described as emotional rave pop (ERP) while according to ELLE Sweden - who judged her Best Dressed Woman 2024 - her \"sense of style, courage and creativity form an expression that leaves an impression - both visually and musically.\"",
+      "en": {
+        "kicker": "swedish singer-songwriter · stockholm",
+        "who": "Hanna Gillian Kristina Jäger, known professionally as Yaeger, is a Swedish singer and songwriter based in Stockholm. Her popular music is described as emotional rave pop (ERP), and ELLE Sweden judged her Best Dressed Woman 2024.",
+        "facts": [
+          "Her style of popular music is described as emotional rave pop (ERP).",
+          "ELLE Sweden judged her Best Dressed Woman 2024."
+        ]
+      },
+      "de": {
+        "kicker": "schwedische singer-songwriterin · stockholm",
+        "who": "hanna gillian kristina jäger, unter dem namen Yaeger bekannt, ist eine schwedische sängerin und songwriterin mit sitz in Stockholm. ihr stil wird als emotional rave pop (ERP) beschrieben, und ELLE Sweden zeichnete sie 2024 als Best Dressed Woman aus.",
+        "facts": [
+          "ihr stil populärer musik wird als emotional rave pop (ERP) beschrieben.",
+          "ELLE Sweden zeichnete sie 2024 als Best Dressed Woman aus."
+        ]
+      },
+      "tr": {
+        "kicker": "isveçli şarkıcı-söz yazarı · stockholm",
+        "who": "hanna gillian kristina jäger, sanatçı adıyla Yaeger, Stockholm merkezli bir isveçli şarkıcı ve söz yazarıdır. popüler müziği emotional rave pop (ERP) olarak tanımlanıyor ve ELLE Sweden onu 2024ün Best Dressed Woman'ı seçti.",
+        "facts": [
+          "popüler müziği emotional rave pop (ERP) olarak tanımlanıyor.",
+          "ELLE Sweden onu 2024ün Best Dressed Woman'ı seçti."
+        ]
+      }
+    },
+    {
+      "id": "87751806-654b-4cec-853c-616e440e6b1c",
+      "slug": "sace6-40389e12",
+      "title": "Sace6",
+      "name": "Sace6",
+      "source_url": "https://en.wikipedia.org/wiki/Sace6",
+      "extract": "Sace6 is an American alternative metal duo consisting of lead vocalist Sace and guitarist-vocalist Noah Thomas. Originally the solo project of Sace, the project developed into a duo in 2024. Sonically, their music offers contrasting melodic vocals and pop-oriented hooks with heavy guitar-driven instrumentation.",
+      "en": {
+        "kicker": "american alternative metal duo · 2024",
+        "who": "Sace6 is an American alternative metal duo of lead vocalist Sace and guitarist-vocalist Noah Thomas. It began as the solo project of Sace and developed into a duo in 2024. Sonically, its music offers contrasting melodic vocals and pop-oriented hooks with heavy guitar-driven instrumentation.",
+        "facts": [
+          "Originally the solo project of Sace, the project developed into a duo in 2024.",
+          "Sonically, their music offers contrasting melodic vocals and pop-oriented hooks with heavy guitar-driven instrumentation."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanisches alternative-metal-duo · 2024",
+        "who": "sace6 ist ein amerikanisches alternative-metal-duo aus sängerin sace und gitarrist und sänger noah thomas. ursprünglich das soloprojekt von sace, entwickelte es sich 2024 zu einem duo. klanglich verbindet ihre musik kontrastreiche melodische gesangsparts und poporientierte hooks mit schwerem, gitarrenbetontem klang.",
+        "facts": [
+          "ursprünglich das soloprojekt von sace, entwickelte sich das projekt 2024 zu einem duo.",
+          "klanglich verbindet ihre musik kontrastreiche melodische gesangsparts und poporientierte hooks mit schwerem, gitarrenbetontem klang."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı alternatif metal ikilisi · 2024",
+        "who": "Sace6, baş vokalist Sace ile gitarist ve vokalist Noah Thomas'tan oluşan amerikalı bir alternatif metal ikilisidir. Sace'in solo projesi olarak başlayan oluşum 2024te ikiliye dönüştü. müzikleri, kontrast oluşturan melodik vokaller ile pop ağırlıklı hooklar ve ağır gitar temelli enstrümantasyonu bir araya getirir.",
+        "facts": [
+          "başlangıçta Sace'in solo projesi olan oluşum 2024te ikiliye dönüştü.",
+          "müzikleri kontrast oluşturan melodik vokaller ve pop odaklı hooklar ile ağır gitar temelli enstrümantasyon sunar."
+        ]
+      }
+    },
+    {
+      "id": "2129aec6-2b1f-49e4-8ec0-a18408f0241a",
+      "slug": "chloe-slater-riot-youth-tour-33f7973f",
+      "title": "CHLOE SLATER - riot youth tour",
+      "name": "Chloe Slater",
+      "source_url": "https://en.wikipedia.org/wiki/Chloe_Slater",
+      "extract": "Chloe Leanne Slater is an English singer-songwriter based in Manchester. Writing about social and political issues, she has been releasing music since 2023 and has issued two extended plays: You Can't Put a Price on Fun, and Love Me Please.",
+      "en": {
+        "kicker": "english singer-songwriter · manchester",
+        "who": "Chloe Leanne Slater is an English singer-songwriter based in Manchester. Writing about social and political issues, she has been releasing music since 2023.",
+        "facts": [
+          "She has been releasing music since 2023.",
+          "She has issued two extended plays: You Can't Put a Price on Fun, and Love Me Please."
+        ]
+      },
+      "de": {
+        "kicker": "englische singer-songwriterin · manchester",
+        "who": "chloe leanne slater ist eine englische singer-songwriterin mit sitz in Manchester. sie schreibt über soziale und politische themen und veröffentlicht musik seit 2023.",
+        "facts": [
+          "sie veröffentlicht musik seit 2023.",
+          "sie hat zwei extended plays herausgebracht: You Can't Put a Price on Fun und Love Me Please."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz şarkıcı-söz yazarı · manchester",
+        "who": "chloe leanne slater, Manchester merkezli bir ingiliz şarkıcı ve söz yazarıdır. sosyal ve politik konuları yazan slater, 2023ten beri müzik yayımlıyor.",
+        "facts": [
+          "2023ten beri müzik yayımlıyor.",
+          "iki extended play yayımladı: You Can't Put a Price on Fun ve Love Me Please."
+        ]
+      }
+    }
+  ]
+}

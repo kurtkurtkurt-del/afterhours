@@ -1,0 +1,70 @@
+{
+ "city": "ciudad-de-mexico",
+ "day": "2026-11-16",
+ "nights": [
+  {
+   "id": "71e6f704-4584-4118-b1f4-90d240a5f986",
+   "slug": "morat-118f40cd",
+   "title": "Morat",
+   "name": "Morat",
+   "source_url": "https://en.wikipedia.org/wiki/Morat_(band)",
+   "extract": "Morat is a Colombian Latin pop rock band formed in the country's capital city, Bogotá. The band is made up of Juan Pablo Isaza, Juan Pablo Villamil, and the brothers Simón Vargas and Martín Vargas. Drummer Alejandro Posada was also a founding member of the band, but left in 2016 and was replaced by Martín Vargas.",
+   "en": {
+    "kicker": "colombian latin pop rock band · bogotá",
+    "who": "Morat is a colombian latin pop rock band formed in bogotá, the country's capital city. The band is made up of Juan Pablo Isaza, Juan Pablo Villamil, and the brothers Simón Vargas and Martín Vargas. Drummer Alejandro Posada was also a founding member, but left in 2016 and was replaced by Martín Vargas.",
+    "facts": [
+     "Morat is a Colombian Latin pop rock band formed in the country's capital city, Bogotá.",
+     "The band is made up of Juan Pablo Isaza, Juan Pablo Villamil, and the brothers Simón Vargas and Martín Vargas."
+    ]
+   },
+   "de": {
+    "kicker": "kolumbianische latin-pop-rock-band · bogotá",
+    "who": "Morat ist eine kolumbianische latin-pop-rock-band, die in bogotá, der hauptstadt des landes, gegründet wurde. Zur band gehören Juan Pablo Isaza, Juan Pablo Villamil sowie die brüder Simón Vargas und Martín Vargas. Der schlagzeuger Alejandro Posada war ebenfalls gründungsmitglied, verließ die band aber 2016 und wurde durch Martín Vargas ersetzt.",
+    "facts": [
+     "Morat ist eine kolumbianische latin-pop-rock-band, die in bogotá, der hauptstadt des landes, gegründet wurde.",
+     "Zur band gehören Juan Pablo Isaza, Juan Pablo Villamil sowie die brüder Simón Vargas und Martín Vargas."
+    ]
+   },
+   "tr": {
+    "kicker": "kolombiyalı latin pop rock grubu · bogotá",
+    "who": "Morat, ülkenin başkenti bogotá'da kurulmuş bir kolombiyalı latin pop rock grubudur. Grupta Juan Pablo Isaza, Juan Pablo Villamil ile kardeşler Simón Vargas ve Martín Vargas yer alıyor. Kurucu üyelerden davulcu Alejandro Posada 2016'da ayrıldı ve yerine Martín Vargas geçti.",
+    "facts": [
+     "Morat, ülkenin başkenti bogotá'da kurulmuş bir kolombiyalı latin pop rock grubudur.",
+     "Grupta Juan Pablo Isaza, Juan Pablo Villamil ile kardeşler Simón Vargas ve Martín Vargas yer alıyor."
+    ]
+   }
+  },
+  {
+   "id": "d82c46c0-a145-44d7-a321-6640be5ad49e",
+   "slug": "rainao-317bd735",
+   "title": "RaiNao",
+   "name": "RaiNao",
+   "source_url": "https://en.wikipedia.org/wiki/RaiNao",
+   "extract": "Naomi Ramírez Rivera, known professionally as RaiNao, is a Puerto Rican singer-songwriter. Based in Santurce, San Juan, Puerto Rico, her music incorporates elements of reggaeton, jazz, R&B, and alternative pop, shaped by her background in music theory and live performance. She got signed to Rimas Entertainment in 2024.",
+   "en": {
+    "kicker": "puerto rican singer-songwriter · santurce, san juan",
+    "who": "Naomi Ramírez Rivera, known professionally as RaiNao, is a Puerto Rican singer-songwriter. Based in Santurce, San Juan, her music incorporates elements of reggaeton, jazz, R&B, and alternative pop, shaped by her background in music theory and live performance. She got signed to Rimas Entertainment in 2024.",
+    "facts": [
+     "Naomi Ramírez Rivera, known professionally as RaiNao, is a Puerto Rican singer-songwriter.",
+     "She got signed to Rimas Entertainment in 2024."
+    ]
+   },
+   "de": {
+    "kicker": "puertoricanische singer-songwriterin · santurce, san juan",
+    "who": "Naomi Ramírez Rivera, unter dem künstlernamen RaiNao bekannt, ist eine puertoricanische singer-songwriterin. Mit Sitz in Santurce, San Juan, verbindet ihre musik Elemente aus reggaeton, jazz, R&B und alternative pop, geprägt von ihrem hintergrund in musiktheorie und live-auftritten. Sie wurde 2024 bei Rimas Entertainment unter vertrag genommen.",
+    "facts": [
+     "Naomi Ramírez Rivera, unter dem künstlernamen RaiNao bekannt, ist eine puertoricanische singer-songwriterin.",
+     "Sie wurde 2024 bei Rimas Entertainment unter vertrag genommen."
+    ]
+   },
+   "tr": {
+    "kicker": "porto rikolu şarkıcı-söz yazarı · santurce, san juan",
+    "who": "Naomi Ramírez Rivera, sahne adıyla RaiNao, porto rikolu bir şarkıcı ve söz yazarıdır. Merkezi Santurce, San Juan olan müziği, müzik teorisi ve canlı performans geçmişinden beslenerek reggaeton, caz, R&B ve alternatif pop öğelerini bir araya getiriyor. 2024'te Rimas Entertainment ile sözleşme imzaladı.",
+    "facts": [
+     "Naomi Ramírez Rivera, sahne adıyla RaiNao, porto rikolu bir şarkıcı ve söz yazarıdır.",
+     "2024'te Rimas Entertainment ile sözleşme imzaladı."
+    ]
+   }
+  }
+ ]
+}

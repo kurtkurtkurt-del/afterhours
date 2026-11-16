@@ -1,0 +1,166 @@
+{
+  "city": "new-york",
+  "day": "2026-11-16",
+  "nights": [
+    {
+      "id": "68452ee7-8820-47c3-bf8e-0c055367a3f9",
+      "slug": "orla-gartland-0be3f5b8",
+      "title": "Orla Gartland",
+      "name": "Orla Gartland",
+      "source_url": "https://en.wikipedia.org/wiki/Orla_Gartland",
+      "extract": "Orla Joan Gartland is an Irish singer, songwriter and musician. Gartland released her debut studio album, Woman on the Internet, in 2021, which reached number 3 on the Irish album chart, number 1 on the UK Indie Chart, and number 10 on the UK Albums Chart. Her second studio album Everybody Needs a Hero came out in October 2024.",
+      "en": {
+        "kicker": "irish singer, songwriter and musician · debut album 2021",
+        "who": "Orla Joan Gartland is an Irish singer, songwriter and musician. Her debut studio album, Woman on the Internet, came out in 2021 and reached the Irish and UK charts.",
+        "facts": [
+          "Her debut studio album, Woman on the Internet, reached number 3 on the Irish album chart.",
+          "Her second studio album, Everybody Needs a Hero, came out in October 2024."
+        ]
+      },
+      "de": {
+        "kicker": "irische sängerin und musikerin · debütalbum 2021",
+        "who": "Orla Joan Gartland ist eine irische sängerin, songwriterin und musikerin. Ihr debütalbum Woman on the Internet erschien 2021 und erreichte die irischen und britischen charts.",
+        "facts": [
+          "ihr debütalbum Woman on the Internet erreichte platz 3 der irischen albumcharts.",
+          "ihr zweites studioalbum Everybody Needs a Hero erschien im oktober 2024."
+        ]
+      },
+      "tr": {
+        "kicker": "irlandalı şarkıcı ve söz yazarı · ilk albümü 2021",
+        "who": "Orla Joan Gartland, irlandalı bir şarkıcı, söz yazarı ve müzisyendir. İlk stüdyo albümü Woman on the Internet 2021'de çıktı ve İrlanda ile Birleşik Krallık listelerinde yer aldı.",
+        "facts": [
+          "ilk stüdyo albümü Woman on the Internet, İrlanda albüm listesinde 3. sıraya yükseldi.",
+          "ikinci stüdyo albümü Everybody Needs a Hero, ekim 2024'te çıktı."
+        ]
+      }
+    },
+    {
+      "id": "723c7cef-4dc5-4269-b1f1-82ab822d7395",
+      "slug": "pedro-sampaio-59897ede",
+      "title": "Pedro Sampaio",
+      "name": "Pedro Sampaio",
+      "source_url": "https://en.wikipedia.org/wiki/Pedro_Sampaio",
+      "extract": "Pedro do Espirito Santo Sampaio is a Brazilian singer, music producer and DJ, known for the songs \"Sentadão\", \"Escada do Prédio\", with Marina Sena, and \"Chama Ela\", in partnership with the singer Lexa. He is signed to Warner Music Brasil.",
+      "en": {
+        "kicker": "brazilian singer, music producer and dj",
+        "who": "Pedro do Espirito Santo Sampaio is a Brazilian singer, music producer and DJ. He is known for the songs \"Sentadão\" and \"Chama Ela\", the second made in partnership with the singer Lexa.",
+        "facts": [
+          "He is known for the songs \"Sentadão\", \"Escada do Prédio\", with Marina Sena, and \"Chama Ela\", in partnership with the singer Lexa.",
+          "He is signed to Warner Music Brasil."
+        ]
+      },
+      "de": {
+        "kicker": "brasilianischer sänger, musikproduzent und DJ",
+        "who": "Pedro do Espirito Santo Sampaio ist ein brasilianischer sänger, musikproduzent und DJ. Er ist vor allem für die songs „Sentadão“ und „Chama Ela“ bekannt, letzteren in zusammenarbeit mit der sängerin Lexa.",
+        "facts": [
+          "er ist bekannt für die songs „Sentadão“, „Escada do Prédio“ mit Marina Sena und „Chama Ela“ in zusammenarbeit mit der sängerin Lexa.",
+          "er steht bei Warner Music Brasil unter vertrag."
+        ]
+      },
+      "tr": {
+        "kicker": "brezilyalı şarkıcı, müzik yapımcısı ve DJ",
+        "who": "Pedro do Espirito Santo Sampaio, brezilyalı bir şarkıcı, müzik yapımcısı ve DJ'dir. „Sentadão“ ile Lexa iş birliğinde çıkardığı „Chama Ela“ gibi şarkılarıyla tanınır.",
+        "facts": [
+          "Tanınmış şarkıları arasında „Sentadão“, Marina Sena ile „Escada do Prédio“ ve Lexa iş birliğiyle „Chama Ela“ bulunur.",
+          "Warner Music Brasil ile sözleşmelidir."
+        ]
+      }
+    },
+    {
+      "id": "7fa5bf88-a6d1-4735-aa27-81b52a093016",
+      "slug": "lalah-hathaway-7bebb61c",
+      "title": "Lalah Hathaway",
+      "name": "Lalah Hathaway",
+      "source_url": "https://en.wikipedia.org/wiki/Lalah_Hathaway",
+      "extract": "Eulaulah Donyll \"Lalah\" Hathaway is an American singer-songwriter and music producer. Credited as the \"First Daughter of Soul\", she is the first-born daughter of musician and soul singer Donny Hathaway.",
+      "en": {
+        "kicker": "american singer-songwriter and music producer",
+        "who": "Eulaulah Donyll \"Lalah\" Hathaway is an American singer-songwriter and music producer. She is credited as the \"First Daughter of Soul\".",
+        "facts": [
+          "She is the first-born daughter of musician and soul singer Donny Hathaway.",
+          "She is credited as the \"First Daughter of Soul\"."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische singer-songwriterin und musikproduzentin",
+        "who": "Eulaulah Donyll „Lalah“ Hathaway ist eine amerikanische singer-songwriterin und musikproduzentin. Ihr wird der titel „First Daughter of Soul“ zugeschrieben.",
+        "facts": [
+          "sie ist die erstgeborene tochter des musikers und soulsängers Donny Hathaway.",
+          "ihr wird der titel „First Daughter of Soul“ zugeschrieben."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı şarkıcı, söz yazarı ve müzik yapımcısı",
+        "who": "Eulaulah Donyll „Lalah“ Hathaway, amerikalı bir şarkıcı, söz yazarı ve müzik yapımcısıdır. „First Daughter of Soul“ unvanıyla anılır.",
+        "facts": [
+          "müzisyen ve soul şarkıcısı Donny Hathaway'in ilk doğan kızıdır.",
+          "„First Daughter of Soul“ unvanıyla anılır."
+        ]
+      }
+    },
+    {
+      "id": "da5e4e3f-ea38-417e-aa6c-e43f13752d10",
+      "slug": "junko-yagami-pop-meets-jazz-on-route-66-93bb9fb9",
+      "title": "JUNKO YAGAMI: Pop Meets Jazz on Route 66",
+      "name": "Junko Yagami",
+      "source_url": "https://en.wikipedia.org/wiki/Junko_Yagami",
+      "extract": "Junko Yagami , is a Japanese singer and songwriter from Aichi Prefecture. She has released 25 albums, including six live concert albums, and is a notable figure in Japanese music of the 1970s and 1980s. Since her marriage in 1986, she has also recorded under the name \"June Stanley\".",
+      "en": {
+        "kicker": "japanese singer and songwriter · aichi prefecture",
+        "who": "Junko Yagami is a Japanese singer and songwriter from Aichi Prefecture. She is a notable figure in Japanese music of the 1970s and 1980s.",
+        "facts": [
+          "She has released 25 albums, including six live concert albums.",
+          "Since her marriage in 1986, she has also recorded under the name \"June Stanley\"."
+        ]
+      },
+      "de": {
+        "kicker": "japanische sängerin und songwriterin · präfektur aichi",
+        "who": "Junko Yagami ist eine japanische sängerin und songwriterin aus der präfektur Aichi. Sie ist eine bekannte persönlichkeit der japanischen musik der 1970er und 1980er jahre.",
+        "facts": [
+          "sie hat 25 alben veröffentlicht, darunter sechs live-konzertalben.",
+          "seit ihrer heirat 1986 nimmt sie auch unter dem namen „June Stanley“ auf."
+        ]
+      },
+      "tr": {
+        "kicker": "japon şarkıcı ve söz yazarı · aichi eyaleti",
+        "who": "Junko Yagami, aichi eyaletinden bir japon şarkıcı ve söz yazarıdır. 1970'ler ve 1980'lerin japon müziğinde öne çıkan isimlerden biridir.",
+        "facts": [
+          "25 albüm yayımladı; bunların altısı canlı konser albümüdür.",
+          "1986'daki evliliğinden sonra „June Stanley“ adıyla da kayıt yapıyor."
+        ]
+      }
+    },
+    {
+      "id": "0ef3eada-33a7-4a2c-9b95-d0195489c8a8",
+      "slug": "michaela-anne-68a32fee",
+      "title": "Michaela Anne",
+      "name": "Michaela Anne",
+      "source_url": "https://en.wikipedia.org/wiki/Michaela_Anne",
+      "extract": "Michaela Anne is an American musician currently residing in Nashville, Tennessee. Her music incorporates elements of classic country, pop, indie rock, and honky-tonk. She has released four albums to date. Her fourth album, Oh To Be That Free, was released through Yep Roc Records on June 10, 2022.",
+      "en": {
+        "kicker": "american musician · nashville, tennessee",
+        "who": "Michaela Anne is an American musician currently residing in Nashville, Tennessee. Her music incorporates elements of classic country, pop, indie rock, and honky-tonk.",
+        "facts": [
+          "She has released four albums to date.",
+          "Her fourth album, Oh To Be That Free, was released through Yep Roc Records on June 10, 2022."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische musikerin · nashville, tennessee",
+        "who": "Michaela Anne ist eine amerikanische musikerin, die derzeit in Nashville, Tennessee, lebt. Ihre musik verbindet elemente von klassischem country, pop, indie rock und honky-tonk.",
+        "facts": [
+          "sie hat bisher vier alben veröffentlicht.",
+          "ihr viertes album „Oh To Be That Free“ erschien am 10. juni 2022 bei Yep Roc Records."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı müzisyen · nashville, tennessee",
+        "who": "Michaela Anne, şu anda Nashville, Tennessee'de yaşayan amerikalı bir müzisyendir. Müziğinde klasik country, pop, indie rock ve honky-tonk öğeleri yer alır.",
+        "facts": [
+          "bugüne kadar dört albüm yayımladı.",
+          "dördüncü albümü „Oh To Be That Free“, 10 haziran 2022'de Yep Roc Records aracılığıyla çıktı."
+        ]
+      }
+    }
+  ]
+}

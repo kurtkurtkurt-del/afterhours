@@ -1,0 +1,134 @@
+{
+  "city": "houston",
+  "day": "2026-11-16",
+  "nights": [
+    {
+      "id": "9db68d00-9259-49b0-9a00-04ac04b5a768",
+      "slug": "bryan-andrews-5721b8ef",
+      "title": "Bryan Andrews",
+      "name": "Bryan Andrews",
+      "source_url": "https://en.wikipedia.org/wiki/Bryan_Andrews_(singer)",
+      "extract": "Bryan Andrews is an American country music singer and activist. He is best known for his politically-themed songs, often from his own progressive left-wing viewpoint. Many of his songs have been described as protest songs.",
+      "en": {
+        "kicker": "american country singer and activist",
+        "who": "Bryan Andrews is an american country music singer and activist. he is best known for his politically-themed songs, often from his own progressive left-wing viewpoint. many of his songs have been described as protest songs.",
+        "facts": [
+          "he is best known for his politically-themed songs, often from his own progressive left-wing viewpoint.",
+          "many of his songs have been described as protest songs."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer country-sänger und aktivist",
+        "who": "Bryan Andrews ist ein amerikanischer country-musiker und aktivist. er ist vor allem für seine politisch geprägten songs bekannt, oft aus seiner eigenen progressiven, linksgerichteten sicht. viele seiner songs wurden als protestsongs beschrieben.",
+        "facts": [
+          "er ist vor allem für seine politisch geprägten songs bekannt, oft aus seiner eigenen progressiven, linksgerichteten sicht.",
+          "viele seiner songs wurden als protestsongs beschrieben."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı country şarkıcısı ve aktivist",
+        "who": "Bryan Andrews amerikalı bir country müzik şarkıcısı ve aktivisttir. özellikle kendi ilerici, sol görüşünden beslenen siyasi temalı şarkılarıyla tanınır. şarkılarının birçoğu protest şarkısı olarak nitelendirilmiştir.",
+        "facts": [
+          "özellikle kendi ilerici, sol görüşünden beslenen siyasi temalı şarkılarıyla tanınır.",
+          "şarkılarının birçoğu protest şarkısı olarak nitelendirilmiştir."
+        ]
+      }
+    },
+    {
+      "id": "5e18ad17-b018-4f0e-98ee-1f9475a87f03",
+      "slug": "aterciopelados-la-pipa-de-la-paz-30-anos-tour-ce47fed3",
+      "title": "Aterciopelados: La Pipa De La Paz 30 Años Tour",
+      "name": "Aterciopelados",
+      "source_url": "https://en.wikipedia.org/wiki/Aterciopelados",
+      "extract": "Aterciopelados, also known as Los Aterciopelados, is a rock band from Colombia, led by Andrea Echeverri and Héctor Buitrago. Their music fuses rock with a variety of Colombian and Latin American musical traditions. Aterciopelados have recorded eight albums.",
+      "en": {
+        "kicker": "colombian rock band",
+        "who": "Aterciopelados, also known as Los Aterciopelados, is a rock band from Colombia, led by Andrea Echeverri and Héctor Buitrago. their music fuses rock with a variety of colombian and latin american musical traditions. the band has recorded eight albums.",
+        "facts": [
+          "their music fuses rock with a variety of colombian and latin american musical traditions.",
+          "aterciopelados have recorded eight albums."
+        ]
+      },
+      "de": {
+        "kicker": "kolumbianische rockband",
+        "who": "Aterciopelados, auch bekannt als Los Aterciopelados, ist eine rockband aus kolumbien, geleitet von Andrea Echeverri und Héctor Buitrago. ihre musik verbindet rock mit einer vielfalt kolumbianischer und lateinamerikanischer musiktraditionen. die band hat acht alben aufgenommen.",
+        "facts": [
+          "ihre musik verbindet rock mit einer vielfalt kolumbianischer und lateinamerikanischer musiktraditionen.",
+          "die band hat acht alben aufgenommen."
+        ]
+      },
+      "tr": {
+        "kicker": "kolombiyalı rock grubu",
+        "who": "Aterciopelados, Los Aterciopelados olarak da bilinen, Andrea Echeverri ve Héctor Buitrago'nun öncülüğünde Kolombiya'dan bir rock grubudur. müzikleri rocku çeşitli kolombiya ve latin amerika müzik geleneğiyle harmanlar. grup sekiz albüm kaydetmiştir.",
+        "facts": [
+          "müzikleri rocku çeşitli kolombiya ve latin amerika müzik geleneğiyle harmanlar.",
+          "grup sekiz albüm kaydetmiştir."
+        ]
+      }
+    },
+    {
+      "id": "2386479c-d91e-4ac4-adeb-76fde43309b5",
+      "slug": "chelsea-handler-the-high-and-mighty-tour-ea6a72b7",
+      "title": "CHELSEA HANDLER: THE HIGH AND MIGHTY TOUR",
+      "name": "Chelsea Handler",
+      "source_url": "https://en.wikipedia.org/wiki/Chelsea_Handler",
+      "extract": "Chelsea Joy Handler is an American stand-up comedian, actress, writer, television host, and producer. She hosted the late-night talk show Chelsea Lately on the E! network from 2007 to 2014 and released a documentary series, Chelsea Does, on Netflix in January 2016. From 2016 to 2017, Handler hosted the talk show Chelsea on Netflix.",
+      "en": {
+        "kicker": "american comedian, actress and writer",
+        "who": "Chelsea Joy Handler is an american stand-up comedian, actress, writer, television host, and producer. she also hosted the talk show Chelsea on Netflix.",
+        "facts": [
+          "she released a documentary series, Chelsea Does, on Netflix in January 2016.",
+          "from 2016 to 2017, Handler hosted the talk show Chelsea on Netflix."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische comedian, schauspielerin und autorin",
+        "who": "Chelsea Joy Handler ist eine amerikanische stand-up-comedian, schauspielerin, autorin, tv-moderatorin und produzentin. sie moderierte außerdem die talkshow Chelsea auf Netflix.",
+        "facts": [
+          "2016 veröffentlichte sie die dokumentarserie Chelsea Does auf Netflix.",
+          "von 2016 bis 2017 moderierte Handler die talkshow Chelsea auf Netflix."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı stand-up komedyen, oyuncu ve yazar",
+        "who": "Chelsea Joy Handler amerikalı bir stand-up komedyen, oyuncu, yazar, televizyon sunucusu ve yapımcıdır. ayrıca Netflix'te Chelsea adlı bir talk show'un sunuculuğunu yaptı.",
+        "facts": [
+          "Ocak 2016'da Netflix'te Chelsea Does adlı belgesel dizisini yayımladı.",
+          "2016 ile 2017 arasında Handler, Netflix'te Chelsea talk show'unu sundu."
+        ]
+      }
+    },
+    {
+      "id": "e153ef51-c237-4082-8dc6-aefacd32f6bc",
+      "slug": "static-dress-injury-episode-usa-tour-9f1fb892",
+      "title": "Static Dress - Injury Episode USA Tour",
+      "name": "Static Dress",
+      "source_url": "https://en.wikipedia.org/wiki/Static_Dress",
+      "extract": "Static Dress are an English rock band from Leeds, West Yorkshire. Formed in 2018, Static Dress are a concept band with their material following a continuous story. They currently consist of lead vocalist Olli Appleyard, drummer Sam Ogden, guitarist Vincent Weight and bassist George Holding. They have released two full-length studio albums, three EPs and various standalone singles, as well as a comic book and three video games.",
+      "en": {
+        "kicker": "english rock band · leeds, 2018",
+        "who": "Static Dress are an english rock band from Leeds, West Yorkshire. they currently consist of lead vocalist Olli Appleyard, drummer Sam Ogden, guitarist Vincent Weight and bassist George Holding.",
+        "facts": [
+          "Formed in 2018, Static Dress are a concept band with their material following a continuous story.",
+          "They have released two full-length studio albums, three EPs and various standalone singles, as well as a comic book and three video games."
+        ]
+      },
+      "de": {
+        "kicker": "englische rockband · leeds, 2018",
+        "who": "Static Dress sind eine englische rockband aus Leeds, West Yorkshire. derzeit bestehen sie aus sänger Olli Appleyard, schlagzeuger Sam Ogden, gitarrist Vincent Weight und bassist George Holding.",
+        "facts": [
+          "Static Dress wurden 2018 gegründet und sind eine concept-band, deren material einer durchgehenden geschichte folgt.",
+          "sie haben zwei vollständige studioalben, drei eps und verschiedene einzelsingles veröffentlicht, außerdem ein comicbuch und drei videospiele."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz rock grubu · leeds, 2018",
+        "who": "Static Dress, West Yorkshire'daki Leeds'ten bir ingiliz rock grubudur. şu an baş vokalist Olli Appleyard, davulcu Sam Ogden, gitarist Vincent Weight ve basçı George Holding'den oluşmaktadır.",
+        "facts": [
+          "2018'de kurulan Static Dress, materyalleri süregelen bir hikâyeyi takip eden bir concept gruptur.",
+          "grup iki tam uzunluklu stüdyo albümü, üç EP ve çeşitli tekil şarkılar yayımladı; ayrıca bir çizgi roman ve üç video oyunu çıkardı."
+        ]
+      }
+    }
+  ]
+}

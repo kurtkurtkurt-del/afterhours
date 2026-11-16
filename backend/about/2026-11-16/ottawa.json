@@ -1,0 +1,70 @@
+{
+  "city": "ottawa",
+  "day": "2026-11-16",
+  "nights": [
+    {
+      "id": "68e594b8-7453-4d08-86aa-4818bf6e7e57",
+      "slug": "down-with-webster-47ff46aa",
+      "title": "Down With Webster",
+      "name": "Down with Webster",
+      "source_url": "https://en.wikipedia.org/wiki/Down_with_Webster",
+      "extract": "Down with Webster is a Canadian rap rock band from The Beaches area of Toronto who signed with Universal Motown in April 2009. The band first achieved commercial success with the release of the 2009 EP, Time to Win, Vol. I which consisted of the singles \"Rich Girl$\", \"Your Man\" and \"Whoa Is Me\". Their major-label debut album, Time to Win, Vol. II (2011) featured the track \"She's Dope\". The 2014 follow-up album Party for Your Life included the songs \"One in a Million\" and \"Chills.\" The band has been nominated for Juno Awards, MuchMusic Video Awards and Canadian Radio Music Awards.",
+      "en": {
+        "kicker": "canadian rap rock band · toronto",
+        "who": "Down with Webster is a Canadian rap rock band from The Beaches area of Toronto. They signed with Universal Motown in April 2009. The band has been nominated for Juno Awards, MuchMusic Video Awards and Canadian Radio Music Awards.",
+        "facts": [
+          "The band first achieved commercial success with the release of the 2009 EP, Time to Win, Vol. I which consisted of the singles \"Rich Girl$\", \"Your Man\" and \"Whoa Is Me\".",
+          "Their major-label debut album, Time to Win, Vol. II (2011) featured the track \"She's Dope\"."
+        ]
+      },
+      "de": {
+        "kicker": "kanadische rap-rock-band · toronto",
+        "who": "down with webster ist eine kanadische rap-rock-band aus The Beaches in Toronto. die band unterschrieb im april 2009 bei Universal Motown. sie wurde für Juno Awards, MuchMusic Video Awards und Canadian Radio Music Awards nominiert.",
+        "facts": [
+          "der durchbruch kam mit der 2009 veröffentlichten EP Time to Win, Vol. I, die aus den singles \"Rich Girl$\", \"Your Man\" und \"Whoa Is Me\" bestand.",
+          "ihr major-label-debütalbum Time to Win, Vol. II (2011) enthielt den titel \"She's Dope\"."
+        ]
+      },
+      "tr": {
+        "kicker": "kanadalı rap rock grubu · toronto",
+        "who": "Down with Webster, Toronto'nun The Beaches bölgesinden gelen bir Kanada rap rock grubudur. grup Nisan 2009'da Universal Motown ile anlaştı. Juno Ödülleri, MuchMusic Video Ödülleri ve Canadian Radio Music Awards için adaylıklar aldı.",
+        "facts": [
+          "grup ilk ticari başarısını 2009 EP'si Time to Win, Vol. I ile elde etti; bu EP \"Rich Girl$\", \"Your Man\" ve \"Whoa Is Me\" single'larından oluşuyordu.",
+          "major plak şirketindeki ilk albümleri Time to Win, Vol. II (2011), \"She's Dope\" parçasını içeriyordu."
+        ]
+      }
+    },
+    {
+      "id": "645dabf3-ae9c-4806-9c0b-20da02467baa",
+      "slug": "april-wine-9af06dd2",
+      "title": "April Wine",
+      "name": "April Wine",
+      "source_url": "https://en.wikipedia.org/wiki/April_Wine",
+      "extract": "April Wine is a Canadian rock band formed in 1969 and originally based in Halifax, Nova Scotia, led by singer-guitarist-songwriter Myles Goodwyn until his death in 2023. April Wine first experienced success with their second album, On Record (1972), which reached the Top 40 in the Canadian album chart and yielded two hit singles: a cover of Elton John's \"Bad Side of the Moon\", a top 20 hit in Canada; and a cover of Hot Chocolate's \"You Could Have Been a Lady\", a number 2 song in Canada.",
+      "en": {
+        "kicker": "canadian rock band · halifax, 1969",
+        "who": "April Wine is a Canadian rock band formed in 1969 and originally based in Halifax, Nova Scotia. The band was led by singer-guitarist-songwriter Myles Goodwyn until his death in 2023.",
+        "facts": [
+          "April Wine first experienced success with their second album, On Record (1972), which reached the Top 40 in the Canadian album chart.",
+          "The album yielded two hit singles: a cover of Elton John's \"Bad Side of the Moon\", a top 20 hit in Canada."
+        ]
+      },
+      "de": {
+        "kicker": "kanadische rockband · halifax, 1969",
+        "who": "April Wine ist eine kanadische rockband, die 1969 gegründet wurde und ursprünglich in Halifax, Nova Scotia, ansässig war. die band wurde von sänger, gitarrist und songwriter Myles Goodwyn angeführt, bis zu seinem tod im jahr 2023.",
+        "facts": [
+          "April Wine hatte ihren ersten erfolg mit ihrem zweiten album On Record (1972), das in den kanadischen albumcharts die top 40 erreichte.",
+          "das album brachte zwei hitsingles hervor: eine coverversion von Elton Johns \"Bad Side of the Moon\", ein top-20-hit in kanada."
+        ]
+      },
+      "tr": {
+        "kicker": "kanadalı rock grubu · halifax, 1969",
+        "who": "April Wine, 1969'da kurulan ve başlangıçta Halifax, Nova Scotia merkezli olan bir Kanada rock grubudur. grup, 2023'teki ölümüne kadar şarkıcı, gitarist ve söz yazarı Myles Goodwyn tarafından yönetildi.",
+        "facts": [
+          "April Wine ilk başarısını ikinci albümü On Record (1972) ile yakaladı; album Kanada albüm listesinde ilk 40'a girdi.",
+          "albüm iki hit single çıkardı: Elton John'un \"Bad Side of the Moon\" parçasının bir cover'ı, Kanada'da ilk 20 hiti."
+        ]
+      }
+    }
+  ]
+}

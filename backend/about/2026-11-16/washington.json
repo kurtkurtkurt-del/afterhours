@@ -1,0 +1,70 @@
+{
+  "city": "washington",
+  "day": "2026-11-16",
+  "nights": [
+    {
+      "id": "9c4be650-0842-4c21-adae-32fbfcd819da",
+      "slug": "bedouine-78743987",
+      "title": "Bedouine",
+      "name": "Bedouine",
+      "source_url": "https://en.wikipedia.org/wiki/Bedouine",
+      "extract": "Azniv Korkejian, known by her stage name Bedouine, is a Syrian-American musician. She has lived in a number of cities and countries, including Saudi Arabia, Houston, Syria, and Boston.",
+      "en": {
+        "kicker": "syrian-american musician",
+        "who": "Bedouine is the stage name of Azniv Korkejian, a Syrian-American musician. She has lived in a number of cities and countries, including Saudi Arabia, Houston, Syria, and Boston.",
+        "facts": [
+          "Azniv Korkejian, known by her stage name Bedouine, is a Syrian-American musician.",
+          "She has lived in a number of cities and countries, including Saudi Arabia, Houston, Syria, and Boston."
+        ]
+      },
+      "de": {
+        "kicker": "syrisch-amerikanische musikerin",
+        "who": "Bedouine ist der künstlername von Azniv Korkejian, einer syrisch-amerikanischen musikerin. Sie hat in einer reihe von städten und ländern gelebt, darunter Saudi-Arabien, Houston, Syrien und Boston.",
+        "facts": [
+          "Azniv Korkejian, unter ihrem künstlernamen Bedouine bekannt, ist eine syrisch-amerikanische musikerin.",
+          "Sie hat in einer reihe von städten und ländern gelebt, darunter Saudi-Arabien, Houston, Syrien und Boston."
+        ]
+      },
+      "tr": {
+        "kicker": "suriyeli-amerikalı müzisyen",
+        "who": "Bedouine, Azniv Korkejian'ın sahne adıdır; kendisi suriyeli-amerikalı bir müzisyen. Birçok şehir ve ülkede yaşamıştır; bunlar arasında Suudi Arabistan, Houston, Suriye ve Boston var.",
+        "facts": [
+          "Azniv Korkejian, sahne adı Bedouine ile tanınan, suriyeli-amerikalı bir müzisyendir.",
+          "Birçok şehir ve ülkede yaşamıştır; bunlar arasında Suudi Arabistan, Houston, Suriye ve Boston var."
+        ]
+      }
+    },
+    {
+      "id": "b418466c-0c50-46d4-b542-7420351615d4",
+      "slug": "colby-acuff-3b0d9132",
+      "title": "Colby Acuff",
+      "name": "Colby Acuff",
+      "source_url": "https://en.wikipedia.org/wiki/Colby_Acuff",
+      "extract": "Colby Acuff is an American country singer-songwriter from Coeur d'Alene, Idaho. His major label debut album Western White Pines released just one month after signing to Sony in May 2023.",
+      "en": {
+        "kicker": "american country singer-songwriter · Coeur d'Alene, Idaho",
+        "who": "Colby Acuff is an American country singer-songwriter from Coeur d'Alene, Idaho. His major label debut album, Western White Pines, came out just one month after he signed to Sony.",
+        "facts": [
+          "Colby Acuff is an American country singer-songwriter from Coeur d'Alene, Idaho.",
+          "His major label debut album Western White Pines released just one month after signing to Sony in May 2023."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer country-singer-songwriter · Coeur d'Alene, Idaho",
+        "who": "Colby Acuff ist ein amerikanischer country-singer-songwriter aus Coeur d'Alene, Idaho. Sein erstes major-label-album Western White Pines erschien nur einen monat, nachdem er bei Sony unterschrieben hatte.",
+        "facts": [
+          "Colby Acuff ist ein amerikanischer country-singer-songwriter aus Coeur d'Alene, Idaho.",
+          "Sein major-label-debütalbum Western White Pines erschien nur einen monat, nachdem er im mai 2023 bei Sony unterschrieben hatte."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı country şarkıcı-söz yazarı · Coeur d'Alene, Idaho",
+        "who": "Colby Acuff, Idaho'nun Coeur d'Alene kentinden gelen amerikalı bir country şarkıcısı ve söz yazarı. Major label'daki ilk albümü Western White Pines, Sony ile anlaşmasından yalnızca bir ay sonra çıktı.",
+        "facts": [
+          "Colby Acuff, Idaho'nun Coeur d'Alene kentinden gelen amerikalı bir country şarkıcısı ve söz yazarıdır.",
+          "Major label'daki ilk albümü Western White Pines, Mayıs 2023'te Sony ile anlaşmasından yalnızca bir ay sonra yayımlandı."
+        ]
+      }
+    }
+  ]
+}

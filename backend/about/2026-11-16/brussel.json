@@ -1,0 +1,38 @@
+{
+  "city": "brussel",
+  "day": "2026-11-16",
+  "nights": [
+    {
+      "id": "d614e71b-3f9b-4812-9591-64a6c37f2461",
+      "slug": "salvatore-adamo-b944182c",
+      "title": "Salvatore Adamo",
+      "name": "Salvatore Adamo",
+      "source_url": "https://en.wikipedia.org/wiki/Salvatore_Adamo",
+      "extract": "Salvatore Adamo is a Belgian-Italian musician, singer, and composer, who is known for his romantic ballads. Adamo was born in Comiso, Sicily, Italy, and has lived in Belgium since the age of three, which is why he has dual citizenship. By the second half of the sixties, Adamo had become the world's second best-selling musician after The Beatles. Through his career, he sold more than 80 million copies worldwide, making him the best-selling Belgian artist of all time, and one of the most commercially successful musicians in the world.",
+      "en": {
+        "kicker": "belgian-italian singer and composer · comiso, sicily",
+        "who": "salvatore adamo is a belgian-italian musician, singer and composer known for his romantic ballads. he was born in comiso, sicily, and has lived in belgium since the age of three, which is why he has dual citizenship.",
+        "facts": [
+          "by the second half of the sixties, adamo had become the world's second best-selling musician after The Beatles.",
+          "he sold more than 80 million copies worldwide, making him the best-selling Belgian artist of all time."
+        ]
+      },
+      "de": {
+        "kicker": "belgisch-italienischer sänger · comiso, sizilien",
+        "who": "salvatore adamo ist ein belgisch-italienischer musiker, sänger und komponist, bekannt für seine romantischen balladen. er wurde in comiso auf sizilien geboren und lebt seit seinem dritten lebensjahr in belgien, weshalb er die doppelte staatsbürgerschaft besitzt.",
+        "facts": [
+          "in der zweiten hälfte der sechziger jahre war adamo der weltweit zweiterfolgreichste musiker nach The Beatles.",
+          "er verkaufte weltweit mehr als 80 millionen exemplare und ist damit der erfolgreichste belgische künstler aller zeiten."
+        ]
+      },
+      "tr": {
+        "kicker": "belçikalı-italyan şarkıcı ve besteci · comiso, sicilya",
+        "who": "salvatore adamo, romantik baladlarıyla bilinen belçikalı-italyan bir müzisyen, şarkıcı ve besteci. sicilya'nın comiso kentinde doğdu ve üç yaşından beri belçika'da yaşıyor; bu yüzden çifte vatandaşlığa sahip.",
+        "facts": [
+          "altmışların ikinci yarısında adamo, The Beatles'tan sonra dünyanın en çok satan ikinci müzisyeni oldu.",
+          "dünya genelinde 80 milyondan fazla kopya satarak tüm zamanların en çok satan belçikalı sanatçısı oldu."
+        ]
+      }
+    }
+  ]
+}

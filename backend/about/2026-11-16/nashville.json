@@ -1,0 +1,38 @@
+{
+  "city": "nashville",
+  "day": "2026-11-16",
+  "nights": [
+    {
+      "id": "e34f57de-0f26-4a09-b898-4568c7c5ba86",
+      "slug": "phillip-phillips-98d49f63",
+      "title": "Phillip Phillips",
+      "name": "Phillip Phillips",
+      "source_url": "https://en.wikipedia.org/wiki/Phillip_Phillips",
+      "extract": "Phillip LaDon Phillips Jr. is an American singer-songwriter who rose to fame after winning the eleventh season of American Idol in 2012. His coronation song, \"Home\", became the best-selling coronation song in American Idol history.",
+      "en": {
+        "kicker": "american singer-songwriter · american idol, 2012",
+        "who": "Phillip LaDon Phillips Jr. is an American singer-songwriter who rose to fame after winning the eleventh season of American Idol in 2012. His coronation song, \"Home\", became the best-selling coronation song in American Idol history.",
+        "facts": [
+          "He rose to fame after winning the eleventh season of American Idol in 2012.",
+          "His coronation song, \"Home\", became the best-selling coronation song in American Idol history."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer singer-songwriter · american idol, 2012",
+        "who": "Phillip LaDon Phillips Jr. ist ein amerikanischer Singer-Songwriter, der 2012 mit dem Sieg in der elften Staffel von American Idol bekannt wurde. Sein Krönungslied „Home“ wurde das meistverkaufte Krönungslied in der Geschichte von American Idol.",
+        "facts": [
+          "Er wurde 2012 mit dem Sieg in der elften Staffel von American Idol bekannt.",
+          "Sein Krönungslied „Home“ wurde das meistverkaufte Krönungslied in der Geschichte von American Idol."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı şarkıcı-söz yazarı · american idol, 2012",
+        "who": "Phillip LaDon Phillips Jr., 2012’de American Idol’ın on birinci sezonunu kazanarak ünlenen Amerikalı bir şarkıcı-söz yazarıdır. Koronasyon şarkısı „Home“, American Idol tarihinin en çok satan koronasyon şarkısı oldu.",
+        "facts": [
+          "2012’de American Idol’ın on birinci sezonunu kazanarak ünlendi.",
+          "Koronasyon şarkısı „Home“, American Idol tarihinin en çok satan koronasyon şarkısı oldu."
+        ]
+      }
+    }
+  ]
+}

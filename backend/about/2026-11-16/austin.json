@@ -1,0 +1,38 @@
+{
+  "city": "austin",
+  "day": "2026-11-16",
+  "nights": [
+    {
+      "id": "3a787521-4cee-4927-8d63-57aaf7f90638",
+      "slug": "montell-fish-cb05b7c4",
+      "title": "Montell Fish",
+      "name": "Montell Fish",
+      "source_url": "https://en.wikipedia.org/wiki/Montell_Fish",
+      "extract": "Montell James Frazier, also known as Montell Fish, is an American singer-songwriter. Formerly making music under the CCM genre, he switched to alternative R&B and neo soul. He has since signed to Virgin Music Group for distribution and released two albums under the deal: Jamie in 2022 and Charlotte in 2024.",
+      "en": {
+        "kicker": "american singer-songwriter · alternative r&b",
+        "who": "Montell Fish, also known as Montell James Frazier, is an American singer-songwriter who has moved from the CCM genre into alternative R&B and neo soul. He now releases music through a deal with Virgin Music Group for distribution.",
+        "facts": [
+          "Formerly making music under the CCM genre, he switched to alternative R&B and neo soul.",
+          "He has since signed to Virgin Music Group for distribution and released two albums under the deal: Jamie in 2022 and Charlotte in 2024."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer singer-songwriter · alternative r&b",
+        "who": "Montell Fish, auch bekannt als Montell James Frazier, ist ein amerikanischer singer-songwriter, der vom CCM-genre zu alternative R&B und neo soul gewechselt ist. Für den vertrieb seiner musik hat er einen vertrag mit Virgin Music Group.",
+        "facts": [
+          "Früher machte er musik im CCM-genre, dann wechselte er zu alternative R&B und neo soul.",
+          "Seitdem hat er bei Virgin Music Group für den vertrieb unterschrieben und im rahmen dieses deals zwei alben veröffentlicht: Jamie 2022 und Charlotte 2024."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı şarkıcı-söz yazarı · alternative r&b",
+        "who": "Montell Fish, diğer adıyla Montell James Frazier, CCM türünden alternative R&B ve neo soul'a yönelmiş amerikalı bir şarkıcı ve söz yazarıdır. Dağıtım için Virgin Music Group ile bir anlaşması vardır.",
+        "facts": [
+          "Daha önce CCM türünde müzik yapıyordu; ardından alternative R&B ve neo soul'a geçti.",
+          "Bundan sonra dağıtım için Virgin Music Group ile anlaşma imzaladı ve bu anlaşma kapsamında Jamie (2022) ve Charlotte (2024) adlı iki albüm yayımladı."
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "city": "los-angeles",
+  "day": "2026-11-16",
+  "nights": [
+    {
+      "id": "809bd078-c081-4291-af1f-85f267830361",
+      "slug": "the-obgms-heart-problems-tour-5fbb5e06",
+      "title": "The OBGMs: Heart Problems Tour",
+      "name": "The OBGMs",
+      "source_url": "https://en.wikipedia.org/wiki/The_OBGMs",
+      "extract": "The OBGMs (The oOohh Baby Gimme Mores) are a Canadian punk rock band from Toronto, Ontario. They are most noted for their 2020 album The Ends, which was a shortlisted finalist for the 2021 Polaris Music Prize.",
+      "en": {
+        "kicker": "canadian punk rock band · toronto, ontario",
+        "who": "the OBGMs (The oOohh Baby Gimme Mores) are a canadian punk rock band from Toronto, Ontario. they are most noted for their 2020 album The Ends.",
+        "facts": [
+          "the OBGMs (The oOohh Baby Gimme Mores) are a Canadian punk rock band from Toronto, Ontario.",
+          "they are most noted for their 2020 album The Ends, which was a shortlisted finalist for the 2021 Polaris Music Prize."
+        ]
+      },
+      "de": {
+        "kicker": "kanadische punkrock-band · toronto, ontario",
+        "who": "die OBGMs (The oOohh Baby Gimme Mores) sind eine kanadische punkrock-band aus Toronto, Ontario. vor allem ihr album The Ends von 2020 ist bekannt.",
+        "facts": [
+          "die OBGMs (The oOohh Baby Gimme Mores) sind eine kanadische punkrock-band aus Toronto, Ontario.",
+          "ihr album The Ends aus dem jahr 2020 stand auf der shortlist für den Polaris Music Prize 2021."
+        ]
+      },
+      "tr": {
+        "kicker": "kanadalı punk rock grubu · toronto, ontario",
+        "who": "The OBGMs (The oOohh Baby Gimme Mores), Toronto, Ontario'dan bir kanadalı punk rock grubudur. en çok 2020 albümü The Ends ile bilinirler.",
+        "facts": [
+          "The OBGMs (The oOohh Baby Gimme Mores), Toronto, Ontario'dan bir kanadalı punk rock grubudur.",
+          "2020 albümleri The Ends, 2021 Polaris Music Prize'ın kısa listesinde yer almıştır."
+        ]
+      }
+    },
+    {
+      "id": "d64343e7-5d72-48c5-9fc5-884f98a19285",
+      "slug": "em-beihold-tales-of-a-failed-shapeshifter-tour-b97fa2eb",
+      "title": "Em Beihold: Tales Of A Failed Shapeshifter Tour",
+      "name": "Em Beihold",
+      "source_url": "https://en.wikipedia.org/wiki/Em_Beihold",
+      "extract": "Emily Mahin Beihold is an American singer-songwriter. She released her debut EP Infrared in 2017. After signing to Republic Records in 2021, she released her major-label debut single \"Numb Little Bug\" in 2022, which brought her widespread recognition. The same year, she released her second EP, Egg in the Backseat. Her debut album, Tales of a Failed Shapeshifter, was released on February 27, 2026.",
+      "en": {
+        "kicker": "american singer-songwriter · debut ep, 2017",
+        "who": "Emily Mahin Beihold is an american singer-songwriter. her debut album, Tales of a Failed Shapeshifter, was released on February 27, 2026.",
+        "facts": [
+          "she released her debut EP Infrared in 2017.",
+          "after signing to Republic Records in 2021, she released her major-label debut single \"Numb Little Bug\" in 2022, which brought her widespread recognition."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische singer-songwriterin · debüt-ep, 2017",
+        "who": "Emily Mahin Beihold ist eine amerikanische singer-songwriterin. ihr debütalbum Tales of a Failed Shapeshifter erschien am 27. februar 2026.",
+        "facts": [
+          "sie veröffentlichte 2017 ihre debüt-ep Infrared.",
+          "nachdem sie 2021 bei Republic Records unterschrieben hatte, veröffentlichte sie 2022 ihre erste major-label-single \"Numb Little Bug\", die ihr breite bekanntheit einbrachte."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı şarkıcı ve söz yazarı · ilk ep, 2017",
+        "who": "Emily Mahin Beihold, amerikalı bir şarkıcı ve söz yazarıdır. ilk albümü Tales of a Failed Shapeshifter, 27 şubat 2026'da yayımlandı.",
+        "facts": [
+          "2017'de ilk ep'i Infrared'ı yayımladı.",
+          "2021'de Republic Records ile anlaştıktan sonra 2022'de büyük plak şirketinden ilk single'ı \"Numb Little Bug\"ı yayımladı ve geniş bir tanınırlık kazandı."
+        ]
+      }
+    },
+    {
+      "id": "cada5219-01a6-4214-8841-1caf511de0d6",
+      "slug": "dirty-honey-5b996c78",
+      "title": "Dirty Honey",
+      "name": "Dirty Honey",
+      "source_url": "https://en.wikipedia.org/wiki/Dirty_Honey",
+      "extract": "Dirty Honey is an American rock band from Los Angeles, formed in 2017. It consists of singer Marc LaBelle, guitarist John Notto, bassist Justin Smolian, and drummer Jaydon Bean.",
+      "en": {
+        "kicker": "american rock band · los angeles, 2017",
+        "who": "Dirty Honey is an american rock band from Los Angeles. its singer is Marc LaBelle.",
+        "facts": [
+          "Dirty Honey is an American rock band from Los Angeles, formed in 2017.",
+          "it consists of singer Marc LaBelle, guitarist John Notto, bassist Justin Smolian, and drummer Jaydon Bean."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische rockband · los angeles, 2017",
+        "who": "Dirty Honey ist eine amerikanische rockband aus Los Angeles. sänger ist Marc LaBelle.",
+        "facts": [
+          "Dirty Honey ist eine amerikanische rockband aus Los Angeles, die 2017 gegründet wurde.",
+          "zur besetzung gehören sänger Marc LaBelle, gitarrist John Notto, bassist Justin Smolian und schlagzeuger Jaydon Bean."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı rock grubu · los angeles, 2017",
+        "who": "Dirty Honey, Los Angeles'tan amerikalı bir rock grubudur. şarkıcısı Marc LaBelle'dir.",
+        "facts": [
+          "Dirty Honey, 2017'de kurulmuş, Los Angeles'tan amerikalı bir rock grubudur.",
+          "kadroda şarkıcı Marc LaBelle, gitarist John Notto, bassist Justin Smolian ve davulcu Jaydon Bean yer alır."
+        ]
+      }
+    }
+  ]
+}

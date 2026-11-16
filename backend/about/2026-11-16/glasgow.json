@@ -1,0 +1,262 @@
+{
+ "city": "glasgow",
+ "day": "2026-11-16",
+ "nights": [
+  {
+   "id": "0523670d-7452-4ea6-824f-ce89b8ba888f",
+   "slug": "ocean-colour-scene-836b30d7",
+   "title": "Ocean Colour Scene",
+   "name": "Ocean Colour Scene",
+   "source_url": "https://en.wikipedia.org/wiki/Ocean_Colour_Scene",
+   "extract": "Ocean Colour Scene are an English rock band formed in Moseley, Birmingham in 1989. They have had five top 10 albums, including a number one in 1997. They have also achieved seventeen top 40 singles and six top 10 singles to date.",
+   "en": {
+    "kicker": "english rock band · moseley, birmingham, 1989",
+    "who": "Ocean Colour Scene are an English rock band formed in Moseley, Birmingham in 1989.",
+    "facts": [
+     "They have had five top 10 albums, including a number one in 1997.",
+     "They have also achieved seventeen top 40 singles and six top 10 singles to date."
+    ]
+   },
+   "de": {
+    "kicker": "englische rockband · moseley, birmingham, 1989",
+    "who": "Ocean Colour Scene sind eine englische Rockband, die 1989 in Moseley, Birmingham gegründet wurde.",
+    "facts": [
+     "Sie hatten fünf Top-10-Alben, darunter ein Nummer-eins-Album im Jahr 1997.",
+     "Außerdem erreichten sie siebzehn Top-40-Singles und sechs Top-10-Singles bis heute."
+    ]
+   },
+   "tr": {
+    "kicker": "ingiliz rock grubu · moseley, birmingham, 1989",
+    "who": "Ocean Colour Scene, 1989'da Birmingham'ın Moseley semtinde kurulmuş bir İngiliz rock grubudur.",
+    "facts": [
+     "1997'de bir numaraya ulaşan albüm dahil beş ilk 10 albümleri oldu.",
+     "Bugüne kadar ayrıca on yedi ilk 40 single ve altı ilk 10 single'a ulaştılar."
+    ]
+   }
+  },
+  {
+   "id": "c6c1b882-dbbd-492a-8d29-c3bddabf8662",
+   "slug": "republica-30-years-of-ready-to-go-ba70d834",
+   "title": "Republica - 30 Years of Ready To Go",
+   "name": "Republica",
+   "source_url": "https://en.wikipedia.org/wiki/Republica",
+   "extract": "Republica are an English alternative rock band formed in 1994. They reached the height of their popularity from 1996 to 1999. The band went on hiatus in 2001 and reunited in 2008.",
+   "en": {
+    "kicker": "english alternative rock band · formed 1994",
+    "who": "Republica are an English alternative rock band formed in 1994.",
+    "facts": [
+     "They reached the height of their popularity from 1996 to 1999.",
+     "The band went on hiatus in 2001 and reunited in 2008."
+    ]
+   },
+   "de": {
+    "kicker": "englische alternative-rockband · gegründet 1994",
+    "who": "Republica sind eine englische Alternative-Rockband, die 1994 gegründet wurde.",
+    "facts": [
+     "Ihre Beliebtheit erreichte von 1996 bis 1999 ihren Höhepunkt.",
+     "Die Band legte 2001 eine Pause ein und fand 2008 wieder zusammen."
+    ]
+   },
+   "tr": {
+    "kicker": "ingiliz alternatif rock grubu · 1994'te kuruldu",
+    "who": "Republica, 1994'te kurulmuş bir İngiliz alternatif rock grubudur.",
+    "facts": [
+     "Popülerliklerinin zirvesine 1996'dan 1999'a kadar ulaştılar.",
+     "Grup 2001'de ara verdi ve 2008'de yeniden bir araya geldi."
+    ]
+   }
+  },
+  {
+   "id": "fd92ad3a-4a76-480d-90d3-4cea24a97a28",
+   "slug": "rizzle-kicks-83c680ba",
+   "title": "Rizzle Kicks",
+   "name": "Rizzle Kicks",
+   "source_url": "https://en.wikipedia.org/wiki/Rizzle_Kicks",
+   "extract": "Rizzle Kicks are a British hip-hop duo from Brighton, England, consisting of Jordan \"Rizzle\" Stephens and Harley \"Sylvester\" Alexander-Sule. Their debut album, Stereo Typical, was released in 2011. As of May 2012, Rizzle Kicks had sold over one million singles and over 600,000 albums in the UK.",
+   "en": {
+    "kicker": "british hip-hop duo · brighton, england",
+    "who": "Rizzle Kicks are a British hip-hop duo from Brighton, England, consisting of Jordan \"Rizzle\" Stephens and Harley \"Sylvester\" Alexander-Sule.",
+    "facts": [
+     "Their debut album, Stereo Typical, was released in 2011.",
+     "As of May 2012, Rizzle Kicks had sold over one million singles and over 600,000 albums in the UK."
+    ]
+   },
+   "de": {
+    "kicker": "britisches hip-hop-duo · brighton, england",
+    "who": "Rizzle Kicks sind ein britisches Hip-Hop-Duo aus Brighton, England, bestehend aus Jordan \"Rizzle\" Stephens und Harley \"Sylvester\" Alexander-Sule.",
+    "facts": [
+     "Ihr Debütalbum Stereo Typical erschien 2011.",
+     "Im Mai 2012 hatte das Duo in Großbritannien über eine Million Singles und über 600.000 Alben verkauft."
+    ]
+   },
+   "tr": {
+    "kicker": "ingiliz hip-hop ikilisi · brighton, england",
+    "who": "Rizzle Kicks, İngiltere'nin Brighton kentinden bir İngiliz hip-hop ikilisidir; Jordan \"Rizzle\" Stephens ve Harley \"Sylvester\" Alexander-Sule'den oluşur.",
+    "facts": [
+     "İlk albümleri Stereo Typical 2011'de yayımlandı.",
+     "Mayıs 2012 itibarıyla Rizzle Kicks, Birleşik Krallık'ta bir milyonun üzerinde single ve 600.000'in üzerinde albüm satmıştı."
+    ]
+   }
+  },
+  {
+   "id": "5513128c-f0f1-43a0-bf3a-0c68d8eb2d89",
+   "slug": "catty-280ce5bb",
+   "title": "CATTY",
+   "name": "Catty",
+   "source_url": "https://en.wikipedia.org/wiki/Catty_(singer)",
+   "extract": "Catrin Hopkins, known professionally as CATTY, is a Welsh singer and songwriter. She began her music career in 2016 in the musical duo Dusky Grey, before becoming a solo artist and a songwriter. Since going solo, she has released the extended plays Healing Out of Spite and Bracing for Impact, as well as supporting various artists on tour, including Dylan and Stevie Nicks.",
+   "en": {
+    "kicker": "welsh singer and songwriter · career from 2016",
+    "who": "Catrin Hopkins, known professionally as CATTY, is a Welsh singer and songwriter.",
+    "facts": [
+     "She began her music career in 2016 in the musical duo Dusky Grey, before becoming a solo artist and a songwriter.",
+     "Since going solo, she has released the extended plays Healing Out of Spite and Bracing for Impact, as well as supporting various artists on tour, including Dylan and Stevie Nicks."
+    ]
+   },
+   "de": {
+    "kicker": "walisische sängerin und songwriterin · karriere ab 2016",
+    "who": "Catrin Hopkins, professionell bekannt als CATTY, ist eine walisische Sängerin und Songwriterin.",
+    "facts": [
+     "Ihre musikalische Karriere begann 2016 im Duo Dusky Grey, bevor sie als Solokünstlerin und Songwriterin arbeitete.",
+     "Seit ihrer Solokarriere hat sie die EPs Healing Out of Spite und Bracing for Impact veröffentlicht und verschiedene Künstler auf Tour unterstützt, unter anderem Dylan und Stevie Nicks."
+    ]
+   },
+   "tr": {
+    "kicker": "galli şarkıcı ve söz yazarı · 2016'dan beri",
+    "who": "Catrin Hopkins, sahne adıyla CATTY, Galli bir şarkıcı ve söz yazarıdır.",
+    "facts": [
+     "Müzik kariyerine 2016'da Dusky Grey ikilisinde başladı; ardından solo sanatçı ve söz yazarı oldu.",
+     "Solo kariyerinden beri Healing Out of Spite ve Bracing for Impact adlı EP'leri yayımladı ve turnelerde Dylan ve Stevie Nicks dahil çeşitli sanatçılara destek verdi."
+    ]
+   }
+  },
+  {
+   "id": "d0340225-1e08-40e3-b0bc-355d6ba8eb9f",
+   "slug": "boko-yout-1d831a71",
+   "title": "Boko Yout",
+   "name": "Boko Yout",
+   "source_url": "https://en.wikipedia.org/wiki/Boko_Yout",
+   "extract": "Boko Yout is a Swedish music group. Previously, the group's singer Paul Adamah, born 1998 in Örebro, used the name Boko Yout as a stage name for his solo project, but since 2025 Boko Yout became a group with the addition of Kevin Stierne on bass and Joel Kiviaho on drums.",
+   "en": {
+    "kicker": "swedish music group · group since 2025",
+    "who": "Boko Yout is a Swedish music group. Its singer, Paul Adamah, previously used the name as a stage name for his solo project.",
+    "facts": [
+     "Boko Yout is a Swedish music group.",
+     "Previously, the group's singer Paul Adamah, born 1998 in Örebro, used the name Boko Yout as a stage name for his solo project, but since 2025 Boko Yout became a group with the addition of Kevin Stierne on bass and Joel Kiviaho on drums."
+    ]
+   },
+   "de": {
+    "kicker": "schwedische musikgruppe · seit 2025 als gruppe",
+    "who": "Boko Yout ist eine schwedische Musikgruppe. Ihr Sänger Paul Adamah nutzte den Namen früher als Künstlernamen für sein Soloprojekt.",
+    "facts": [
+     "Boko Yout ist eine schwedische Musikgruppe.",
+     "Früher nutzte der Sänger der Gruppe, Paul Adamah, geboren 1998 in Örebro, den Namen Boko Yout als Künstlernamen für sein Soloprojekt, doch seit 2025 ist Boko Yout eine Gruppe mit Kevin Stierne am Bass und Joel Kiviaho am Schlagzeug."
+    ]
+   },
+   "tr": {
+    "kicker": "isveçli müzik grubu · 2025'ten beri grup",
+    "who": "Boko Yout bir İsveçli müzik grubudur. Grubun şarkıcısı Paul Adamah, adı önce solo projesi için sahne adı olarak kullanmıştı.",
+    "facts": [
+     "Boko Yout bir İsveçli müzik grubudur.",
+     "Grubun şarkıcısı Paul Adamah, 1998'de Örebro'da doğdu ve önce solo projesi için Boko Yout adını sahne adı olarak kullandı; 2025'ten beri Boko Yout, bas gitarda Kevin Stierne ve davulda Joel Kiviaho'nun katılmasıyla bir gruptur."
+    ]
+   }
+  },
+  {
+   "id": "7f1aa26d-b7fd-4583-8bb6-fb8a69e5c786",
+   "slug": "gloryhammer-f771335c",
+   "title": "Gloryhammer",
+   "name": "Gloryhammer",
+   "source_url": "https://en.wikipedia.org/wiki/Gloryhammer",
+   "extract": "Gloryhammer are a British power metal band founded by keyboardist Christopher Bowes, lead vocalist of the band Alestorm. Each member of the band represents a character in the story concept. Band members appear on stage in armour and costumes to represent their respective characters.",
+   "en": {
+    "kicker": "british power metal band · founded by christopher bowes",
+    "who": "Gloryhammer are a British power metal band founded by keyboardist Christopher Bowes, lead vocalist of the band Alestorm.",
+    "facts": [
+     "Each member of the band represents a character in the story concept.",
+     "Band members appear on stage in armour and costumes to represent their respective characters."
+    ]
+   },
+   "de": {
+    "kicker": "britische power-metal-band · gegründet von christopher bowes",
+    "who": "Gloryhammer sind eine britische Power-Metal-Band, gegründet von Keyboarder Christopher Bowes, dem Leadsänger der Band Alestorm.",
+    "facts": [
+     "Jedes Bandmitglied verkörpert eine Figur aus dem Geschichtenkonzept.",
+     "Die Musiker treten in Rüstungen und Kostümen auf, um ihre jeweiligen Figuren darzustellen."
+    ]
+   },
+   "tr": {
+    "kicker": "ingiliz power metal grubu · christopher bowes tarafından kuruldu",
+    "who": "Gloryhammer, klavyeci Christopher Bowes tarafından kurulmuş bir İngiliz power metal grubudur. Bowes, Alestorm grubunun baş vokalistidir.",
+    "facts": [
+     "Grubun her üyesi, hikaye konseptindeki bir karakteri temsil eder.",
+     "Grup üyeleri, kendi karakterlerini temsil etmek için sahnede zırh ve kostümlerle çıkar."
+    ]
+   }
+  },
+  {
+   "id": "54d7486f-73d6-4537-93c7-96e7fcd6505a",
+   "slug": "fontaines-d-c-c066d437",
+   "title": "Fontaines D.C.",
+   "name": "Fontaines D.C.",
+   "source_url": "https://en.wikipedia.org/wiki/Fontaines_D.C.",
+   "extract": "Fontaines D.C. are an Irish rock band formed in Dublin in 2014. The band consists of Grian Chatten (vocals), Conor Curley (guitar), Conor \"Deego\" Deegan III (bass), Tom Coll (drums), and Carlos O'Connell (guitar).",
+   "en": {
+    "kicker": "irish rock band · dublin, 2014",
+    "who": "Fontaines D.C. are an Irish rock band formed in Dublin in 2014. Grian Chatten sings for the band.",
+    "facts": [
+     "Fontaines D.C. are an Irish rock band formed in Dublin in 2014.",
+     "The band consists of Grian Chatten (vocals), Conor Curley (guitar), Conor \"Deego\" Deegan III (bass), Tom Coll (drums), and Carlos O'Connell (guitar)."
+    ]
+   },
+   "de": {
+    "kicker": "irische rockband · dublin, 2014",
+    "who": "Fontaines D.C. sind eine irische Rockband, die 2014 in Dublin gegründet wurde. Grian Chatten singt bei der Band.",
+    "facts": [
+     "Fontaines D.C. sind eine irische Rockband, die 2014 in Dublin gegründet wurde.",
+     "Zur Band gehören Grian Chatten (Gesang), Conor Curley (Gitarre), Conor \"Deego\" Deegan III (Bass), Tom Coll (Schlagzeug) und Carlos O'Connell (Gitarre)."
+    ]
+   },
+   "tr": {
+    "kicker": "irlandalı rock grubu · dublin, 2014",
+    "who": "Fontaines D.C., 2014'te Dublin'de kurulmuş bir İrlanda rock grubudur. Grian Chatten grupta vokal yapar.",
+    "facts": [
+     "Fontaines D.C., 2014'te Dublin'de kurulmuş bir İrlanda rock grubudur.",
+     "Grubun üyeleri Grian Chatten (vokal), Conor Curley (gitar), Conor \"Deego\" Deegan III (bas), Tom Coll (davul) ve Carlos O'Connell (gitar)'dır."
+    ]
+   }
+  },
+  {
+   "id": "a7c475aa-c360-4daf-9085-f7baf3d63a76",
+   "slug": "mystery-jets-1e85eb59",
+   "title": "Mystery Jets",
+   "name": "Mystery Jets",
+   "source_url": "https://en.wikipedia.org/wiki/Mystery_Jets",
+   "extract": "Mystery Jets are an English indie rock band, formed on Eel Pie Island in Twickenham, London. The founding members still part of the band consist of Blaine Harrison, Henry Harrison (lyrics), and Kapil Trivedi (drums).",
+   "en": {
+    "kicker": "english indie rock band · formed on eel pie island",
+    "who": "Mystery Jets are an English indie rock band, formed on Eel Pie Island in Twickenham, London. The founding members still part of the band are Blaine Harrison, Henry Harrison and Kapil Trivedi.",
+    "facts": [
+     "Mystery Jets are an English indie rock band, formed on Eel Pie Island in Twickenham, London.",
+     "The founding members still part of the band consist of Blaine Harrison, Henry Harrison (lyrics), and Kapil Trivedi (drums)."
+    ]
+   },
+   "de": {
+    "kicker": "englische indie-rockband · gegründet auf eel pie island",
+    "who": "Mystery Jets sind eine englische Indie-Rockband, gegründet auf Eel Pie Island in Twickenham, London. Blaine Harrison, Henry Harrison und Kapil Trivedi gehören als Gründungsmitglieder weiterhin zur Band.",
+    "facts": [
+     "Mystery Jets sind eine englische Indie-Rockband, gegründet auf Eel Pie Island in Twickenham, London.",
+     "Die Gründungsmitglieder, die noch zur Band gehören, sind Blaine Harrison, Henry Harrison (Texte) und Kapil Trivedi (Schlagzeug)."
+    ]
+   },
+   "tr": {
+    "kicker": "ingiliz indie rock grubu · eel pie island'da kuruldu",
+    "who": "Mystery Jets, Londra'nın Twickenham semtindeki Eel Pie Island'da kurulmuş bir İngiliz indie rock grubudur. Kurucu üyelerinden Blaine Harrison, Henry Harrison ve Kapil Trivedi hâlâ grupta yer alıyor.",
+    "facts": [
+     "Mystery Jets, Londra'nın Twickenham semtindeki Eel Pie Island'da kurulmuş bir İngiliz indie rock grubudur.",
+     "Hâlâ grubun parçası olan kurucu üyeler Blaine Harrison, Henry Harrison (söz) ve Kapil Trivedi (davul)'dir."
+    ]
+   }
+  }
+ ]
+}

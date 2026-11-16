@@ -1,0 +1,102 @@
+{
+  "city": "toronto",
+  "day": "2026-11-16",
+  "nights": [
+    {
+      "id": "23b8148c-5ef8-438d-8621-fdc4590ffba9",
+      "slug": "mamas-gun-28a7f741",
+      "title": "Mamas Gun",
+      "name": "Mamas Gun",
+      "source_url": "https://en.wikipedia.org/wiki/Mamas_Gun",
+      "extract": "Mamas Gun is a British contemporary soul band. They found early international success with a radio-friendly soul pop sound. They made 5 full-length albums with evolving personnel, reaching a sound rooted in classic soul with alternative/progressive leanings. Golden Days (2018) marked a major turning point, the band having recorded and produced it themselves.",
+      "en": {
+        "kicker": "british contemporary soul band",
+        "who": "Mamas Gun is a British contemporary soul band. The band found early international success with a radio-friendly soul pop sound. It has made 5 full-length albums and now plays a classic soul sound with alternative and progressive leanings.",
+        "facts": [
+          "They found early international success with a radio-friendly soul pop sound.",
+          "Golden Days (2018) marked a major turning point, the band having recorded and produced it themselves."
+        ]
+      },
+      "de": {
+        "kicker": "britische contemporary-soul-band",
+        "who": "mamas gun ist eine britische contemporary-soul-band. die band fand früh internationalen erfolg mit einem radiotauglichen soul-pop-sound. sie hat 5 vollständige alben veröffentlicht und spielt heute einen klassischen soul-sound mit alternativen und progressiven einflüssen.",
+        "facts": [
+          "die band fand früh internationalen erfolg mit einem radiotauglichen soul-pop-sound.",
+          "golden days (2018) markierte einen wendepunkt, da die band das album selbst aufgenommen und produziert hatte."
+        ]
+      },
+      "tr": {
+        "kicker": "britanyalı çağdaş soul grubu",
+        "who": "mamas gun, britanyalı bir çağdaş soul grubudur. grup erken dönemde radyo dostu bir soul pop sonoruyla uluslararası başarı elde etti. 5 tam uzunluklu albüm yayımladı ve bugün alternatif ile progresif eğilimleri olan, klasik soula dayanan bir ses çalıyor.",
+        "facts": [
+          "grup erken dönemde radyo dostu bir soul pop sonoruyla uluslararası başarı elde etti.",
+          "golden days (2018), grubun albümü kendisinin kaydedip üretmesiyle büyük bir dönüm noktası oldu."
+        ]
+      }
+    },
+    {
+      "id": "cef762db-7500-4990-82cf-1dba5479e725",
+      "slug": "blackie-and-the-rodeo-kings-1a735e80",
+      "title": "Blackie and the Rodeo Kings",
+      "name": "Blackie and the Rodeo Kings",
+      "source_url": "https://en.wikipedia.org/wiki/Blackie_and_the_Rodeo_Kings",
+      "extract": "Blackie and the Rodeo Kings are a Canadian folk rock–alternative country band with blues and country influences. The band was formed in 1996, in Hamilton, Ontario, by Tom Wilson, Stephen Fearing, and Colin Linden.",
+      "en": {
+        "kicker": "canadian folk rock band · 1996, hamilton",
+        "who": "Blackie and the Rodeo Kings is a Canadian band that mixes folk rock and alternative country with blues and country influences. It was formed in 1996 in Hamilton, Ontario, by Tom Wilson, Stephen Fearing and Colin Linden.",
+        "facts": [
+          "Blackie and the Rodeo Kings are a Canadian folk rock–alternative country band with blues and country influences.",
+          "The band was formed in 1996, in Hamilton, Ontario, by Tom Wilson, Stephen Fearing, and Colin Linden."
+        ]
+      },
+      "de": {
+        "kicker": "kanadische folk-rock-band · 1996, hamilton",
+        "who": "blackie and the rodeo kings ist eine kanadische band, die folk rock und alternative country mit blues- und country-einflüssen verbindet. die band wurde 1996 in hamilton, ontario, von tom wilson, stephen fearing und colin linden gegründet.",
+        "facts": [
+          "blackie and the rodeo kings sind eine kanadische folk-rock–alternative-country-band mit blues- und country-einflüssen.",
+          "die band wurde 1996 in hamilton, ontario, von tom wilson, stephen fearing und colin linden gegründet."
+        ]
+      },
+      "tr": {
+        "kicker": "kanadalı folk rock grubu · 1996, hamilton",
+        "who": "blackie and the rodeo kings, folk rock ile alternatif country'yi blues ve country etkileriyle harmanlayan bir kanada grubudur. grup 1996'da hamilton, ontario'da tom wilson, stephen fearing ve colin linden tarafından kuruldu.",
+        "facts": [
+          "blackie and the rodeo kings, blues ve country etkileri olan kanadalı bir folk rock–alternatif country grubudur.",
+          "grup 1996'da hamilton, ontario'da tom wilson, stephen fearing ve colin linden tarafından kuruldu."
+        ]
+      }
+    },
+    {
+      "id": "7abd07fa-88c0-4236-8bf0-939562616698",
+      "slug": "keenan-te-the-afterthought-tour-698b8270",
+      "title": "Keenan Te: The Afterthought Tour",
+      "name": "Keenan Te",
+      "source_url": "https://en.wikipedia.org/wiki/Keenan_Te",
+      "extract": "Keenan Te is an Australian singer-songwriter of Vietnamese and Cambodian heritage. He is known for piano-driven ballads and songs that gained popularity through TikTok.",
+      "en": {
+        "kicker": "australian singer-songwriter",
+        "who": "Keenan Te is an Australian singer-songwriter with Vietnamese and Cambodian roots. He writes piano-driven ballads, and some of his songs became popular through TikTok.",
+        "facts": [
+          "Keenan Te is an Australian singer-songwriter of Vietnamese and Cambodian heritage.",
+          "He is known for piano-driven ballads and songs that gained popularity through TikTok."
+        ]
+      },
+      "de": {
+        "kicker": "australischer singer-songwriter",
+        "who": "keenan te ist ein australischer singer-songwriter mit vietnamesischen und kambodschanischen wurzeln. er ist für pianogetragene balladen bekannt, und einige seiner songs wurden über tiktok populär.",
+        "facts": [
+          "keenan te ist ein australischer singer-songwriter mit vietnamesischen und kambodschanischen wurzeln.",
+          "er ist für pianogetragene balladen und songs bekannt, die über tiktok an beliebtheit gewannen."
+        ]
+      },
+      "tr": {
+        "kicker": "avustralyalı şarkıcı ve söz yazarı",
+        "who": "keenan te, vietnam ve kamboçya kökenli bir avustralyalı şarkıcı ve söz yazarıdır. piyano temelli baladlarıyla tanınır ve bazı şarkıları tiktok sayesinde popüler oldu.",
+        "facts": [
+          "keenan te, vietnam ve kamboçya kökenli bir avustralyalı şarkıcı ve söz yazarıdır.",
+          "piyano temelli baladlarıyla ve tiktok üzerinden popüler olan şarkılarıyla tanınır."
+        ]
+      }
+    }
+  ]
+}

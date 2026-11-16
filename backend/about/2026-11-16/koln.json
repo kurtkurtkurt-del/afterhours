@@ -1,0 +1,70 @@
+{
+ "city": "koln",
+ "day": "2026-11-16",
+ "nights": [
+  {
+   "id": "ca11c24c-a962-4cab-90e6-719dba3bdb81",
+   "slug": "she-wants-revenge-europe-2027-78bb928b",
+   "title": "She Wants Revenge - Europe 2027",
+   "name": "She Wants Revenge",
+   "source_url": "https://en.wikipedia.org/wiki/She_Wants_Revenge",
+   "extract": "She Wants Revenge is an American rock band, based in San Fernando Valley, California. Formed in 2004, the band is led by the duo of singer and guitarist Justin Warfield and multi-instrumentalist Adam Bravin. Their music has been influenced by post-punk, darkwave and gothic rock. The band has sold more than 300,000 records in the US.",
+   "en": {
+    "kicker": "american rock band · san fernando valley, 2004",
+    "who": "She Wants Revenge is an American rock band, based in San Fernando Valley, California. Their music has been influenced by post-punk, darkwave and gothic rock.",
+    "facts": [
+     "Formed in 2004, the band is led by the duo of singer and guitarist Justin Warfield and multi-instrumentalist Adam Bravin.",
+     "The band has sold more than 300,000 records in the US."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische rockband · san fernando valley, 2004",
+    "who": "She Wants Revenge ist eine amerikanische rockband mit sitz in san fernando valley, kalifornien. Ihre musik ist von post-punk, darkwave und gothic rock beeinflusst.",
+    "facts": [
+     "die band wurde 2004 gegründet und wird vom duo aus sänger und gitarrist Justin Warfield und multiinstrumentalist Adam Bravin geleitet.",
+     "die band hat in den USA mehr als 300.000 tonträger verkauft."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı rock grubu · san fernando valley, 2004",
+    "who": "She Wants Revenge, California'daki San Fernando Valley merkezli bir amerikalı rock grubudur. Müzikleri post-punk, darkwave ve gothic rock'tan etkilenmiştir.",
+    "facts": [
+     "grup 2004'te kuruldu; şarkıcı ve gitarist Justin Warfield ile çok enstrümanlı Adam Bravin'in oluşturduğu ikili tarafından yönetiliyor.",
+     "grup ABD'de 300.000'den fazla plak sattı."
+    ]
+   }
+  },
+  {
+   "id": "8c16164c-212c-4c60-ad12-670e15e69bf5",
+   "slug": "sofia-camara-sincerely-yours-tour-62924e08",
+   "title": "Sofia Camara - Sincerely Yours, Tour",
+   "name": "Sofia Camara",
+   "source_url": "https://en.wikipedia.org/wiki/Sofia_Camara",
+   "extract": "Sofia Camara is a Portuguese and Canadian pop musician. Her debut EP, Was I(t) Worth It? was released on Universal Music Canada in 2025, followed later that year by her second EP, Hard to Love.",
+   "en": {
+    "kicker": "pop musician · portuguese and canadian, 2025",
+    "who": "Sofia Camara is a Portuguese and Canadian pop musician. Her 2025 releases include two EPs.",
+    "facts": [
+     "Her debut EP, Was I(t) Worth It? was released on Universal Music Canada in 2025.",
+     "Her second EP, Hard to Love, followed later that year."
+    ]
+   },
+   "de": {
+    "kicker": "pop-musikerin · portugiesisch und kanadisch, 2025",
+    "who": "Sofia Camara ist eine portugiesisch-kanadische pop-musikerin. Ihre veröffentlichungen 2025 umfassen zwei EPs.",
+    "facts": [
+     "ihre erste EP, Was I(t) Worth It?, erschien 2025 bei Universal Music Canada.",
+     "ihre zweite EP, Hard to Love, folgte später im selben Jahr."
+    ]
+   },
+   "tr": {
+    "kicker": "pop müzisyeni · portekizli ve kanadalı, 2025",
+    "who": "Sofia Camara, portekizli ve kanadalı bir pop müzisyenidir. 2025'te iki EP yayımladı.",
+    "facts": [
+     "ilk EP'si Was I(t) Worth It?, 2025'te Universal Music Canada tarafından yayımlandı.",
+     "ikinci EP'si Hard to Love, aynı yıl ilerleyen bir tarihte yayımlandı."
+    ]
+   }
+  }
+ ]
+}
