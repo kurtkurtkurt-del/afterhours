@@ -1,0 +1,14 @@
+{
+  "city": "helsinki",
+  "day": "2026-11-20",
+  "sparks": [
+    {
+      "kind": "openmic",
+      "title": { "en": "stand-up open mic at lazy fox.", "de": "stand-up-open-mic im lazy fox.", "tr": "lazy fox'ta stand-up open mic." },
+      "line": { "en": "helsinki stand-up league's monthly open mic, in english, 19:00 to 21:00 at lazy fox kamppi. free entry, 18 and over, for women and lgbtq+ comedians of all levels.", "de": "der monatliche open mic der helsinki stand-up league, auf englisch, 19:00 bis 21:00 im lazy fox kamppi. eintritt frei, ab 18 jahren, für comedians aller stufen, besonders frauen und lgbtq+.", "tr": "helsinki stand-up league'in aylık open mic'i, ingilizce, 19:00 - 21:00 arası lazy fox kamppi'de. giriş ücretsiz, 18 yaş ve üstü; her seviyeden kadın ve lgbtq+ komedyenler için." },
+      "place": { "en": "lazy fox kamppi", "de": "lazy fox kamppi", "tr": "lazy fox kamppi" },
+      "hour": 19, "minute": 0,
+      "why": "Helsinki Stand-Up League open mic, Fri 20.11 19:00-21:00 at Lazy Fox Kamppi, free, 18+, in English (MyHelsinki event listing; also Eventbrite)."
+    }
+  ]
+}
