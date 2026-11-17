@@ -1,0 +1,27 @@
+{
+  "city": "budapest",
+  "day": "2026-11-21",
+  "sparks": [
+    {
+      "kind": "flea",
+      "title": {
+        "en": "the ecseri flea market, saturday morning.",
+        "de": "der ecseri-flohmarkt, samstagmorgen.",
+        "tr": "ecseri bit pazarı, cumartesi sabahı."
+      },
+      "line": {
+        "en": "the big saturday flea market on nagykőrösi út in district xix. go in the morning, before the best stalls sell out; hours vary by stall.",
+        "de": "der große samstagsflohmarkt an der nagykőrösi út im 19. bezirk. morgens hingehen, bevor die besten stände weg sind; die öffnungszeiten variieren je nach stand.",
+        "tr": "xix. ilçe'de nagykőrösi út üzerinde büyük cumartesi bit pazarı. sabah gidin, en iyi tezgâhlar erken tükenir; saatler tezgâhtan tezgâha değişiyor."
+      },
+      "place": {
+        "en": "ecseri piac",
+        "de": "ecseri piac",
+        "tr": "ecseri piac"
+      },
+      "hour": 8,
+      "minute": 0,
+      "why": "Ecseri flea market, the main Saturday flea market (programturizmus.hu, Tripadvisor); opening hours conflict across sources (from 05:00 to 08:00, closing 13:45 to 15:00), so 08:00 is a middle guess and stalls vary."
+    }
+  ]
+}

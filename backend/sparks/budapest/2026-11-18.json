@@ -1,0 +1,14 @@
+{
+  "city": "budapest",
+  "day": "2026-11-18",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "the vörösmarty christmas market is open.", "de": "der weihnachtsmarkt am vörösmarty tér ist offen.", "tr": "vörösmarty tér'deki noel pazarı açık." },
+      "line": { "en": "the christmas market on vörösmarty tér runs daily until 31 december, 11:00 to 21:00 on weekdays. a short walk after work, with hungarian crafts and festive food.", "de": "der weihnachtsmarkt auf dem vörösmarty tér läuft täglich bis 31. dezember, werktags von 11:00 bis 21:00. ein kurzer weg nach der arbeit, mit ungarischem kunsthandwerk und festlichen speisen.", "tr": "vörösmarty tér'deki noel pazarı 31 aralık'a kadar her gün açık, hafta içi 11:00 ile 21:00 arası. iş çıkışı kısa bir yürüyüş; macar el sanatları ve festival yemekleri var." },
+      "place": { "en": "vörösmarty tér", "de": "vörösmarty tér", "tr": "vörösmarty tér" },
+      "hour": 17, "minute": 0,
+      "why": "Vörösmarty Classic Xmas market, open from 13 Nov to 31 Dec, weekdays 11:00 to 21:00 (Dinepass listing, budapest.hu); the season was confirmed by Pénzcentrum, the official market site was not checked."
+    }
+  ]
+}
