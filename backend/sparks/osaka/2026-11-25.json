@@ -1,0 +1,14 @@
+{
+  "city": "osaka",
+  "day": "2026-11-25",
+  "sparks": [
+    {
+      "kind": "football",
+      "title": { "en": "gamba osaka vs port in the champions league.", "de": "gamba osaka gegen port in der champions league.", "tr": "gamba osaka - port, şampiyonlar ligi'nde." },
+      "line": { "en": "asian champions league elite, league stage matchday 5, kick-off 19:00 at panasonic stadium suita. a weeknight game against port fc of thailand.", "de": "asian champions league elite, ligaphase spieltag 5, anpfiff 19:00 im panasonic stadium suita. ein spiel unter der woche gegen port fc aus thailand.", "tr": "asya şampiyonlar ligi elit, lig aşaması 5. hafta, saat 19:00'da panasonic stadium suita'da. hafta içi, tayland'dan port fc'ye karşı maç." },
+      "place": { "en": "panasonic stadium suita", "de": "panasonic stadium suita", "tr": "panasonic stadium suita" },
+      "hour": 19, "minute": 0,
+      "why": "Gamba Osaka vs Port FC, AFC Champions League Elite matchday 5, Wed 25 Nov 19:00 per the J.League listing and Gamba Osaka official site; the stadium is named differently by sources but is the same ground."
+    }
+  ]
+}
