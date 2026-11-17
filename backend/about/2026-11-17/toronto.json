@@ -1,0 +1,70 @@
+{
+ "city": "toronto",
+ "day": "2026-11-17",
+ "nights": [
+  {
+   "id": "ea1ec8b2-ea0b-4a3b-9a52-86d7f6e56bca",
+   "slug": "the-watchmen-608e8f42",
+   "title": "The Watchmen",
+   "name": "The Watchmen",
+   "source_url": "https://en.wikipedia.org/wiki/The_Watchmen_(band)",
+   "extract": "The Watchmen are a Canadian rock band. They were one of the most commercially successful bands in Canada in the mid to late 1990s. During their peak years, the band had one platinum record and three more gold records. The band has toured Canada a number of times, were the opening act for The Tragically Hip, and co-headlined a national tour with Big Wreck.",
+   "en": {
+    "kicker": "Canadian rock band · mid to late 1990s",
+    "who": "The Watchmen are a Canadian rock band. They were one of the most commercially successful bands in Canada in the mid to late 1990s. The band has toured Canada a number of times.",
+    "facts": [
+     "During their peak years, the band had one platinum record and three more gold records.",
+     "The Watchmen were the opening act for The Tragically Hip and co-headlined a national tour with Big Wreck."
+    ]
+   },
+   "de": {
+    "kicker": "kanadische rockband · mitte bis ende der 1990er",
+    "who": "The Watchmen sind eine kanadische Rockband. Sie gehörten Mitte bis Ende der 1990er Jahre zu den kommerziell erfolgreichsten Bands in Kanada. Die Band ist schon mehrfach durch Kanada getourt.",
+    "facts": [
+     "Auf ihrem Höhepunkt erhielt die Band eine Platin-Schallplatte und drei weitere Gold-Schallplatten.",
+     "The Watchmen waren Vorgruppe von The Tragically Hip und gingen mit Big Wreck gemeinsam als Co-Headliner auf eine landesweite Tournee."
+    ]
+   },
+   "tr": {
+    "kicker": "kanadalı rock grubu · 1990'ların ortası ile sonu",
+    "who": "The Watchmen, Kanadalı bir rock grubudur. 1990'ların ortasında ve sonunda Kanada'daki en ticari açıdan başarılı gruplardan biriydi. Grup Kanada'yı birkaç kez turneyle dolaştı.",
+    "facts": [
+     "Zirve yıllarında grubun bir platin ve üç altın plağı vardı.",
+     "The Watchmen, The Tragically Hip'in açılış grubuydu ve Big Wreck ile ulusal bir turda ortak başrol oynadı."
+    ]
+   }
+  },
+  {
+   "id": "699505dc-2683-47c5-a26f-6b6f53967ff5",
+   "slug": "protest-the-hero-94a64c15",
+   "title": "Protest the Hero",
+   "name": "Protest the Hero",
+   "source_url": "https://en.wikipedia.org/wiki/Protest_the_Hero",
+   "extract": "Protest the Hero is a Canadian progressive metal band formed in Whitby, Ontario, in 1999. Originally named Happy Go Lucky, the band changed their name to Protest the Hero and released their debut EP, Search for the Truth, in 2002. In 2005, the band released their first album Kezia on Canadian indie label Underground Operations.",
+   "en": {
+    "kicker": "Canadian progressive metal band · 1999, Whitby, Ontario",
+    "who": "Protest the Hero is a Canadian progressive metal band. The band was formed in Whitby, Ontario, in 1999. It was originally named Happy Go Lucky.",
+    "facts": [
+     "The band released their debut EP, Search for the Truth, in 2002.",
+     "In 2005, the band released their first album Kezia on Canadian indie label Underground Operations."
+    ]
+   },
+   "de": {
+    "kicker": "kanadische progressive-metal-band · 1999, Whitby, Ontario",
+    "who": "Protest the Hero ist eine kanadische Progressive-Metal-Band. Die Band wurde 1999 in Whitby, Ontario, gegründet und hieß ursprünglich Happy Go Lucky.",
+    "facts": [
+     "Die Band veröffentlichte ihre Debüt-EP Search for the Truth im Jahr 2002.",
+     "Im Jahr 2005 erschien ihr erstes Album Kezia beim kanadischen Indie-Label Underground Operations."
+    ]
+   },
+   "tr": {
+    "kicker": "kanadalı progresif metal grubu · 1999, Whitby, Ontario",
+    "who": "Protest the Hero, Kanadalı bir progresif metal grubudur. Grup 1999 yılında Ontario eyaletinin Whitby kentinde kuruldu ve başlangıçta Happy Go Lucky adını taşıyordu.",
+    "facts": [
+     "Grup, ilk EP'si Search for the Truth'u 2002 yılında yayımladı.",
+     "2005 yılında grup, ilk albümü Kezia'yı Kanadalı bağımsız plak etiketi Underground Operations aracılığıyla yayımladı."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,38 @@
+{
+ "city": "warszawa",
+ "day": "2026-11-17",
+ "nights": [
+  {
+   "id": "ff21c34b-7295-42c2-a86e-a10a07841baa",
+   "slug": "myslovitz-2fccc82b",
+   "title": "Myslovitz",
+   "name": "Myslovitz",
+   "source_url": "https://en.wikipedia.org/wiki/Myslovitz",
+   "extract": "Myslovitz is a Polish rock band. The band take their name from their industrial hometown of Mysłowice in the Upper Silesia region of southern Poland.",
+   "en": {
+    "kicker": "rock band · Polish, Upper Silesia",
+    "who": "Myslovitz is a Polish rock band. The band take their name from their industrial hometown of Mysłowice in the Upper Silesia region of southern Poland.",
+    "facts": [
+     "Myslovitz is a Polish rock band.",
+     "The band take their name from their industrial hometown of Mysłowice in the Upper Silesia region of southern Poland."
+    ]
+   },
+   "de": {
+    "kicker": "rockband · polnisch, Oberschlesien",
+    "who": "Myslovitz ist eine polnische Rockband. Die Band hat ihren Namen von ihrer industriellen Heimatstadt Mysłowice in der Region Oberschlesien im Süden Polens.",
+    "facts": [
+     "Myslovitz ist eine polnische Rockband.",
+     "Die Band hat ihren Namen von ihrer industriellen Heimatstadt Mysłowice in der Region Oberschlesien im Süden Polens."
+    ]
+   },
+   "tr": {
+    "kicker": "rock grubu · Polonyalı, Yukarı Silezya",
+    "who": "Myslovitz bir Polonya rock grubudur. Grup adını, güney Polonya'daki Yukarı Silezya bölgesinde yer alan sanayi kenti Mysłowice'deki memleketinden alır.",
+    "facts": [
+     "Myslovitz bir Polonya rock grubudur.",
+     "Grup adını, güney Polonya'daki Yukarı Silezya bölgesinde yer alan sanayi kenti Mysłowice'deki memleketinden alır."
+    ]
+   }
+  }
+ ]
+}

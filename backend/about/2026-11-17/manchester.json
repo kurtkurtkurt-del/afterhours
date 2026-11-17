@@ -1,0 +1,134 @@
+{
+  "city": "manchester",
+  "day": "2026-11-17",
+  "nights": [
+    {
+      "id": "7eb1ba06-ad11-4ed9-8cab-515cb3996efa",
+      "slug": "deyyess-5fa7fad4",
+      "title": "Déyyess",
+      "name": "Déyyess",
+      "source_url": "https://en.wikipedia.org/wiki/D%C3%A9yyess",
+      "extract": "Hannah Jennifer Marie Butcher, known professionally as Déyyess, is an English singer-songwriter. She has released a number of singles and two EPs.",
+      "en": {
+        "kicker": "English singer-songwriter",
+        "who": "Déyyess is the professional name of Hannah Jennifer Marie Butcher, an English singer-songwriter. She has released a number of singles and two EPs.",
+        "facts": [
+          "Hannah Jennifer Marie Butcher is an English singer-songwriter known professionally as Déyyess.",
+          "She has released a number of singles and two EPs."
+        ]
+      },
+      "de": {
+        "kicker": "englische sängerin und songwriterin",
+        "who": "Déyyess ist der Künstlername von Hannah Jennifer Marie Butcher, einer englischen Singer-Songwriterin. Sie hat mehrere Singles und zwei EPs veröffentlicht.",
+        "facts": [
+          "Hannah Jennifer Marie Butcher ist eine englische Singer-Songwriterin, die unter dem Namen Déyyess auftritt.",
+          "Sie hat eine Reihe von Singles und zwei EPs veröffentlicht."
+        ]
+      },
+      "tr": {
+        "kicker": "İngiliz şarkıcı ve söz yazarı",
+        "who": "Déyyess, İngiliz şarkıcı ve söz yazarı Hannah Jennifer Marie Butcher'ın sahne adıdır. Bir dizi single ve iki EP yayımlamıştır.",
+        "facts": [
+          "Hannah Jennifer Marie Butcher, sahne adı Déyyess olan İngiliz bir şarkıcı ve söz yazarıdır.",
+          "Bir dizi single ve iki EP yayımlamıştır."
+        ]
+      }
+    },
+    {
+      "id": "b4114752-4e36-44bb-80ed-fa53046c99fa",
+      "slug": "julia-wolf-e7762176",
+      "title": "Julia Wolf",
+      "name": "Julia Wolf",
+      "source_url": "https://en.wikipedia.org/wiki/Julia_Wolf_(musician)",
+      "extract": "Julia Jade Capello, known professionally as Julia Wolf, is an American singer. Known for her ethereal vocals and self-produced alt-pop sound, she blends elements of indie pop, alternative rock, and R&B. Capello gained early attention on TikTok before releasing her debut EP Girls in Purgatory (2021) and her studio albums Good Thing We Stayed (2023) and Pressure (2025).",
+      "en": {
+        "kicker": "American singer · alt-pop",
+        "who": "Julia Wolf is the professional name of Julia Jade Capello, an American singer known for ethereal vocals and a self-produced alt-pop sound. Her music blends elements of indie pop, alternative rock and R&B. She gained early attention on TikTok before releasing her debut EP and studio albums.",
+        "facts": [
+          "Julia Jade Capello, known professionally as Julia Wolf, is an American singer.",
+          "Capello gained early attention on TikTok before releasing her debut EP Girls in Purgatory."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische sängerin · alt-pop",
+        "who": "Julia Wolf ist der Künstlername von Julia Jade Capello, einer amerikanischen Sängerin. Bekannt ist sie für ihre ätherischen Vocals und einen selbst produzierten Alt-Pop-Sound, der Elemente aus Indie-Pop, Alternative Rock und R&B verbindet. Capello wurde zunächst auf TikTok bekannt, bevor sie ihre Debüt-EP und ihre Studioalben veröffentlichte.",
+        "facts": [
+          "Julia Jade Capello, bekannt als Julia Wolf, ist eine amerikanische Sängerin.",
+          "Capello wurde zunächst auf TikTok bekannt, bevor sie ihre Debüt-EP Girls in Purgatory veröffentlichte."
+        ]
+      },
+      "tr": {
+        "kicker": "Amerikalı şarkıcı · alt-pop",
+        "who": "Julia Jade Capello, sahne adıyla Julia Wolf olarak tanınan Amerikalı bir şarkıcıdır. Etkileyici vokalleri ve kendi prodüksiyonu olan alt-pop sesiyle bilinir. Müziği indie pop, alternatif rock ve R&B öğelerini harmanlar. TikTok'ta erken dönemde ilgi görmüş, ardından ilk EP'sini ve stüdyo albümlerini yayımlamıştır.",
+        "facts": [
+          "Julia Jade Capello, sahne adıyla Julia Wolf olarak tanınan Amerikalı bir şarkıcıdır.",
+          "TikTok'ta erken dönemde ilgi gören Capello, ardından ilk EP'si Girls in Purgatory'yi yayımlamıştır."
+        ]
+      }
+    },
+    {
+      "id": "f2c1fc89-b6b9-4c7a-a81c-12db1cdb4dc8",
+      "slug": "graham-coxon-30cb1166",
+      "title": "GRAHAM COXON",
+      "name": "Graham Coxon",
+      "source_url": "https://en.wikipedia.org/wiki/Graham_Coxon",
+      "extract": "Graham Leslie Coxon is an English guitarist, singer and songwriter who came to prominence as a founding member of the rock band Blur, of which he was the lead guitarist and secondary vocalist. He is also a member of The Waeve, which he formed alongside Rose Elinor Dougall in 2021.",
+      "en": {
+        "kicker": "English guitarist · founding member of Blur",
+        "who": "Graham Leslie Coxon is an English guitarist, singer and songwriter. He came to prominence as a founding member of the rock band Blur, where he was lead guitarist and secondary vocalist. He is also a member of The Waeve, which he formed with Rose Elinor Dougall in 2021.",
+        "facts": [
+          "Graham Leslie Coxon is an English guitarist, singer and songwriter who came to prominence as a founding member of the rock band Blur.",
+          "He is also a member of The Waeve, which he formed alongside Rose Elinor Dougall in 2021."
+        ]
+      },
+      "de": {
+        "kicker": "englischer gitarrist · gründungsmitglied von Blur",
+        "who": "Graham Leslie Coxon ist ein englischer Gitarrist, Sänger und Songwriter. Bekannt wurde er als Gründungsmitglied der Rockband Blur, in der er Leadgitarrist und zweiter Sänger war. Er ist außerdem Mitglied von The Waeve, die er 2021 zusammen mit Rose Elinor Dougall gegründet hat.",
+        "facts": [
+          "Graham Leslie Coxon ist ein englischer Gitarrist, Sänger und Songwriter, der als Gründungsmitglied der Rockband Blur bekannt wurde.",
+          "Er ist außerdem Mitglied von The Waeve, die er 2021 zusammen mit Rose Elinor Dougall gründete."
+        ]
+      },
+      "tr": {
+        "kicker": "İngiliz gitarist · Blur'ün kurucu üyesi",
+        "who": "Graham Leslie Coxon, İngiliz bir gitarist, şarkıcı ve söz yazarıdır. Rock grubu Blur'ün kurucu üyesi olarak öne çıkmış, grupta solo gitarist ve ikinci vokal olarak yer almıştır. Ayrıca 2021'de Rose Elinor Dougall ile birlikte kurduğu The Waeve'in de üyesidir.",
+        "facts": [
+          "Graham Leslie Coxon, Blur rock grubunun kurucu üyesi olarak öne çıkan İngiliz bir gitarist, şarkıcı ve söz yazarıdır.",
+          "Ayrıca 2021'de Rose Elinor Dougall ile birlikte kurduğu The Waeve'in de üyesidir."
+        ]
+      }
+    },
+    {
+      "id": "42b7d4c4-d962-488c-bb0f-35f12f598d2d",
+      "slug": "sace6-3fd9a20a",
+      "title": "sace6",
+      "name": "Sace6",
+      "source_url": "https://en.wikipedia.org/wiki/Sace6",
+      "extract": "Sace6 is an American alternative metal duo consisting of lead vocalist Sace and guitarist-vocalist Noah Thomas. Originally the solo project of Sace, the project developed into a duo in 2024. Sonically, their music offers contrasting melodic vocals and pop-oriented hooks with heavy guitar-driven instrumentation.",
+      "en": {
+        "kicker": "American alternative metal duo",
+        "who": "Sace6 is an American alternative metal duo made up of lead vocalist Sace and guitarist-vocalist Noah Thomas. The project began as the solo project of Sace and developed into a duo in 2024. Their music pairs contrasting melodic vocals and pop-oriented hooks with heavy guitar-driven instrumentation.",
+        "facts": [
+          "Sace6 is an American alternative metal duo consisting of lead vocalist Sace and guitarist-vocalist Noah Thomas.",
+          "Originally the solo project of Sace, the project developed into a duo in 2024."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanisches alternative-metal-duo",
+        "who": "Sace6 ist ein amerikanisches Alternative-Metal-Duo aus der Leadsängerin Sace und dem Gitarristen und Sänger Noah Thomas. Das Projekt begann als Soloprojekt von Sace und wurde 2024 zu einem Duo. Ihre Musik verbindet kontrastreiche melodische Vocals und popnahe Hooks mit schwerem, gitarrenlastigem Sound.",
+        "facts": [
+          "Sace6 ist ein amerikanisches Alternative-Metal-Duo, bestehend aus der Leadsängerin Sace und dem Gitarristen und Sänger Noah Thomas.",
+          "Ursprünglich das Soloprojekt von Sace, entwickelte sich das Projekt 2024 zu einem Duo."
+        ]
+      },
+      "tr": {
+        "kicker": "Amerikalı alternatif metal ikilisi",
+        "who": "Sace6, baş vokalist Sace ile gitarist ve vokalist Noah Thomas'tan oluşan Amerikalı bir alternatif metal ikilisidir. Proje başlangıçta Sace'in solo projesiydi ve 2024'te ikiliye dönüştü. Müzikleri, kontrast oluşturan melodik vokalleri ve pop odaklı nakaratları ağır gitar ağırlıklı enstrümantasyonla birleştirir.",
+        "facts": [
+          "Sace6, baş vokalist Sace ile gitarist ve vokalist Noah Thomas'tan oluşan Amerikalı bir alternatif metal ikilisidir.",
+          "Başlangıçta Sace'in solo projesi olan proje, 2024'te bir ikiliye dönüşmüştür."
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "city": "chicago",
+  "day": "2026-11-17",
+  "nights": [
+    {
+      "id": "05d08a80-cbd0-41a6-81f7-e1b0a4fa6d80",
+      "slug": "slow-pulp-4b2f4aba",
+      "title": "Slow Pulp",
+      "name": "Slow Pulp",
+      "source_url": "https://en.wikipedia.org/wiki/Slow_Pulp",
+      "extract": "Slow Pulp is an American indie rock band from Madison, Wisconsin, currently based in Chicago, Illinois. Formed in 2015, the band has held the same line-up since 2017: Emily Massey on lead vocals and rhythm guitar, Alex Leeds on bass and backing vocals, Teddy Matthews on drums and percussion, and Henry Stoehr on lead guitar. The band have released three studio albums to date: Moveys (2020), Yard (2023), and Melodie (2026).",
+      "en": {
+        "kicker": "indie rock band · formed 2015, Madison, Wisconsin",
+        "who": "Slow Pulp is an indie rock band from Madison, Wisconsin, now based in Chicago, Illinois. The band has kept the same line-up since 2017. Emily Massey, Alex Leeds, Teddy Matthews and Henry Stoehr make up the group.",
+        "facts": [
+          "The band has released three studio albums to date: Moveys (2020), Yard (2023) and Melodie (2026).",
+          "Emily Massey sings lead vocals and plays rhythm guitar, and Henry Stoehr plays lead guitar."
+        ]
+      },
+      "de": {
+        "kicker": "Indie-Rock-Band · gegründet 2015, Madison, Wisconsin",
+        "who": "Slow Pulp ist eine Indie-Rock-Band aus Madison, Wisconsin, die heute in Chicago, Illinois, ansässig ist. Die Besetzung ist seit 2017 unverändert. Zur Band gehören Emily Massey, Alex Leeds, Teddy Matthews und Henry Stoehr.",
+        "facts": [
+          "Die Band hat bisher drei Studioalben veröffentlicht: Moveys (2020), Yard (2023) und Melodie (2026).",
+          "Emily Massey singt die Leadvocals und spielt Rhythmusgitarre, Henry Stoehr spielt die Leadgitarre."
+        ]
+      },
+      "tr": {
+        "kicker": "indie rock grubu · 2015'te kuruldu, Madison, Wisconsin",
+        "who": "Slow Pulp, Wisconsin eyaletinin Madison kentinden çıkan ve şu an Illinois eyaletinin Chicago kentinde yaşayan bir indie rock grubudur. Grup 2017'den beri aynı kadroyla çalışıyor. Kadroda Emily Massey, Alex Leeds, Teddy Matthews ve Henry Stoehr yer alıyor.",
+        "facts": [
+          "Grup bugüne kadar üç stüdyo albümü yayımladı: Moveys (2020), Yard (2023) ve Melodie (2026).",
+          "Emily Massey ana vokal ve ritim gitarı, Henry Stoehr ise solo gitar çalıyor."
+        ]
+      }
+    },
+    {
+      "id": "b489da97-57c7-4692-af4f-8382cae016e7",
+      "slug": "beartooth-pure-ecstasy-world-tour-b92cc7af",
+      "title": "Beartooth: Pure Ecstasy World Tour",
+      "name": "Beartooth",
+      "source_url": "https://en.wikipedia.org/wiki/Beartooth_(band)",
+      "extract": "Beartooth is an American rock band founded by vocalist and multi-instrumentalist Caleb Shomo in Columbus, Ohio, in 2012. Originally, Beartooth was a studio project with Shomo performing all instruments, before expanding to a group with four or five members over their existence. They are known for relatively more conventional songwriting than some of Shomo's other work, with an emphasis on melodic hooks and catchy choruses. Beartooth has been signed to Red Bull Records since 2013; their debut EP Sick was released on July 26, 2013, followed by the debut full-length album Disgusting on June 10, 2014. Since then, Shomo has released a further five studio albums under the Beartooth moniker: Aggres",
+      "en": {
+        "kicker": "rock band · founded 2012, Columbus, Ohio",
+        "who": "Beartooth is an American rock band founded by vocalist and multi-instrumentalist Caleb Shomo in Columbus, Ohio, in 2012. It began as a studio project with Shomo performing all instruments, before becoming a group of four or five members. The band is known for more conventional songwriting than some of Shomo's other work, with melodic hooks and catchy choruses.",
+        "facts": [
+          "Beartooth has been signed to Red Bull Records since 2013.",
+          "Their debut EP Sick was released on July 26, 2013, followed by the debut full-length album Disgusting on June 10, 2014."
+        ]
+      },
+      "de": {
+        "kicker": "Rockband · gegründet 2012, Columbus, Ohio",
+        "who": "Beartooth ist eine amerikanische Rockband, die 2012 in Columbus, Ohio, von Sänger und Multiinstrumentalist Caleb Shomo gegründet wurde. Zunächst war Beartooth ein Studioprojekt, bei dem Shomo alle Instrumente selbst spielte, bevor daraus eine Gruppe mit vier oder fünf Mitgliedern wurde. Die Band gilt im Songwriting als konventioneller als manche andere Arbeit von Shomo, mit eingängigen Melodien und Refrains.",
+        "facts": [
+          "Beartooth ist seit 2013 bei Red Bull Records unter Vertrag.",
+          "Das Debüt-EP Sick erschien am 26. Juli 2013, gefolgt vom Vollalbum Disgusting am 10. Juni 2014."
+        ]
+      },
+      "tr": {
+        "kicker": "rock grubu · 2012'de kuruldu, Columbus, Ohio",
+        "who": "Beartooth, 2012 yılında Ohio eyaletinin Columbus kentinde, vokalist ve çok enstrümanlı müzisyen Caleb Shomo tarafından kurulmuş bir Amerikan rock grubudur. Başlangıçta Shomo'nun tüm enstrümanları kendisinin çaldığı bir stüdyo projesiydi, daha sonra dört ya da beş üyeli bir gruba dönüştü. Grup, Shomo'nun diğer işlerine göre daha alışılmış şarkı yazımıyla, melodik kancalar ve akılda kalıcı nakaratlarla tanınır.",
+        "facts": [
+          "Beartooth 2013'ten beri Red Bull Records ile sözleşmeli.",
+          "İlk EP'leri Sick, 26 Temmuz 2013'te yayımlandı, ardından ilk tam uzunluklu albüm Disgusting 10 Haziran 2014'te çıktı."
+        ]
+      }
+    }
+  ]
+}

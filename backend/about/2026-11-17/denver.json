@@ -1,0 +1,70 @@
+{
+  "city": "denver",
+  "day": "2026-11-17",
+  "nights": [
+    {
+      "id": "786da775-2278-44e1-8a7d-4d89b7e97136",
+      "slug": "audien-123389bb",
+      "title": "Audien",
+      "name": "Audien",
+      "source_url": "https://en.wikipedia.org/wiki/Audien",
+      "extract": "Nathaniel \"Nate\" Rathbun, better known under his stage name Audien, is an American DJ and electronic music producer. Audien has released many singles and remixes for electronic record labels including Enhanced, Perceptive, Armada, Black Hole, and Nervous. His tracks have appeared on Corsten's Countdown, Tiësto's Club Life, Above & Beyond's Trance Around The World, and Armin van Buuren's A State of Trance compilations.",
+      "en": {
+        "kicker": "dj and electronic music producer",
+        "who": "Nathaniel \"Nate\" Rathbun, better known under the stage name Audien, is an American DJ and electronic music producer. He has released many singles and remixes for electronic record labels. His tracks have appeared on several compilation series.",
+        "facts": [
+          "Audien has released many singles and remixes for electronic record labels including Enhanced, Perceptive, Armada, Black Hole, and Nervous.",
+          "His tracks have appeared on Corsten's Countdown, Tiësto's Club Life, Above & Beyond's Trance Around The World, and Armin van Buuren's A State of Trance compilations."
+        ]
+      },
+      "de": {
+        "kicker": "dj und produzent elektronischer musik",
+        "who": "Nathaniel \"Nate\" Rathbun, besser bekannt unter dem Künstlernamen Audien, ist ein amerikanischer DJ und Produzent elektronischer Musik. Er hat zahlreiche Singles und Remixes für Labels elektronischer Musik veröffentlicht. Seine Tracks sind auf mehreren Compilation-Reihen erschienen.",
+        "facts": [
+          "Audien hat zahlreiche Singles und Remixes für Labels elektronischer Musik wie Enhanced, Perceptive, Armada, Black Hole und Nervous veröffentlicht.",
+          "Seine Tracks sind auf Compilations wie Corsten's Countdown, Tiësto's Club Life, Above & Beyond's Trance Around The World und Armin van Buuren's A State of Trance erschienen."
+        ]
+      },
+      "tr": {
+        "kicker": "dj ve elektronik müzik yapımcısı",
+        "who": "Nathaniel \"Nate\" Rathbun, Audien sahne adıyla tanınan Amerikalı bir DJ ve elektronik müzik yapımcısıdır. Elektronik plak şirketleri için çok sayıda single ve remix yayımlamıştır. Parçaları birden fazla derleme serisinde yer almıştır.",
+        "facts": [
+          "Audien, Enhanced, Perceptive, Armada, Black Hole ve Nervous gibi elektronik plak şirketleri için çok sayıda single ve remix yayımlamıştır.",
+          "Parçaları Corsten's Countdown, Tiësto's Club Life, Above & Beyond's Trance Around The World ve Armin van Buuren's A State of Trance derlemelerinde yer almıştır."
+        ]
+      }
+    },
+    {
+      "id": "ee9601cd-8a7f-400d-8e59-728a9e3552e4",
+      "slug": "mauro-picotto-706d1e2e",
+      "title": "Mauro Picotto",
+      "name": "Mauro Picotto",
+      "source_url": "https://en.wikipedia.org/wiki/Mauro_Picotto",
+      "extract": "Mauro Picotto is an Italian electronic music producer and DJ, and previously a member of the Italian Euro house group \"R.A.F.\". He became well known as a solo artist with songs including \"Komodo \", \"Pulsar\", \"Iguana\", and \"Lizard\". He has collaborated with other electronica/trance musicians such as Tiësto and Mario Più.",
+      "en": {
+        "kicker": "electronic music producer and dj · euro house",
+        "who": "Mauro Picotto is an Italian electronic music producer and DJ. He was previously a member of the Italian Euro house group \"R.A.F.\". He became well known as a solo artist and has collaborated with other electronica and trance musicians.",
+        "facts": [
+          "He became well known as a solo artist with songs including \"Komodo\", \"Pulsar\", \"Iguana\", and \"Lizard\".",
+          "He has collaborated with other electronica/trance musicians such as Tiësto and Mario Più."
+        ]
+      },
+      "de": {
+        "kicker": "produzent elektronischer musik und dj · euro house",
+        "who": "Mauro Picotto ist ein italienischer Produzent elektronischer Musik und DJ. Zuvor war er Mitglied der italienischen Euro-House-Gruppe \"R.A.F.\". Als Solokünstler wurde er bekannt und arbeitete mit anderen Musikern aus Elektronika und Trance zusammen.",
+        "facts": [
+          "Als Solokünstler wurde er mit Songs wie \"Komodo\", \"Pulsar\", \"Iguana\" und \"Lizard\" bekannt.",
+          "Er hat mit anderen Musikern aus Elektronika und Trance wie Tiësto und Mario Più zusammengearbeitet."
+        ]
+      },
+      "tr": {
+        "kicker": "elektronik müzik yapımcısı ve dj · euro house",
+        "who": "Mauro Picotto İtalyan bir elektronik müzik yapımcısı ve DJ'dir. Daha önce İtalyan Euro house grubu \"R.A.F.\"nin üyesiydi. Solo sanatçı olarak tanındı ve diğer elektronika ve trance müzisyenleriyle iş birliği yaptı.",
+        "facts": [
+          "\"Komodo\", \"Pulsar\", \"Iguana\" ve \"Lizard\" gibi şarkılarla solo sanatçı olarak tanındı.",
+          "Tiësto ve Mario Più gibi elektronika ve trance müzisyenleriyle iş birliği yaptı."
+        ]
+      }
+    }
+  ]
+}

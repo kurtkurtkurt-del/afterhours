@@ -1,0 +1,38 @@
+{
+ "city": "ciudad-de-mexico",
+ "day": "2026-11-17",
+ "nights": [
+  {
+   "id": "1da4932d-f1ba-48bb-bf53-7c0e1fc8e9e2",
+   "slug": "los-angeles-azules-3f4ac7f4",
+   "title": "Los Angeles Azules",
+   "name": "Los Ángeles Azules",
+   "source_url": "https://en.wikipedia.org/wiki/Los_%C3%81ngeles_Azules",
+   "extract": "Los Ángeles Azules are a Mexican musical group that plays the Mexican Cumbia genre, which is the style of cumbia adopted in various Mexican regions.",
+   "en": {
+    "kicker": "mexican musical group · cumbia",
+    "who": "Los Ángeles Azules is a Mexican musical group. The group plays the Mexican cumbia genre, which is the style of cumbia adopted in various Mexican regions.",
+    "facts": [
+     "Los Ángeles Azules are a Mexican musical group.",
+     "They play the Mexican Cumbia genre, which is the style of cumbia adopted in various Mexican regions."
+    ]
+   },
+   "de": {
+    "kicker": "mexikanische musikgruppe · cumbia",
+    "who": "Los Ángeles Azules ist eine mexikanische Musikgruppe. Die Gruppe spielt das Genre der mexikanischen Cumbia, also jene Form der Cumbia, die in verschiedenen mexikanischen Regionen übernommen wurde.",
+    "facts": [
+     "Los Ángeles Azules sind eine mexikanische Musikgruppe.",
+     "Die Gruppe spielt das Genre der mexikanischen Cumbia, also jene Form der Cumbia, die in verschiedenen mexikanischen Regionen übernommen wurde."
+    ]
+   },
+   "tr": {
+    "kicker": "meksikalı müzik grubu · cumbia",
+    "who": "Los Ángeles Azules bir Meksika müzik grubudur. Grup, çeşitli Meksika bölgelerinde benimsenen cumbia tarzı olan Meksika cumbia türünü çalar.",
+    "facts": [
+     "Los Ángeles Azules bir Meksika müzik grubudur.",
+     "Grup, çeşitli Meksika bölgelerinde benimsenen cumbia tarzı olan Meksika cumbia türünü çalar."
+    ]
+   }
+  }
+ ]
+}

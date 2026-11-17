@@ -1,0 +1,38 @@
+{
+  "city": "ankara",
+  "day": "2026-11-17",
+  "nights": [
+    {
+      "id": "51242d6c-6d52-4ffd-8680-c5936cc8338e",
+      "slug": "karsu-4dec0804",
+      "title": "Karsu",
+      "name": "Karsu",
+      "source_url": "https://en.wikipedia.org/wiki/Karsu",
+      "extract": "Karsu Dönmez, known mononymously as Karsu, is a Turkish-Dutch singer, pianist and composer. While her music style is a blend of various genres, jazz pop is probably the best description for it. She has songs in Dutch, English, and Turkish.",
+      "en": {
+        "kicker": "singer, pianist and composer",
+        "who": "Karsu Dönmez, known mononymously as Karsu, is a Turkish-Dutch singer, pianist and composer. Her music blends several genres, and jazz pop is probably the best description for it. Her songs are in Dutch, English and Turkish.",
+        "facts": [
+          "Karsu is a Turkish-Dutch singer, pianist and composer.",
+          "She has songs in Dutch, English and Turkish."
+        ]
+      },
+      "de": {
+        "kicker": "sängerin, pianistin und komponistin",
+        "who": "Karsu Dönmez, bekannt als Karsu, ist eine türkisch-niederländische Sängerin, Pianistin und Komponistin. Ihre Musik verbindet mehrere Genres, am ehesten lässt sie sich als Jazz-Pop beschreiben. Ihre Songs sind auf Niederländisch, Englisch und Türkisch.",
+        "facts": [
+          "Karsu ist eine türkisch-niederländische Sängerin, Pianistin und Komponistin.",
+          "Ihre Songs sind auf Niederländisch, Englisch und Türkisch."
+        ]
+      },
+      "tr": {
+        "kicker": "şarkıcı, piyanist ve besteci",
+        "who": "Karsu Dönmez, Karsu adıyla bilinir ve Türk-Hollandalı bir şarkıcı, piyanist ve bestecidir. Müziği birçok türün karışımıdır ve bunu en iyi anlatan tanım muhtemelen jazz pop'tur. Şarkılarının sözleri Hollandaca, İngilizce ve Türkçedir.",
+        "facts": [
+          "Karsu, Türk-Hollandalı bir şarkıcı, piyanist ve bestecidir.",
+          "Şarkılarının sözleri Hollandaca, İngilizce ve Türkçedir."
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+ "city": "istanbul",
+ "day": "2026-11-17",
+ "nights": [
+  {
+   "id": "694ddef8-f88e-4d91-ac4a-958138bd2968",
+   "slug": "infinity-song-bbf598bc",
+   "title": "Infinity Song",
+   "name": "Infinity Song",
+   "source_url": "https://en.wikipedia.org/wiki/Infinity_Song",
+   "extract": "Infinity Song is an American soft rock band composed of siblings Abraham, Angel, Israel and Momo Boyd. Based in New York City, the group has released three albums under record label Roc Nation.",
+   "en": {
+    "kicker": "American soft rock band · based in New York City",
+    "who": "Infinity Song is an American soft rock band made up of the siblings Abraham, Angel, Israel and Momo Boyd. Based in New York City, the group has released three albums under the record label Roc Nation.",
+    "facts": [
+     "The band is composed of the siblings Abraham, Angel, Israel and Momo Boyd.",
+     "The group has released three albums under the record label Roc Nation."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische Soft-Rock-Band · Sitz in New York City",
+    "who": "Infinity Song ist eine amerikanische Soft-Rock-Band, die aus den Geschwistern Abraham, Angel, Israel und Momo Boyd besteht. Mit Sitz in New York City hat die Gruppe drei Alben beim Label Roc Nation veröffentlicht.",
+    "facts": [
+     "Die Band besteht aus den Geschwistern Abraham, Angel, Israel und Momo Boyd.",
+     "Die Gruppe hat drei Alben beim Label Roc Nation veröffentlicht."
+    ]
+   },
+   "tr": {
+    "kicker": "Amerikalı soft rock grubu · merkezi New York City",
+    "who": "Infinity Song, kardeşler Abraham, Angel, Israel ve Momo Boyd'dan oluşan Amerikalı bir soft rock grubudur. New York City merkezli grup, Roc Nation plak şirketi altında üç albüm yayımlamıştır.",
+    "facts": [
+     "Grup, kardeşler Abraham, Angel, Israel ve Momo Boyd'dan oluşmaktadır.",
+     "Grup, Roc Nation plak şirketi altında üç albüm yayımlamıştır."
+    ]
+   }
+  },
+  {
+   "id": "6022dd45-6a5a-4529-bf6b-6b0204cddb0f",
+   "slug": "ask-n-nur-yengi-70c194f9",
+   "title": "Aşkın Nur Yengi",
+   "name": "Aşkın Nur Yengi",
+   "source_url": "https://en.wikipedia.org/wiki/A%C5%9Fk%C4%B1n_Nur_Yengi",
+   "extract": "Aşkın Nur Yengi is a Turkish singer, composer, and actress.\nShe started working as a backing vocalist for Sezen Aksu and with Aksu's help, released her first studio album in 1990. With her debut album Sevgiliye in 1990, she became one of the most successful Turkish singers of the '90s.",
+   "en": {
+    "kicker": "Turkish singer and actress · debut album 1990",
+    "who": "Aşkın Nur Yengi is a Turkish singer, composer and actress. She started working as a backing vocalist for Sezen Aksu, and with Aksu's help released her first studio album in 1990. With her debut album Sevgiliye in 1990, she became one of the most successful Turkish singers of the '90s.",
+    "facts": [
+     "She started working as a backing vocalist for Sezen Aksu.",
+     "With her debut album Sevgiliye in 1990, she became one of the most successful Turkish singers of the '90s."
+    ]
+   },
+   "de": {
+    "kicker": "türkische Sängerin und Schauspielerin · Debütalbum 1990",
+    "who": "Aşkın Nur Yengi ist eine türkische Sängerin, Komponistin und Schauspielerin. Sie begann als Background-Sängerin für Sezen Aksu, und mit Aksus Hilfe veröffentlichte sie 1990 ihr erstes Studioalbum. Mit ihrem Debütalbum Sevgiliye im Jahr 1990 wurde sie eine der erfolgreichsten türkischen Sängerinnen der 90er.",
+    "facts": [
+     "Sie begann als Background-Sängerin für Sezen Aksu zu arbeiten.",
+     "Mit ihrem Debütalbum Sevgiliye im Jahr 1990 wurde sie eine der erfolgreichsten türkischen Sängerinnen der 90er."
+    ]
+   },
+   "tr": {
+    "kicker": "Türk şarkıcı ve oyuncu · ilk albüm 1990",
+    "who": "Aşkın Nur Yengi bir Türk şarkıcı, besteci ve oyuncudur. Sezen Aksu'nun arka plan vokalisti olarak çalışmaya başladı ve Aksu'nun desteğiyle ilk stüdyo albümünü 1990'da yayımladı. 1990'da çıkardığı Sevgiliye adlı ilk albümüyle 90'ların en başarılı Türk şarkıcılarından biri oldu.",
+    "facts": [
+     "Sezen Aksu'nun arka plan vokalisti olarak çalışmaya başladı.",
+     "Debut albümü Sevgiliye 1990'da çıktı ve kendisi 90'ların en başarılı Türk şarkıcılarından biri oldu."
+    ]
+   }
+  },
+  {
+   "id": "625d09b7-2c1c-4837-9448-00ce2c078434",
+   "slug": "demet-akal-n-57eec046",
+   "title": "Demet Akalın",
+   "name": "Demet Akalın",
+   "source_url": "https://en.wikipedia.org/wiki/Demet_Akal%C4%B1n",
+   "extract": "Demet Akalın is a Turkish singer and former model. Due to the popular songs she has released since the middle of the 2000s, she has become a prominent figure in Turkish pop music.",
+   "en": {
+    "kicker": "Turkish singer · songs since the middle of the 2000s",
+    "who": "Demet Akalın is a Turkish singer and former model. She has released popular songs since the middle of the 2000s, and has become a prominent figure in Turkish pop music.",
+    "facts": [
+     "She has released popular songs since the middle of the 2000s.",
+     "She has become a prominent figure in Turkish pop music."
+    ]
+   },
+   "de": {
+    "kicker": "türkische Sängerin · Songs seit Mitte der 2000er",
+    "who": "Demet Akalın ist eine türkische Sängerin und ehemaliges Model. Mit beliebten Songs, die sie seit Mitte der 2000er veröffentlicht hat, ist sie zu einer prominenten Figur des türkischen Pop geworden.",
+    "facts": [
+     "Sie hat seit Mitte der 2000er beliebte Songs veröffentlicht.",
+     "Sie ist zu einer prominenten Figur der türkischen Popmusik geworden."
+    ]
+   },
+   "tr": {
+    "kicker": "Türk şarkıcı · 2000'lerin ortasından beri şarkılar",
+    "who": "Demet Akalın bir Türk şarkıcı ve eski manekendir. 2000'lerin ortasından beri yayımladığı popüler şarkılarla Türk pop müziğinin öne çıkan isimlerinden biri haline gelmiştir.",
+    "facts": [
+     "2000'lerin ortasından beri popüler şarkılar yayımlamıştır.",
+     "Türk pop müziğinin öne çıkan isimlerinden biri haline gelmiştir."
+    ]
+   }
+  }
+ ]
+}

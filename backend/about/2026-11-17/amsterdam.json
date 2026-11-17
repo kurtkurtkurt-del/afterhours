@@ -1,0 +1,38 @@
+{
+  "city": "amsterdam",
+  "day": "2026-11-17",
+  "nights": [
+    {
+      "id": "661d4f4b-d259-4276-8954-08275c34cd4f",
+      "slug": "elmiene-8e2f159a",
+      "title": "Elmiene",
+      "name": "Elmiene",
+      "source_url": "https://en.wikipedia.org/wiki/Elmiene",
+      "extract": "Abdala Elamin, known professionally as Elmiene, is a British-Sudanese singer from Oxford. He placed fifth in the BBC Sound of 2024 poll and was nominated for the Brit Award for Rising Star in 2025.",
+      "en": {
+        "kicker": "British-Sudanese singer · from Oxford",
+        "who": "Elmiene is the professional name of Abdala Elamin, a British-Sudanese singer from Oxford. He placed fifth in the BBC Sound of 2024 poll. He was nominated for the Brit Award for Rising Star in 2025.",
+        "facts": [
+          "He placed fifth in the BBC Sound of 2024 poll.",
+          "He was nominated for the Brit Award for Rising Star in 2025."
+        ]
+      },
+      "de": {
+        "kicker": "britisch-sudanesischer sänger · aus Oxford",
+        "who": "Elmiene ist das Künstlerpseudonym von Abdala Elamin, einem britisch-sudanesischen Sänger aus Oxford. Er belegte beim BBC Sound of 2024 den fünften Platz. 2025 war er für den Brit Award in der Kategorie Rising Star nominiert.",
+        "facts": [
+          "Beim BBC Sound of 2024 belegte er den fünften Platz.",
+          "2025 war er für den Brit Award in der Kategorie Rising Star nominiert."
+        ]
+      },
+      "tr": {
+        "kicker": "britanyalı-sudanlı şarkıcı · Oxford",
+        "who": "Elmiene, Abdala Elamin'in sahne adıdır. Oxford'dan britanyalı-sudanlı bir şarkıcıdır. BBC Sound of 2024 anketinde beşinci sırada yer aldı ve 2025'te Brit Award'da Rising Star kategorisinde aday gösterildi.",
+        "facts": [
+          "BBC Sound of 2024 anketinde beşinci sırada yer aldı.",
+          "2025'te Brit Award'da Rising Star kategorisinde aday gösterildi."
+        ]
+      }
+    }
+  ]
+}

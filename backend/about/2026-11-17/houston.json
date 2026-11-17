@@ -1,0 +1,38 @@
+{
+  "city": "houston",
+  "day": "2026-11-17",
+  "nights": [
+    {
+      "id": "0d477a8c-6644-4a0b-9d1b-205044d3d51f",
+      "slug": "crankdat-ages-18-fe5e2242",
+      "title": "Crankdat - Ages 18+",
+      "name": "Crankdat",
+      "source_url": "https://en.wikipedia.org/wiki/Crankdat",
+      "extract": "Christian Smith, known professionally as Crankdat, is an American DJ and electronic dance music producer.",
+      "en": {
+        "kicker": "dj and electronic dance music producer · American",
+        "who": "Christian Smith is known professionally as Crankdat. He is an American DJ and electronic dance music producer. Crankdat is the professional name he works under.",
+        "facts": [
+          "Christian Smith is known professionally as Crankdat.",
+          "He is an American DJ and electronic dance music producer."
+        ]
+      },
+      "de": {
+        "kicker": "dj und produzent elektronischer tanzmusik · amerikanisch",
+        "who": "Christian Smith ist unter dem professionellen Namen Crankdat bekannt. Er ist ein amerikanischer DJ und Produzent elektronischer Tanzmusik. Crankdat ist damit der Name, unter dem er auftritt.",
+        "facts": [
+          "Crankdat ist der professionelle Name von Christian Smith.",
+          "Er ist ein amerikanischer DJ und Produzent elektronischer Tanzmusik."
+        ]
+      },
+      "tr": {
+        "kicker": "dj ve elektronik dans müziği yapımcısı · amerikalı",
+        "who": "Christian Smith, profesyonel olarak Crankdat adıyla tanınır. Amerikalı bir DJ ve elektronik dans müziği yapımcısıdır. Crankdat, onun profesyonel adıdır.",
+        "facts": [
+          "Crankdat, Christian Smith'in profesyonel adıdır.",
+          "Amerikalı bir DJ ve elektronik dans müziği yapımcısıdır."
+        ]
+      }
+    }
+  ]
+}

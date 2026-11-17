@@ -1,0 +1,70 @@
+{
+ "city": "vancouver",
+ "day": "2026-11-17",
+ "nights": [
+  {
+   "id": "6ee38e46-18d0-4acf-a2af-6988470ceced",
+   "slug": "amtrac-7901ba1e",
+   "title": "Amtrac",
+   "name": "Amtrac",
+   "source_url": "https://en.wikipedia.org/wiki/Amtrac_(musician)",
+   "extract": "Caleb Cornett, known professionally as Amtrac, is an American DJ, electronic music producer, singer, multi-instrumentalist, and songwriter.",
+   "en": {
+    "kicker": "dj and electronic music producer",
+    "who": "Amtrac is the professional name of Caleb Cornett. He is an American DJ and electronic music producer. He is also a singer, multi-instrumentalist, and songwriter.",
+    "facts": [
+     "Caleb Cornett, known professionally as Amtrac, is an American DJ and electronic music producer.",
+     "He is also a singer, multi-instrumentalist, and songwriter."
+    ]
+   },
+   "de": {
+    "kicker": "dj und produzent elektronischer musik",
+    "who": "Amtrac ist der Künstlername von Caleb Cornett. Er ist ein amerikanischer DJ und Produzent elektronischer Musik. Außerdem ist er Sänger, Multiinstrumentalist und Songwriter.",
+    "facts": [
+     "Caleb Cornett, unter dem Künstlernamen Amtrac bekannt, ist ein amerikanischer DJ und Produzent elektronischer Musik.",
+     "Außerdem ist er Sänger, Multiinstrumentalist und Songwriter."
+    ]
+   },
+   "tr": {
+    "kicker": "dj ve elektronik müzik yapımcısı",
+    "who": "Amtrac, Caleb Cornett'in sahne adıdır. Amerikalı bir DJ ve elektronik müzik yapımcısıdır. Ayrıca şarkıcı, çok enstrümanlı müzisyen ve söz yazarıdır.",
+    "facts": [
+     "Amerikalı bir DJ ve elektronik müzik yapımcısı olan Caleb Cornett, sahne adıyla Amtrac olarak bilinir.",
+     "Ayrıca şarkıcı, çok enstrümanlı müzisyen ve söz yazarıdır."
+    ]
+   }
+  },
+  {
+   "id": "5acc1472-2fb0-4908-a242-97b35d01fe8f",
+   "slug": "olivia-rodrigo-the-unraveled-tour-6cce8f4a",
+   "title": "Olivia Rodrigo: The Unraveled Tour",
+   "name": "Olivia Rodrigo",
+   "source_url": "https://en.wikipedia.org/wiki/Olivia_Rodrigo",
+   "extract": "Olivia Isabel Rodrigo is an American singer-songwriter and actress. Rodrigo began her career as a child actress, appearing in commercials and the direct-to-video film An American Girl: Grace Stirs Up Success (2015). She rose to prominence with her leading roles in the Disney Channel series Bizaardvark (2016–2019) and the Disney+ series High School Musical: The Musical: The Series (2019–2022).",
+   "en": {
+    "kicker": "singer-songwriter and actress",
+    "who": "Olivia Isabel Rodrigo is an American singer-songwriter and actress. She began her career as a child actress, appearing in commercials and the direct-to-video film An American Girl: Grace Stirs Up Success. She rose to prominence with leading roles in the Disney Channel series Bizaardvark and the Disney+ series High School Musical: The Musical: The Series.",
+    "facts": [
+     "Rodrigo began her career as a child actress, appearing in commercials and the direct-to-video film An American Girl: Grace Stirs Up Success (2015).",
+     "She rose to prominence with her leading roles in the Disney Channel series Bizaardvark (2016–2019) and the Disney+ series High School Musical: The Musical: The Series (2019–2022)."
+    ]
+   },
+   "de": {
+    "kicker": "singer-songwriterin und schauspielerin",
+    "who": "Olivia Isabel Rodrigo ist eine amerikanische Singer-Songwriterin und Schauspielerin. Sie begann ihre Karriere als Kinderdarstellerin in Werbespots und dem direkt auf Video veröffentlichten Film An American Girl: Grace Stirs Up Success. Bekannt wurde sie durch Hauptrollen in der Disney-Channel-Serie Bizaardvark und der Disney+-Serie High School Musical: The Musical: The Series.",
+    "facts": [
+     "Rodrigo begann ihre Karriere als Kinderdarstellerin in Werbespots und dem direkt auf Video veröffentlichten Film An American Girl: Grace Stirs Up Success (2015).",
+     "Bekannt wurde sie durch Hauptrollen in der Disney-Channel-Serie Bizaardvark (2016–2019) und der Disney+-Serie High School Musical: The Musical: The Series (2019–2022)."
+    ]
+   },
+   "tr": {
+    "kicker": "şarkıcı-söz yazarı ve oyuncu",
+    "who": "Olivia Isabel Rodrigo, Amerikalı bir şarkıcı-söz yazarı ve oyuncudur. Çocuk oyuncu olarak kariyerine reklamlarda ve doğrudan video olarak yayımlanan An American Girl: Grace Stirs Up Success filmiyle başladı. Öne çıkması, Disney Channel dizisi Bizaardvark ve Disney+ dizisi High School Musical: The Musical: The Series'deki başrollerle oldu.",
+    "facts": [
+     "Rodrigo, reklamlarda ve doğrudan video olarak yayımlanan An American Girl: Grace Stirs Up Success (2015) filminde çocuk oyuncu olarak kariyerine başladı.",
+     "Disney Channel dizisi Bizaardvark (2016–2019) ve Disney+ dizisi High School Musical: The Musical: The Series (2019–2022) ile öne çıktı."
+    ]
+   }
+  }
+ ]
+}

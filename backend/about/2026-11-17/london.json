@@ -1,0 +1,70 @@
+{
+  "city": "london",
+  "day": "2026-11-17",
+  "nights": [
+    {
+      "id": "5b3ddfbd-c314-467f-80fa-8904175f4036",
+      "slug": "seb-lowe-91ca2577",
+      "title": "Seb Lowe",
+      "name": "Seb Lowe",
+      "source_url": "https://en.wikipedia.org/wiki/Seb_Lowe",
+      "extract": "Sebastian Lowe is an English singer-songwriter from Saddleworth, Greater Manchester. He is known for incorporating politics into his music, having started out uploading videos of his songs to TikTok.",
+      "en": {
+        "kicker": "English singer-songwriter · Saddleworth, Greater Manchester",
+        "who": "Sebastian Lowe is an English singer-songwriter from Saddleworth, Greater Manchester. His songs are known for incorporating politics, and he started out uploading videos of them to TikTok.",
+        "facts": [
+          "He is known for incorporating politics into his music.",
+          "He started out uploading videos of his songs to TikTok."
+        ]
+      },
+      "de": {
+        "kicker": "englischer singer-songwriter · Saddleworth, Greater Manchester",
+        "who": "Sebastian Lowe ist ein englischer Singer-Songwriter aus Saddleworth, Greater Manchester. Seine Lieder sind dafür bekannt, Politik aufzugreifen, und er begann damit, Videos seiner Songs auf TikTok hochzuladen.",
+        "facts": [
+          "Er ist dafür bekannt, Politik in seine Musik einzubringen.",
+          "Er begann, Videos seiner Songs auf TikTok hochzuladen."
+        ]
+      },
+      "tr": {
+        "kicker": "İngiliz şarkıcı-söz yazarı · Saddleworth, Greater Manchester",
+        "who": "Sebastian Lowe, Greater Manchester'daki Saddleworth'den gelen İngiliz bir şarkıcı-söz yazarıdır. Şarkılarında siyaseti işlemesiyle bilinir ve TikTok'a şarkılarının videolarını yükleyerek başladı.",
+        "facts": [
+          "Müziğine siyaseti dahil etmesiyle tanınır.",
+          "Şarkılarının videolarını TikTok'a yükleyerek başladı."
+        ]
+      }
+    },
+    {
+      "id": "fc41db05-3f6a-4ae8-8503-5c79e70cf132",
+      "slug": "jesse-and-joy-d65bfdf6",
+      "title": "Jesse & Joy",
+      "name": "Jesse & Joy",
+      "source_url": "https://en.wikipedia.org/wiki/Jesse_%26_Joy",
+      "extract": "Jesse & Joy is a Mexican pop duo. It was formed in 2005 in Mexico City by brother and sister Jesse and Joy Huerta.",
+      "en": {
+        "kicker": "Mexican pop duo · formed 2005 in Mexico City",
+        "who": "Jesse & Joy is a Mexican pop duo. It was formed in Mexico City by brother and sister Jesse and Joy Huerta.",
+        "facts": [
+          "It was formed in 2005 in Mexico City.",
+          "Jesse and Joy Huerta are brother and sister."
+        ]
+      },
+      "de": {
+        "kicker": "mexikanisches popduo · gegründet 2005 in Mexiko-Stadt",
+        "who": "Jesse & Joy ist ein mexikanisches Popduo. Es wurde 2005 in Mexiko-Stadt von den Geschwistern Jesse und Joy Huerta gegründet.",
+        "facts": [
+          "Das Duo wurde 2005 in Mexiko-Stadt gegründet.",
+          "Jesse und Joy Huerta sind Bruder und Schwester."
+        ]
+      },
+      "tr": {
+        "kicker": "Meksikalı pop ikilisi · 2005'te Mexico City'de kuruldu",
+        "who": "Jesse & Joy, Meksikalı bir pop ikilisidir. 2005 yılında Mexico City'de, kardeşler Jesse ve Joy Huerta tarafından kuruldu.",
+        "facts": [
+          "İkili 2005 yılında Mexico City'de kuruldu.",
+          "Jesse ve Joy Huerta erkek ve kız kardeştir."
+        ]
+      }
+    }
+  ]
+}

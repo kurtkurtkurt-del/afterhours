@@ -1,0 +1,38 @@
+{
+ "city": "singapore",
+ "day": "2026-11-17",
+ "nights": [
+  {
+   "id": "06fe324a-3ae5-4295-8c3c-7a89cc576a4c",
+   "slug": "tori-kelly-god-must-really-love-me-world-tour-ebc82d53",
+   "title": "Tori Kelly - God Must Really Love Me World Tour",
+   "name": "Tori Kelly",
+   "source_url": "https://en.wikipedia.org/wiki/Tori_Kelly",
+   "extract": "Victoria Loren \"Tori\" Kelly is an American singer-songwriter. She first gained recognition on YouTube before making it through to Hollywood week on the ninth season of American Idol in 2010 and eventually releasing her debut EP, Handmade Songs (2012).",
+   "en": {
+    "kicker": "american singer-songwriter · debut ep 2012",
+    "who": "Victoria Loren \"Tori\" Kelly is an American singer-songwriter. She first gained recognition on YouTube before making it through to Hollywood week on the ninth season of American Idol in 2010. She eventually released her debut EP, Handmade Songs, in 2012.",
+    "facts": [
+     "She first gained recognition on YouTube before making it through to Hollywood week on the ninth season of American Idol in 2010.",
+     "She eventually released her debut EP, Handmade Songs, in 2012."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische singer-songwriterin · debüt-ep 2012",
+    "who": "Victoria Loren \"Tori\" Kelly ist eine amerikanische Singer-Songwriterin. Sie wurde zunächst auf YouTube bekannt, bevor sie im Jahr 2010 in der Hollywood-Woche der neunten Staffel von American Idol landete. Schließlich veröffentlichte sie ihre Debüt-EP Handmade Songs im Jahr 2012.",
+    "facts": [
+     "Sie wurde zunächst auf YouTube bekannt, bevor sie im Jahr 2010 in der Hollywood-Woche der neunten Staffel von American Idol landete.",
+     "Schließlich veröffentlichte sie ihre Debüt-EP Handmade Songs im Jahr 2012."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı şarkıcı-söz yazarı · ilk ep 2012",
+    "who": "Victoria Loren \"Tori\" Kelly bir Amerikalı şarkıcı ve söz yazarıdır. Önce YouTube'da tanınmaya başladı, ardından 2010 yılında American Idol'ün dokuzuncu sezonunda Hollywood haftasına kadar ilerledi. Sonunda ilk EP'si Handmade Songs'ı 2012 yılında yayımladı.",
+    "facts": [
+     "Önce YouTube'da tanınmaya başladı, ardından 2010 yılında American Idol'ün dokuzuncu sezonunda Hollywood haftasına kadar ilerledi.",
+     "Sonunda ilk EP'si Handmade Songs'ı 2012 yılında yayımladı."
+    ]
+   }
+  }
+ ]
+}

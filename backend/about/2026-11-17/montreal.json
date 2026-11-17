@@ -1,0 +1,38 @@
+{
+ "city": "montreal",
+ "day": "2026-11-17",
+ "nights": [
+  {
+   "id": "b8aa2c7d-86ac-4659-989e-675ffb000775",
+   "slug": "doja-cat-tour-ma-vie-world-tour-874fb1ea",
+   "title": "Doja Cat - Tour Ma Vie World Tour",
+   "name": "Doja Cat",
+   "source_url": "https://en.wikipedia.org/wiki/Doja_Cat",
+   "extract": "Amala Ratna Zandile Dlamini, known professionally as Doja Cat, is an American rapper and singer-songwriter. Regarded as the \"Queen of Pop-Rap\", she is known for her musical versatility, live performance skills and humorous internet presence. Billboard named her \"one of the world's biggest pop stars\" and \"one of the defining pop stars of this era\", and Time listed her as one of the world's most influential people in 2023.",
+   "en": {
+    "kicker": "american rapper and singer-songwriter · queen of pop-rap",
+    "who": "Amala Ratna Zandile Dlamini, known professionally as Doja Cat, is an American rapper and singer-songwriter. She is regarded as the \"Queen of Pop-Rap\" and is known for her musical versatility, live performance skills and humorous internet presence.",
+    "facts": [
+     "Billboard named her \"one of the world's biggest pop stars\" and \"one of the defining pop stars of this era\".",
+     "Time listed her as one of the world's most influential people in 2023."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische rapperin und singer-songwriterin · königin des pop-rap",
+    "who": "Amala Ratna Zandile Dlamini, unter dem Künstlernamen Doja Cat bekannt, ist eine amerikanische Rapperin und Singer-Songwriterin. Sie gilt als „Queen of Pop-Rap“ und ist für ihre musikalische Vielseitigkeit, ihre Fähigkeiten bei Live-Auftritten und ihre humorvolle Präsenz im Internet bekannt.",
+    "facts": [
+     "Billboard nannte sie „einen der größten Popstars der Welt“ und „einen der prägenden Popstars dieser Ära“.",
+     "Time führte sie 2023 als eine der einflussreichsten Personen der Welt auf."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı rapçi ve şarkı yazarı · pop-rap kraliçesi",
+    "who": "Amala Ratna Zandile Dlamini, sahne adıyla Doja Cat olarak tanınan, Amerikalı bir rapçi ve şarkı yazarıdır. “Pop-rap kraliçesi” olarak anılır; müzikal çok yönlülüğü, canlı performans becerileri ve mizahi internet varlığıyla bilinir.",
+    "facts": [
+     "Billboard onu “dünyanın en büyük pop yıldızlarından biri” ve “bu dönemin belirleyici pop yıldızlarından biri” olarak nitelendirdi.",
+     "Time, 2023 yılında onu dünyanın en etkili insanlarından biri olarak listeledi."
+    ]
+   }
+  }
+ ]
+}

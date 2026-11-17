@@ -1,0 +1,70 @@
+{
+ "city": "atlanta",
+ "day": "2026-11-17",
+ "nights": [
+  {
+   "id": "c6306c98-b56e-4b94-a85a-10f3e6d7820f",
+   "slug": "the-war-and-treaty-c2fe24df",
+   "title": "The War And Treaty",
+   "name": "The War and Treaty",
+   "source_url": "https://en.wikipedia.org/wiki/The_War_and_Treaty",
+   "extract": "The War and Treaty is an American husband-and-wife duo consisting of singer-songwriters Michael Trotter Jr. and Tanya Trotter. Their debut studio album, Healing Tide (2018), received generally favorable reviews upon its release. Their second album, Hearts Town (2020), featured a collaboration with Emmylou Harris and had a Triple A top 40 hit single \"Five More Minutes.\" In 2022, they signed to Universal Music Group Nashville, and released their major label debut, Lover's Game (2023). Their collaboration with Zach Bryan on the song \"Hey Driver\" made the top 20 on the Billboard Hot 100.",
+   "en": {
+    "kicker": "American husband-and-wife duo · singer-songwriters",
+    "who": "The War and Treaty is an American husband-and-wife duo. The duo consists of singer-songwriters Michael Trotter Jr. and Tanya Trotter. Their debut studio album, Healing Tide (2018), received generally favorable reviews upon its release.",
+    "facts": [
+     "The duo consists of singer-songwriters Michael Trotter Jr. and Tanya Trotter.",
+     "Their collaboration with Zach Bryan on the song \"Hey Driver\" made the top 20 on the Billboard Hot 100."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanisches Ehepaar-Duo · singer-songwriter",
+    "who": "The War and Treaty ist ein amerikanisches Duo aus Ehemann und Ehefrau. Es besteht aus Michael Trotter Jr. und Tanya Trotter, die als singer-songwriter arbeiten. Ihr Debütalbum Healing Tide (2018) erhielt bei seinem Erscheinen überwiegend positive Kritiken.",
+    "facts": [
+     "Das Duo besteht aus den singer-songwritern Michael Trotter Jr. und Tanya Trotter.",
+     "Ihre Zusammenarbeit mit Zach Bryan am Lied \"Hey Driver\" erreichte die Top 20 der Billboard Hot 100."
+    ]
+   },
+   "tr": {
+    "kicker": "Amerikalı karı-koca ikilisi · şarkıcı-söz yazarları",
+    "who": "The War and Treaty, Michael Trotter Jr. ve Tanya Trotter'dan oluşan Amerikalı bir karı-koca ikilisidir. İkili şarkıcı ve söz yazarı olarak çalışıyor. Debut albümleri Healing Tide (2018), çıkışında genel olarak olumlu eleştiriler aldı.",
+    "facts": [
+     "Duo, şarkıcı-söz yazarları Michael Trotter Jr. ve Tanya Trotter'dan oluşuyor.",
+     "Zach Bryan ile yaptıkları \"Hey Driver\" şarkısı Billboard Hot 100 listesinde ilk 20'ye girdi."
+    ]
+   }
+  },
+  {
+   "id": "b07084a4-a595-4b58-a009-c66be9755a23",
+   "slug": "dragonforce-inhuman-rampage-20th-anniversary-8cbc73e4",
+   "title": "DragonForce: Inhuman Rampage 20th Anniversary",
+   "name": "DragonForce",
+   "source_url": "https://en.wikipedia.org/wiki/DragonForce",
+   "extract": "DragonForce are a British power metal band from London, formed in 1999. They are known for their long and fast guitar solos, fantasy-themed lyrics and retro video game-influenced sound. The band themselves refer to their music as \"extreme power metal\".",
+   "en": {
+    "kicker": "British power metal band · London, 1999",
+    "who": "DragonForce are a British power metal band from London, formed in 1999. They are known for their long and fast guitar solos, fantasy-themed lyrics and retro video game-influenced sound.",
+    "facts": [
+     "They are known for their long and fast guitar solos, fantasy-themed lyrics and retro video game-influenced sound.",
+     "The band themselves refer to their music as \"extreme power metal\"."
+    ]
+   },
+   "de": {
+    "kicker": "britische Power-Metal-Band · London, 1999",
+    "who": "DragonForce sind eine britische Power-Metal-Band aus London, die 1999 gegründet wurde. Die Band ist für lange und schnelle Gitarrensolos, fantasy-geprägte Texte und einen von Retro-Videospielen beeinflussten Sound bekannt.",
+    "facts": [
+     "Sie sind bekannt für lange und schnelle Gitarrensolos, fantasy-geprägte Texte und einen von Retro-Videospielen beeinflussten Sound.",
+     "Die Band selbst nennt ihre Musik \"extreme power metal\"."
+    ]
+   },
+   "tr": {
+    "kicker": "İngiliz power metal grubu · Londra, 1999",
+    "who": "DragonForce, 1999 yılında Londra'da kurulmuş İngiliz bir power metal grubudur. Grup, uzun ve hızlı gitar soloları, fantezi temalı sözleri ve retro video oyunlarından etkilenen sesiyle tanınır.",
+    "facts": [
+     "Grup, uzun ve hızlı gitar soloları, fantezi temalı sözleri ve retro video oyunlarından etkilenen sesiyle tanınır.",
+     "Grup kendi müziğini \"extreme power metal\" olarak tanımlıyor."
+    ]
+   }
+  }
+ ]
+}

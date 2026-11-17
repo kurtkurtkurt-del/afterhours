@@ -1,0 +1,70 @@
+{
+  "city": "washington",
+  "day": "2026-11-17",
+  "nights": [
+    {
+      "id": "8477e0d8-3ab6-4666-b26d-f8a3eaded7ff",
+      "slug": "gregory-porter-dc-jazz-festival-benefit-concert-db001fed",
+      "title": "Gregory Porter - DC Jazz Festival Benefit Concert, A Night of Stars",
+      "name": "Gregory Porter",
+      "source_url": "https://en.wikipedia.org/wiki/Gregory_Porter",
+      "extract": "Gregory Porter is an American singer, songwriter, and musician. He has twice won the Grammy Award for Best Jazz Vocal Album: first in 2014 for Liquid Spirit and then again in 2017 for Take Me to the Alley.",
+      "en": {
+        "kicker": "american singer and songwriter · jazz vocal albums",
+        "who": "Gregory Porter is an American singer, songwriter, and musician. He has twice won the Grammy Award for Best Jazz Vocal Album.",
+        "facts": [
+          "He has twice won the Grammy Award for Best Jazz Vocal Album.",
+          "He first won in 2014 for Liquid Spirit and then again in 2017 for Take Me to the Alley."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer sänger und songwriter · jazz-gesang",
+        "who": "Gregory Porter ist ein amerikanischer Sänger, Songwriter und Musiker. Er hat zweimal den Grammy Award für das beste Jazz-Gesangsalbum gewonnen.",
+        "facts": [
+          "Er hat den Grammy Award für das beste Jazz-Gesangsalbum zweimal gewonnen.",
+          "Er gewann 2014 zuerst mit Liquid Spirit und 2017 dann mit Take Me to the Alley."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı şarkıcı ve söz yazarı · caz vokal albümleri",
+        "who": "Gregory Porter, Amerikalı bir şarkıcı, söz yazarı ve müzisyendir. En İyi Caz Vokal Albümü dalında Grammy Ödülü'nü iki kez kazanmıştır.",
+        "facts": [
+          "En İyi Caz Vokal Albümü dalında Grammy Ödülü'nü iki kez kazanmıştır.",
+          "Önce 2014'te Liquid Spirit ile, ardından 2017'de Take Me to the Alley ile kazanmıştır."
+        ]
+      }
+    },
+    {
+      "id": "ecc585cf-b614-4bbc-8055-9115e60de3cc",
+      "slug": "tiny-habits-the-keepers-tour-ddd83fd6",
+      "title": "Tiny Habits - The Keepers Tour",
+      "name": "Tiny Habits",
+      "source_url": "https://en.wikipedia.org/wiki/Tiny_Habits",
+      "extract": "Tiny Habits is an American folk-pop music group formed in Boston in 2022. The trio consists of Berklee College of Music alumni Cinya Khan, Maya Rae, and Judah Mayowa. Their first EP, Tiny Things, was released in April 2023. Their debut studio album All For Something was released in May 2024. Their second album Keepers came out in August 2026.",
+      "en": {
+        "kicker": "american folk-pop trio · formed in Boston, 2022",
+        "who": "Tiny Habits is an American folk-pop music group formed in Boston in 2022. The trio consists of Berklee College of Music alumni Cinya Khan, Maya Rae, and Judah Mayowa.",
+        "facts": [
+          "Their first EP, Tiny Things, was released in April 2023.",
+          "Their debut studio album All For Something was released in May 2024."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanisches folk-pop-trio · gegründet in Boston, 2022",
+        "who": "Tiny Habits ist eine amerikanische Folk-Pop-Musikgruppe, die 2022 in Boston gegründet wurde. Das Trio besteht aus den Berklee-College-of-Music-Absolventen Cinya Khan, Maya Rae und Judah Mayowa.",
+        "facts": [
+          "Ihre erste EP Tiny Things erschien im April 2023.",
+          "Ihr Debütstudioalbum All For Something wurde im Mai 2024 veröffentlicht."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı folk-pop üçlüsü · 2022'de Boston'da kuruldu",
+        "who": "Tiny Habits, 2022'de Boston'da kurulmuş bir Amerikan folk-pop müzik grubudur. Üçlü, Berklee College of Music mezunları Cinya Khan, Maya Rae ve Judah Mayowa'dan oluşur.",
+        "facts": [
+          "İlk EP'leri Tiny Things Nisan 2023'te yayımlandı.",
+          "Debut stüdyo albümleri All For Something Mayıs 2024'te yayımlandı."
+        ]
+      }
+    }
+  ]
+}

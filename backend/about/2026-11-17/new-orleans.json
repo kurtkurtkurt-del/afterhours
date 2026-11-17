@@ -1,0 +1,38 @@
+{
+ "city": "new-orleans",
+ "day": "2026-11-17",
+ "nights": [
+  {
+   "id": "017710fc-6551-48bc-9a16-f7260b682a98",
+   "slug": "pj-morton-annual-black-friday-show-dce3a130",
+   "title": "PJ Morton: Annual Black Friday Show",
+   "name": "PJ Morton",
+   "source_url": "https://en.wikipedia.org/wiki/PJ_Morton",
+   "extract": "Paul Sylvester \"P.J.\" Morton Jr. is an American musician, singer, songwriter and record producer. In 2010, he joined pop rock band Maroon 5, as a touring member and became an official member after Jesse Carmichael went on a brief hiatus in 2012. During this period, Morton signed with Young Money to release his debut major-label studio album, New Orleans (2013), and later self-released Gumbo, which earned him two Grammy Award nominations for Best R&B Album and Best R&B Song at the 60th Annual Grammy Awards. Since then he has received six Grammy Awards.",
+   "en": {
+    "kicker": "musician, singer, songwriter and record producer",
+    "who": "Paul Sylvester \"P.J.\" Morton Jr. is an American musician, singer, songwriter and record producer. In 2010 he joined the pop rock band Maroon 5 as a touring member, and in 2012 he became an official member after Jesse Carmichael went on a brief hiatus. He signed with Young Money to release his debut major-label studio album, New Orleans, which came out in 2013.",
+    "facts": [
+     "He joined the pop rock band Maroon 5 as a touring member in 2010.",
+     "His self-released album Gumbo earned him two Grammy Award nominations, and he has received six Grammy Awards since."
+    ]
+   },
+   "de": {
+    "kicker": "musiker, sänger, songwriter und produzent",
+    "who": "Paul Sylvester „P.J.“ Morton Jr. ist ein amerikanischer Musiker, Sänger, Songwriter und Musikproduzent. 2010 kam er als Tourmitglied zur Poprockband Maroon 5, und 2012 wurde er offizielles Mitglied, nachdem Jesse Carmichael eine kurze Pause eingelegt hatte. Morton unterschrieb bei Young Money, um sein Debütalbum bei einem großen Label, New Orleans (2013), zu veröffentlichen.",
+    "facts": [
+     "Er stieg 2010 als Tourmitglied bei der Poprockband Maroon 5 ein.",
+     "Sein selbst veröffentlichtes Album Gumbo brachte ihm zwei Grammy-Nominierungen ein, und seitdem hat er sechs Grammys erhalten."
+    ]
+   },
+   "tr": {
+    "kicker": "müzisyen, şarkıcı, söz yazarı ve yapımcı",
+    "who": "Paul Sylvester \"P.J.\" Morton Jr., Amerikalı bir müzisyen, şarkıcı, söz yazarı ve plak yapımcısıdır. 2010'da pop rock grubu Maroon 5'e turne üyesi olarak katıldı; 2012'de Jesse Carmichael kısa bir ara verince resmi üye oldu. Young Money ile anlaşarak ilk büyük plak şirketi albümü olan New Orleans'ı (2013) çıkardı.",
+    "facts": [
+     "2010 yılında pop rock grubu Maroon 5'e turne üyesi olarak katıldı.",
+     "Kendi yayımladığı Gumbo albümüyle iki Grammy adaylığı kazandı ve o tarihten beri altı Grammy Ödülü aldı."
+    ]
+   }
+  }
+ ]
+}

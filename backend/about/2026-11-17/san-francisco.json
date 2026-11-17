@@ -1,0 +1,38 @@
+{
+  "city": "san-francisco",
+  "day": "2026-11-17",
+  "nights": [
+    {
+      "id": "09ad8d3e-d3ec-4a05-88ec-af006ce1d431",
+      "slug": "jonas-brothers-the-burning-up-tour-all-over-agai-00189430",
+      "title": "Jonas Brothers: The Burning Up Tour All Over Again",
+      "name": "Jonas Brothers",
+      "source_url": "https://en.wikipedia.org/wiki/Jonas_Brothers",
+      "extract": "The Jonas Brothers are an American pop rock band formed in 2005 comprising brothers Kevin Jonas, Joe Jonas, and Nick Jonas. Raised in Wyckoff, New Jersey, the Jonas Brothers moved to Little Falls, New Jersey, in 2005, where they wrote their first record that made its release on Hollywood Records, a Disney-owned record label, after which they gained popularity from their appearances on Disney Channel. They starred in the 2008 Disney Channel Original Movie Camp Rock and its 2010 sequel, Camp Rock 2: The Final Jam. They also starred in their own Disney Channel series Jonas, which was rebranded as Jonas L.A. for its second season. The band has released seven albums: It's About Time (2006), Jonas",
+      "en": {
+        "kicker": "American pop rock band · formed 2005, New Jersey",
+        "who": "The Jonas Brothers are an American pop rock band formed in 2005, comprising brothers Kevin Jonas, Joe Jonas, and Nick Jonas. They gained popularity from their appearances on Disney Channel and starred in their own series, Jonas. The band has released seven albums.",
+        "facts": [
+          "The band wrote its first record in Little Falls, New Jersey, and it was released on Hollywood Records, a Disney-owned record label.",
+          "The band starred in the 2008 Disney Channel Original Movie Camp Rock and its 2010 sequel, Camp Rock 2: The Final Jam."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische pop-rock-band · gegründet 2005, New Jersey",
+        "who": "Die Jonas Brothers sind eine amerikanische Pop-Rock-Band, die 2005 aus den Brüdern Kevin Jonas, Joe Jonas und Nick Jonas gegründet wurde. Die Band erlangte durch ihre Auftritte im Disney Channel Popularität und spielte in der eigenen Serie Jonas mit. Sie hat sieben Alben veröffentlicht.",
+        "facts": [
+          "Die Band schrieb ihre erste Platte in Little Falls, New Jersey, und sie erschien bei Hollywood Records, einem Disney-eigenen Plattenlabel.",
+          "Die Band spielte im Disney-Channel-Original-Film Camp Rock von 2008 und in dessen Fortsetzung Camp Rock 2: The Final Jam von 2010 mit."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı pop rock grubu · 2005, New Jersey",
+        "who": "Jonas Brothers, 2005 yılında kurulmuş, kardeşler Kevin Jonas, Joe Jonas ve Nick Jonas'tan oluşan bir Amerikalı pop rock grubudur. Grup, Disney Channel'daki görünümleriyle popülerlik kazandı ve kendi dizisi Jonas'ta rol aldı. Grup yedi albüm yayımlamıştır.",
+        "facts": [
+          "Grup ilk kaydını Little Falls, New Jersey'de yazdı ve kayıt, Disney'e ait bir plak şirketi olan Hollywood Records'ta yayımlandı.",
+          "Grup, 2008 yapımı Disney Channel Original Movie Camp Rock ve 2010'da çıkan devamı Camp Rock 2: The Final Jam'de rol aldı."
+        ]
+      }
+    }
+  ]
+}

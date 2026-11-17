@@ -1,0 +1,166 @@
+{
+ "city": "los-angeles",
+ "day": "2026-11-17",
+ "nights": [
+  {
+   "id": "1f50d765-e680-4f69-8131-59ecf88de054",
+   "slug": "boynextdoor-2b5dbe1c",
+   "title": "BOYNEXTDOOR",
+   "name": "BoyNextDoor",
+   "source_url": "https://en.wikipedia.org/wiki/BoyNextDoor",
+   "extract": "BoyNextDoor is a South Korean boy band formed by KOZ Entertainment in 2023. The group consists of six members: Sungho, Riwoo, Myung Jaehyun, Taesan, Leehan, and Woonhak. Characterized by its eponymous \"boy next door\" image, the group defines their work as easy listening with themes drawn from daily life.",
+   "en": {
+    "kicker": "South Korean boy band · 2023",
+    "who": "BoyNextDoor is a South Korean boy band formed by KOZ Entertainment in 2023. The group has six members: Sungho, Riwoo, Myung Jaehyun, Taesan, Leehan and Woonhak. Their work is described as easy listening, with themes drawn from daily life.",
+    "facts": [
+     "The group was formed by KOZ Entertainment in 2023.",
+     "The group consists of six members: Sungho, Riwoo, Myung Jaehyun, Taesan, Leehan, and Woonhak."
+    ]
+   },
+   "de": {
+    "kicker": "südkoreanische boygroup · 2023",
+    "who": "BoyNextDoor ist eine südkoreanische Boygroup, die 2023 von KOZ Entertainment gegründet wurde. Die Gruppe besteht aus sechs Mitgliedern: Sungho, Riwoo, Myung Jaehyun, Taesan, Leehan und Woonhak. Ihre Musik beschreibt die Gruppe als Easy Listening mit Themen aus dem Alltag.",
+    "facts": [
+     "Die Gruppe wurde 2023 von KOZ Entertainment gegründet.",
+     "Die Gruppe besteht aus sechs Mitgliedern: Sungho, Riwoo, Myung Jaehyun, Taesan, Leehan und Woonhak."
+    ]
+   },
+   "tr": {
+    "kicker": "güney koreli erkek grubu · 2023",
+    "who": "BoyNextDoor, KOZ Entertainment tarafından 2023 yılında kurulan bir Güney Koreli erkek grubudur. Grup altı üyeden oluşuyor: Sungho, Riwoo, Myung Jaehyun, Taesan, Leehan ve Woonhak. Grup, işlerini günlük hayattan temalar alan kolay dinlenen müzik olarak tanımlıyor.",
+    "facts": [
+     "Grup, 2023 yılında KOZ Entertainment tarafından kuruldu.",
+     "Grup altı üyeden oluşuyor: Sungho, Riwoo, Myung Jaehyun, Taesan, Leehan ve Woonhak."
+    ]
+   }
+  },
+  {
+   "id": "99713450-6e83-4a8f-84d7-c4a1f41c55bd",
+   "slug": "chazz-palminteri-a-bronx-tale-5-and-over-651b480e",
+   "title": "Chazz Palminteri: A Bronx Tale (5 and Over)",
+   "name": "Chazz Palminteri",
+   "source_url": "https://en.wikipedia.org/wiki/Chazz_Palminteri",
+   "extract": "Calogero Lorenzo \"Chazz\" Palminteri is an American actor, producer, screenwriter, and playwright. He is best known for his film roles in A Bronx Tale (1993), based on his play of the same name, along with Bullets Over Broadway (1994) for which he was nominated for an Academy Award for Best Supporting Actor, and \nThe Usual Suspects (1995).\nHis recent work includes his recurring role as Shorty in Modern Family (2010–2019).",
+   "en": {
+    "kicker": "American actor and playwright · 1993",
+    "who": "Calogero Lorenzo \"Chazz\" Palminteri is an American actor, producer, screenwriter and playwright. He is best known for his film roles in A Bronx Tale (1993), based on his play of the same name, and in Bullets Over Broadway (1994) and The Usual Suspects (1995). His recent work includes a recurring role as Shorty in Modern Family (2010–2019).",
+    "facts": [
+     "A Bronx Tale (1993) is based on his play of the same name.",
+     "He was nominated for an Academy Award for Best Supporting Actor for Bullets Over Broadway (1994)."
+    ]
+   },
+   "de": {
+    "kicker": "US-amerikanischer schauspieler und dramatiker · 1993",
+    "who": "Calogero Lorenzo \"Chazz\" Palminteri ist ein US-amerikanischer Schauspieler, Produzent, Drehbuchautor und Dramatiker. Bekannt ist er vor allem durch seine Filmrollen in A Bronx Tale (1993), das auf seinem gleichnamigen Theaterstück basiert, sowie in Bullets Over Broadway (1994) und The Usual Suspects (1995). Zuletzt hatte er eine wiederkehrende Rolle als Shorty in Modern Family (2010–2019).",
+    "facts": [
+     "A Bronx Tale (1993) basiert auf seinem gleichnamigen Theaterstück.",
+     "Für Bullets Over Broadway (1994) war er für den Oscar als bester Nebendarsteller nominiert."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı oyuncu ve oyun yazarı · 1993",
+    "who": "Calogero Lorenzo \"Chazz\" Palminteri bir Amerikalı oyuncu, yapımcı, senarist ve oyun yazarıdır. En çok A Bronx Tale (1993) filmindeki rolleriyle tanınır; bu film kendi aynı adlı oyununa dayanır. Ayrıca Bullets Over Broadway (1994) ve The Usual Suspects (1995) filmlerinde de rol almıştır. Son dönemdeki işleri arasında Modern Family (2010–2019) dizisindeki Shorty rolü vardır.",
+    "facts": [
+     "A Bronx Tale (1993), kendi aynı adlı oyununa dayanır.",
+     "Bullets Over Broadway (1994) ile En İyi Erkek Yardımcı Oyuncu dalında Akademi Ödülü'ne aday gösterilmiştir."
+    ]
+   }
+  },
+  {
+   "id": "48ca15ad-fdd3-42d7-92e4-ca9d5d60dd9a",
+   "slug": "boston-manor-0ab82665",
+   "title": "Boston Manor",
+   "name": "Boston Manor",
+   "source_url": "https://en.wikipedia.org/wiki/Boston_Manor_(band)",
+   "extract": "Boston Manor are a British rock band formed in Blackpool, Lancashire, England, in March 2013. They released a first EP, Here/Now, through Never Mend Records on Bandcamp, and in 2014 they signed with Failure By Design Records for their second EP, Driftwood. In 2015 the band signed with Pure Noise Records: with them, they released another EP, Saudade, as well as their full-length albums Be Nothing (2016), Welcome to the Neighbourhood (2018) and Glue (2020). The band's sound blends emo with heavier influences, reminiscent of '90s grunge and early 2000s post-hardcore. The band have been nominated for Best British Breakthrough at Kerrang! Awards in 2018 and Welcome to the Neighbourhood received a",
+   "en": {
+    "kicker": "British rock band · 2013, Blackpool",
+    "who": "Boston Manor are a British rock band formed in Blackpool, Lancashire, England, in March 2013. In 2015 they signed with Pure Noise Records, and their full-length albums include Be Nothing (2016), Welcome to the Neighbourhood (2018) and Glue (2020). Their sound blends emo with heavier influences, reminiscent of '90s grunge and early 2000s post-hardcore.",
+    "facts": [
+     "The band was formed in Blackpool, Lancashire, England, in March 2013.",
+     "Their sound blends emo with heavier influences, reminiscent of '90s grunge and early 2000s post-hardcore."
+    ]
+   },
+   "de": {
+    "kicker": "britische rockband · 2013, Blackpool",
+    "who": "Boston Manor ist eine britische Rockband, die im März 2013 in Blackpool in Lancashire, England, gegründet wurde. 2015 unterschrieb die Band bei Pure Noise Records, wo unter anderem die Alben Be Nothing (2016), Welcome to the Neighbourhood (2018) und Glue (2020) erschienen. Ihr Sound verbindet Emo mit härteren Einflüssen, die an Grunge der Neunziger und Post-Hardcore der frühen 2000er erinnern.",
+    "facts": [
+     "Die Band wurde im März 2013 in Blackpool, Lancashire, England, gegründet.",
+     "Ihr Sound verbindet Emo mit härteren Einflüssen, die an Grunge der Neunziger und Post-Hardcore der frühen 2000er erinnern."
+    ]
+   },
+   "tr": {
+    "kicker": "İngiliz rock grubu · 2013, Blackpool",
+    "who": "Boston Manor, 2013 yılının Mart ayında İngiltere'nin Lancashire bölgesindeki Blackpool'da kurulan bir İngiliz rock grubudur. 2015'te Pure Noise Records ile anlaşan grup, bu plak şirketiyle Be Nothing (2016), Welcome to the Neighbourhood (2018) ve Glue (2020) albümlerini yayımlamıştır. Sesleri emoyu daha ağır etkilerle harmanlar; bu, 90'ların grunge'ını ve 2000'lerin başındaki post-hardcore'u andırır.",
+    "facts": [
+     "Grup, 2013 yılının Mart ayında Blackpool, Lancashire, İngiltere'de kuruldu.",
+     "Sesleri emoyu daha ağır etkilerle harmanlar; bu, 90'ların grunge'ını ve 2000'lerin başındaki post-hardcore'u andırır."
+    ]
+   }
+  },
+  {
+   "id": "041045ad-db11-4ace-a7f0-435a422bffbc",
+   "slug": "terrace-martin-0f6b2741",
+   "title": "Terrace Martin",
+   "name": "Terrace Martin",
+   "source_url": "https://en.wikipedia.org/wiki/Terrace_Martin",
+   "extract": "Terrace Jamahl Martin is an American musician, rapper, singer, and record producer. He is perhaps best known for producing records for several prominent artists in the music industry, including Kendrick Lamar, Snoop Dogg, the Game, Busta Rhymes, Stevie Wonder, Charlie Wilson, Raphael Saadiq and YG, among others. Martin is a multi-instrumentalist whose music production embodies funk, jazz, classical and soul. Martin released his sixth studio album, Velvet Portraits, on his label, Sounds of Crenshaw Records, through Ropeadope Records.",
+   "en": {
+    "kicker": "American musician and record producer",
+    "who": "Terrace Jamahl Martin is an American musician, rapper, singer and record producer. He is best known for producing records for artists including Kendrick Lamar, Snoop Dogg, Stevie Wonder and YG. His music production embodies funk, jazz, classical and soul.",
+    "facts": [
+     "He is perhaps best known for producing records for several prominent artists, including Kendrick Lamar and Snoop Dogg.",
+     "He released his sixth studio album, Velvet Portraits, on his label, Sounds of Crenshaw Records, through Ropeadope Records."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer musiker und musikproduzent",
+    "who": "Terrace Jamahl Martin ist ein amerikanischer Musiker, Rapper, Sänger und Musikproduzent. Er ist vor allem dafür bekannt, Platten für zahlreiche bekannte Künstler produziert zu haben, darunter Kendrick Lamar, Snoop Dogg, Stevie Wonder und YG. Seine Produktionen verbinden Funk, Jazz, Klassik und Soul.",
+    "facts": [
+     "Er hat für mehrere bekannte Künstler der Musikbranche Platten produziert, darunter Kendrick Lamar und Snoop Dogg.",
+     "Sein sechstes Studioalbum Velvet Portraits erschien auf seinem Label Sounds of Crenshaw Records über Ropeadope Records."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı müzisyen ve plak yapımcısı",
+    "who": "Terrace Jamahl Martin bir Amerikalı müzisyen, rapçi, şarkıcı ve plak yapımcısıdır. Kendrick Lamar, Snoop Dogg, Stevie Wonder ve YG gibi birçok tanınmış sanatçının plaklarını üretmesiyle bilinir. Müzik üretimi funk, caz, klasik ve soul'u bir araya getirir.",
+    "facts": [
+     "Kendrick Lamar ve Snoop Dogg dahil birçok tanınmış sanatçının plaklarını üretmiştir.",
+     "Altıncı stüdyo albümü Velvet Portraits, kendi etiketi Sounds of Crenshaw Records üzerinden, Ropeadope Records aracılığıyla yayımlanmıştır."
+    ]
+   }
+  },
+  {
+   "id": "d0a208ee-1794-4f94-be47-4daa8a76b6c0",
+   "slug": "qendresa-sold-out-2eb87f0e",
+   "title": "Qendresa - SOLD OUT",
+   "name": "Qendresa",
+   "source_url": "https://en.wikipedia.org/wiki/Qendresa",
+   "extract": "Qendresa is a British-Kosovar singer, songwriter, and producer from North West London. She is known for her self-produced electronic soul and personal songwriting. She has released two studio albums: Midnight Request Line (2020) and Londra (2024). She gained mainstream recognition in 2026 through her collaborations with Canadian rapper Drake across his albums Habibti and Maid of Honour.",
+   "en": {
+    "kicker": "British-Kosovar singer and producer · North West London",
+    "who": "Qendresa is a British-Kosovar singer, songwriter and producer from North West London. She has released two studio albums, Midnight Request Line (2020) and Londra (2024). Her music is self-produced electronic soul with personal songwriting.",
+    "facts": [
+     "She is known for her self-produced electronic soul and personal songwriting.",
+     "She gained mainstream recognition in 2026 through her collaborations with Canadian rapper Drake."
+    ]
+   },
+   "de": {
+    "kicker": "britisch-kosovarische sängerin und produzentin · North West London",
+    "who": "Qendresa ist eine britisch-kosovarische Sängerin, Songwriterin und Produzentin aus North West London. Sie hat zwei Studioalben veröffentlicht, Midnight Request Line (2020) und Londra (2024). Ihre Musik ist selbst produzierter elektronischer Soul mit persönlichen Texten.",
+    "facts": [
+     "Sie ist vor allem für ihren selbst produzierten elektronischen Soul und persönliche Songtexte bekannt.",
+     "2026 wurde sie durch Zusammenarbeiten mit dem kanadischen Rapper Drake einem breiteren Publikum bekannt."
+    ]
+   },
+   "tr": {
+    "kicker": "İngiliz-Kosovalı şarkıcı ve yapımcı · North West London",
+    "who": "Qendresa, North West London'dan bir İngiliz-Kosovalı şarkıcı, söz yazarı ve yapımcıdır. Midnight Request Line (2020) ve Londra (2024) adlı iki stüdyo albümü yayımlamıştır. Müziği, kendi ürettiği elektronik soul ve kişisel söz yazımına dayanır.",
+    "facts": [
+     "Kendi ürettiği elektronik soul ve kişisel söz yazımıyla tanınır.",
+     "2026'da Kanadalı rapçi Drake ile yaptığı işbirlikleri sayesinde geniş kitlelerce tanınmaya başlamıştır."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,102 @@
+{
+  "city": "glasgow",
+  "day": "2026-11-17",
+  "nights": [
+    {
+      "id": "74c522c5-1a49-467a-8980-70cf38bf2314",
+      "slug": "sace6-02e3e85d",
+      "title": "sace6",
+      "name": "Sace6",
+      "source_url": "https://en.wikipedia.org/wiki/Sace6",
+      "extract": "Sace6 is an American alternative metal duo consisting of lead vocalist Sace and guitarist-vocalist Noah Thomas. Originally the solo project of Sace, the project developed into a duo in 2024. Sonically, their music offers contrasting melodic vocals and pop-oriented hooks with heavy guitar-driven instrumentation.",
+      "en": {
+        "kicker": "alternative metal duo · a duo since 2024",
+        "who": "Sace6 is an American alternative metal duo made up of lead vocalist Sace and guitarist-vocalist Noah Thomas. The project began as the solo project of Sace and developed into a duo in 2024. Its music combines contrasting melodic vocals and pop-oriented hooks with heavy guitar-driven instrumentation.",
+        "facts": [
+          "The duo consists of lead vocalist Sace and guitarist-vocalist Noah Thomas.",
+          "Sonically, their music offers contrasting melodic vocals and pop-oriented hooks with heavy guitar-driven instrumentation."
+        ]
+      },
+      "de": {
+        "kicker": "alternative metal duo · seit 2024 ein duo",
+        "who": "Sace6 ist ein amerikanisches Alternative-Metal-Duo, das aus Lead-Vocals Sace und Gitarre und Gesang von Noah Thomas besteht. Das Projekt war zunächst ein Soloprojekt von Sace und wurde 2024 zu einem Duo. Musikalisch verbindet die Band kontrastreichen melodischen Gesang und popnahe Hooks mit schwerem, gitarrengetriebenem Instrumentarium.",
+        "facts": [
+          "Zur Besetzung gehören Sace am Lead-Gesang und Noah Thomas an Gitarre und Gesang.",
+          "Musikalisch bieten sie kontrastreichen melodischen Gesang und popnahe Hooks mit schwerem, gitarrengetriebenem Instrumentarium."
+        ]
+      },
+      "tr": {
+        "kicker": "alternatif metal ikilisi · 2024'ten beri ikili",
+        "who": "Sace6, lider vokalist Sace ve gitarist-vokalist Noah Thomas'tan oluşan Amerikalı bir alternatif metal ikilisidir. Proje başlangıçta Sace'in solo projesiyken 2024'te ikiliye dönüştü. Müzikleri, kontrastlı melodik vokalleri ve pop odaklı hook'ları ağır, gitar ağırlıklı enstrümantasyonla birleştirir.",
+        "facts": [
+          "İkili, lider vokalist Sace ve gitarist-vokalist Noah Thomas'tan oluşur.",
+          "Müzikleri, kontrastlı melodik vokalleri ve pop odaklı hook'ları ağır, gitar ağırlıklı enstrümantasyonla sunar."
+        ]
+      }
+    },
+    {
+      "id": "5a66ec8b-4672-4843-9102-c5f865c7d766",
+      "slug": "drake-milligan-6704304e",
+      "title": "Drake Milligan",
+      "name": "Drake Milligan",
+      "source_url": "https://en.wikipedia.org/wiki/Drake_Milligan",
+      "extract": "Drake Milligan is an American singer, best known for portraying Elvis Presley on the CMT series Sun Records and starring in the film Nobody where he portrayed a young teen Elvis. He has also appeared on American Idol and America's Got Talent. Milligan has charted with the singles \"Sounds Like Something I'd Do\" and \"Honky Tonkin' About\", the latter of which became his first number one when it topped the Canadian country chart. His debut album, Dallas/Fort Worth, was released on September 15, 2022.",
+      "en": {
+        "kicker": "singer · debut album, 2022",
+        "who": "Drake Milligan is an American singer best known for portraying Elvis Presley on the CMT series Sun Records. He also starred in the film Nobody, where he portrayed a young teen Elvis, and has appeared on American Idol and America's Got Talent. He has charted with the singles “Sounds Like Something I'd Do” and “Honky Tonkin' About”.",
+        "facts": [
+          "His debut album, Dallas/Fort Worth, was released on September 15, 2022.",
+          "“Honky Tonkin' About” became his first number one when it topped the Canadian country chart."
+        ]
+      },
+      "de": {
+        "kicker": "sänger · debütalbum, 2022",
+        "who": "Drake Milligan ist ein amerikanischer Sänger, der vor allem durch die Darstellung von Elvis Presley in der CMT-Serie Sun Records bekannt ist. In dem Film Nobody spielte er einen jungen Teenager-Elvis. Er trat außerdem bei American Idol und America's Got Talent auf und war mit den Singles „Sounds Like Something I'd Do“ und „Honky Tonkin' About“ in den Charts.",
+        "facts": [
+          "Sein Debütalbum Dallas/Fort Worth erschien am 15. September 2022.",
+          "„Honky Tonkin' About“ wurde sein erster Nummer-eins-Hit, als es die kanadische Country-Chartliste anführte."
+        ]
+      },
+      "tr": {
+        "kicker": "şarkıcı · debut albüm, 2022",
+        "who": "Drake Milligan, en çok CMT dizisi Sun Records'ta Elvis Presley'i canlandırmasıyla tanınan Amerikalı bir şarkıcıdır. Nobody filminde genç bir Elvis'i canlandırdı ve American Idol ile America's Got Talent'te de yer aldı. “Sounds Like Something I'd Do” ve “Honky Tonkin' About” single'larıyla listelere girdi.",
+        "facts": [
+          "Debut albümü Dallas/Fort Worth, 15 Eylül 2022'de yayımlandı.",
+          "“Honky Tonkin' About”, Kanada country listesinin zirvesine çıkarak kariyerinin ilk bir numaralı şarkısı oldu."
+        ]
+      }
+    },
+    {
+      "id": "352d24d2-6e0c-4fea-b23a-f1d5092db3e6",
+      "slug": "waylon-wyatt-3c30b713",
+      "title": "Waylon Wyatt",
+      "name": "Waylon Wyatt",
+      "source_url": "https://en.wikipedia.org/wiki/Waylon_Wyatt",
+      "extract": "Waylon Wyatt Potter is an American country music singer-songwriter, musician, and producer from Hackett, Arkansas. He garnered popularity when his first song \"Everything Under the Sun\" became viral on TikTok. He is signed to Darkroom Records and has released two extended plays with the label. His debut album, Dustpiles, was released in July 2026.",
+      "en": {
+        "kicker": "country singer-songwriter · from Hackett, Arkansas",
+        "who": "Waylon Wyatt Potter is an American country music singer-songwriter, musician and producer from Hackett, Arkansas. He garnered popularity when his first song “Everything Under the Sun” became viral on TikTok. He is signed to Darkroom Records and has released two extended plays with the label.",
+        "facts": [
+          "His debut album, Dustpiles, was released in July 2026.",
+          "He garnered popularity when his first song “Everything Under the Sun” became viral on TikTok."
+        ]
+      },
+      "de": {
+        "kicker": "country-sänger und songwriter · aus Hackett, Arkansas",
+        "who": "Waylon Wyatt Potter ist ein amerikanischer Country-Sänger, Songwriter, Musiker und Produzent aus Hackett, Arkansas. Seine Bekanntheit begann, als sein erster Song „Everything Under the Sun“ auf TikTok viral ging. Er steht bei Darkroom Records unter Vertrag und hat mit dem Label zwei EPs veröffentlicht.",
+        "facts": [
+          "Sein Debütalbum Dustpiles erschien im Juli 2026.",
+          "Er wurde bekannt, als sein erster Song „Everything Under the Sun“ auf TikTok viral ging."
+        ]
+      },
+      "tr": {
+        "kicker": "country şarkıcı ve söz yazarı · Hackett, Arkansas",
+        "who": "Waylon Wyatt Potter, Arkansas'ın Hackett kentinden Amerikalı bir country müzik şarkıcısı, söz yazarı, müzisyen ve yapımcıdır. İlk şarkısı “Everything Under the Sun”ın TikTok'ta viral olmasıyla popülerlik kazandı. Darkroom Records ile sözleşmelidir ve label ile iki EP yayımlamıştır.",
+        "facts": [
+          "Debut albümü Dustpiles, Temmuz 2026'da yayımlandı.",
+          "İlk şarkısı “Everything Under the Sun” TikTok'ta viral olunca popülerlik kazandı."
+        ]
+      }
+    }
+  ]
+}

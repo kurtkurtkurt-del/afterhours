@@ -1,0 +1,38 @@
+{
+ "city": "birmingham",
+ "day": "2026-11-17",
+ "nights": [
+  {
+   "id": "2cfc7a43-9ab3-49ca-8558-0517deb954ce",
+   "slug": "electric-six-4ac838bb",
+   "title": "Electric Six",
+   "name": "Electric Six",
+   "source_url": "https://en.wikipedia.org/wiki/Electric_Six",
+   "extract": "Electric Six is an American rock band formed in Detroit in 1996. They are known for combining elements of rock, disco, garage rock, metal, new wave, and punk rock. Since achieving widespread recognition in 2003 with the singles \"Danger! High Voltage\" and \"Gay Bar\", they have released 20 studio albums, two rarities albums, one live album and one live DVD. Each band member is given a unique stage name. The line-up has undergone changes over the years: co-founder, lead vocalist, and primary songwriter Dick Valentine has been the only constant member. The current line-up consists of Valentine, lead guitarist Johnny Na$hinal, keyboardist Tait Nucleus?, rhythm guitarist Herb S. Flavourings, drumme",
+   "en": {
+    "kicker": "rock band · formed in Detroit, 1996",
+    "who": "Electric Six is an American rock band formed in Detroit in 1996. They combine elements of rock, disco, garage rock, metal, new wave and punk rock. Their work gained widespread recognition in 2003.",
+    "facts": [
+     "Electric Six has released 20 studio albums since achieving widespread recognition in 2003.",
+     "Each band member is given a unique stage name."
+    ]
+   },
+   "de": {
+    "kicker": "rockband · gegründet in Detroit, 1996",
+    "who": "Electric Six ist eine amerikanische Rockband, die 1996 in Detroit gegründet wurde. Die Band verbindet Elemente aus Rock, Disco, Garage Rock, Metal, New Wave und Punkrock. Die Band erreichte 2003 weitverbreitete Anerkennung.",
+    "facts": [
+     "Electric Six hat seit der weitverbreiteten Anerkennung im Jahr 2003 20 Studioalben veröffentlicht.",
+     "Jedes Bandmitglied erhält einen eigenen Künstlernamen."
+    ]
+   },
+   "tr": {
+    "kicker": "rock grubu · 1996, Detroit'te kuruldu",
+    "who": "Electric Six, 1996 yılında Detroit'te kurulmuş Amerikalı bir rock grubudur. Grup rock, disco, garage rock, metal, new wave ve punk rock unsurlarını bir araya getirir. 2003'te geniş çapta tanınmaya başladı.",
+    "facts": [
+     "Electric Six, 2003'te geniş çapta tanınmaya başladıktan sonra 20 stüdyo albümü yayımladı.",
+     "Grup üyelerinin her birine kendine özgü bir sahne adı verilir."
+    ]
+   }
+  }
+ ]
+}

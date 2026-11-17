@@ -1,0 +1,70 @@
+{
+ "city": "detroit",
+ "day": "2026-11-17",
+ "nights": [
+  {
+   "id": "b5d377bb-f3fe-4687-86c8-bb6360f163e3",
+   "slug": "cheap-trick-all-washed-up-tour-07fe0086",
+   "title": "Cheap Trick: All Washed Up Tour",
+   "name": "Cheap Trick",
+   "source_url": "https://en.wikipedia.org/wiki/Cheap_Trick",
+   "extract": "Cheap Trick is an American rock band formed in Rockford, Illinois, in 1973. The band's work bridged elements of 1960s guitar pop, 1970s hard rock, and the emerging punk rock sound, and helped set the template for subsequent power pop artists.",
+   "en": {
+    "kicker": "rock band · formed 1973 in Rockford, Illinois",
+    "who": "Cheap Trick is an American rock band formed in Rockford, Illinois, in 1973. The band's work bridged 1960s guitar pop, 1970s hard rock and the emerging punk rock sound. It helped set the template for later power pop artists.",
+    "facts": [
+     "Cheap Trick was formed in Rockford, Illinois, in 1973.",
+     "The band's work bridged elements of 1960s guitar pop, 1970s hard rock and the emerging punk rock sound."
+    ]
+   },
+   "de": {
+    "kicker": "rockband · gegründet 1973 in Rockford, Illinois",
+    "who": "Cheap Trick ist eine amerikanische Rockband, die 1973 in Rockford, Illinois, gegründet wurde. Die Arbeit der Band verband Elemente des Gitarren-Pops der 1960er, des Hardrock der 1970er und des aufkommenden Punkrock. Sie half, die Vorlage für spätere Power-Pop-Künstler zu schaffen.",
+    "facts": [
+     "Cheap Trick wurde 1973 in Rockford, Illinois, gegründet.",
+     "Die Musik der Band verband Elemente des Gitarren-Pops der 1960er, des Hardrock der 1970er und des aufkommenden Punkrock."
+    ]
+   },
+   "tr": {
+    "kicker": "rock grubu · 1973'te Rockford, Illinois'de kuruldu",
+    "who": "Cheap Trick, 1973 yılında Rockford, Illinois'de kurulmuş Amerikalı bir rock grubudur. Grubun işi 1960'ların gitar popu, 1970'lerin hard rock'ı ve yükselen punk rock sesi unsurlarını birleştirdi. Sonraki power pop sanatçıları için bir şablon oluşturulmasına yardımcı oldu.",
+    "facts": [
+     "Cheap Trick, 1973 yılında Rockford, Illinois'de kuruldu.",
+     "Grubun işi 1960'ların gitar popu, 1970'lerin hard rock'ı ve yükselen punk rock sesini birleştirdi."
+    ]
+   }
+  },
+  {
+   "id": "3e241834-ecaa-4d22-92c5-2c6b809bf445",
+   "slug": "black-milk-5baba128",
+   "title": "Black Milk",
+   "name": "Black Milk",
+   "source_url": "https://en.wikipedia.org/wiki/Black_Milk",
+   "extract": "Curtis Eugene Cross, better known by his stage name Black Milk, is an American rapper, songwriter, and record producer.",
+   "en": {
+    "kicker": "rapper · songwriter · record producer",
+    "who": "Curtis Eugene Cross performs under the stage name Black Milk. He is an American rapper, songwriter and record producer.",
+    "facts": [
+     "Curtis Eugene Cross is better known by his stage name, Black Milk.",
+     "Black Milk is an American rapper, songwriter and record producer."
+    ]
+   },
+   "de": {
+    "kicker": "rapper · songwriter · musikproduzent",
+    "who": "Curtis Eugene Cross ist besser unter seinem Künstlernamen Black Milk bekannt. Er ist ein amerikanischer Rapper, Songwriter und Musikproduzent.",
+    "facts": [
+     "Curtis Eugene Cross ist besser unter seinem Künstlernamen Black Milk bekannt.",
+     "Black Milk ist ein amerikanischer Rapper, Songwriter und Musikproduzent."
+    ]
+   },
+   "tr": {
+    "kicker": "rapçi · söz yazarı · plak yapımcısı",
+    "who": "Curtis Eugene Cross, sahne adı Black Milk ile daha çok tanınır. Amerikalı bir rapçi, söz yazarı ve plak yapımcısıdır.",
+    "facts": [
+     "Curtis Eugene Cross, sahne adı Black Milk ile daha iyi bilinir.",
+     "Black Milk, Amerikalı bir rapçi, söz yazarı ve plak yapımcısıdır."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,102 @@
+{
+ "city": "new-york",
+ "day": "2026-11-17",
+ "nights": [
+  {
+   "id": "f88bef47-a6aa-4352-a036-c4605c82c443",
+   "slug": "jack-blocker-big-jefe-tour-532326bc",
+   "title": "Jack Blocker: Big Jefe Tour",
+   "name": "Jack Blocker",
+   "source_url": "https://en.wikipedia.org/wiki/Jack_Blocker",
+   "extract": "Jack Forest Blocker is an American country singer-songwriter and musician from Richardson, Texas, known for his recordings, including a 2026 album on Sony Music's Thirty Tigers label, and his touring career. He came to prominence as a season 22 American Idol finalist, having been the first contestant to initially receive a majority of two \"no\" votes from the judges and subsequently reach the finals. Based in Nashville, Blocker released his debut album, The Land on Most High, in September 2025, and has his next album set for a November 2026 release on Thirty Tigers.",
+   "en": {
+    "kicker": "country singer-songwriter · Richardson, Texas",
+    "who": "Jack Blocker is an American country singer-songwriter and musician, known for his recordings and his touring career. Based in Nashville, he released his debut album, The Land on Most High, in September 2025. His next album is set for a November 2026 release on Thirty Tigers.",
+    "facts": [
+     "Jack Forest Blocker is an American country singer-songwriter and musician from Richardson, Texas.",
+     "He came to prominence as a season 22 American Idol finalist, the first contestant to initially receive a majority of two \"no\" votes from the judges and subsequently reach the finals."
+    ]
+   },
+   "de": {
+    "kicker": "country-singer-songwriter und musiker · Richardson, Texas",
+    "who": "Jack Blocker ist ein amerikanischer Country-Singer-Songwriter und Musiker, bekannt für seine Aufnahmen und seine Tourneekarriere. Mit Sitz in Nashville veröffentlichte er im September 2025 sein Debütalbum The Land on Most High. Sein nächstes Album ist für November 2026 bei Thirty Tigers angesetzt.",
+    "facts": [
+     "Jack Forest Blocker ist ein amerikanischer Country-Singer-Songwriter und Musiker aus Richardson, Texas.",
+     "Bekannt wurde er als Finalist der 22. Staffel von American Idol, als erster Kandidat, der zunächst eine Mehrheit von zwei \"Nein\"-Stimmen der Jury erhielt und dennoch das Finale erreichte."
+    ]
+   },
+   "tr": {
+    "kicker": "country şarkıcı ve söz yazarı · Richardson, Texas",
+    "who": "Jack Blocker, kayıtlarıyla ve tur kariyeriyle bilinen Amerikalı bir country şarkıcı, söz yazarı ve müzisyendir. Nashville merkezli olan Blocker, Eylül 2025'te ilk albümü The Land on Most High'ı yayımladı. Bir sonraki albümünün Kasım 2026'da Thirty Tigers etiketiyle çıkması planlanıyor.",
+    "facts": [
+     "Jack Forest Blocker, Richardson, Texas'tan Amerikalı bir country şarkıcı, söz yazarı ve müzisyendir.",
+     "Sezon 22 American Idol finalisti olarak öne çıktı; jüriden başlangıçta çoğunlukla iki \"hayır\" oyu alan ve yine de finale kalan ilk yarışmacıydı."
+    ]
+   }
+  },
+  {
+   "id": "286d3b00-fc57-45ee-93d8-af41c3bea17f",
+   "slug": "rene-lopez-0315e91c",
+   "title": "Rene Lopez",
+   "name": "Rene Lopez",
+   "source_url": "https://en.wikipedia.org/wiki/Rene_Lopez_(musician)",
+   "extract": "Rene Lopez is an American singer, songwriter and musician. He has toured and recorded extensively with Joseph Arthur, and was the lead singer of the band The Authority, who performed at Lollapalooza and opened shows for Phish, Spin Doctors, and Public Enemy. As a solo artist he has released eight albums, many receiving favorable reviews, and has performed at such venues as the Kennedy Center, Brooklyn Bowl, Rockwood Music Hall, and Nublu.",
+   "en": {
+    "kicker": "singer, songwriter and musician · eight solo albums",
+    "who": "Rene Lopez is an American singer, songwriter and musician. He has toured and recorded extensively with Joseph Arthur. As a solo artist he has released eight albums, and has performed at venues such as the Kennedy Center and Brooklyn Bowl.",
+    "facts": [
+     "He was the lead singer of the band The Authority, who performed at Lollapalooza and opened shows for Phish, Spin Doctors, and Public Enemy.",
+     "As a solo artist he has released eight albums, many receiving favorable reviews."
+    ]
+   },
+   "de": {
+    "kicker": "sänger, songwriter und musiker · acht soloalben",
+    "who": "Rene Lopez ist ein amerikanischer Sänger, Songwriter und Musiker. Er war ausgiebig auf Tour und hat viel mit Joseph Arthur aufgenommen. Als Solokünstler hat er acht Alben veröffentlicht und ist in Venues wie dem Kennedy Center und dem Brooklyn Bowl aufgetreten.",
+    "facts": [
+     "Er war Leadsänger der Band The Authority, die beim Lollapalooza auftrat und Shows für Phish, Spin Doctors und Public Enemy eröffnete.",
+     "Als Solokünstler hat er acht Alben veröffentlicht, von denen viele positive Kritiken erhielten."
+    ]
+   },
+   "tr": {
+    "kicker": "şarkıcı, söz yazarı ve müzisyen · sekiz solo albüm",
+    "who": "Rene Lopez, Amerikalı bir şarkıcı, söz yazarı ve müzisyendir. Joseph Arthur ile yoğun biçimde tur yaptı ve kayıt yaptı. Solo sanatçı olarak sekiz albüm yayımladı ve Kennedy Center ile Brooklyn Bowl gibi mekanlarda sahne aldı.",
+    "facts": [
+     "Grubun baş vokalistiydi; The Authority, Lollapalooza'da sahne aldı ve Phish, Spin Doctors ve Public Enemy için açılış yaptı.",
+     "Solo sanatçı olarak, birçoğu olumlu eleştiriler alan sekiz albüm yayımladı."
+    ]
+   }
+  },
+  {
+   "id": "bbe58605-1995-4edf-a341-3cfe6b1bc1dc",
+   "slug": "mamas-gun-be887d8a",
+   "title": "Mamas Gun",
+   "name": "Mamas Gun",
+   "source_url": "https://en.wikipedia.org/wiki/Mamas_Gun",
+   "extract": "Mamas Gun is a British contemporary soul band. They found early international success with a radio-friendly soul pop sound. They made 5 full-length albums with evolving personnel, reaching a sound rooted in classic soul with alternative/progressive leanings. Golden Days (2018) marked a major turning point, the band having recorded and produced it themselves.",
+   "en": {
+    "kicker": "contemporary soul band · 5 full-length albums",
+    "who": "Mamas Gun is a British contemporary soul band. They found early international success with a radio-friendly soul pop sound. Over five full-length albums with evolving personnel, their sound came to rest in classic soul with alternative and progressive leanings.",
+    "facts": [
+     "They found early international success with a radio-friendly soul pop sound.",
+     "Golden Days (2018) marked a major turning point, the band having recorded and produced it themselves."
+    ]
+   },
+   "de": {
+    "kicker": "britische contemporary-soul-band · 5 alben",
+    "who": "Mamas Gun ist eine britische Contemporary-Soul-Band. Früh fand sie internationalen Erfolg mit einem radiotauglichen Soul-Pop-Sound. In fünf Alben mit wechselnder Besetzung fand ihr Klang zu einem klassischen Soul mit alternativen und progressiven Einflüssen.",
+    "facts": [
+     "Früh fand die Band internationalen Erfolg mit einem radiotauglichen Soul-Pop-Sound.",
+     "Golden Days (2018) markierte einen großen Wendepunkt, da die Band das Album selbst aufgenommen und produziert hatte."
+    ]
+   },
+   "tr": {
+    "kicker": "İngiliz çağdaş soul grubu · 5 uzun çalar albüm",
+    "who": "Mamas Gun, İngiliz bir çağdaş soul grubudur. Erken dönemde, radyo dostu bir soul pop sesiyle uluslararası başarı yakaladı. Değişen kadrosuyla 5 uzun çalar albüm yayımlayan grubun sesi, alternatif ve progresif eğilimlerle birlikte klasik soula dayandı.",
+    "facts": [
+     "Grup, erken dönemde radyo dostu bir soul pop sesiyle uluslararası başarı buldu.",
+     "Golden Days (2018), grubun albümü kendisinin kaydedip üretmesiyle büyük bir dönüm noktası oldu."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,38 @@
+{
+ "city": "boston",
+ "day": "2026-11-17",
+ "nights": [
+  {
+   "id": "bb4e608a-be49-4377-b394-15c2cd853c27",
+   "slug": "bonobo-distance-in-static-live-north-american-to-75048b65",
+   "title": "Bonobo - Distance In Static Live North American Tour",
+   "name": "Bonobo",
+   "source_url": "https://en.wikipedia.org/wiki/Bonobo_(musician)",
+   "extract": "Simon Charles Green, known by his stage name Bonobo, is an English musician, producer, and DJ based in Los Angeles. He debuted with a trip hop aesthetic and has since explored more upbeat approaches as well as jazz and world music influences. His electronic sound incorporates the use of organic instrumentation and is recreated by a full band in live performances.",
+   "en": {
+    "kicker": "English musician, producer, DJ · Los Angeles",
+    "who": "Bonobo is the stage name of Simon Charles Green, an English musician, producer, and DJ based in Los Angeles. He debuted with a trip hop aesthetic and has since explored more upbeat approaches as well as jazz and world music influences. His electronic sound incorporates organic instrumentation and is recreated by a full band in live performances.",
+    "facts": [
+     "Simon Charles Green, known by his stage name Bonobo, is an English musician, producer, and DJ based in Los Angeles.",
+     "His electronic sound incorporates the use of organic instrumentation and is recreated by a full band in live performances."
+    ]
+   },
+   "de": {
+    "kicker": "englischer musiker, produzent und DJ · Los Angeles",
+    "who": "Bonobo ist das Künstlerpseudonym von Simon Charles Green, einem englischen Musiker, Produzenten und DJ, der in Los Angeles ansässig ist. Er debütierte mit einer Trip-Hop-Ästhetik und hat seitdem lebhaftere Ansätze sowie Einflüsse aus Jazz und Weltmusik erkundet. Sein elektronischer Sound greift auf organische Instrumentierung zurück und wird bei Live-Auftritten von einer vollständigen Band nachgebildet.",
+    "facts": [
+     "Simon Charles Green, bekannt unter dem Künstlernamen Bonobo, ist ein englischer Musiker, Produzent und DJ mit Sitz in Los Angeles.",
+     "Sein elektronischer Sound nutzt organische Instrumentierung und wird bei Live-Auftritten von einer vollständigen Band nachgebildet."
+    ]
+   },
+   "tr": {
+    "kicker": "İngiliz müzisyen, yapımcı ve DJ · Los Angeles",
+    "who": "Bonobo, Los Angeles merkezli İngiliz müzisyen, yapımcı ve DJ Simon Charles Green'in sahne adıdır. Trip hop estetiğiyle çıkış yaptı ve o zamandan beri jazz ile dünya müziği etkilerini barındıran daha neşeli yaklaşımlar denedi. Elektronik sesi organik enstrümantasyon kullanır ve canlı performanslarda tam bir grup tarafından yeniden çalınır.",
+    "facts": [
+     "Simon Charles Green, sahne adı Bonobo olan, Los Angeles merkezli bir İngiliz müzisyen, yapımcı ve DJ'dir.",
+     "Elektronik sesi organik enstrümantasyon kullanır ve canlı performanslarda tam bir grup tarafından yeniden çalınır."
+    ]
+   }
+  }
+ ]
+}

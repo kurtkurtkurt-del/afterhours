@@ -1,0 +1,134 @@
+{
+  "city": "philadelphia",
+  "day": "2026-11-17",
+  "nights": [
+    {
+      "id": "0df606ec-f2c6-467c-bbad-a44b09def68b",
+      "slug": "julia-jacklin-05232fe9",
+      "title": "Julia Jacklin",
+      "name": "Julia Jacklin",
+      "source_url": "https://en.wikipedia.org/wiki/Julia_Jacklin",
+      "extract": "Julia Jacklin is an Australian singer-songwriter from the Blue Mountains region of New South Wales. Jacklin's musical style has been described as indie pop, indie folk, and alternative country. She has released four studio albums, Don't Let the Kids Win (2016), Crushing (2019), Pre Pleasure (2022) and The Gem (2026). Jacklin has also performed with the band Phantastic Ferniture, with whom she released the debut single \"Fuckin 'n' Rollin\" and a self-titled album in 2018, followed by subsequent singles.",
+      "en": {
+        "kicker": "singer-songwriter · Blue Mountains, New South Wales",
+        "who": "Julia Jacklin is an Australian singer-songwriter from the Blue Mountains region of New South Wales. She has released four studio albums, Don't Let the Kids Win (2016), Crushing (2019), Pre Pleasure (2022) and The Gem (2026).",
+        "facts": [
+          "Jacklin's musical style has been described as indie pop, indie folk, and alternative country.",
+          "Jacklin has also performed with the band Phantastic Ferniture."
+        ]
+      },
+      "de": {
+        "kicker": "singer-songwriter · Blue Mountains, New South Wales",
+        "who": "Julia Jacklin ist eine australische Singer-Songwriterin aus der Region Blue Mountains in New South Wales. Sie hat vier Studioalben veröffentlicht: Don't Let the Kids Win (2016), Crushing (2019), Pre Pleasure (2022) und The Gem (2026).",
+        "facts": [
+          "Ihr musikalischer Stil wird als Indie-Pop, Indie-Folk und Alternative Country beschrieben.",
+          "Jacklin ist außerdem mit der Band Phantastic Ferniture aufgetreten."
+        ]
+      },
+      "tr": {
+        "kicker": "şarkıcı-söz yazarı · Blue Mountains, New South Wales",
+        "who": "Julia Jacklin, New South Wales'in Blue Mountains bölgesinden gelen Avustralyalı bir şarkıcı-söz yazarıdır. Don't Let the Kids Win (2016), Crushing (2019), Pre Pleasure (2022) ve The Gem (2026) adlı dört stüdyo albümü yayımlamıştır.",
+        "facts": [
+          "Müzik tarzı indie pop, indie folk ve alternatif country olarak tanımlanmıştır.",
+          "Jacklin ayrıca Phantastic Ferniture grubuyla sahne almıştır."
+        ]
+      }
+    },
+    {
+      "id": "e7e55918-6e12-4b27-a925-adb20fdd9709",
+      "slug": "zack-fox-fb1ca920",
+      "title": "Zack Fox",
+      "name": "Zack Fox",
+      "source_url": "https://en.wikipedia.org/wiki/Zack_Fox",
+      "extract": "Zachary Channing Fox is an American stand-up comedian, rapper, actor, DJ, and internet personality from Atlanta, Georgia. He has collaborated with Kenny Beats, Flying Lotus, Thundercat, Doechii, and Bnyx. He describes his genre of art as \"Shemar-Core,\" a term that likely references actor Shemar Moore, who serves as an artistic muse for Fox.",
+      "en": {
+        "kicker": "comedian, rapper and actor · Atlanta, Georgia",
+        "who": "Zack Fox is an American stand-up comedian, rapper, actor, DJ, and internet personality from Atlanta, Georgia. He describes his genre of art as \"Shemar-Core.\"",
+        "facts": [
+          "He has collaborated with Kenny Beats, Flying Lotus, Thundercat, Doechii, and Bnyx.",
+          "Actor Shemar Moore serves as an artistic muse for Fox."
+        ]
+      },
+      "de": {
+        "kicker": "comedian, rapper und schauspieler · Atlanta, Georgia",
+        "who": "Zack Fox ist ein amerikanischer Stand-up-Comedian, Rapper, Schauspieler, DJ und Internet-Persönlichkeit aus Atlanta, Georgia. Er beschreibt seine Kunstrichtung als „Shemar-Core“.",
+        "facts": [
+          "Er hat mit Kenny Beats, Flying Lotus, Thundercat, Doechii und Bnyx zusammengearbeitet.",
+          "Der Schauspieler Shemar Moore dient Fox als künstlerische Muse."
+        ]
+      },
+      "tr": {
+        "kicker": "komedyen, rapçi ve oyuncu · Atlanta, Georgia",
+        "who": "Zack Fox, Atlanta, Georgia'dan Amerikalı bir stand-up komedyen, rapçi, oyuncu, DJ ve internet kişiliğidir. Sanat türünü „Shemar-Core“ olarak tanımlar.",
+        "facts": [
+          "Kenny Beats, Flying Lotus, Thundercat, Doechii ve Bnyx ile iş birliği yapmıştır.",
+          "Oyuncu Shemar Moore, Fox için sanatsal bir ilham kaynağı olarak görev yapmaktadır."
+        ]
+      }
+    },
+    {
+      "id": "53d27bb6-5ee9-4d46-aa85-200e51ecae50",
+      "slug": "pouya-the-foreverglades-tour-a3b48bd7",
+      "title": "Pouya - The Foreverglades Tour",
+      "name": "Pouya",
+      "source_url": "https://en.wikipedia.org/wiki/Pouya",
+      "extract": "Kevin Pouya, known mononymously as Pouya, is an American rapper. Considered as a pioneer of the underground rap scene that began on SoundCloud in 2012, along with discovering the well known hip-hop duo Suicideboys in their early career, Pouya has developed a long-lasting core fanbase as an independent artist.",
+      "en": {
+        "kicker": "rapper · underground SoundCloud scene, 2012",
+        "who": "Kevin Pouya, known mononymously as Pouya, is an American rapper. He is considered a pioneer of the underground rap scene that began on SoundCloud in 2012.",
+        "facts": [
+          "He discovered the well known hip-hop duo Suicideboys in their early career.",
+          "Pouya has developed a long-lasting core fanbase as an independent artist."
+        ]
+      },
+      "de": {
+        "kicker": "rapper · underground-szene auf SoundCloud, 2012",
+        "who": "Kevin Pouya, bekannt als Pouya, ist ein amerikanischer Rapper. Er gilt als Pionier der Underground-Rap-Szene, die 2012 auf SoundCloud begann.",
+        "facts": [
+          "Er hat das bekannte Hip-Hop-Duo Suicideboys in dessen früher Karriere entdeckt.",
+          "Pouya hat als unabhängiger Künstler eine langlebige Stammfanbasis aufgebaut."
+        ]
+      },
+      "tr": {
+        "kicker": "rapçi · SoundCloud'da underground sahne, 2012",
+        "who": "Kevin Pouya, Pouya adıyla tanınan Amerikalı bir rapçidir. SoundCloud'da 2012 yılında başlayan underground rap sahnesinin öncülerinden biri kabul edilir.",
+        "facts": [
+          "Erken kariyerinde ünlü hip-hop ikilisi Suicideboys'u keşfetmiştir.",
+          "Bağımsız bir sanatçı olarak uzun süreli bir çekirdek hayran kitlesi oluşturmuştur."
+        ]
+      }
+    },
+    {
+      "id": "47cdc9a7-b4be-4964-a47c-519e98b31aea",
+      "slug": "the-oak-ridge-boys-77feb60d",
+      "title": "The Oak Ridge Boys",
+      "name": "The Oak Ridge Boys",
+      "source_url": "https://en.wikipedia.org/wiki/The_Oak_Ridge_Boys",
+      "extract": "The Oak Ridge Boys are an American vocal quartet. The group consists of Duane Allen (lead), William Lee Golden (baritone) and Ben James, who replaced Joe Bonsall as tenor in December 2023. Allen, Bonsall, Golden, and Richard Sterban comprised the group's longest-lasting lineup, from 1973 until 2023, except for the period between 1987 and 1995 when Golden was replaced by Steve Sanders.",
+      "en": {
+        "kicker": "vocal quartet · longest lineup, 1973 to 2023",
+        "who": "The Oak Ridge Boys are an American vocal quartet. The group consists of Duane Allen (lead), William Lee Golden (baritone) and Ben James.",
+        "facts": [
+          "Ben James replaced Joe Bonsall as tenor in December 2023.",
+          "Allen, Bonsall, Golden, and Richard Sterban comprised the group's longest-lasting lineup, from 1973 until 2023."
+        ]
+      },
+      "de": {
+        "kicker": "vokalquartett · längste besetzung, 1973 bis 2023",
+        "who": "The Oak Ridge Boys sind ein amerikanisches Vokalquartett. Zur Gruppe gehören Duane Allen (Lead), William Lee Golden (Bariton) und Ben James.",
+        "facts": [
+          "Ben James ersetzte Joe Bonsall im Dezember 2023 als Tenor.",
+          "Allen, Bonsall, Golden und Richard Sterban bildeten die langlebigste Besetzung der Gruppe von 1973 bis 2023."
+        ]
+      },
+      "tr": {
+        "kicker": "vokal dörtlü · en uzun kadro, 1973-2023",
+        "who": "The Oak Ridge Boys Amerikalı bir vokal dörtlüsüdür. Grubu Duane Allen (lead), William Lee Golden (bariton) ve Ben James oluşturmaktadır.",
+        "facts": [
+          "Ben James, Aralık 2023'te Joe Bonsall'ın tenor olarak yerini almıştır.",
+          "Allen, Bonsall, Golden ve Richard Sterban, 1973'ten 2023'e kadar süren grubun en uzun ömürlü kadrosunu oluşturmuştur."
+        ]
+      }
+    }
+  ]
+}
