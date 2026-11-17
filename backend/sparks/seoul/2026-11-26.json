@@ -1,0 +1,14 @@
+{
+  "city": "seoul",
+  "day": "2026-11-26",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "seoul design festival at coex, thursday.", "de": "seoul design festival im coex, donnerstag.", "tr": "coex'te seoul tasarım festivali, perşembe." },
+      "line": { "en": "the seoul design festival runs 26 to 29 nov at coex, designers and makers under one roof. thursday is the first day, a good start before the weekend.", "de": "das seoul design festival läuft vom 26. bis 29. november im coex, designer und macher unter einem dach. donnerstag ist der erste tag, ein guter start vor dem wochenende.", "tr": "seoul tasarım festivali 26 ile 29 kasım arasında coex'te, tasarımcılar ve üreticiler tek çatı altında. perşembe ilk gün, hafta sonundan önce iyi bir başlangıç." },
+      "place": { "en": "coex", "de": "coex", "tr": "coex" },
+      "hour": 13, "minute": 0,
+      "why": "Seoul design festival at coex, 26–29 nov 2026 (official COEX listing, 10:30–18:30 on 26–28 nov; 13:00 is inside those hours)."
+    }
+  ]
+}

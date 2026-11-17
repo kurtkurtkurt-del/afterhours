@@ -1,0 +1,14 @@
+{
+  "city": "seoul",
+  "day": "2026-11-21",
+  "sparks": [
+    {
+      "kind": "flea",
+      "title": { "en": "namdaemun night food and flea market, saturday.", "de": "namdaemun bei nacht: essen und flohmarkt am samstag.", "tr": "cumartesi namdaemun'da gece yemek ve bit pazarı." },
+      "line": { "en": "the moonlight food fair runs 14 to 21 nov, 18:00 to 21:00, in the namdaemun market arcade with a flea market alongside. this is the last weekend: walk the arcade first, then eat.", "de": "die mondlicht-food-messe läuft vom 14. bis 21. november, 18:00 bis 21:00, in der arkade des namdaemun-marktes, mit flohmarkt daneben. das ist das letzte wochenende: erst die arkade ablaufen, dann essen.", "tr": "ay ışığı yemek fuarı 14 ile 21 kasım arasında, 18:00 ile 21:00 arasında namdaemun pazarı arkadında yanında bit pazarıyla açık. bu son hafta sonu: önce arkadı gez, sonra ye." },
+      "place": { "en": "namdaemun market", "de": "namdaemun market", "tr": "namdaemun market" },
+      "hour": 18, "minute": 0,
+      "why": "Seoul moonlight food fair at namdaemun market, 14–21 nov, daily 18:00–21:00 with a flea market (Seoul City mediahub, search snippet; page not opened)."
+    }
+  ]
+}
