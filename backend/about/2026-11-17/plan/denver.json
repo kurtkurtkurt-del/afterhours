@@ -1,0 +1,26 @@
+{
+ "city": "denver",
+ "day": "2026-11-17",
+ "nights": [
+  {
+   "id": "786da775-2278-44e1-8a7d-4d89b7e97136",
+   "slug": "audien-123389bb",
+   "title": "Audien",
+   "act": "Audien",
+   "name": "Audien",
+   "description": "American DJ and producer",
+   "source_url": "https://en.wikipedia.org/wiki/Audien",
+   "extract": "Nathaniel \"Nate\" Rathbun, better known under his stage name Audien, is an American DJ and electronic music producer. Audien has released many singles and remixes for electronic record labels including Enhanced, Perceptive, Armada, Black Hole, and Nervous. His tracks have appeared on Corsten's Countdown, Tiësto's Club Life, Above & Beyond's Trance Around The World, and Armin van Buuren's A State of Trance compilations."
+  },
+  {
+   "id": "ee9601cd-8a7f-400d-8e59-728a9e3552e4",
+   "slug": "mauro-picotto-706d1e2e",
+   "title": "Mauro Picotto",
+   "act": "Mauro Picotto",
+   "name": "Mauro Picotto",
+   "description": "Italian DJ and remixer (born 1966)",
+   "source_url": "https://en.wikipedia.org/wiki/Mauro_Picotto",
+   "extract": "Mauro Picotto is an Italian electronic music producer and DJ, and previously a member of the Italian Euro house group \"R.A.F.\". He became well known as a solo artist with songs including \"Komodo \", \"Pulsar\", \"Iguana\", and \"Lizard\". He has collaborated with other electronica/trance musicians such as Tiësto and Mario Più."
+  }
+ ]
+}

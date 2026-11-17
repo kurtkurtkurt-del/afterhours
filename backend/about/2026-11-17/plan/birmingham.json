@@ -1,0 +1,26 @@
+{
+ "city": "birmingham",
+ "day": "2026-11-17",
+ "nights": [
+  {
+   "id": "d88e851b-25f1-4a0e-aa9d-6547a44796ca",
+   "slug": "the-rifles-646e4243",
+   "title": "The Rifles",
+   "act": "The Rifles",
+   "name": "The Rifles",
+   "description": "English indie rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Rifles_(band)",
+   "extract": "The Rifles are an English indie rock band from Chingford, London."
+  },
+  {
+   "id": "2cfc7a43-9ab3-49ca-8558-0517deb954ce",
+   "slug": "electric-six-4ac838bb",
+   "title": "Electric Six",
+   "act": "Electric Six",
+   "name": "Electric Six",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Electric_Six",
+   "extract": "Electric Six is an American rock band formed in Detroit in 1996. They are known for combining elements of rock, disco, garage rock, metal, new wave, and punk rock. Since achieving widespread recognition in 2003 with the singles \"Danger! High Voltage\" and \"Gay Bar\", they have released 20 studio albums, two rarities albums, one live album and one live DVD. Each band member is given a unique stage name. The line-up has undergone changes over the years: co-founder, lead vocalist, and primary songwriter Dick Valentine has been the only constant member. The current line-up consists of Valentine, lead guitarist Johnny Na$hinal, keyboardist Tait Nucleus?, rhythm guitarist Herb S. Flavourings, drummer Dr. Jay and bassist Mr. Poison."
+  }
+ ]
+}

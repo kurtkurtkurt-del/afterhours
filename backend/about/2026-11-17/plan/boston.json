@@ -1,0 +1,36 @@
+{
+ "city": "boston",
+ "day": "2026-11-17",
+ "nights": [
+  {
+   "id": "ab30adaa-c953-4de5-a756-138d66d1c714",
+   "slug": "yung-gravy-the-joyrider-tour-bde45503",
+   "title": "Yung Gravy: The Joyrider Tour",
+   "act": "Yung Gravy",
+   "name": "Yung Gravy",
+   "description": "American rapper (born 1996)",
+   "source_url": "https://en.wikipedia.org/wiki/Yung_Gravy",
+   "extract": "Matthew Raymond Hauri, better known by his stage name Yung Gravy, is an American rapper."
+  },
+  {
+   "id": "eed62331-ae5f-417a-994c-1027949c78e4",
+   "slug": "chris-botti-fa8a1de2",
+   "title": "Chris Botti",
+   "act": "Chris Botti",
+   "name": "Chris Botti",
+   "description": "American trumpeter and composer (born 1962)",
+   "source_url": "https://en.wikipedia.org/wiki/Chris_Botti",
+   "extract": "Christopher Stephen Botti is an American trumpeter and composer."
+  },
+  {
+   "id": "bb4e608a-be49-4377-b394-15c2cd853c27",
+   "slug": "bonobo-distance-in-static-live-north-american-to-75048b65",
+   "title": "Bonobo - Distance In Static Live North American Tour",
+   "act": "Bonobo",
+   "name": "Bonobo",
+   "description": "English musician, producer, and DJ (born 1976)",
+   "source_url": "https://en.wikipedia.org/wiki/Bonobo_(musician)",
+   "extract": "Simon Charles Green, known by his stage name Bonobo, is an English musician, producer, and DJ based in Los Angeles. He debuted with a trip hop aesthetic and has since explored more upbeat approaches as well as jazz and world music influences. His electronic sound incorporates the use of organic instrumentation and is recreated by a full band in live performances."
+  }
+ ]
+}

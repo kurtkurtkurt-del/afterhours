@@ -1,0 +1,16 @@
+{
+ "city": "ciudad-de-mexico",
+ "day": "2026-11-17",
+ "nights": [
+  {
+   "id": "1da4932d-f1ba-48bb-bf53-7c0e1fc8e9e2",
+   "slug": "los-angeles-azules-3f4ac7f4",
+   "title": "Los Angeles Azules",
+   "act": "Los Angeles Azules",
+   "name": "Los Ángeles Azules",
+   "description": "Mexican musical group",
+   "source_url": "https://en.wikipedia.org/wiki/Los_%C3%81ngeles_Azules",
+   "extract": "Los Ángeles Azules are a Mexican musical group that plays the Mexican Cumbia genre, which is the style of cumbia adopted in various Mexican regions."
+  }
+ ]
+}

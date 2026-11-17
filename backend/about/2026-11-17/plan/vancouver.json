@@ -1,0 +1,26 @@
+{
+ "city": "vancouver",
+ "day": "2026-11-17",
+ "nights": [
+  {
+   "id": "6ee38e46-18d0-4acf-a2af-6988470ceced",
+   "slug": "amtrac-7901ba1e",
+   "title": "Amtrac",
+   "act": "Amtrac",
+   "name": "Amtrac",
+   "description": "American DJ and electronic music producer (born 1987)",
+   "source_url": "https://en.wikipedia.org/wiki/Amtrac_(musician)",
+   "extract": "Caleb Cornett, known professionally as Amtrac, is an American DJ, electronic music producer, singer, multi-instrumentalist, and songwriter."
+  },
+  {
+   "id": "5acc1472-2fb0-4908-a242-97b35d01fe8f",
+   "slug": "olivia-rodrigo-the-unraveled-tour-6cce8f4a",
+   "title": "Olivia Rodrigo: The Unraveled Tour",
+   "act": "Olivia Rodrigo",
+   "name": "Olivia Rodrigo",
+   "description": "American singer-songwriter and actress (born 2003)",
+   "source_url": "https://en.wikipedia.org/wiki/Olivia_Rodrigo",
+   "extract": "Olivia Isabel Rodrigo is an American singer-songwriter and actress. Rodrigo began her career as a child actress, appearing in commercials and the direct-to-video film An American Girl: Grace Stirs Up Success (2015). She rose to prominence with her leading roles in the Disney Channel series Bizaardvark (2016–2019) and the Disney+ series High School Musical: The Musical: The Series (2019–2022)."
+  }
+ ]
+}

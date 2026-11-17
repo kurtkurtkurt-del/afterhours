@@ -1,0 +1,16 @@
+{
+ "city": "warszawa",
+ "day": "2026-11-17",
+ "nights": [
+  {
+   "id": "ff21c34b-7295-42c2-a86e-a10a07841baa",
+   "slug": "myslovitz-2fccc82b",
+   "title": "Myslovitz",
+   "act": "Myslovitz",
+   "name": "Myslovitz",
+   "description": "Polish rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Myslovitz",
+   "extract": "Myslovitz is a Polish rock band. The band take their name from their industrial hometown of Mysłowice in the Upper Silesia region of southern Poland."
+  }
+ ]
+}

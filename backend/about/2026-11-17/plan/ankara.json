@@ -1,0 +1,26 @@
+{
+ "city": "ankara",
+ "day": "2026-11-17",
+ "nights": [
+  {
+   "id": "51242d6c-6d52-4ffd-8680-c5936cc8338e",
+   "slug": "karsu-4dec0804",
+   "title": "Karsu",
+   "act": "Karsu",
+   "name": "Karsu",
+   "description": "Dutch singer (born 1990)",
+   "source_url": "https://en.wikipedia.org/wiki/Karsu",
+   "extract": "Karsu Dönmez, known mononymously as Karsu, is a Turkish-Dutch singer, pianist and composer. While her music style is a blend of various genres, jazz pop is probably the best description for it. She has songs in Dutch, English, and Turkish."
+  },
+  {
+   "id": "2627b668-c0c3-4b34-a54a-07767c8a625b",
+   "slug": "ogun-sanl-soy-f6e4c780",
+   "title": "Ogün Sanlısoy",
+   "act": "Ogün Sanlısoy",
+   "name": "Ogün Sanlısoy",
+   "description": "Turkish musician (born 1971)",
+   "source_url": "https://en.wikipedia.org/wiki/Og%C3%BCn_Sanl%C4%B1soy",
+   "extract": "Ogün Sanlısoy is a Turkish musician, vocalist and guitarist for thrash metal band Mezarkabul."
+  }
+ ]
+}

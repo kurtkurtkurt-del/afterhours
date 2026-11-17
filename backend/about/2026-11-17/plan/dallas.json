@@ -1,0 +1,16 @@
+{
+ "city": "dallas",
+ "day": "2026-11-17",
+ "nights": [
+  {
+   "id": "4540abfb-0d5e-4154-bed5-e1dfef25f60c",
+   "slug": "new-constellations-4375dc2c",
+   "title": "New Constellations",
+   "act": "New Constellations",
+   "name": "New Constellations",
+   "description": "American dream pop band",
+   "source_url": "https://en.wikipedia.org/wiki/New_Constellations",
+   "extract": "New Constellations is an American dream pop and synthwave duo based out of Portland, Oregon."
+  }
+ ]
+}

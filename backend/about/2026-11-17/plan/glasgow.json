@@ -1,0 +1,56 @@
+{
+ "city": "glasgow",
+ "day": "2026-11-17",
+ "nights": [
+  {
+   "id": "74c522c5-1a49-467a-8980-70cf38bf2314",
+   "slug": "sace6-02e3e85d",
+   "title": "sace6",
+   "act": "sace6",
+   "name": "Sace6",
+   "description": "American alternative metal duo",
+   "source_url": "https://en.wikipedia.org/wiki/Sace6",
+   "extract": "Sace6 is an American alternative metal duo consisting of lead vocalist Sace and guitarist-vocalist Noah Thomas. Originally the solo project of Sace, the project developed into a duo in 2024. Sonically, their music offers contrasting melodic vocals and pop-oriented hooks with heavy guitar-driven instrumentation."
+  },
+  {
+   "id": "f2c1d8a5-0098-4973-a58b-da1d1e5a6921",
+   "slug": "nia-archives-921fd4f7",
+   "title": "Nia Archives",
+   "act": "Nia Archives",
+   "name": "Nia Archives",
+   "description": "English record producer, DJ and songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Nia_Archives",
+   "extract": "Dehaney Nia Lishahn Hunt, known professionally as Nia Archives, is an English record producer, DJ, singer and songwriter. Born in Bradford in West Yorkshire, she moved to Leeds aged seven, out of the family home aged sixteen, and then to Greater Manchester, during which time she was inspired by jungle documentaries and the women within them."
+  },
+  {
+   "id": "5a66ec8b-4672-4843-9102-c5f865c7d766",
+   "slug": "drake-milligan-6704304e",
+   "title": "Drake Milligan",
+   "act": "Drake Milligan",
+   "name": "Drake Milligan",
+   "description": "American singer (born 1998)",
+   "source_url": "https://en.wikipedia.org/wiki/Drake_Milligan",
+   "extract": "Drake Milligan is an American singer, best known for portraying Elvis Presley on the CMT series Sun Records and starring in the film Nobody where he portrayed a young teen Elvis. He has also appeared on American Idol and America's Got Talent. Milligan has charted with the singles \"Sounds Like Something I'd Do\" and \"Honky Tonkin' About\", the latter of which became his first number one when it topped the Canadian country chart. His debut album, Dallas/Fort Worth, was released on September 15, 2022."
+  },
+  {
+   "id": "c2bac131-981e-450b-8d6d-98116a340be8",
+   "slug": "dylan-leblanc-5544267d",
+   "title": "Dylan LeBlanc",
+   "act": "Dylan LeBlanc",
+   "name": "Dylan LeBlanc",
+   "description": "American singer-songwriter (born 1990)",
+   "source_url": "https://en.wikipedia.org/wiki/Dylan_LeBlanc",
+   "extract": "Dylan LeBlanc is an American singer-songwriter and guitarist. He has released five studio albums."
+  },
+  {
+   "id": "352d24d2-6e0c-4fea-b23a-f1d5092db3e6",
+   "slug": "waylon-wyatt-3c30b713",
+   "title": "Waylon Wyatt",
+   "act": "Waylon Wyatt",
+   "name": "Waylon Wyatt",
+   "description": "American country music singer",
+   "source_url": "https://en.wikipedia.org/wiki/Waylon_Wyatt",
+   "extract": "Waylon Wyatt Potter is an American country music singer-songwriter, musician, and producer from Hackett, Arkansas. He garnered popularity when his first song \"Everything Under the Sun\" became viral on TikTok. He is signed to Darkroom Records and has released two extended plays with the label. His debut album, Dustpiles, was released in July 2026."
+  }
+ ]
+}

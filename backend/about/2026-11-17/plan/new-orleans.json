@@ -1,0 +1,26 @@
+{
+ "city": "new-orleans",
+ "day": "2026-11-17",
+ "nights": [
+  {
+   "id": "017710fc-6551-48bc-9a16-f7260b682a98",
+   "slug": "pj-morton-annual-black-friday-show-dce3a130",
+   "title": "PJ Morton: Annual Black Friday Show",
+   "act": "PJ Morton",
+   "name": "PJ Morton",
+   "description": "American musician (born 1981)",
+   "source_url": "https://en.wikipedia.org/wiki/PJ_Morton",
+   "extract": "Paul Sylvester \"P.J.\" Morton Jr. is an American musician, singer, songwriter and record producer. In 2010, he joined pop rock band Maroon 5, as a touring member and became an official member after Jesse Carmichael went on a brief hiatus in 2012. During this period, Morton signed with Young Money to release his debut major-label studio album, New Orleans (2013), and later self-released Gumbo, which earned him two Grammy Award nominations for Best R&B Album and Best R&B Song at the 60th Annual Grammy Awards. Since then he has received six Grammy Awards."
+  },
+  {
+   "id": "f7a026dc-ee2c-48f7-aff4-a2396be8e5c7",
+   "slug": "kristin-diable-e1fa8905",
+   "title": "Kristin Diable",
+   "act": "Kristin Diable",
+   "name": "Kristin Diable",
+   "description": "American songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Kristin_Diable",
+   "extract": "Kristin Diable is an American musician, songwriter, and singer from New Orleans, Louisiana."
+  }
+ ]
+}

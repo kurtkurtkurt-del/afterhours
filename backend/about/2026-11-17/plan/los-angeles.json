@@ -1,0 +1,66 @@
+{
+ "city": "los-angeles",
+ "day": "2026-11-17",
+ "nights": [
+  {
+   "id": "1f50d765-e680-4f69-8131-59ecf88de054",
+   "slug": "boynextdoor-2b5dbe1c",
+   "title": "BOYNEXTDOOR",
+   "act": "BOYNEXTDOOR",
+   "name": "BoyNextDoor",
+   "description": "South Korean boy band",
+   "source_url": "https://en.wikipedia.org/wiki/BoyNextDoor",
+   "extract": "BoyNextDoor is a South Korean boy band formed by KOZ Entertainment in 2023. The group consists of six members: Sungho, Riwoo, Myung Jaehyun, Taesan, Leehan, and Woonhak. Characterized by its eponymous \"boy next door\" image, the group defines their work as easy listening with themes drawn from daily life."
+  },
+  {
+   "id": "99713450-6e83-4a8f-84d7-c4a1f41c55bd",
+   "slug": "chazz-palminteri-a-bronx-tale-5-and-over-651b480e",
+   "title": "Chazz Palminteri: A Bronx Tale (5 and Over)",
+   "act": "Chazz Palminteri",
+   "name": "Chazz Palminteri",
+   "description": "American actor, producer, screenwriter, and playwright (born 1952)",
+   "source_url": "https://en.wikipedia.org/wiki/Chazz_Palminteri",
+   "extract": "Calogero Lorenzo \"Chazz\" Palminteri is an American actor, producer, screenwriter, and playwright. He is best known for his film roles in A Bronx Tale (1993), based on his play of the same name, along with Bullets Over Broadway (1994) for which he was nominated for an Academy Award for Best Supporting Actor, and \nThe Usual Suspects (1995).\nHis recent work includes his recurring role as Shorty in Modern Family (2010–2019)."
+  },
+  {
+   "id": "48ca15ad-fdd3-42d7-92e4-ca9d5d60dd9a",
+   "slug": "boston-manor-0ab82665",
+   "title": "Boston Manor",
+   "act": "Boston Manor",
+   "name": "Boston Manor",
+   "description": "British rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Boston_Manor_(band)",
+   "extract": "Boston Manor are a British rock band formed in Blackpool, Lancashire, England, in March 2013. They released a first EP, Here/Now, through Never Mend Records on Bandcamp, and in 2014 they signed with Failure By Design Records for their second EP, Driftwood. In 2015 the band signed with Pure Noise Records: with them, they released another EP, Saudade, as well as their full-length albums Be Nothing (2016), Welcome to the Neighbourhood (2018) and Glue (2020). The band's sound blends emo with heavier influences, reminiscent of '90s grunge and early 2000s post-hardcore. The band have been nominated for Best British Breakthrough at Kerrang! Awards in 2018 and Welcome to the Neighbourhood received a nomination for Best Album Artwork at Heavy Music Awards in 2019."
+  },
+  {
+   "id": "041045ad-db11-4ace-a7f0-435a422bffbc",
+   "slug": "terrace-martin-0f6b2741",
+   "title": "Terrace Martin",
+   "act": "Terrace Martin",
+   "name": "Terrace Martin",
+   "description": "American musician (born 1978)",
+   "source_url": "https://en.wikipedia.org/wiki/Terrace_Martin",
+   "extract": "Terrace Jamahl Martin is an American musician, rapper, singer, and record producer. He is perhaps best known for producing records for several prominent artists in the music industry, including Kendrick Lamar, Snoop Dogg, the Game, Busta Rhymes, Stevie Wonder, Charlie Wilson, Raphael Saadiq and YG, among others. Martin is a multi-instrumentalist whose music production embodies funk, jazz, classical and soul. Martin released his sixth studio album, Velvet Portraits, on his label, Sounds of Crenshaw Records, through Ropeadope Records."
+  },
+  {
+   "id": "2a588afd-6675-4737-9e93-c9d68cad6c82",
+   "slug": "houndmouth-d2c0054d",
+   "title": "Houndmouth",
+   "act": "Houndmouth",
+   "name": "Houndmouth",
+   "description": "American alternative blues band",
+   "source_url": "https://en.wikipedia.org/wiki/Houndmouth",
+   "extract": "Houndmouth is an American alternative blues and rock band from New Albany, Indiana, formed in 2011, consisting of Matt Myers, Caleb Hickman, Zac Anderson, and Noah Denney (drums)."
+  },
+  {
+   "id": "d0a208ee-1794-4f94-be47-4daa8a76b6c0",
+   "slug": "qendresa-sold-out-2eb87f0e",
+   "title": "Qendresa - SOLD OUT",
+   "act": "Qendresa",
+   "name": "Qendresa",
+   "description": "British-Kosovan singer and producer",
+   "source_url": "https://en.wikipedia.org/wiki/Qendresa",
+   "extract": "Qendresa is a British-Kosovar singer, songwriter, and producer from North West London. She is known for her self-produced electronic soul and personal songwriting. She has released two studio albums: Midnight Request Line (2020) and Londra (2024). She gained mainstream recognition in 2026 through her collaborations with Canadian rapper Drake across his albums Habibti and Maid of Honour."
+  }
+ ]
+}

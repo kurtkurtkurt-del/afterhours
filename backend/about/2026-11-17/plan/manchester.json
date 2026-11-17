@@ -1,0 +1,56 @@
+{
+ "city": "manchester",
+ "day": "2026-11-17",
+ "nights": [
+  {
+   "id": "7eb1ba06-ad11-4ed9-8cab-515cb3996efa",
+   "slug": "deyyess-5fa7fad4",
+   "title": "Déyyess",
+   "act": "Déyyess",
+   "name": "Déyyess",
+   "description": "English singer",
+   "source_url": "https://en.wikipedia.org/wiki/D%C3%A9yyess",
+   "extract": "Hannah Jennifer Marie Butcher, known professionally as Déyyess, is an English singer-songwriter. She has released a number of singles and two EPs."
+  },
+  {
+   "id": "b4114752-4e36-44bb-80ed-fa53046c99fa",
+   "slug": "julia-wolf-e7762176",
+   "title": "Julia Wolf",
+   "act": "Julia Wolf",
+   "name": "Julia Wolf",
+   "description": "American singer",
+   "source_url": "https://en.wikipedia.org/wiki/Julia_Wolf_(musician)",
+   "extract": "Julia Jade Capello, known professionally as Julia Wolf, is an American singer. Known for her ethereal vocals and self-produced alt-pop sound, she blends elements of indie pop, alternative rock, and R&B. Capello gained early attention on TikTok before releasing her debut EP Girls in Purgatory (2021) and her studio albums Good Thing We Stayed (2023) and Pressure (2025)."
+  },
+  {
+   "id": "f2c1fc89-b6b9-4c7a-a81c-12db1cdb4dc8",
+   "slug": "graham-coxon-30cb1166",
+   "title": "GRAHAM COXON",
+   "act": "GRAHAM COXON",
+   "name": "Graham Coxon",
+   "description": "English musician (born 1969)",
+   "source_url": "https://en.wikipedia.org/wiki/Graham_Coxon",
+   "extract": "Graham Leslie Coxon is an English guitarist, singer and songwriter who came to prominence as a founding member of the rock band Blur, of which he was the lead guitarist and secondary vocalist. He is also a member of The Waeve, which he formed alongside Rose Elinor Dougall in 2021."
+  },
+  {
+   "id": "42b7d4c4-d962-488c-bb0f-35f12f598d2d",
+   "slug": "sace6-3fd9a20a",
+   "title": "sace6",
+   "act": "sace6",
+   "name": "Sace6",
+   "description": "American alternative metal duo",
+   "source_url": "https://en.wikipedia.org/wiki/Sace6",
+   "extract": "Sace6 is an American alternative metal duo consisting of lead vocalist Sace and guitarist-vocalist Noah Thomas. Originally the solo project of Sace, the project developed into a duo in 2024. Sonically, their music offers contrasting melodic vocals and pop-oriented hooks with heavy guitar-driven instrumentation."
+  },
+  {
+   "id": "6c855b3c-0ce7-49df-b8d6-00cda5859c17",
+   "slug": "1000mods-de00c09e",
+   "title": "1000MODS",
+   "act": "1000MODS",
+   "name": "1000mods",
+   "description": "Greek stoner metal band",
+   "source_url": "https://en.wikipedia.org/wiki/1000mods",
+   "extract": "1000mods is a hard rock band from Chiliomodi, Greece, formed in 2006. The group consists of Dani G., Giorgos T. (guitar), and Labros G. (drums). Since their formation, the band has toured extensively across the globe and released five full-length studio albums."
+  }
+ ]
+}

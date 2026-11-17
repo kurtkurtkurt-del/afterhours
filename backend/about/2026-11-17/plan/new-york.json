@@ -1,0 +1,46 @@
+{
+ "city": "new-york",
+ "day": "2026-11-17",
+ "nights": [
+  {
+   "id": "b3a481f4-fc7b-471c-aa41-c504766adc5f",
+   "slug": "stella-lefty-0d810862",
+   "title": "Stella Lefty",
+   "act": "Stella Lefty",
+   "name": "Stella Lefty",
+   "description": "American singer-songwriter (born 2002)",
+   "source_url": "https://en.wikipedia.org/wiki/Stella_Lefty",
+   "extract": "Stella Lefkofsky, better known by her stage name Stella Lefty, is an American singer-songwriter. Her 2026 country-pop single \"Boston\" peaked at number two on the US Billboard Hot 100."
+  },
+  {
+   "id": "f88bef47-a6aa-4352-a036-c4605c82c443",
+   "slug": "jack-blocker-big-jefe-tour-532326bc",
+   "title": "Jack Blocker: Big Jefe Tour",
+   "act": "Jack Blocker",
+   "name": "Jack Blocker",
+   "description": "American singer and musician (born 1998)",
+   "source_url": "https://en.wikipedia.org/wiki/Jack_Blocker",
+   "extract": "Jack Forest Blocker is an American country singer-songwriter and musician from Richardson, Texas, known for his recordings, including a 2026 album on Sony Music's Thirty Tigers label, and his touring career. He came to prominence as a season 22 American Idol finalist, having been the first contestant to initially receive a majority of two \"no\" votes from the judges and subsequently reach the finals. Based in Nashville, Blocker released his debut album, The Land on Most High, in September 2025, and has his next album set for a November 2026 release on Thirty Tigers."
+  },
+  {
+   "id": "286d3b00-fc57-45ee-93d8-af41c3bea17f",
+   "slug": "rene-lopez-0315e91c",
+   "title": "Rene Lopez",
+   "act": "Rene Lopez",
+   "name": "Rene Lopez",
+   "description": "American singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Rene_Lopez_(musician)",
+   "extract": "Rene Lopez is an American singer, songwriter and musician. He has toured and recorded extensively with Joseph Arthur, and was the lead singer of the band The Authority, who performed at Lollapalooza and opened shows for Phish, Spin Doctors, and Public Enemy. As a solo artist he has released eight albums, many receiving favorable reviews, and has performed at such venues as the Kennedy Center, Brooklyn Bowl, Rockwood Music Hall, and Nublu."
+  },
+  {
+   "id": "bbe58605-1995-4edf-a341-3cfe6b1bc1dc",
+   "slug": "mamas-gun-be887d8a",
+   "title": "Mamas Gun",
+   "act": "Mamas Gun",
+   "name": "Mamas Gun",
+   "description": "British contemporary soul band",
+   "source_url": "https://en.wikipedia.org/wiki/Mamas_Gun",
+   "extract": "Mamas Gun is a British contemporary soul band. They found early international success with a radio-friendly soul pop sound. They made 5 full-length albums with evolving personnel, reaching a sound rooted in classic soul with alternative/progressive leanings. Golden Days (2018) marked a major turning point, the band having recorded and produced it themselves."
+  }
+ ]
+}

@@ -1,0 +1,46 @@
+{
+ "city": "chicago",
+ "day": "2026-11-17",
+ "nights": [
+  {
+   "id": "ca54ba78-62e9-41a3-be4d-997be25c934c",
+   "slug": "charlie-zaa-8dbb7e6d",
+   "title": "Charlie Zaa",
+   "act": "Charlie Zaa",
+   "name": "Charlie Zaa",
+   "description": "Colombian musician (born 1974)",
+   "source_url": "https://en.wikipedia.org/wiki/Charlie_Zaa",
+   "extract": "Carlos Alberto Sánchez, known professionally as Charlie Zaa, is a Colombian singer. Zaa is the son of singer Luis Humberto Sánchez."
+  },
+  {
+   "id": "05d08a80-cbd0-41a6-81f7-e1b0a4fa6d80",
+   "slug": "slow-pulp-4b2f4aba",
+   "title": "Slow Pulp",
+   "act": "Slow Pulp",
+   "name": "Slow Pulp",
+   "description": "American indie rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Slow_Pulp",
+   "extract": "Slow Pulp is an American indie rock band from Madison, Wisconsin, currently based in Chicago, Illinois. Formed in 2015, the band has held the same line-up since 2017: Emily Massey on lead vocals and rhythm guitar, Alex Leeds on bass and backing vocals, Teddy Matthews on drums and percussion, and Henry Stoehr on lead guitar. The band have released three studio albums to date: Moveys (2020), Yard (2023), and Melodie (2026)."
+  },
+  {
+   "id": "bf2c4440-7ab3-43bf-b9c9-f6bfb5c2fbaa",
+   "slug": "kelsey-hart-red-all-over-tour-with-carson-bock-a0a414ac",
+   "title": "Kelsey Hart - Red All Over Tour with Carson Bock",
+   "act": "Kelsey Hart",
+   "name": "Kelsey Hart",
+   "description": "American singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Kelsey_Hart",
+   "extract": "Kelsey Hart is an American country music singer-songwriter from Kentucky signed to Curb Records."
+  },
+  {
+   "id": "b489da97-57c7-4692-af4f-8382cae016e7",
+   "slug": "beartooth-pure-ecstasy-world-tour-b92cc7af",
+   "title": "Beartooth: Pure Ecstasy World Tour",
+   "act": "Beartooth",
+   "name": "Beartooth",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Beartooth_(band)",
+   "extract": "Beartooth is an American rock band founded by vocalist and multi-instrumentalist Caleb Shomo in Columbus, Ohio, in 2012. Originally, Beartooth was a studio project with Shomo performing all instruments, before expanding to a group with four or five members over their existence. They are known for relatively more conventional songwriting than some of Shomo's other work, with an emphasis on melodic hooks and catchy choruses. Beartooth has been signed to Red Bull Records since 2013; their debut EP Sick was released on July 26, 2013, followed by the debut full-length album Disgusting on June 10, 2014. Since then, Shomo has released a further five studio albums under the Beartooth moniker: Aggressive (2016), Disease (2018), Below (2021), The Surface (2023), and Pure Ecstasy (2026)."
+  }
+ ]
+}

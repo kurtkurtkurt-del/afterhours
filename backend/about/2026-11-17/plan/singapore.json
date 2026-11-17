@@ -1,0 +1,16 @@
+{
+ "city": "singapore",
+ "day": "2026-11-17",
+ "nights": [
+  {
+   "id": "06fe324a-3ae5-4295-8c3c-7a89cc576a4c",
+   "slug": "tori-kelly-god-must-really-love-me-world-tour-ebc82d53",
+   "title": "Tori Kelly - God Must Really Love Me World Tour",
+   "act": "Tori Kelly",
+   "name": "Tori Kelly",
+   "description": "American singer-songwriter (born 1992)",
+   "source_url": "https://en.wikipedia.org/wiki/Tori_Kelly",
+   "extract": "Victoria Loren \"Tori\" Kelly is an American singer-songwriter. She first gained recognition on YouTube before making it through to Hollywood week on the ninth season of American Idol in 2010 and eventually releasing her debut EP, Handmade Songs (2012)."
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "city": "atlanta",
+ "day": "2026-11-17",
+ "nights": [
+  {
+   "id": "c6306c98-b56e-4b94-a85a-10f3e6d7820f",
+   "slug": "the-war-and-treaty-c2fe24df",
+   "title": "The War And Treaty",
+   "act": "The War And Treaty",
+   "name": "The War and Treaty",
+   "description": "American country music duo",
+   "source_url": "https://en.wikipedia.org/wiki/The_War_and_Treaty",
+   "extract": "The War and Treaty is an American husband-and-wife duo consisting of singer-songwriters Michael Trotter Jr. and Tanya Trotter. Their debut studio album, Healing Tide (2018), received generally favorable reviews upon its release. Their second album, Hearts Town (2020), featured a collaboration with Emmylou Harris and had a Triple A top 40 hit single \"Five More Minutes.\" In 2022, they signed to Universal Music Group Nashville, and released their major label debut, Lover's Game (2023). Their collaboration with Zach Bryan on the song \"Hey Driver\" made the top 20 on the Billboard Hot 100."
+  },
+  {
+   "id": "b07084a4-a595-4b58-a009-c66be9755a23",
+   "slug": "dragonforce-inhuman-rampage-20th-anniversary-8cbc73e4",
+   "title": "DragonForce: Inhuman Rampage 20th Anniversary",
+   "act": "DragonForce",
+   "name": "DragonForce",
+   "description": "British power metal band",
+   "source_url": "https://en.wikipedia.org/wiki/DragonForce",
+   "extract": "DragonForce are a British power metal band from London, formed in 1999. They are known for their long and fast guitar solos, fantasy-themed lyrics and retro video game-influenced sound. The band themselves refer to their music as \"extreme power metal\"."
+  }
+ ]
+}

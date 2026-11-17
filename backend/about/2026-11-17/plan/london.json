@@ -1,0 +1,56 @@
+{
+ "city": "london",
+ "day": "2026-11-17",
+ "nights": [
+  {
+   "id": "e9c18134-05bd-4a32-8b68-8fc07e3c016b",
+   "slug": "muna-c2d588c4",
+   "title": "MUNA",
+   "act": "MUNA",
+   "name": "Muna",
+   "description": "American indie pop band",
+   "source_url": "https://en.wikipedia.org/wiki/Muna_(band)",
+   "extract": "Muna is an American indie pop band consisting of Katie Gavin, Josette Maskin, and Naomi McPherson. They released two studio albums with RCA Records, About U (2017) and Saves the World (2019), before signing with independent label Saddest Factory Records, which released their third studio album, Muna, in June 2022, and Dancing on the Wall in May 2026."
+  },
+  {
+   "id": "5b3ddfbd-c314-467f-80fa-8904175f4036",
+   "slug": "seb-lowe-91ca2577",
+   "title": "Seb Lowe",
+   "act": "Seb Lowe",
+   "name": "Seb Lowe",
+   "description": "English musician (born 2003)",
+   "source_url": "https://en.wikipedia.org/wiki/Seb_Lowe",
+   "extract": "Sebastian Lowe is an English singer-songwriter from Saddleworth, Greater Manchester. He is known for incorporating politics into his music, having started out uploading videos of his songs to TikTok."
+  },
+  {
+   "id": "12562d05-d0b0-4ef4-ae14-7ed7e1587ca4",
+   "slug": "paris-paloma-1466828e",
+   "title": "Paris Paloma",
+   "act": "Paris Paloma",
+   "name": "Paris Paloma",
+   "description": "British singer-songwriter (born 1999)",
+   "source_url": "https://en.wikipedia.org/wiki/Paris_Paloma",
+   "extract": "Paris Paloma is a British singer-songwriter and guitarist. She gained prominence through the single \"Labour\" (2023). Her debut album, Cacophony, was released in 2024. Her second album, The Fatal Flaw, followed in 2026."
+  },
+  {
+   "id": "52d0cbc2-7d26-4dcc-b716-f0617fc939ef",
+   "slug": "radio-free-alice-5a0ce5b4",
+   "title": "Radio Free Alice",
+   "act": "Radio Free Alice",
+   "name": "Radio Free Alice",
+   "description": "Australian post-punk band",
+   "source_url": "https://en.wikipedia.org/wiki/Radio_Free_Alice",
+   "extract": "Radio Free Alice is an Australian post-punk band from Melbourne."
+  },
+  {
+   "id": "fc41db05-3f6a-4ae8-8503-5c79e70cf132",
+   "slug": "jesse-and-joy-d65bfdf6",
+   "title": "Jesse & Joy",
+   "act": "Jesse & Joy",
+   "name": "Jesse & Joy",
+   "description": "Mexican pop duo",
+   "source_url": "https://en.wikipedia.org/wiki/Jesse_%26_Joy",
+   "extract": "Jesse & Joy is a Mexican pop duo. It was formed in 2005 in Mexico City by brother and sister Jesse and Joy Huerta."
+  }
+ ]
+}

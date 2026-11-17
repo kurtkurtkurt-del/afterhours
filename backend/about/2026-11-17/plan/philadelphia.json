@@ -1,0 +1,46 @@
+{
+ "city": "philadelphia",
+ "day": "2026-11-17",
+ "nights": [
+  {
+   "id": "0df606ec-f2c6-467c-bbad-a44b09def68b",
+   "slug": "julia-jacklin-05232fe9",
+   "title": "Julia Jacklin",
+   "act": "Julia Jacklin",
+   "name": "Julia Jacklin",
+   "description": "Australian singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Julia_Jacklin",
+   "extract": "Julia Jacklin is an Australian singer-songwriter from the Blue Mountains region of New South Wales. Jacklin's musical style has been described as indie pop, indie folk, and alternative country. She has released four studio albums, Don't Let the Kids Win (2016), Crushing (2019), Pre Pleasure (2022) and The Gem (2026). Jacklin has also performed with the band Phantastic Ferniture, with whom she released the debut single \"Fuckin 'n' Rollin\" and a self-titled album in 2018, followed by subsequent singles."
+  },
+  {
+   "id": "e7e55918-6e12-4b27-a925-adb20fdd9709",
+   "slug": "zack-fox-fb1ca920",
+   "title": "Zack Fox",
+   "act": "Zack Fox",
+   "name": "Zack Fox",
+   "description": "American comedian, rapper and actor (born 1990)",
+   "source_url": "https://en.wikipedia.org/wiki/Zack_Fox",
+   "extract": "Zachary Channing Fox is an American stand-up comedian, rapper, actor, DJ, and internet personality from Atlanta, Georgia. He has collaborated with Kenny Beats, Flying Lotus, Thundercat, Doechii, and Bnyx. He describes his genre of art as \"Shemar-Core,\" a term that likely references actor Shemar Moore, who serves as an artistic muse for Fox."
+  },
+  {
+   "id": "53d27bb6-5ee9-4d46-aa85-200e51ecae50",
+   "slug": "pouya-the-foreverglades-tour-a3b48bd7",
+   "title": "Pouya - The Foreverglades Tour",
+   "act": "Pouya",
+   "name": "Pouya",
+   "description": "American rapper (born 1994)",
+   "source_url": "https://en.wikipedia.org/wiki/Pouya",
+   "extract": "Kevin Pouya, known mononymously as Pouya, is an American rapper. Considered as a pioneer of the underground rap scene that began on SoundCloud in 2012, along with discovering the well known hip-hop duo Suicideboys in their early career, Pouya has developed a long-lasting core fanbase as an independent artist."
+  },
+  {
+   "id": "47cdc9a7-b4be-4964-a47c-519e98b31aea",
+   "slug": "the-oak-ridge-boys-77feb60d",
+   "title": "The Oak Ridge Boys",
+   "act": "The Oak Ridge Boys",
+   "name": "The Oak Ridge Boys",
+   "description": "American country and gospel vocal quartet",
+   "source_url": "https://en.wikipedia.org/wiki/The_Oak_Ridge_Boys",
+   "extract": "The Oak Ridge Boys are an American vocal quartet. The group consists of Duane Allen (lead), William Lee Golden (baritone) and Ben James, who replaced Joe Bonsall as tenor in December 2023. Allen, Bonsall, Golden, and Richard Sterban comprised the group's longest-lasting lineup, from 1973 until 2023, except for the period between 1987 and 1995 when Golden was replaced by Steve Sanders."
+  }
+ ]
+}

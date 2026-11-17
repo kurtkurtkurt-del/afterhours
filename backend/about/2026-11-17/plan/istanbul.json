@@ -1,0 +1,56 @@
+{
+ "city": "istanbul",
+ "day": "2026-11-17",
+ "nights": [
+  {
+   "id": "945e36fd-043a-4020-bcde-2959444d5310",
+   "slug": "murat-boz-2deff02c",
+   "title": "Murat Boz",
+   "act": "Murat Boz",
+   "name": "Murat Boz",
+   "description": "Turkish singer-songwriter and actor (born 1980)",
+   "source_url": "https://en.wikipedia.org/wiki/Murat_Boz",
+   "extract": "Murat Boz is a Turkish singer, songwriter and actor."
+  },
+  {
+   "id": "694ddef8-f88e-4d91-ac4a-958138bd2968",
+   "slug": "infinity-song-bbf598bc",
+   "title": "Infinity Song",
+   "act": "Infinity Song",
+   "name": "Infinity Song",
+   "description": "American soft rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Infinity_Song",
+   "extract": "Infinity Song is an American soft rock band composed of siblings Abraham, Angel, Israel and Momo Boyd. Based in New York City, the group has released three albums under record label Roc Nation."
+  },
+  {
+   "id": "9c35f9b0-7b59-47ef-afa0-d41867c68daf",
+   "slug": "ayta-sozeri-b18cc21d",
+   "title": "Ayta Sözeri",
+   "act": "Ayta Sözeri",
+   "name": "Ayta Sözeri",
+   "description": "Turkish actress and singer",
+   "source_url": "https://en.wikipedia.org/wiki/Ayta_S%C3%B6zeri",
+   "extract": "Ayta Sözeri is a Turkish actress, singer and LGBT activist."
+  },
+  {
+   "id": "6022dd45-6a5a-4529-bf6b-6b0204cddb0f",
+   "slug": "ask-n-nur-yengi-70c194f9",
+   "title": "Aşkın Nur Yengi",
+   "act": "Aşkın Nur Yengi",
+   "name": "Aşkın Nur Yengi",
+   "description": "Turkish singer and actress (born 1970)",
+   "source_url": "https://en.wikipedia.org/wiki/A%C5%9Fk%C4%B1n_Nur_Yengi",
+   "extract": "Aşkın Nur Yengi is a Turkish singer, composer, and actress.\nShe started working as a backing vocalist for Sezen Aksu and with Aksu's help, released her first studio album in 1990. With her debut album Sevgiliye in 1990, she became one of the most successful Turkish singers of the '90s."
+  },
+  {
+   "id": "625d09b7-2c1c-4837-9448-00ce2c078434",
+   "slug": "demet-akal-n-57eec046",
+   "title": "Demet Akalın",
+   "act": "Demet Akalın",
+   "name": "Demet Akalın",
+   "description": "Turkish singer",
+   "source_url": "https://en.wikipedia.org/wiki/Demet_Akal%C4%B1n",
+   "extract": "Demet Akalın is a Turkish singer and former model. Due to the popular songs she has released since the middle of the 2000s, she has become a prominent figure in Turkish pop music."
+  }
+ ]
+}

@@ -1,0 +1,46 @@
+{
+ "city": "washington",
+ "day": "2026-11-17",
+ "nights": [
+  {
+   "id": "8477e0d8-3ab6-4666-b26d-f8a3eaded7ff",
+   "slug": "gregory-porter-dc-jazz-festival-benefit-concert-db001fed",
+   "title": "Gregory Porter - DC Jazz Festival Benefit Concert, A Night of Stars",
+   "act": "Gregory Porter",
+   "name": "Gregory Porter",
+   "description": "American singer and songwriter (born 1971)",
+   "source_url": "https://en.wikipedia.org/wiki/Gregory_Porter",
+   "extract": "Gregory Porter is an American singer, songwriter, and musician. He has twice won the Grammy Award for Best Jazz Vocal Album: first in 2014 for Liquid Spirit and then again in 2017 for Take Me to the Alley."
+  },
+  {
+   "id": "fcab9fd9-b5a4-44c6-859e-60cd1f1da240",
+   "slug": "die-spitz-3de80cac",
+   "title": "Die Spitz",
+   "act": "Die Spitz",
+   "name": "Die Spitz",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Die_Spitz",
+   "extract": "Die Spitz is an American rock band from Austin, Texas, consisting of guitarist/singer/drummer Ava Schrobilgen, guitarist/singer Eleanor Livingston, bassist Kate Halter, and drummer/singer/guitarist Chloe de St. Aubin. Their debut album Something to Consume was released in September 2025."
+  },
+  {
+   "id": "30cec617-6fa5-4a5e-a593-e70bd9cf5a72",
+   "slug": "trippie-redd-the-non-disclosure-agreement-tour-3a6d1481",
+   "title": "Trippie Redd - The Non-disclosure Agreement Tour",
+   "act": "Trippie Redd",
+   "name": "Trippie Redd",
+   "description": "American rapper (born 1999)",
+   "source_url": "https://en.wikipedia.org/wiki/Trippie_Redd",
+   "extract": "Michael Lamar White II, known professionally as Trippie Redd, is an American rapper, singer, and songwriter. Born and raised in Canton, Ohio, he has contributed to the progression of emo rap and rage, a subgenre of trap music."
+  },
+  {
+   "id": "ecc585cf-b614-4bbc-8055-9115e60de3cc",
+   "slug": "tiny-habits-the-keepers-tour-ddd83fd6",
+   "title": "Tiny Habits - The Keepers Tour",
+   "act": "Tiny Habits",
+   "name": "Tiny Habits",
+   "description": "American folk-pop trio",
+   "source_url": "https://en.wikipedia.org/wiki/Tiny_Habits",
+   "extract": "Tiny Habits is an American folk-pop music group formed in Boston in 2022. The trio consists of Berklee College of Music alumni Cinya Khan, Maya Rae, and Judah Mayowa. Their first EP, Tiny Things, was released in April 2023. Their debut studio album All For Something was released in May 2024. Their second album Keepers came out in August 2026."
+  }
+ ]
+}
