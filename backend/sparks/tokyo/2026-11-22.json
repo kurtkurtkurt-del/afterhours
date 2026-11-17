@@ -1,0 +1,14 @@
+{
+  "city": "tokyo",
+  "day": "2026-11-22",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "tokyo shūkaku matsuri at tokyo international forum.", "de": "tokyo shūkaku matsuri am tokyo international forum.", "tr": "tokyo international forum'da tokyo shūkaku matsuri." },
+      "line": { "en": "a harvest festival with food and products from the 23 wards, tama and the islands. free entry, so walk the stalls and eat your way round.", "de": "ein erntefest mit speisen und produkten aus den 23 bezirken, tama und den inseln. eintritt frei, also an den ständen entlang und probieren.", "tr": "23 ilçeden, tama'dan ve adalardan yiyecek ve ürünlerle bir hasat şenliği. giriş ücretsiz, standları gez ve yiyerek dolaş." },
+      "place": { "en": "tokyo international forum", "de": "tokyo international forum", "tr": "tokyo international forum" },
+      "hour": 11, "minute": 0,
+      "why": "TOKYO Shūkaku Matsuri 2026, sat-sun 21-22.11 at Tokyo International Forum, free admission (2026 event listings in search results, not checked on the organiser's site); sunday chosen to spread the week."
+    }
+  ]
+}

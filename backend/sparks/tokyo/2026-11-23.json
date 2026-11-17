@@ -1,0 +1,14 @@
+{
+  "city": "tokyo",
+  "day": "2026-11-23",
+  "sparks": [
+    {
+      "kind": "flea",
+      "title": { "en": "oedo antique market, tokyo international forum.", "de": "oedo-antikmarkt am tokyo international forum.", "tr": "tokyo international forum'da oedo antika pazarı." },
+      "line": { "en": "a public holiday, so the market is busy. stalls open 9:00 to 16:00 with old prints, glassware and small things to dig through. it can be cancelled in bad weather.", "de": "ein feiertag, der markt ist also voll. die stände sind von 9:00 bis 16:00 offen, mit alten drucken, glaswaren und kleinen dingen zum durchstöbern. bei schlechtem wetter kann er ausfallen.", "tr": "resmi tatil olduğu için pazar kalabalık. standlar 09:00 ile 16:00 arası açık; eski baskılar, cam eşyalar ve küçük şeyler. kötü havada iptal edilebilir." },
+      "place": { "en": "tokyo international forum", "de": "tokyo international forum", "tr": "tokyo international forum" },
+      "hour": 10, "minute": 0,
+      "why": "Oedo Antique Market listed for mon 23.11, 勤労感謝の日 public holiday, 9:00-16:00, free, at Tokyo International Forum (tokyocheapo.com calendar in search results)."
+    }
+  ]
+}
