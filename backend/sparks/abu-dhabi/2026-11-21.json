@@ -1,0 +1,14 @@
+{
+  "city": "abu-dhabi",
+  "day": "2026-11-21",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "nomad, the design fair in the old airport.", "de": "nomad, die design-messe im alten flughafen.", "tr": "nomad, eski havalimanında tasarım fuarı." },
+      "line": { "en": "more than fifty exhibitors in the former terminal 1 of the old airport. free entry, open 13:00 to 21:00.", "de": "über fünfzig aussteller im ehemaligen terminal 1 des alten flughafens. kostenloser eintritt, geöffnet 13:00 bis 21:00 uhr.", "tr": "eski havalimanının eski 1. terminalinde elliden fazla katılımcı. ücretsiz giriş, 13:00 ile 21:00 arası açık." },
+      "place": { "en": "nomad, old abu dhabi airport terminal 1", "de": "nomad, altes flughafenterminal 1 abu dhabi", "tr": "nomad, eski abu dhabi havalimanı terminal 1" },
+      "hour": 16, "minute": 0,
+      "why": "NOMAD Abu Dhabi runs 18 to 22 Nov in old airport Terminal 1, free, 1pm to 9pm (Abu Dhabi Culture listing, The Art Newspaper)."
+    }
+  ]
+}
