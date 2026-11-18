@@ -1,0 +1,657 @@
+{
+  "city": "munchen",
+  "day": "2026-11-18",
+  "sparks": [
+    {
+      "kind": "derby",
+      "title": {
+        "en": "a match night at the kilians.",
+        "de": "ein spieleabend im kilians.",
+        "tr": "kilians'ta bir maç gecesi."
+      },
+      "line": {
+        "en": "no big match confirmed tonight. ask at the bar what is on; a screen and a table beat the wet walk home.",
+        "de": "heute ist kein großes spiel bestätigt. frag an der bar, was läuft; bildschirm und tisch schlagen den nassen heimweg.",
+        "tr": "bu gece büyük bir maç doğrulanmadı. barda ne oynadığını sor; ıslak yürüyüşten iyidir."
+      },
+      "place": {
+        "en": "kilians irish pub",
+        "de": "kilians irish pub",
+        "tr": "kilians irish pub"
+      },
+      "hour": 20,
+      "minute": 0,
+      "why": "No FC Bayern, 1860, EHC or national-team match could be confirmed for 18.11. Generic pub spark, indoors for the wind and rain."
+    },
+    {
+      "kind": "grill",
+      "title": {
+        "en": "a short grill at the flaucher.",
+        "de": "ein kurzer grill am flaucher.",
+        "tr": "flaucher'de kısa bir mangal."
+      },
+      "line": {
+        "en": "mild for november but grey and windy. bring sausages and a thermos, grill where allowed by the isar and keep it to an hour.",
+        "de": "mild für november, aber grau und windig. würstchen und thermoskanne mit, wo erlaubt an der isar grillen, eine stunde reicht.",
+        "tr": "kasım için ılık ama gri ve rüzgarlı. sosis ve termos getir, izin verilen yerde isar kıyısında bir saat mangal yap."
+      },
+      "place": {
+        "en": "flaucher",
+        "de": "flaucher",
+        "tr": "flaucher"
+      },
+      "hour": 17,
+      "minute": 0,
+      "why": "Forecast ~9–11°C, overcast, light rain possible and windy (wetter.com, wetterdienst.de). Sunset about 16:30, so after dark; generic outdoor spark, rain may cancel it."
+    },
+    {
+      "kind": "hike",
+      "title": {
+        "en": "a grey-day walk up the olympiaberg.",
+        "de": "graue-tage-gang auf den olympiaberg.",
+        "tr": "olympiaberg'e gri gün yürüyüşü."
+      },
+      "line": {
+        "en": "school is out and the day is mild. take the olympiaberg for the view over the park before the early dusk.",
+        "de": "schulfrei und mild. der olympiaberg bietet den blick über den park, bevor es früh dunkel wird.",
+        "tr": "okul tatil ve hava ılık. erken kararmadan olympiaberg’den parkın manzarasına bak."
+      },
+      "place": {
+        "en": "olympiaberg",
+        "de": "olympiaberg",
+        "tr": "olympiaberg"
+      },
+      "hour": 13,
+      "minute": 30,
+      "why": "Forecast ~9–11°C, overcast, light rain possible and windy (wetter.com, wetterdienst.de). Wed 18.11 is Buß- und Bettag: no public holiday in Bavaria but schools are shut and a quiet-day rule limits loud entertainment (muenchen.de)."
+    },
+    {
+      "kind": "sunrise",
+      "title": {
+        "en": "sunrise over the isar at 07:20.",
+        "de": "sonnenaufgang an der isar um 07:20.",
+        "tr": "isar'da 07:20 gün doğumu."
+      },
+      "line": {
+        "en": "sunrise is about 07:20 under heavy cloud, so expect a soft grey glow. coffee in hand at the reichenbachbrücke, home by eight.",
+        "de": "sonnenaufgang gegen 07:20 unter dichten wolken, also eher ein sanftes grau. kaffee in der hand an der reichenbachbrücke, um acht zuhause.",
+        "tr": "gün doğumu 07:20 civarı, bulutlu olduğundan yumuşak bir gri ışık var. reichenbachbrücke’de elinde kahve, sekizde evde."
+      },
+      "place": {
+        "en": "reichenbachbrücke",
+        "de": "reichenbachbrücke",
+        "tr": "reichenbachbrücke"
+      },
+      "hour": 7,
+      "minute": 0,
+      "why": "Sunrise in Munich about 07:20 on 18.11 (sunrise time tables), sunrise-minus-20 start. Forecast ~9–11°C, overcast, light rain possible and windy (wetter.com, wetterdienst.de)."
+    },
+    {
+      "kind": "breakfast",
+      "title": {
+        "en": "a slow breakfast, school is out.",
+        "de": "langes frühstück, schulfrei.",
+        "tr": "okul tatil, yavaş bir kahvaltı."
+      },
+      "line": {
+        "en": "buß- und bettag: the kids are off and the town starts late. a long breakfast with weißwurst or eggs in glockenbach.",
+        "de": "buß- und bettag: schulfrei, die stadt startet spät. langes frühstück mit weißwurst oder eiern im glockenbach.",
+        "tr": "buß- und bettag: okul yok, şehir geç başlıyor. glockenbach’ta uzun bir kahvaltı."
+      },
+      "place": {
+        "en": "glockenbachviertel",
+        "de": "glockenbachviertel",
+        "tr": "glockenbachviertel"
+      },
+      "hour": 10,
+      "minute": 0,
+      "why": "Wed 18.11 is Buß- und Bettag: no public holiday in Bavaria but schools are shut and a quiet-day rule limits loud entertainment (muenchen.de)."
+    },
+    {
+      "kind": "rooftop",
+      "title": {
+        "en": "a rooftop for the grey light.",
+        "de": "dachterrasse im grauen licht.",
+        "tr": "gri ışıkta bir çatı terası."
+      },
+      "line": {
+        "en": "too cold and windy to linger outside. take a heated rooftop or a high bar with a window, and watch the cloud move over the town.",
+        "de": "zu kalt und windig zum bleiben. such dir eine beheizte dachterrasse oder eine hohe bar mit fenster und schau den wolken zu.",
+        "tr": "dışarıda kalmak için soğuk ve rüzgarlı. ısıtmalı bir çatı ya da pencereli yüksek bir bar seç, bulutları izle."
+      },
+      "place": {
+        "en": "viktualienmarkt",
+        "de": "viktualienmarkt",
+        "tr": "viktualienmarkt"
+      },
+      "hour": 16,
+      "minute": 0,
+      "why": "Forecast ~9–11°C, overcast, light rain possible and windy (wetter.com, wetterdienst.de). Heated or indoor view instead of an open terrace."
+    },
+    {
+      "kind": "swim",
+      "title": {
+        "en": "an indoor swim at the müller’sches.",
+        "de": "schwimmen im müller’schen volksbad.",
+        "tr": "müller'sches volksbad'da yüzme."
+      },
+      "line": {
+        "en": "the lakes are cold, so go indoors. the jugendstil hall at the müller’sches volksbad, then the sauna if you want it.",
+        "de": "die seen sind kalt, also drinnen. das jugendstilbad im müller’schen volksbad, danach wenn du magst die sauna.",
+        "tr": "göller soğuk, iç mekana git. müller’sches volksbad’ın jugendstil havuzu, istersen sonra sauna."
+      },
+      "place": {
+        "en": "müller’sches volksbad",
+        "de": "müller’sches volksbad",
+        "tr": "müller’sches volksbad"
+      },
+      "hour": 18,
+      "minute": 0,
+      "why": "Forecast ~9–11°C, overcast, light rain possible and windy (wetter.com, wetterdienst.de). Too cold for lakes or the Isar; indoor pool. Opening hours not re-checked for the day."
+    },
+    {
+      "kind": "quiz",
+      "title": {
+        "en": "a pub quiz in the rain.",
+        "de": "kneipenquiz im regen.",
+        "tr": "yağmurda bir pub quiz."
+      },
+      "line": {
+        "en": "a midweek quiz is the right answer to a damp wednesday. gather four friends and ask for a table at the irish pub.",
+        "de": "ein quiz unter der woche passt zu einem nassen mittwoch. vier freunde mitbringen und einen tisch im irish pub nehmen.",
+        "tr": "haftaiçi quiz ıslak bir çarşambaya yakışır. dört arkadaş topla ve irish pub’da masa iste."
+      },
+      "place": {
+        "en": "kilians irish pub",
+        "de": "kilians irish pub",
+        "tr": "kilians irish pub"
+      },
+      "hour": 20,
+      "minute": 0,
+      "why": "Forecast ~9–11°C, overcast, light rain possible and windy (wetter.com, wetterdienst.de). No FC Bayern, 1860, EHC or national-team match could be confirmed for 18.11."
+    },
+    {
+      "kind": "newplace",
+      "title": {
+        "en": "one new place you have not tried.",
+        "de": "ein neuer ort, den du nicht kennst.",
+        "tr": "denemediğin bir yer."
+      },
+      "line": {
+        "en": "pick a street in haidhausen you never walk and go into the first small place with a light on. order the thing you cannot pronounce.",
+        "de": "such dir eine straße in haidhausen, in der du nie gehst, und geh ins erste kleine lokal mit licht. bestell, was du nicht aussprechen kannst.",
+        "tr": "haidhausen’da hiç yürümediğin bir sokak seç ve ışığı yanan ilk küçük yere gir. telaffuz edemediğini sipariş et."
+      },
+      "place": {
+        "en": "haidhausen",
+        "de": "haidhausen",
+        "tr": "haidhausen"
+      },
+      "hour": 19,
+      "minute": 0,
+      "why": "Generic Munich spark; nothing special confirmed for the day."
+    },
+    {
+      "kind": "camera",
+      "title": {
+        "en": "photos in the grey light.",
+        "de": "fotos im grauen licht.",
+        "tr": "gri ışıkta fotoğraflar."
+      },
+      "line": {
+        "en": "overcast light is soft and even. walk with a camera from the isartor to the museumsinsel and catch the wet stone and street lamps.",
+        "de": "bedecktes licht ist weich und gleichmäßig. mit der kamera vom isartor zur museumsinsel, nasse steine und laternen einfangen.",
+        "tr": "bulutlu ışık yumuşak ve dengeli. isartor’dan museumsinsel’e kamerayla yürü, ıslak taş ve sokak lambalarını yakala."
+      },
+      "place": {
+        "en": "isartor",
+        "de": "isartor",
+        "tr": "isartor"
+      },
+      "hour": 14,
+      "minute": 0,
+      "why": "Forecast ~9–11°C, overcast, light rain possible and windy (wetter.com, wetterdienst.de)."
+    },
+    {
+      "kind": "festival",
+      "title": {
+        "en": "christmas lights, not yet markets.",
+        "de": "weihnachtslichter, noch keine märkte.",
+        "tr": "noel ışıkları, henüz pazar yok."
+      },
+      "line": {
+        "en": "the big christmas markets are still a week or so away. take a walk through the lit streets around the marienplatz instead.",
+        "de": "die großen weihnachtsmärkte sind noch etwa eine woche entfernt. lauf stattdessen durch die beleuchteten gassen am marienplatz.",
+        "tr": "büyük noel pazarları daha bir hafta kadar uzakta. onun yerine marienplatz çevresinde ışıklı sokaklarda yürü."
+      },
+      "place": {
+        "en": "marienplatz",
+        "de": "marienplatz",
+        "tr": "marienplatz"
+      },
+      "hour": 17,
+      "minute": 0,
+      "why": "No festival confirmed for 18.11; Christmas markets not yet opened (not verified in detail). Wed 18.11 is Buß- und Bettag: no public holiday in Bavaria but schools are shut and a quiet-day rule limits loud entertainment (muenchen.de)."
+    },
+    {
+      "kind": "karaoke",
+      "title": {
+        "en": "a quiet table, a private karaoke room.",
+        "de": "ruhiger tisch, privater karaokeraum.",
+        "tr": "sakin bir masa, özel karaoke odası."
+      },
+      "line": {
+        "en": "it is a quiet day with a dancing ban, so skip the loud bars. book a private karaoke box for the group and sing behind a closed door.",
+        "de": "heute ist stiller tag mit tanzverbot, also nicht in laute bars. buch eine private karaokebox für die gruppe und sing hinter geschlossener tür.",
+        "tr": "bugün sessiz gün ve dans yasağı var, gürültülü barlardan kaçın. grup için özel bir karaoke kabini ayırt, kapalı kapının ardında söyle."
+      },
+      "place": {
+        "en": "münchen innenstadt",
+        "de": "münchen innenstadt",
+        "tr": "münchen innenstadt"
+      },
+      "hour": 19,
+      "minute": 30,
+      "why": "Wed 18.11 is Buß- und Bettag: no public holiday in Bavaria but schools are shut and a quiet-day rule limits loud entertainment (muenchen.de). Venue availability not verified."
+    },
+    {
+      "kind": "vinyl",
+      "title": {
+        "en": "crate digging, then a record at home.",
+        "de": "plattenstöbern, dann eine platte zuhause.",
+        "tr": "plak karıştır, sonra evde bir plak."
+      },
+      "line": {
+        "en": "a wet afternoon is for record shops. flip through the bins in the glockenbach, buy one you do not know and play it that night.",
+        "de": "ein nasser nachmittag gehört den plattenläden. blätter im glockenbach durch die kisten, kauf eine unbekannte und spiel sie am abend.",
+        "tr": "ıslak bir öğleden sonra plakçılar içindir. glockenbach’ta kutuları karıştır, tanımadığın birini al ve akşam çal."
+      },
+      "place": {
+        "en": "glockenbachviertel",
+        "de": "glockenbachviertel",
+        "tr": "glockenbachviertel"
+      },
+      "hour": 15,
+      "minute": 0,
+      "why": "Forecast ~9–11°C, overcast, light rain possible and windy (wetter.com, wetterdienst.de). Generic vinyl spark; shop hours not verified."
+    },
+    {
+      "kind": "openair",
+      "title": {
+        "en": "no open air tonight.",
+        "de": "heute kein open air.",
+        "tr": "bu gece açık hava yok."
+      },
+      "line": {
+        "en": "it is cold and wet, so move it under a roof. the muffathalle has josé gonzález on stage tonight, a quiet gig that fits the day.",
+        "de": "es ist kalt und nass, also unters dach. in der muffathalle spielt heute josé gonzález, ein ruhiges konzert, das zum tag passt.",
+        "tr": "soğuk ve ıslak, o yüzden çatı altına geç. muffathalle’de bu gece josé gonzález var, güne yakışan sakin bir konser."
+      },
+      "place": {
+        "en": "muffathalle",
+        "de": "muffathalle",
+        "tr": "muffathalle"
+      },
+      "hour": 20,
+      "minute": 0,
+      "why": "José González at Muffathalle on 18.11 (mvp.de, regioactive.de); outdoor events not suitable in November weather. Ticket status not checked."
+    },
+    {
+      "kind": "bike",
+      "title": {
+        "en": "a cold-air loop along the isar.",
+        "de": "isar-runde in kalter luft.",
+        "tr": "isar boyunca soğuk havada tur."
+      },
+      "line": {
+        "en": "mild but windy. ride the isar path from the deutsches museum down to the flaucher and back, with gloves and lights on.",
+        "de": "mild, aber windig. fahr den isarradweg vom deutschen museum bis zum flaucher und zurück, mit handschuhen und licht.",
+        "tr": "ılık ama rüzgarlı. deutsches museum’dan flaucher’a isar yolunda git-gel, eldiven ve ışıkla."
+      },
+      "place": {
+        "en": "isarradweg",
+        "de": "isarradweg",
+        "tr": "isarradweg"
+      },
+      "hour": 14,
+      "minute": 0,
+      "why": "Forecast ~9–11°C, overcast, light rain possible and windy (wetter.com, wetterdienst.de). Dry spell likely mornings, rain later."
+    },
+    {
+      "kind": "cinema",
+      "title": {
+        "en": "a film on a wet afternoon.",
+        "de": "ein film am nassen nachmittag.",
+        "tr": "ıslak bir öğleden sonra film."
+      },
+      "line": {
+        "en": "a rainy school-free day suits the cinema. go for the matinee at the neues rottmann or the filmmuseum and stay for a drink after.",
+        "de": "ein regnerischer schulfreier tag passt ins kino. nachmittagsvorstellung im neuen rottmann oder im filmmuseum, danach noch ein getränk.",
+        "tr": "yağmurlu okulsuz gün sinemaya uygun. neues rottmann ya da filmmuseum’da matine, sonra bir içki."
+      },
+      "place": {
+        "en": "filmmuseum münchen",
+        "de": "filmmuseum münchen",
+        "tr": "filmmuseum münchen"
+      },
+      "hour": 17,
+      "minute": 0,
+      "why": "Forecast ~9–11°C, overcast, light rain possible and windy (wetter.com, wetterdienst.de). Wed 18.11 is Buß- und Bettag: no public holiday in Bavaria but schools are shut and a quiet-day rule limits loud entertainment (muenchen.de). Programme not checked."
+    },
+    {
+      "kind": "boardgames",
+      "title": {
+        "en": "board games and tea on a school-free day.",
+        "de": "brettspiele und tee am schulfreien tag.",
+        "tr": "okulsuz günde kutu oyunları ve çay."
+      },
+      "line": {
+        "en": "grey and windy outside. bring two games to a board-game café, order tea and stay until the rain stops.",
+        "de": "draußen grau und windig. zwei spiele in ein brettspielcafé mitnehmen, tee bestellen und bleiben, bis der regen aufhört.",
+        "tr": "dışarısı gri ve rüzgarlı. iki oyunla bir kutu oyunu kafesine git, çay söyle ve yağmur dinene kadar kal."
+      },
+      "place": {
+        "en": "brettspielcafé münchen",
+        "de": "brettspielcafé münchen",
+        "tr": "brettspielcafé münchen"
+      },
+      "hour": 16,
+      "minute": 0,
+      "why": "Forecast ~9–11°C, overcast, light rain possible and windy (wetter.com, wetterdienst.de). Venue chosen generically; opening not verified."
+    },
+    {
+      "kind": "flea",
+      "title": {
+        "en": "a flea market for the quiet day.",
+        "de": "flohmarkt für den stillen tag.",
+        "tr": "sessiz gün için bir bit pazarı."
+      },
+      "line": {
+        "en": "the big outdoor flea markets are on weekends. today try the shops of the isarvorstadt and the second-hand stalls near the viktualienmarkt.",
+        "de": "die großen freiluft-flohmärkte sind am wochenende. heute die läden der isarvorstadt und gebrauchtes rund um den viktualienmarkt.",
+        "tr": "büyük açık hava bit pazarları hafta sonu. bugün isarvorstadt dükkanlarına ve viktualienmarkt yakınındaki ikinci el tezgahlara bak."
+      },
+      "place": {
+        "en": "viktualienmarkt",
+        "de": "viktualienmarkt",
+        "tr": "viktualienmarkt"
+      },
+      "hour": 13,
+      "minute": 0,
+      "why": "Outdoor flea markets run on weekends; Wednesday is a plain shopping day. No market confirmed."
+    },
+    {
+      "kind": "skate",
+      "title": {
+        "en": "a roof over the skate crew.",
+        "de": "das skatedach für die crew.",
+        "tr": "kayak ekibi için bir çatı."
+      },
+      "line": {
+        "en": "wet concrete is no fun. take the board to an indoor skatehall, or wait for a dry stretch at the olympiapark.",
+        "de": "nasser beton macht keinen spaß. brett in eine skatehalle mitnehmen oder auf eine trockene phase im olympiapark warten.",
+        "tr": "ıslak beton keyifsiz. tahtayı kapalı bir kaykay salonuna götür ya da olympiapark’ta kuru bir an bekle."
+      },
+      "place": {
+        "en": "olympiapark",
+        "de": "olympiapark",
+        "tr": "olympiapark"
+      },
+      "hour": 16,
+      "minute": 0,
+      "why": "Forecast ~9–11°C, overcast, light rain possible and windy (wetter.com, wetterdienst.de). Venue not verified for the day."
+    },
+    {
+      "kind": "cook",
+      "title": {
+        "en": "cook a big pot together.",
+        "de": "einen großen topf zusammen kochen.",
+        "tr": "birlikte büyük bir tencere yemek."
+      },
+      "line": {
+        "en": "cold wet night, warm kitchen. one pot of goulash or dal, everybody brings one ingredient and the oven stays on.",
+        "de": "kalter nasser abend, warme küche. ein topf gulasch oder dal, jeder bringt eine zutat mit und der ofen bleibt an.",
+        "tr": "soğuk ıslak gece, sıcak mutfak. bir tencere gulaş ya da dal, herkes bir malzeme getirir, fırın açık kalır."
+      },
+      "place": {
+        "en": "zuhause",
+        "de": "zuhause",
+        "tr": "zuhause"
+      },
+      "hour": 19,
+      "minute": 0,
+      "why": "Forecast ~9–11°C, overcast, light rain possible and windy (wetter.com, wetterdienst.de)."
+    },
+    {
+      "kind": "sauna",
+      "title": {
+        "en": "sauna on a damp wednesday.",
+        "de": "sauna an einem nassen mittwoch.",
+        "tr": "ıslak bir çarşambada sauna."
+      },
+      "line": {
+        "en": "the best answer to grey and wind. go to the müller’sches volksbad or the dante-winter sauna and sweat out the day.",
+        "de": "die beste antwort auf grau und wind. ins müller’sche volksbad oder die dante-winter-sauna und den tag ausschwitzen.",
+        "tr": "gri ve rüzgara en iyi cevap. müller’sches volksbad ya da dante-winter sauna’ya git, günün yorgunluğunu at."
+      },
+      "place": {
+        "en": "müller’sches volksbad",
+        "de": "müller’sches volksbad",
+        "tr": "müller’sches volksbad"
+      },
+      "hour": 18,
+      "minute": 30,
+      "why": "Forecast ~9–11°C, overcast, light rain possible and windy (wetter.com, wetterdienst.de). Opening hours not re-checked."
+    },
+    {
+      "kind": "openmic",
+      "title": {
+        "en": "an open mic on a quiet night.",
+        "de": "open mic an einem stillen abend.",
+        "tr": "sessiz bir gecede open mic."
+      },
+      "line": {
+        "en": "a small stage fits the day. read, sing or just listen at an open-mic night at the substanz or the café mohr in haidhausen.",
+        "de": "eine kleine bühne passt zum tag. lies, sing oder hör einfach zu bei einem open-mic-abend in der substanz oder im café mohr in haidhausen.",
+        "tr": "küçük bir sahne güne yakışır. substanz ya da haidhausen’daki café mohr’da open mic gecesinde oku, söyle ya da dinle."
+      },
+      "place": {
+        "en": "substanz",
+        "de": "substanz",
+        "tr": "substanz"
+      },
+      "hour": 20,
+      "minute": 0,
+      "why": "Wed 18.11 is Buß- und Bettag: no public holiday in Bavaria but schools are shut and a quiet-day rule limits loud entertainment (muenchen.de). Programme not confirmed; check venue before going."
+    },
+    {
+      "kind": "pingpong",
+      "title": {
+        "en": "table tennis, four people, one table.",
+        "de": "tischtennis, vier leute, ein tisch.",
+        "tr": "masa tenisi, dört kişi, bir masa."
+      },
+      "line": {
+        "en": "a public table in the englischer garten is too wet. find an indoor table-tennis club or bar with tables and play rounds until it is dark.",
+        "de": "ein öffentlicher tisch im englischen garten ist zu nass. such einen tischtennisclub oder eine bar mit platten und spiel runden bis es dunkel ist.",
+        "tr": "englischer garten’deki açık masa fazla ıslak. kapalı bir masa tenisi kulübü ya da masalı bir bar bul ve karanlık olana kadar oyna."
+      },
+      "place": {
+        "en": "englischer garten",
+        "de": "englischer garten",
+        "tr": "englischer garten"
+      },
+      "hour": 18,
+      "minute": 0,
+      "why": "Forecast ~9–11°C, overcast, light rain possible and windy (wetter.com, wetterdienst.de). Indoor alternative suggested."
+    },
+    {
+      "kind": "bouldering",
+      "title": {
+        "en": "a bouldering evening inside.",
+        "de": "ein boulderabend drinnen.",
+        "tr": "içeride bir boulder akşamı."
+      },
+      "line": {
+        "en": "a rainy school-free day fills the halls, so go after dinner. the first and last holds are the same for everyone: chalk up and warm up.",
+        "de": "ein regnerischer schulfreier tag füllt die hallen, also nach dem essen gehen. erste und letzte griffe gelten für alle: magnesia an die hände und aufwärmen.",
+        "tr": "yağmurlu okulsuz günde salonlar dolu, o yüzden yemekten sonra git. ilk ve son tutuş herkes için aynı: magnezyum sür ve ısın."
+      },
+      "place": {
+        "en": "boulderhalle münchen",
+        "de": "boulderhalle münchen",
+        "tr": "boulderhalle münchen"
+      },
+      "hour": 19,
+      "minute": 0,
+      "why": "Forecast ~9–11°C, overcast, light rain possible and windy (wetter.com, wetterdienst.de). Wed 18.11 is Buß- und Bettag: no public holiday in Bavaria but schools are shut and a quiet-day rule limits loud entertainment (muenchen.de)."
+    },
+    {
+      "kind": "picnic",
+      "title": {
+        "en": "an indoor picnic.",
+        "de": "ein picknick drinnen.",
+        "tr": "kapalı bir piknik."
+      },
+      "line": {
+        "en": "no blanket in the park today. spread it out in a living room or a warm café nook and bring cheese, bread and fruit.",
+        "de": "heute keine decke im park. breite sie im wohnzimmer oder einer warmen café-ecke aus und bring käse, brot und obst mit.",
+        "tr": "bugün parkta battaniye yok. oturma odasında ya da sıcak bir kafe köşesinde ser; peynir, ekmek ve meyve getir."
+      },
+      "place": {
+        "en": "zuhause",
+        "de": "zuhause",
+        "tr": "zuhause"
+      },
+      "hour": 15,
+      "minute": 0,
+      "why": "Forecast ~9–11°C, overcast, light rain possible and windy (wetter.com, wetterdienst.de). Moved indoors."
+    },
+    {
+      "kind": "crawl",
+      "title": {
+        "en": "a short bar crawl, nothing loud.",
+        "de": "eine kurze kneipentour, nichts lautes.",
+        "tr": "kısa bir bar turu, gürültüsüz."
+      },
+      "line": {
+        "en": "quiet day, so keep it to three calm places. start at the glockenbach, then the gärtnerplatz, end where the music is low.",
+        "de": "stiller tag, also bleib bei drei ruhigen orten. start im glockenbach, dann am gärtnerplatz, dort enden, wo die musik leise ist.",
+        "tr": "sessiz gün, üç sakin yerde kal. glockenbach’ta başla, sonra gärtnerplatz, müziğin kısık olduğu yerde bitir."
+      },
+      "place": {
+        "en": "gärtnerplatz",
+        "de": "gärtnerplatz",
+        "tr": "gärtnerplatz"
+      },
+      "hour": 20,
+      "minute": 30,
+      "why": "Wed 18.11 is Buß- und Bettag: no public holiday in Bavaria but schools are shut and a quiet-day rule limits loud entertainment (muenchen.de)."
+    },
+    {
+      "kind": "stars",
+      "title": {
+        "en": "stars, if the cloud breaks.",
+        "de": "sterne, falls die wolken aufreißen.",
+        "tr": "bulutlar açılırsa yıldızlar."
+      },
+      "line": {
+        "en": "heavy cloud is forecast, so no promise. check the sky after dark and go to the olympiaberg only if a gap shows.",
+        "de": "dichte wolken angesagt, also kein versprechen. nach einbruch der dunkelheit himmel prüfen und nur bei einer lücke auf den olympiaberg.",
+        "tr": "yoğun bulut bekleniyor, söz yok. karanlıkta gökyüzüne bak, ancak açıklık varsa olympiaberg’e git."
+      },
+      "place": {
+        "en": "olympiaberg",
+        "de": "olympiaberg",
+        "tr": "olympiaberg"
+      },
+      "hour": 21,
+      "minute": 0,
+      "why": "Forecast ~9–11°C, overcast, light rain possible and windy (wetter.com, wetterdienst.de). Low chance of a clear sky."
+    },
+    {
+      "kind": "football",
+      "title": {
+        "en": "a kickabout, or the screen.",
+        "de": "bolzen oder bildschirm.",
+        "tr": "top oyna ya da ekran izle."
+      },
+      "line": {
+        "en": "wet grass and no big match on. play five-a-side in a hall if you can book one, or watch whatever is on at a pub.",
+        "de": "nasser rasen und kein großes spiel. fünf gegen fünf in der halle, wenn du eine bekommst, oder schau im pub, was läuft.",
+        "tr": "ıslak çim ve büyük maç yok. salon bulabilirsen beşe beş oyna, yoksa pubda ne varsa izle."
+      },
+      "place": {
+        "en": "olympiapark",
+        "de": "olympiapark",
+        "tr": "olympiapark"
+      },
+      "hour": 19,
+      "minute": 0,
+      "why": "No FC Bayern, 1860, EHC or national-team match could be confirmed for 18.11. Forecast ~9–11°C, overcast, light rain possible and windy (wetter.com, wetterdienst.de)."
+    },
+    {
+      "kind": "tram",
+      "title": {
+        "en": "the 19 to the end of the line.",
+        "de": "mit der 19 bis zur endstation.",
+        "tr": "19 numaralı tramvayla son durağa."
+      },
+      "line": {
+        "en": "ride the tram without a plan. the 19 runs from pasing through the maximilianstraße to berg am laim; get off where the lights look warm.",
+        "de": "tram ohne plan. die 19 fährt von pasing über die maximilianstraße nach berg am laim; steig aus, wo die lichter warm wirken.",
+        "tr": "plansızca tramvaya bin. 19 pasing’ten maximilianstraße üzerinden berg am laim’e gider; ışıkların sıcak göründüğü yerde in."
+      },
+      "place": {
+        "en": "maximilianstraße",
+        "de": "maximilianstraße",
+        "tr": "maximilianstraße"
+      },
+      "hour": 18,
+      "minute": 0,
+      "why": "Tram ride is a generic spark; line routing not verified. Forecast ~9–11°C, overcast, light rain possible and windy (wetter.com, wetterdienst.de)."
+    },
+    {
+      "kind": "jazz",
+      "title": {
+        "en": "a jazz night, soft and low.",
+        "de": "ein jazzabend, leise und tief.",
+        "tr": "yumuşak ve alçak bir caz gecesi."
+      },
+      "line": {
+        "en": "quiet day, quiet music. try the unterfahrt in haidhausen for a seated set, doors about 20:00, or the jazzclub schlachthof.",
+        "de": "stiller tag, leise musik. versuch die unterfahrt in haidhausen für ein konzert im sitzen, einlass gegen 20 uhr.",
+        "tr": "sessiz gün, sessiz müzik. oturarak dinlemek için haidhausen’daki unterfahrt’ı dene, kapılar 20:00 civarı."
+      },
+      "place": {
+        "en": "unterfahrt",
+        "de": "unterfahrt",
+        "tr": "unterfahrt"
+      },
+      "hour": 20,
+      "minute": 0,
+      "why": "Wed 18.11 is Buß- und Bettag: no public holiday in Bavaria but schools are shut and a quiet-day rule limits loud entertainment (muenchen.de). Programme not confirmed; check the club."
+    },
+    {
+      "kind": "walk",
+      "title": {
+        "en": "a long walk before it gets dark.",
+        "de": "ein langer spaziergang vor der dämmerung.",
+        "tr": "kararmadan uzun bir yürüyüş."
+      },
+      "line": {
+        "en": "no rain forecast for the morning, mild air. walk the englischer garten from the monopteros to the chinese tower and back before dusk at 16:30.",
+        "de": "am morgen kein regen, milde luft. durch den englischen garten vom monopteros zum chinesischen turm und zurück, vor der dämmerung um 16:30.",
+        "tr": "sabah yağmur yok, ılık hava. 16:30’daki alacakaranlıktan önce monopteros’tan çin kulesi’ne englischer garten’de yürü."
+      },
+      "place": {
+        "en": "monopteros",
+        "de": "monopteros",
+        "tr": "monopteros"
+      },
+      "hour": 13,
+      "minute": 0,
+      "why": "Forecast ~9–11°C, overcast, light rain possible and windy (wetter.com, wetterdienst.de). Sunset about 16:30."
+    }
+  ]
+}
