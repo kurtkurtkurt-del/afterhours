@@ -1,0 +1,26 @@
+{
+ "city": "berlin",
+ "day": "2026-11-18",
+ "nights": [
+  {
+   "id": "ead87ee9-0757-477c-b2d5-c46b21e77063",
+   "slug": "strangelove-the-depeche-mode-experience-black-ce-32208ef4",
+   "title": "Strangelove - The DEPECHE MODE Experience Black Celebration 2026",
+   "act": "Strangelove",
+   "name": "Strangelove",
+   "description": "English alternative rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Strangelove_(band)",
+   "extract": "Strangelove were an English alternative rock band, formed in Bristol in 1991 comprising singer Patrick Duff, guitarists Alex Lee & Julian Poole, bassist Joe Allen and John Langley on drums. They released two EPs and three albums before disbanding in 1998."
+  },
+  {
+   "id": "3459fc4a-70b5-4254-95a5-acb7c99a2c08",
+   "slug": "ledbyher-midwinter-tour-ab41b7d0",
+   "title": "Ledbyher - Midwinter Tour",
+   "act": "Ledbyher",
+   "name": "Ledbyher",
+   "description": "British rapper and record producer",
+   "source_url": "https://en.wikipedia.org/wiki/Ledbyher",
+   "extract": "Rachel Aisyah Diack, known professionally as Ledbyher, is a British rapper, songwriter and record producer. Cited by The Guardian as a member of the UK underground rap scene, she describes her musical style as \"bedroom drill\". Her work is characterized by a \"wispy, sung-spoken\" delivery and ethereal, lo-fi instrumentals. Her debut extended play Cunch was released in 2023, before she signed to Island Records and released the mixtape The Elephant in 2026."
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "city": "ottawa",
+ "day": "2026-11-18",
+ "nights": [
+  {
+   "id": "0c25b28d-e96c-41d3-a5db-340d9b1e45f9",
+   "slug": "shakey-graves-fondness-etc-tour-1e571ceb",
+   "title": "Shakey Graves - Fondness, Etc. Tour",
+   "act": "Shakey Graves",
+   "name": "Shakey Graves",
+   "description": "American Americana musician",
+   "source_url": "https://en.wikipedia.org/wiki/Shakey_Graves",
+   "extract": "Shakey Graves is an American musician and actor from Austin, Texas."
+  },
+  {
+   "id": "3fda4958-08dd-40cb-9dd7-22cdb18d49cb",
+   "slug": "ani-difranco-cb486601",
+   "title": "Ani DiFranco",
+   "act": "Ani DiFranco",
+   "name": "Ani DiFranco",
+   "description": "American musician (born 1970)",
+   "source_url": "https://en.wikipedia.org/wiki/Ani_DiFranco",
+   "extract": "Angela Maria \"Ani\" DiFranco is an American-Canadian singer-songwriter. She has released more than 20 albums. Her music has been classified as folk rock and alternative rock, although it has additional influences from punk, funk, hip-hop and jazz. She has released all her albums on her own record label, Righteous Babe."
+  }
+ ]
+}

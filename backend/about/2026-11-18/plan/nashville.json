@@ -1,0 +1,16 @@
+{
+ "city": "nashville",
+ "day": "2026-11-18",
+ "nights": [
+  {
+   "id": "a9b9da21-5810-4b3b-a3ed-08f790ed002a",
+   "slug": "arrows-in-action-fb2bdbef",
+   "title": "Arrows In Action",
+   "act": "Arrows In Action",
+   "name": "Arrows in Action",
+   "description": "American pop-rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Arrows_in_Action",
+   "extract": "Arrows in Action is a Nashville-based pop-rock trio originating in Gainesville, Florida. The group is composed of singer/guitarist Victor Viramontes-Pattison, drummer Jesse Frimmel, and lead guitarist Matt Fowler. The band has released three full-length albums, as well as numerous EPs and singles, with over 223,000,000 streams across various platforms."
+  }
+ ]
+}

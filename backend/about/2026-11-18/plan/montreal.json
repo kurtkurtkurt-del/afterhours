@@ -1,0 +1,16 @@
+{
+ "city": "montreal",
+ "day": "2026-11-18",
+ "nights": [
+  {
+   "id": "fb9cc4fd-3d56-4564-b9fa-a82bae77a7c4",
+   "slug": "bonobo-distance-in-static-live-north-american-to-6e357429",
+   "title": "Bonobo - Distance In Static Live North American Tour",
+   "act": "Bonobo",
+   "name": "Bonobo",
+   "description": "English musician, producer, and DJ (born 1976)",
+   "source_url": "https://en.wikipedia.org/wiki/Bonobo_(musician)",
+   "extract": "Simon Charles Green, known by his stage name Bonobo, is an English musician, producer, and DJ based in Los Angeles. He debuted with a trip hop aesthetic and has since explored more upbeat approaches as well as jazz and world music influences. His electronic sound incorporates the use of organic instrumentation and is recreated by a full band in live performances."
+  }
+ ]
+}

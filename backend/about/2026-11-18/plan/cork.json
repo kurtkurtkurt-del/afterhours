@@ -1,0 +1,36 @@
+{
+ "city": "cork",
+ "day": "2026-11-18",
+ "nights": [
+  {
+   "id": "16467e84-c4d6-4b0f-838b-9404c73635f0",
+   "slug": "alexandra-kay-cbbb7b4c",
+   "title": "Alexandra Kay",
+   "act": "Alexandra Kay",
+   "name": "Alexandra Kay",
+   "description": "American singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Alexandra_Kay",
+   "extract": "Alexandra Kay is an American country music singer-songwriter from Waterloo, Illinois signed to Wheelhouse Records."
+  },
+  {
+   "id": "d410756e-21b6-4592-b97e-0c5a46da99a6",
+   "slug": "mario-rosenstock-cff53dbe",
+   "title": "Mario Rosenstock",
+   "act": "Mario Rosenstock",
+   "name": "Mario Rosenstock",
+   "description": "Irish actor, comedian and musician",
+   "source_url": "https://en.wikipedia.org/wiki/Mario_Rosenstock",
+   "extract": "Mario Rosenstock is an Irish actor, comedian, impressionist and musician."
+  },
+  {
+   "id": "9adf9f50-c871-4ad0-bc1b-c61c40a84175",
+   "slug": "the-bootleg-beatles-65ffe54a",
+   "title": "The Bootleg Beatles",
+   "act": "The Bootleg Beatles",
+   "name": "The Bootleg Beatles",
+   "description": "Beatles tribute band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Bootleg_Beatles",
+   "extract": "The Bootleg Beatles are a Beatles tribute band. They have performed over 4,000 times since their establishment in March 1980."
+  }
+ ]
+}

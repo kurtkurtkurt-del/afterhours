@@ -1,0 +1,16 @@
+{
+ "city": "brussel",
+ "day": "2026-11-18",
+ "nights": [
+  {
+   "id": "b67fe5e3-3466-408d-b8a7-de5589514380",
+   "slug": "the-last-internationale-dde5e1cd",
+   "title": "The Last Internationale",
+   "act": "The Last Internationale",
+   "name": "The Last Internationale",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Last_Internationale",
+   "extract": "The Last Internationale (TLI) is an American rock band formed by New York City guitarist Edgey Pires and vocalist Delila Paz."
+  }
+ ]
+}

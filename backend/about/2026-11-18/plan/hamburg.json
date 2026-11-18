@@ -1,0 +1,36 @@
+{
+ "city": "hamburg",
+ "day": "2026-11-18",
+ "nights": [
+  {
+   "id": "37609bfe-03d6-4893-bd9d-c5a75596e0de",
+   "slug": "strangelove-the-depeche-mode-experience-black-ce-78ed7735",
+   "title": "Strangelove - The DEPECHE MODE Experience Black Celebration 2026",
+   "act": "Strangelove",
+   "name": "Strangelove",
+   "description": "English alternative rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Strangelove_(band)",
+   "extract": "Strangelove were an English alternative rock band, formed in Bristol in 1991 comprising singer Patrick Duff, guitarists Alex Lee & Julian Poole, bassist Joe Allen and John Langley on drums. They released two EPs and three albums before disbanding in 1998."
+  },
+  {
+   "id": "b01476b9-383d-4cb6-9add-8286d2b25ddf",
+   "slug": "green-lung-0f7cf7d3",
+   "title": "Green Lung",
+   "act": "Green Lung",
+   "name": "Green Lung",
+   "description": "British rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Green_Lung",
+   "extract": "Green Lung is a British stoner/doom metal band formed in 2017 in London, currently signed to Nuclear Blast Records."
+  },
+  {
+   "id": "e6a93c03-0429-46a2-9e04-17c7227b3a6e",
+   "slug": "night-lovell-my-blood-as-the-ink-tour-ef748b07",
+   "title": "Night Lovell - My Blood As The Ink Tour",
+   "act": "Night Lovell",
+   "name": "Night Lovell",
+   "description": "American musician (born 1997)",
+   "source_url": "https://en.wikipedia.org/wiki/Night_Lovell",
+   "extract": "Shermar Cuba Paul, known professionally as Night Lovell, is a Canadian rapper, songwriter and record producer. He initially gained fame after his song Dark Light went viral in 2014. He has released four studio albums named Red Teenage Melody released on June 13, 2016, Goodnight Lovell released on February 22, 2019, Just Say You Don't Care, released May 6, 2021, and I Hope You're Happy released on December 8, 2023. He was a featured artist on American YouTuber and musician Corpse Husband's \"Hot Demon Bitches Near U ! ! !\", which released on September 3, 2021."
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "city": "stuttgart",
+ "day": "2026-11-18",
+ "nights": [
+  {
+   "id": "17ee822b-df41-46b0-85f2-4ad0125d5475",
+   "slug": "andreas-gabalier-arena-tour-2027-1abf0d22",
+   "title": "Andreas Gabalier - Arena Tour 2027",
+   "act": "Andreas Gabalier",
+   "name": "Andreas Gabalier",
+   "description": "Austrian folk singer",
+   "source_url": "https://en.wikipedia.org/wiki/Andreas_Gabalier",
+   "extract": "Andreas Gabalier is an Austrian folk and Rock and roll singer."
+  }
+ ]
+}

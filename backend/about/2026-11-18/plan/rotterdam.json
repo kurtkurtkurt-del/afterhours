@@ -1,0 +1,16 @@
+{
+ "city": "rotterdam",
+ "day": "2026-11-18",
+ "nights": [
+  {
+   "id": "f2142d24-d107-4f29-9874-2b0a7ea5942d",
+   "slug": "the-bootleg-beatles-53b2c73b",
+   "title": "The Bootleg Beatles",
+   "act": "The Bootleg Beatles",
+   "name": "The Bootleg Beatles",
+   "description": "Beatles tribute band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Bootleg_Beatles",
+   "extract": "The Bootleg Beatles are a Beatles tribute band. They have performed over 4,000 times since their establishment in March 1980."
+  }
+ ]
+}

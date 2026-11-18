@@ -1,0 +1,26 @@
+{
+ "city": "warszawa",
+ "day": "2026-11-18",
+ "nights": [
+  {
+   "id": "68d334ff-f58a-4813-b8fa-2fa951cdc6d9",
+   "slug": "the-last-internationale-ee41cf83",
+   "title": "The Last Internationale",
+   "act": "The Last Internationale",
+   "name": "The Last Internationale",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Last_Internationale",
+   "extract": "The Last Internationale (TLI) is an American rock band formed by New York City guitarist Edgey Pires and vocalist Delila Paz."
+  },
+  {
+   "id": "a7461c4d-6f08-4783-9620-b95f9ba24371",
+   "slug": "dayseeker-creature-in-the-black-night-tour-70fece0d",
+   "title": "Dayseeker: CREATURE IN THE BLACK NIGHT TOUR",
+   "act": "Dayseeker",
+   "name": "Dayseeker",
+   "description": "American post-hardcore band",
+   "source_url": "https://en.wikipedia.org/wiki/Dayseeker",
+   "extract": "Dayseeker is an American post-hardcore band formed in Orange County, California, in 2012. The group consists of vocalist Rory Rodriguez, bassist Ramone Valerio and drummer Zac Mayfield. They are currently signed to Spinefarm Records and have released six studio albums. Their most recent studio album, Creature in the Black Night, was released on October 24, 2025 with a Redux deluxe edition scheduled to release on February 26, 2027."
+  }
+ ]
+}

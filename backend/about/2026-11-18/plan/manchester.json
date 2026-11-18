@@ -1,0 +1,26 @@
+{
+ "city": "manchester",
+ "day": "2026-11-18",
+ "nights": [
+  {
+   "id": "c2662c91-ec03-4641-9423-c250cfa50448",
+   "slug": "feeble-little-horse-90042ea3",
+   "title": "feeble little horse",
+   "act": "feeble little horse",
+   "name": "Feeble Little Horse",
+   "description": "American indie rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Feeble_Little_Horse",
+   "extract": "feeble little horse is an American indie rock band from Pittsburgh, Pennsylvania, that formed in 2021. It currently comprises three founding members: multi-instrumentalist Sebastian Kinsler, drummer Jake Kelley, and vocalist-bassist Lydia Slocum. Guitarist Ryan Walchonski was also a founding member but left the group in 2025. The band is currently signed to Saddle Creek Records; they have three albums and one EP."
+  },
+  {
+   "id": "1419e360-6ef6-4822-9fc1-50c355c3d8a0",
+   "slug": "mystery-jets-c263e3df",
+   "title": "Mystery Jets",
+   "act": "Mystery Jets",
+   "name": "Mystery Jets",
+   "description": "English indie rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Mystery_Jets",
+   "extract": "Mystery Jets are an English indie rock band, formed on Eel Pie Island in Twickenham, London. The founding members still part of the band consist of Blaine Harrison, Henry Harrison (lyrics), and Kapil Trivedi (drums)."
+  }
+ ]
+}

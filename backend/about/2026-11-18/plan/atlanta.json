@@ -1,0 +1,26 @@
+{
+ "city": "atlanta",
+ "day": "2026-11-18",
+ "nights": [
+  {
+   "id": "3cac41fe-6d47-476c-9051-0a4628c0dafe",
+   "slug": "waterparks-night-3-8c41f72c",
+   "title": "Waterparks - NIGHT 3",
+   "act": "Waterparks",
+   "name": "Waterparks",
+   "description": "American pop rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Waterparks_(band)",
+   "extract": "Waterparks is an American pop rock band formed in Houston, Texas in 2011. The group currently consists of lead vocalist and rhythm guitarist Awsten Knight, backing vocalist and lead guitarist Geoff Wigington, and backing vocalist and drummer Otto Wood."
+  },
+  {
+   "id": "201d0ff1-4e40-45be-94a8-b3ff491745aa",
+   "slug": "phillip-phillips-ecd19869",
+   "title": "Phillip Phillips",
+   "act": "Phillip Phillips",
+   "name": "Phillip Phillips",
+   "description": "American singer",
+   "source_url": "https://en.wikipedia.org/wiki/Phillip_Phillips",
+   "extract": "Phillip LaDon Phillips Jr. is an American singer-songwriter who rose to fame after winning the eleventh season of American Idol in 2012. His coronation song, \"Home\", became the best-selling coronation song in American Idol history."
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "city": "chicago",
+ "day": "2026-11-18",
+ "nights": [
+  {
+   "id": "b88ecd5f-bd38-42f5-93fb-e05ba62442d8",
+   "slug": "michigander-9d74b9b5",
+   "title": "Michigander",
+   "act": "Michigander",
+   "name": "Michigander",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Michigander_(band)",
+   "extract": "Michigander is an American rock band created in 2014 from Kalamazoo, Michigan. It is the solo project centered around its vocalist, songwriter and multi-instrumentalist frontman, Jason Singer."
+  }
+ ]
+}

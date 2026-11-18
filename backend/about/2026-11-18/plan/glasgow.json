@@ -1,0 +1,46 @@
+{
+ "city": "glasgow",
+ "day": "2026-11-18",
+ "nights": [
+  {
+   "id": "45ff4687-f862-4419-b542-144b9d2cd7fb",
+   "slug": "xentrix-cross-atlantic-carnage-nervosa-ded10c13",
+   "title": "Xentrix: Cross-Atlantic Carnage + Nervosa",
+   "act": "Xentrix",
+   "name": "Xentrix",
+   "description": "English thrash metal band",
+   "source_url": "https://en.wikipedia.org/wiki/Xentrix",
+   "extract": "Xentrix are an English thrash metal band formed as Sweet Vengeance in Preston, Lancashire in 1984. They changed their name to Xentrix in 1988, and released four albums – Shattered Existence (1989), For Whose Advantage? (1990), Kin (1992) and Scourge (1996) – before disbanding in 1997. After briefly reuniting in 2005–2006, Xentrix reunited again in 2013, and they have since released three more albums: Bury the Pain (2019), Seven Words (2022) and Allied with the Enemy (2026). As part of the late 1980s-early-to-mid 1990s underground metal scene, Xentrix have been referred to as one of the \"Big Four\" of English thrash metal, along with Acid Reign, Onslaught and Sabbat."
+  },
+  {
+   "id": "0bcceb74-0f53-4964-b096-4bf231f5b595",
+   "slug": "bill-bailey-vaudevillean-a37c0410",
+   "title": "Bill Bailey - Vaudevillean",
+   "act": "Bill Bailey",
+   "name": "Bill Bailey",
+   "description": "British musician and comedian (born 1965)",
+   "source_url": "https://en.wikipedia.org/wiki/Bill_Bailey",
+   "extract": "Mark Robert \"Bill\" Bailey is an English musician, comedian, actor and television presenter. He is known for his role as Manny in the sitcom Black Books (2000–2004), and for his regular appearances on the panel shows Never Mind the Buzzcocks, Have I Got News for You, and QI, as well as for his stand-up comedy work. He plays a variety of musical instruments and incorporates music into his performances."
+  },
+  {
+   "id": "cd54bdf7-b2da-4c00-b478-2f201cfc28a7",
+   "slug": "paris-paloma-84a3d1b0",
+   "title": "Paris Paloma",
+   "act": "Paris Paloma",
+   "name": "Paris Paloma",
+   "description": "British singer-songwriter (born 1999)",
+   "source_url": "https://en.wikipedia.org/wiki/Paris_Paloma",
+   "extract": "Paris Paloma is a British singer-songwriter and guitarist. She gained prominence through the single \"Labour\" (2023). Her debut album, Cacophony, was released in 2024. Her second album, The Fatal Flaw, followed in 2026."
+  },
+  {
+   "id": "12532b84-0ebc-4c5f-abec-4398dbd8813d",
+   "slug": "westside-cowboy-d176cc94",
+   "title": "Westside Cowboy",
+   "act": "Westside Cowboy",
+   "name": "Westside Cowboy",
+   "description": "English rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Westside_Cowboy",
+   "extract": "Westside Cowboy are an English rock band formed in Manchester in 2023. The band members are Jimmy Bradbury, Reuben Haycocks, Aoife Anson O'Connell and Paddy Murphy."
+  }
+ ]
+}

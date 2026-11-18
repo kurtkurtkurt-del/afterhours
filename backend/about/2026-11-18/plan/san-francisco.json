@@ -1,0 +1,16 @@
+{
+ "city": "san-francisco",
+ "day": "2026-11-18",
+ "nights": [
+  {
+   "id": "e3b110ba-9621-47a7-b6a1-7ccb88b30055",
+   "slug": "the-mountain-goats-night-six-closers-fb1c68be",
+   "title": "The Mountain Goats - Night Six: Closers",
+   "act": "The Mountain Goats",
+   "name": "The Mountain Goats",
+   "description": "American indie folk band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Mountain_Goats",
+   "extract": "The Mountain Goats are an American indie folk band formed in Claremont, California, by singer-songwriter John Darnielle. Since 2003, the band has been based in Durham, North Carolina. For many years, the sole member of the Mountain Goats was Darnielle, despite the plural moniker. Although he remains the core member of the band, he has worked with a variety of collaborators over time, including bassist and vocalist Peter Hughes, drummer Jon Wurster, multi-instrumentalist Matt Douglas, singer-songwriter Franklin Bruno, bassist and vocalist Rachel Ware, singer-songwriter/producer John Vanderslice, guitarist Kaki King, and multi-instrumentalist Annie Clark."
+  }
+ ]
+}

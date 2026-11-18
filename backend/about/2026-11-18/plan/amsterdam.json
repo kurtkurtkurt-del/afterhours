@@ -1,0 +1,36 @@
+{
+ "city": "amsterdam",
+ "day": "2026-11-18",
+ "nights": [
+  {
+   "id": "a162096e-052d-489e-8d6d-cd16dbfbb03c",
+   "slug": "gang-of-youths-778e8fb2",
+   "title": "Gang Of Youths",
+   "act": "Gang Of Youths",
+   "name": "Gang of Youths",
+   "description": "Australian rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Gang_of_Youths",
+   "extract": "Gang of Youths are an Australian alternative rock band from Sydney that formed in 2012. The band was founded by chief songwriter and lead vocalist David Le'aupepe; he has been joined by Jung Kim on guitar and keyboards since the band's inception, as well as Donnie Borzestowski on drums since 2014 and Tom Hobden on violin, rhythm guitar and keyboards since 2020. The band's debut studio album The Positions (2015) received multiple ARIA Award nominations and peaked at number five on the Australian albums chart. It provided the single \"Magnolia\", which has been described as their breakthrough hit and was certified platinum in 2018."
+  },
+  {
+   "id": "8ee39955-97a3-42d3-bd16-6b5bc1c5c63d",
+   "slug": "muse-the-wow-signal-europa-tour-c0f9f2d4",
+   "title": "Muse - The Wow! Signal Europa Tour",
+   "act": "Muse",
+   "name": "Muse",
+   "description": "English rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Muse_(band)",
+   "extract": "Muse are an English rock band from Teignmouth, Devon, formed in 1994. The band consists of Matt Bellamy, Chris Wolstenholme, and Dominic Howard."
+  },
+  {
+   "id": "25f25b7a-35dc-4a51-9bfc-5500e3e5fd66",
+   "slug": "esdeekid-council-house-rat-tour-354a9f16",
+   "title": "EsDeeKid - Council House Rat Tour",
+   "act": "EsDeeKid",
+   "name": "EsDeeKid",
+   "description": "British rapper",
+   "source_url": "https://en.wikipedia.org/wiki/EsDeeKid",
+   "extract": "EsDeeKid is a British rapper from Liverpool, England. He released his debut mixtape, Rebel, in June 2025. He has been noted as a prominent figure in the UK underground rap scene. His music is characterised by his thick Scouse accent and draws inspiration from cloud rap. He covers his face with a balaclava, and keeps his name, appearance, and age private. He still lives in his council house.\nAs of May 2026, EsDeeKid's single \"Phantom\" has accumulated more than 300 million streams. His mixtape Rebel has charted in multiple European countries, as well as peaked at number 23 on the US Billboard 200, despite being released nearly five months before its debut on the chart."
+  }
+ ]
+}

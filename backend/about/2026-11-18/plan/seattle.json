@@ -1,0 +1,16 @@
+{
+ "city": "seattle",
+ "day": "2026-11-18",
+ "nights": [
+  {
+   "id": "f1a8ad5a-c574-4c27-9b1b-3d1486065215",
+   "slug": "alter-bridge-what-lies-within-tour-41d177fe",
+   "title": "Alter Bridge - What Lies Within Tour",
+   "act": "Alter Bridge",
+   "name": "Alter Bridge",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Alter_Bridge",
+   "extract": "Alter Bridge is an American rock band from Orlando, Florida. The band was formed in 2004 by lead vocalist and rhythm guitarist Myles Kennedy, lead guitarist Mark Tremonti, bassist Brian Marshall and drummer Scott Phillips. After their former band Creed became inactive in 2003, Tremonti and Phillips formed a new band with former bandmate Marshall and new member Kennedy; Alter Bridge was formally unveiled in January 2004, months before Creed's official breakup in June."
+  }
+ ]
+}

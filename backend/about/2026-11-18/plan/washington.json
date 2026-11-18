@@ -1,0 +1,16 @@
+{
+ "city": "washington",
+ "day": "2026-11-18",
+ "nights": [
+  {
+   "id": "93ca82c8-c799-442d-bcf0-5297371c2db9",
+   "slug": "virginia-coalition-3cbfaf96",
+   "title": "Virginia Coalition",
+   "act": "Virginia Coalition",
+   "name": "Virginia Coalition",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Virginia_Coalition",
+   "extract": "Virginia Coalition is an American rock band from Alexandria, Virginia, whose five founding members met in the early 1990s at T. C. Williams High School. Often referred to as VACO by fans, the band self-released their first album, The Colors of The Sound, in 1998. The group toured between Boston and Virginia heavily in the late 1990s, supporting The Colors of the Sound and its 2000 follow-up, Townburg; the band's tour van logged more than 100,000 miles by May 2001. The band's 2003 album on Koch Records, Rock & Roll Party, peaked at #18 on the Billboard Top Internet Albums chart. This album marked their transition from a band that primarily played in the Northeast and Mid-Atlantic regions of the United States to a nationwide touring act. The group's next full-length, OK to Go, was released in 2004 and was produced by Matt Wallace. In 2008 they followed up with the album Home This Year."
+  }
+ ]
+}

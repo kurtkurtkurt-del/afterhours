@@ -1,0 +1,46 @@
+{
+ "city": "zurich",
+ "day": "2026-11-18",
+ "nights": [
+  {
+   "id": "03c51dea-5c7c-4fc7-bf06-7f0c24e84955",
+   "slug": "filow-3d6410c9",
+   "title": "Filow",
+   "act": "Filow",
+   "name": "Filow",
+   "description": "German musician",
+   "source_url": "https://en.wikipedia.org/wiki/Filow",
+   "extract": "Felix Nier, known professionally as Filow, is a German influencer and musician."
+  },
+  {
+   "id": "16d8d826-b8d7-481f-baaa-ca82d87ffef3",
+   "slug": "the-scratch-856a6663",
+   "title": "The Scratch",
+   "act": "The Scratch",
+   "name": "The Scratch",
+   "description": "Irish trad/metal band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Scratch_(band)",
+   "extract": "The Scratch are an Irish band based in Dublin, whose music blends Irish traditional music and heavy metal."
+  },
+  {
+   "id": "d5ca4a0c-6aff-40ce-a629-8c6c31778d92",
+   "slug": "ayra-starr-starrgirl-world-tour-642e6389",
+   "title": "Ayra Starr: Starrgirl World Tour",
+   "act": "Ayra Starr",
+   "name": "Ayra Starr",
+   "description": "Beninese-born Nigerian singer (born 2002)",
+   "source_url": "https://en.wikipedia.org/wiki/Ayra_Starr",
+   "extract": "Oyinkansola Sarah Aderibigbe, known professionally as Ayra Starr, is a Beninese-born Nigerian singer-songwriter and producer."
+  },
+  {
+   "id": "7a85378c-cac6-4464-90e3-b892769328c1",
+   "slug": "almost-monday-46eb0864",
+   "title": "almost monday",
+   "act": "almost monday",
+   "name": "Almost Monday",
+   "description": "American indie pop band",
+   "source_url": "https://en.wikipedia.org/wiki/Almost_Monday",
+   "extract": "Almost Monday is an American indie pop band based in San Diego, California."
+  }
+ ]
+}

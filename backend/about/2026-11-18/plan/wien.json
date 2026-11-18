@@ -1,0 +1,26 @@
+{
+ "city": "wien",
+ "day": "2026-11-18",
+ "nights": [
+  {
+   "id": "d30ffaa5-ddcb-44a8-98fa-d96fa18eb4e5",
+   "slug": "the-veils-fragile-world-d8bd4a67",
+   "title": "The Veils - Fragile World",
+   "act": "The Veils",
+   "name": "The Veils",
+   "description": "English/New Zealand rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Veils",
+   "extract": "The Veils are an English/New Zealand indie/rock band fronted by singer and songwriter Finn Andrews."
+  },
+  {
+   "id": "8ff7850e-41e2-4367-811c-7d201b513386",
+   "slug": "ider-looking-gorgeous-expecting-everything-tour-1cca1f1c",
+   "title": "IDER - Looking Gorgeous, Expecting Everything Tour",
+   "act": "IDER",
+   "name": "Ider",
+   "description": "English singer-songwriter duo",
+   "source_url": "https://en.wikipedia.org/wiki/Ider_(band)",
+   "extract": "Ider are an English singer-songwriter duo from London, composed of Megan Markwick and Lily Somerville. Their musical style combines features of various musical genres, and it has been described as \"cross-genre\". Formed in 2016 after performing as Lily & Meg for two years, Ider released their debut EP Gut Me Like an Animal in 2017, followed by the first full-length album Emotional Education in 2019."
+  }
+ ]
+}
