@@ -1,0 +1,14 @@
+{
+  "city": "los-angeles",
+  "day": "2026-11-22",
+  "sparks": [
+    {
+      "kind": "flea",
+      "title": { "en": "makers art market at the beverly connection.", "de": "makers art market im beverly connection.", "tr": "beverly connection'da makers art market." },
+      "line": { "en": "a makers and art market in the former saks off fifth space, sunday 12 to 6 pm, running through 13 december.", "de": "ein maker- und kunstmarkt im ehemaligen saks off fifth, sonntag 12 bis 18 uhr, bis 13. dezember.", "tr": "eski saks off fifth alanında makers ve sanat pazarı, pazar 12.00 ile 18.00 arası, 13 aralık'a kadar." },
+      "place": { "en": "beverly connection", "de": "beverly connection", "tr": "beverly connection" },
+      "hour": 12, "minute": 0,
+      "why": "Makers ART Market listing (ma.to) for the Beverly Connection, 100 N. La Cienega Blvd: Sundays 12 to 6 pm through 13 Dec 2026. Filed as flea as the closest kind for a vendor market; the Sunday date itself has no dedicated page."
+    }
+  ]
+}

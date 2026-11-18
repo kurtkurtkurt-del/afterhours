@@ -1,0 +1,14 @@
+{
+  "city": "los-angeles",
+  "day": "2026-11-20",
+  "sparks": [
+    {
+      "kind": "derby",
+      "title": { "en": "lakers vs kings at crypto.com arena.", "de": "lakers gegen kings im crypto.com arena.", "tr": "crypto.com arena'da lakers – kings." },
+      "line": { "en": "the california rivalry at crypto.com arena, friday at 7 pm. tickets through the arena or the resale sites.", "de": "das kalifornische duell im crypto.com arena, freitag um 19 uhr. tickets über die arena oder die wiederverkaufsportale.", "tr": "crypto.com arena'da kaliforniya rekabeti, cuma saat 19.00. biletler arena'dan ya da ikinci el satış sitelerinden." },
+      "place": { "en": "crypto.com arena", "de": "crypto.com arena", "tr": "crypto.com arena" },
+      "hour": 19, "minute": 0,
+      "why": "Lakers vs Sacramento Kings at Crypto.com Arena, Fri 20 Nov 2026, 7 pm PT, per SeatGeek's Lakers home schedule; a SportBusy listing gives the same date. Filed as a derby for the rivalry."
+    }
+  ]
+}
