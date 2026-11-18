@@ -1,0 +1,14 @@
+{
+  "city": "miami",
+  "day": "2026-11-29",
+  "sparks": [
+    {
+      "kind": "football",
+      "title": { "en": "dolphins vs jets at hard rock stadium.", "de": "dolphins gegen jets im hard rock stadium.", "tr": "hard rock stadium'da dolphins – jets." },
+      "line": { "en": "dolphins home game against the new york jets at 1pm, at hard rock stadium in miami gardens, on cbs. a sunday afternoon after thanksgiving.", "de": "dolphins heimspiel gegen die new york jets um 13 uhr im hard rock stadium in miami gardens, übertragen auf cbs. ein sonntagnachmittag nach thanksgiving.", "tr": "dolphins, saat 13:00'te miami gardens'taki hard rock stadium'da new york jets'i ağırlıyor. cbs yayını. şükran gününden sonraki pazar öğleden sonrası." },
+      "place": { "en": "Hard Rock Stadium, Miami Gardens", "de": "Hard Rock Stadium, Miami Gardens", "tr": "Hard Rock Stadium, Miami Gardens" },
+      "hour": 13, "minute": 0,
+      "why": "NFL Week 12 Dolphins home game vs Jets, Sun 29 Nov 1pm ET (Hard Rock Stadium events page; Ticketmaster and CBS schedule listings)."
+    }
+  ]
+}
