@@ -1,0 +1,38 @@
+{
+ "city": "hamburg",
+ "day": "2026-11-18",
+ "nights": [
+  {
+   "id": "e6a93c03-0429-46a2-9e04-17c7227b3a6e",
+   "slug": "night-lovell-my-blood-as-the-ink-tour-ef748b07",
+   "title": "Night Lovell - My Blood As The Ink Tour",
+   "name": "Night Lovell",
+   "source_url": "https://en.wikipedia.org/wiki/Night_Lovell",
+   "extract": "Shermar Cuba Paul, known professionally as Night Lovell, is a Canadian rapper, songwriter and record producer. He initially gained fame after his song Dark Light went viral in 2014. He has released four studio albums named Red Teenage Melody released on June 13, 2016, Goodnight Lovell released on February 22, 2019, Just Say You Don't Care, released May 6, 2021, and I Hope You're Happy released on December 8, 2023. He was a featured artist on American YouTuber and musician Corpse Husband's \"Hot Demon Bitches Near U ! ! !\", which released on September 3, 2021.",
+   "en": {
+    "kicker": "canadian rapper and producer",
+    "who": "shermar cuba paul, known professionally as night lovell, is a canadian rapper, songwriter and record producer. he first gained fame after his song dark light went viral in 2014.",
+    "facts": [
+     "He initially gained fame after his song Dark Light went viral in 2014.",
+     "He has released four studio albums named Red Teenage Melody released on June 13, 2016, Goodnight Lovell released on February 22, 2019, Just Say You Don't Care, released May 6, 2021, and I Hope You're Happy released on December 8, 2023."
+    ]
+   },
+   "de": {
+    "kicker": "kanadischer rapper und produzent",
+    "who": "shermar cuba paul, bekannt als night lovell, ist ein kanadischer rapper, songwriter und musikproduzent. bekannt wurde er durch den song dark light, der 2014 viral ging.",
+    "facts": [
+     "er wurde vor allem durch seinen song dark light bekannt, der 2014 viral ging.",
+     "er hat vier studioalben veröffentlicht: red teenage melody (2016), goodnight lovell (2019), just say you don't care (2021) und i hope you're happy (2023)."
+    ]
+   },
+   "tr": {
+    "kicker": "kanadalı rapçi ve yapımcı",
+    "who": "shermar cuba paul, sanat adıyla night lovell, kanadalı bir rapçi, söz yazarı ve müzik yapımcısıdır. ilk ünü 2014'te viral olan \"dark light\" şarkısıyla kazandı.",
+    "facts": [
+     "ilk şöhretini 2014'te viral olan \"dark light\" şarkısıyla kazandı.",
+     "dört stüdyo albümü yayımladı: red teenage melody (2016), goodnight lovell (2019), just say you don't care (2021) ve i hope you're happy (2023)."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,70 @@
+{
+ "city": "new-orleans",
+ "day": "2026-11-18",
+ "nights": [
+  {
+   "id": "01851825-b4ad-4334-88e3-ead3b8ef201a",
+   "slug": "the-afghan-whigs-1ce3fd4d",
+   "title": "The Afghan Whigs",
+   "name": "The Afghan Whigs",
+   "source_url": "https://en.wikipedia.org/wiki/The_Afghan_Whigs",
+   "extract": "The Afghan Whigs are an American rock band from Cincinnati, Ohio. They were active from 1986 to 2001, reformed briefly in 2006 and again from 2011 to present.",
+   "en": {
+    "kicker": "american rock band · cincinnati, 1986",
+    "who": "the afghan whigs are an american rock band from cincinnati, ohio. they were active from 1986 to 2001, reformed briefly in 2006 and again from 2011.",
+    "facts": [
+     "The Afghan Whigs are an American rock band from Cincinnati, Ohio.",
+     "They were active from 1986 to 2001, reformed briefly in 2006 and again from 2011 to present."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische rockband · cincinnati, 1986",
+    "who": "the afghan whigs sind eine amerikanische rockband aus cincinnati, ohio. sie waren von 1986 bis 2001 aktiv, formierten sich 2006 kurz neu und seit 2011 erneut.",
+    "facts": [
+     "the afghan whigs sind eine amerikanische rockband aus cincinnati, ohio.",
+     "sie waren von 1986 bis 2001 aktiv, formierten sich 2006 kurz neu und seit 2011 wieder bis heute."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı rock grubu · cincinnati, 1986",
+    "who": "the afghan whigs, ohio eyaletinin cincinnati kentinden bir amerikalı rock grubudur. 1986'dan 2001'e kadar aktifti, 2006'da kısa süreliğine yeniden bir araya geldi ve 2011'den beri yeniden aktif.",
+    "facts": [
+     "the afghan whigs, ohio eyaletinin cincinnati kentinden bir amerikalı rock grubudur.",
+     "grup 1986'dan 2001'e kadar aktifti, 2006'da kısaca yeniden birleşti ve 2011'den bu yana yeniden faaliyette."
+    ]
+   }
+  },
+  {
+   "id": "16178f3c-adf4-404a-ae52-5a34735f8b1c",
+   "slug": "project-pat-b64014e9",
+   "title": "Project Pat",
+   "name": "Project Pat",
+   "source_url": "https://en.wikipedia.org/wiki/Project_Pat",
+   "extract": "Patrick Earl Houston, known professionally as Project Pat, is an American rapper from Memphis, Tennessee. He is the older brother of Juicy J, the co-founder of Three 6 Mafia.",
+   "en": {
+    "kicker": "american rapper · memphis",
+    "who": "project pat is an american rapper from memphis, tennessee, and the older brother of juicy j.",
+    "facts": [
+     "Patrick Earl Houston, known professionally as Project Pat, is an American rapper from Memphis, Tennessee.",
+     "He is the older brother of Juicy J, the co-founder of Three 6 Mafia."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer rapper · memphis",
+    "who": "project pat ist ein amerikanischer rapper aus memphis, tennessee, und der ältere bruder von juicy j.",
+    "facts": [
+     "patrick earl houston, bekannt als project pat, ist ein amerikanischer rapper aus memphis, tennessee.",
+     "er ist der ältere bruder von juicy j, dem mitbegründer von three 6 mafia."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı rapçi · memphis",
+    "who": "project pat, tennessee'nin memphis kentinden bir amerikalı rapçidir ve juicy j'nin ağabeyidir.",
+    "facts": [
+     "patrick earl houston, sanat adıyla project pat, tennessee'nin memphis kentinden bir amerikalı rapçidir.",
+     "three 6 mafia'nın kurucu ortaklarından juicy j'nin ağabeyidir."
+    ]
+   }
+  }
+ ]
+}

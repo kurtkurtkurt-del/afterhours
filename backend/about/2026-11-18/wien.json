@@ -1,0 +1,38 @@
+{
+ "city": "wien",
+ "day": "2026-11-18",
+ "nights": [
+  {
+   "id": "8ff7850e-41e2-4367-811c-7d201b513386",
+   "slug": "ider-looking-gorgeous-expecting-everything-tour-1cca1f1c",
+   "title": "IDER - Looking Gorgeous, Expecting Everything Tour",
+   "name": "Ider",
+   "source_url": "https://en.wikipedia.org/wiki/Ider_(band)",
+   "extract": "Ider are an English singer-songwriter duo from London, composed of Megan Markwick and Lily Somerville. Their musical style combines features of various musical genres, and it has been described as \"cross-genre\". Formed in 2016 after performing as Lily & Meg for two years, Ider released their debut EP Gut Me Like an Animal in 2017, followed by the first full-length album Emotional Education in 2019.",
+   "en": {
+    "kicker": "english singer-songwriter duo · london, 2016",
+    "who": "ider are an english singer-songwriter duo from london, made up of megan markwick and lily somerville. their style combines features of several genres and has been described as \"cross-genre\".",
+    "facts": [
+     "Ider are an English singer-songwriter duo from London, composed of Megan Markwick and Lily Somerville.",
+     "Formed in 2016 after performing as Lily & Meg for two years, Ider released their debut EP Gut Me Like an Animal in 2017, followed by the first full-length album Emotional Education in 2019."
+    ]
+   },
+   "de": {
+    "kicker": "englisches singer-songwriter-duo · london, 2016",
+    "who": "ider sind ein englisches singer-songwriter-duo aus london, bestehend aus megan markwick und lily somerville. ihr stil verbindet merkmale verschiedener genres und wird als \"cross-genre\" beschrieben.",
+    "facts": [
+     "ider sind ein englisches singer-songwriter-duo aus london, bestehend aus megan markwick und lily somerville.",
+     "2016 gegründet nach zwei jahren als lily & meg, veröffentlichten ider 2017 ihre debüt-ep gut me like an animal, gefolgt vom ersten album emotional education 2019."
+    ]
+   },
+   "tr": {
+    "kicker": "ingiliz şarkıcı-söz yazarı ikilisi · londra, 2016",
+    "who": "ider, megan markwick ve lily somerville'den oluşan londra merkezli bir ingiliz şarkıcı-söz yazarı ikilisidir. müzik tarzları birden çok türün özelliklerini birleştirir ve \"cross-genre\" olarak tanımlanır.",
+    "facts": [
+     "ider, megan markwick ve lily somerville'den oluşan londra merkezli bir ingiliz şarkıcı-söz yazarı ikilisidir.",
+     "2016'da iki yıl lily & meg olarak sahne aldıktan sonra kuruldu; 2017'de debut ep'i gut me like an animal'ı, 2019'da ilk albümü emotional education'ı yayımladı."
+    ]
+   }
+  }
+ ]
+}

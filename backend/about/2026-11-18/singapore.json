@@ -1,0 +1,38 @@
+{
+ "city": "singapore",
+ "day": "2026-11-18",
+ "nights": [
+  {
+   "id": "2f32f9eb-ad89-4220-a57f-4fba458f7c48",
+   "slug": "5-seconds-of-summer-everyone-s-a-star-world-tour-3694ab50",
+   "title": "5 SECONDS OF SUMMER: EVERYONE’S A STAR! WORLD TOUR",
+   "name": "5 Seconds of Summer",
+   "source_url": "https://en.wikipedia.org/wiki/5_Seconds_of_Summer",
+   "extract": "5 Seconds of Summer, often shortened to 5SOS, are an Australian pop rock band formed in Sydney in 2011. The group consists of lead vocalist and rhythm guitarist Luke Hemmings, lead guitarist Michael Clifford, bassist Calum Hood, and drummer Ashton Irwin. Originally beginning their career as YouTube celebrities, they rose to international fame while touring with English-Irish boy band One Direction on their Take Me Home Tour. Since 2014, 5 Seconds of Summer have sold more than 10 million albums, sold over 2 million concert tickets worldwide, and have attained more than 7 billion streams of their songs on music streaming services, making them one of the most successful Australian musical acts ",
+   "en": {
+    "kicker": "australian pop rock band · sydney, 2011",
+    "who": "5 seconds of summer, often shortened to 5sos, are an australian pop rock band. since 2014 they have sold more than 10 million albums and attained more than 7 billion streams.",
+    "facts": [
+     "5 Seconds of Summer, often shortened to 5SOS, are an Australian pop rock band formed in Sydney in 2011.",
+     "The group consists of lead vocalist and rhythm guitarist Luke Hemmings, lead guitarist Michael Clifford, bassist Calum Hood, and drummer Ashton Irwin."
+    ]
+   },
+   "de": {
+    "kicker": "australische pop-rock-band · sydney, 2011",
+    "who": "5 seconds of summer, kurz 5sos, sind eine australische pop-rock-band. seit 2014 haben sie mehr als 10 millionen alben verkauft und über 7 milliarden streams erreicht.",
+    "facts": [
+     "5 seconds of summer, kurz 5sos, sind eine australische pop-rock-band, die 2011 in sydney gegründet wurde.",
+     "zur band gehören der leadsänger und rhythmusgitarrist luke hemmings, der leadgitarrist michael clifford, der bassist calum hood und der schlagzeuger ashton irwin."
+    ]
+   },
+   "tr": {
+    "kicker": "avustralyalı pop rock grubu · sidney, 2011",
+    "who": "5 seconds of summer, kısaca 5sos, avustralyalı bir pop rock grubudur. 2014'ten beri 10 milyondan fazla albüm sattı ve 7 milyardan fazla dinlenmeye ulaştı.",
+    "facts": [
+     "5 seconds of summer, kısaca 5sos, 2011'de sidney'de kurulmuş avustralyalı bir pop rock grubudur.",
+     "grup baş vokalist ve ritim gitaristi luke hemmings, baş gitarist michael clifford, basçı calum hood ve davulcu ashton irwin'den oluşuyor."
+    ]
+   }
+  }
+ ]
+}

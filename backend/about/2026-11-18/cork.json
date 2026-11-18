@@ -1,0 +1,38 @@
+{
+ "city": "cork",
+ "day": "2026-11-18",
+ "nights": [
+  {
+   "id": "9adf9f50-c871-4ad0-bc1b-c61c40a84175",
+   "slug": "the-bootleg-beatles-65ffe54a",
+   "title": "The Bootleg Beatles",
+   "name": "The Bootleg Beatles",
+   "source_url": "https://en.wikipedia.org/wiki/The_Bootleg_Beatles",
+   "extract": "The Bootleg Beatles are a Beatles tribute band. They have performed over 4,000 times since their establishment in March 1980.",
+   "en": {
+    "kicker": "beatles tribute band · est. 1980",
+    "who": "the bootleg beatles are a beatles tribute band that has been performing since it was established in march 1980.",
+    "facts": [
+     "The Bootleg Beatles are a Beatles tribute band.",
+     "They have performed over 4,000 times since their establishment in March 1980."
+    ]
+   },
+   "de": {
+    "kicker": "beatles-tributeband · gegründet 1980",
+    "who": "the bootleg beatles sind eine beatles-tributeband, die seit märz 1980 besteht und über 4.000 auftritte absolviert hat.",
+    "facts": [
+     "the bootleg beatles sind eine beatles-tributeband.",
+     "seit ihrer gründung im märz 1980 sind sie über 4.000 mal aufgetreten."
+    ]
+   },
+   "tr": {
+    "kicker": "beatles tribute grubu · 1980'de kuruldu",
+    "who": "the bootleg beatles bir beatles tribute grubudur. mart 1980'de kurulduklarından bu yana 4.000'den fazla kez sahne almışlardır.",
+    "facts": [
+     "the bootleg beatles bir beatles tribute grubudur.",
+     "mart 1980'deki kuruluşlarından bu yana 4.000'den fazla kez sahne almışlardır."
+    ]
+   }
+  }
+ ]
+}

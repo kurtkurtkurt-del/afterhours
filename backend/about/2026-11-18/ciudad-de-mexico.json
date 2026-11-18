@@ -1,0 +1,38 @@
+{
+ "city": "ciudad-de-mexico",
+ "day": "2026-11-18",
+ "nights": [
+  {
+   "id": "ec3c4864-fc9f-432b-a7db-7d7ce37d005d",
+   "slug": "morat-7d020213",
+   "title": "Morat",
+   "name": "Morat",
+   "source_url": "https://en.wikipedia.org/wiki/Morat_(band)",
+   "extract": "Morat is a Colombian Latin pop rock band formed in the country's capital city, Bogotá. The band is made up of Juan Pablo Isaza, Juan Pablo Villamil, and the brothers Simón Vargas and Martín Vargas. Drummer Alejandro Posada was also a founding member of the band, but left in 2016 and was replaced by Martín Vargas.",
+   "en": {
+    "kicker": "colombian pop rock band · bogotá",
+    "who": "morat is a colombian latin pop rock band from bogotá. the band is made up of juan pablo isaza, juan pablo villamil and the brothers simón and martín vargas.",
+    "facts": [
+     "Morat is a Colombian Latin pop rock band formed in the country's capital city, Bogotá.",
+     "The band is made up of Juan Pablo Isaza, Juan Pablo Villamil, and the brothers Simón Vargas and Martín Vargas."
+    ]
+   },
+   "de": {
+    "kicker": "kolumbianische pop-rock-band · bogotá",
+    "who": "morat ist eine kolumbianische latin-pop-rock-band aus bogotá. zur band gehören juan pablo isaza, juan pablo villamil sowie die brüder simón und martín vargas.",
+    "facts": [
+     "morat ist eine kolumbianische latin-pop-rock-band, die in der hauptstadt bogotá gegründet wurde.",
+     "die band besteht aus juan pablo isaza, juan pablo villamil sowie den brüdern simón vargas und martín vargas."
+    ]
+   },
+   "tr": {
+    "kicker": "kolombiyalı pop rock grubu · bogotá",
+    "who": "morat, kolombiya'nın başkenti bogotá'da kurulmuş bir kolombiyalı latin pop rock grubudur. grubun üyeleri juan pablo isaza, juan pablo villamil ve kardeşler simón ile martín vargas'tır.",
+    "facts": [
+     "morat, ülkenin başkenti bogotá'da kurulmuş bir kolombiyalı latin pop rock grubudur.",
+     "grup juan pablo isaza, juan pablo villamil ve kardeşler simón ile martín vargas'tan oluşuyor."
+    ]
+   }
+  }
+ ]
+}

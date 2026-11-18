@@ -1,0 +1,38 @@
+{
+ "city": "warszawa",
+ "day": "2026-11-18",
+ "nights": [
+  {
+   "id": "a7461c4d-6f08-4783-9620-b95f9ba24371",
+   "slug": "dayseeker-creature-in-the-black-night-tour-70fece0d",
+   "title": "Dayseeker: CREATURE IN THE BLACK NIGHT TOUR",
+   "name": "Dayseeker",
+   "source_url": "https://en.wikipedia.org/wiki/Dayseeker",
+   "extract": "Dayseeker is an American post-hardcore band formed in Orange County, California, in 2012. The group consists of vocalist Rory Rodriguez, bassist Ramone Valerio and drummer Zac Mayfield. They are currently signed to Spinefarm Records and have released six studio albums. Their most recent studio album, Creature in the Black Night, was released on October 24, 2025 with a Redux deluxe edition scheduled to release on February 26, 2027.",
+   "en": {
+    "kicker": "american post-hardcore band · orange county, 2012",
+    "who": "dayseeker is an american post-hardcore band formed in orange county, california, in 2012. the group consists of vocalist rory rodriguez, bassist ramone valerio and drummer zac mayfield.",
+    "facts": [
+     "Dayseeker is an American post-hardcore band formed in Orange County, California, in 2012.",
+     "They are currently signed to Spinefarm Records and have released six studio albums."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische post-hardcore-band · orange county, 2012",
+    "who": "dayseeker sind eine amerikanische post-hardcore-band aus orange county, kalifornien. zur band gehören sänger rory rodriguez, bassist ramone valerio und schlagzeuger zac mayfield.",
+    "facts": [
+     "dayseeker sind eine amerikanische post-hardcore-band, die 2012 in orange county, kalifornien, gegründet wurde.",
+     "die band steht derzeit bei spinefarm records unter vertrag und hat sechs studioalben veröffentlicht."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı post-hardcore grubu · orange county, 2012",
+    "who": "dayseeker, kaliforniya'nın orange county kentinde 2012'de kurulmuş amerikalı bir post-hardcore grubudur. grubun üyeleri vokalist rory rodriguez, basçı ramone valerio ve davulcu zac mayfield'dır.",
+    "facts": [
+     "dayseeker, 2012'de kaliforniya'nın orange county kentinde kurulmuş amerikalı bir post-hardcore grubudur.",
+     "grup şu anda spinefarm records ile anlaşmalı ve altı stüdyo albümü yayımladı."
+    ]
+   }
+  }
+ ]
+}

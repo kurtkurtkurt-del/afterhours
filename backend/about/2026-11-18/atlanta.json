@@ -1,0 +1,70 @@
+{
+ "city": "atlanta",
+ "day": "2026-11-18",
+ "nights": [
+  {
+   "id": "3cac41fe-6d47-476c-9051-0a4628c0dafe",
+   "slug": "waterparks-night-3-8c41f72c",
+   "title": "Waterparks - NIGHT 3",
+   "name": "Waterparks",
+   "source_url": "https://en.wikipedia.org/wiki/Waterparks_(band)",
+   "extract": "Waterparks is an American pop rock band formed in Houston, Texas in 2011. The group currently consists of lead vocalist and rhythm guitarist Awsten Knight, backing vocalist and lead guitarist Geoff Wigington, and backing vocalist and drummer Otto Wood.",
+   "en": {
+    "kicker": "american pop rock band · houston, 2011",
+    "who": "waterparks is an american pop rock band from houston, texas. the group is fronted by lead vocalist and rhythm guitarist awsten knight.",
+    "facts": [
+     "Waterparks is an American pop rock band formed in Houston, Texas in 2011.",
+     "The group currently consists of lead vocalist and rhythm guitarist Awsten Knight, backing vocalist and lead guitarist Geoff Wigington, and backing vocalist and drummer Otto Wood."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische pop-rock-band · houston, 2011",
+    "who": "waterparks ist eine amerikanische pop-rock-band aus houston, texas. frontmann ist der leadsänger und rhythmusgitarrist awsten knight.",
+    "facts": [
+     "waterparks ist eine amerikanische pop-rock-band, die 2011 in houston, texas, gegründet wurde.",
+     "zur band gehören awsten knight als leadsänger und rhythmusgitarrist, geoff wigington als leadgitarrist und otto wood als schlagzeuger."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı pop rock grubu · houston, 2011",
+    "who": "waterparks, teksas'ın houston kentinde kurulmuş bir amerikalı pop rock grubudur. baş vokali awsten knight'tır.",
+    "facts": [
+     "waterparks, 2011'de teksas'ın houston kentinde kurulmuş amerikalı bir pop rock grubudur.",
+     "grubu şu anda baş vokalist ve ritim gitaristi awsten knight, baş gitarist geoff wigington ve davulcu otto wood oluşturuyor."
+    ]
+   }
+  },
+  {
+   "id": "201d0ff1-4e40-45be-94a8-b3ff491745aa",
+   "slug": "phillip-phillips-ecd19869",
+   "title": "Phillip Phillips",
+   "name": "Phillip Phillips",
+   "source_url": "https://en.wikipedia.org/wiki/Phillip_Phillips",
+   "extract": "Phillip LaDon Phillips Jr. is an American singer-songwriter who rose to fame after winning the eleventh season of American Idol in 2012. His coronation song, \"Home\", became the best-selling coronation song in American Idol history.",
+   "en": {
+    "kicker": "american singer-songwriter · american idol, 2012",
+    "who": "phillip phillips is an american singer-songwriter. his coronation song \"home\" became the best-selling coronation song in american idol history.",
+    "facts": [
+     "Phillip LaDon Phillips Jr. is an American singer-songwriter who rose to fame after winning the eleventh season of American Idol in 2012.",
+     "His coronation song, \"Home\", became the best-selling coronation song in American Idol history."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer singer-songwriter · american idol, 2012",
+    "who": "phillip phillips ist ein amerikanischer singer-songwriter. sein krönungslied \"home\" wurde das meistverkaufte krönungslied in der geschichte von american idol.",
+    "facts": [
+     "phillip phillips wurde durch den gewinn der elften staffel von american idol im jahr 2012 bekannt.",
+     "sein krönungslied \"home\" wurde das meistverkaufte krönungslied in der geschichte von american idol."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı şarkıcı ve söz yazarı · american idol, 2012",
+    "who": "phillip phillips, amerikalı bir şarkıcı ve söz yazarıdır. taç giyme şarkısı \"home\", american idol tarihinin en çok satan taç giyme şarkısı oldu.",
+    "facts": [
+     "2012'de american idol'ün on birinci sezonunu kazanarak ünlendi.",
+     "taç giyme şarkısı \"home\", american idol tarihinin en çok satan taç giyme şarkısı oldu."
+    ]
+   }
+  }
+ ]
+}

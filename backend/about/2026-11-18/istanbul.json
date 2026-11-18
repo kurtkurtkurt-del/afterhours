@@ -1,0 +1,38 @@
+{
+ "city": "istanbul",
+ "day": "2026-11-18",
+ "nights": [
+  {
+   "id": "8432acd6-2a95-468f-98fa-3cbe93c00d84",
+   "slug": "hande-yener-604729b4",
+   "title": "Hande Yener",
+   "name": "Hande Yener",
+   "source_url": "https://en.wikipedia.org/wiki/Hande_Yener",
+   "extract": "Makbule Hande Özyener, known professionally as Hande Yener, is a Turkish singer and songwriter. She made her debut in the early 2000s, and since then has become a prominent figure of Turkish pop music with numerous songs that topped the music charts. Alongside her music career, she is also known for her choice of clothes and has renewed her image multiple times over the years. She has occasionally made changes in her music style as well; for a while, she started making electronic music, but this period was short-lived and she again returned to performing pop music. During her career, both her professional and personal life have been among the favorite subjects of columnists, and her rivalry ",
+   "en": {
+    "kicker": "turkish singer and songwriter",
+    "who": "makbule hande özyener, known professionally as hande yener, is a turkish singer and songwriter. she has become a prominent figure of turkish pop music with numerous songs that topped the charts.",
+    "facts": [
+     "Makbule Hande Özyener, known professionally as Hande Yener, is a Turkish singer and songwriter.",
+     "Alongside her music career, she is also known for her choice of clothes and has renewed her image multiple times over the years."
+    ]
+   },
+   "de": {
+    "kicker": "türkische sängerin und songwriterin",
+    "who": "makbule hande özyener, bekannt als hande yener, ist eine türkische sängerin und songwriterin. mit zahlreichen chart-hits zählt sie zu den prägenden gesichtern des türkischen pop.",
+    "facts": [
+     "makbule hande özyener, bekannt als hande yener, ist eine türkische sängerin und songwriterin.",
+     "neben ihrer musikkarriere ist sie auch für ihre kleiderwahl bekannt und hat ihr image im laufe der jahre mehrfach erneuert."
+    ]
+   },
+   "tr": {
+    "kicker": "türk şarkıcı ve söz yazarı",
+    "who": "makbule hande özyener, sanat adıyla hande yener, türk bir şarkıcı ve söz yazarıdır. türk pop müziğinin öne çıkan isimlerinden biri olarak listelerin zirvesine çıkan birçok şarkısı var.",
+    "facts": [
+     "makbule hande özyener, sanat adıyla hande yener, türk bir şarkıcı ve söz yazarıdır.",
+     "müzik kariyerinin yanı sıra giyim tarzıyla da bilinir ve yıllar içinde görüntüsünü birkaç kez yeniledi."
+    ]
+   }
+  }
+ ]
+}

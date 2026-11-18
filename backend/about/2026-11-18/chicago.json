@@ -1,0 +1,38 @@
+{
+ "city": "chicago",
+ "day": "2026-11-18",
+ "nights": [
+  {
+   "id": "b88ecd5f-bd38-42f5-93fb-e05ba62442d8",
+   "slug": "michigander-9d74b9b5",
+   "title": "Michigander",
+   "name": "Michigander",
+   "source_url": "https://en.wikipedia.org/wiki/Michigander_(band)",
+   "extract": "Michigander is an American rock band created in 2014 from Kalamazoo, Michigan. It is the solo project centered around its vocalist, songwriter and multi-instrumentalist frontman, Jason Singer.",
+   "en": {
+    "kicker": "american rock band · kalamazoo, 2014",
+    "who": "michigander is a solo project centered around its vocalist, songwriter and multi-instrumentalist frontman, jason singer.",
+    "facts": [
+     "Michigander is an American rock band created in 2014 from Kalamazoo, Michigan.",
+     "It is the solo project centered around its vocalist, songwriter and multi-instrumentalist frontman, Jason Singer."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische rockband · kalamazoo, 2014",
+    "who": "michigander ist ein soloprojekt rund um den sänger, songwriter und multiinstrumentalisten jason singer.",
+    "facts": [
+     "michigander ist eine amerikanische rockband, die 2014 in kalamazoo, michigan, entstand.",
+     "es ist das soloprojekt rund um seinen sänger, songwriter und multiinstrumentalisten, frontmann jason singer."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı rock grubu · kalamazoo, 2014",
+    "who": "michigander, vokalisti, söz yazarı ve çok enstrümanlı ön sanatçısı jason singer etrafında kurulmuş bir solo projedir.",
+    "facts": [
+     "michigander, 2014'te michigan'ın kalamazoo kentinde kurulmuş amerikalı bir rock grubudur.",
+     "bu grup, vokalist, söz yazarı ve çok enstrümanlı ön sanatçı jason singer etrafında kurulmuş bir solo projedir."
+    ]
+   }
+  }
+ ]
+}

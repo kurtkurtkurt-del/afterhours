@@ -1,0 +1,134 @@
+{
+ "city": "glasgow",
+ "day": "2026-11-18",
+ "nights": [
+  {
+   "id": "45ff4687-f862-4419-b542-144b9d2cd7fb",
+   "slug": "xentrix-cross-atlantic-carnage-nervosa-ded10c13",
+   "title": "Xentrix: Cross-Atlantic Carnage + Nervosa",
+   "name": "Xentrix",
+   "source_url": "https://en.wikipedia.org/wiki/Xentrix",
+   "extract": "Xentrix are an English thrash metal band formed as Sweet Vengeance in Preston, Lancashire in 1984. They changed their name to Xentrix in 1988, and released four albums – Shattered Existence (1989), For Whose Advantage? (1990), Kin (1992) and Scourge (1996) – before disbanding in 1997. After briefly reuniting in 2005–2006, Xentrix reunited again in 2013, and they have since released three more albums: Bury the Pain (2019), Seven Words (2022) and Allied with the Enemy (2026). As part of the late 1980s-early-to-mid 1990s underground metal scene, Xentrix have been referred to as one of the \"Big Four\" of English thrash metal, along with Acid Reign, Onslaught and Sabbat.",
+   "en": {
+    "kicker": "english thrash metal band · preston, 1984",
+    "who": "xentrix are an english thrash metal band formed as sweet vengeance in preston, lancashire, in 1984. they are often named as one of the \"big four\" of english thrash metal.",
+    "facts": [
+     "Xentrix are an English thrash metal band formed as Sweet Vengeance in Preston, Lancashire in 1984.",
+     "As part of the late 1980s-early-to-mid 1990s underground metal scene, Xentrix have been referred to as one of the \"Big Four\" of English thrash metal, along with Acid Reign, Onslaught and Sabbat."
+    ]
+   },
+   "de": {
+    "kicker": "englische thrash-metal-band · preston, 1984",
+    "who": "xentrix sind eine englische thrash-metal-band, die 1984 in preston, lancashire, als sweet vengeance gegründet wurde. sie gelten als eine der \"big four\" des englischen thrash metal.",
+    "facts": [
+     "xentrix sind eine englische thrash-metal-band, die 1984 in preston, lancashire, als sweet vengeance gegründet wurde.",
+     "im underground-metal der späten 1980er und frühen bis mittleren 1990er jahre gelten xentrix als eine der \"big four\" des englischen thrash metal, zusammen mit acid reign, onslaught und sabbat."
+    ]
+   },
+   "tr": {
+    "kicker": "ingiliz thrash metal grubu · preston, 1984",
+    "who": "xentrix, 1984'te lancashire'ın preston kentinde sweet vengeance adıyla kurulmuş bir ingiliz thrash metal grubudur. ingiliz thrash metal'in \"big four\" gruplarından biri sayılır.",
+    "facts": [
+     "xentrix, 1984'te lancashire'ın preston kentinde sweet vengeance adıyla kurulmuş bir ingiliz thrash metal grubudur.",
+     "1980'lerin sonu ile 1990'ların ortası arasındaki yeraltı metal sahnesinde xentrix, acid reign, onslaught ve sabbat ile birlikte ingiliz thrash metal'in \"big four\" gruplarından biri olarak anılır."
+    ]
+   }
+  },
+  {
+   "id": "0bcceb74-0f53-4964-b096-4bf231f5b595",
+   "slug": "bill-bailey-vaudevillean-a37c0410",
+   "title": "Bill Bailey - Vaudevillean",
+   "name": "Bill Bailey",
+   "source_url": "https://en.wikipedia.org/wiki/Bill_Bailey",
+   "extract": "Mark Robert \"Bill\" Bailey is an English musician, comedian, actor and television presenter. He is known for his role as Manny in the sitcom Black Books (2000–2004), and for his regular appearances on the panel shows Never Mind the Buzzcocks, Have I Got News for You, and QI, as well as for his stand-up comedy work. He plays a variety of musical instruments and incorporates music into his performances.",
+   "en": {
+    "kicker": "english musician and comedian",
+    "who": "mark robert \"bill\" bailey is an english musician, comedian, actor and television presenter. he plays a variety of musical instruments and works music into his performances.",
+    "facts": [
+     "He is known for his role as Manny in the sitcom Black Books (2000–2004), and for his regular appearances on the panel shows Never Mind the Buzzcocks, Have I Got News for You, and QI, as well as for his stand-up comedy work.",
+     "He plays a variety of musical instruments and incorporates music into his performances."
+    ]
+   },
+   "de": {
+    "kicker": "englischer musiker und comedian",
+    "who": "mark robert \"bill\" bailey ist ein englischer musiker, comedian, schauspieler und fernsehmoderator. er spielt eine vielzahl von instrumenten und bindet musik in seine auftritte ein.",
+    "facts": [
+     "er ist bekannt für seine rolle als manny in der sitcom black books (2000–2004) und für regelmäßige auftritte in panelshows wie never mind the buzzcocks, have i got news for you und qi.",
+     "er spielt eine vielzahl von instrumenten und bindet musik in seine auftritte ein."
+    ]
+   },
+   "tr": {
+    "kicker": "ingiliz müzisyen ve komedyen",
+    "who": "mark robert \"bill\" bailey, ingiliz bir müzisyen, komedyen, oyuncu ve televizyon sunucusudur. çeşitli müzik aletleri çalar ve performanslarına müziği dahil eder.",
+    "facts": [
+     "black books (2000–2004) dizisinde manny rolüyle tanınır ve never mind the buzzcocks, have i got news for you ile qi gibi panel programlarında düzenli olarak yer alır.",
+     "çeşitli müzik aletleri çalar ve performanslarına müziği dahil eder."
+    ]
+   }
+  },
+  {
+   "id": "cd54bdf7-b2da-4c00-b478-2f201cfc28a7",
+   "slug": "paris-paloma-84a3d1b0",
+   "title": "Paris Paloma",
+   "name": "Paris Paloma",
+   "source_url": "https://en.wikipedia.org/wiki/Paris_Paloma",
+   "extract": "Paris Paloma is a British singer-songwriter and guitarist. She gained prominence through the single \"Labour\" (2023). Her debut album, Cacophony, was released in 2024. Her second album, The Fatal Flaw, followed in 2026.",
+   "en": {
+    "kicker": "british singer-songwriter and guitarist",
+    "who": "paris paloma is a british singer-songwriter and guitarist. her second album, the fatal flaw, followed in 2026.",
+    "facts": [
+     "She gained prominence through the single \"Labour\" (2023).",
+     "Her debut album, Cacophony, was released in 2024."
+    ]
+   },
+   "de": {
+    "kicker": "britische singer-songwriterin und gitarristin",
+    "who": "paris paloma ist eine britische singer-songwriterin und gitarristin. ihr zweites album the fatal flaw folgte 2026.",
+    "facts": [
+     "sie wurde vor allem durch die single \"labour\" (2023) bekannt.",
+     "ihr debütalbum cacophony erschien 2024."
+    ]
+   },
+   "tr": {
+    "kicker": "ingiliz şarkıcı, söz yazarı ve gitarist",
+    "who": "paris paloma, ingiliz bir şarkıcı, söz yazarı ve gitaristtir. ikinci albümü the fatal flaw 2026'da çıktı.",
+    "facts": [
+     "\"labour\" (2023) single'ıyla ön plana çıktı.",
+     "debut albümü cacophony 2024'te yayımlandı."
+    ]
+   }
+  },
+  {
+   "id": "12532b84-0ebc-4c5f-abec-4398dbd8813d",
+   "slug": "westside-cowboy-d176cc94",
+   "title": "Westside Cowboy",
+   "name": "Westside Cowboy",
+   "source_url": "https://en.wikipedia.org/wiki/Westside_Cowboy",
+   "extract": "Westside Cowboy are an English rock band formed in Manchester in 2023. The band members are Jimmy Bradbury, Reuben Haycocks, Aoife Anson O'Connell and Paddy Murphy.",
+   "en": {
+    "kicker": "english rock band · manchester, 2023",
+    "who": "westside cowboy are an english rock band from manchester. the members are jimmy bradbury, reuben haycocks, aoife anson o'connell and paddy murphy.",
+    "facts": [
+     "Westside Cowboy are an English rock band formed in Manchester in 2023.",
+     "The band members are Jimmy Bradbury, Reuben Haycocks, Aoife Anson O'Connell and Paddy Murphy."
+    ]
+   },
+   "de": {
+    "kicker": "englische rockband · manchester, 2023",
+    "who": "westside cowboy sind eine englische rockband aus manchester. zu den mitgliedern gehören jimmy bradbury, reuben haycocks, aoife anson o'connell und paddy murphy.",
+    "facts": [
+     "westside cowboy sind eine englische rockband, die 2023 in manchester gegründet wurde.",
+     "zu den mitgliedern gehören jimmy bradbury, reuben haycocks, aoife anson o'connell und paddy murphy."
+    ]
+   },
+   "tr": {
+    "kicker": "ingiliz rock grubu · manchester, 2023",
+    "who": "westside cowboy, 2023'te manchester'da kurulmuş bir ingiliz rock grubudur. grubun üyeleri jimmy bradbury, reuben haycocks, aoife anson o'connell ve paddy murphy'dir.",
+    "facts": [
+     "westside cowboy, 2023'te manchester'da kurulmuş bir ingiliz rock grubudur.",
+     "grubun üyeleri jimmy bradbury, reuben haycocks, aoife anson o'connell ve paddy murphy'dir."
+    ]
+   }
+  }
+ ]
+}

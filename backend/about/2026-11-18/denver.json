@@ -1,0 +1,38 @@
+{
+ "city": "denver",
+ "day": "2026-11-18",
+ "nights": [
+  {
+   "id": "cf87ea65-89ba-4ca1-af98-227501a2ff30",
+   "slug": "journey-final-frontier-tour-an-evening-with-b2f1b9d3",
+   "title": "JOURNEY - Final Frontier Tour (An Evening With)",
+   "name": "Journey",
+   "source_url": "https://en.wikipedia.org/wiki/Journey_(band)",
+   "extract": "Journey is an American rock band formed in San Francisco in 1973 by former members of Santana, the Steve Miller Band, and Frumious Bandersnatch. The band as of 2026 consists of Neal Schon on guitars and vocals; Jonathan Cain on keyboards, guitars and vocals; Deen Castronovo on drums and vocals; Arnel Pineda on lead vocals; Jason Derlatka on keyboards and vocals; and Todd Jensen on bass and vocals.",
+   "en": {
+    "kicker": "american rock band · san francisco, 1973",
+    "who": "journey is an american rock band formed in san francisco in 1973 by former members of santana, the steve miller band and frumious bandersnatch. as of 2026 the band includes neal schon, jonathan cain, deen castronovo and arnel pineda.",
+    "facts": [
+     "Journey is an American rock band formed in San Francisco in 1973 by former members of Santana, the Steve Miller Band, and Frumious Bandersnatch.",
+     "The band as of 2026 consists of Neal Schon on guitars and vocals; Jonathan Cain on keyboards, guitars and vocals; Deen Castronovo on drums and vocals; Arnel Pineda on lead vocals; Jason Derlatka on keyboards and vocals; and Todd Jensen on bass and vocals."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische rockband · san francisco, 1973",
+    "who": "journey ist eine amerikanische rockband, die 1973 in san francisco von ehemaligen mitgliedern von santana, der steve miller band und frumious bandersnatch gegründet wurde. 2026 gehören unter anderem neal schon, jonathan cain, deen castronovo und arnel pineda zur band.",
+    "facts": [
+     "journey ist eine amerikanische rockband, die 1973 in san francisco von ehemaligen mitgliedern von santana, der steve miller band und frumious bandersnatch gegründet wurde.",
+     "2026 besteht die band aus neal schon, jonathan cain, deen castronovo, arnel pineda, jason derlatka und todd jensen."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı rock grubu · san francisco, 1973",
+    "who": "journey, 1973'te san francisco'da santana, steve miller band ve frumious bandersnatch'in eski üyeleri tarafından kurulmuş amerikalı bir rock grubudur. 2026 itibarıyla grupta neal schon, jonathan cain, deen castronovo ve arnel pineda yer alıyor.",
+    "facts": [
+     "journey, 1973'te san francisco'da santana, steve miller band ve frumious bandersnatch'in eski üyeleri tarafından kurulmuş amerikalı bir rock grubudur.",
+     "2026 itibarıyla grup neal schon, jonathan cain, deen castronovo, arnel pineda, jason derlatka ve todd jensen'den oluşuyor."
+    ]
+   }
+  }
+ ]
+}

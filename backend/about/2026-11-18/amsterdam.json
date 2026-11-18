@@ -1,0 +1,102 @@
+{
+ "city": "amsterdam",
+ "day": "2026-11-18",
+ "nights": [
+  {
+   "id": "a162096e-052d-489e-8d6d-cd16dbfbb03c",
+   "slug": "gang-of-youths-778e8fb2",
+   "title": "Gang Of Youths",
+   "name": "Gang of Youths",
+   "source_url": "https://en.wikipedia.org/wiki/Gang_of_Youths",
+   "extract": "Gang of Youths are an Australian alternative rock band from Sydney that formed in 2012. The band was founded by chief songwriter and lead vocalist David Le'aupepe; he has been joined by Jung Kim on guitar and keyboards since the band's inception, as well as Donnie Borzestowski on drums since 2014 and Tom Hobden on violin, rhythm guitar and keyboards since 2020. The band's debut studio album The Positions (2015) received multiple ARIA Award nominations and peaked at number five on the Australian albums chart. It provided the single \"Magnolia\", which has been described as their breakthrough hit and was certified platinum in 2018.",
+   "en": {
+    "kicker": "australian alternative rock band · sydney, 2012",
+    "who": "gang of youths are an australian alternative rock band from sydney. the band was founded by chief songwriter and lead vocalist david le'aupepe, and its debut album received multiple aria award nominations.",
+    "facts": [
+     "Gang of Youths are an Australian alternative rock band from Sydney that formed in 2012.",
+     "The band's debut studio album The Positions (2015) received multiple ARIA Award nominations."
+    ]
+   },
+   "de": {
+    "kicker": "australische alternative-rock-band · sydney, 2012",
+    "who": "gang of youths sind eine australische alternative-rock-band aus sydney. gegründet wurde sie von songwriter und leadsänger david le'aupepe, ihr debütalbum erhielt mehrere aria-award-nominierungen.",
+    "facts": [
+     "gang of youths sind eine australische alternative-rock-band aus sydney, die sich 2012 gründete.",
+     "das debütalbum the positions (2015) erhielt mehrere aria-award-nominierungen und erreichte platz fünf der australischen albumcharts."
+    ]
+   },
+   "tr": {
+    "kicker": "avustralyalı alternatif rock grubu · sidney, 2012",
+    "who": "gang of youths, sidney'den bir avustralya alternatif rock grubudur. grubu baş söz yazarı ve baş vokalist david le'aupepe kurdu; debut albümü birden çok aria ödülü adaylığı aldı.",
+    "facts": [
+     "gang of youths, 2012'de kurulmuş sidney merkezli bir avustralya alternatif rock grubudur.",
+     "grubun debut stüdyo albümü the positions (2015) birden çok aria ödülü adaylığı aldı ve avustralya albüm listesinde beşinci sıraya yükseldi."
+    ]
+   }
+  },
+  {
+   "id": "8ee39955-97a3-42d3-bd16-6b5bc1c5c63d",
+   "slug": "muse-the-wow-signal-europa-tour-c0f9f2d4",
+   "title": "Muse - The Wow! Signal Europa Tour",
+   "name": "Muse",
+   "source_url": "https://en.wikipedia.org/wiki/Muse_(band)",
+   "extract": "Muse are an English rock band from Teignmouth, Devon, formed in 1994. The band consists of Matt Bellamy, Chris Wolstenholme, and Dominic Howard.",
+   "en": {
+    "kicker": "english rock band · teignmouth, 1994",
+    "who": "muse are an english rock band from teignmouth, devon. the band consists of matt bellamy, chris wolstenholme and dominic howard.",
+    "facts": [
+     "Muse are an English rock band from Teignmouth, Devon, formed in 1994.",
+     "The band consists of Matt Bellamy, Chris Wolstenholme, and Dominic Howard."
+    ]
+   },
+   "de": {
+    "kicker": "englische rockband · teignmouth, 1994",
+    "who": "muse sind eine englische rockband aus teignmouth in devon. zur band gehören matt bellamy, chris wolstenholme und dominic howard.",
+    "facts": [
+     "muse sind eine englische rockband aus teignmouth, devon, die 1994 gegründet wurde.",
+     "die band besteht aus matt bellamy, chris wolstenholme und dominic howard."
+    ]
+   },
+   "tr": {
+    "kicker": "ingiliz rock grubu · teignmouth, 1994",
+    "who": "muse, devon'un teignmouth kentinden bir ingiliz rock grubudur. grubun üyeleri matt bellamy, chris wolstenholme ve dominic howard'dır.",
+    "facts": [
+     "muse, 1994'te kurulmuş devon'un teignmouth kentinden bir ingiliz rock grubudur.",
+     "grubun üyeleri matt bellamy, chris wolstenholme ve dominic howard'dır."
+    ]
+   }
+  },
+  {
+   "id": "25f25b7a-35dc-4a51-9bfc-5500e3e5fd66",
+   "slug": "esdeekid-council-house-rat-tour-354a9f16",
+   "title": "EsDeeKid - Council House Rat Tour",
+   "name": "EsDeeKid",
+   "source_url": "https://en.wikipedia.org/wiki/EsDeeKid",
+   "extract": "EsDeeKid is a British rapper from Liverpool, England. He released his debut mixtape, Rebel, in June 2025. He has been noted as a prominent figure in the UK underground rap scene. His music is characterised by his thick Scouse accent and draws inspiration from cloud rap. He covers his face with a balaclava, and keeps his name, appearance, and age private. He still lives in his council house.\nAs of May 2026, EsDeeKid's single \"Phantom\" has accumulated more than 300 million streams. His mixtape Rebel has charted in multiple European countries, as well as peaked at number 23 on the US Billboard 200, despite being released nearly five months before its debut on the chart.",
+   "en": {
+    "kicker": "british rapper · liverpool",
+    "who": "esdeekid is a british rapper from liverpool and a prominent figure in the uk underground rap scene. he keeps his name, appearance and age private.",
+    "facts": [
+     "He covers his face with a balaclava, and keeps his name, appearance, and age private.",
+     "As of May 2026, EsDeeKid's single \"Phantom\" has accumulated more than 300 million streams."
+    ]
+   },
+   "de": {
+    "kicker": "britischer rapper · liverpool",
+    "who": "esdeekid ist ein britischer rapper aus liverpool und gilt als prominente figur der britischen underground-rapszene. name, aussehen und alter hält er privat.",
+    "facts": [
+     "er verdeckt sein gesicht mit einer sturmhaube und hält name, aussehen und alter privat.",
+     "stand mai 2026 hat die single \"phantom\" von esdeekid mehr als 300 millionen streams gesammelt."
+    ]
+   },
+   "tr": {
+    "kicker": "ingiliz rapçi · liverpool",
+    "who": "esdeekid, liverpool'dan bir ingiliz rapçidir ve ingiltere'nin yeraltı rap sahnesinin öne çıkan isimlerinden biridir. adını, görünüşünü ve yaşını gizli tutar.",
+    "facts": [
+     "yüzünü bir balaklavayla örtüyor ve adını, görünüşünü ve yaşını gizli tutuyor.",
+     "mayıs 2026 itibarıyla esdeekid'in \"phantom\" single'ı 300 milyondan fazla dinlenme topladı."
+    ]
+   }
+  }
+ ]
+}

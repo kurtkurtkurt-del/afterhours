@@ -1,0 +1,38 @@
+{
+ "city": "new-york",
+ "day": "2026-11-18",
+ "nights": [
+  {
+   "id": "643b0006-8219-4d02-98d8-1b711aad33a0",
+   "slug": "buena-vista-social-club-0845b496",
+   "title": "Buena Vista Social Club",
+   "name": "Buena Vista Social Club",
+   "source_url": "https://en.wikipedia.org/wiki/Buena_Vista_Social_Club",
+   "extract": "Buena Vista Social Club was a musical ensemble primarily made up of Cuban musicians, formed in 1996. The project was organized by World Circuit executive Nick Gold, produced by American guitarist Ry Cooder and directed by Juan de Marcos González. They named the group after the members' club of the same name in the Buenavista quarter of Havana, a popular music venue in the 1940s. To showcase the popular styles of the time, such as son, bolero and danzón, they recruited a dozen veteran musicians, some of whom had been retired for many years.",
+   "en": {
+    "kicker": "cuban musical ensemble · 1996",
+    "who": "buena vista social club was a musical ensemble made up mainly of cuban musicians, formed in 1996. the project was produced by american guitarist ry cooder and directed by juan de marcos gonzález.",
+    "facts": [
+     "Buena Vista Social Club was a musical ensemble primarily made up of Cuban musicians, formed in 1996.",
+     "The project was organized by World Circuit executive Nick Gold, produced by American guitarist Ry Cooder and directed by Juan de Marcos González."
+    ]
+   },
+   "de": {
+    "kicker": "kubanisches musikensemble · 1996",
+    "who": "buena vista social club war ein musikensemble, das vor allem aus kubanischen musikern bestand und 1996 gegründet wurde. das projekt wurde von ry cooder produziert und von juan de marcos gonzález geleitet.",
+    "facts": [
+     "buena vista social club war ein musikensemble, das vor allem aus kubanischen musikern bestand und 1996 gegründet wurde.",
+     "das projekt wurde von world-circuit-manager nick gold organisiert, von dem amerikanischen gitarristen ry cooder produziert und von juan de marcos gonzález geleitet."
+    ]
+   },
+   "tr": {
+    "kicker": "küba müzik topluluğu · 1996",
+    "who": "buena vista social club, çoğunlukla küballı müzisyenlerden oluşan ve 1996'da kurulmuş bir müzik topluluğuydu. proje amerikalı gitarist ry cooder tarafından yapımcılığa, juan de marcos gonzález tarafından yönetmenliğe alındı.",
+    "facts": [
+     "buena vista social club, çoğunlukla küballı müzisyenlerden oluşan ve 1996'da kurulmuş bir müzik topluluğuydu.",
+     "proje world circuit yöneticisi nick gold tarafından organize edildi, amerikalı gitarist ry cooder tarafından yapımı yapıldı ve juan de marcos gonzález tarafından yönetildi."
+    ]
+   }
+  }
+ ]
+}

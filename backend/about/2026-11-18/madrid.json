@@ -1,0 +1,38 @@
+{
+ "city": "madrid",
+ "day": "2026-11-18",
+ "nights": [
+  {
+   "id": "eccfd58a-5211-4125-8430-cdf4c3d63ac9",
+   "slug": "kingfishr-europe-2026-797ec5d6",
+   "title": "Kingfishr - Europe 2026",
+   "name": "Kingfishr",
+   "source_url": "https://en.wikipedia.org/wiki/Kingfishr",
+   "extract": "Kingfishr are an Irish indie folk group formed in Letterkenny Co Donegal in 2022 comprising members Eddie Keogh, Eoghan \"McGoo\" McGrath, and Eoin \"Fitz\" Fitzgibbon. The band's breakout success was their song \"Killeagh\", which reached number one on the Irish Singles Chart on 2 May 2025. Their debut studio album Halcyon was released in August 2025. The group's second studio album Weight of the Feather is scheduled for release in April 2027.",
+   "en": {
+    "kicker": "irish indie folk group · letterkenny, 2022",
+    "who": "kingfishr are an irish indie folk group formed in letterkenny, county donegal, in 2022. their breakout success was the song \"killeagh\", which reached number one on the irish singles chart in may 2025.",
+    "facts": [
+     "Kingfishr are an Irish indie folk group formed in Letterkenny Co Donegal in 2022 comprising members Eddie Keogh, Eoghan \"McGoo\" McGrath, and Eoin \"Fitz\" Fitzgibbon.",
+     "The band's breakout success was their song \"Killeagh\", which reached number one on the Irish Singles Chart on 2 May 2025."
+    ]
+   },
+   "de": {
+    "kicker": "irische indie-folk-band · letterkenny, 2022",
+    "who": "kingfishr sind eine irische indie-folk-band aus letterkenny, county donegal, gegründet 2022. ihr durchbruch gelang mit dem song \"killeagh\", der am 2. mai 2025 auf platz eins der irischen singlecharts stand.",
+    "facts": [
+     "kingfishr sind eine irische indie-folk-band, die 2022 in letterkenny, county donegal, gegründet wurde. zu den mitgliedern gehören eddie keogh, eoghan \"mcgoo\" mcgrath und eoin \"fitz\" fitzgibbon.",
+     "ihr durchbruch war der song \"killeagh\", der am 2. mai 2025 auf platz eins der irish singles chart kam."
+    ]
+   },
+   "tr": {
+    "kicker": "irlandalı indie folk grubu · letterkenny, 2022",
+    "who": "kingfishr, 2022'de donegal'ın letterkenny kentinde kurulmuş bir irlandalı indie folk grubudur. ilk büyük başarıları \"killeagh\" şarkısı oldu; şarkı mayıs 2025'te irlanda single listesinde birinci sıraya çıktı.",
+    "facts": [
+     "kingfishr, 2022'de donegal'ın letterkenny kentinde kurulmuş bir irlandalı indie folk grubudur. grubun üyeleri eddie keogh, eoghan \"mcgoo\" mcgrath ve eoin \"fitz\" fitzgibbon'dır.",
+     "\"killeagh\" şarkısı 2 mayıs 2025'te irlanda single listesinde birinci olarak yükseldi."
+    ]
+   }
+  }
+ ]
+}

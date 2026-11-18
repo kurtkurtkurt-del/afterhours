@@ -1,0 +1,38 @@
+{
+ "city": "washington",
+ "day": "2026-11-18",
+ "nights": [
+  {
+   "id": "93ca82c8-c799-442d-bcf0-5297371c2db9",
+   "slug": "virginia-coalition-3cbfaf96",
+   "title": "Virginia Coalition",
+   "name": "Virginia Coalition",
+   "source_url": "https://en.wikipedia.org/wiki/Virginia_Coalition",
+   "extract": "Virginia Coalition is an American rock band from Alexandria, Virginia, whose five founding members met in the early 1990s at T. C. Williams High School. Often referred to as VACO by fans, the band self-released their first album, The Colors of The Sound, in 1998. The group toured between Boston and Virginia heavily in the late 1990s, supporting The Colors of the Sound and its 2000 follow-up, Townburg; the band's tour van logged more than 100,000 miles by May 2001. The band's 2003 album on Koch Records, Rock & Roll Party, peaked at #18 on the Billboard Top Internet Albums chart. This album marked their transition from a band that primarily played in the Northeast and Mid-Atlantic regions of t",
+   "en": {
+    "kicker": "american rock band · alexandria, virginia",
+    "who": "virginia coalition is an american rock band from alexandria, virginia. the five founding members met in the early 1990s at t. c. williams high school and self-released their first album in 1998.",
+    "facts": [
+     "Virginia Coalition is an American rock band from Alexandria, Virginia, whose five founding members met in the early 1990s at T. C. Williams High School.",
+     "The band's 2003 album on Koch Records, Rock & Roll Party, peaked at #18 on the Billboard Top Internet Albums chart."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische rockband · alexandria, virginia",
+    "who": "virginia coalition ist eine amerikanische rockband aus alexandria, virginia. die fünf gründungsmitglieder lernten sich anfang der 1990er an der t. c. williams high school kennen und veröffentlichten ihr erstes album 1998 in eigenregie.",
+    "facts": [
+     "virginia coalition ist eine amerikanische rockband aus alexandria, virginia, deren fünf gründungsmitglieder sich anfang der 1990er an der t. c. williams high school trafen.",
+     "das album rock & roll party (2003) bei koch records erreichte platz 18 der billboard-top-internet-albums-charts."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı rock grubu · alexandria, virginia",
+    "who": "virginia coalition, virginia eyaletinin alexandria kentinden bir amerikalı rock grubudur. beş kurucu üye 1990'ların başında t. c. williams high school'da tanıştı ve ilk albümünü 1998'de kendi imkânlarıyla yayımladı.",
+    "facts": [
+     "virginia coalition, 1990'ların başında t. c. williams high school'da tanışan beş kurucu üyeden oluşan amerikalı bir rock grubudur.",
+     "grubun 2003'te koch records'ta çıkan rock & roll party albümü billboard top internet albums listesinde 18. sıraya yükseldi."
+    ]
+   }
+  }
+ ]
+}

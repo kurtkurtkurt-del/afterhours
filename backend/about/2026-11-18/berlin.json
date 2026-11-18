@@ -1,0 +1,38 @@
+{
+ "city": "berlin",
+ "day": "2026-11-18",
+ "nights": [
+  {
+   "id": "3459fc4a-70b5-4254-95a5-acb7c99a2c08",
+   "slug": "ledbyher-midwinter-tour-ab41b7d0",
+   "title": "Ledbyher - Midwinter Tour",
+   "name": "Ledbyher",
+   "source_url": "https://en.wikipedia.org/wiki/Ledbyher",
+   "extract": "Rachel Aisyah Diack, known professionally as Ledbyher, is a British rapper, songwriter and record producer. Cited by The Guardian as a member of the UK underground rap scene, she describes her musical style as \"bedroom drill\". Her work is characterized by a \"wispy, sung-spoken\" delivery and ethereal, lo-fi instrumentals. Her debut extended play Cunch was released in 2023, before she signed to Island Records and released the mixtape The Elephant in 2026.",
+   "en": {
+    "kicker": "british rapper and record producer",
+    "who": "ledbyher is a british rapper, songwriter and record producer. her work is characterized by a \"wispy, sung-spoken\" delivery and ethereal, lo-fi instrumentals.",
+    "facts": [
+     "Cited by The Guardian as a member of the UK underground rap scene, she describes her musical style as \"bedroom drill\".",
+     "Her debut extended play Cunch was released in 2023, before she signed to Island Records and released the mixtape The Elephant in 2026."
+    ]
+   },
+   "de": {
+    "kicker": "britische rapperin und produzentin",
+    "who": "ledbyher ist eine britische rapperin, songwriterin und musikproduzentin. ihre arbeit ist von einem \"wispy, sung-spoken\" vortrag und ätherischen, lo-fi-instrumentals geprägt.",
+    "facts": [
+     "der guardian zählt sie zur britischen underground-rapszene, und sie beschreibt ihren stil als \"bedroom drill\".",
+     "ihre debüt-ep cunch erschien 2023, bevor sie bei island records unterschrieb und das mixtape the elephant 2026 veröffentlichte."
+    ]
+   },
+   "tr": {
+    "kicker": "ingiliz rapçi ve yapımcı",
+    "who": "ledbyher, ingiliz bir rapçi, söz yazarı ve müzik yapımcısıdır. işi, \"wispy, sung-spoken\" bir sunum tarzı ve ruhani, lo-fi enstrümantallerle öne çıkar.",
+    "facts": [
+     "the guardian onu ingiltere yeraltı rap sahnesinin bir parçası olarak gösterir; o da müzik tarzını \"bedroom drill\" olarak tanımlar.",
+     "debut ep'i cunch 2023'te çıktı; ardından island records ile anlaşıp 2026'da the elephant mixtape'ini yayımladı."
+    ]
+   }
+  }
+ ]
+}

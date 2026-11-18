@@ -1,0 +1,38 @@
+{
+ "city": "utrecht",
+ "day": "2026-11-18",
+ "nights": [
+  {
+   "id": "d5d32db8-17e9-40ca-8406-6173395f0a6f",
+   "slug": "polyphia-be-not-afraid-world-tour-ad5593f0",
+   "title": "Polyphia: BE NOT AFRAID World Tour",
+   "name": "Polyphia",
+   "source_url": "https://en.wikipedia.org/wiki/Polyphia",
+   "extract": "Polyphia is an American rock band based in Plano, Texas, formed in 2010. The group consists of guitarists Tim Henson and Scott LePage, bassist Clay Gober, and drummer Clay Aeschliman. Rooted in a heavy metal sound in their early releases, the band's music evolved into a more progressive rock style in their later productions, combining elements of electronic and hip-hop music. Polyphia has released five studio albums, one live record, two EPs, and numerous singles.",
+   "en": {
+    "kicker": "american rock band · plano, 2010",
+    "who": "polyphia is an american rock band based in plano, texas. its music evolved from heavy metal into a more progressive style that mixes in electronic and hip-hop elements.",
+    "facts": [
+     "Polyphia is an American rock band based in Plano, Texas, formed in 2010.",
+     "Polyphia has released five studio albums, one live record, two EPs, and numerous singles."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische rockband · plano, 2010",
+    "who": "polyphia ist eine amerikanische rockband aus plano, texas. ihre musik entwickelte sich vom heavy metal hin zu einem progressiveren rockstil mit elektronik- und hip-hop-elementen.",
+    "facts": [
+     "polyphia ist eine amerikanische rockband aus plano, texas, die 2010 gegründet wurde.",
+     "polyphia hat fünf studioalben, ein live-album, zwei eps und zahlreiche singles veröffentlicht."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı rock grubu · plano, 2010",
+    "who": "polyphia, teksas'ın plano kentinde kurulmuş amerikalı bir rock grubudur. müzikleri heavy metal'den daha progresif bir tarza evrildi ve elektronik ile hip-hop öğelerini harmanladı.",
+    "facts": [
+     "polyphia, 2010'da kurulmuş teksas'ın plano kentinden amerikalı bir rock grubudur.",
+     "polyphia beş stüdyo albümü, bir canlı kaydı, iki ep'i ve çok sayıda single yayımladı."
+    ]
+   }
+  }
+ ]
+}

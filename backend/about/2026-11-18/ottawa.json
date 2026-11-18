@@ -1,0 +1,38 @@
+{
+ "city": "ottawa",
+ "day": "2026-11-18",
+ "nights": [
+  {
+   "id": "3fda4958-08dd-40cb-9dd7-22cdb18d49cb",
+   "slug": "ani-difranco-cb486601",
+   "title": "Ani DiFranco",
+   "name": "Ani DiFranco",
+   "source_url": "https://en.wikipedia.org/wiki/Ani_DiFranco",
+   "extract": "Angela Maria \"Ani\" DiFranco is an American-Canadian singer-songwriter. She has released more than 20 albums. Her music has been classified as folk rock and alternative rock, although it has additional influences from punk, funk, hip-hop and jazz. She has released all her albums on her own record label, Righteous Babe.",
+   "en": {
+    "kicker": "american-canadian singer-songwriter",
+    "who": "angela maria \"ani\" difranco is an american-canadian singer-songwriter. her music has been classified as folk rock and alternative rock, with additional influences from punk, funk, hip-hop and jazz.",
+    "facts": [
+     "She has released more than 20 albums.",
+     "She has released all her albums on her own record label, Righteous Babe."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanisch-kanadische singer-songwriterin",
+    "who": "angela maria \"ani\" difranco ist eine amerikanisch-kanadische singer-songwriterin. ihre musik wird als folk rock und alternative rock eingeordnet, mit einflüssen aus punk, funk, hip-hop und jazz.",
+    "facts": [
+     "sie hat mehr als 20 alben veröffentlicht.",
+     "alle ihre alben erschienen auf ihrem eigenen label, righteous babe."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı-kanadalı şarkıcı ve söz yazarı",
+    "who": "angela maria \"ani\" difranco, amerikalı-kanadalı bir şarkıcı ve söz yazarıdır. müziği folk rock ve alternatif rock olarak sınıflandırılır; punk, funk, hip-hop ve caz etkileri de taşır.",
+    "facts": [
+     "20'den fazla albüm yayımladı.",
+     "tüm albümlerini kendi plak şirketi righteous babe'den çıkardı."
+    ]
+   }
+  }
+ ]
+}

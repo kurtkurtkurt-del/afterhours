@@ -1,0 +1,38 @@
+{
+ "city": "san-francisco",
+ "day": "2026-11-18",
+ "nights": [
+  {
+   "id": "e3b110ba-9621-47a7-b6a1-7ccb88b30055",
+   "slug": "the-mountain-goats-night-six-closers-fb1c68be",
+   "title": "The Mountain Goats - Night Six: Closers",
+   "name": "The Mountain Goats",
+   "source_url": "https://en.wikipedia.org/wiki/The_Mountain_Goats",
+   "extract": "The Mountain Goats are an American indie folk band formed in Claremont, California, by singer-songwriter John Darnielle. Since 2003, the band has been based in Durham, North Carolina. For many years, the sole member of the Mountain Goats was Darnielle, despite the plural moniker. Although he remains the core member of the band, he has worked with a variety of collaborators over time, including bassist and vocalist Peter Hughes, drummer Jon Wurster, multi-instrumentalist Matt Douglas, singer-songwriter Franklin Bruno, bassist and vocalist Rachel Ware, singer-songwriter/producer John Vanderslice, guitarist Kaki King, and multi-instrumentalist Annie Clark.",
+   "en": {
+    "kicker": "american indie folk band · claremont, california",
+    "who": "the mountain goats are an american indie folk band formed by singer-songwriter john darnielle. he remains the core member, and the band has worked with many collaborators over time.",
+    "facts": [
+     "The Mountain Goats are an American indie folk band formed in Claremont, California, by singer-songwriter John Darnielle.",
+     "Since 2003, the band has been based in Durham, North Carolina."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische indie-folk-band · claremont, kalifornien",
+    "who": "the mountain goats sind eine amerikanische indie-folk-band, gegründet vom singer-songwriter john darnielle. er bleibt das kernmitglied, hat aber über die jahre mit vielen mitstreitern gearbeitet.",
+    "facts": [
+     "the mountain goats sind eine amerikanische indie-folk-band, die in claremont, kalifornien, vom singer-songwriter john darnielle gegründet wurde.",
+     "seit 2003 ist die band in durham, north carolina, ansässig."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı indie folk grubu · claremont, kaliforniya",
+    "who": "the mountain goats, şarkıcı-söz yazarı john darnielle tarafından kurulmuş amerikalı bir indie folk grubudur. darnielle çekirdek üye olarak kalsa da grup zamanla pek çok iş birlikçisiyle çalıştı.",
+    "facts": [
+     "the mountain goats, kaliforniya'nın claremont kentinde şarkıcı-söz yazarı john darnielle tarafından kurulmuş amerikalı bir indie folk grubudur.",
+     "2003'ten beri grup north carolina'nın durham kentinde faaliyet gösteriyor."
+    ]
+   }
+  }
+ ]
+}

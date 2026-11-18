@@ -1,0 +1,38 @@
+{
+ "city": "seattle",
+ "day": "2026-11-18",
+ "nights": [
+  {
+   "id": "f1a8ad5a-c574-4c27-9b1b-3d1486065215",
+   "slug": "alter-bridge-what-lies-within-tour-41d177fe",
+   "title": "Alter Bridge - What Lies Within Tour",
+   "name": "Alter Bridge",
+   "source_url": "https://en.wikipedia.org/wiki/Alter_Bridge",
+   "extract": "Alter Bridge is an American rock band from Orlando, Florida. The band was formed in 2004 by lead vocalist and rhythm guitarist Myles Kennedy, lead guitarist Mark Tremonti, bassist Brian Marshall and drummer Scott Phillips. After their former band Creed became inactive in 2003, Tremonti and Phillips formed a new band with former bandmate Marshall and new member Kennedy; Alter Bridge was formally unveiled in January 2004, months before Creed's official breakup in June.",
+   "en": {
+    "kicker": "american rock band · orlando, 2004",
+    "who": "alter bridge is an american rock band from orlando, florida. the band was formally unveiled in january 2004, months before creed's official breakup in june.",
+    "facts": [
+     "Alter Bridge is an American rock band from Orlando, Florida.",
+     "The band was formed in 2004 by lead vocalist and rhythm guitarist Myles Kennedy, lead guitarist Mark Tremonti, bassist Brian Marshall and drummer Scott Phillips."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische rockband · orlando, 2004",
+    "who": "alter bridge sind eine amerikanische rockband aus orlando, florida. die band wurde im januar 2004 vorgestellt, wenige monate vor der offiziellen auflösung von creed im juni.",
+    "facts": [
+     "alter bridge sind eine amerikanische rockband aus orlando, florida.",
+     "die band wurde 2004 von sänger und rhythmusgitarrist myles kennedy, leadgitarrist mark tremonti, bassist brian marshall und schlagzeuger scott phillips gegründet."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı rock grubu · orlando, 2004",
+    "who": "alter bridge, florida'nın orlando kentinden bir amerikalı rock grubudur. grup, creed'in haziran ayındaki resmi dağılmasından aylar önce ocak 2004'te tanıtıldı.",
+    "facts": [
+     "alter bridge, florida'nın orlando kentinden bir amerikalı rock grubudur.",
+     "grup 2004'te baş vokalist ve ritim gitaristi myles kennedy, baş gitarist mark tremonti, basçı brian marshall ve davulcu scott phillips tarafından kuruldu."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,38 @@
+{
+ "city": "koln",
+ "day": "2026-11-18",
+ "nights": [
+  {
+   "id": "0ad9fd53-6b97-4f5a-906b-d8cdb3d52ae2",
+   "slug": "julia-wolf-deep-end-world-tour-2026-baf630ba",
+   "title": "JULIA WOLF - Deep End World Tour 2026",
+   "name": "Julia Wolf",
+   "source_url": "https://en.wikipedia.org/wiki/Julia_Wolf_(musician)",
+   "extract": "Julia Jade Capello, known professionally as Julia Wolf, is an American singer. Known for her ethereal vocals and self-produced alt-pop sound, she blends elements of indie pop, alternative rock, and R&B. Capello gained early attention on TikTok before releasing her debut EP Girls in Purgatory (2021) and her studio albums Good Thing We Stayed (2023) and Pressure (2025).",
+   "en": {
+    "kicker": "american singer · alt-pop",
+    "who": "julia jade capello, known professionally as julia wolf, is an american singer. she gained early attention on TikTok before releasing her debut ep.",
+    "facts": [
+     "Known for her ethereal vocals and self-produced alt-pop sound, she blends elements of indie pop, alternative rock, and R&B.",
+     "Capello gained early attention on TikTok before releasing her debut EP Girls in Purgatory (2021) and her studio albums Good Thing We Stayed (2023) and Pressure (2025)."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische sängerin · alt-pop",
+    "who": "julia jade capello, bekannt als julia wolf, ist eine amerikanische sängerin. vor ihrer debüt-ep girls in purgatory (2021) machte sie zuerst auf TikTok auf sich aufmerksam.",
+    "facts": [
+     "bekannt für ihre ätherische stimme und ihren selbst produzierten alt-pop-sound, verbindet sie indie-pop, alternative rock und r&b.",
+     "capello erregte früh aufmerksamkeit auf TikTok, bevor sie die debüt-ep girls in purgatory (2021) sowie die alben good thing we stayed (2023) und pressure (2025) veröffentlichte."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı şarkıcı · alt-pop",
+    "who": "julia jade capello, sanat adıyla julia wolf, amerikalı bir şarkıcıdır. debut ep'i girls in purgatory'den (2021) önce TikTok'ta erken dönemde ilgi topladı.",
+    "facts": [
+     "ruhani vokalleri ve kendi prodüksiyonu olan alt-pop sesiyle indie pop, alternatif rock ve r&b öğelerini harmanlar.",
+     "debut ep'i girls in purgatory (2021) ile stüdyo albümleri good thing we stayed (2023) ve pressure (2025) öncesinde TikTok'ta ilgi gördü."
+    ]
+   }
+  }
+ ]
+}

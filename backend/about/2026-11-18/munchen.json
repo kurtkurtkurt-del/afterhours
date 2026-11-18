@@ -1,0 +1,70 @@
+{
+ "city": "munchen",
+ "day": "2026-11-18",
+ "nights": [
+  {
+   "id": "6f87c234-f094-4b8f-9b3d-c65a3ec24f91",
+   "slug": "sim-hooman-after-all-world-tour-3e7dcf38",
+   "title": "SiM - Hooman After All World Tour",
+   "name": "SiM",
+   "source_url": "https://en.wikipedia.org/wiki/SiM",
+   "extract": "SiM are a Japanese metalcore band from Kanagawa Prefecture formed in 2004. The band currently consists of MAH (vocals), SHOW-HATE (guitar), SIN (bass), and GODRi (drums). Their musical style mixes nu metal, alternative, hip-hop, ska, reggae, dub, and punk with rebellious lyrics and songs with attitude.",
+   "en": {
+    "kicker": "japanese metalcore band · kanagawa, 2004",
+    "who": "sim are a japanese metalcore band from kanagawa prefecture, formed in 2004. their music mixes nu metal, alternative, hip-hop, ska, reggae, dub and punk with rebellious lyrics.",
+    "facts": [
+     "SiM are a Japanese metalcore band from Kanagawa Prefecture formed in 2004.",
+     "Their musical style mixes nu metal, alternative, hip-hop, ska, reggae, dub, and punk with rebellious lyrics and songs with attitude."
+    ]
+   },
+   "de": {
+    "kicker": "japanische metalcore-band · kanagawa, 2004",
+    "who": "sim sind eine japanische metalcore-band aus der präfektur kanagawa, gegründet 2004. ihr stil mischt nu metal, alternative, hip-hop, ska, reggae, dub und punk mit rebellischen texten.",
+    "facts": [
+     "sim sind eine japanische metalcore-band aus der präfektur kanagawa, die 2004 gegründet wurde.",
+     "ihr musikalischer stil mischt nu metal, alternative, hip-hop, ska, reggae, dub und punk mit rebellischen texten und songs mit attitüde."
+    ]
+   },
+   "tr": {
+    "kicker": "japon metalcore grubu · kanagawa, 2004",
+    "who": "sim, kanagawa eyaletinden 2004'te kurulmuş bir japon metalcore grubudur. müzik tarzı nu metal, alternatif, hip-hop, ska, reggae, dub ve punk'ı asi sözlerle harmanlar.",
+    "facts": [
+     "sim, 2004'te kurulmuş kanagawa eyaletinden bir japon metalcore grubudur.",
+     "müzik tarzı nu metal, alternatif, hip-hop, ska, reggae, dub ve punk'ı asi sözler ve tavırlı şarkılarla harmanlar."
+    ]
+   }
+  },
+  {
+   "id": "f663a224-3a8b-4291-b65f-e3000e513c45",
+   "slug": "dagny-europe-2027-03f5b7bf",
+   "title": "DAGNY - Europe 2027",
+   "name": "Dagny",
+   "source_url": "https://en.wikipedia.org/wiki/Dagny_(singer)",
+   "extract": "Dagny Norvoll Sandvik, known mononymously as Dagny, is a Norwegian singer and songwriter. Her music is pop-based, incorporating elements of indie, dance, synth-pop, electropop and disco. She has released two studio albums, Strangers / Lovers (2020) and Elle (2024), and one EP, Ultraviolet (2016). Her single \"Somebody\" won Song of the Year at the 2020 P3 Gull, and her 2017 track \"Love You Like That\" was the basis for Katy Perry's \"Never Really Over\" (2019). She frequently performs at festivals in Norway and the United Kingdom including Øyafestivalen, Stavernfestivalen, and Bergenfest.",
+   "en": {
+    "kicker": "norwegian singer and songwriter · pop",
+    "who": "dagny norvoll sandvik, known mononymously as dagny, is a norwegian singer and songwriter. her music is pop-based, with elements of indie, dance, synth-pop, electropop and disco.",
+    "facts": [
+     "Her single \"Somebody\" won Song of the Year at the 2020 P3 Gull, and her 2017 track \"Love You Like That\" was the basis for Katy Perry's \"Never Really Over\" (2019).",
+     "She has released two studio albums, Strangers / Lovers (2020) and Elle (2024), and one EP, Ultraviolet (2016)."
+    ]
+   },
+   "de": {
+    "kicker": "norwegische sängerin und songwriterin · pop",
+    "who": "dagny norvoll sandvik, bekannt als dagny, ist eine norwegische sängerin und songwriterin. ihre musik basiert auf pop und verbindet indie, dance, synth-pop, electropop und disco.",
+    "facts": [
+     "ihr single \"somebody\" gewann 2020 den song of the year beim p3 gull, und ihr track \"love you like that\" von 2017 war die grundlage für katy perrys \"never really over\" (2019).",
+     "sie hat zwei studioalben, strangers / lovers (2020) und elle (2024), sowie eine ep, ultraviolet (2016), veröffentlicht."
+    ]
+   },
+   "tr": {
+    "kicker": "norveçli şarkıcı ve söz yazarı · pop",
+    "who": "dagny norvoll sandvik, dagny adıyla bilinen norveçli bir şarkıcı ve söz yazarıdır. müziği pop temellidir ve indie, dans, synth-pop, electropop ve disco öğeleri içerir.",
+    "facts": [
+     "\"somebody\" single'ı 2020'de p3 gull'da yılın şarkısı ödülünü kazandı; 2017 tarihli \"love you like that\" parçası katy perry'nin \"never really over\" (2019) şarkısının temeli oldu.",
+     "strangers / lovers (2020) ve elle (2024) adlı iki stüdyo albümü ile ultraviolet (2016) ep'ini yayımladı."
+    ]
+   }
+  }
+ ]
+}

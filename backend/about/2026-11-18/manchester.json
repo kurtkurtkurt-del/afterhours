@@ -1,0 +1,70 @@
+{
+ "city": "manchester",
+ "day": "2026-11-18",
+ "nights": [
+  {
+   "id": "c2662c91-ec03-4641-9423-c250cfa50448",
+   "slug": "feeble-little-horse-90042ea3",
+   "title": "feeble little horse",
+   "name": "Feeble Little Horse",
+   "source_url": "https://en.wikipedia.org/wiki/Feeble_Little_Horse",
+   "extract": "feeble little horse is an American indie rock band from Pittsburgh, Pennsylvania, that formed in 2021. It currently comprises three founding members: multi-instrumentalist Sebastian Kinsler, drummer Jake Kelley, and vocalist-bassist Lydia Slocum. Guitarist Ryan Walchonski was also a founding member but left the group in 2025. The band is currently signed to Saddle Creek Records; they have three albums and one EP.",
+   "en": {
+    "kicker": "american indie rock band · pittsburgh, 2021",
+    "who": "feeble little horse is an american indie rock band from pittsburgh, pennsylvania, formed in 2021. the band is currently signed to saddle creek records.",
+    "facts": [
+     "feeble little horse is an American indie rock band from Pittsburgh, Pennsylvania, that formed in 2021.",
+     "The band is currently signed to Saddle Creek Records; they have three albums and one EP."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische indie-rockband · pittsburgh, 2021",
+    "who": "feeble little horse sind eine amerikanische indie-rockband aus pittsburgh, pennsylvania. sie stehen derzeit bei saddle creek records unter vertrag.",
+    "facts": [
+     "feeble little horse sind eine amerikanische indie-rockband aus pittsburgh, pennsylvania, die sich 2021 gründete.",
+     "die band ist derzeit bei saddle creek records unter vertrag und hat drei alben sowie eine ep veröffentlicht."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı indie rock grubu · pittsburgh, 2021",
+    "who": "feeble little horse, pennsylvania'nın pittsburgh kentinden 2021'de kurulmuş bir amerikalı indie rock grubudur. grup şu anda saddle creek records ile çalışıyor.",
+    "facts": [
+     "feeble little horse, 2021'de kurulmuş pennsylvania'nın pittsburgh kentinden bir amerikalı indie rock grubudur.",
+     "grup şu anda saddle creek records ile anlaşmalı ve üç albüm ile bir ep yayımladı."
+    ]
+   }
+  },
+  {
+   "id": "1419e360-6ef6-4822-9fc1-50c355c3d8a0",
+   "slug": "mystery-jets-c263e3df",
+   "title": "Mystery Jets",
+   "name": "Mystery Jets",
+   "source_url": "https://en.wikipedia.org/wiki/Mystery_Jets",
+   "extract": "Mystery Jets are an English indie rock band, formed on Eel Pie Island in Twickenham, London. The founding members still part of the band consist of Blaine Harrison, Henry Harrison (lyrics), and Kapil Trivedi (drums).",
+   "en": {
+    "kicker": "english indie rock band · twickenham",
+    "who": "mystery jets are an english indie rock band formed on eel pie island in twickenham, london. the founding members still in the band are blaine harrison, henry harrison and kapil trivedi.",
+    "facts": [
+     "Mystery Jets are an English indie rock band, formed on Eel Pie Island in Twickenham, London.",
+     "The founding members still part of the band consist of Blaine Harrison, Henry Harrison (lyrics), and Kapil Trivedi (drums)."
+    ]
+   },
+   "de": {
+    "kicker": "englische indie-rockband · twickenham",
+    "who": "mystery jets sind eine englische indie-rockband, die auf eel pie island in twickenham, london, gegründet wurde. zu den noch aktiven gründungsmitgliedern gehören blaine harrison, henry harrison und kapil trivedi.",
+    "facts": [
+     "mystery jets sind eine englische indie-rockband, die auf eel pie island in twickenham, london, entstand.",
+     "zu den noch aktiven gründungsmitgliedern gehören blaine harrison, henry harrison (texte) und kapil trivedi (schlagzeug)."
+    ]
+   },
+   "tr": {
+    "kicker": "ingiliz indie rock grubu · twickenham",
+    "who": "mystery jets, londra'nın twickenham bölgesindeki eel pie island'da kurulmuş bir ingiliz indie rock grubudur. kurucu üyelerden hâlâ grupta olanlar blaine harrison, henry harrison ve kapil trivedi'dir.",
+    "facts": [
+     "mystery jets, londra'nın twickenham bölgesindeki eel pie island'da kurulmuş bir ingiliz indie rock grubudur.",
+     "kurucu üyelerden hâlâ grupta olanlar blaine harrison, henry harrison (sözler) ve kapil trivedi (davul)'dir."
+    ]
+   }
+  }
+ ]
+}
