@@ -1,0 +1,14 @@
+{
+  "city": "hong-kong",
+  "day": "2026-11-21",
+  "sparks": [
+    {
+      "kind": "picnic",
+      "title": { "en": "the big picnic at tai pak beach, discovery bay.", "de": "the big picnic am tai pak beach, discovery bay.", "tr": "tai pak beach'te the big picnic, discovery bay." },
+      "line": { "en": "eleven hours of live music on two stages from 11:00 to 22:00, with a handmade hong kong artisan market and food vendors on the beach. it is ticketed, so buy before you go.", "de": "elf stunden livemusik auf zwei bühnen von 11:00 bis 22:00, dazu ein markt mit handgemachten waren aus hongkong und essensstände am strand. es ist ein ticketpflichtiges event, also vorher kaufen.", "tr": "11:00'den 22:00'ye kadar iki sahnede on bir saat canlı müzik, plajda el yapımı hong kong ürünleri pazarı ve yiyecek standları. biletlidir; gitmeden önce al." },
+      "place": { "en": "tai pak beach, discovery bay", "de": "tai pak beach, discovery bay", "tr": "tai pak beach, discovery bay" },
+      "hour": 11, "minute": 0,
+      "why": "The BIG Picnic at Tai Pak Beach and DB Plaza, Discovery Bay, Sat 21.11 from 11:00 to 22:00, per Little Steps and hongkongcheapo.com; ticketed in 2026."
+    }
+  ]
+}
