@@ -1,0 +1,27 @@
+{
+  "city": "new-york",
+  "day": "2026-11-19",
+  "sparks": [
+    {
+      "kind": "skate",
+      "title": {
+        "en": "skate at the rockefeller rink, now 90 years old.",
+        "de": "auf der rockefeller-eisbahn laufen, sie wird 90.",
+        "tr": "rockefeller pistinde kay, pist 90 yaşında."
+      },
+      "line": {
+        "en": "the rink at rockefeller center is open for the season, and the new skate house opened on 14 november. go after work, before the crowd.",
+        "de": "die eisbahn am rockefeller center ist für die saison geöffnet, das neue skate house eröffnete am 14. november. nach der arbeit hingehen, vor dem gedränge.",
+        "tr": "rockefeller center'daki pist sezon için açık, yeni skate house 14 kasım'da açıldı. işten sonra, kalabalıktan önce git."
+      },
+      "place": {
+        "en": "the rink at rockefeller center",
+        "de": "die eisbahn am rockefeller center",
+        "tr": "rockefeller center pisti"
+      },
+      "hour": 17,
+      "minute": 0,
+      "why": "The Rink at Rockefeller Center celebrates 90 years, with a new Skate House opened 14 Nov (rockefellercenter.com, November 2026 guide)."
+    }
+  ]
+}
