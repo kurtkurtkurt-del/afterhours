@@ -1,0 +1,14 @@
+{
+  "city": "san-francisco",
+  "day": "2026-11-29",
+  "sparks": [
+    {
+      "kind": "football",
+      "title": { "en": "49ers against the seahawks, at levi's.", "de": "49ers gegen die seahawks, im levi's.", "tr": "49ers, seahawks karşısında, levi's'ta." },
+      "line": { "en": "the niners at home to the seahawks, kickoff 13:25 on fox. the stadium is in santa clara, so allow time for the drive.", "de": "die niners zu hause gegen die seahawks, anpfiff 13:25 auf fox. das stadion liegt in santa clara, also zeit für die fahrt einplanen.", "tr": "niners evinde seahawks'la oynuyor, 13:25'te başlıyor, fox'ta yayında. stadyum santa clara'da, yolculuk için zaman ayırın." },
+      "place": { "en": "levi's stadium", "de": "levi's stadium", "tr": "levi's stadium" },
+      "hour": 13, "minute": 25,
+      "why": "49ers vs Seahawks, week 12, sun 29 nov 13:25 PT on FOX (levisstadium.com event page; 49ers.com)."
+    }
+  ]
+}
