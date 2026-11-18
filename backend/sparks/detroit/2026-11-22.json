@@ -1,0 +1,14 @@
+{
+  "city": "detroit",
+  "day": "2026-11-22",
+  "sparks": [
+    {
+      "kind": "football",
+      "title": { "en": "lions vs tampa bay at ford field.", "de": "lions gegen tampa bay im ford field.", "tr": "lions – tampa bay, ford field'da." },
+      "line": { "en": "the lions at home, 1 pm kickoff. ford field is downtown; come early for a table in a bar near the stadium.", "de": "die lions zu hause, anpfiff um 13 uhr. das ford field liegt in der innenstadt; früh kommen für einen tisch in einer bar in der nähe.", "tr": "lions evde, 13:00 başlangıç. ford field şehir merkezinde; stadyuma yakın bir barda masa için erken gelin." },
+      "place": { "en": "ford field", "de": "ford field", "tr": "ford field" },
+      "hour": 13, "minute": 0,
+      "why": "Lions home game vs Tampa Bay, Sun 22 Nov, 1 pm ET, from the Lions 2026 schedule release (detroitlions.com) and a calendarx listing."
+    }
+  ]
+}

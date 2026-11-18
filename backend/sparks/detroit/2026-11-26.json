@@ -1,0 +1,14 @@
+{
+  "city": "detroit",
+  "day": "2026-11-26",
+  "sparks": [
+    {
+      "kind": "football",
+      "title": { "en": "lions vs bears on thanksgiving.", "de": "lions gegen bears am thanksgiving.", "tr": "şükran günü'nde lions – bears." },
+      "line": { "en": "the thanksgiving day game at ford field, 1 pm kickoff on cbs. the america's thanksgiving parade is the same day.", "de": "das thanksgiving-spiel im ford field, anpfiff um 13 uhr auf cbs. die america's thanksgiving parade findet am selben tag statt.", "tr": "ford field'da şükran günü maçı, 13:00 başlangıç, cbs'de. america's thanksgiving parade aynı gün." },
+      "place": { "en": "ford field", "de": "ford field", "tr": "ford field" },
+      "hour": 13, "minute": 0,
+      "why": "Lions vs Chicago, Thu 26 Nov, 1 pm ET on CBS at Ford Field, from the NFL 2026 schedule release (NFL.com); parade centennial per a Detroit events roundup."
+    }
+  ]
+}
