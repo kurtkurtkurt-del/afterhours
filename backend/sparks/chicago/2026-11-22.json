@@ -1,0 +1,27 @@
+{
+  "city": "chicago",
+  "day": "2026-11-22",
+  "sparks": [
+    {
+      "kind": "football",
+      "title": {
+        "en": "bears – saints at soldier field.",
+        "de": "bears – saints im soldier field.",
+        "tr": "bears – saints, soldier field'de."
+      },
+      "line": {
+        "en": "the bears host the saints at noon at soldier field, sunday. tickets from the bears or resale; the stadium is on the lakefront, so dress for the wind.",
+        "de": "die bears empfangen die saints sonntag um 12:00 im soldier field. tickets über die bears oder den zweitmarkt; das stadion liegt am see, also auf den wind einstellen.",
+        "tr": "bears pazar günü öğlen saints'i soldier field'da ağırlıyor. biletler bears'ten ya da ikinci elden; stadyum göl kenarında, rüzgara hazırlıklı git."
+      },
+      "place": {
+        "en": "soldier field",
+        "de": "soldier field",
+        "tr": "soldier field"
+      },
+      "hour": 12,
+      "minute": 0,
+      "why": "Bears vs Saints, home, sun 22 nov 12:00 CT at Soldier Field, per the Chicago Bears 2026 schedule listing (https://www.chicagobears.com/schedule/2026/); flex scheduling can move it."
+    }
+  ]
+}

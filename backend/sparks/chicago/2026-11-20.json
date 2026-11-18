@@ -1,0 +1,14 @@
+{
+  "city": "chicago",
+  "day": "2026-11-20",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "christkindlmarket opens at daley plaza.", "de": "christkindlmarket öffnet am daley plaza.", "tr": "christkindlmarket daley plaza'da açılıyor." },
+      "line": { "en": "the christkindlmarket opens friday at 11:00 and runs to 24 december. entry is free; open until 21:00 on fridays. go for the glühwein after work.", "de": "der christkindlmarkt öffnet freitag um 11:00 und läuft bis 24. dezember. eintritt frei, freitags bis 21:00. nach der arbeit zum glühwein gehen.", "tr": "christkindlmarket cuma günü 11:00'de açılıyor ve 24 aralık'a kadar sürüyor. giriş ücretsiz; cuma günleri 21:00'e kadar açık. iş çıkışı glühwein için uğra." },
+      "place": { "en": "daley plaza", "de": "daley plaza", "tr": "daley plaza" },
+      "hour": 17, "minute": 30,
+      "why": "Christkindlmarket Chicago 2026 season opens fri 20 nov 11:00 at Daley Plaza, free, to 24 dec (radicalstorage.com 2026 market guide, consistent with Choose Chicago holiday listings); the official site was not opened."
+    }
+  ]
+}
