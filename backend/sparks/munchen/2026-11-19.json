@@ -1,0 +1,657 @@
+{
+  "city": "munchen",
+  "day": "2026-11-19",
+  "sparks": [
+    {
+      "kind": "derby",
+      "title": {
+        "en": "a match night at the kilians.",
+        "de": "ein spieleabend im kilians.",
+        "tr": "kilians'ta bir maç gecesi."
+      },
+      "line": {
+        "en": "no big match confirmed tonight. ask at the bar what is on; a screen and a table beat the cold walk home.",
+        "de": "heute ist kein großes spiel bestätigt. frag an der bar, was läuft; bildschirm und tisch schlagen den kalten heimweg.",
+        "tr": "bu gece büyük bir maç doğrulanmadı. barda ne oynadığını sor; ekran ve masa soğuk yoldan iyidir."
+      },
+      "place": {
+        "en": "kilians irish pub",
+        "de": "kilians irish pub",
+        "tr": "kilians irish pub"
+      },
+      "hour": 20,
+      "minute": 0,
+      "why": "Thu 19.11, no holiday in Bavaria; no FC Bayern, 1860 or EHC home match could be confirmed (club schedules). Generic pub spark."
+    },
+    {
+      "kind": "grill",
+      "title": {
+        "en": "a short grill at the flaucher.",
+        "de": "ein kurzer grill am flaucher.",
+        "tr": "flaucher'de kısa bir mangal."
+      },
+      "line": {
+        "en": "cold and dark by half past four. bring sausages and a thermos, grill where the isar allows it and keep it to an hour.",
+        "de": "kalt und ab halb fünf dunkel. würstchen und thermoskanne mit, wo die isar es erlaubt grillen, eine stunde reicht.",
+        "tr": "soğuk ve dörtbuçukta karanlık. sosis ve termos getir, isar izin veren yerde bir saat mangal yap."
+      },
+      "place": {
+        "en": "flaucher",
+        "de": "flaucher",
+        "tr": "flaucher"
+      },
+      "hour": 17,
+      "minute": 0,
+      "why": "No day-specific forecast could be confirmed; late-November Munich assumed cold with sunrise ~07:25 and sunset ~16:35 (astronomical tables). Thu 19.11, no holiday. Generic outdoor spark, weather may cancel it."
+    },
+    {
+      "kind": "hike",
+      "title": {
+        "en": "a short climb up the olympiaberg.",
+        "de": "ein kurzer aufstieg auf den olympiaberg.",
+        "tr": "olympiaberg'e kısa bir tırmanış."
+      },
+      "line": {
+        "en": "take the olympiaberg for the view over the park and the alps if the air is clear. be down before the dusk at half past four.",
+        "de": "der olympiaberg bietet den blick über den park und bei klarer luft die alpen. vor der dämmerung um halb fünf wieder unten.",
+        "tr": "olympiaberg parkın ve hava açıksa alplerin manzarasını verir. dörtbuçukta alacakaranlıktan önce aşağıda ol."
+      },
+      "place": {
+        "en": "olympiaberg",
+        "de": "olympiaberg",
+        "tr": "olympiaberg"
+      },
+      "hour": 13,
+      "minute": 0,
+      "why": "No day-specific forecast could be confirmed; late-November Munich assumed cold with sunrise ~07:25 and sunset ~16:35 (astronomical tables). Thu 19.11, no holiday."
+    },
+    {
+      "kind": "sunrise",
+      "title": {
+        "en": "sunrise over the isar at 07:25.",
+        "de": "sonnenaufgang an der isar um 07:25.",
+        "tr": "isar'da 07:25 gün doğumu."
+      },
+      "line": {
+        "en": "sunrise is about 07:25 and it is cold, so wear a hat. coffee in hand at the reichenbachbrücke, home by eight.",
+        "de": "sonnenaufgang gegen 07:25, es ist kalt, also mütze auf. kaffee in der hand an der reichenbachbrücke, um acht zuhause.",
+        "tr": "gün doğumu 07:25 civarı ve hava soğuk, bere tak. reichenbachbrücke’de elinde kahve, sekizde evde."
+      },
+      "place": {
+        "en": "reichenbachbrücke",
+        "de": "reichenbachbrücke",
+        "tr": "reichenbachbrücke"
+      },
+      "hour": 7,
+      "minute": 5,
+      "why": "Sunrise in Munich about 07:25 on 19.11 (sunrise tables), start 20 minutes before. No day-specific forecast could be confirmed; late-November Munich assumed cold with sunrise ~07:25 and sunset ~16:35 (astronomical tables). Thu 19.11, no holiday."
+    },
+    {
+      "kind": "breakfast",
+      "title": {
+        "en": "a thursday breakfast in the glockenbach.",
+        "de": "donnerstagsfrühstück im glockenbach.",
+        "tr": "glockenbach'ta perşembe kahvaltısı."
+      },
+      "line": {
+        "en": "a normal working day, so go early or late for a table. weißwurst or eggs, and a second coffee by the window.",
+        "de": "ein normaler arbeitstag, also früh oder spät für einen tisch. weißwurst oder eier und ein zweiter kaffee am fenster.",
+        "tr": "sıradan bir iş günü, masa için erken ya da geç git. weißwurst ya da yumurta, pencere kenarında ikinci kahve."
+      },
+      "place": {
+        "en": "glockenbachviertel",
+        "de": "glockenbachviertel",
+        "tr": "glockenbachviertel"
+      },
+      "hour": 9,
+      "minute": 30,
+      "why": "Thu 19.11, no holiday in Bavaria; no FC Bayern, 1860 or EHC home match could be confirmed (club schedules)."
+    },
+    {
+      "kind": "rooftop",
+      "title": {
+        "en": "a high bar for the last light.",
+        "de": "eine hohe bar fürs letzte licht.",
+        "tr": "son ışık için yüksek bir bar."
+      },
+      "line": {
+        "en": "too cold to stay outside. take a heated rooftop or a high bar with a window and watch the sun go down around half past four.",
+        "de": "draußen zu kalt zum bleiben. such dir eine beheizte dachterrasse oder eine hohe bar mit fenster und schau um halb fünf der sonne zu.",
+        "tr": "dışarıda kalmak için çok soğuk. ısıtmalı bir çatı ya da pencereli yüksek bir bar seç, dörtbuçukta güneşin batışını izle."
+      },
+      "place": {
+        "en": "viktualienmarkt",
+        "de": "viktualienmarkt",
+        "tr": "viktualienmarkt"
+      },
+      "hour": 16,
+      "minute": 0,
+      "why": "No day-specific forecast could be confirmed; late-November Munich assumed cold with sunrise ~07:25 and sunset ~16:35 (astronomical tables). Thu 19.11, no holiday. Heated or indoor view instead of an open terrace."
+    },
+    {
+      "kind": "swim",
+      "title": {
+        "en": "an indoor swim at the müller’sches.",
+        "de": "schwimmen im müller’schen volksbad.",
+        "tr": "müller'sches volksbad'da kapalı yüzme."
+      },
+      "line": {
+        "en": "the open lidos are shut. the old pool hall by the isar is warm and tiled; swim a few lengths after work.",
+        "de": "die freibäder sind zu. die alte schwimmhalle an der isar ist warm und gefliest; nach der arbeit ein paar bahnen.",
+        "tr": "açık havuzlar kapalı. isar kıyısındaki eski yüzme salonu sıcak ve çinili; işten sonra birkaç kulaç at."
+      },
+      "place": {
+        "en": "müller’sches volksbad",
+        "de": "müller’sches volksbad",
+        "tr": "müller’sches volksbad"
+      },
+      "hour": 18,
+      "minute": 0,
+      "why": "Outdoor pools and lidos are closed in November; indoor pool instead. Opening hours not re-verified today."
+    },
+    {
+      "kind": "quiz",
+      "title": {
+        "en": "a pub quiz on a thursday.",
+        "de": "donnerstags ins kneipenquiz.",
+        "tr": "perşembe pub bilgi yarışması."
+      },
+      "line": {
+        "en": "four people, one table, pen and paper. come at eight for a seat before the first round.",
+        "de": "vier leute, ein tisch, stift und papier. um acht kommen für einen platz vor der ersten runde.",
+        "tr": "dört kişi, bir masa, kalem ve kağıt. ilk turdan önce yer için sekizde gel."
+      },
+      "place": {
+        "en": "kilians irish pub",
+        "de": "kilians irish pub",
+        "tr": "kilians irish pub"
+      },
+      "hour": 20,
+      "minute": 0,
+      "why": "Thu 19.11, no holiday in Bavaria; no FC Bayern, 1860 or EHC home match could be confirmed (club schedules). Generic quiz spark; quiz night not confirmed for the venue."
+    },
+    {
+      "kind": "newplace",
+      "title": {
+        "en": "one new place you have not tried.",
+        "de": "ein neuer ort, den du nicht kennst.",
+        "tr": "denemediğin bir yeni yer."
+      },
+      "line": {
+        "en": "pick a street in haidhausen you never turn into and take the first door that looks warm.",
+        "de": "such dir eine straße in haidhausen, in die du nie abbiegst, und nimm die erste tür, die warm aussieht.",
+        "tr": "haidhausen’de hiç dönmediğin bir sokak seç, sıcak görünen ilk kapıdan gir."
+      },
+      "place": {
+        "en": "haidhausen",
+        "de": "haidhausen",
+        "tr": "haidhausen"
+      },
+      "hour": 19,
+      "minute": 0,
+      "why": "Nothing special confirmed for the day; generic Munich spark."
+    },
+    {
+      "kind": "camera",
+      "title": {
+        "en": "photos in the low light.",
+        "de": "fotos im tiefen licht.",
+        "tr": "alçak ışıkta fotoğraflar."
+      },
+      "line": {
+        "en": "the sun sits low all day and the old gate catches it. walk from the isartor to the viktualienmarkt with a camera.",
+        "de": "die sonne steht den ganzen tag tief und das alte tor fängt sie. vom isartor zum viktualienmarkt mit kamera.",
+        "tr": "güneş gün boyu alçak ve eski kapı onu yakalıyor. isartor’dan viktualienmarkt’a kamerayla yürü."
+      },
+      "place": {
+        "en": "isartor",
+        "de": "isartor",
+        "tr": "isartor"
+      },
+      "hour": 14,
+      "minute": 0,
+      "why": "No day-specific forecast could be confirmed; late-November Munich assumed cold with sunrise ~07:25 and sunset ~16:35 (astronomical tables). Thu 19.11, no holiday."
+    },
+    {
+      "kind": "festival",
+      "title": {
+        "en": "winter lights, markets still to come.",
+        "de": "winterlichter, märkte kommen noch.",
+        "tr": "kış ışıkları, pazarlar yakında."
+      },
+      "line": {
+        "en": "the city is getting ready for advent. walk across the marienplatz after dark and see what is already lit.",
+        "de": "die stadt macht sich für den advent bereit. nach der dämmerung über den marienplatz und sehen, was schon leuchtet.",
+        "tr": "şehir advent’e hazırlanıyor. karanlıktan sonra marienplatz’dan geç, nelerin yandığına bak."
+      },
+      "place": {
+        "en": "marienplatz",
+        "de": "marienplatz",
+        "tr": "marienplatz"
+      },
+      "hour": 17,
+      "minute": 0,
+      "why": "No festival confirmed for 19.11; christmas market opening dates not verified. Generic spark."
+    },
+    {
+      "kind": "karaoke",
+      "title": {
+        "en": "a private karaoke room.",
+        "de": "ein privates karaokezimmer.",
+        "tr": "özel bir karaoke odası."
+      },
+      "line": {
+        "en": "book a room for six, order drinks and sing the songs you would never sing in public.",
+        "de": "buch einen raum für sechs, bestell getränke und sing die lieder, die du nie öffentlich singen würdest.",
+        "tr": "altı kişilik bir oda ayır, içecek söyle, herkesin önünde söylemeyeceğin şarkıları söyle."
+      },
+      "place": {
+        "en": "münchen innenstadt",
+        "de": "münchen innenstadt",
+        "tr": "münchen innenstadt"
+      },
+      "hour": 19,
+      "minute": 30,
+      "why": "Generic indoor spark for a cold weekday evening."
+    },
+    {
+      "kind": "vinyl",
+      "title": {
+        "en": "crate digging, then a record at home.",
+        "de": "plattenkisten wühlen, dann zuhause hören.",
+        "tr": "plak karıştır, sonra evde dinle."
+      },
+      "line": {
+        "en": "spend an hour in the record shops of the glockenbach, pick one record each and play them at home.",
+        "de": "eine stunde in den plattenläden im glockenbach, jeder sucht eine platte aus und zuhause wird sie gespielt.",
+        "tr": "glockenbach’ın plakçılarında bir saat geçir, herkes bir plak seçsin, evde çalın."
+      },
+      "place": {
+        "en": "glockenbachviertel",
+        "de": "glockenbachviertel",
+        "tr": "glockenbachviertel"
+      },
+      "hour": 15,
+      "minute": 0,
+      "why": "Generic indoor spark. Thu 19.11, no holiday in Bavaria; no FC Bayern, 1860 or EHC home match could be confirmed (club schedules)."
+    },
+    {
+      "kind": "openair",
+      "title": {
+        "en": "no open air, a gig inside.",
+        "de": "kein open air, ein konzert drinnen.",
+        "tr": "açık hava yok, içeride bir konser."
+      },
+      "line": {
+        "en": "too cold for open air. the irish band gurriers play the strom tonight; check the doors and tickets first.",
+        "de": "zu kalt für open air. die irische band gurriers spielt heute im strom; vorher türen und tickets prüfen.",
+        "tr": "açık hava için çok soğuk. irlandalı gurriers bu gece strom’da çalıyor; önce kapı ve bilet bilgisine bak."
+      },
+      "place": {
+        "en": "strom",
+        "de": "strom",
+        "tr": "strom"
+      },
+      "hour": 20,
+      "minute": 0,
+      "why": "Gurriers listed at Strom on 19.11 (regioactive.de, mvp.de listing); no open-air events in November. Ticket status not verified."
+    },
+    {
+      "kind": "bike",
+      "title": {
+        "en": "a cold-air loop along the isar.",
+        "de": "kalte luft, eine runde an der isar.",
+        "tr": "isar boyunca soğuk havada tur."
+      },
+      "line": {
+        "en": "wrap up and ride the isar path from the flaucher to the deutsches museum. be home before the dark at half past four.",
+        "de": "dick einpacken und den isarradweg vom flaucher zum deutschen museum fahren. vor dem dunkel um halb fünf zuhause.",
+        "tr": "sıkı giyin, flaucher’dan deutsches museum’a isar bisiklet yolunda git. dörtbuçukta karanlıktan önce evde ol."
+      },
+      "place": {
+        "en": "isarradweg",
+        "de": "isarradweg",
+        "tr": "isarradweg"
+      },
+      "hour": 14,
+      "minute": 0,
+      "why": "No day-specific forecast could be confirmed; late-November Munich assumed cold with sunrise ~07:25 and sunset ~16:35 (astronomical tables). Thu 19.11, no holiday."
+    },
+    {
+      "kind": "cinema",
+      "title": {
+        "en": "a film in the early dark.",
+        "de": "ein film in der frühen dunkelheit.",
+        "tr": "erken karanlıkta bir film."
+      },
+      "line": {
+        "en": "it is dark by half past four. the filmmuseum at st.-jakobs-platz shows old films on a big screen; check today’s listing.",
+        "de": "um halb fünf ist es dunkel. das filmmuseum am st.-jakobs-platz zeigt alte filme auf großer leinwand; heutiges programm prüfen.",
+        "tr": "dörtbuçukta hava kararıyor. st.-jakobs-platz’taki filmmuseum büyük perdede eski filmler gösterir; bugünkü programa bak."
+      },
+      "place": {
+        "en": "filmmuseum münchen",
+        "de": "filmmuseum münchen",
+        "tr": "filmmuseum münchen"
+      },
+      "hour": 17,
+      "minute": 0,
+      "why": "Programme not verified today; generic cinema spark for a dark early evening."
+    },
+    {
+      "kind": "boardgames",
+      "title": {
+        "en": "board games and tea after work.",
+        "de": "brettspiele und tee nach der arbeit.",
+        "tr": "işten sonra masa oyunu ve çay."
+      },
+      "line": {
+        "en": "a long table, a pot of tea and a game with a thick rulebook. book a table in a board game cafe.",
+        "de": "ein langer tisch, eine kanne tee und ein spiel mit dickem regelheft. tisch im brettspielcafé reservieren.",
+        "tr": "uzun bir masa, bir demlik çay ve kalın kural kitaplı bir oyun. oyun kafede masa ayırt."
+      },
+      "place": {
+        "en": "brettspielcafé münchen",
+        "de": "brettspielcafé münchen",
+        "tr": "brettspielcafé münchen"
+      },
+      "hour": 18,
+      "minute": 0,
+      "why": "Generic indoor spark."
+    },
+    {
+      "kind": "flea",
+      "title": {
+        "en": "a market lunch on a thursday.",
+        "de": "marktmittag am donnerstag.",
+        "tr": "perşembe pazar öğle yemeği."
+      },
+      "line": {
+        "en": "no flea market that we could confirm today; the viktualienmarkt stalls are open all day. cheese, bread and soup standing up.",
+        "de": "heute ist kein flohmarkt bestätigt; die stände am viktualienmarkt haben den ganzen tag offen. käse, brot und suppe im stehen.",
+        "tr": "bugün doğrulanmış bir bit pazarı yok; viktualienmarkt tezgahları gün boyu açık. peynir, ekmek ve ayakta çorba."
+      },
+      "place": {
+        "en": "viktualienmarkt",
+        "de": "viktualienmarkt",
+        "tr": "viktualienmarkt"
+      },
+      "hour": 13,
+      "minute": 0,
+      "why": "No flea market confirmed for Thursday 19.11; viktualienmarkt is open on weekdays (muenchen.de, not re-checked today)."
+    },
+    {
+      "kind": "skate",
+      "title": {
+        "en": "a roof over the skate crew.",
+        "de": "skater unter dach.",
+        "tr": "kaykaycılara bir çatı."
+      },
+      "line": {
+        "en": "cold ground and early dark. find a covered spot or an indoor skate hall instead of the open park.",
+        "de": "kalter boden und frühe dunkelheit. such eine überdachte stelle oder eine skatehalle statt des offenen parks.",
+        "tr": "soğuk zemin ve erken karanlık. açık park yerine kapalı bir yer ya da kaykay salonu bul."
+      },
+      "place": {
+        "en": "olympiapark",
+        "de": "olympiapark",
+        "tr": "olympiapark"
+      },
+      "hour": 16,
+      "minute": 0,
+      "why": "No day-specific forecast could be confirmed; late-November Munich assumed cold with sunrise ~07:25 and sunset ~16:35 (astronomical tables). Thu 19.11, no holiday. Indoor alternative; hall hours not verified."
+    },
+    {
+      "kind": "cook",
+      "title": {
+        "en": "cook a big pot together.",
+        "de": "kocht zusammen einen großen topf.",
+        "tr": "birlikte büyük bir tencere pişir."
+      },
+      "line": {
+        "en": "a cold evening for soup or a stew. everyone brings one ingredient, one person stirs.",
+        "de": "ein kalter abend für suppe oder eintopf. jeder bringt eine zutat mit, einer rührt.",
+        "tr": "soğuk bir akşam çorba ya da güveç için. herkes bir malzeme getirir, biri karıştırır."
+      },
+      "place": {
+        "en": "zuhause",
+        "de": "zuhause",
+        "tr": "zuhause"
+      },
+      "hour": 19,
+      "minute": 0,
+      "why": "Generic indoor spark for a cold weekday evening."
+    },
+    {
+      "kind": "sauna",
+      "title": {
+        "en": "sauna on a cold thursday.",
+        "de": "sauna an einem kalten donnerstag.",
+        "tr": "soğuk bir perşembede sauna."
+      },
+      "line": {
+        "en": "the best answer to a cold november evening. the sauna at the müller’sches is warm and quiet; check the day for men or women.",
+        "de": "die beste antwort auf einen kalten novemberabend. die sauna im müller’schen ist warm und ruhig; den tag für männer oder frauen prüfen.",
+        "tr": "soğuk bir kasım akşamına en iyi cevap. müller’sches’teki sauna sıcak ve sakin; gün kadın mı erkek mi diye bak."
+      },
+      "place": {
+        "en": "müller’sches volksbad",
+        "de": "müller’sches volksbad",
+        "tr": "müller’sches volksbad"
+      },
+      "hour": 18,
+      "minute": 30,
+      "why": "Generic indoor spark; sauna days by gender not verified today."
+    },
+    {
+      "kind": "openmic",
+      "title": {
+        "en": "an open mic on a thursday.",
+        "de": "offene bühne am donnerstag.",
+        "tr": "perşembe açık mikrofon."
+      },
+      "line": {
+        "en": "bring a song or a poem. the substanz is small; come early and sign up before the first act.",
+        "de": "bring ein lied oder ein gedicht mit. die substanz ist klein; früh kommen und vor dem ersten act eintragen.",
+        "tr": "bir şarkı ya da şiir getir. substanz küçük; erken gel, ilk sanatçıdan önce yazıl."
+      },
+      "place": {
+        "en": "substanz",
+        "de": "substanz",
+        "tr": "substanz"
+      },
+      "hour": 20,
+      "minute": 0,
+      "why": "Generic spark; an open mic at the venue on 19.11 could not be confirmed."
+    },
+    {
+      "kind": "pingpong",
+      "title": {
+        "en": "table tennis, four people, one table.",
+        "de": "tischtennis, vier leute, ein tisch.",
+        "tr": "masa tenisi, dört kişi, bir masa."
+      },
+      "line": {
+        "en": "too cold for the outdoor tables. find a club hall or a bar with a table and play doubles to eleven.",
+        "de": "zu kalt für die tische draußen. such eine vereinshalle oder eine bar mit platte und spiel doppel bis elf.",
+        "tr": "dış masalar için çok soğuk. bir kulüp salonu ya da masalı bir bar bul, on bire kadar çiftler oyna."
+      },
+      "place": {
+        "en": "olympiapark",
+        "de": "olympiapark",
+        "tr": "olympiapark"
+      },
+      "hour": 18,
+      "minute": 0,
+      "why": "No day-specific forecast could be confirmed; late-November Munich assumed cold with sunrise ~07:25 and sunset ~16:35 (astronomical tables). Thu 19.11, no holiday. Indoor alternative."
+    },
+    {
+      "kind": "bouldering",
+      "title": {
+        "en": "a bouldering evening inside.",
+        "de": "ein boulderabend drinnen.",
+        "tr": "içeride bir bouldering akşamı."
+      },
+      "line": {
+        "en": "warm hall, chalk, four problems before you stop counting. thursday evening is busy, come at seven.",
+        "de": "warme halle, magnesia, vier routen bevor du aufhörst zu zählen. donnerstagabend ist voll, um sieben kommen.",
+        "tr": "sıcak salon, magnezyum, saymayı bırakmadan dört problem. perşembe akşamı kalabalık, yedide gel."
+      },
+      "place": {
+        "en": "boulderhalle münchen",
+        "de": "boulderhalle münchen",
+        "tr": "boulderhalle münchen"
+      },
+      "hour": 19,
+      "minute": 0,
+      "why": "Generic indoor spark."
+    },
+    {
+      "kind": "picnic",
+      "title": {
+        "en": "an indoor picnic.",
+        "de": "ein picknick drinnen.",
+        "tr": "içeride bir piknik."
+      },
+      "line": {
+        "en": "spread a blanket on the floor, bring bread, cheese and fruit, and keep the lamps low.",
+        "de": "eine decke auf den boden, brot, käse und obst dazu und das licht gedimmt.",
+        "tr": "yere bir battaniye ser, ekmek, peynir ve meyve getir, ışıkları kıs."
+      },
+      "place": {
+        "en": "zuhause",
+        "de": "zuhause",
+        "tr": "zuhause"
+      },
+      "hour": 15,
+      "minute": 0,
+      "why": "No day-specific forecast could be confirmed; late-November Munich assumed cold with sunrise ~07:25 and sunset ~16:35 (astronomical tables). Thu 19.11, no holiday. Indoor picnic."
+    },
+    {
+      "kind": "crawl",
+      "title": {
+        "en": "a short bar crawl, three stops.",
+        "de": "eine kurze kneipentour, drei stationen.",
+        "tr": "kısa bir bar turu, üç durak."
+      },
+      "line": {
+        "en": "start at the gärtnerplatz, walk to the glockenbach and finish by the isar. a drink at each, no more.",
+        "de": "start am gärtnerplatz, weiter durchs glockenbach, ende an der isar. je ein getränk, nicht mehr.",
+        "tr": "gärtnerplatz’tan başla, glockenbach’a yürü, isar’da bitir. her yerde bir içki, fazlası yok."
+      },
+      "place": {
+        "en": "gärtnerplatz",
+        "de": "gärtnerplatz",
+        "tr": "gärtnerplatz"
+      },
+      "hour": 20,
+      "minute": 30,
+      "why": "Thu 19.11, no holiday in Bavaria; no FC Bayern, 1860 or EHC home match could be confirmed (club schedules). Generic spark."
+    },
+    {
+      "kind": "stars",
+      "title": {
+        "en": "stars, if the cloud breaks.",
+        "de": "sterne, wenn die wolken aufreißen.",
+        "tr": "bulutlar açılırsa yıldızlar."
+      },
+      "line": {
+        "en": "it is dark from five. if the sky is clear, take a blanket up the olympiaberg; if not, go home.",
+        "de": "ab fünf ist es dunkel. wenn der himmel klar ist, mit decke auf den olympiaberg; wenn nicht, nach hause.",
+        "tr": "beşten sonra hava karanlık. gökyüzü açıksa battaniyeyle olympiaberg’e çık; değilse eve dön."
+      },
+      "place": {
+        "en": "olympiaberg",
+        "de": "olympiaberg",
+        "tr": "olympiaberg"
+      },
+      "hour": 21,
+      "minute": 0,
+      "why": "No day-specific forecast could be confirmed; late-November Munich assumed cold with sunrise ~07:25 and sunset ~16:35 (astronomical tables). Thu 19.11, no holiday. Depends on cloud cover, not confirmed."
+    },
+    {
+      "kind": "football",
+      "title": {
+        "en": "a kickabout, or the screen.",
+        "de": "ein bolzen, oder der bildschirm.",
+        "tr": "bir top çevirme ya da ekran."
+      },
+      "line": {
+        "en": "floodlit pitches are cold but empty on a thursday. bring gloves, or watch whatever is on in a bar.",
+        "de": "flutlichtplätze sind donnerstags kalt aber leer. handschuhe mit, oder in einer bar schauen, was läuft.",
+        "tr": "projektörlü sahalar perşembe soğuk ama boş. eldiven getir ya da bir barda ne varsa izle."
+      },
+      "place": {
+        "en": "olympiapark",
+        "de": "olympiapark",
+        "tr": "olympiapark"
+      },
+      "hour": 19,
+      "minute": 0,
+      "why": "Thu 19.11, no holiday in Bavaria; no FC Bayern, 1860 or EHC home match could be confirmed (club schedules). No national-team or Champions League fixture confirmed either."
+    },
+    {
+      "kind": "tram",
+      "title": {
+        "en": "the 19 to the end of the line.",
+        "de": "mit der 19 bis zur endhaltestelle.",
+        "tr": "19 numarayla son durağa."
+      },
+      "line": {
+        "en": "hop on the tram line 19 at the maximilianstraße and ride it to the end. get off where the lights look good.",
+        "de": "steig an der maximilianstraße in die tram 19 und fahr bis zur endhaltestelle. steig aus, wo die lichter gut aussehen.",
+        "tr": "maximilianstraße’den 19 numaralı tramvaya bin ve son durağa kadar git. ışıkların güzel göründüğü yerde in."
+      },
+      "place": {
+        "en": "maximilianstraße",
+        "de": "maximilianstraße",
+        "tr": "maximilianstraße"
+      },
+      "hour": 18,
+      "minute": 0,
+      "why": "Generic spark; tram line 19 route not re-verified today."
+    },
+    {
+      "kind": "jazz",
+      "title": {
+        "en": "a jazz night, soft and low.",
+        "de": "ein jazzabend, leise und tief.",
+        "tr": "bir caz gecesi, yumuşak ve kısık."
+      },
+      "line": {
+        "en": "the unterfahrt in haidhausen is a cellar with a small stage. check tonight’s act and come at eight for a table.",
+        "de": "die unterfahrt in haidhausen ist ein keller mit kleiner bühne. heutigen act prüfen und um acht für einen tisch kommen.",
+        "tr": "haidhausen’deki unterfahrt küçük sahneli bir bodrum. bu geceki sanatçıya bak, masa için sekizde gel."
+      },
+      "place": {
+        "en": "unterfahrt",
+        "de": "unterfahrt",
+        "tr": "unterfahrt"
+      },
+      "hour": 20,
+      "minute": 0,
+      "why": "Tonight’s Unterfahrt programme not verified; generic jazz spark."
+    },
+    {
+      "kind": "walk",
+      "title": {
+        "en": "a long walk before it gets dark.",
+        "de": "ein langer spaziergang vor dem dunkel.",
+        "tr": "karanlıktan önce uzun bir yürüyüş."
+      },
+      "line": {
+        "en": "the english garden is bare and quiet. walk from the monopteros to the chinesischer turm and get a hot drink.",
+        "de": "der englische garten ist kahl und still. vom monopteros zum chinesischen turm und ein heißgetränk.",
+        "tr": "ingiliz bahçesi çıplak ve sessiz. monopteros’tan çin kulesi’ne yürü, sıcak bir şey iç."
+      },
+      "place": {
+        "en": "monopteros",
+        "de": "monopteros",
+        "tr": "monopteros"
+      },
+      "hour": 13,
+      "minute": 0,
+      "why": "No day-specific forecast could be confirmed; late-November Munich assumed cold with sunrise ~07:25 and sunset ~16:35 (astronomical tables). Thu 19.11, no holiday."
+    }
+  ]
+}
