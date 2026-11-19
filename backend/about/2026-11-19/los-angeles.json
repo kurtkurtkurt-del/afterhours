@@ -1,0 +1,134 @@
+{
+ "city": "los-angeles",
+ "day": "2026-11-19",
+ "nights": [
+  {
+   "id": "ccc87c77-371e-47d8-accc-fe00bbc88a4e",
+   "slug": "icona-pop-eca1a2c2",
+   "title": "Icona Pop",
+   "name": "Icona Pop",
+   "source_url": "https://en.wikipedia.org/wiki/Icona_Pop",
+   "extract": "Icona Pop are a Swedish synth-pop duo that formed in 2009, with electro house and indie pop music influences. Its two members, Aino Jawo and Caroline Hjelt, grew up in Stockholm and created what the Swedish press has described as music which \"you can both laugh and cry to at the same time\". They signed to TEN Music Group in 2009 and are currently also in a label deal with Ultra Music. Their biggest hit to date has been \"I Love It\".",
+   "en": {
+    "kicker": "swedish synth-pop duo · 2009",
+    "who": "Icona Pop are a swedish synth-pop duo. its two members are Aino Jawo and Caroline Hjelt.",
+    "facts": [
+     "Icona Pop are a Swedish synth-pop duo that formed in 2009, with electro house and indie pop music influences.",
+     "Their biggest hit to date has been \"I Love It\"."
+    ]
+   },
+   "de": {
+    "kicker": "schwedisches synth-pop-duo · 2009",
+    "who": "Icona Pop sind ein schwedisches synth-pop-duo. die beiden mitglieder sind Aino Jawo und Caroline Hjelt.",
+    "facts": [
+     "Icona Pop sind ein schwedisches synth-pop-duo, das sich 2009 formierte und von electro house und indie-pop beeinflusst ist.",
+     "ihr bislang größter hit ist \"I Love It\"."
+    ]
+   },
+   "tr": {
+    "kicker": "isveçli synth-pop ikilisi · 2009",
+    "who": "Icona Pop, 2009'da kurulmuş bir İsveçli synth-pop ikilisidir. üyeleri Aino Jawo ve Caroline Hjelt'tir.",
+    "facts": [
+     "Icona Pop, electro house ve indie pop etkileriyle 2009'da kurulmuş bir İsveçli synth-pop ikilisidir.",
+     "bugüne kadarki en büyük hitleri \"I Love It\" oldu."
+    ]
+   }
+  },
+  {
+   "id": "7c0551ed-a37b-4f2b-926f-b34b1e3b8f2d",
+   "slug": "silverada-dff8ba30",
+   "title": "Silverada",
+   "name": "Silverada",
+   "source_url": "https://en.wikipedia.org/wiki/Silverada",
+   "extract": "Silverada is an American neotraditional country and Americana band based in Austin, Texas. It was formed by singer-songwriter Mike Harmeier in 2007. Its members are singer and guitarist Harmeier, drummer Taylor Englert, guitarist Catlin Rutherford, keyboard player Parker Twomey, and bassist Omar Oyoque.",
+   "en": {
+    "kicker": "american country band · Austin, 2007",
+    "who": "Silverada is a neotraditional country and Americana band from Austin, Texas. its members include singer and guitarist Mike Harmeier.",
+    "facts": [
+     "Silverada is an American neotraditional country and Americana band based in Austin, Texas.",
+     "It was formed by singer-songwriter Mike Harmeier in 2007."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische country-band · Austin, 2007",
+    "who": "Silverada ist eine neotraditionelle country- und americana-band aus Austin, Texas. zu den mitgliedern gehört sänger und gitarrist Mike Harmeier.",
+    "facts": [
+     "Silverada ist eine amerikanische neotraditionelle country- und americana-band mit sitz in Austin, Texas.",
+     "gegründet wurde sie 2007 von singer-songwriter Mike Harmeier."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı country grubu · Austin, 2007",
+    "who": "Silverada, Austin, Texas merkezli neotradisyonel country ve Americana grubudur. üyeleri arasında şarkıcı ve gitarist Mike Harmeier var.",
+    "facts": [
+     "Silverada, Austin, Texas merkezli Amerikalı neotradisyonel country ve Americana grubudur.",
+     "grup 2007'de şarkıcı-söz yazarı Mike Harmeier tarafından kuruldu."
+    ]
+   }
+  },
+  {
+   "id": "fb060807-31f1-444d-8622-f7e697063a6d",
+   "slug": "eiv-r-d891a435",
+   "title": "Eivør",
+   "name": "Eivør",
+   "source_url": "https://en.wikipedia.org/wiki/Eiv%C3%B8r_(singer)",
+   "extract": "Eivør Pálsdóttir, known mononymously as Eivør, is a Faroese singer-songwriter. Born and raised in Syðrugøta, she had her first televised performance at the age of 13. Over the course of her decades-long career, her musical output has spanned a wide range of genres such as folk, art pop, jazz, folk rock, classical and electronica.",
+   "en": {
+    "kicker": "faroese singer-songwriter · Syðrugøta",
+    "who": "Eivør Pálsdóttir, known mononymously as Eivør, is a faroese singer-songwriter. her music has spanned folk, art pop, jazz, classical and electronica.",
+    "facts": [
+     "Born and raised in Syðrugøta, she had her first televised performance at the age of 13.",
+     "Over the course of her decades-long career, her musical output has spanned a wide range of genres such as folk, art pop, jazz, folk rock, classical and electronica."
+    ]
+   },
+   "de": {
+    "kicker": "färöische singer-songwriterin · Syðrugøta",
+    "who": "Eivør Pálsdóttir, bekannt als Eivør, ist eine färöische singer-songwriterin. ihre musik reicht von folk bis elektronik.",
+    "facts": [
+     "in Syðrugøta geboren und aufgewachsen, hatte sie ihren ersten fernsehauftritt im alter von 13 jahren.",
+     "im laufe ihrer jahrzehntelangen karriere umfasste ihr musikalisches schaffen genres wie folk, art pop, jazz, folkrock, klassik und elektronik."
+    ]
+   },
+   "tr": {
+    "kicker": "faroe adalı şarkıcı-söz yazarı · Syðrugøta",
+    "who": "Eivør Pálsdóttir, Eivør adıyla tanınan Faroe Adalı bir şarkıcı ve söz yazarıdır. müziği folk, art pop, caz, klasik ve elektronik dahil birçok türe uzanır.",
+    "facts": [
+     "Syðrugøta'da doğup büyüdü ve ilk televizyon performansını 13 yaşında verdi.",
+     "on yıllara yayılan kariyerinde folk, art pop, caz, folk rock, klasik ve elektronik gibi geniş bir tür yelpazesinde üretti."
+    ]
+   }
+  },
+  {
+   "id": "b2524c17-ed4f-45d1-95a6-fe45c3994cb6",
+   "slug": "katseye-the-wildworld-tour-a4e987ce",
+   "title": "KATSEYE: THE WILDWORLD TOUR",
+   "name": "Katseye",
+   "source_url": "https://en.wikipedia.org/wiki/Katseye",
+   "extract": "Katseye is a girl group formed in 2024, based in Los Angeles. The group consists of six members: Daniela Avanzini, Lara Raj, Manon Bannerman, Megan Skiendiel, Sophia Laforteza, and Yoonchae Jeung. With members from the Philippines, South Korea, Switzerland, and the United States, Katseye is often called a \"global girl group\".",
+   "en": {
+    "kicker": "girl group · Los Angeles, 2024",
+    "who": "Katseye is a girl group based in Los Angeles. its members come from the Philippines, South Korea, Switzerland and the United States.",
+    "facts": [
+     "Katseye is a girl group formed in 2024, based in Los Angeles.",
+     "The group consists of six members: Daniela Avanzini, Lara Raj, Manon Bannerman, Megan Skiendiel, Sophia Laforteza, and Yoonchae Jeung."
+    ]
+   },
+   "de": {
+    "kicker": "girlgroup · Los Angeles, 2024",
+    "who": "Katseye ist eine girlgroup aus Los Angeles. ihre mitglieder stammen von den Philippinen, aus südkorea, der schweiz und den USA.",
+    "facts": [
+     "Katseye ist eine 2024 gegründete girlgroup mit sitz in Los Angeles.",
+     "die gruppe besteht aus sechs mitgliedern: Daniela Avanzini, Lara Raj, Manon Bannerman, Megan Skiendiel, Sophia Laforteza und Yoonchae Jeung."
+    ]
+   },
+   "tr": {
+    "kicker": "kız grubu · Los Angeles, 2024",
+    "who": "Katseye, Los Angeles merkezli bir kız grubudur. üyeleri Filipinler, Güney Kore, İsviçre ve Amerika Birleşik Devletleri'nden geliyor.",
+    "facts": [
+     "Katseye, 2024'te kurulmuş, Los Angeles merkezli bir kız grubudur.",
+     "grup altı üyeden oluşuyor: Daniela Avanzini, Lara Raj, Manon Bannerman, Megan Skiendiel, Sophia Laforteza ve Yoonchae Jeung."
+    ]
+   }
+  }
+ ]
+}

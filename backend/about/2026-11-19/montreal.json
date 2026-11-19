@@ -1,0 +1,70 @@
+{
+ "city": "montreal",
+ "day": "2026-11-19",
+ "nights": [
+  {
+   "id": "6790af75-0ba3-473a-813f-f27020519f1a",
+   "slug": "kiwi-jr-226ec544",
+   "title": "KIWI JR.",
+   "name": "Kiwi Jr.",
+   "source_url": "https://en.wikipedia.org/wiki/Kiwi_Jr.",
+   "extract": "Kiwi Jr. is a Canadian indie rock band based in Toronto, Ontario. The band consists of Jeremy Gaudet (vocals), Mike Walker (bass), Brohan Moore (drums), and Brian Murphy (guitar). Their first album Football Money was released on the Canadian Mint Records. The band's fourth album, Blowin' Up, released on August 14, 2026 on K Records. Between 2021 and 2026, they were signed to the American record label Sub Pop.",
+   "en": {
+    "kicker": "canadian indie rock band · Toronto",
+    "who": "Kiwi Jr. is a canadian indie rock band from Toronto. between 2021 and 2026 they were signed to the american record label Sub Pop.",
+    "facts": [
+     "Their first album Football Money was released on the Canadian Mint Records.",
+     "The band's fourth album, Blowin' Up, released on August 14, 2026 on K Records."
+    ]
+   },
+   "de": {
+    "kicker": "kanadische indie-rock-band · Toronto",
+    "who": "Kiwi Jr. ist eine kanadische indie-rock-band aus Toronto. zwischen 2021 und 2026 stand sie beim amerikanischen label Sub Pop unter vertrag.",
+    "facts": [
+     "ihr erstes album Football Money erschien bei Canadian Mint Records.",
+     "das vierte album der band, Blowin' Up, erschien am 14. august 2026 bei K Records."
+    ]
+   },
+   "tr": {
+    "kicker": "kanadalı indie rock grubu · Toronto",
+    "who": "Kiwi Jr., Toronto merkezli Kanadalı bir indie rock grubudur. 2021 ile 2026 arasında Amerikalı Sub Pop etiketiyle sözleşmeliydi.",
+    "facts": [
+     "ilk albümleri Football Money, Canadian Mint Records'ta yayımlandı.",
+     "grubun dördüncü albümü Blowin' Up, 14 Ağustos 2026'da K Records'ta yayımlandı."
+    ]
+   }
+  },
+  {
+   "id": "938e8212-e4d0-4432-b9b4-dab70aaed22b",
+   "slug": "underoath-define-the-great-line-20th-anniversary-2b96f56c",
+   "title": "Underoath - Define the Great Line 20th Anniversary Tour",
+   "name": "Underoath",
+   "source_url": "https://en.wikipedia.org/wiki/Underoath",
+   "extract": "Underoath is an American rock band from Tampa, Florida. It was founded by lead vocalist Dallas Taylor and guitarist Luke Morton in 1997 in Ocala, Florida; subsequently, its additional members were from Tampa, including drummer, singer and last remaining original member Aaron Gillespie. The band's current lineup consists of Gillespie, keyboardist Christopher Dudley, lead guitarist Timothy McTague, bassist Grant Brandell, and lead vocalist Spencer Chamberlain.",
+   "en": {
+    "kicker": "american rock band · Ocala, 1997",
+    "who": "Underoath is an american rock band from Tampa, Florida. its last remaining original member is drummer Aaron Gillespie.",
+    "facts": [
+     "It was founded by lead vocalist Dallas Taylor and guitarist Luke Morton in 1997 in Ocala, Florida.",
+     "The band's current lineup consists of Gillespie, keyboardist Christopher Dudley, lead guitarist Timothy McTague, bassist Grant Brandell, and lead vocalist Spencer Chamberlain."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische rockband · Ocala, 1997",
+    "who": "Underoath ist eine amerikanische rockband aus Tampa, Florida. ihr letztes verbliebenes gründungsmitglied ist schlagzeuger Aaron Gillespie.",
+    "facts": [
+     "gegründet wurde die band 1997 in Ocala, Florida, von leadsänger Dallas Taylor und gitarrist Luke Morton.",
+     "die aktuelle besetzung besteht aus Gillespie, keyboarder Christopher Dudley, leadgitarrist Timothy McTague, bassist Grant Brandell und leadsänger Spencer Chamberlain."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı rock grubu · Ocala, 1997",
+    "who": "Underoath, Florida'nın Tampa kentinden Amerikalı bir rock grubudur. kalan son orijinal üye davulcu Aaron Gillespie'dir.",
+    "facts": [
+     "grup, 1997'de Ocala, Florida'da baş vokalist Dallas Taylor ve gitarist Luke Morton tarafından kuruldu.",
+     "grubun güncel kadrosu Gillespie, klavyeci Christopher Dudley, solo gitarist Timothy McTague, basçı Grant Brandell ve baş vokalist Spencer Chamberlain'den oluşuyor."
+    ]
+   }
+  }
+ ]
+}

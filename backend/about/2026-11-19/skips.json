@@ -1530,6 +1530,102 @@
    "slug": "das-lumpenpack-2afff7d9",
    "city": "zurich",
    "why": "no page"
+  },
+  {
+   "id": "24dd7234-17bb-40ab-ab81-1574eceacadf",
+   "slug": "horsegiirl-304aea6b",
+   "city": "amsterdam",
+   "why": "thin extract: one sentence, no two facts"
+  },
+  {
+   "id": "28dc4d85-1c34-4bac-83e0-a766adf72df6",
+   "slug": "ayta-sozeri-cd1117f0",
+   "city": "ankara",
+   "why": "thin extract: one sentence, no two facts"
+  },
+  {
+   "id": "b8e2262e-c53d-41b1-8b39-2f3ef7f07d6f",
+   "slug": "david-garrett-immortal-classic-tour-2027-3ee7890d",
+   "city": "basel",
+   "why": "thin extract: one sentence, no two facts"
+  },
+  {
+   "id": "604b0f17-b183-4d30-a66b-733e1a1fdda7",
+   "slug": "horsegiirl-nature-is-healing-tour-dfa24f6b",
+   "city": "berlin",
+   "why": "thin extract: one sentence, no two facts"
+  },
+  {
+   "id": "6f60fb5b-caf0-4be8-a597-7b0fb5f37599",
+   "slug": "deorro-ages-18-a34e4096",
+   "city": "dallas",
+   "why": "house style: the only second fact is a stage name with an exclamation mark"
+  },
+  {
+   "id": "657b1c4f-e5d9-4ca1-8d11-b50123b15f63",
+   "slug": "yung-gravy-the-joyrider-tour-8cc432c6",
+   "city": "denver",
+   "why": "thin extract: one sentence, no two facts"
+  },
+  {
+   "id": "d3ff784a-854d-4e93-9394-018b44186cbb",
+   "slug": "cem-adrian-d84f11ac",
+   "city": "istanbul",
+   "why": "thin extract: one sentence, no two facts"
+  },
+  {
+   "id": "d8e40162-ccd5-4764-9986-c8ce2ee62806",
+   "slug": "linet-ef944e1a",
+   "city": "istanbul",
+   "why": "check: source page is the bare name Linet; could not verify it is the singer"
+  },
+  {
+   "id": "30581044-03ed-4846-a8d9-4d52950f83da",
+   "slug": "skye-newman-be8d0c0d",
+   "city": "manchester",
+   "why": "thin extract: one sentence, no two facts"
+  },
+  {
+   "id": "1f738b3a-6657-40e0-8750-be1232ee7b21",
+   "slug": "the-rifles-e230b65c",
+   "city": "manchester",
+   "why": "thin extract: one sentence, no two facts"
+  },
+  {
+   "id": "812c94cd-9571-4492-b94b-19c2d859211b",
+   "slug": "glenn-jones-20d53506",
+   "city": "manchester",
+   "why": "check: the source page is a generic name that cannot be tied to this act"
+  },
+  {
+   "id": "1ae01a01-bdb2-4edd-b7e9-5486dbdac1f7",
+   "slug": "caloncho-89ae745d",
+   "city": "monterrey",
+   "why": "thin extract: one sentence, no two facts"
+  },
+  {
+   "id": "1ff50134-e74c-4009-8f11-6be79a44cd6a",
+   "slug": "brutalismus-3000-ages-16-67aaab72",
+   "city": "san-francisco",
+   "why": "thin extract: one sentence, no two facts"
+  },
+  {
+   "id": "a7d23fe4-cbfa-4704-bfd3-c9c68f7f52b4",
+   "slug": "q-marsden-577b874d",
+   "city": "san-francisco",
+   "why": "thin extract: one sentence, no two facts"
+  },
+  {
+   "id": "f74c3aa3-843a-4be0-a465-4562573c6085",
+   "slug": "strangelove-the-depeche-mode-experience-e821b693",
+   "city": "warszawa",
+   "why": "namesake: a tribute show; the page is another band"
+  },
+  {
+   "id": "a1751d0b-8a9f-4a70-a9ec-995715da9942",
+   "slug": "maryla-rodowicz-01c8ff97",
+   "city": "warszawa",
+   "why": "thin extract: one sentence, no two facts"
   }
  ]
 }

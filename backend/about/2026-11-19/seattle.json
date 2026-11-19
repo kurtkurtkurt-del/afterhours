@@ -1,0 +1,38 @@
+{
+ "city": "seattle",
+ "day": "2026-11-19",
+ "nights": [
+  {
+   "id": "971164e1-f79f-4ea4-aea2-9c305b971c6b",
+   "slug": "haley-heynderickx-869102bb",
+   "title": "Haley Heynderickx",
+   "name": "Haley Heynderickx",
+   "source_url": "https://en.wikipedia.org/wiki/Haley_Heynderickx",
+   "extract": "Haley Hannah Heynderickx is an American singer-songwriter from Portland, Oregon. In 2016, she released her debut EP, Fish Eyes. Her first full-length album, I Need to Start a Garden, was released in March 2018 on Mama Bird Recording Co. Seed of a Seed, her second album, was released in November 2024 on the same label.",
+   "en": {
+    "kicker": "american singer-songwriter · Portland, 2016",
+    "who": "Haley Hannah Heynderickx is an american singer-songwriter from Portland, Oregon. her second album, Seed of a Seed, was released in November 2024.",
+    "facts": [
+     "In 2016, she released her debut EP, Fish Eyes.",
+     "Her first full-length album, I Need to Start a Garden, was released in March 2018 on Mama Bird Recording Co."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische singer-songwriterin · Portland, 2016",
+    "who": "Haley Hannah Heynderickx ist eine amerikanische singer-songwriterin aus Portland, Oregon. ihr zweites album Seed of a Seed erschien im november 2024.",
+    "facts": [
+     "2016 veröffentlichte sie ihre debüt-EP Fish Eyes.",
+     "ihr erstes album in voller länge, I Need to Start a Garden, erschien im märz 2018 bei Mama Bird Recording Co."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı şarkıcı-söz yazarı · Portland, 2016",
+    "who": "Haley Hannah Heynderickx, Portland, Oregon'dan Amerikalı bir şarkıcı-söz yazarıdır. ikinci albümü Seed of a Seed, Kasım 2024'te çıktı.",
+    "facts": [
+     "2016'da ilk EP'si Fish Eyes'ı yayımladı.",
+     "ilk uzun çalar albümü I Need to Start a Garden, Mart 2018'de Mama Bird Recording Co. etiketiyle çıktı."
+    ]
+   }
+  }
+ ]
+}

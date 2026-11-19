@@ -1,0 +1,38 @@
+{
+ "city": "boston",
+ "day": "2026-11-19",
+ "nights": [
+  {
+   "id": "72fcf14a-99c6-4df5-88c8-ebed47fa3e81",
+   "slug": "underoath-define-the-great-line-20th-anniversary-f3b9593e",
+   "title": "Underoath - Define the Great Line 20th Anniversary Tour",
+   "name": "Underoath",
+   "source_url": "https://en.wikipedia.org/wiki/Underoath",
+   "extract": "Underoath is an American rock band from Tampa, Florida. It was founded by lead vocalist Dallas Taylor and guitarist Luke Morton in 1997 in Ocala, Florida; subsequently, its additional members were from Tampa, including drummer, singer and last remaining original member Aaron Gillespie. The band's current lineup consists of Gillespie, keyboardist Christopher Dudley, lead guitarist Timothy McTague, bassist Grant Brandell, and lead vocalist Spencer Chamberlain.",
+   "en": {
+    "kicker": "american rock band · Ocala, 1997",
+    "who": "Underoath is an american rock band from Tampa, Florida. its last remaining original member is drummer Aaron Gillespie.",
+    "facts": [
+     "It was founded by lead vocalist Dallas Taylor and guitarist Luke Morton in 1997 in Ocala, Florida.",
+     "The band's current lineup consists of Gillespie, keyboardist Christopher Dudley, lead guitarist Timothy McTague, bassist Grant Brandell, and lead vocalist Spencer Chamberlain."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische rockband · Ocala, 1997",
+    "who": "Underoath ist eine amerikanische rockband aus Tampa, Florida. ihr letztes verbliebenes gründungsmitglied ist schlagzeuger Aaron Gillespie.",
+    "facts": [
+     "gegründet wurde die band 1997 in Ocala, Florida, von leadsänger Dallas Taylor und gitarrist Luke Morton.",
+     "die aktuelle besetzung besteht aus Gillespie, keyboarder Christopher Dudley, leadgitarrist Timothy McTague, bassist Grant Brandell und leadsänger Spencer Chamberlain."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı rock grubu · Ocala, 1997",
+    "who": "Underoath, Florida'nın Tampa kentinden Amerikalı bir rock grubudur. kalan son orijinal üye davulcu Aaron Gillespie'dir.",
+    "facts": [
+     "grup, 1997'de Ocala, Florida'da baş vokalist Dallas Taylor ve gitarist Luke Morton tarafından kuruldu.",
+     "grubun güncel kadrosu Gillespie, klavyeci Christopher Dudley, solo gitarist Timothy McTague, basçı Grant Brandell ve baş vokalist Spencer Chamberlain'den oluşuyor."
+    ]
+   }
+  }
+ ]
+}

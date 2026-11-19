@@ -1,0 +1,38 @@
+{
+ "city": "new-york",
+ "day": "2026-11-19",
+ "nights": [
+  {
+   "id": "9fbeb3f8-2ed5-4e9d-8355-5759a819dae8",
+   "slug": "liana-flores-57cfbe38",
+   "title": "Liana Flores",
+   "name": "Liana Flores",
+   "source_url": "https://en.wikipedia.org/wiki/Liana_Flores",
+   "extract": "Liana Flores is a British-Brazilian singer-songwriter and guitarist. After independently releasing two extended plays The Water's Fine! (2018) and Recently (2019), her debut studio album Flower of the Soul was released under Verve and Fiction in June 2024.",
+   "en": {
+    "kicker": "british-brazilian singer-songwriter · 2024",
+    "who": "Liana Flores is a british-brazilian singer-songwriter and guitarist. her debut studio album, Flower of the Soul, came out in June 2024.",
+    "facts": [
+     "After independently releasing two extended plays (2018 and 2019), her debut studio album Flower of the Soul was released under Verve and Fiction in June 2024.",
+     "Liana Flores is a British-Brazilian singer-songwriter and guitarist."
+    ]
+   },
+   "de": {
+    "kicker": "britisch-brasilianische singer-songwriterin · 2024",
+    "who": "Liana Flores ist eine britisch-brasilianische singer-songwriterin und gitarristin. ihr debütalbum Flower of the Soul erschien im juni 2024.",
+    "facts": [
+     "nach zwei unabhängig veröffentlichten eps aus 2018 und 2019 erschien ihr debütalbum Flower of the Soul im juni 2024 bei Verve und Fiction.",
+     "Liana Flores ist eine britisch-brasilianische singer-songwriterin und gitarristin."
+    ]
+   },
+   "tr": {
+    "kicker": "ingiliz-brezilyalı şarkıcı-söz yazarı · 2024",
+    "who": "Liana Flores, İngiliz-Brezilyalı bir şarkıcı, söz yazarı ve gitaristtir. debut stüdyo albümü Flower of the Soul, Haziran 2024'te çıktı.",
+    "facts": [
+     "2018 ve 2019'da bağımsız olarak yayımladığı iki EP'nin ardından debut albümü Flower of the Soul, Haziran 2024'te Verve ve Fiction etiketiyle çıktı.",
+     "Liana Flores, İngiliz-Brezilyalı bir şarkıcı, söz yazarı ve gitaristtir."
+    ]
+   }
+  }
+ ]
+}

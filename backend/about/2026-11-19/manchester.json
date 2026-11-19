@@ -1,0 +1,38 @@
+{
+ "city": "manchester",
+ "day": "2026-11-19",
+ "nights": [
+  {
+   "id": "7236d81f-1700-4bdf-b729-41b7b773f668",
+   "slug": "the-big-moon-532ca7eb",
+   "title": "The Big Moon",
+   "name": "The Big Moon",
+   "source_url": "https://en.wikipedia.org/wiki/The_Big_Moon",
+   "extract": "The Big Moon are a British indie rock band, formed in 2014 in London by frontwoman Juliette Jackson. Their debut album, Love in the 4th Dimension, was released on 6 April 2017, containing a number of tracks previously released on their EP The Road. The album was shortlisted for the prestigious Mercury Prize in 2017. They are signed to Fiction Records and have toured internationally. They supported Pixies on their 2019 UK tour.",
+   "en": {
+    "kicker": "british indie rock band · London, 2014",
+    "who": "The Big Moon are a british indie rock band. they are signed to Fiction Records.",
+    "facts": [
+     "The Big Moon are a British indie rock band, formed in 2014 in London by frontwoman Juliette Jackson.",
+     "The album was shortlisted for the prestigious Mercury Prize in 2017."
+    ]
+   },
+   "de": {
+    "kicker": "britische indie-rock-band · London, 2014",
+    "who": "The Big Moon sind eine britische indie-rock-band. sie stehen bei Fiction Records unter vertrag und unterstützten die Pixies 2019.",
+    "facts": [
+     "The Big Moon sind eine britische indie-rock-band, die 2014 in London von frontfrau Juliette Jackson gegründet wurde.",
+     "ihr debütalbum stand 2017 auf der shortlist des renommierten Mercury Prize."
+    ]
+   },
+   "tr": {
+    "kicker": "ingiliz indie rock grubu · Londra, 2014",
+    "who": "The Big Moon, 2014'te Londra'da kurulmuş bir İngiliz indie rock grubudur. Fiction Records ile sözleşmelidir.",
+    "facts": [
+     "The Big Moon, ön kadın Juliette Jackson tarafından 2014'te Londra'da kurulmuş bir İngiliz indie rock grubudur.",
+     "ilk albümü 2017'de prestijli Mercury Ödülü'nün kısa listesine girdi."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,38 @@
+{
+ "city": "san-francisco",
+ "day": "2026-11-19",
+ "nights": [
+  {
+   "id": "723f0028-f139-4741-9ebf-ab17fc5f08aa",
+   "slug": "poi-dog-pondering-97250f1c",
+   "title": "Poi Dog Pondering",
+   "name": "Poi Dog Pondering",
+   "source_url": "https://en.wikipedia.org/wiki/Poi_Dog_Pondering",
+   "extract": "Poi Dog Pondering is an American musical group which is noted for its cross-pollination of diverse musical genres, including various forms of acoustic and electronic music. Frank Orrall founded the band in Hawaii in 1984, initially as a solo project, and as his music production alias. In 1986 Orrall formed the first line-up of PDP to perform its first concert at the Honolulu Academy of Arts. The band then embarked on a yearlong street performance busking tour across North America. They eventually settled down in Austin, Texas in 1988, where they recorded 2 E.P. albums for Texas Hotel Records, and 2 subsequent full-length albums for Columbia Records. In 1992, the band relocated to Chicago",
+   "en": {
+    "kicker": "american band · Austin, 1988",
+    "who": "Poi Dog Pondering is an american musical group noted for its cross-pollination of diverse genres, including acoustic and electronic music. it was founded in Hawaii in 1984 by Frank Orrall.",
+    "facts": [
+     "Frank Orrall founded the band in Hawaii in 1984, initially as a solo project, and as his music production alias.",
+     "In 1986 Orrall formed the first line-up of PDP to perform its first concert at the Honolulu Academy of Arts."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische band · Austin, 1988",
+    "who": "Poi Dog Pondering ist eine amerikanische musikgruppe, die für ihre mischung verschiedener genres bekannt ist, darunter akustische und elektronische musik. gegründet wurde sie 1984 auf Hawaii von Frank Orrall.",
+    "facts": [
+     "Frank Orrall gründete die band 1984 auf Hawaii, zunächst als soloprojekt und als alias für seine musikproduktion.",
+     "1986 formte Orrall die erste besetzung von PDP, die ihr erstes konzert an der Honolulu Academy of Arts spielte."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı grup · Austin, 1988",
+    "who": "Poi Dog Pondering, akustik ve elektronik müzik dahil çok çeşitli türleri harmanlamasıyla bilinen Amerikalı bir müzik grubudur. grup 1984'te Hawaii'de Frank Orrall tarafından kuruldu.",
+    "facts": [
+     "Frank Orrall grubu 1984'te Hawaii'de, başlangıçta solo bir proje ve müzik yapım takma adı olarak kurdu.",
+     "1986'da Orrall, Honolulu Academy of Arts'taki ilk konserini verecek ilk kadroyu oluşturdu."
+    ]
+   }
+  }
+ ]
+}

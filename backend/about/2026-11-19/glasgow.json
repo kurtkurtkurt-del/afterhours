@@ -1,0 +1,38 @@
+{
+ "city": "glasgow",
+ "day": "2026-11-19",
+ "nights": [
+  {
+   "id": "188b995f-6523-4ec5-ae35-6a3fa4e77689",
+   "slug": "1000mods-cdd5857a",
+   "title": "1000MODS",
+   "name": "1000mods",
+   "source_url": "https://en.wikipedia.org/wiki/1000mods",
+   "extract": "1000mods is a hard rock band from Chiliomodi, Greece, formed in 2006. The group consists of Dani G., Giorgos T. (guitar), and Labros G. (drums). Since their formation, the band has toured extensively across the globe and released five full-length studio albums.",
+   "en": {
+    "kicker": "greek hard rock band · Chiliomodi, 2006",
+    "who": "1000mods is a greek hard rock band. since its formation, the band has toured extensively across the globe.",
+    "facts": [
+     "1000mods is a hard rock band from Chiliomodi, Greece, formed in 2006.",
+     "Since their formation, the band has toured extensively across the globe and released five full-length studio albums."
+    ]
+   },
+   "de": {
+    "kicker": "griechische hard-rock-band · Chiliomodi, 2006",
+    "who": "1000mods ist eine griechische hard-rock-band. seit ihrer gründung ist die band international ausgiebig getourt.",
+    "facts": [
+     "1000mods ist eine hard-rock-band aus Chiliomodi, Griechenland, gegründet 2006.",
+     "seit ihrer gründung tourte die band ausgiebig rund um den globus und veröffentlichte fünf studioalben."
+    ]
+   },
+   "tr": {
+    "kicker": "yunan hard rock grubu · Chiliomodi, 2006",
+    "who": "1000mods, Yunanistan'ın Chiliomodi kentinden bir hard rock grubudur. grup dünyanın dört bir yanında geniş çaplı turnelere çıktı.",
+    "facts": [
+     "1000mods, 2006'da kurulmuş, Chiliomodi, Yunanistan'dan bir hard rock grubudur.",
+     "kuruluşundan bu yana grup dünyanın her yanında turneye çıktı ve beş stüdyo albümü yayımladı."
+    ]
+   }
+  }
+ ]
+}

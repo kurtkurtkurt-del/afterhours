@@ -1,0 +1,70 @@
+{
+ "city": "birmingham",
+ "day": "2026-11-19",
+ "nights": [
+  {
+   "id": "be213d71-ab61-47c8-9791-73416759ebdb",
+   "slug": "the-pogues-the-very-best-of-the-pogues-ced98d62",
+   "title": "The Pogues - the Very Best of the Pogues",
+   "name": "The Pogues",
+   "source_url": "https://en.wikipedia.org/wiki/The_Pogues",
+   "extract": "The Pogues are an English Celtic punk band founded in King's Cross, London, in 1982, by Shane MacGowan, Spider Stacy and Jem Finer. Originally named Pogue Mahone—an anglicisation of the Irish phrase póg mo thóin, meaning \"kiss my arse\"—the band fused Irish traditional music with punk rock influences. After adding more members, including James Fearnley and Cait O'Riordan, the Pogues built a reputation with their live shows in London pubs and clubs.",
+   "en": {
+    "kicker": "english celtic punk band · London, 1982",
+    "who": "The Pogues are an english celtic punk band. the band fused irish traditional music with punk rock influences.",
+    "facts": [
+     "The Pogues are an English Celtic punk band founded in King's Cross, London, in 1982, by Shane MacGowan, Spider Stacy and Jem Finer.",
+     "Originally named Pogue Mahone—an anglicisation of the Irish phrase póg mo thóin, meaning \"kiss my arse\"—the band fused Irish traditional music with punk rock influences."
+    ]
+   },
+   "de": {
+    "kicker": "englische celtic-punk-band · London, 1982",
+    "who": "The Pogues sind eine englische celtic-punk-band. die band verband irische traditionelle musik mit punkrock.",
+    "facts": [
+     "The Pogues wurden 1982 in King's Cross, London, von Shane MacGowan, Spider Stacy und Jem Finer gegründet.",
+     "ursprünglich hieß die band Pogue Mahone, eine anglisierung der irischen phrase póg mo thóin, was \"kiss my arse\" bedeutet."
+    ]
+   },
+   "tr": {
+    "kicker": "ingiliz celtic punk grubu · Londra, 1982",
+    "who": "The Pogues, 1982'de Londra'nın King's Cross bölgesinde kurulmuş bir İngiliz celtic punk grubudur. İrlanda geleneksel müziğini punk rock ile harmanladı.",
+    "facts": [
+     "grup, Shane MacGowan, Spider Stacy ve Jem Finer tarafından kuruldu.",
+     "başlangıçta Pogue Mahone adını taşıyordu; bu, İrlandaca \"póg mo thóin\" ifadesinin İngilizceleştirilmiş hali ve \"kiss my arse\" anlamına geliyordu."
+    ]
+   }
+  },
+  {
+   "id": "b37e03e1-0b8d-40aa-9b46-dd829d5ba31f",
+   "slug": "nemzzz-locked-in-tour-e0ad23fe",
+   "title": "Nemzzz - Locked In Tour",
+   "name": "Nemzzz",
+   "source_url": "https://en.wikipedia.org/wiki/Nemzzz",
+   "extract": "Nemiah Emmanuel Simms, known professionally as Nemzzz, is a British rapper who gained recognition in 2021 with the tracks \"Elevate\" and \"2MS\". He released his first mixtape Do Not Disturb in 2024, which debuted at number 17 on the UK Albums Chart.",
+   "en": {
+    "kicker": "british rapper · 2021",
+    "who": "Nemiah Emmanuel Simms, known professionally as Nemzzz, is a british rapper. he released his first mixtape, Do Not Disturb, in 2024.",
+    "facts": [
+     "He gained recognition in 2021 with the tracks \"Elevate\" and \"2MS\".",
+     "He released his first mixtape Do Not Disturb in 2024, which debuted at number 17 on the UK Albums Chart."
+    ]
+   },
+   "de": {
+    "kicker": "britischer rapper · 2021",
+    "who": "Nemiah Emmanuel Simms, bekannt als Nemzzz, ist ein britischer rapper. 2024 erschien sein erstes mixtape Do Not Disturb.",
+    "facts": [
+     "2021 wurde er mit den tracks \"Elevate\" und \"2MS\" bekannt.",
+     "sein erstes mixtape Do Not Disturb erschien 2024 und stieg auf platz 17 der britischen albumcharts ein."
+    ]
+   },
+   "tr": {
+    "kicker": "ingiliz rapçi · 2021",
+    "who": "Nemiah Emmanuel Simms, Nemzzz adıyla tanınan İngiliz bir rapçidir. 2024'te ilk mixtape'i Do Not Disturb'ü yayımladı.",
+    "facts": [
+     "2021'de \"Elevate\" ve \"2MS\" parçalarıyla tanınmaya başladı.",
+     "ilk mixtape'i Do Not Disturb, 2024'te çıktı ve İngiltere Albüm Listesi'nde 17. sıraya girdi."
+    ]
+   }
+  }
+ ]
+}

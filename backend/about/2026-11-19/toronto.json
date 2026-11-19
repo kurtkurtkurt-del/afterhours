@@ -1,0 +1,38 @@
+{
+ "city": "toronto",
+ "day": "2026-11-19",
+ "nights": [
+  {
+   "id": "1b849fca-1e5d-4ff1-bde3-2fd13eb2b309",
+   "slug": "victoria-monet-frequency-of-love-tour-e67dea9d",
+   "title": "Victoria Monét: Frequency Of Love Tour",
+   "name": "Victoria Monét",
+   "source_url": "https://en.wikipedia.org/wiki/Victoria_Mon%C3%A9t",
+   "extract": "Victoria Monét McCants is an American singer-songwriter. First gaining recognition for her songwriting work, Monét pursued a recording career with the release of a series of extended plays (EPs); her fifth, Jaguar (2020) was met with critical acclaim. Her debut studio album, Jaguar II (2023), became her commercial breakthrough and was supported by the hit single \"On My Mama\", which peaked within the top 40 of the Billboard Hot 100 and earned a Grammy Award nomination for Record of the Year. The nomination was among seven she received at the 66th Annual Grammy Awards, from which she won Best New Artist, Best R&B Album and Best Engineered Album, Non-Classical.",
+   "en": {
+    "kicker": "american singer-songwriter · 2023",
+    "who": "Victoria Monét McCants is an american singer-songwriter. she first gained recognition for her songwriting before pursuing a recording career with EPs.",
+    "facts": [
+     "Her debut studio album, Jaguar II (2023), became her commercial breakthrough and was supported by the hit single \"On My Mama\", which peaked within the top 40 of the Billboard Hot 100 and earned a Grammy Award nomination for Record of the Year.",
+     "Her fifth EP, Jaguar (2020), was met with critical acclaim."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische singer-songwriterin · 2023",
+    "who": "Victoria Monét McCants ist eine amerikanische singer-songwriterin. zuerst wurde sie als songwriterin bekannt, bevor sie mit EPs eine solokarriere begann.",
+    "facts": [
+     "ihr debütalbum Jaguar II (2023) wurde ihr kommerzieller durchbruch und wurde vom hit „On My Mama“ getragen, der in den top 40 der Billboard Hot 100 landete und eine Grammy-nominierung als Record of the Year erhielt.",
+     "ihre fünfte EP Jaguar (2020) erntete viel lob von der kritik."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı şarkıcı-söz yazarı · 2023",
+    "who": "Victoria Monét McCants, Amerikalı bir şarkıcı ve söz yazarıdır. önce söz yazarlığıyla tanındı, ardından EP'lerle kayıt kariyerine başladı.",
+    "facts": [
+     "debut stüdyo albümü Jaguar II (2023) ticari çıkışı oldu ve \"On My Mama\" single'ıyla desteklendi; bu single Billboard Hot 100'ün ilk 40'ına girdi ve Record of the Year için Grammy adaylığı aldı.",
+     "beşinci EP'si Jaguar (2020) eleştirmenlerden büyük övgü aldı."
+    ]
+   }
+  }
+ ]
+}

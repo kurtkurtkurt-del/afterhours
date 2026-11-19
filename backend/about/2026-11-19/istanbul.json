@@ -1,0 +1,38 @@
+{
+ "city": "istanbul",
+ "day": "2026-11-19",
+ "nights": [
+  {
+   "id": "2d791d9b-4635-47b5-89e5-ce46a9269f75",
+   "slug": "cem-belevi-388ac69c",
+   "title": "Cem Belevi",
+   "name": "Cem Belevi",
+   "source_url": "https://en.wikipedia.org/wiki/Cem_Belevi",
+   "extract": "Cem Belevi is a Turkish pop singer, songwriter, and actor. He gained recognition for his collaborations, including the duet \"Kim Ne Derse Desin\" with Ayshe.",
+   "en": {
+    "kicker": "turkish pop singer · actor",
+    "who": "Cem Belevi is a turkish pop singer, songwriter and actor. he gained recognition for his collaborations.",
+    "facts": [
+     "Cem Belevi is a Turkish pop singer, songwriter, and actor.",
+     "He gained recognition for his collaborations, including the duet \"Kim Ne Derse Desin\" with Ayshe."
+    ]
+   },
+   "de": {
+    "kicker": "türkischer popsänger · schauspieler",
+    "who": "Cem Belevi ist ein türkischer popsänger, songwriter und schauspieler. bekannt wurde er durch kollaborationen.",
+    "facts": [
+     "Cem Belevi ist ein türkischer popsänger, songwriter und schauspieler.",
+     "bekannt wurde er unter anderem durch das duett \"Kim Ne Derse Desin\" mit Ayshe."
+    ]
+   },
+   "tr": {
+    "kicker": "türk pop şarkıcısı · oyuncu",
+    "who": "Cem Belevi bir Türk pop şarkıcısı, söz yazarı ve oyuncudur. iş birlikleriyle tanındı.",
+    "facts": [
+     "Cem Belevi bir Türk pop şarkıcısı, söz yazarı ve oyuncudur.",
+     "Ayshe ile yaptığı \"Kim Ne Derse Desin\" düetiyle dahil iş birlikleriyle tanındı."
+    ]
+   }
+  }
+ ]
+}

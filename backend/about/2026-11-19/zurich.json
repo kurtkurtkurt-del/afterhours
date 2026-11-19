@@ -1,0 +1,38 @@
+{
+ "city": "zurich",
+ "day": "2026-11-19",
+ "nights": [
+  {
+   "id": "7b839878-caa8-4e9d-aceb-41642ac9bb75",
+   "slug": "pa-sports-5a056307",
+   "title": "PA Sports",
+   "name": "PA Sports",
+   "source_url": "https://en.wikipedia.org/wiki/PA_Sports",
+   "extract": "Parham Vakili, known professionally as PA Sports, is a German rapper and music producer. He has produced over a dozen albums and over fifty singles. He is also the founder and owner of the music label Life is Pain.",
+   "en": {
+    "kicker": "german rapper and producer",
+    "who": "Parham Vakili, known professionally as PA Sports, is a german rapper and music producer. he runs his own label, Life is Pain.",
+    "facts": [
+     "Parham Vakili, known professionally as PA Sports, is a German rapper and music producer.",
+     "He has produced over a dozen albums and over fifty singles."
+    ]
+   },
+   "de": {
+    "kicker": "deutscher rapper und produzent",
+    "who": "Parham Vakili, bekannt als PA Sports, ist ein deutscher rapper und musikproduzent. er betreibt sein eigenes label, Life is Pain.",
+    "facts": [
+     "Parham Vakili, bekannt als PA Sports, ist ein deutscher rapper und musikproduzent.",
+     "er hat über ein dutzend alben und über fünfzig singles produziert."
+    ]
+   },
+   "tr": {
+    "kicker": "alman rapçi ve yapımcı",
+    "who": "Parham Vakili, PA Sports adıyla tanınan Alman bir rapçi ve müzik yapımcısıdır. kendi müzik etiketi Life is Pain'in sahibidir.",
+    "facts": [
+     "Parham Vakili, sahne adıyla PA Sports, Alman bir rapçi ve müzik yapımcısıdır.",
+     "bir düzineden fazla albüm ve elliden fazla single üretti."
+    ]
+   }
+  }
+ ]
+}

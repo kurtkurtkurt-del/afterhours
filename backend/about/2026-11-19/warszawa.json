@@ -1,0 +1,38 @@
+{
+ "city": "warszawa",
+ "day": "2026-11-19",
+ "nights": [
+  {
+   "id": "882dfecc-90b5-4429-aa6e-930609f91668",
+   "slug": "maustetytot-itken-jos-mua-huvittaa-european-tour-121619e4",
+   "title": "Maustetytöt - Itken Jos Mua Huvittaa European Tour 26",
+   "name": "Maustetytöt",
+   "source_url": "https://en.wikipedia.org/wiki/Maustetyt%C3%B6t",
+   "extract": "Maustetytöt is a Finnish girl group consisting of sisters Anna Karjalainen and Kaisa Karjalainen. The band's trademarks include a laconic and serious-looking performance style.",
+   "en": {
+    "kicker": "finnish girl group",
+    "who": "Maustetytöt is a Finnish girl group. its members are the sisters Anna Karjalainen and Kaisa Karjalainen.",
+    "facts": [
+     "Maustetytöt is a Finnish girl group consisting of sisters Anna Karjalainen and Kaisa Karjalainen.",
+     "The band's trademarks include a laconic and serious-looking performance style."
+    ]
+   },
+   "de": {
+    "kicker": "finnische girlgroup",
+    "who": "Maustetytöt ist eine finnische girlgroup. ihre mitglieder sind die schwestern Anna Karjalainen und Kaisa Karjalainen.",
+    "facts": [
+     "Maustetytöt ist eine finnische girlgroup, bestehend aus den schwestern Anna Karjalainen und Kaisa Karjalainen.",
+     "zu den markenzeichen der band gehört ein lakonischer und ernst wirkender auftritt."
+    ]
+   },
+   "tr": {
+    "kicker": "fin kız grubu",
+    "who": "Maustetytöt, Anna Karjalainen ve Kaisa Karjalainen kardeşlerden oluşan bir Fin kız grubudur. grup ağırbaşlı, ciddi görünümlü sahne tarzıyla bilinir.",
+    "facts": [
+     "Maustetytöt, Anna Karjalainen ve Kaisa Karjalainen kardeşlerden oluşan bir Fin kız grubudur.",
+     "grubun imzası kuru ve ciddi görünümlü bir sahne üslubudur."
+    ]
+   }
+  }
+ ]
+}

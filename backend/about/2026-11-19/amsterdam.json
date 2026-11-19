@@ -1,0 +1,134 @@
+{
+ "city": "amsterdam",
+ "day": "2026-11-19",
+ "nights": [
+  {
+   "id": "e866e761-44c6-48b7-8a4f-685757f0068d",
+   "slug": "jessie-ware-premium-seats-910e63e2",
+   "title": "Jessie Ware | Premium Seats",
+   "name": "Jessie Ware",
+   "source_url": "https://en.wikipedia.org/wiki/Jessie_Ware",
+   "extract": "Jessica Lois Ware is a British singer and songwriter. She came to prominence following the release of her debut album, Devotion (2012), which peaked at number five on the UK Albums Chart and produced the single \"Wildest Moments\". Her second album, Tough Love (2014), reached number nine in the UK and produced the singles \"Tough Love\" and \"Say You Love Me\". Her third album, Glasshouse (2017), reached number seven in the UK.",
+   "en": {
+    "kicker": "british singer · 2012",
+    "who": "Jessica Lois Ware is a British singer and songwriter. she came to prominence following the release of her debut album, Devotion, in 2012.",
+    "facts": [
+     "Devotion peaked at number five on the UK Albums Chart and produced the single \"Wildest Moments\".",
+     "Her third album, Glasshouse (2017), reached number seven in the UK."
+    ]
+   },
+   "de": {
+    "kicker": "britische sängerin · 2012",
+    "who": "Jessica Lois Ware ist eine britische sängerin und songwriterin. bekannt wurde sie mit ihrem debütalbum Devotion (2012).",
+    "facts": [
+     "Devotion erreichte in den britischen albumcharts platz fünf und brachte die single \"Wildest Moments\" hervor.",
+     "ihr drittes album Glasshouse (2017) erreichte in großbritannien platz sieben."
+    ]
+   },
+   "tr": {
+    "kicker": "ingiliz şarkıcı · 2012",
+    "who": "Jessica Lois Ware bir İngiliz şarkıcı ve söz yazarıdır. ilk albümü Devotion (2012) ile öne çıktı.",
+    "facts": [
+     "Devotion, İngiltere albüm listesinde beşinci sıraya yükseldi ve \"Wildest Moments\" single'ını çıkardı.",
+     "üçüncü albümü Glasshouse (2017), İngiltere'de yedinci sıraya ulaştı."
+    ]
+   }
+  },
+  {
+   "id": "f355de67-202f-4ce6-aa90-754160114943",
+   "slug": "the-chameleons-0aa7450a",
+   "title": "The Chameleons",
+   "name": "The Chameleons",
+   "source_url": "https://en.wikipedia.org/wiki/The_Chameleons",
+   "extract": "The Chameleons are an English rock band formed in Middleton, Greater Manchester, in 1981. The band's classic line-up consisted of bassist and vocalist Mark Burgess, guitarists Reginald Smithies and Dave Fielding and drummer John Lever.",
+   "en": {
+    "kicker": "english rock band · middleton, 1981",
+    "who": "The Chameleons are an english rock band. Mark Burgess, bassist and vocalist, was part of their classic line-up.",
+    "facts": [
+     "The Chameleons are an English rock band formed in Middleton, Greater Manchester, in 1981.",
+     "The band's classic line-up consisted of bassist and vocalist Mark Burgess, guitarists Reginald Smithies and Dave Fielding and drummer John Lever."
+    ]
+   },
+   "de": {
+    "kicker": "englische rockband · middleton, 1981",
+    "who": "The Chameleons sind eine englische rockband. Mark Burgess, bassist und sänger, gehörte zur klassischen besetzung.",
+    "facts": [
+     "The Chameleons sind eine englische rockband aus Middleton, Greater Manchester, gegründet 1981.",
+     "zur klassischen besetzung gehörten bassist und sänger Mark Burgess, die gitarristen Reginald Smithies und Dave Fielding sowie schlagzeuger John Lever."
+    ]
+   },
+   "tr": {
+    "kicker": "ingiliz rock grubu · middleton, 1981",
+    "who": "The Chameleons bir İngiliz rock grubudur. basçı ve vokalist Mark Burgess grubun klasik kadrosundaydı.",
+    "facts": [
+     "The Chameleons, 1981'de Middleton, Greater Manchester'da kurulmuş bir İngiliz rock grubudur.",
+     "klasik kadroyu basçı ve vokalist Mark Burgess, gitaristler Reginald Smithies ve Dave Fielding ile davulcu John Lever oluşturuyordu."
+    ]
+   }
+  },
+  {
+   "id": "0029c502-b09c-4b4f-9a93-21efaccb54fe",
+   "slug": "beth-hart-premium-seats-940ce016",
+   "title": "Beth Hart | Premium Seats",
+   "name": "Beth Hart",
+   "source_url": "https://en.wikipedia.org/wiki/Beth_Hart",
+   "extract": "Beth Hart is an American musician from Los Angeles, California. She rose to fame with the release of her 1999 single \"L.A. Song \" from her second album Screamin' for My Supper. The single was a number one hit in New Zealand, as well as reaching the top five of the US Adult Contemporary and Top 10 on the Billboard Adult Top 40 charts.",
+   "en": {
+    "kicker": "american musician · los angeles, 1999",
+    "who": "Beth Hart is an american musician from Los Angeles, California. her second album was Screamin' for My Supper.",
+    "facts": [
+     "She rose to fame with the release of her 1999 single \"L.A. Song\" from her second album Screamin' for My Supper.",
+     "The single was a number one hit in New Zealand, as well as reaching the top five of the US Adult Contemporary and Top 10 on the Billboard Adult Top 40 charts."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische musikerin · los angeles, 1999",
+    "who": "Beth Hart ist eine amerikanische musikerin aus Los Angeles, Kalifornien. ihr zweites album war Screamin' for My Supper.",
+    "facts": [
+     "sie wurde mit der single \"L.A. Song\" von 1999 aus dem album Screamin' for My Supper bekannt.",
+     "die single war in neuseeland ein nummer-eins-hit und erreichte die top fünf der US-Adult-Contemporary-charts sowie die top 10 der Billboard Adult Top 40."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı müzisyen · los angeles, 1999",
+    "who": "Beth Hart, Los Angeles, Kaliforniya'dan Amerikalı bir müzisyendir. ikinci albümü Screamin' for My Supper'dır.",
+    "facts": [
+     "1999'da ikinci albümü Screamin' for My Supper'dan çıkan \"L.A. Song\" single'ıyla ün kazandı.",
+     "bu single yeni zelanda'da bir numaralı hit oldu, ABD Adult Contemporary listesinde ilk beşe girdi ve Billboard Adult Top 40'ta ilk 10'a girdi."
+    ]
+   }
+  },
+  {
+   "id": "1b847431-2326-4ffb-90b7-1c1680719166",
+   "slug": "beth-hart-sky-lounge-0fba747f",
+   "title": "Beth Hart | Sky Lounge",
+   "name": "Beth Hart",
+   "source_url": "https://en.wikipedia.org/wiki/Beth_Hart",
+   "extract": "Beth Hart is an American musician from Los Angeles, California. She rose to fame with the release of her 1999 single \"L.A. Song \" from her second album Screamin' for My Supper. The single was a number one hit in New Zealand, as well as reaching the top five of the US Adult Contemporary and Top 10 on the Billboard Adult Top 40 charts.",
+   "en": {
+    "kicker": "american musician · los angeles, 1999",
+    "who": "Beth Hart is an american musician from Los Angeles, California. her second album was Screamin' for My Supper.",
+    "facts": [
+     "She rose to fame with the release of her 1999 single \"L.A. Song\" from her second album Screamin' for My Supper.",
+     "The single was a number one hit in New Zealand, as well as reaching the top five of the US Adult Contemporary and Top 10 on the Billboard Adult Top 40 charts."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische musikerin · los angeles, 1999",
+    "who": "Beth Hart ist eine amerikanische musikerin aus Los Angeles, Kalifornien. ihr zweites album war Screamin' for My Supper.",
+    "facts": [
+     "sie wurde mit der single \"L.A. Song\" von 1999 aus dem album Screamin' for My Supper bekannt.",
+     "die single war in neuseeland ein nummer-eins-hit und erreichte die top fünf der US-Adult-Contemporary-charts sowie die top 10 der Billboard Adult Top 40."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı müzisyen · los angeles, 1999",
+    "who": "Beth Hart, Los Angeles, Kaliforniya'dan Amerikalı bir müzisyendir. ikinci albümü Screamin' for My Supper'dır.",
+    "facts": [
+     "1999'da ikinci albümü Screamin' for My Supper'dan çıkan \"L.A. Song\" single'ıyla ün kazandı.",
+     "bu single yeni zelanda'da bir numaralı hit oldu, ABD Adult Contemporary listesinde ilk beşe girdi ve Billboard Adult Top 40'ta ilk 10'a girdi."
+    ]
+   }
+  }
+ ]
+}

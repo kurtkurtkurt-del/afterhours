@@ -1,0 +1,70 @@
+{
+ "city": "austin",
+ "day": "2026-11-19",
+ "nights": [
+  {
+   "id": "88a45df8-61c9-4e12-b637-7069835c4ed8",
+   "slug": "leslie-odom-jr-ede72b08",
+   "title": "Leslie Odom Jr.",
+   "name": "Leslie Odom Jr.",
+   "source_url": "https://en.wikipedia.org/wiki/Leslie_Odom_Jr.",
+   "extract": "Leslie Lloyd Odom Jr. is an American actor, singer and songwriter. He made his acting debut on Broadway in 1998 and first gained recognition for his portrayal of Aaron Burr in the musical Hamilton, which earned him a Tony Award for Best Actor in a Musical and a Grammy Award for Best Musical Theater Album in the same year. His performance was captured in the Disney+ live stage recording of Hamilton which earned him a Primetime Emmy Award for Outstanding Actor in a Leading Role in a Limited Series or Movie nomination.",
+   "en": {
+    "kicker": "american actor and singer · 1998",
+    "who": "Leslie Lloyd Odom Jr. is an american actor, singer and songwriter. he first gained recognition for playing Aaron Burr in the musical Hamilton.",
+    "facts": [
+     "He made his acting debut on Broadway in 1998.",
+     "His performance was captured in the Disney+ live stage recording of Hamilton which earned him a Primetime Emmy Award for Outstanding Actor in a Leading Role in a Limited Series or Movie nomination."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer schauspieler und sänger · 1998",
+    "who": "Leslie Lloyd Odom Jr. ist ein amerikanischer schauspieler, sänger und songwriter. bekannt wurde er durch seine rolle als Aaron Burr im musical Hamilton.",
+    "facts": [
+     "sein debüt als schauspieler am Broadway gab er 1998.",
+     "seine darbietung wurde in der Disney+-liveaufnahme von Hamilton festgehalten, die ihm eine nominierung für den Primetime Emmy als bester hauptdarsteller in einer miniserie oder einem film einbrachte."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı oyuncu ve şarkıcı · 1998",
+    "who": "Leslie Lloyd Odom Jr., Amerikalı bir oyuncu, şarkıcı ve söz yazarıdır. Hamilton müzikalindeki Aaron Burr rolüyle tanındı.",
+    "facts": [
+     "Broadway'deki oyunculuk ilk işi 1998'de gerçekleşti.",
+     "Hamilton'ın Disney+ için kaydedilen canlı sahne kaydı, kendisine Primetime Emmy'de sınırlı dizi veya film dalında aday gösterilme getirdi."
+    ]
+   }
+  },
+  {
+   "id": "193d2a00-1754-414f-af9b-1d6602d4a9ce",
+   "slug": "project-pat-e1137fc5",
+   "title": "Project Pat",
+   "name": "Project Pat",
+   "source_url": "https://en.wikipedia.org/wiki/Project_Pat",
+   "extract": "Patrick Earl Houston, known professionally as Project Pat, is an American rapper from Memphis, Tennessee. He is the older brother of Juicy J, the co-founder of Three 6 Mafia.",
+   "en": {
+    "kicker": "american rapper · Memphis, Tennessee",
+    "who": "Project Pat is the stage name of Patrick Earl Houston, a rapper from Memphis, Tennessee. he is the older brother of Juicy J.",
+    "facts": [
+     "Patrick Earl Houston, known professionally as Project Pat, is an American rapper from Memphis, Tennessee.",
+     "He is the older brother of Juicy J, the co-founder of Three 6 Mafia."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer rapper · Memphis, Tennessee",
+    "who": "Project Pat ist das künstlername von Patrick Earl Houston, einem rapper aus Memphis, Tennessee. er ist der ältere bruder von Juicy J.",
+    "facts": [
+     "Patrick Earl Houston, bekannt als Project Pat, ist ein amerikanischer rapper aus Memphis, Tennessee.",
+     "er ist der ältere bruder von Juicy J, dem mitbegründer von Three 6 Mafia."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı rapçi · Memphis, Tennessee",
+    "who": "Project Pat, Patrick Earl Houston'ın sahne adıdır. Memphis, Tennessee'li bir rapçidir.",
+    "facts": [
+     "Patrick Earl Houston, sahne adıyla Project Pat, Memphis, Tennessee'den Amerikalı bir rapçidir.",
+     "Three 6 Mafia'nın kurucu ortağı Juicy J'nin ağabeyidir."
+    ]
+   }
+  }
+ ]
+}

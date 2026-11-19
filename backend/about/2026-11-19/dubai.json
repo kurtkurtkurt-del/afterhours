@@ -1,0 +1,38 @@
+{
+ "city": "dubai",
+ "day": "2026-11-19",
+ "nights": [
+  {
+   "id": "83644055-7457-435e-9fc2-c8f36dd64c06",
+   "slug": "sven-vath-house-rules-67274843",
+   "title": "SVEN VÄTH | House Rules",
+   "name": "Sven Väth",
+   "source_url": "https://en.wikipedia.org/wiki/Sven_V%C3%A4th",
+   "extract": "Sven Väth is a German DJ and electronic music producer. He is a three-time DJ Awards winner, with a career in electronic music spanning over 40 years. The release of the single \"Electrica Salsa\" with OFF in 1986 launched his career. Known as \"Papa Sven\" by his fans, Väth became one of Germany's pop stars in the 1990s, establishing two nightclubs in Germany and founding his own company, Cocoon, which includes a booking agency, record label, and event management branch.",
+   "en": {
+    "kicker": "german dj and producer · 1986",
+    "who": "Sven Väth is a german dj and electronic music producer with a career spanning over 40 years. Known as \"Papa Sven\" by his fans.",
+    "facts": [
+     "The release of the single \"Electrica Salsa\" with OFF in 1986 launched his career.",
+     "Väth became one of Germany's pop stars in the 1990s, establishing two nightclubs in Germany and founding his own company, Cocoon, which includes a booking agency, record label, and event management branch."
+    ]
+   },
+   "de": {
+    "kicker": "deutscher dj und produzent · 1986",
+    "who": "Sven Väth ist ein deutscher dj und produzent elektronischer musik mit einer karriere von über 40 jahren. seine fans nennen ihn „Papa Sven“.",
+    "facts": [
+     "Die single \"Electrica Salsa\" mit OFF erschien 1986 und begründete seine karriere.",
+     "in den 1990er-jahren wurde Väth einer der popstars Deutschlands, gründete zwei clubs und sein eigenes unternehmen Cocoon, zu dem eine booking-agentur, ein label und eine eventmanagement-sparte gehören."
+    ]
+   },
+   "tr": {
+    "kicker": "alman dj ve yapımcı · 1986",
+    "who": "Sven Väth, 40 yılı aşkın kariyeriyle Alman bir DJ ve elektronik müzik yapımcısıdır. hayranları ona \"Papa Sven\" diyor.",
+    "facts": [
+     "\"Electrica Salsa\" single'ı OFF ile birlikte 1986'da yayımlandı ve kariyerini başlattı.",
+     "1990'larda Väth, Almanya'nın pop yıldızlarından biri oldu; iki gece kulübü açtı ve Cocoon adlı kendi şirketini kurdu; Cocoon bir booking ajansı, plak etiketi ve etkinlik yönetimi birimi içeriyor."
+    ]
+   }
+  }
+ ]
+}
