@@ -1,0 +1,14 @@
+{
+  "city": "boston",
+  "day": "2026-11-21",
+  "sparks": [
+    {
+      "kind": "football",
+      "title": { "en": "bruins – capitals at the td garden.", "de": "bruins – capitals im td garden.", "tr": "td garden'da bruins – capitals." },
+      "line": { "en": "the bruins host washington on saturday, puck drop 7 pm. come at 18:30 to be in your seat before the first face-off.", "de": "die bruins empfangen washington am samstag, spielbeginn 19 uhr. um 18:30 da sein, bevor das erste bully fällt.", "tr": "bruins cumartesi washington'ı ağırlıyor, ilk bul saat 19:00. ilk buldan önce yerinizde olmak için 18:30'da gelin." },
+      "place": { "en": "td garden", "de": "td garden", "tr": "td garden" },
+      "hour": 18, "minute": 30,
+      "why": "Bruins vs Washington Capitals, Sat 21 Nov, 7:00 pm ET at TD Garden (Legion Report, SeatGeek and Sports Media Watch agree on date, time and venue)."
+    }
+  ]
+}

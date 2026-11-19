@@ -1,0 +1,14 @@
+{
+  "city": "boston",
+  "day": "2026-11-27",
+  "sparks": [
+    {
+      "kind": "football",
+      "title": { "en": "bruins – toronto at the td garden.", "de": "bruins – toronto im td garden.", "tr": "td garden'da bruins – toronto." },
+      "line": { "en": "black friday afternoon: the bruins host toronto, puck drop 1 pm. come at 12:30 to be in your seat in time.", "de": "black friday nachmittag: die bruins empfangen toronto, spielbeginn 13 uhr. um 12:30 da sein, um rechtzeitig am platz zu sein.", "tr": "black friday öğleden sonra: bruins toronto'yu ağırlıyor, ilk bul saat 13:00. yerinize zamanında oturmak için 12:30'da gelin." },
+      "place": { "en": "td garden", "de": "td garden", "tr": "td garden" },
+      "hour": 12, "minute": 30,
+      "why": "Bruins vs Toronto Maple Leafs, Fri 27 Nov, 1 pm at TD Garden (Boston Globe Thanksgiving-week note; sportbusy schedule). Day 8, added because the week is thin."
+    }
+  ]
+}
