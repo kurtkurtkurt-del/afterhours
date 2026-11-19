@@ -1,0 +1,14 @@
+{
+  "city": "philadelphia",
+  "day": "2026-11-21",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "christmas village preview weekend.", "de": "christmas village, vorschau-wochenende.", "tr": "christmas village önizleme hafta sonu." },
+      "line": { "en": "the christmas village has a preview weekend before its full opening on thanksgiving day. a good early evening walk.", "de": "das christmas village hat ein vorschau-wochenende vor der eröffnung am thanksgiving-tag. ein guter früher abend für einen spaziergang.", "tr": "christmas village, thanksgiving gününden önce bir önizleme hafta sonu yapıyor. erken bir akşam için iyi bir yürüyüş." },
+      "place": { "en": "philadelphia christmas village", "de": "philadelphia christmas village", "tr": "philadelphia christmas village" },
+      "hour": 17, "minute": 0,
+      "why": "Philadelphia Christmas Village preview weekend 21-22 Nov 2026, full opening on Thanksgiving (philachristmas.com press release)."
+    }
+  ]
+}
