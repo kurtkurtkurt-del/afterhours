@@ -1,0 +1,14 @@
+{
+  "city": "austin",
+  "day": "2026-11-21",
+  "sparks": [
+    {
+      "kind": "football",
+      "title": { "en": "texas vs arkansas at darrell k royal.", "de": "texas gegen arkansas im darrell k royal.", "tr": "texas – arkansas, darrell k royal'da." },
+      "line": { "en": "the longhorns at home. kickoff is 2:30 or 3:30 pm, not yet set; a downtown tailgate runs at 18th and trinity before.", "de": "die longhorns zu hause. anpfiff 14:30 oder 15:30, noch offen; davor läuft ein tailgate an 18th und trinity.", "tr": "longhorns evinde oynuyor. başlama saati 14:30 ya da 15:30, henüz netleşmedi; öncesinde 18th ve trinity'de bir tailgate var." },
+      "place": { "en": "darrell k royal–texas memorial stadium", "de": "darrell k royal–texas memorial stadium", "tr": "darrell k royal–texas memorial stadium" },
+      "hour": 14, "minute": 30,
+      "why": "Texas hosts Arkansas on Nov. 21, 2026; UT Athletics lists a 2:30 to 3:30 pm CT window and theScore lists the fixture; the downtown tailgate at 18th and Trinity is from a listing."
+    }
+  ]
+}

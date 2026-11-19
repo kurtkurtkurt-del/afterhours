@@ -1,0 +1,14 @@
+{
+  "city": "austin",
+  "day": "2026-11-20",
+  "sparks": [
+    {
+      "kind": "newplace",
+      "title": { "en": "the yacht club, in the new hotel trinity.", "de": "the yacht club, im neuen hotel trinity.", "tr": "the yacht club, yeni hotel trinity'de." },
+      "line": { "en": "oysters, caviar, cocktails and seafood mains on fifth street, open since early november.", "de": "austern, kaviar, cocktails und seafood-hauptgerichte an der fifth street, seit anfang november offen.", "tr": "fifth street'te istiridye, havyar, kokteyl ve deniz ürünü ana yemekler. kasım başından beri açık." },
+      "place": { "en": "the yacht club", "de": "the yacht club", "tr": "the yacht club" },
+      "hour": 19, "minute": 0,
+      "why": "The Yacht Club at Hotel Trinity, 311 E. Fifth St., listed by Community Impact as opened Nov. 5, 2026; the hour is a suggested start."
+    }
+  ]
+}
