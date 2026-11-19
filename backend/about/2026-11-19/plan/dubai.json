@@ -1,0 +1,16 @@
+{
+ "city": "dubai",
+ "day": "2026-11-19",
+ "nights": [
+  {
+   "id": "83644055-7457-435e-9fc2-c8f36dd64c06",
+   "slug": "sven-vath-house-rules-67274843",
+   "title": "SVEN VÄTH | House Rules",
+   "act": "SVEN VÄTH",
+   "name": "Sven Väth",
+   "description": "German DJ and producer (born 1964)",
+   "source_url": "https://en.wikipedia.org/wiki/Sven_V%C3%A4th",
+   "extract": "Sven Väth is a German DJ and electronic music producer. He is a three-time DJ Awards winner, with a career in electronic music spanning over 40 years. The release of the single \"Electrica Salsa\" with OFF in 1986 launched his career. Known as \"Papa Sven\" by his fans, Väth became one of Germany's pop stars in the 1990s, establishing two nightclubs in Germany and founding his own company, Cocoon, which includes a booking agency, record label, and event management branch."
+  }
+ ]
+}

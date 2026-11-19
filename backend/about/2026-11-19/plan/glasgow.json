@@ -1,0 +1,16 @@
+{
+ "city": "glasgow",
+ "day": "2026-11-19",
+ "nights": [
+  {
+   "id": "188b995f-6523-4ec5-ae35-6a3fa4e77689",
+   "slug": "1000mods-cdd5857a",
+   "title": "1000MODS",
+   "act": "1000MODS",
+   "name": "1000mods",
+   "description": "Greek stoner metal band",
+   "source_url": "https://en.wikipedia.org/wiki/1000mods",
+   "extract": "1000mods is a hard rock band from Chiliomodi, Greece, formed in 2006. The group consists of Dani G., Giorgos T. (guitar), and Labros G. (drums). Since their formation, the band has toured extensively across the globe and released five full-length studio albums."
+  }
+ ]
+}

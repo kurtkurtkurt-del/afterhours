@@ -1,0 +1,16 @@
+{
+ "city": "new-york",
+ "day": "2026-11-19",
+ "nights": [
+  {
+   "id": "9fbeb3f8-2ed5-4e9d-8355-5759a819dae8",
+   "slug": "liana-flores-57cfbe38",
+   "title": "Liana Flores",
+   "act": "Liana Flores",
+   "name": "Liana Flores",
+   "description": "British singer-songwriter and guitarist",
+   "source_url": "https://en.wikipedia.org/wiki/Liana_Flores",
+   "extract": "Liana Flores is a British-Brazilian singer-songwriter and guitarist. After independently releasing two extended plays The Water's Fine! (2018) and Recently (2019), her debut studio album Flower of the Soul was released under Verve and Fiction in June 2024."
+  }
+ ]
+}

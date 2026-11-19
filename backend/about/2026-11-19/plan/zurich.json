@@ -1,0 +1,16 @@
+{
+ "city": "zurich",
+ "day": "2026-11-19",
+ "nights": [
+  {
+   "id": "7b839878-caa8-4e9d-aceb-41642ac9bb75",
+   "slug": "pa-sports-5a056307",
+   "title": "PA Sports",
+   "act": "PA Sports",
+   "name": "PA Sports",
+   "description": "German rapper",
+   "source_url": "https://en.wikipedia.org/wiki/PA_Sports",
+   "extract": "Parham Vakili, known professionally as PA Sports, is a German rapper and music producer. He has produced over a dozen albums and over fifty singles. He is also the founder and owner of the music label Life is Pain."
+  }
+ ]
+}

@@ -1,0 +1,36 @@
+{
+ "city": "istanbul",
+ "day": "2026-11-19",
+ "nights": [
+  {
+   "id": "d3ff784a-854d-4e93-9394-018b44186cbb",
+   "slug": "cem-adrian-d84f11ac",
+   "title": "Cem Adrian",
+   "act": "Cem Adrian",
+   "name": "Cem Adrian",
+   "description": "Turkish singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Cem_Adrian",
+   "extract": "Cem Filiz, better known by his stage name Cem Adrian, is a Turkish musician of Bosniak descent, singer-songwriter and record producer."
+  },
+  {
+   "id": "d8e40162-ccd5-4764-9986-c8ce2ee62806",
+   "slug": "linet-ef944e1a",
+   "title": "Linet",
+   "act": "Linet",
+   "name": "Linet",
+   "description": "Turkish-Israeli singer (born 1975)",
+   "source_url": "https://en.wikipedia.org/wiki/Linet",
+   "extract": "Linet Mor Menashe is an Israeli-born Turkish-Jewish singer, best known for her performances of arabesque and pop music. She is well known in Turkey, Israel, and the Middle East, mostly thanks to her grasp overmultiple languages."
+  },
+  {
+   "id": "2d791d9b-4635-47b5-89e5-ce46a9269f75",
+   "slug": "cem-belevi-388ac69c",
+   "title": "Cem Belevi",
+   "act": "Cem Belevi",
+   "name": "Cem Belevi",
+   "description": "Turkish pop singer and actor",
+   "source_url": "https://en.wikipedia.org/wiki/Cem_Belevi",
+   "extract": "Cem Belevi is a Turkish pop singer, songwriter, and actor. He gained recognition for his collaborations, including the duet \"Kim Ne Derse Desin\" with Ayshe."
+  }
+ ]
+}

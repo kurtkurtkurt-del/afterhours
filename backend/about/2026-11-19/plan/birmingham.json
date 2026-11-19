@@ -1,0 +1,26 @@
+{
+ "city": "birmingham",
+ "day": "2026-11-19",
+ "nights": [
+  {
+   "id": "be213d71-ab61-47c8-9791-73416759ebdb",
+   "slug": "the-pogues-the-very-best-of-the-pogues-ced98d62",
+   "title": "The Pogues - the Very Best of the Pogues",
+   "act": "The Pogues",
+   "name": "The Pogues",
+   "description": "English Celtic punk band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Pogues",
+   "extract": "The Pogues are an English Celtic punk band founded in King's Cross, London, in 1982, by Shane MacGowan, Spider Stacy and Jem Finer. Originally named Pogue Mahone—an anglicisation of the Irish phrase póg mo thóin, meaning \"kiss my arse\"—the band fused Irish traditional music with punk rock influences. After adding more members, including James Fearnley and Cait O'Riordan, the Pogues built a reputation with their live shows in London pubs and clubs."
+  },
+  {
+   "id": "b37e03e1-0b8d-40aa-9b46-dd829d5ba31f",
+   "slug": "nemzzz-locked-in-tour-e0ad23fe",
+   "title": "Nemzzz - Locked In Tour",
+   "act": "Nemzzz",
+   "name": "Nemzzz",
+   "description": "British rapper (born 2004)",
+   "source_url": "https://en.wikipedia.org/wiki/Nemzzz",
+   "extract": "Nemiah Emmanuel Simms, known professionally as Nemzzz, is a British rapper who gained recognition in 2021 with the tracks \"Elevate\" and \"2MS\". He released his first mixtape Do Not Disturb in 2024, which debuted at number 17 on the UK Albums Chart."
+  }
+ ]
+}

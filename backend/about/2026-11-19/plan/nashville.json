@@ -1,0 +1,26 @@
+{
+ "city": "nashville",
+ "day": "2026-11-19",
+ "nights": [
+  {
+   "id": "616ba6c9-cbc3-4254-a2a4-86d4444f4986",
+   "slug": "imminence-north-america-2026-a268e6a3",
+   "title": "Imminence: North America 2026",
+   "act": "Imminence",
+   "name": "Imminence",
+   "description": "Swedish metalcore band",
+   "source_url": "https://en.wikipedia.org/wiki/Imminence_(band)",
+   "extract": "Imminence is a Swedish metalcore band formed in Trelleborg. The group consists of vocalist Eddie Berg, rhythm guitarist Harald Barrett, lead guitarist Alex Arnoldsson, and bassist Christian Höijer."
+  },
+  {
+   "id": "809a7146-cb8d-4235-b7ae-b2b8c96297d4",
+   "slug": "everclear-lucky-7-tour-fdd172dd",
+   "title": "Everclear - Lucky 7 Tour",
+   "act": "Everclear",
+   "name": "Everclear",
+   "description": "American alternative rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Everclear_(band)",
+   "extract": "Everclear is an American rock band formed in Portland, Oregon, in 1992. The band was formed by Art Alexakis, the band's lead songwriter, vocalist, and guitarist. For most of the band's height of popularity, the band was filled out by bassist Craig Montoya and drummer Greg Eklund. After the limited release of their independently released debut album, World of Noise (1993), the band found success with their first three albums on Capitol Records: Sparkle and Fade (1995), So Much for the Afterglow (1997), and Songs from an American Movie Vol. One: Learning How to Smile (2000), which were all certified platinum in sales in the United States. However, the following two albums Songs from an American Movie Vol. Two: Good Time for a Bad Attitude (2000) and Slow Motion Daydream (2003) stalled commercially, with Montoya and Eklund leaving shortly after."
+  }
+ ]
+}

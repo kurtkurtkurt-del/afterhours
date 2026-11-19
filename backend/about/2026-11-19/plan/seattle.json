@@ -1,0 +1,16 @@
+{
+ "city": "seattle",
+ "day": "2026-11-19",
+ "nights": [
+  {
+   "id": "971164e1-f79f-4ea4-aea2-9c305b971c6b",
+   "slug": "haley-heynderickx-869102bb",
+   "title": "Haley Heynderickx",
+   "act": "Haley Heynderickx",
+   "name": "Haley Heynderickx",
+   "description": "American singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Haley_Heynderickx",
+   "extract": "Haley Hannah Heynderickx is an American singer-songwriter from Portland, Oregon. In 2016, she released her debut EP, Fish Eyes. Her first full-length album, I Need to Start a Garden, was released in March 2018 on Mama Bird Recording Co. Seed of a Seed, her second album, was released in November 2024 on the same label."
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "city": "montreal",
+ "day": "2026-11-19",
+ "nights": [
+  {
+   "id": "6790af75-0ba3-473a-813f-f27020519f1a",
+   "slug": "kiwi-jr-226ec544",
+   "title": "KIWI JR.",
+   "act": "KIWI JR.",
+   "name": "Kiwi Jr.",
+   "description": "Canadian indie rock band based in Toronto",
+   "source_url": "https://en.wikipedia.org/wiki/Kiwi_Jr.",
+   "extract": "Kiwi Jr. is a Canadian indie rock band based in Toronto, Ontario. The band consists of Jeremy Gaudet (vocals), Mike Walker (bass), Brohan Moore (drums), and Brian Murphy (guitar). Their first album Football Money was released on the Canadian Mint Records. The band's fourth album, Blowin' Up, released on August 14, 2026 on K Records. Between 2021 and 2026, they were signed to the American record label Sub Pop."
+  },
+  {
+   "id": "938e8212-e4d0-4432-b9b4-dab70aaed22b",
+   "slug": "underoath-define-the-great-line-20th-anniversary-2b96f56c",
+   "title": "Underoath - Define the Great Line 20th Anniversary Tour",
+   "act": "Underoath",
+   "name": "Underoath",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Underoath",
+   "extract": "Underoath is an American rock band from Tampa, Florida. It was founded by lead vocalist Dallas Taylor and guitarist Luke Morton in 1997 in Ocala, Florida; subsequently, its additional members were from Tampa, including drummer, singer and last remaining original member Aaron Gillespie. The band's current lineup consists of Gillespie, keyboardist Christopher Dudley, lead guitarist Timothy McTague, bassist Grant Brandell, and lead vocalist Spencer Chamberlain."
+  }
+ ]
+}

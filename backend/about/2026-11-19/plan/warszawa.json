@@ -1,0 +1,36 @@
+{
+ "city": "warszawa",
+ "day": "2026-11-19",
+ "nights": [
+  {
+   "id": "f74c3aa3-843a-4be0-a465-4562573c6085",
+   "slug": "strangelove-the-depeche-mode-experience-e821b693",
+   "title": "Strangelove: The Depeche Mode Experience",
+   "act": "Strangelove",
+   "name": "Strangelove",
+   "description": "English alternative rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Strangelove_(band)",
+   "extract": "Strangelove were an English alternative rock band, formed in Bristol in 1991 comprising singer Patrick Duff, guitarists Alex Lee & Julian Poole, bassist Joe Allen and John Langley on drums. They released two EPs and three albums before disbanding in 1998."
+  },
+  {
+   "id": "a1751d0b-8a9f-4a70-a9ec-995715da9942",
+   "slug": "maryla-rodowicz-01c8ff97",
+   "title": "Maryla Rodowicz",
+   "act": "Maryla Rodowicz",
+   "name": "Maryla Rodowicz",
+   "description": "Polish singer, guitarist and actress",
+   "source_url": "https://en.wikipedia.org/wiki/Maryla_Rodowicz",
+   "extract": "Maria Antonina Rodowicz, known professionally as Maryla Rodowicz,, is a Polish singer, guitarist and actress."
+  },
+  {
+   "id": "882dfecc-90b5-4429-aa6e-930609f91668",
+   "slug": "maustetytot-itken-jos-mua-huvittaa-european-tour-121619e4",
+   "title": "Maustetytöt - Itken Jos Mua Huvittaa European Tour 26",
+   "act": "Maustetytöt",
+   "name": "Maustetytöt",
+   "description": "Finnish girl group",
+   "source_url": "https://en.wikipedia.org/wiki/Maustetyt%C3%B6t",
+   "extract": "Maustetytöt is a Finnish girl group consisting of sisters Anna Karjalainen and Kaisa Karjalainen. The band's trademarks include a laconic and serious-looking performance style."
+  }
+ ]
+}

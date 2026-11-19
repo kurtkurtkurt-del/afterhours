@@ -1,0 +1,16 @@
+{
+ "city": "denver",
+ "day": "2026-11-19",
+ "nights": [
+  {
+   "id": "657b1c4f-e5d9-4ca1-8d11-b50123b15f63",
+   "slug": "yung-gravy-the-joyrider-tour-8cc432c6",
+   "title": "Yung Gravy: The Joyrider Tour",
+   "act": "Yung Gravy",
+   "name": "Yung Gravy",
+   "description": "American rapper (born 1996)",
+   "source_url": "https://en.wikipedia.org/wiki/Yung_Gravy",
+   "extract": "Matthew Raymond Hauri, better known by his stage name Yung Gravy, is an American rapper."
+  }
+ ]
+}

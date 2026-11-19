@@ -1,0 +1,36 @@
+{
+ "city": "philadelphia",
+ "day": "2026-11-19",
+ "nights": [
+  {
+   "id": "00bb1022-5bac-45b8-afc9-7fb1837f7048",
+   "slug": "tiny-habits-6fd2c0c1",
+   "title": "Tiny Habits",
+   "act": "Tiny Habits",
+   "name": "Tiny Habits",
+   "description": "American folk-pop trio",
+   "source_url": "https://en.wikipedia.org/wiki/Tiny_Habits",
+   "extract": "Tiny Habits is an American folk-pop music group formed in Boston in 2022. The trio consists of Berklee College of Music alumni Cinya Khan, Maya Rae, and Judah Mayowa. Their first EP, Tiny Things, was released in April 2023. Their debut studio album All For Something was released in May 2024. Their second album Keepers came out in August 2026."
+  },
+  {
+   "id": "5537104b-249b-448d-b2aa-82c8e020933b",
+   "slug": "toosii-76264f9d",
+   "title": "Toosii",
+   "act": "Toosii",
+   "name": "Toosii",
+   "description": "American rapper (born 2000)",
+   "source_url": "https://en.wikipedia.org/wiki/Toosii",
+   "extract": "Nau'Jour Lazier Grainger, better known by his stage name Toosii, is an American rapper, singer, songwriter, and football player. Beginning his career in 2017, he rose to mainstream prominence following the release of his 2023 single \"Favorite Song\", which first gained virality on the social media platform TikTok. The song peaked at number 5 on the Billboard Hot 100, earned double platinum certification by the Recording Industry Association of America (RIAA), and preceded the release of his second studio album, Naujour (2023). The album peaked at number 19 on the Billboard 200, although his debut album, Poetic Pain (2020), reached number 17 on the chart."
+  },
+  {
+   "id": "77507baf-6733-4bc0-9589-b4670e6cd596",
+   "slug": "meek-mill-dream-chasers-nights-b45e4845",
+   "title": "Meek Mill: Dream Chasers Nights",
+   "act": "Meek Mill",
+   "name": "Meek Mill",
+   "description": "American rapper (born 1987)",
+   "source_url": "https://en.wikipedia.org/wiki/Meek_Mill",
+   "extract": "Robert Rihmeek Williams, known professionally as Meek Mill, is an American rapper. Born and raised in Philadelphia, Pennsylvania, he embarked on his career as a battle rapper, and later formed the short-lived rap group the Bloodhoundz. He signed with T.I.'s Grand Hustle Records as a solo act in 2008, but parted ways with the label in 2011 without any releases. He then signed with Rick Ross's Maybach Music Group (MMG) later that year, and rose to further recognition following his appearances on the label's Self Made Vol. 1 (2011) compilation album; his song \"Tupac Back\" served as the album's lead single, while its follow-up, \"Ima Boss\", became his first entry on the Billboard Hot 100."
+  }
+ ]
+}

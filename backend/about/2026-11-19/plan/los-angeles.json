@@ -1,0 +1,46 @@
+{
+ "city": "los-angeles",
+ "day": "2026-11-19",
+ "nights": [
+  {
+   "id": "ccc87c77-371e-47d8-accc-fe00bbc88a4e",
+   "slug": "icona-pop-eca1a2c2",
+   "title": "Icona Pop",
+   "act": "Icona Pop",
+   "name": "Icona Pop",
+   "description": "Swedish synth-pop duo",
+   "source_url": "https://en.wikipedia.org/wiki/Icona_Pop",
+   "extract": "Icona Pop are a Swedish synth-pop duo that formed in 2009, with electro house and indie pop music influences. Its two members, Aino Jawo and Caroline Hjelt, grew up in Stockholm and created what the Swedish press has described as music which \"you can both laugh and cry to at the same time\". They signed to TEN Music Group in 2009 and are currently also in a label deal with Ultra Music. Their biggest hit to date has been \"I Love It\"."
+  },
+  {
+   "id": "7c0551ed-a37b-4f2b-926f-b34b1e3b8f2d",
+   "slug": "silverada-dff8ba30",
+   "title": "Silverada",
+   "act": "Silverada",
+   "name": "Silverada",
+   "description": "American country band",
+   "source_url": "https://en.wikipedia.org/wiki/Silverada",
+   "extract": "Silverada is an American neotraditional country and Americana band based in Austin, Texas. It was formed by singer-songwriter Mike Harmeier in 2007. Its members are singer and guitarist Harmeier, drummer Taylor Englert, guitarist Catlin Rutherford, keyboard player Parker Twomey, and bassist Omar Oyoque."
+  },
+  {
+   "id": "fb060807-31f1-444d-8622-f7e697063a6d",
+   "slug": "eiv-r-d891a435",
+   "title": "Eivør",
+   "act": "Eivør",
+   "name": "Eivør",
+   "description": "Faroese singer-songwriter (born 1983)",
+   "source_url": "https://en.wikipedia.org/wiki/Eiv%C3%B8r_(singer)",
+   "extract": "Eivør Pálsdóttir, known mononymously as Eivør, is a Faroese singer-songwriter. Born and raised in Syðrugøta, she had her first televised performance at the age of 13. Over the course of her decades-long career, her musical output has spanned a wide range of genres such as folk, art pop, jazz, folk rock, classical and electronica."
+  },
+  {
+   "id": "b2524c17-ed4f-45d1-95a6-fe45c3994cb6",
+   "slug": "katseye-the-wildworld-tour-a4e987ce",
+   "title": "KATSEYE: THE WILDWORLD TOUR",
+   "act": "KATSEYE",
+   "name": "Katseye",
+   "description": "Los Angeles–based girl group",
+   "source_url": "https://en.wikipedia.org/wiki/Katseye",
+   "extract": "Katseye is a girl group formed in 2024, based in Los Angeles. The group consists of six members: Daniela Avanzini, Lara Raj, Manon Bannerman, Megan Skiendiel, Sophia Laforteza, and Yoonchae Jeung. With members from the Philippines, South Korea, Switzerland, and the United States, Katseye is often called a \"global girl group\"."
+  }
+ ]
+}

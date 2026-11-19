@@ -1,0 +1,26 @@
+{
+ "city": "austin",
+ "day": "2026-11-19",
+ "nights": [
+  {
+   "id": "88a45df8-61c9-4e12-b637-7069835c4ed8",
+   "slug": "leslie-odom-jr-ede72b08",
+   "title": "Leslie Odom Jr.",
+   "act": "Leslie Odom Jr.",
+   "name": "Leslie Odom Jr.",
+   "description": "American actor, singer and songwriter (born 1981)",
+   "source_url": "https://en.wikipedia.org/wiki/Leslie_Odom_Jr.",
+   "extract": "Leslie Lloyd Odom Jr. is an American actor, singer and songwriter. He made his acting debut on Broadway in 1998 and first gained recognition for his portrayal of Aaron Burr in the musical Hamilton, which earned him a Tony Award for Best Actor in a Musical and a Grammy Award for Best Musical Theater Album in the same year. His performance was captured in the Disney+ live stage recording of Hamilton which earned him a Primetime Emmy Award for Outstanding Actor in a Leading Role in a Limited Series or Movie nomination."
+  },
+  {
+   "id": "193d2a00-1754-414f-af9b-1d6602d4a9ce",
+   "slug": "project-pat-e1137fc5",
+   "title": "Project Pat",
+   "act": "Project Pat",
+   "name": "Project Pat",
+   "description": "American rapper (born 1973)",
+   "source_url": "https://en.wikipedia.org/wiki/Project_Pat",
+   "extract": "Patrick Earl Houston, known professionally as Project Pat, is an American rapper from Memphis, Tennessee. He is the older brother of Juicy J, the co-founder of Three 6 Mafia."
+  }
+ ]
+}

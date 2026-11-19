@@ -1,0 +1,56 @@
+{
+ "city": "amsterdam",
+ "day": "2026-11-19",
+ "nights": [
+  {
+   "id": "e866e761-44c6-48b7-8a4f-685757f0068d",
+   "slug": "jessie-ware-premium-seats-910e63e2",
+   "title": "Jessie Ware | Premium Seats",
+   "act": "Jessie Ware",
+   "name": "Jessie Ware",
+   "description": "British singer (born 1984)",
+   "source_url": "https://en.wikipedia.org/wiki/Jessie_Ware",
+   "extract": "Jessica Lois Ware is a British singer and songwriter. She came to prominence following the release of her debut album, Devotion (2012), which peaked at number five on the UK Albums Chart and produced the single \"Wildest Moments\". Her second album, Tough Love (2014), reached number nine in the UK and produced the singles \"Tough Love\" and \"Say You Love Me\". Her third album, Glasshouse (2017), reached number seven in the UK."
+  },
+  {
+   "id": "f355de67-202f-4ce6-aa90-754160114943",
+   "slug": "the-chameleons-0aa7450a",
+   "title": "The Chameleons",
+   "act": "The Chameleons",
+   "name": "The Chameleons",
+   "description": "English rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Chameleons",
+   "extract": "The Chameleons are an English rock band formed in Middleton, Greater Manchester, in 1981. The band's classic line-up consisted of bassist and vocalist Mark Burgess, guitarists Reginald Smithies and Dave Fielding and drummer John Lever."
+  },
+  {
+   "id": "24dd7234-17bb-40ab-ab81-1574eceacadf",
+   "slug": "horsegiirl-304aea6b",
+   "title": "horsegiirL",
+   "act": "horsegiirL",
+   "name": "HorsegiirL",
+   "description": "German DJ and singer (born 2000)",
+   "source_url": "https://en.wikipedia.org/wiki/HorsegiirL",
+   "extract": "HorsegiirL is a German DJ, singer, and songwriter, known for wearing a horse head mask."
+  },
+  {
+   "id": "0029c502-b09c-4b4f-9a93-21efaccb54fe",
+   "slug": "beth-hart-premium-seats-940ce016",
+   "title": "Beth Hart | Premium Seats",
+   "act": "Beth Hart",
+   "name": "Beth Hart",
+   "description": "American blues rock musician (born 1972)",
+   "source_url": "https://en.wikipedia.org/wiki/Beth_Hart",
+   "extract": "Beth Hart is an American musician from Los Angeles, California. She rose to fame with the release of her 1999 single \"L.A. Song \" from her second album Screamin' for My Supper. The single was a number one hit in New Zealand, as well as reaching the top five of the US Adult Contemporary and Top 10 on the Billboard Adult Top 40 charts."
+  },
+  {
+   "id": "1b847431-2326-4ffb-90b7-1c1680719166",
+   "slug": "beth-hart-sky-lounge-0fba747f",
+   "title": "Beth Hart | Sky Lounge",
+   "act": "Beth Hart",
+   "name": "Beth Hart",
+   "description": "American blues rock musician (born 1972)",
+   "source_url": "https://en.wikipedia.org/wiki/Beth_Hart",
+   "extract": "Beth Hart is an American musician from Los Angeles, California. She rose to fame with the release of her 1999 single \"L.A. Song \" from her second album Screamin' for My Supper. The single was a number one hit in New Zealand, as well as reaching the top five of the US Adult Contemporary and Top 10 on the Billboard Adult Top 40 charts."
+  }
+ ]
+}

@@ -1,0 +1,46 @@
+{
+ "city": "manchester",
+ "day": "2026-11-19",
+ "nights": [
+  {
+   "id": "30581044-03ed-4846-a8d9-4d52950f83da",
+   "slug": "skye-newman-be8d0c0d",
+   "title": "Skye Newman",
+   "act": "Skye Newman",
+   "name": "Skye Newman",
+   "description": "English singer-songwriter (born 2003)",
+   "source_url": "https://en.wikipedia.org/wiki/Skye_Newman",
+   "extract": "Skye Newman is an English singer-songwriter from south-east London."
+  },
+  {
+   "id": "1f738b3a-6657-40e0-8750-be1232ee7b21",
+   "slug": "the-rifles-e230b65c",
+   "title": "The Rifles",
+   "act": "The Rifles",
+   "name": "The Rifles",
+   "description": "English indie rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Rifles_(band)",
+   "extract": "The Rifles are an English indie rock band from Chingford, London."
+  },
+  {
+   "id": "7236d81f-1700-4bdf-b729-41b7b773f668",
+   "slug": "the-big-moon-532ca7eb",
+   "title": "The Big Moon",
+   "act": "The Big Moon",
+   "name": "The Big Moon",
+   "description": "English rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Big_Moon",
+   "extract": "The Big Moon are a British indie rock band, formed in 2014 in London by frontwoman Juliette Jackson. Their debut album, Love in the 4th Dimension, was released on 6 April 2017, containing a number of tracks previously released on their EP The Road. The album was shortlisted for the prestigious Mercury Prize in 2017. They are signed to Fiction Records and have toured internationally. They supported Pixies on their 2019 UK tour."
+  },
+  {
+   "id": "812c94cd-9571-4492-b94b-19c2d859211b",
+   "slug": "glenn-jones-20d53506",
+   "title": "Glenn Jones",
+   "act": "Glenn Jones",
+   "name": "Glenn Jones",
+   "description": "American R&B/soul singer (born 1962)",
+   "source_url": "https://en.wikipedia.org/wiki/Glenn_Jones",
+   "extract": "Glenn Jones is an American R&B/soul singer. He is best known for his songs \"Show Me\", \"We've Only Just Begun \" and \"Here I Go Again\", which reached No. 1 on the Billboard R&B charts in 1991/1992, as well as the track \"I've Been Searching \"."
+  }
+ ]
+}

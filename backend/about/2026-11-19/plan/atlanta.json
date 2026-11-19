@@ -1,0 +1,46 @@
+{
+ "city": "atlanta",
+ "day": "2026-11-19",
+ "nights": [
+  {
+   "id": "5d187030-8054-43d4-9eb4-913eade78da8",
+   "slug": "blue-october-foiled-20th-anniversary-world-tour-98bc6b73",
+   "title": "Blue October: Foiled 20th Anniversary World Tour",
+   "act": "Blue October",
+   "name": "Blue October",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Blue_October",
+   "extract": "Blue October is an American rock band originally from Houston, Texas, formed in 1995. It currently consists of singer/guitarist Justin Furstenfeld, drummer Jeremy Furstenfeld, multi-instrumentalist Ryan Delahoussaye, bassist Matt Noveskey, and lead guitarist Will Knaak."
+  },
+  {
+   "id": "5544c1e0-ab83-4feb-95c6-56ee339af3bc",
+   "slug": "blitzkid-modern-hel-tour-2026-847065b7",
+   "title": "Blitzkid: Modern Hel Tour 2026",
+   "act": "Blitzkid",
+   "name": "Blitzkid",
+   "description": "American horror punk band",
+   "source_url": "https://en.wikipedia.org/wiki/Blitzkid",
+   "extract": "Blitzkid is an American horror punk band from Bluefield, West Virginia. One of the leading proponents of the horror punk scene, the band is led by singer/guitarist TB Monstrosity and singer/bassist Argyle Goolsby. Active from 1997 until 2012 and reforming in 2020, Blitzkid released five studio albums, appeared on numerous compilations, and toured both nationally and internationally."
+  },
+  {
+   "id": "998a04a1-b2c0-4e59-be77-4743cfafad3a",
+   "slug": "deante-hitchcock-41c02052",
+   "title": "Deante' Hitchcock",
+   "act": "Deante' Hitchcock",
+   "name": "Deante' Hitchcock",
+   "description": "American rapper",
+   "source_url": "https://en.wikipedia.org/wiki/Deante'_Hitchcock",
+   "extract": "Deante' Van Hitchcock, is an American rapper from Riverdale, Georgia. He initially gained recognition as a rapper following the releases of three mixtapes: 19 Summers (2012), Wishful Thinking (2015) and Good (2016). He received widespread attention on the internet in 2016 after a weekly series of freestyles called New Atlanta Tuesday's. In 2017, he signed to ByStorm and RCA Records. His debut album Better was released on May 13, 2020."
+  },
+  {
+   "id": "c2e203a6-c753-4937-afce-1793184d3ff0",
+   "slug": "trippie-redd-the-non-disclosure-agreement-tour-5f056f29",
+   "title": "Trippie Redd - The Non-disclosure Agreement Tour",
+   "act": "Trippie Redd",
+   "name": "Trippie Redd",
+   "description": "American rapper (born 1999)",
+   "source_url": "https://en.wikipedia.org/wiki/Trippie_Redd",
+   "extract": "Michael Lamar White II, known professionally as Trippie Redd, is an American rapper, singer, and songwriter. Born and raised in Canton, Ohio, he has contributed to the progression of emo rap and rage, a subgenre of trap music."
+  }
+ ]
+}

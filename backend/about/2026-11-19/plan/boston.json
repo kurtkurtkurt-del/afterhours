@@ -1,0 +1,16 @@
+{
+ "city": "boston",
+ "day": "2026-11-19",
+ "nights": [
+  {
+   "id": "72fcf14a-99c6-4df5-88c8-ebed47fa3e81",
+   "slug": "underoath-define-the-great-line-20th-anniversary-f3b9593e",
+   "title": "Underoath - Define the Great Line 20th Anniversary Tour",
+   "act": "Underoath",
+   "name": "Underoath",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Underoath",
+   "extract": "Underoath is an American rock band from Tampa, Florida. It was founded by lead vocalist Dallas Taylor and guitarist Luke Morton in 1997 in Ocala, Florida; subsequently, its additional members were from Tampa, including drummer, singer and last remaining original member Aaron Gillespie. The band's current lineup consists of Gillespie, keyboardist Christopher Dudley, lead guitarist Timothy McTague, bassist Grant Brandell, and lead vocalist Spencer Chamberlain."
+  }
+ ]
+}
