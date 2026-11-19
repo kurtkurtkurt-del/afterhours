@@ -1,0 +1,15 @@
+{
+  "city": "washington",
+  "day": "2026-11-22",
+  "sparks": [
+    {
+      "kind": "cinema",
+      "title": { "en": "jim henson's labyrinth, live band, lincoln theatre.", "de": "jim henson's labyrinth, live-band, lincoln theatre.", "tr": "jim henson's labyrinth, canlı grup, lincoln theatre." },
+      "line": { "en": "the 1986 film with a live band playing the score, 40th anniversary tour. doors 19:00, show 20:00, at 1215 u st nw. tickets needed.", "de": "der film von 1986 mit einer live-band zur musik, tour zum 40. jubiläum. einlass 19:00, beginn 20:00, 1215 u st nw. tickets nötig.", "tr": "1986 filmi, müziğini canlı bir grup çalıyor; 40. yıl turu. kapılar 19:00, başlangıç 20:00, 1215 u st nw. bilet gerekli." },
+      "place": { "en": "lincoln theatre", "de": "lincoln theatre", "tr": "lincoln theatre" },
+      "hour": 20,
+      "minute": 0,
+      "why": "Jim Henson's Labyrinth in Concert at Lincoln Theatre, sun 22 nov, doors 19:00 and show 20:00 (thelincolndc.com event listing, matched by ticket sites)."
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "city": "washington",
+  "day": "2026-11-20",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "enchant christmas opens at nationals park.", "de": "enchant christmas öffnet im nationals park.", "tr": "enchant christmas nationals park'ta açılıyor." },
+      "line": { "en": "opening night of the run, with the new nutcracker light maze. open 16:30 to 22:30 daily until 27 december; come at 17:00, before the crowd.", "de": "eröffnungsabend der saison mit dem neuen nutcracker-lichterlabyrinth. täglich 16:30 bis 22:30 bis 27. dezember; um 17:00 kommen, vor dem andrang.", "tr": "sezonun açılış gecesi, yeni nutcracker ışık labirenti ile. her gün 16:30 ile 22:30 arası, 27 aralığa kadar; kalabalıktan önce 17:00'de gelin." },
+      "place": { "en": "nationals park", "de": "nationals park", "tr": "nationals park" },
+      "hour": 17,
+      "minute": 0,
+      "why": "Enchant Christmas opens 20 nov at Nationals Park, daily 16:30-22:30 to 27 dec, with the new Night of the Nutcracker maze (washington.org event listing; Enchant opening-night announcement via the MLB listing)."
+    }
+  ]
+}

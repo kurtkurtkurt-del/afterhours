@@ -1,0 +1,15 @@
+{
+  "city": "washington",
+  "day": "2026-11-21",
+  "sparks": [
+    {
+      "kind": "football",
+      "title": { "en": "nwsl championship at audi field.", "de": "nwsl-finale im audi field.", "tr": "audi field'da nwsl şampiyonluk maçı." },
+      "line": { "en": "the 2026 nwsl championship at audi field, kickoff 20:00 et, shown on cbs and paramount+. get there before the start to find a seat.", "de": "das nwsl-finale 2026 im audi field, anpfiff 20:00 et, übertragen auf cbs und paramount+. vor dem anpfiff kommen, dann findet sich ein platz.", "tr": "audi field'da 2026 nwsl şampiyonluk maçı, başlama 20:00 et, cbs ve paramount+'ta yayında. yer bulmak için başlamadan önce gelin." },
+      "place": { "en": "audi field", "de": "audi field", "tr": "audi field" },
+      "hour": 20,
+      "minute": 0,
+      "why": "NWSL Championship at Audi Field, sat 21 nov, 8 pm ET, on CBS and Paramount+ (eventsdc.com news release; CBS Sports report)."
+    }
+  ]
+}
