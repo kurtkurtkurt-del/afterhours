@@ -1,0 +1,27 @@
+{
+  "city": "atlanta",
+  "day": "2026-11-25",
+  "sparks": [
+    {
+      "kind": "walk",
+      "title": {
+        "en": "garden lights, after dark at the botanical garden.",
+        "de": "garden lights, nach dunkelheit im botanischen garten.",
+        "tr": "botanik bahçesi'nde karanlıktan sonra garden lights."
+      },
+      "line": {
+        "en": "garden lights, holiday nights runs nightly from five p.m. to midnight through 10 january. walk the paths slowly.",
+        "de": "garden lights, holiday nights läuft täglich von 17 uhr bis mitternacht bis 10. januar. die wege langsam gehen.",
+        "tr": "garden lights, holiday nights her gece 17.00'den gece yarısına kadar, 10 ocak'a dek sürüyor. yolları yavaşça yürü."
+      },
+      "place": {
+        "en": "atlanta botanical garden",
+        "de": "atlanta botanical garden",
+        "tr": "atlanta botanical garden"
+      },
+      "hour": 18,
+      "minute": 0,
+      "why": "Garden Lights, Holiday Nights, nightly 5 p.m.-midnight, 14 Nov 2026 to 10 Jan 2027 (atlantabg.org calendar; Atlanta News First, 12 Nov 2026)."
+    }
+  ]
+}

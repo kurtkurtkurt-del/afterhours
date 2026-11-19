@@ -1,0 +1,27 @@
+{
+  "city": "atlanta",
+  "day": "2026-11-24",
+  "sparks": [
+    {
+      "kind": "football",
+      "title": {
+        "en": "arsenal – dortmund at cosm, 3 p.m.",
+        "de": "arsenal – dortmund im cosm, 15 uhr.",
+        "tr": "cosm'da arsenal – dortmund, saat 15.00."
+      },
+      "line": {
+        "en": "champions league matchday five, watch party 3 to 5 p.m. at cosm. a shared screen experience rather than a pub.",
+        "de": "champions league, spieltag fünf, watch party von 15 bis 17 uhr im cosm. eher ein gemeinsames screen-erlebnis als eine kneipe.",
+        "tr": "şampiyonlar ligi beşinci hafta, cosm'da 15.00 ile 17.00 arası izleme partisi. kafeden çok ortak bir ekran deneyimi."
+      },
+      "place": {
+        "en": "cosm atlanta",
+        "de": "cosm atlanta",
+        "tr": "cosm atlanta"
+      },
+      "hour": 15,
+      "minute": 0,
+      "why": "Champions League Arsenal vs Borussia Dortmund, Tue 24 Nov 2026, 3-5 pm watch party at Cosm Atlanta (discoveratlanta.com event listing)."
+    }
+  ]
+}
