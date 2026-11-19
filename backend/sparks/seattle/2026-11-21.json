@@ -1,0 +1,27 @@
+{
+  "city": "seattle",
+  "day": "2026-11-21",
+  "sparks": [
+    {
+      "kind": "flea",
+      "title": {
+        "en": "renegade craft fair at hangar 30 opens at eleven.",
+        "de": "renegade craft fair in hangar 30 öffnet um elf.",
+        "tr": "hangar 30'da renegade craft fair saat on birde açılıyor."
+      },
+      "line": {
+        "en": "makers and handmade goods under one roof at magnuson park; weekend hours are 11 to 5, so the morning is easy.",
+        "de": "handgemachte waren unter einem dach im magnuson park; wochenendöffnung von 11 bis 17 uhr, gut für den vormittag.",
+        "tr": "magnuson park'ta tek çatı altında el yapımı ürünler; hafta sonu 11 ile 17 arası açık, sabah için uygun."
+      },
+      "place": {
+        "en": "hangar 30, magnuson park",
+        "de": "hangar 30, magnuson park",
+        "tr": "hangar 30, magnuson park"
+      },
+      "hour": 11,
+      "minute": 0,
+      "why": "Renegade Craft Fair at Hangar 30, Magnuson Park, 20-22 Nov 2026 per TheCraftMap and Planomato (weekend hours 11am-5pm)."
+    }
+  ]
+}

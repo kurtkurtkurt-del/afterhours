@@ -1,0 +1,27 @@
+{
+  "city": "seattle",
+  "day": "2026-11-20",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": {
+        "en": "seattle christmas market at seattle center opens today.",
+        "de": "weihnachtsmarkt im seattle center beginnt heute.",
+        "tr": "seattle center'da noel pazarı bugün açılıyor."
+      },
+      "line": {
+        "en": "the market runs through the holidays; timed entry tickets are booked ahead and hours vary by day, so check the site before you go.",
+        "de": "der markt läuft bis weihnachten; zeitfenster-tickets vorab buchen, die öffnungszeiten wechseln je nach tag, also vorher auf der seite prüfen.",
+        "tr": "pazar tatil boyunca açık; zaman dilimli biletleri önceden alın, saatler güne göre değişiyor, gitmeden siteyi kontrol edin."
+      },
+      "place": {
+        "en": "seattle center",
+        "de": "seattle center",
+        "tr": "seattle center"
+      },
+      "hour": 17,
+      "minute": 0,
+      "why": "Seattle Christmas Market at Seattle Center, opening 20 Nov 2026 per VisitSeattle and Seattle Refined; timed tickets per Seeing Washington. The 17:00 start is a suggested evening time, not a published hour."
+    }
+  ]
+}
