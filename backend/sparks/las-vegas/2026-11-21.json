@@ -1,0 +1,19 @@
+{
+  "city": "las-vegas",
+  "day": "2026-11-21",
+  "sparks": [
+    {
+      "kind": "newplace",
+      "title": { "en": "the corner store at the cosmopolitan.", "de": "the corner store im cosmopolitan.", "tr": "cosmopolitan'da the corner store." },
+      "line": {
+        "en": "the new restaurant on the cosmopolitan's third floor, open since 9 november. dinner friday and saturday from 5 pm, until late.",
+        "de": "das neue restaurant im dritten stock des cosmopolitan, seit 9. november offen. abendessen freitag und samstag ab 17 uhr, bis spät.",
+        "tr": "cosmopolitan'ın üçüncü katındaki yeni restoran, 9 kasım'dan beri açık. cuma ve cumartesi akşam yemeği 17:00'den itibaren, geç saatlere kadar."
+      },
+      "place": { "en": "the corner store", "de": "the corner store", "tr": "the corner store" },
+      "hour": 19,
+      "minute": 0,
+      "why": "The Corner Store opened at The Cosmopolitan on 9 Nov 2026, Fri and Sat dinner from 5 pm until late (Mann Report, Haute Living, LA Mag debut coverage)."
+    }
+  ]
+}

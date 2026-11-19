@@ -1,0 +1,19 @@
+{
+  "city": "las-vegas",
+  "day": "2026-11-20",
+  "sparks": [
+    {
+      "kind": "jazz",
+      "title": { "en": "jazz at tap n ash.", "de": "jazz im tap n ash.", "tr": "tap n ash'te caz." },
+      "line": {
+        "en": "the 91.5 jazz and more live broadcast, 8 to 10 pm. free entry, 21 and over.",
+        "de": "91.5 jazz and more, live aus dem tap n ash, 20 bis 22 uhr. eintritt frei, ab 21 jahren.",
+        "tr": "91.5 jazz and more, tap n ash'ten canlı yayın, 20:00 ile 22:00 arası. giriş ücretsiz, 21 yaş ve üzeri."
+      },
+      "place": { "en": "tap n ash", "de": "tap n ash", "tr": "tap n ash" },
+      "hour": 20,
+      "minute": 0,
+      "why": "91.5 Jazz and More live broadcast, Fri 20 Nov 8-10 pm, free, 21+, at Tap N Ash Social Club, 1606 S Commerce St (UNLV events calendar; the series is on KUNV 91.5)."
+    }
+  ]
+}
