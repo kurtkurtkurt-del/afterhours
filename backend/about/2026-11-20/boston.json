@@ -1,0 +1,70 @@
+{
+  "city": "boston",
+  "day": "2026-11-20",
+  "nights": [
+    {
+      "id": "736f8335-9fd8-4783-bb18-585897bb7859",
+      "slug": "sasha-alex-sloan-and-the-crowd-goes-mild-tour-ft-4cea804b",
+      "title": "Sasha Alex Sloan: And The Crowd Goes Mild Tour ft Macy Todd",
+      "name": "Sasha Alex Sloan",
+      "source_url": "https://en.wikipedia.org/wiki/Sasha_Alex_Sloan",
+      "extract": "Alexandra Artourovna Yatchenko, better known as Sasha Alex Sloan or simply Sasha Sloan, is an American singer-songwriter. Sloan performs in the indie pop, alt pop, and the singer-songwriter genres. Her debut studio album, Only Child, was released in October 2020, and was met with critical acclaim by music critics, deeming it as a solid and outspoken debut album. Sloan's second studio album, I Blame the World, was released in May 2022, and after her departure from RCA Records in 2023, she independently released her third studio album, Me Again, in May 2024. In 2026, she released her fourth studio album, And The Crowd Goes Mild.",
+      "en": {
+        "kicker": "american singer-songwriter · debut album 2020",
+        "who": "alexandra artourovna yatchenko, known as sasha alex sloan or sasha sloan, is an american singer-songwriter. her debut studio album, only child, was released in october 2020 and met with critical acclaim.",
+        "facts": [
+          "sloan performs in the indie pop, alt pop and singer-songwriter genres.",
+          "in 2026 she released her fourth studio album, and the crowd goes mild."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische singer-songwriterin · debüt 2020",
+        "who": "alexandra artourovna yatchenko, bekannt als sasha alex sloan oder sasha sloan, ist eine amerikanische singer-songwriterin. ihr debütalbum only child erschien im oktober 2020 und wurde von der kritik gefeiert.",
+        "facts": [
+          "sie bewegt sich im indie-pop, alt-pop und im singer-songwriter-genre.",
+          "2026 veröffentlichte sie ihr viertes studioalbum and the crowd goes mild."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı şarkıcı-söz yazarı · debut albüm 2020",
+        "who": "alexandra artourovna yatchenko, sanat adıyla sasha alex sloan ya da sasha sloan, amerikalı bir şarkıcı ve söz yazarıdır. ilk stüdyo albümü only child ekim 2020'de çıktı ve eleştirmenlerden övgü aldı.",
+        "facts": [
+          "indie pop, alt pop ve singer-songwriter türlerinde üretiyor.",
+          "2026'da dördüncü stüdyo albümü and the crowd goes mild'ı yayımladı."
+        ]
+      }
+    },
+    {
+      "id": "7d181f0a-61cc-4b9d-a556-5fadfa5768db",
+      "slug": "sabaton-legends-on-tour-87509839",
+      "title": "Sabaton: Legends on Tour",
+      "name": "Sabaton",
+      "source_url": "https://en.wikipedia.org/wiki/Sabaton_(band)",
+      "extract": "Sabaton is a Swedish power metal band from Falun, formed in 1999 by lead singer Joakim Brodén, bassist Pär Sundström, guitarists Oskar Montelius and Rikard Sundén, and drummer Richard Larsson. The band has gone through multiple lineup changes with Brodén and Sundström remaining the only consistent members. The vast majority of their songs are about historical events, mainly wars and significant battles. As of 2026, the band has released eleven studio albums, four live albums, five live DVDs and thirty music videos.",
+      "en": {
+        "kicker": "swedish power metal band · falun, 1999",
+        "who": "sabaton is a swedish power metal band from falun, formed in 1999 by lead singer joakim brodén. the vast majority of their songs are about historical events, mainly wars and significant battles.",
+        "facts": [
+          "as of 2026 the band has released eleven studio albums.",
+          "the vast majority of their songs are about historical events."
+        ]
+      },
+      "de": {
+        "kicker": "schwedische power-metal-band · falun, 1999",
+        "who": "sabaton ist eine schwedische power-metal-band aus falun, die 1999 von sänger joakim brodén gegründet wurde. der großteil ihrer songs handelt von historischen ereignissen, vor allem von kriegen und bedeutenden schlachten.",
+        "facts": [
+          "bis 2026 hat die band elf studioalben veröffentlicht.",
+          "der großteil ihrer songs handelt von historischen ereignissen."
+        ]
+      },
+      "tr": {
+        "kicker": "isveçli power metal grubu · falun, 1999",
+        "who": "sabaton, falun'dan bir isveçli power metal grubudur ve 1999'da ön vokali joakim brodén tarafından kuruldu. şarkılarının büyük çoğunluğu tarihi olaylar, başta savaşlar ve önemli muharebeler üzerine.",
+        "facts": [
+          "grup 2026 itibarıyla on bir stüdyo albümü yayımladı.",
+          "şarkılarının büyük çoğunluğu tarihi olaylar hakkında."
+        ]
+      }
+    }
+  ]
+}

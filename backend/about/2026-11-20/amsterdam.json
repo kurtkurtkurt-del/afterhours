@@ -1,0 +1,102 @@
+{
+  "city": "amsterdam",
+  "day": "2026-11-20",
+  "nights": [
+    {
+      "id": "b86e2df4-a7ab-4bbc-9656-a04574961bc9",
+      "slug": "beth-hart-3dd39285",
+      "title": "Beth Hart",
+      "name": "Beth Hart",
+      "source_url": "https://en.wikipedia.org/wiki/Beth_Hart",
+      "extract": "Beth Hart is an American musician from Los Angeles, California. She rose to fame with the release of her 1999 single \"L.A. Song \" from her second album Screamin' for My Supper. The single was a number one hit in New Zealand, as well as reaching the top five of the US Adult Contemporary and Top 10 on the Billboard Adult Top 40 charts.",
+      "en": {
+        "kicker": "american musician · los angeles",
+        "who": "beth hart is an american musician from los angeles, california. she rose to fame with the 1999 single \"l.a. song\", from her second album screamin' for my supper.",
+        "facts": [
+          "the single was a number one hit in new zealand.",
+          "it also reached the top five of the us adult contemporary chart."
+        ]
+      },
+      "de": {
+        "kicker": "musiker aus den usa · los angeles",
+        "who": "beth hart ist eine musikerin aus los angeles, kalifornien. bekannt wurde sie mit der single \"l.a. song\" von 1999, aus ihrem zweiten album screamin' for my supper.",
+        "facts": [
+          "die single war in neuseeland ein nummer-eins-hit.",
+          "sie erreichte außerdem die top fünf der us-adult-contemporary-charts."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı müzisyen · los angeles",
+        "who": "beth hart, los angeles, kaliforniya'dan amerikalı bir müzisyendir. 1999'daki \"l.a. song\" single'ıyla ün kazandı; şarkı ikinci albümü screamin' for my supper'da yer alıyor.",
+        "facts": [
+          "single yeni zelanda'da bir numaralı hit oldu.",
+          "ayrıca us adult contemporary listesinde ilk beşe girdi."
+        ]
+      }
+    },
+    {
+      "id": "0968ec20-22f2-46f0-9300-39847c647678",
+      "slug": "nia-archives-aa13869a",
+      "title": "Nia Archives",
+      "name": "Nia Archives",
+      "source_url": "https://en.wikipedia.org/wiki/Nia_Archives",
+      "extract": "Dehaney Nia Lishahn Hunt, known professionally as Nia Archives, is an English record producer, DJ, singer and songwriter. Born in Bradford in West Yorkshire, she moved to Leeds aged seven, out of the family home aged sixteen, and then to Greater Manchester, during which time she was inspired by jungle documentaries and the women within them.",
+      "en": {
+        "kicker": "english record producer and dj · bradford",
+        "who": "dehaney nia lishahn hunt, known as nia archives, is an english record producer, dj, singer and songwriter. born in bradford, she moved to leeds aged seven and later to greater manchester.",
+        "facts": [
+          "she was born in bradford in west yorkshire.",
+          "she moved to leeds aged seven."
+        ]
+      },
+      "de": {
+        "kicker": "englische produzentin und dj · bradford",
+        "who": "dehaney nia lishahn hunt, bekannt als nia archives, ist eine englische produzentin, dj, sängerin und songwriterin. sie wurde in bradford geboren, zog mit sieben jahren nach leeds und später nach greater manchester.",
+        "facts": [
+          "sie wurde in bradford in west yorkshire geboren.",
+          "mit sieben jahren zog sie nach leeds."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz yapımcı ve dj · bradford",
+        "who": "dehaney nia lishahn hunt, sanat adıyla nia archives, bir ingiliz yapımcı, dj, şarkıcı ve söz yazarıdır. bradford'da doğdu, yedi yaşında leeds'e, sonra greater manchester'a taşındı.",
+        "facts": [
+          "bradford, west yorkshire'da doğdu.",
+          "yedi yaşında leeds'e taşındı."
+        ]
+      }
+    },
+    {
+      "id": "da1133f9-4df7-46bc-b53b-4b269bfbed67",
+      "slug": "beabadoobee-premium-seats-c802d8c4",
+      "title": "Beabadoobee | Premium Seats",
+      "name": "Beabadoobee",
+      "source_url": "https://en.wikipedia.org/wiki/Beabadoobee",
+      "extract": "Beatrice Kristi Ilejay Laus, known professionally as Beabadoobee, is a Filipino and British singer and songwriter. From 2018 to 2021, she released five extended plays (EPs) under the independent label Dirty Hit: Lice (2018), Patched Up (2018), Loveworm (2019), Space Cadet (2019) and Our Extended Play (2021). Her debut studio album Fake It Flowers was released in October 2020, and received critical acclaim. Her second studio album, Beatopia, was released on July 2022, and spawned the hit \"The Perfect Pair\". Her third studio album, This Is How Tomorrow Moves, was released in August 2024; it became her first album to peak atop the UK Albums Chart. In September 2026, her fourth studio album, Pyl",
+      "en": {
+        "kicker": "filipino and british singer · debut album 2020",
+        "who": "beatrice kristi ilejay laus, known as beabadoobee, is a filipino and british singer and songwriter. her debut studio album, fake it flowers, was released in october 2020 and received critical acclaim.",
+        "facts": [
+          "from 2018 to 2021 she released five extended plays under the independent label dirty hit.",
+          "her third studio album became her first to peak atop the uk albums chart."
+        ]
+      },
+      "de": {
+        "kicker": "philippinisch-britische sängerin · debüt 2020",
+        "who": "beatrice kristi ilejay laus, bekannt als beabadoobee, ist eine philippinisch-britische sängerin und songwriterin. ihr debütalbum fake it flowers erschien im oktober 2020 und wurde von der kritik gefeiert.",
+        "facts": [
+          "von 2018 bis 2021 veröffentlichte sie fünf eps beim unabhängigen label dirty hit.",
+          "ihr drittes studioalbum war ihr erstes, das die spitze der britischen albumcharts erreichte."
+        ]
+      },
+      "tr": {
+        "kicker": "filipinli ve britanyalı şarkıcı · debut albüm 2020",
+        "who": "beatrice kristi ilejay laus, sanat adıyla beabadoobee, filipinli ve britanyalı bir şarkıcı ve söz yazarıdır. ilk stüdyo albümü fake it flowers ekim 2020'de çıktı ve eleştirmenlerden övgü aldı.",
+        "facts": [
+          "2018 ile 2021 arasında bağımsız dirty hit etiketiyle beş ep yayımladı.",
+          "üçüncü stüdyo albümü, İngiltere albüm listesinde zirveye çıkan ilk albümü oldu."
+        ]
+      }
+    }
+  ]
+}

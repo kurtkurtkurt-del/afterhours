@@ -1,0 +1,38 @@
+{
+  "city": "birmingham",
+  "day": "2026-11-20",
+  "nights": [
+    {
+      "id": "a2a0c9ee-06b9-4a86-b598-09916acdda81",
+      "slug": "blossoms-47ca879a",
+      "title": "Blossoms",
+      "name": "Blossoms",
+      "source_url": "https://en.wikipedia.org/wiki/Blossoms_(band)",
+      "extract": "Blossoms are an English indie rock band from Stockport, Greater Manchester, England. Formed in 2013, the band consists of Tom Ogden, Charlie Salt, Josh Dewhurst, Joe Donovan (drums) and Myles Kellock.",
+      "en": {
+        "kicker": "english indie rock band · stockport, 2013",
+        "who": "blossoms are an english indie rock band from stockport, greater manchester. formed in 2013, the band consists of tom ogden, charlie salt, josh dewhurst, joe donovan on drums and myles kellock.",
+        "facts": [
+          "the band was formed in 2013.",
+          "the band is from stockport, greater manchester, england."
+        ]
+      },
+      "de": {
+        "kicker": "englische indie-rockband · stockport, 2013",
+        "who": "blossoms sind eine englische indie-rockband aus stockport in greater manchester. die band wurde 2013 gegründet und besteht aus tom ogden, charlie salt, josh dewhurst, joe donovan am schlagzeug und myles kellock.",
+        "facts": [
+          "die band wurde 2013 gegründet.",
+          "sie stammt aus stockport in greater manchester, england."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz indie rock grubu · stockport, 2013",
+        "who": "blossoms, greater manchester'ın stockport kentinden bir ingiliz indie rock grubudur. 2013'te kurulan grup; tom ogden, charlie salt, josh dewhurst, davulda joe donovan ve myles kellock'tan oluşur.",
+        "facts": [
+          "grup 2013'te kuruldu.",
+          "stockport, greater manchester'dan geliyor."
+        ]
+      }
+    }
+  ]
+}

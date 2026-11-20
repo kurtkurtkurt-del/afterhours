@@ -1,0 +1,38 @@
+{
+  "city": "vancouver",
+  "day": "2026-11-20",
+  "nights": [
+    {
+      "id": "fb2f57d7-7288-477a-83c2-8d44dd71ba3c",
+      "slug": "john-craigie-keep-it-warm-tour-2026-64092889",
+      "title": "John Craigie - Keep It Warm Tour 2026",
+      "name": "John Craigie",
+      "source_url": "https://en.wikipedia.org/wiki/John_Craigie_(musician)",
+      "extract": "John Harrold Craigie III is an American singer-songwriter and storyteller. Hailed as a \"Modern-Day Troubadour\" in the style of Woody Guthrie, Craigie's comedic storytelling style has been compared to Mitch Hedberg, while his music and commitment to living on the road has drawn comparisons to Guthrie, Ramblin' Jack Elliott and Pete Seeger.",
+      "en": {
+        "kicker": "american singer-songwriter and storyteller",
+        "who": "john harrold craigie iii is an american singer-songwriter and storyteller. his comedic storytelling style has been compared to mitch hedberg, while his music and commitment to living on the road has drawn comparisons to guthrie, ramblin' jack elliott and pete seeger.",
+        "facts": [
+          "his comedic storytelling style has been compared to mitch hedberg.",
+          "he is hailed as a \"modern-day troubadour\" in the style of woody guthrie."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer singer-songwriter und geschichtenerzähler",
+        "who": "john harrold craigie iii ist ein amerikanischer singer-songwriter und geschichtenerzähler. sein komisches erzählen wurde mit mitch hedberg verglichen, seine musik und sein leben auf der straße mit woody guthrie, ramblin' jack elliott und pete seeger.",
+        "facts": [
+          "sein komischer erzählstil wurde mit mitch hedberg verglichen.",
+          "er wird im stil von woody guthrie als \"modern-day troubadour\" gefeiert."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı şarkıcı-söz yazarı ve hikâye anlatıcısı",
+        "who": "john harrold craigie iii, amerikalı bir şarkıcı, söz yazarı ve hikâye anlatıcısıdır. komik anlatım tarzı mitch hedberg'e benzetilirken, müziği ve sürekli yolda olma tutkusu woody guthrie, ramblin' jack elliott ve pete seeger ile kıyaslandı.",
+        "facts": [
+          "komik anlatım tarzı mitch hedberg'e benzetildi.",
+          "woody guthrie tarzında \"modern-day troubadour\" olarak anılıyor."
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "city": "dallas",
+  "day": "2026-11-20",
+  "nights": [
+    {
+      "id": "4b80d80d-8876-47bc-aedb-0d1d76332ad1",
+      "slug": "deorro-ages-21-1bd87655",
+      "title": "Deorro - Ages 21+",
+      "name": "Deorro",
+      "source_url": "https://en.wikipedia.org/wiki/Deorro",
+      "extract": "Erick Orrosquieta, commonly known by his stage name Deorro, is a Mexican and American DJ and record producer signed to Ultra Records. He formerly used the name TON!C.",
+      "en": {
+        "kicker": "mexican and american dj · ultra records",
+        "who": "erick orrosquieta, commonly known as deorro, is a mexican and american dj and record producer signed to ultra records. he formerly used a different name.",
+        "facts": [
+          "he is signed to ultra records.",
+          "he formerly used a different name."
+        ]
+      },
+      "de": {
+        "kicker": "mexikanisch-amerikanischer dj · ultra records",
+        "who": "erick orrosquieta, bekannt als deorro, ist ein mexikanisch-amerikanischer dj und produzent bei ultra records. früher trat er unter einem anderen namen auf.",
+        "facts": [
+          "er steht bei ultra records unter vertrag.",
+          "früher nannte er sich anders."
+        ]
+      },
+      "tr": {
+        "kicker": "meksikalı-amerikalı dj · ultra records",
+        "who": "erick orrosquieta, bilinen adıyla deorro, ultra records ile çalışan meksikalı-amerikalı bir dj ve yapımcıdır. daha önce farklı bir ad kullanıyordu.",
+        "facts": [
+          "ultra records ile sözleşmelidir.",
+          "daha önce farklı bir adla çalışıyordu."
+        ]
+      }
+    },
+    {
+      "id": "e96aea3c-4d28-4e5d-a9e3-6d8b3be17657",
+      "slug": "trivium-crown-in-the-grave-world-tour-6c113466",
+      "title": "TRIVIUM: CROWN IN THE GRAVE WORLD TOUR",
+      "name": "Trivium",
+      "source_url": "https://en.wikipedia.org/wiki/Trivium_(band)",
+      "extract": "Trivium is an American heavy metal band from Orlando, Florida, formed in 1999. The band's creative core comprises three long-time members; vocalist and guitarist Matt Heafy, guitarist Corey Beaulieu, and bassist Paolo Gregoletto. The band has changed drummers numerous times, with Alex Rüdinger becoming the most recent addition in October 2025.",
+      "en": {
+        "kicker": "american heavy metal band · orlando, 1999",
+        "who": "trivium is an american heavy metal band from orlando, florida, formed in 1999. the band's creative core is vocalist and guitarist matt heafy, guitarist corey beaulieu and bassist paolo gregoletto.",
+        "facts": [
+          "the band has changed drummers numerous times.",
+          "alex rüdinger became its most recent drummer in october 2025."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische heavy-metal-band · orlando, 1999",
+        "who": "trivium ist eine amerikanische heavy-metal-band aus orlando, florida, die 1999 gegründet wurde. den kreativen kern bilden sänger und gitarrist matt heafy, gitarrist corey beaulieu und bassist paolo gregoletto.",
+        "facts": [
+          "die band hat ihre schlagzeuger schon oft gewechselt.",
+          "alex rüdinger kam im oktober 2025 als neuester schlagzeuger hinzu."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı heavy metal grubu · orlando, 1999",
+        "who": "trivium, 1999'da kurulmuş, florida'nın orlando kentinden amerikalı bir heavy metal grubudur. grubun yaratıcı çekirdeğini vokalist ve gitarist matt heafy, gitarist corey beaulieu ve bassist paolo gregoletto oluşturur.",
+        "facts": [
+          "grup davulcularını çok kez değiştirdi.",
+          "alex rüdinger, ekim 2025'te en son katılan davulcu oldu."
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "city": "leipzig",
+  "day": "2026-11-20",
+  "nights": [
+    {
+      "id": "7e9a02b4-e4d2-4eb1-9d15-b606274d8e0c",
+      "slug": "current-swell-0858bc8b",
+      "title": "CURRENT SWELL",
+      "name": "Current Swell",
+      "source_url": "https://en.wikipedia.org/wiki/Current_Swell",
+      "extract": "Current Swell is a Canadian indie rock band from Victoria, British Columbia, Canada. The band has released seven albums; So I Say, Trust Us Now, Protect Your Own, Long Time Ago, Ulysses, When to Talk and When to Listen and Buffalo.",
+      "en": {
+        "kicker": "canadian indie rock band · victoria, british columbia",
+        "who": "current swell is a canadian indie rock band. the band has released seven albums, including so i say, trust us now and buffalo.",
+        "facts": [
+          "the band is from victoria, british columbia, canada.",
+          "the band has released seven albums."
+        ]
+      },
+      "de": {
+        "kicker": "kanadische indie-rockband · victoria, british columbia",
+        "who": "current swell ist eine kanadische indie-rockband. sie haben sieben alben veröffentlicht, darunter so i say, trust us now und buffalo.",
+        "facts": [
+          "die band stammt aus victoria in british columbia, kanada.",
+          "die band hat sieben alben veröffentlicht."
+        ]
+      },
+      "tr": {
+        "kicker": "kanadalı indie rock grubu · victoria, british columbia",
+        "who": "current swell, kanadalı bir indie rock grubudur. grup yedi albüm yayımladı; bunlar arasında so i say, trust us now ve buffalo yer alıyor.",
+        "facts": [
+          "grup kanada'nın victoria, british columbia kentinden.",
+          "grup yedi albüm yayımladı."
+        ]
+      }
+    },
+    {
+      "id": "15eaa333-3dd0-430b-a67b-9df9f458f137",
+      "slug": "the-coronas-germany-tour-2027-90fc3420",
+      "title": "The Coronas - Germany Tour 2027",
+      "name": "The Coronas",
+      "source_url": "https://en.wikipedia.org/wiki/The_Coronas",
+      "extract": "The Coronas are an Irish rock band that originated in Dublin. They release their music by their own independent record label, 3ú Records, and are based between Dublin and London. They have released seven studio albums, Heroes or Ghosts (2007), Tony Was an Ex-Con (2009), Closer to You (2011) The Long Way (2014), Trust The Wire (2017), True Love Waits (2020) Time Stopped (2022) Thoughts and Observations (2024).",
+      "en": {
+        "kicker": "irish rock band · dublin",
+        "who": "the coronas are an irish rock band that originated in dublin. they release their music on their own independent label, 3ú records, and are based between dublin and london.",
+        "facts": [
+          "they release their music on their own label, 3ú records.",
+          "they are based between dublin and london."
+        ]
+      },
+      "de": {
+        "kicker": "irische rockband · dublin",
+        "who": "the coronas sind eine irische rockband aus dublin. sie veröffentlichen ihre musik über das eigene independent-label 3ú records und sind zwischen dublin und london zu hause.",
+        "facts": [
+          "sie veröffentlichen ihre musik über das eigene label 3ú records.",
+          "sie sind zwischen dublin und london ansässig."
+        ]
+      },
+      "tr": {
+        "kicker": "irlandalı rock grubu · dublin",
+        "who": "the coronas, dublin'de ortaya çıkmış bir irlanda rock grubudur. müziklerini kendi bağımsız plak şirketleri 3ú records ile yayımlıyorlar ve dublin ile londra arasında yaşıyorlar.",
+        "facts": [
+          "müziklerini kendi etiketleri 3ú records ile yayımlıyorlar.",
+          "merkezleri dublin ile londra arasındadır."
+        ]
+      }
+    }
+  ]
+}

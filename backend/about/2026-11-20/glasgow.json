@@ -1,0 +1,70 @@
+{
+  "city": "glasgow",
+  "day": "2026-11-20",
+  "nights": [
+    {
+      "id": "6d88e968-87ef-4e00-a137-764ebd0f61d2",
+      "slug": "bleachers-c06ac144",
+      "title": "Bleachers",
+      "name": "Bleachers",
+      "source_url": "https://en.wikipedia.org/wiki/Bleachers_(band)",
+      "extract": "Bleachers is an American rock band from New Jersey, formed in 2013 by musician Jack Antonoff. Antonoff was the only permanent member of the group until 2023, when longtime touring musicians Mikey Freedom Hart, Sean Hutchinson, Evan Smith, Michael Riddleberger, and Zem Audu became official members.",
+      "en": {
+        "kicker": "american rock band · new jersey, 2013",
+        "who": "bleachers is an american rock band from new jersey, formed in 2013 by musician jack antonoff. antonoff was the only permanent member until 2023, when touring musicians became official members.",
+        "facts": [
+          "the band was formed in 2013 by jack antonoff.",
+          "in 2023 five touring musicians became official members."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische rockband · new jersey, 2013",
+        "who": "bleachers ist eine amerikanische rockband aus new jersey, die 2013 vom musiker jack antonoff gegründet wurde. antonoff war bis 2023 das einzige dauerhafte mitglied, dann wurden tourmusiker offizielle mitglieder.",
+        "facts": [
+          "die band wurde 2013 von jack antonoff gegründet.",
+          "2023 wurden fünf tourmusiker offizielle mitglieder."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı rock grubu · new jersey, 2013",
+        "who": "bleachers, new jersey'den bir amerikalı rock grubudur ve 2013'te müzisyen jack antonoff tarafından kuruldu. antonoff 2023'e kadar grubun tek kalıcı üyesiydi; o yıl turnelerde yer alan müzisyenler resmi üye oldu.",
+        "facts": [
+          "grup 2013'te jack antonoff tarafından kuruldu.",
+          "2023'te beş turne müzisyeni resmi üye oldu."
+        ]
+      }
+    },
+    {
+      "id": "e29ea1bd-551e-466f-b58f-12050d1fc6ef",
+      "slug": "ferris-and-sylvester-05dcfccf",
+      "title": "Ferris & Sylvester",
+      "name": "Ferris & Sylvester",
+      "source_url": "https://en.wikipedia.org/wiki/Ferris_%26_Sylvester",
+      "extract": "Ferris & Sylvester are a British folk duo from London. The group consists of Issy Ferris and Archie Sylvester. In 2019, they were named as one of Rolling Stone's Americana artists to watch; their debut album, released in 2022, won \"UK Album of the Year\" at the 2023 UK Americana Awards.",
+      "en": {
+        "kicker": "british folk duo · london",
+        "who": "ferris & sylvester are a british folk duo from london, made up of issy ferris and archie sylvester. their debut album, released in 2022, won \"uk album of the year\" at the 2023 uk americana awards.",
+        "facts": [
+          "in 2019 they were named one of rolling stone's americana artists to watch.",
+          "their debut album won \"uk album of the year\" at the 2023 uk americana awards."
+        ]
+      },
+      "de": {
+        "kicker": "britisches folk-duo · london",
+        "who": "ferris & sylvester sind ein britisches folk-duo aus london, bestehend aus issy ferris und archie sylvester. ihr debütalbum von 2022 gewann bei den uk americana awards 2023 den titel \"uk album of the year\".",
+        "facts": [
+          "2019 wurden sie vom rolling stone zu americana-künstlern erklärt, auf die man achten sollte.",
+          "ihr debütalbum gewann \"uk album of the year\" bei den uk americana awards 2023."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz folk ikilisi · londra",
+        "who": "ferris & sylvester, londra'dan bir ingiliz folk ikilisidir; issy ferris ve archie sylvester'dan oluşur. 2022'de çıkan debut albümleri, 2023 uk americana awards'ta \"uk album of the year\" ödülünü kazandı.",
+        "facts": [
+          "2019'da rolling stone'un izlenmesi gereken americana sanatçıları arasında gösterildiler.",
+          "debut albümleri 2023 uk americana awards'ta \"uk album of the year\" ödülünü kazandı."
+        ]
+      }
+    }
+  ]
+}

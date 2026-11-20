@@ -1,0 +1,38 @@
+{
+  "city": "philadelphia",
+  "day": "2026-11-20",
+  "nights": [
+    {
+      "id": "7234294d-1621-46f0-91bc-d876ffb030bb",
+      "slug": "john-summit-ctrl-escape-arena-tour-702ec2e9",
+      "title": "JOHN SUMMIT - CTRL ESCAPE ARENA TOUR",
+      "name": "John Summit",
+      "source_url": "https://en.wikipedia.org/wiki/John_Summit",
+      "extract": "John Walter Schuster, better known by his stage name John Summit, is an American DJ and record producer, former accountant and current owner of the Experts Only label. His music includes original tracks and remixes, primarily focused in the genre of tech house.",
+      "en": {
+        "kicker": "american dj and producer · tech house",
+        "who": "john walter schuster, known as john summit, is an american dj and record producer, former accountant and current owner of the experts only label. his music includes original tracks and remixes, primarily in the genre of tech house.",
+        "facts": [
+          "he is the owner of the experts only label.",
+          "his music is primarily in the genre of tech house."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer dj und produzent · tech house",
+        "who": "john walter schuster, bekannt als john summit, ist ein amerikanischer dj und musikproduzent, früher buchhalter und heute inhaber des labels experts only. seine musik umfasst eigene tracks und remixe, vor allem im genre tech house.",
+        "facts": [
+          "er ist inhaber des labels experts only.",
+          "seine musik liegt vor allem im genre tech house."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı dj ve yapımcı · tech house",
+        "who": "john walter schuster, sanat adıyla john summit, amerikalı bir dj ve plak yapımcısıdır; eski bir muhasebeci ve experts only etiketinin sahibidir. müziği özgün parçaları ve remixleri kapsar, ağırlıklı olarak tech house türündedir.",
+        "facts": [
+          "experts only etiketinin sahibidir.",
+          "müziği ağırlıklı olarak tech house türündedir."
+        ]
+      }
+    }
+  ]
+}

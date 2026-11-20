@@ -1,0 +1,230 @@
+{
+  "city": "san-francisco",
+  "day": "2026-11-20",
+  "nights": [
+    {
+      "id": "e2d90dc6-d8d1-4a94-a095-fb57582f0c93",
+      "slug": "san-francisco-symphony-youth-orchestra-7f98df73",
+      "title": "San Francisco Symphony Youth Orchestra",
+      "name": "San Francisco Symphony Youth Orchestra",
+      "source_url": "https://en.wikipedia.org/wiki/San_Francisco_Symphony_Youth_Orchestra",
+      "extract": "The San Francisco Symphony Youth Orchestra (SFSYO) is a youth orchestra organized by the San Francisco Symphony. The SFSYO performs an annual concert series and has made several recordings. The orchestra rehearses in Louise M. Davies Symphony Hall and has been directed by Radu Paponiu since the 2024–2025 season.",
+      "en": {
+        "kicker": "youth orchestra · san francisco symphony",
+        "who": "the san francisco symphony youth orchestra (sfsyo) is a youth orchestra organized by the san francisco symphony. it performs an annual concert series and has made several recordings.",
+        "facts": [
+          "the orchestra rehearses in louise m. davies symphony hall.",
+          "it has been directed by radu paponiu since the 2024–2025 season."
+        ]
+      },
+      "de": {
+        "kicker": "jugendorchester · san francisco symphony",
+        "who": "das san francisco symphony youth orchestra (sfsyo) ist ein jugendorchester der san francisco symphony. es gibt jährlich eine konzertreihe und hat mehrere aufnahmen gemacht.",
+        "facts": [
+          "das orchester probt in der louise m. davies symphony hall.",
+          "seit der spielzeit 2024–2025 wird es von radu paponiu geleitet."
+        ]
+      },
+      "tr": {
+        "kicker": "genç orkestra · san francisco symphony",
+        "who": "san francisco symphony youth orchestra (sfsyo), san francisco symphony tarafından organize edilen bir gençlik orkestrasıdır. her yıl bir konser serisi düzenler ve birkaç kayıt yapmıştır.",
+        "facts": [
+          "orkestra louise m. davies symphony hall'da prova yapar.",
+          "2024–2025 sezonundan beri radu paponiu tarafından yönetiliyor."
+        ]
+      }
+    },
+    {
+      "id": "978b6206-ba95-4594-8eb1-c55d28fa1e4e",
+      "slug": "qendresa-932c0dc4",
+      "title": "Qendresa",
+      "name": "Qendresa",
+      "source_url": "https://en.wikipedia.org/wiki/Qendresa",
+      "extract": "Qendresa is a British-Kosovar singer, songwriter, and producer from North West London. She is known for her self-produced electronic soul and personal songwriting. She has released two studio albums: Midnight Request Line (2020) and Londra (2024). She gained mainstream recognition in 2026 through her collaborations with Canadian rapper Drake across his albums Habibti and Maid of Honour.",
+      "en": {
+        "kicker": "british-kosovar singer and producer · london",
+        "who": "qendresa is a british-kosovar singer, songwriter and producer from north west london. she is known for her self-produced electronic soul and personal songwriting.",
+        "facts": [
+          "she has released two studio albums: midnight request line (2020) and londra (2024).",
+          "she gained mainstream recognition in 2026 through her collaborations with drake across his albums habibti and maid of honour."
+        ]
+      },
+      "de": {
+        "kicker": "britisch-kosovarische sängerin und produzentin · london",
+        "who": "qendresa ist eine britisch-kosovarische sängerin, songwriterin und produzentin aus dem nordwesten londons. sie ist bekannt für ihren selbst produzierten elektronischen soul und persönliche songs.",
+        "facts": [
+          "sie hat zwei studioalben veröffentlicht: midnight request line (2020) und londra (2024).",
+          "2026 wurde sie durch die zusammenarbeit mit drake auf habibti und maid of honour bekannt."
+        ]
+      },
+      "tr": {
+        "kicker": "britanyalı-kosovalı şarkıcı ve yapımcı · londra",
+        "who": "qendresa, londra'nın kuzeybatısından britanyalı-kosovalı bir şarkıcı, söz yazarı ve yapımcıdır. kendi prodüksiyonu olan elektronik soul ve kişisel sözleriyle tanınır.",
+        "facts": [
+          "midnight request line (2020) ve londra (2024) adlı iki stüdyo albümü var.",
+          "2026'da drake'in habibti ve maid of honour albümlerindeki işbirlikleriyle geniş kitlelere ulaştı."
+        ]
+      }
+    },
+    {
+      "id": "39c546ba-280b-42ea-8808-94dcac0d5d63",
+      "slug": "boston-manor-201ec05c",
+      "title": "Boston Manor",
+      "name": "Boston Manor",
+      "source_url": "https://en.wikipedia.org/wiki/Boston_Manor_(band)",
+      "extract": "Boston Manor are a British rock band formed in Blackpool, Lancashire, England, in March 2013. They released a first EP, Here/Now, through Never Mend Records on Bandcamp, and in 2014 they signed with Failure By Design Records for their second EP, Driftwood. In 2015 the band signed with Pure Noise Records: with them, they released another EP, Saudade, as well as their full-length albums Be Nothing (2016), Welcome to the Neighbourhood (2018) and Glue (2020). The band's sound blends emo with heavier influences, reminiscent of '90s grunge and early 2000s post-hardcore. The band have been nominated for Best British Breakthrough at Kerrang! Awards in 2018 and Welcome to the Neighbourhood received a",
+      "en": {
+        "kicker": "british rock band · blackpool, 2013",
+        "who": "boston manor are a british rock band formed in blackpool, lancashire, england, in march 2013. the band's sound blends emo with heavier influences, reminiscent of '90s grunge and early 2000s post-hardcore.",
+        "facts": [
+          "in 2015 the band signed with pure noise records.",
+          "their full-length albums include be nothing (2016), welcome to the neighbourhood (2018) and glue (2020)."
+        ]
+      },
+      "de": {
+        "kicker": "britische rockband · blackpool, 2013",
+        "who": "boston manor sind eine britische rockband, die im märz 2013 in blackpool, lancashire, gegründet wurde. ihr sound verbindet emo mit härteren einflüssen, die an grunge der 90er und post-hardcore der frühen 2000er erinnern.",
+        "facts": [
+          "2015 unterschrieb die band bei pure noise records.",
+          "ihre alben umfassen be nothing (2016), welcome to the neighbourhood (2018) und glue (2020)."
+        ]
+      },
+      "tr": {
+        "kicker": "britanyalı rock grubu · blackpool, 2013",
+        "who": "boston manor, mart 2013'te ingiltere'nin lancashire kentindeki blackpool'da kurulmuş britanyalı bir rock grubudur. sound'ları emo'yu 90'ların grunge'ı ve 2000'lerin başındaki post-hardcore'u andıran daha ağır etkilerle harmanlar.",
+        "facts": [
+          "2015'te grup pure noise records ile sözleşme imzaladı.",
+          "uzun çalar albümleri be nothing (2016), welcome to the neighbourhood (2018) ve glue (2020)."
+        ]
+      }
+    },
+    {
+      "id": "b35989c9-9015-4e58-873c-b7f9d4519b52",
+      "slug": "mark-william-lewis-ea33f218",
+      "title": "Mark William Lewis",
+      "name": "Mark William Lewis",
+      "source_url": "https://en.wikipedia.org/wiki/Mark_William_Lewis",
+      "extract": "Mark William Lewis is a British musician and songwriter known for his multi-genre music, blending dream pop, indie rock, jazz, folk and experimental music. He is based in South London and has collaborated with artists like Mike, Nina Cristante, and Sokora Violetov. During his 2025 tour, he played with Samba Jean-Baptiste as his opener.",
+      "en": {
+        "kicker": "british indie musician · south london",
+        "who": "mark william lewis is a british musician and songwriter known for multi-genre music, blending dream pop, indie rock, jazz, folk and experimental music. he is based in south london and has collaborated with artists like mike, nina cristante and sokora violetov.",
+        "facts": [
+          "he is based in south london.",
+          "during his 2025 tour, he played with samba jean-baptiste as his opener."
+        ]
+      },
+      "de": {
+        "kicker": "britischer indie-musiker · süd-london",
+        "who": "mark william lewis ist ein britischer musiker und songwriter, dessen musik dream pop, indie rock, jazz, folk und experimentelle elemente verbindet. er lebt in süd-london und hat mit künstlern wie mike, nina cristante und sokora violetov zusammengearbeitet.",
+        "facts": [
+          "er lebt in süd-london.",
+          "auf seiner tour 2025 trat samba jean-baptiste als vorband auf."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz indie müzisyeni · güney londra",
+        "who": "mark william lewis, dream pop, indie rock, caz, folk ve deneysel müziği harmanlayan çok türlü müziğiyle tanınan britanyalı bir müzisyen ve söz yazarıdır. güney londra'da yaşıyor ve mike, nina cristante ile sokora violetov gibi sanatçılarla çalıştı.",
+        "facts": [
+          "güney londra'da yaşıyor.",
+          "2025 turnesinde samba jean-baptiste açılış sanatçısıydı."
+        ]
+      }
+    },
+    {
+      "id": "9916fcef-9a3b-4c88-b798-f0a5e95e5b8a",
+      "slug": "gary-numan-b3c9c40e",
+      "title": "Gary Numan",
+      "name": "Gary Numan",
+      "source_url": "https://en.wikipedia.org/wiki/Gary_Numan",
+      "extract": "Gary Anthony James Webb, known professionally as Gary Numan, is an English musician. He entered the music industry as frontman of the new wave band Tubeway Army. The band's second and final album, 1979's Replicas, reached No. 1 on the UK Albums Chart, and spawned a UK No. 1 single with \"Are 'Friends' Electric?\". Following the band's split, he released his debut solo album The Pleasure Principle later in 1979, which also reached No. 1 in the UK and produced another UK No. 1 single with \"Cars\". Although his commercial popularity peaked in the late 1970s and early 1980s, he has maintained a strong cult following since then. He has sold over 10 million records.",
+      "en": {
+        "kicker": "english musician · new wave, 1979",
+        "who": "gary anthony james webb, known as gary numan, is an english musician. he entered the music industry as frontman of the new wave band tubeway army, and has maintained a strong cult following since his commercial peak in the late 1970s and early 1980s.",
+        "facts": [
+          "the band's album replicas reached no. 1 on the uk albums chart in 1979.",
+          "his debut solo album the pleasure principle also reached no. 1 in the uk, with the single \"cars\"."
+        ]
+      },
+      "de": {
+        "kicker": "englischer musiker · new wave, 1979",
+        "who": "gary anthony james webb, bekannt als gary numan, ist ein englischer musiker. er stieg als frontmann der new-wave-band tubeway army ein; seine kultanhängerschaft hält bis heute an, auch wenn der kommerzielle höhepunkt in den späten 1970er- und frühen 1980er-jahren lag.",
+        "facts": [
+          "das album replicas der band erreichte 1979 platz eins der uk albums charts.",
+          "sein soloalbum the pleasure principle erreichte ebenfalls platz eins in großbritannien, mit der single \"cars\"."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz müzisyen · new wave, 1979",
+        "who": "gary anthony james webb, sanat adıyla gary numan, bir ingiliz müzisyendir. new wave grubu tubeway army'nin ön vokali olarak müzik kariyerine başladı; ticari zirvesi 1970'lerin sonu ve 1980'lerin başına denk gelse de güçlü bir kült takipçi kitlesini hâlâ koruyor.",
+        "facts": [
+          "grubun replicas albümü 1979'da uk albüm listesinde bir numaraya ulaştı.",
+          "solo albümü the pleasure principle da birleşik krallık'ta bir numaraya ulaştı ve \"cars\" single'ını çıkardı."
+        ]
+      }
+    },
+    {
+      "id": "a8825980-d3de-4bc4-8fba-fa075bf4e360",
+      "slug": "cocorosie-4a6e37fa",
+      "title": "CocoRosie",
+      "name": "CocoRosie",
+      "source_url": "https://en.wikipedia.org/wiki/CocoRosie",
+      "extract": "CocoRosie is an American musical group formed in 2003 by sisters Sierra Rose \"Rosie\" and Bianca Leilani \"Coco\" Casady. The group's music has been described as folktronica, freak folk and \"New Weird America\", and incorporates elements of pop, blues, opera, electronica, and hip hop. The group has released eight studio albums, La Maison de Mon Rêve (2004), Noah's Ark (2005), The Adventures of Ghosthorse and Stillborn (2007), Grey Oceans (2010), Tales of a GrassWidow (2013), Heartache City (2015), Put the Shine On (2020) and Little Death Wishes (2025), and two EPs, Beautiful Boyz (2004) and Coconuts, Plenty of Junk Food (2009). They released their sixth album Heartache City on their own record l",
+      "en": {
+        "kicker": "american musical group · formed 2003",
+        "who": "cocorosie is an american musical group formed in 2003 by sisters sierra rose \"rosie\" and bianca leilani \"coco\" casady. their music has been described as folktronica, freak folk and \"new weird america\".",
+        "facts": [
+          "the group has released eight studio albums.",
+          "the group's music incorporates elements of pop, blues, opera, electronica and hip hop."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische musikgruppe · gegründet 2003",
+        "who": "cocorosie ist eine amerikanische musikgruppe, die 2003 von den schwestern sierra rose \"rosie\" und bianca leilani \"coco\" casady gegründet wurde. ihre musik wird als folktronica, freak folk und \"new weird america\" beschrieben.",
+        "facts": [
+          "die gruppe hat acht studioalben veröffentlicht.",
+          "ihre musik enthält elemente aus pop, blues, oper, elektronik und hip-hop."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı müzik grubu · 2003'te kuruldu",
+        "who": "cocorosie, 2003'te kardeşler sierra rose \"rosie\" ve bianca leilani \"coco\" casady tarafından kurulmuş amerikalı bir müzik grubudur. müzikleri folktronica, freak folk ve \"new weird america\" olarak tanımlanıyor.",
+        "facts": [
+          "grup sekiz stüdyo albümü yayımladı.",
+          "müziği pop, blues, opera, elektronik ve hip hop öğeleri içeriyor."
+        ]
+      }
+    },
+    {
+      "id": "b9028560-6594-4c87-be04-e6e7ac9ca534",
+      "slug": "steve-lacy-oh-yeah-tour-3b730d09",
+      "title": "Steve Lacy: Oh yeah? Tour",
+      "name": "Steve Lacy",
+      "source_url": "https://en.wikipedia.org/wiki/Steve_Lacy",
+      "extract": "Steve Thomas Lacy-Moya is an American singer-songwriter, guitarist and record producer. He gained recognition as the guitarist of the alternative R&B band the Internet, which he joined in 2015. His self-produced debut EP, Steve Lacy's Demo (2017), was met with critical praise and became a sleeper hit. Lacy then guest performed alongside Frank Ocean on Tyler, the Creator's 2017 single \"911 / Mr. Lonely\", which received double platinum certification by the Recording Industry Association of America (RIAA). That year, he also co-wrote songs for artists including Solange Knowles, and Kendrick Lamar on his song \"Pride\".",
+      "en": {
+        "kicker": "american singer-songwriter and guitarist",
+        "who": "steve thomas lacy-moya is an american singer-songwriter, guitarist and record producer. he gained recognition as the guitarist of the alternative r&b band the internet, which he joined in 2015.",
+        "facts": [
+          "his self-produced debut ep, steve lacy's demo (2017), was met with critical praise.",
+          "in 2017 he co-wrote songs for artists including solange knowles and kendrick lamar."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer singer-songwriter und gitarrist",
+        "who": "steve thomas lacy-moya ist ein amerikanischer singer-songwriter, gitarrist und musikproduzent. bekannt wurde er als gitarrist der alternativen r&b-band the internet, der er 2015 beitrat.",
+        "facts": [
+          "sein selbst produziertes debüt-ep steve lacy's demo (2017) erhielt viel lob von der kritik.",
+          "2017 schrieb er songs für künstler wie solange knowles und kendrick lamar mit."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı şarkıcı-söz yazarı ve gitarist",
+        "who": "steve thomas lacy-moya, amerikalı bir şarkıcı, söz yazarı, gitarist ve plak yapımcısıdır. 2015'te katıldığı alternatif r&b grubu the internet'in gitaristi olarak tanındı.",
+        "facts": [
+          "kendi prodüksiyonu olan debut ep'i steve lacy's demo (2017) eleştirmenlerden övgü aldı.",
+          "2017'de solange knowles ve kendrick lamar gibi sanatçılar için şarkılar yazdı."
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "city": "manchester",
+  "day": "2026-11-20",
+  "nights": [
+    {
+      "id": "6385348f-9b61-4873-9385-6f6eb180ae68",
+      "slug": "clara-mann-1b50a690",
+      "title": "Clara Mann",
+      "name": "Clara Mann",
+      "source_url": "https://en.wikipedia.org/wiki/Clara_Mann",
+      "extract": "Clara Mann is a British singer-songwriter. She released her debut album Rift on state51 in March 2025. Her second album, Wishbone was released on 23 October 2026.",
+      "en": {
+        "kicker": "british singer-songwriter · debut album 2025",
+        "who": "clara mann is a british singer-songwriter. she released her debut album rift on state51 in march 2025, and her second album, wishbone, was released on 23 october 2026.",
+        "facts": [
+          "her debut album rift was released on state51 in march 2025.",
+          "her second album, wishbone, was released on 23 october 2026."
+        ]
+      },
+      "de": {
+        "kicker": "britische singer-songwriterin · debüt 2025",
+        "who": "clara mann ist eine britische singer-songwriterin. ihr debütalbum rift erschien im märz 2025 bei state51, ihr zweites album wishbone am 23. oktober 2026.",
+        "facts": [
+          "ihr debütalbum rift erschien im märz 2025 bei state51.",
+          "ihr zweites album wishbone erschien am 23. oktober 2026."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz şarkıcı-söz yazarı · debut albüm 2025",
+        "who": "clara mann, bir ingiliz şarkıcı ve söz yazarıdır. debut albümü rift mart 2025'te state51 etiketiyle çıktı; ikinci albümü wishbone ise 23 ekim 2026'da yayımlandı.",
+        "facts": [
+          "debut albümü rift, mart 2025'te state51 etiketiyle yayımlandı.",
+          "ikinci albümü wishbone, 23 ekim 2026'da yayımlandı."
+        ]
+      }
+    },
+    {
+      "id": "b8c8c075-f0fa-4e9b-8f8e-c31fbbec03fb",
+      "slug": "electric-six-403e203a",
+      "title": "Electric Six",
+      "name": "Electric Six",
+      "source_url": "https://en.wikipedia.org/wiki/Electric_Six",
+      "extract": "Electric Six is an American rock band formed in Detroit in 1996. They are known for combining elements of rock, disco, garage rock, metal, new wave, and punk rock. Since achieving widespread recognition in 2003 with the singles \"Danger! High Voltage\" and \"Gay Bar\", they have released 20 studio albums, two rarities albums, one live album and one live DVD. Each band member is given a unique stage name. The line-up has undergone changes over the years: co-founder, lead vocalist, and primary songwriter Dick Valentine has been the only constant member. The current line-up consists of Valentine, lead guitarist Johnny Na$hinal, keyboardist Tait Nucleus?, rhythm guitarist Herb S. Flavourings, drumme",
+      "en": {
+        "kicker": "american rock band · detroit, 1996",
+        "who": "electric six is an american rock band formed in detroit in 1996. they are known for combining elements of rock, disco, garage rock, metal, new wave and punk rock.",
+        "facts": [
+          "they gained widespread recognition in 2003 with singles including \"gay bar\".",
+          "they have released 20 studio albums."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische rockband · detroit, 1996",
+        "who": "electric six ist eine amerikanische rockband, die 1996 in detroit gegründet wurde. sie verbinden elemente aus rock, disco, garage rock, metal, new wave und punk.",
+        "facts": [
+          "2003 wurden sie mit singles wie \"gay bar\" bekannt.",
+          "sie haben 20 studioalben veröffentlicht."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı rock grubu · detroit, 1996",
+        "who": "electric six, 1996'da detroit'te kurulmuş amerikalı bir rock grubudur. rock, disco, garage rock, metal, new wave ve punk öğelerini birleştirmeleriyle bilinirler.",
+        "facts": [
+          "2003'te \"gay bar\" dahil single'larla geniş çapta tanındılar.",
+          "20 stüdyo albümü yayımladılar."
+        ]
+      }
+    },
+    {
+      "id": "47d47a92-8d06-49bb-a1db-844dc7d75429",
+      "slug": "chuck-strangers-5efa4019",
+      "title": "Chuck Strangers",
+      "name": "Chuck Strangers",
+      "source_url": "https://en.wikipedia.org/wiki/Chuck_Strangers",
+      "extract": "Che Jessamy, known professionally as Chuck Strangers, is an American rapper and record producer who is a member of the Pro Era collective. He first began to gain prominence for his work on Joey Badass' debut mixtape 1999.",
+      "en": {
+        "kicker": "american rapper and producer · pro era",
+        "who": "che jessamy, known as chuck strangers, is an american rapper and record producer and a member of the pro era collective. he first began to gain prominence for his work on joey badass' debut mixtape 1999.",
+        "facts": [
+          "he is a member of the pro era collective and a record producer.",
+          "he first began to gain prominence for his work on joey badass' debut mixtape 1999."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer rapper und produzent · pro era",
+        "who": "che jessamy, bekannt als chuck strangers, ist ein amerikanischer rapper und musikproduzent und mitglied des kollektivs pro era. bekannt wurde er zunächst durch seine arbeit am debütmixtape 1999 von joey badass.",
+        "facts": [
+          "er ist mitglied des kollektivs pro era und musikproduzent.",
+          "zuerst wurde er durch seine arbeit am debütmixtape 1999 von joey badass bekannt."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı rapçi ve yapımcı · pro era",
+        "who": "che jessamy, sanat adıyla chuck strangers, amerikalı bir rapçi ve plak yapımcısı; pro era kolektifinin üyesidir. ilk olarak joey badass'in debut mixtape'i 1999'daki çalışmasıyla öne çıktı.",
+        "facts": [
+          "pro era kolektifinin üyesi ve plak yapımcısıdır.",
+          "ilk olarak joey badass'in debut mixtape'i 1999'daki çalışmalarıyla öne çıktı."
+        ]
+      }
+    },
+    {
+      "id": "ed4c16f4-4314-4b3e-9ada-3a34e4235c43",
+      "slug": "phoebe-bridgers-bbc6530d",
+      "title": "Phoebe Bridgers",
+      "name": "Phoebe Bridgers",
+      "source_url": "https://en.wikipedia.org/wiki/Phoebe_Bridgers",
+      "extract": "Phoebe Lucille Bridgers is an American singer-songwriter, record producer, and actress. Her indie folk music typically centers on acoustic guitar and electronic production, with melancholic lyrical themes. She has won four Grammy Awards.",
+      "en": {
+        "kicker": "american singer-songwriter · indie folk",
+        "who": "phoebe lucille bridgers is an american singer-songwriter, record producer and actress. her indie folk music typically centers on acoustic guitar and electronic production, with melancholic lyrical themes.",
+        "facts": [
+          "she has won four grammy awards.",
+          "her indie folk music typically centers on acoustic guitar and electronic production."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische singer-songwriterin · indie-folk",
+        "who": "phoebe lucille bridgers ist eine amerikanische singer-songwriterin, musikproduzentin und schauspielerin. ihr indie-folk setzt meist auf akustikgitarre und elektronische produktion, mit melancholischen texten.",
+        "facts": [
+          "sie hat vier grammys gewonnen.",
+          "ihre musik setzt meist auf akustikgitarre und elektronische produktion."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı şarkıcı-söz yazarı · indie folk",
+        "who": "phoebe lucille bridgers, amerikalı bir şarkıcı, söz yazarı, plak yapımcısı ve oyuncudur. indie folk müziği genellikle akustik gitar ve elektronik prodüksiyon üzerine kuruludur ve melankolik sözlere sahiptir.",
+        "facts": [
+          "dört grammy ödülü kazandı.",
+          "müziği genellikle akustik gitar ve elektronik prodüksiyon üzerine kuruludur."
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "city": "washington",
+  "day": "2026-11-20",
+  "nights": [
+    {
+      "id": "9200630a-7371-42b0-83de-c4aaa67410e2",
+      "slug": "victoria-monet-frequency-of-love-tour-864ae532",
+      "title": "Victoria Monét: Frequency Of Love Tour",
+      "name": "Victoria Monét",
+      "source_url": "https://en.wikipedia.org/wiki/Victoria_Mon%C3%A9t",
+      "extract": "Victoria Monét McCants is an American singer-songwriter. First gaining recognition for her songwriting work, Monét pursued a recording career with the release of a series of extended plays (EPs); her fifth, Jaguar (2020) was met with critical acclaim. Her debut studio album, Jaguar II (2023), became her commercial breakthrough and was supported by the hit single \"On My Mama\", which peaked within the top 40 of the Billboard Hot 100 and earned a Grammy Award nomination for Record of the Year. The nomination was among seven she received at the 66th Annual Grammy Awards, from which she won Best New Artist, Best R&B Album and Best Engineered Album, Non-Classical.",
+      "en": {
+        "kicker": "american singer-songwriter · jaguar ii, 2023",
+        "who": "victoria monét mccants is an american singer-songwriter. her debut studio album, jaguar ii (2023), became her commercial breakthrough and was supported by the hit single \"on my mama\".",
+        "facts": [
+          "at the 66th annual grammy awards she won best new artist, best r&b album and best engineered album, non-classical.",
+          "her single \"on my mama\" peaked within the top 40 of the billboard hot 100."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische singer-songwriterin · jaguar ii, 2023",
+        "who": "victoria monét mccants ist eine amerikanische singer-songwriterin. ihr debütalbum jaguar ii (2023) wurde ihr kommerzieller durchbruch, unterstützt von der hit-single \"on my mama\".",
+        "facts": [
+          "bei den 66. grammy awards gewann sie best new artist, best r&b album und best engineered album, non-classical.",
+          "ihre single \"on my mama\" erreichte die top 40 der billboard hot 100."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı şarkıcı-söz yazarı · jaguar ii, 2023",
+        "who": "victoria monét mccants, amerikalı bir şarkıcı ve söz yazarıdır. ilk stüdyo albümü jaguar ii (2023) ticari çıkışını sağladı; albümü \"on my mama\" single'ı destekledi.",
+        "facts": [
+          "66. grammy ödüllerinde best new artist, best r&b album ve best engineered album, non-classical ödüllerini kazandı.",
+          "\"on my mama\" single'ı billboard hot 100'ün ilk 40'ında yer aldı."
+        ]
+      }
+    }
+  ]
+}

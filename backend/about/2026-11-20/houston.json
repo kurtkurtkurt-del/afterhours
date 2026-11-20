@@ -1,0 +1,38 @@
+{
+  "city": "houston",
+  "day": "2026-11-20",
+  "nights": [
+    {
+      "id": "14d821b0-ff74-48fa-9f75-43ddc0e9c49a",
+      "slug": "project-pat-726e4ed7",
+      "title": "Project Pat",
+      "name": "Project Pat",
+      "source_url": "https://en.wikipedia.org/wiki/Project_Pat",
+      "extract": "Patrick Earl Houston, known professionally as Project Pat, is an American rapper from Memphis, Tennessee. He is the older brother of Juicy J, the co-founder of Three 6 Mafia.",
+      "en": {
+        "kicker": "american rapper from memphis, tennessee",
+        "who": "patrick earl houston, known as project pat, is an american rapper from memphis, tennessee. he is the older brother of juicy j, the co-founder of three 6 mafia.",
+        "facts": [
+          "he is the older brother of juicy j.",
+          "juicy j is the co-founder of three 6 mafia."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer rapper aus memphis, tennessee",
+        "who": "patrick earl houston, bekannt als project pat, ist ein amerikanischer rapper aus memphis, tennessee. er ist der ältere bruder von juicy j, dem mitgründer von three 6 mafia.",
+        "facts": [
+          "er ist der ältere bruder von juicy j.",
+          "juicy j ist mitgründer von three 6 mafia."
+        ]
+      },
+      "tr": {
+        "kicker": "memphis, tennessee'li amerikalı rapçi",
+        "who": "patrick earl houston, sanat adıyla project pat, memphis, tennessee'den amerikalı bir rapçidir. three 6 mafia'nın kurucu ortağı juicy j'nin büyük kardeşidir.",
+        "facts": [
+          "juicy j'nin büyük kardeşidir.",
+          "juicy j, three 6 mafia'nın kurucu ortağıdır."
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "city": "los-angeles",
+  "day": "2026-11-20",
+  "nights": [
+    {
+      "id": "2a54a323-95de-4b89-9a05-62a9d25708ac",
+      "slug": "hurricane-wisdom-037f4588",
+      "title": "Hurricane Wisdom",
+      "name": "Hurricane Wisdom",
+      "source_url": "https://en.wikipedia.org/wiki/Hurricane_Wisdom",
+      "extract": "Wisdom Mikeal Oluola, known professionally as Hurricane Wisdom, is an American rapper, singer-songwriter, and social media personality. Born in Tallahassee, Florida, and growing up in Havana, Florida, Oluola started his music career in 2018 or 2019, although he started taking the career seriously in 2020, with his debut single being \"Granny's Baby\".",
+      "en": {
+        "kicker": "american rapper and singer-songwriter · florida",
+        "who": "wisdom mikeal oluola, known as hurricane wisdom, is an american rapper, singer-songwriter and social media personality. born in tallahassee, florida, he grew up in havana, florida.",
+        "facts": [
+          "he was born in tallahassee, florida.",
+          "his debut single was \"granny's baby\"."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer rapper und singer-songwriter · florida",
+        "who": "wisdom mikeal oluola, bekannt als hurricane wisdom, ist ein amerikanischer rapper, singer-songwriter und social-media-persönlichkeit. er wurde in tallahassee, florida, geboren und wuchs in havana, florida, auf.",
+        "facts": [
+          "er wurde in tallahassee, florida, geboren.",
+          "seine debütsingle war \"granny's baby\"."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı rapçi ve şarkıcı-söz yazarı · florida",
+        "who": "wisdom mikeal oluola, sanat adıyla hurricane wisdom, amerikalı bir rapçi, şarkıcı, söz yazarı ve sosyal medya fenomenidir. florida'nın tallahassee kentinde doğdu ve havana, florida'da büyüdü.",
+        "facts": [
+          "tallahassee, florida'da doğdu.",
+          "debut single'ı \"granny's baby\" oldu."
+        ]
+      }
+    }
+  ]
+}

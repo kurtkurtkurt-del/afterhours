@@ -1,0 +1,38 @@
+{
+  "city": "toronto",
+  "day": "2026-11-20",
+  "nights": [
+    {
+      "id": "d3b937ee-b6ed-4313-9cd1-551d75938d32",
+      "slug": "giant-rooks-ada71d75",
+      "title": "Giant Rooks",
+      "name": "Giant Rooks",
+      "source_url": "https://en.wikipedia.org/wiki/Giant_Rooks",
+      "extract": "Giant Rooks are a German indie rock band from Hamm, Germany founded in 2014. They are best known for their EP Wild Stare, their album How Have You Been? and their top-100 charting cover of \"Tom's Diner\" by Suzanne Vega.",
+      "en": {
+        "kicker": "german indie rock band · hamm, 2014",
+        "who": "giant rooks are a german indie rock band from hamm, germany, founded in 2014. they are best known for their ep wild stare, their album how have you been? and a top-100 charting cover of \"tom's diner\" by suzanne vega.",
+        "facts": [
+          "they are best known for the ep wild stare.",
+          "their cover of \"tom's diner\" by suzanne vega charted in the top 100."
+        ]
+      },
+      "de": {
+        "kicker": "deutsche indie-rockband · hamm, 2014",
+        "who": "giant rooks sind eine deutsche indie-rockband aus hamm, gegründet 2014. bekannt sind sie vor allem für die ep wild stare, das album how have you been? und ein cover von \"tom's diner\" von suzanne vega, das in den top 100 landete.",
+        "facts": [
+          "bekannt sind sie vor allem für die ep wild stare.",
+          "ihr cover von \"tom's diner\" von suzanne vega erreichte die top 100."
+        ]
+      },
+      "tr": {
+        "kicker": "alman indie rock grubu · hamm, 2014",
+        "who": "giant rooks, almanya'nın hamm kentinden 2014'te kurulmuş bir alman indie rock grubudur. en çok wild stare ep'si, how have you been? albümü ve suzanne vega'nın \"tom's diner\" cover'ı ile tanınırlar; bu cover top 100 listesine girdi.",
+        "facts": [
+          "en çok wild stare ep'siyle tanınırlar.",
+          "suzanne vega'nın \"tom's diner\" cover'ı top 100 listesine girdi."
+        ]
+      }
+    }
+  ]
+}

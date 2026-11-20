@@ -1,0 +1,38 @@
+{
+  "city": "denver",
+  "day": "2026-11-20",
+  "nights": [
+    {
+      "id": "bc4743b1-c90b-402b-82ab-e6b6a4280cf1",
+      "slug": "josh-baker-ages-16-9084c7a8",
+      "title": "Josh Baker - Ages 16+",
+      "name": "Josh Baker",
+      "source_url": "https://en.wikipedia.org/wiki/Josh_Baker_(musician)",
+      "extract": "Josh Baker is a British musician, DJ and record producer from Manchester, England. In 2024, he was named Breakthrough Producer at the DJ Mag Best of British awards, and several of his singles have charted on the UK Singles Chart. He is a co-founder of the record label and events series You&Me and of the Hide & Seek festival, and the founder of the electronic music-production education platform Syntho.",
+      "en": {
+        "kicker": "british dj and producer · manchester",
+        "who": "josh baker is a british musician, dj and record producer from manchester, england. he co-founded the record label and events series you&me and the hide & seek festival.",
+        "facts": [
+          "in 2024 he was named breakthrough producer at the dj mag best of british awards.",
+          "he is the founder of the electronic music-production education platform syntho."
+        ]
+      },
+      "de": {
+        "kicker": "britischer dj und produzent · manchester",
+        "who": "josh baker ist ein britischer musiker, dj und musikproduzent aus manchester, england. er ist mitgründer des labels und der veranstaltungsreihe you&me sowie des festivals hide & seek.",
+        "facts": [
+          "2024 wurde er bei den dj mag best of british awards als breakthrough producer ausgezeichnet.",
+          "er gründete die plattform syntho für elektronische musikproduktion."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz dj ve yapımcı · manchester",
+        "who": "josh baker, ingiltere'nin manchester kentinden bir ingiliz müzisyen, dj ve plak yapımcısıdır. you&me etiketinin ve etkinlik serisinin, ayrıca hide & seek festivalinin kurucu ortağıdır.",
+        "facts": [
+          "2024'te dj mag best of british ödüllerinde breakthrough producer seçildi.",
+          "elektronik müzik prodüksiyonu eğitim platformu syntho'nun kurucusudur."
+        ]
+      }
+    }
+  ]
+}

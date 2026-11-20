@@ -1,0 +1,166 @@
+{
+  "city": "nashville",
+  "day": "2026-11-20",
+  "nights": [
+    {
+      "id": "91d855ca-434f-497f-ab24-eaa5f89e93f8",
+      "slug": "night-ranger-7918b0b5",
+      "title": "Night Ranger",
+      "name": "Night Ranger",
+      "source_url": "https://en.wikipedia.org/wiki/Night_Ranger",
+      "extract": "Night Ranger is an American hard rock band from San Francisco, California. The band was incorporated in 1982 after three years of lineup and name changes, and experienced a surge of popularity during the 1980s with the release of several successful albums and hit singles. Guitarist Brad Gillis and drummer Kelly Keagy have been the band's only constant members, though bassist Jack Blades performed on all but one of their albums. Other current members of the band include guitarist Keri Kelli and keyboardist Eric Levy.",
+      "en": {
+        "kicker": "american hard rock band · san francisco",
+        "who": "night ranger is an american hard rock band from san francisco, california. guitarist brad gillis and drummer kelly keagy have been the only constant members, and bassist jack blades played on all but one of their albums.",
+        "facts": [
+          "the band was incorporated in 1982.",
+          "guitarist brad gillis and drummer kelly keagy have been the only constant members."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische hard-rock-band · san francisco",
+        "who": "night ranger ist eine amerikanische hard-rock-band aus san francisco, kalifornien. gitarrist brad gillis und schlagzeuger kelly keagy sind die einzigen konstanten mitglieder, und bassist jack blades spielte auf allen alben außer einem mit.",
+        "facts": [
+          "die band wurde 1982 gegründet.",
+          "gitarrist brad gillis und schlagzeuger kelly keagy sind die einzigen konstanten mitglieder."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı hard rock grubu · san francisco",
+        "who": "night ranger, san francisco, kaliforniya'dan amerikalı bir hard rock grubudur. gitarist brad gillis ve davulcu kelly keagy grubun tek sabit üyeleri; bassist jack blades ise albümlerin biri hariç hepsinde yer aldı.",
+        "facts": [
+          "grup 1982'de kuruldu.",
+          "gitarist brad gillis ve davulcu kelly keagy, grubun tek sabit üyeleri."
+        ]
+      }
+    },
+    {
+      "id": "d93ebd9f-dfbc-4e21-8d67-81f847d451f2",
+      "slug": "black-stone-cherry-ages-18-e4e9ce31",
+      "title": "Black Stone Cherry - Ages 18+",
+      "name": "Black Stone Cherry",
+      "source_url": "https://en.wikipedia.org/wiki/Black_Stone_Cherry",
+      "extract": "Black Stone Cherry is an American hard rock band formed in Edmonton, Kentucky in 2001. They were signed to Roadrunner Records until 2015; the band is now signed to Mascot Label Group. The band consists of Chris Robertson, Ben Wells (guitar), Steve Jewell (bass) and John Fred Young (drums). Black Stone Cherry has released eight studio albums as well as three EPs and have charted seventeen singles on the US Mainstream Rock Tracks charts. Their latest album, Screamin' at the Sky, was released in 2023.",
+      "en": {
+        "kicker": "american hard rock band · kentucky, 2001",
+        "who": "black stone cherry is an american hard rock band formed in edmonton, kentucky, in 2001. the band is now signed to mascot label group, after being signed to roadrunner records until 2015.",
+        "facts": [
+          "the band has released eight studio albums.",
+          "their latest album, screamin' at the sky, was released in 2023."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische hard-rock-band · kentucky, 2001",
+        "who": "black stone cherry ist eine amerikanische hard-rock-band, die 2001 in edmonton, kentucky, gegründet wurde. bis 2015 stand die band bei roadrunner records unter vertrag, heute ist sie bei mascot label group.",
+        "facts": [
+          "die band hat acht studioalben veröffentlicht.",
+          "ihr neuestes album screamin' at the sky erschien 2023."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı hard rock grubu · kentucky, 2001",
+        "who": "black stone cherry, 2001'de kentucky'nin edmonton kentinde kurulmuş amerikalı bir hard rock grubudur. grup 2015'e kadar roadrunner records ile çalıştı, şimdi mascot label group ile sözleşmeli.",
+        "facts": [
+          "grup sekiz stüdyo albümü yayımladı.",
+          "en son albümü screamin' at the sky 2023'te çıktı."
+        ]
+      }
+    },
+    {
+      "id": "b48b675f-a21b-443c-9775-b909072d98e3",
+      "slug": "jonah-kagen-59e95a88",
+      "title": "Jonah Kagen",
+      "name": "Jonah Kagen",
+      "source_url": "https://en.wikipedia.org/wiki/Jonah_Kagen",
+      "extract": "Jonah Kagen is an American singer, songwriter, and multi-instrumentalist from Savannah, Georgia. His single \"God Needs the Devil\" topped the Billboard Alternative Airplay chart in May 2025. Later in 2025, he released his second album, Sunflowers and Leather, which was written while traveling the United States with an Airstream trailer.",
+      "en": {
+        "kicker": "american singer-songwriter · savannah, georgia",
+        "who": "jonah kagen is an american singer, songwriter and multi-instrumentalist from savannah, georgia. his single \"god needs the devil\" topped the billboard alternative airplay chart in may 2025.",
+        "facts": [
+          "his second album, sunflowers and leather, was released in 2025.",
+          "sunflowers and leather was written while traveling the united states with an airstream trailer."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer singer-songwriter · savannah, georgia",
+        "who": "jonah kagen ist ein amerikanischer sänger, songwriter und multiinstrumentalist aus savannah, georgia. seine single \"god needs the devil\" stand im mai 2025 an der spitze der billboard alternative airplay charts.",
+        "facts": [
+          "sein zweites album sunflowers and leather erschien 2025.",
+          "das album entstand auf reisen durch die usa in einem airstream-wohnwagen."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı şarkıcı-söz yazarı · savannah, georgia",
+        "who": "jonah kagen, savannah, georgia'dan amerikalı bir şarkıcı, söz yazarı ve çok enstrümanlı bir müzisyendir. \"god needs the devil\" single'ı mayıs 2025'te billboard alternative airplay listesinde zirveye çıktı.",
+        "facts": [
+          "ikinci albümü sunflowers and leather 2025'te çıktı.",
+          "albüm, bir airstream karavanıyla amerika birleşik devletleri'ni gezerken yazıldı."
+        ]
+      }
+    },
+    {
+      "id": "9e0edb4b-6c36-49bc-829b-6ddf4f7f604f",
+      "slug": "olivia-rodrigo-the-unraveled-tour-23089d67",
+      "title": "Olivia Rodrigo: The Unraveled Tour",
+      "name": "Olivia Rodrigo",
+      "source_url": "https://en.wikipedia.org/wiki/Olivia_Rodrigo",
+      "extract": "Olivia Isabel Rodrigo is an American singer-songwriter and actress. Rodrigo began her career as a child actress, appearing in commercials and the direct-to-video film An American Girl: Grace Stirs Up Success (2015). She rose to prominence with her leading roles in the Disney Channel series Bizaardvark (2016–2019) and the Disney+ series High School Musical: The Musical: The Series (2019–2022).",
+      "en": {
+        "kicker": "american singer-songwriter and actress",
+        "who": "olivia isabel rodrigo is an american singer-songwriter and actress. she began as a child actress and rose to prominence with leading roles in the disney channel series bizaardvark and the disney+ series high school musical: the musical: the series.",
+        "facts": [
+          "she appeared in the direct-to-video film an american girl: grace stirs up success in 2015.",
+          "she starred in bizaardvark from 2016 to 2019."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische singer-songwriterin und schauspielerin",
+        "who": "olivia isabel rodrigo ist eine amerikanische singer-songwriterin und schauspielerin. sie begann als kinderdarstellerin und wurde durch hauptrollen in der disney-channel-serie bizaardvark und der disney+-serie high school musical: the musical: the series bekannt.",
+        "facts": [
+          "2015 spielte sie im direkt-auf-video-film an american girl: grace stirs up success mit.",
+          "von 2016 bis 2019 spielte sie in bizaardvark mit."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı şarkıcı-söz yazarı ve oyuncu",
+        "who": "olivia isabel rodrigo, amerikalı bir şarkıcı, söz yazarı ve oyuncudur. çocuk oyuncu olarak başladı; disney channel dizisi bizaardvark ve disney+ dizisi high school musical: the musical: the series'deki başrollerle öne çıktı.",
+        "facts": [
+          "2015'te doğrudan video filmi an american girl: grace stirs up success'te rol aldı.",
+          "2016'dan 2019'a kadar bizaardvark'ta oynadı."
+        ]
+      }
+    },
+    {
+      "id": "865bc856-6e61-4329-89bd-e32c622488d9",
+      "slug": "the-time-jumpers-c5659cc0",
+      "title": "THE TIME JUMPERS",
+      "name": "The Time Jumpers",
+      "source_url": "https://en.wikipedia.org/wiki/The_Time_Jumpers",
+      "extract": "The Time Jumpers is a Western swing band formed in 1998 by a group of Nashville studio musicians who enjoyed jamming together. Country star Vince Gill was a member of the group between 2010 and 2020. The 11–member group started playing occasional local gigs until they agreed to take a regular slot playing at the Station Inn, a venerable Nashville bluegrass venue. They later moved to a larger venue, Nashville's \"3rd & Lindsley\", and were called by Tennessean writer Juli Thanki, \"One of the hottest shows in town\". Some of their guest artists on the weekly live show have included Joe Walsh, Robert Plant, Norah Jones, Bonnie Raitt, Reba McEntire, Jimmy Buffett, Kings of Leon, and Toby Keith. Amy",
+      "en": {
+        "kicker": "western swing band · nashville, 1998",
+        "who": "the time jumpers are a western swing band formed in 1998 by a group of nashville studio musicians who enjoyed jamming together. country star vince gill was a member between 2010 and 2020.",
+        "facts": [
+          "they agreed to take a regular slot playing at the station inn, a nashville bluegrass venue.",
+          "they later moved to nashville's \"3rd & lindsley\"."
+        ]
+      },
+      "de": {
+        "kicker": "western-swing-band · nashville, 1998",
+        "who": "the time jumpers sind eine western-swing-band, die 1998 von nashviller studiomusikern gegründet wurde, die gerne zusammen jammten. country-star vince gill war zwischen 2010 und 2020 mitglied.",
+        "facts": [
+          "sie traten regelmäßig im station inn auf, einem traditionsreichen bluegrass-club in nashville.",
+          "später zogen sie in den größeren club \"3rd & lindsley\" in nashville."
+        ]
+      },
+      "tr": {
+        "kicker": "western swing grubu · nashville, 1998",
+        "who": "the time jumpers, birlikte müzik yapmaktan hoşlanan nashville stüdyo müzisyenleri tarafından 1998'de kurulmuş bir western swing grubudur. country yıldızı vince gill 2010 ile 2020 arasında grubun üyesiydi.",
+        "facts": [
+          "nashville'in bluegrass mekânı station inn'de düzenli bir yer almaya başladılar.",
+          "daha sonra nashville'in daha büyük mekânı \"3rd & lindsley\"e taşındılar."
+        ]
+      }
+    }
+  ]
+}

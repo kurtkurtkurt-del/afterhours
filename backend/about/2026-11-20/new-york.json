@@ -1,0 +1,70 @@
+{
+  "city": "new-york",
+  "day": "2026-11-20",
+  "nights": [
+    {
+      "id": "5cc6f2ae-0f88-4231-a79b-3f4326071112",
+      "slug": "buena-vista-social-club-47efbe46",
+      "title": "Buena Vista Social Club",
+      "name": "Buena Vista Social Club",
+      "source_url": "https://en.wikipedia.org/wiki/Buena_Vista_Social_Club",
+      "extract": "Buena Vista Social Club was a musical ensemble primarily made up of Cuban musicians, formed in 1996. The project was organized by World Circuit executive Nick Gold, produced by American guitarist Ry Cooder and directed by Juan de Marcos González. They named the group after the members' club of the same name in the Buenavista quarter of Havana, a popular music venue in the 1940s. To showcase the popular styles of the time, such as son, bolero and danzón, they recruited a dozen veteran musicians, some of whom had been retired for many years.",
+      "en": {
+        "kicker": "cuban musical ensemble · 1996",
+        "who": "buena vista social club was a musical ensemble made up primarily of cuban musicians, formed in 1996. the project was organized by world circuit executive nick gold and produced by american guitarist ry cooder.",
+        "facts": [
+          "they named the group after a club in the buenavista quarter of havana.",
+          "they recruited a dozen veteran musicians to showcase styles such as son, bolero and danzón."
+        ]
+      },
+      "de": {
+        "kicker": "kubanisches musikensemble · 1996",
+        "who": "buena vista social club war ein musikensemble, das überwiegend aus kubanischen musikern bestand und 1996 gegründet wurde. das projekt wurde von world-circuit-geschäftsführer nick gold organisiert und vom amerikanischen gitarristen ry cooder produziert.",
+        "facts": [
+          "die gruppe ist nach einem club im havannaer viertel buenavista benannt.",
+          "für die musik im stil von son, bolero und danzón holten sie ein dutzend erfahrener musiker."
+        ]
+      },
+      "tr": {
+        "kicker": "küba müzik topluluğu · 1996",
+        "who": "buena vista social club, ağırlıklı olarak küba'lı müzisyenlerden oluşan ve 1996'da kurulmuş bir müzik topluluğuydu. proje world circuit yöneticisi nick gold tarafından organize edildi ve amerikalı gitarist ry cooder tarafından prodüksiyonu yapıldı.",
+        "facts": [
+          "grubun adı, havana'nın buenavista semtindeki bir kulüpten geliyor.",
+          "son, bolero ve danzón gibi tarzları sergilemek için on iki deneyimli müzisyeni bir araya getirdiler."
+        ]
+      }
+    },
+    {
+      "id": "23233099-b230-4a26-a7c8-372fe9dcd1b4",
+      "slug": "pouya-the-forever-glades-tour-08cc14e3",
+      "title": "Pouya: The Forever Glades Tour",
+      "name": "Pouya",
+      "source_url": "https://en.wikipedia.org/wiki/Pouya",
+      "extract": "Kevin Pouya, known mononymously as Pouya, is an American rapper. Considered as a pioneer of the underground rap scene that began on SoundCloud in 2012, along with discovering the well known hip-hop duo Suicideboys in their early career, Pouya has developed a long-lasting core fanbase as an independent artist.",
+      "en": {
+        "kicker": "american rapper · soundcloud underground",
+        "who": "kevin pouya, known mononymously as pouya, is an american rapper. he is considered a pioneer of the underground rap scene that began on soundcloud in 2012.",
+        "facts": [
+          "he discovered the hip-hop duo suicideboys in their early career.",
+          "he has developed a long-lasting core fanbase as an independent artist."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer rapper · soundcloud-untergrund",
+        "who": "kevin pouya, mononym als pouya bekannt, ist ein amerikanischer rapper. er gilt als pionier der underground-rap-szene, die 2012 auf soundcloud begann.",
+        "facts": [
+          "er entdeckte das hip-hop-duo suicideboys in deren früher karriere.",
+          "als unabhängiger künstler hat er eine langlebige stammfanbase aufgebaut."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı rapçi · soundcloud yeraltı sahnesi",
+        "who": "kevin pouya, tek adıyla pouya, amerikalı bir rapçidir. 2012'de soundcloud'da başlayan yeraltı rap sahnesinin öncülerinden biri olarak görülür.",
+        "facts": [
+          "hip-hop ikilisi suicideboys'u erken kariyerlerinde keşfetti.",
+          "bağımsız bir sanatçı olarak uzun süreli bir çekirdek hayran kitlesi oluşturdu."
+        ]
+      }
+    }
+  ]
+}

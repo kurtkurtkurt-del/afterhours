@@ -1,0 +1,38 @@
+{
+  "city": "las-vegas",
+  "day": "2026-11-20",
+  "nights": [
+    {
+      "id": "945ccf7f-dc79-41ce-ad5d-4ae5afde22e5",
+      "slug": "human-nature-back-to-the-sound-of-motown-646ba11a",
+      "title": "Human Nature: Back To The Sound Of Motown",
+      "name": "Human Nature",
+      "source_url": "https://en.wikipedia.org/wiki/Human_Nature_(band)",
+      "extract": "Human Nature are an Australian pop vocal group which formed in 1989. They are a quartet featuring Toby Allen, Phil Burton and brothers, Andrew and Mike Tierney. Originally they were established as a doo-wop group called the 4 Trax, when the members were schoolmates.",
+      "en": {
+        "kicker": "australian pop vocal group · 1989",
+        "who": "human nature are an australian pop vocal group formed in 1989. they are a quartet featuring toby allen, phil burton and brothers andrew and mike tierney.",
+        "facts": [
+          "originally they were established as a doo-wop group called the 4 trax.",
+          "the members were schoolmates."
+        ]
+      },
+      "de": {
+        "kicker": "australische pop-vokalgruppe · 1989",
+        "who": "human nature sind eine australische pop-vokalgruppe, die 1989 gegründet wurde. das quartett besteht aus toby allen, phil burton und den brüdern andrew und mike tierney.",
+        "facts": [
+          "ursprünglich waren sie eine doo-wop-gruppe namens the 4 trax.",
+          "die mitglieder waren schulkameraden."
+        ]
+      },
+      "tr": {
+        "kicker": "avustralyalı pop vokal grubu · 1989",
+        "who": "human nature, 1989'da kurulmuş avustralyalı bir pop vokal grubudur. dörtlü kadroda toby allen, phil burton ve kardeşler andrew ile mike tierney yer alır.",
+        "facts": [
+          "başlangıçta the 4 trax adında bir doo-wop grubuydular.",
+          "üyeler okul arkadaşıydı."
+        ]
+      }
+    }
+  ]
+}
