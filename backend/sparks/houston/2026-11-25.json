@@ -1,0 +1,14 @@
+{
+  "city": "houston",
+  "day": "2026-11-25",
+  "sparks": [
+    {
+      "kind": "crawl",
+      "title": { "en": "thanksgiving eve bar crawl downtown.", "de": "thanksgiving eve bar crawl in der innenstadt.", "tr": "downtown'da thanksgiving eve bar crawl." },
+      "line":  { "en": "the official crawl starts at 7 pm and runs to about midnight; tickets on eventbrite. one listing says 8 pm, so check the start.", "de": "der offizielle crawl beginnt um 19 uhr und läuft bis etwa mitternacht; tickets bei eventbrite. eine liste nennt 20 uhr, also start prüfen.", "tr": "resmi crawl akşam 7'de başlıyor, yaklaşık gece yarısına kadar sürüyor; biletler eventbrite'ta. bir liste 8 diyor, başlangıcı kontrol et." },
+      "place": { "en": "downtown houston", "de": "downtown houston", "tr": "downtown houston" },
+      "hour": 19, "minute": 0,
+      "why": "Houston Official Thanksgiving Eve Bar Crawl 2026 on Eventbrite, Wed 25 Nov 7 pm to about midnight; a second listing gives 8 pm at a Brazos Street bar, so the start is not fully confirmed."
+    }
+  ]
+}

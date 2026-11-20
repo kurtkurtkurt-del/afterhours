@@ -1,0 +1,14 @@
+{
+  "city": "houston",
+  "day": "2026-11-27",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "texas renaissance festival on thanksgiving friday.", "de": "texas renaissance festival am thanksgiving-freitag.", "tr": "thanksgiving cuma'sında texas renaissance festival." },
+      "line":  { "en": "open 9 am to 8 pm, gates close at 7 pm. the festival is outside town, so plan a full day; it runs to sunday 29 november.", "de": "geöffnet 9 bis 20 uhr, einlass endet um 19 uhr. das fest liegt außerhalb der stadt, also einen ganzen tag einplanen; es läuft bis sonntag, 29. november.", "tr": "09:00'dan 20:00'ye açık, girişler 19:00'da kapanıyor. festival şehir dışında, tam bir gün planla; 29 kasım pazar gününe kadar sürüyor." },
+      "place": { "en": "texas renaissance festival", "de": "texas renaissance festival", "tr": "texas renaissance festival" },
+      "hour": 10, "minute": 0,
+      "why": "Texas Renaissance Festival, Thanksgiving Friday 27 Nov 9 am to 8 pm per Visit Conroe and other listings; the season runs to 29 Nov 2026 (Houstonia's October end date is treated as an error)."
+    }
+  ]
+}
