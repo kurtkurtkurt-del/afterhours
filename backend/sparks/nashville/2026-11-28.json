@@ -1,0 +1,14 @@
+{
+  "city": "nashville",
+  "day": "2026-11-28",
+  "sparks": [
+    {
+      "kind": "football",
+      "title": { "en": "tennessee v vanderbilt at firstbank stadium.", "de": "tennessee gegen vanderbilt im firstbank stadium.", "tr": "tennessee – vanderbilt, firstbank stadium'da." },
+      "line": { "en": "the in-state college rivalry at firstbank stadium, kickoff around 18:00 ct (7 or 7:30 pm et per the tennessean; check the tv listing).", "de": "das college-duell im firstbank stadium, anpfiff etwa 18:00 ct (laut the tennessean 19:00 oder 19:30 et; im tv-programm prüfen).", "tr": "firstbank stadium'da üniversite derbisi, başlama yaklaşık 18:00 ct (the tennessean'a göre 19:00 ya da 19:30 et; yayın programına bak)." },
+      "place": { "en": "firstbank stadium", "de": "firstbank stadium", "tr": "firstbank stadium" },
+      "hour": 18, "minute": 0,
+      "why": "Tennessee vs Vanderbilt at FirstBank Stadium, sat 28.11, 7 or 7:30 pm ET per the Tennessean via Yahoo Sports; ESPN shows a wider window, so kickoff is not final. Day 8, extension week."
+    }
+  ]
+}
