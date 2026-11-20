@@ -1,0 +1,14 @@
+{
+  "city": "toronto",
+  "day": "2026-11-27",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "the distillery winter village, friday evening.", "de": "das distillery winter village, freitagabend.", "tr": "distillery winter village, cuma akşamı." },
+      "line": { "en": "the christmas market is open until 3 january. entry is free off-peak; paid tickets apply at peak hours, so come early.", "de": "der weihnachtsmarkt ist bis 3. januar geöffnet. der eintritt ist außerhalb der stoßzeiten frei; zu stoßzeiten gibt es bezahlte tickets, also früh kommen.", "tr": "noel pazarı 3 ocak'a kadar açık. yoğun saatlerin dışında giriş ücretsiz; yoğun saatlerde ücretli bilet gerekiyor, bu yüzden erken gel." },
+      "place": { "en": "distillery district", "de": "distillery district", "tr": "distillery district" },
+      "hour": 17, "minute": 0,
+      "why": "Distillery Winter Village 2026, 12 Nov to 3 Jan, open daily from 10:00 per the official schedule (thedistillerywintervillage.com); admission per todocanada and newswire.ca."
+    }
+  ]
+}

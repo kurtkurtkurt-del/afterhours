@@ -1,0 +1,14 @@
+{
+  "city": "toronto",
+  "day": "2026-11-21",
+  "sparks": [
+    {
+      "kind": "jazz",
+      "title": { "en": "artie roth quartet at the pilot.", "de": "artie roth quartet im the pilot.", "tr": "the pilot'ta artie roth quartet." },
+      "line": { "en": "an afternoon set by the artie roth quartet. doors at 13:00, show at 14:00; online tickets from about 15 dollars plus fees.", "de": "ein nachmittagskonzert des artie roth quartet. einlass um 13:00, beginn um 14:00; online tickets ab etwa 15 dollar plus gebühren.", "tr": "artie roth quartet'ın öğleden sonra konseri. kapılar 13:00'te, konser 14:00'te; online biletler yaklaşık 15 dolar artı ücretle." },
+      "place": { "en": "the pilot", "de": "the pilot", "tr": "the pilot" },
+      "hour": 14, "minute": 0,
+      "why": "Artie Roth Quartet at The Pilot, Sat 21 Nov 2026, doors 13:00 and show 14:00 (Eventbrite listing)."
+    }
+  ]
+}

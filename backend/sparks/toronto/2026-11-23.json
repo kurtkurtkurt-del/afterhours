@@ -1,0 +1,14 @@
+{
+  "city": "toronto",
+  "day": "2026-11-23",
+  "sparks": [
+    {
+      "kind": "sunrise",
+      "title": { "en": "sunrise over the lake at woodbine beach.", "de": "sonnenaufgang über dem see am woodbine beach.", "tr": "woodbine beach'te göl üzerinde gündoğumu." },
+      "line": { "en": "sunrise is at 07:22 on monday and sunset at 16:45. a short early walk on the beach before the day starts; bring a warm layer.", "de": "der sonnenaufgang ist am montag um 07:22, der sonnenuntergang um 16:45. ein kurzer früher spaziergang am strand, bevor der tag beginnt; warme schicht mitnehmen.", "tr": "pazartesi gündoğumu 07:22, gün batımı 16:45. gün başlamadan kısa, erken bir sahil yürüyüşü; sıcak bir katman al." },
+      "place": { "en": "woodbine beach", "de": "woodbine beach", "tr": "woodbine beach" },
+      "hour": 7, "minute": 0,
+      "why": "Sunrise 07:22 and sunset 16:45 on Mon 23 Nov 2026 (sunrise-sunset.net Toronto table); the walk is a suggestion, no event found."
+    }
+  ]
+}
