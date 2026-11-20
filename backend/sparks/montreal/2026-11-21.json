@@ -1,0 +1,14 @@
+{
+  "city": "montreal",
+  "day": "2026-11-21",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "défilé du père noël on boulevard rené-lévesque.", "de": "défilé du père noël auf dem boulevard rené-lévesque.", "tr": "défilé du père noël, boulevard rené-lévesque'te." },
+      "line": { "en": "the 74th santa parade runs down boulevard rené-lévesque from 11:00. it is free to watch; the metro is the easiest way in, so come early for a front spot.", "de": "die 74. weihnachtsparade zieht ab 11:00 über den boulevard rené-lévesque. zuschauen ist kostenlos; mit der metro kommt man am einfachsten hin, früh für einen platz vorne.", "tr": "74. noel geçit töreni 11:00'den itibaren boulevard rené-lévesque'ten geçiyor. izlemek ücretsiz; en kolay ulaşım metro, önde yer için erken gel." },
+      "place": { "en": "boulevard rené-lévesque", "de": "boulevard rené-lévesque", "tr": "boulevard rené-lévesque" },
+      "hour": 11, "minute": 0,
+      "why": "Narcity's Montreal weekend guide and deeparrival.com both list the 74th Santa Claus Parade on sat 21 nov from 11:00 on René-Lévesque, free to watch; the City of Montreal downtown holiday guide also lists it."
+    }
+  ]
+}
