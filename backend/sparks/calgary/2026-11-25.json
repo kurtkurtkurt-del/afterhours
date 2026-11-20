@@ -1,0 +1,14 @@
+{
+  "city": "calgary",
+  "day": "2026-11-25",
+  "sparks": [
+    {
+      "kind": "football",
+      "title": { "en": "hitmen vs red deer at the saddledome.", "de": "hitmen gegen red deer im saddledome.", "tr": "saddledome'da hitmen – red deer." },
+      "line":  { "en": "whl junior hockey on a wednesday night, 7pm. a short night out on a cold evening, close to downtown.", "de": "whl-juniorenhockey an einem mittwochabend, 19 uhr. ein kurzer abend an einem kalten tag, nah an der innenstadt.", "tr": "çarşamba akşamı whl genç hokey, saat 19:00. soğuk bir akşam için kısa bir çıkış, şehir merkezine yakın." },
+      "place": { "en": "scotiabank saddledome", "de": "scotiabank saddledome", "tr": "scotiabank saddledome" },
+      "hour": 19, "minute": 0,
+      "why": "Calgary Hitmen vs Red Deer Rebels, Wed 25 Nov 7pm, Saddledome (event ticket listing; a Hitmen home-game roundup also lists 25 Nov)."
+    }
+  ]
+}

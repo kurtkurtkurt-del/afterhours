@@ -1,0 +1,14 @@
+{
+  "city": "calgary",
+  "day": "2026-11-27",
+  "sparks": [
+    {
+      "kind": "flea",
+      "title": { "en": "inglewood night market at the quonset.", "de": "inglewood-nachtmarkt im quonset.", "tr": "quonset'ta inglewood gece pazarı." },
+      "line":  { "en": "holiday night market with over 50 local vendors, live music and food, 4pm to 9pm. entry is $5, free under 12 and over 65. covered and heated.", "de": "weihnachtlicher nachtmarkt mit über 50 lokalen ständen, live-musik und essen, 16 bis 21 uhr. eintritt 5 dollar, unter 12 und über 65 frei. überdacht und beheizt.", "tr": "16:00 ile 21:00 arası, 50'den fazla yerel satıcı, canlı müzik ve yemek içeren tatil gece pazarı. giriş 5 dolar, 12 yaş altı ve 65 üstü ücretsiz. kapalı ve ısıtmalı." },
+      "place": { "en": "the quonset, crossroads market", "de": "the quonset, crossroads market", "tr": "the quonset, crossroads market" },
+      "hour": 16, "minute": 0,
+      "why": "Inglewood Holiday Night Market, Fri 27 Nov 4-9pm at The Quonset, Crossroads Market (DailyHive; Savour Calgary lists the same weekend)."
+    }
+  ]
+}

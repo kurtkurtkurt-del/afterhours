@@ -1,0 +1,14 @@
+{
+  "city": "calgary",
+  "day": "2026-11-22",
+  "sparks": [
+    {
+      "kind": "football",
+      "title": { "en": "hitmen vs swift current at the saddledome.", "de": "hitmen gegen swift current im saddledome.", "tr": "saddledome'da hitmen – swift current." },
+      "line":  { "en": "whl junior hockey, home game at 2pm. a cheap sunday afternoon out, downtown.", "de": "whl-juniorenhockey, heimspiel um 14 uhr. ein günstiger sonntagnachmittag in der innenstadt.", "tr": "whl genç hokey, saat 14:00'te ev maçı. şehir merkezinde ucuz bir pazar öğleden sonrası." },
+      "place": { "en": "scotiabank saddledome", "de": "scotiabank saddledome", "tr": "scotiabank saddledome" },
+      "hour": 14, "minute": 0,
+      "why": "Calgary Hitmen home game vs Swift Current Broncos, Sun 22 Nov 2pm (SeatGeek schedule listing; a Hitmen home-game roundup also lists 22 Nov)."
+    }
+  ]
+}

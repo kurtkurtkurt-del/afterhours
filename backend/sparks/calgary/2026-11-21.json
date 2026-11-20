@@ -1,0 +1,14 @@
+{
+  "city": "calgary",
+  "day": "2026-11-21",
+  "sparks": [
+    {
+      "kind": "jazz",
+      "title": { "en": "live jazz with the jt band at gulbar.", "de": "live-jazz mit der jt band im gulbar.", "tr": "gulbar'da jt band ile canlı caz." },
+      "line":  { "en": "live jazz with the jt band from 6pm. a quiet saturday night out, easy to join without a plan.", "de": "live-jazz mit der jt band ab 18 uhr. ein ruhiger samstagabend, ohne plan leicht mitzumachen.", "tr": "18:00'den itibaren jt band ile canlı caz. sakin bir cumartesi gecesi, plansız da katılmak kolay." },
+      "place": { "en": "gulbar", "de": "gulbar", "tr": "gulbar" },
+      "hour": 18, "minute": 0,
+      "why": "Live jazz with JT Band at GULBAR, Sat 21 Nov 6pm (ma.to event listing found by web search)."
+    }
+  ]
+}
