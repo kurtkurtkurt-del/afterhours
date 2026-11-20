@@ -1,0 +1,14 @@
+{
+  "city": "vancouver",
+  "day": "2026-11-21",
+  "sparks": [
+    {
+      "kind": "crawl",
+      "title": { "en": "eastside culture crawl, saturday open studios.", "de": "eastside culture crawl, die samstäglichen offenen ateliers.", "tr": "eastside culture crawl, cumartesi açık atölyeler." },
+      "line": { "en": "the 30th eastside culture crawl: over 500 artist studios across east vancouver, open saturday and sunday from 11:00 to 18:00.", "de": "der 30. eastside culture crawl: über 500 künstleratelier im osten von vancouver, samstag und sonntag von 11 bis 18 uhr geöffnet.", "tr": "30. eastside culture crawl: doğu vancouver'da 500'ü aşkın sanatçı atölyesi, cumartesi ve pazar 11 ile 18 arası açık." },
+      "place": { "en": "eastside arts district", "de": "eastside arts district", "tr": "eastside arts district" },
+      "hour": 11, "minute": 0,
+      "why": "Eastside Culture Crawl, 19 to 22 Nov 2026; Sat and Sun 11:00 to 18:00 per BroadwayWorld (Oct 2026) and The Drive, with 500+ artists per Curiocity. Not checked on culturecrawl.ca."
+    }
+  ]
+}

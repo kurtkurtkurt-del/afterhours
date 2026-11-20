@@ -1,0 +1,14 @@
+{
+  "city": "vancouver",
+  "day": "2026-11-27",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "the vancouver christmas market at jack poole plaza.", "de": "der vancouver christmas market am jack poole plaza.", "tr": "jack poole plaza'da vancouver christmas market." },
+      "line": { "en": "the market runs to 24 december; weekday hours are 16:00 to 21:30 through 4 december, beside the convention centre.", "de": "der markt läuft bis 24. dezember; werktags 16 bis 21:30 uhr bis 4. dezember, neben dem convention centre.", "tr": "market 24 aralık'a kadar açık; 4 aralığa kadar hafta içi 16:00 ile 21:30 arası, convention centre'ın yanında." },
+      "place": { "en": "jack poole plaza", "de": "jack poole plaza", "tr": "jack poole plaza" },
+      "hour": 16, "minute": 0,
+      "why": "Vancouver Christmas Market at Jack Poole Plaza, 1055 Canada Place, 16 Nov to 24 Dec 2026 per Daily Hive (Sep 2026); weekday hours 16:00 to 21:30 to 4 Dec per Vancouver's Best Places. Friday hours not separately confirmed; check vancouverchristmasmarket.com."
+    }
+  ]
+}
