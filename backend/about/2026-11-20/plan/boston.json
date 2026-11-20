@@ -1,0 +1,26 @@
+{
+ "city": "boston",
+ "day": "2026-11-20",
+ "nights": [
+  {
+   "id": "736f8335-9fd8-4783-bb18-585897bb7859",
+   "slug": "sasha-alex-sloan-and-the-crowd-goes-mild-tour-ft-4cea804b",
+   "title": "Sasha Alex Sloan: And The Crowd Goes Mild Tour ft Macy Todd",
+   "act": "Sasha Alex Sloan",
+   "name": "Sasha Alex Sloan",
+   "description": "American singer-songwriter (born 1995)",
+   "source_url": "https://en.wikipedia.org/wiki/Sasha_Alex_Sloan",
+   "extract": "Alexandra Artourovna Yatchenko, better known as Sasha Alex Sloan or simply Sasha Sloan, is an American singer-songwriter. Sloan performs in the indie pop, alt pop, and the singer-songwriter genres. Her debut studio album, Only Child, was released in October 2020, and was met with critical acclaim by music critics, deeming it as a solid and outspoken debut album. Sloan's second studio album, I Blame the World, was released in May 2022, and after her departure from RCA Records in 2023, she independently released her third studio album, Me Again, in May 2024. In 2026, she released her fourth studio album, And The Crowd Goes Mild."
+  },
+  {
+   "id": "7d181f0a-61cc-4b9d-a556-5fadfa5768db",
+   "slug": "sabaton-legends-on-tour-87509839",
+   "title": "Sabaton: Legends on Tour",
+   "act": "Sabaton",
+   "name": "Sabaton",
+   "description": "Swedish power metal band",
+   "source_url": "https://en.wikipedia.org/wiki/Sabaton_(band)",
+   "extract": "Sabaton is a Swedish power metal band from Falun, formed in 1999 by lead singer Joakim Brodén, bassist Pär Sundström, guitarists Oskar Montelius and Rikard Sundén, and drummer Richard Larsson. The band has gone through multiple lineup changes with Brodén and Sundström remaining the only consistent members. The vast majority of their songs are about historical events, mainly wars and significant battles. As of 2026, the band has released eleven studio albums, four live albums, five live DVDs and thirty music videos."
+  }
+ ]
+}

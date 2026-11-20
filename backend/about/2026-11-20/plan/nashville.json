@@ -1,0 +1,56 @@
+{
+ "city": "nashville",
+ "day": "2026-11-20",
+ "nights": [
+  {
+   "id": "91d855ca-434f-497f-ab24-eaa5f89e93f8",
+   "slug": "night-ranger-7918b0b5",
+   "title": "Night Ranger",
+   "act": "Night Ranger",
+   "name": "Night Ranger",
+   "description": "American hard rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Night_Ranger",
+   "extract": "Night Ranger is an American hard rock band from San Francisco, California. The band was incorporated in 1982 after three years of lineup and name changes, and experienced a surge of popularity during the 1980s with the release of several successful albums and hit singles. Guitarist Brad Gillis and drummer Kelly Keagy have been the band's only constant members, though bassist Jack Blades performed on all but one of their albums. Other current members of the band include guitarist Keri Kelli and keyboardist Eric Levy."
+  },
+  {
+   "id": "d93ebd9f-dfbc-4e21-8d67-81f847d451f2",
+   "slug": "black-stone-cherry-ages-18-e4e9ce31",
+   "title": "Black Stone Cherry - Ages 18+",
+   "act": "Black Stone Cherry",
+   "name": "Black Stone Cherry",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Black_Stone_Cherry",
+   "extract": "Black Stone Cherry is an American hard rock band formed in Edmonton, Kentucky in 2001. They were signed to Roadrunner Records until 2015; the band is now signed to Mascot Label Group. The band consists of Chris Robertson, Ben Wells (guitar), Steve Jewell (bass) and John Fred Young (drums). Black Stone Cherry has released eight studio albums as well as three EPs and have charted seventeen singles on the US Mainstream Rock Tracks charts. Their latest album, Screamin' at the Sky, was released in 2023."
+  },
+  {
+   "id": "b48b675f-a21b-443c-9775-b909072d98e3",
+   "slug": "jonah-kagen-59e95a88",
+   "title": "Jonah Kagen",
+   "act": "Jonah Kagen",
+   "name": "Jonah Kagen",
+   "description": "American singer, songwriter and musician (born 2000)",
+   "source_url": "https://en.wikipedia.org/wiki/Jonah_Kagen",
+   "extract": "Jonah Kagen is an American singer, songwriter, and multi-instrumentalist from Savannah, Georgia. His single \"God Needs the Devil\" topped the Billboard Alternative Airplay chart in May 2025. Later in 2025, he released his second album, Sunflowers and Leather, which was written while traveling the United States with an Airstream trailer."
+  },
+  {
+   "id": "9e0edb4b-6c36-49bc-829b-6ddf4f7f604f",
+   "slug": "olivia-rodrigo-the-unraveled-tour-23089d67",
+   "title": "Olivia Rodrigo: The Unraveled Tour",
+   "act": "Olivia Rodrigo",
+   "name": "Olivia Rodrigo",
+   "description": "American singer-songwriter and actress (born 2003)",
+   "source_url": "https://en.wikipedia.org/wiki/Olivia_Rodrigo",
+   "extract": "Olivia Isabel Rodrigo is an American singer-songwriter and actress. Rodrigo began her career as a child actress, appearing in commercials and the direct-to-video film An American Girl: Grace Stirs Up Success (2015). She rose to prominence with her leading roles in the Disney Channel series Bizaardvark (2016–2019) and the Disney+ series High School Musical: The Musical: The Series (2019–2022)."
+  },
+  {
+   "id": "865bc856-6e61-4329-89bd-e32c622488d9",
+   "slug": "the-time-jumpers-c5659cc0",
+   "title": "THE TIME JUMPERS",
+   "act": "THE TIME JUMPERS",
+   "name": "The Time Jumpers",
+   "description": "Musical group",
+   "source_url": "https://en.wikipedia.org/wiki/The_Time_Jumpers",
+   "extract": "The Time Jumpers is a Western swing band formed in 1998 by a group of Nashville studio musicians who enjoyed jamming together. Country star Vince Gill was a member of the group between 2010 and 2020. The 11–member group started playing occasional local gigs until they agreed to take a regular slot playing at the Station Inn, a venerable Nashville bluegrass venue. They later moved to a larger venue, Nashville's \"3rd & Lindsley\", and were called by Tennessean writer Juli Thanki, \"One of the hottest shows in town\". Some of their guest artists on the weekly live show have included Joe Walsh, Robert Plant, Norah Jones, Bonnie Raitt, Reba McEntire, Jimmy Buffett, Kings of Leon, and Toby Keith. Amy Grant said, \"You can't hear that caliber of musicians every Monday night for a cover charge in any town in America except here\". The group rarely travels, but in 2010 they performed at New York's Lincoln Center. In 2007, they recorded a live album entitled Jumpin' Time and in 2012 recorded The Time Jumpers. At the 2017 Grammy Awards the group won \"Best American Roots Song\" for Vince Gill's composition \"Kid Sister\"."
+  }
+ ]
+}

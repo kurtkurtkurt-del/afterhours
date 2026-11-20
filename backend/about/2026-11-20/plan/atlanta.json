@@ -1,0 +1,56 @@
+{
+ "city": "atlanta",
+ "day": "2026-11-20",
+ "nights": [
+  {
+   "id": "b986ea8d-7ca8-472a-913b-ad86c47f3f19",
+   "slug": "angine-de-poitrine-8a2e56a9",
+   "title": "Angine de Poitrine",
+   "act": "Angine de Poitrine",
+   "name": "Angine de Poitrine",
+   "description": "Canadian rock duo",
+   "source_url": "https://en.wikipedia.org/wiki/Angine_de_Poitrine",
+   "extract": "Angine de Poitrine is a Canadian rock duo formed in Saguenay, Quebec, in 2019. The members are anonymous and perform under the pseudonyms Khn de Poitrine and Klek de Poitrine (drums). They perform complex microtonal compositions in the style of math rock and experimental rock, with an absurdist image involving oversized papier-mâché masks and black-and-white polka-dotted costumes."
+  },
+  {
+   "id": "c8208696-9bf0-492a-828b-4f5e2e702843",
+   "slug": "angine-de-poitrine-moved-to-the-eastern-3f432be9",
+   "title": "Angine de Poitrine - MOVED TO THE EASTERN",
+   "act": "Angine de Poitrine",
+   "name": "Angine de Poitrine",
+   "description": "Canadian rock duo",
+   "source_url": "https://en.wikipedia.org/wiki/Angine_de_Poitrine",
+   "extract": "Angine de Poitrine is a Canadian rock duo formed in Saguenay, Quebec, in 2019. The members are anonymous and perform under the pseudonyms Khn de Poitrine and Klek de Poitrine (drums). They perform complex microtonal compositions in the style of math rock and experimental rock, with an absurdist image involving oversized papier-mâché masks and black-and-white polka-dotted costumes."
+  },
+  {
+   "id": "e93616d5-eb5d-47a4-b351-b644e274e546",
+   "slug": "rush-fifty-something-01e33276",
+   "title": "RUSH: Fifty Something",
+   "act": "RUSH",
+   "name": "Rush",
+   "description": "Canadian rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Rush_(band)",
+   "extract": "Rush is a Canadian rock band, formed in Toronto in 1968. The band's original line-up included guitarist Alex Lifeson, drummer John Rutsey, and bassist and vocalist Jeff Jones, whom Geddy Lee replaced shortly after its formation. Rush went through a few lineup changes before settling on its classic power trio line-up with the addition of Neil Peart in July 1974, replacing Rutsey four months after the release of their self-titled debut album. The lineup of Lifeson, Lee, and Peart remained stable for the remainder of the band's initial run until 2015, when Peart retired from music. Lifeson and Lee occasionally worked together after Peart's death in 2020, and launched a 2026–2027 reunion tour as Rush in October 2025, with Anika Nilles filling in for Peart, and Loren Gold as the band's keyboardist."
+  },
+  {
+   "id": "c475c25d-9bca-4b5d-b0c1-7ee64231e055",
+   "slug": "belly-gang-kushington-wtf-goin-tour-48a19c3b",
+   "title": "Belly Gang Kushington: Wtf Goin Tour",
+   "act": "Belly Gang Kushington",
+   "name": "Belly Gang Kushington",
+   "description": "American rapper",
+   "source_url": "https://en.wikipedia.org/wiki/Belly_Gang_Kushington",
+   "extract": "Victor Thomas, known professionally as Belly Gang Kushington, an American rapper. Hailing from Atlanta, Georgia, he began his recording career in 2016 and signed with Love Renaissance in 2024."
+  },
+  {
+   "id": "5007583a-7b03-414d-bd61-edb9b396eab9",
+   "slug": "christopher-williams-9f989403",
+   "title": "Christopher Williams",
+   "act": "Christopher Williams",
+   "name": "Christopher Williams",
+   "description": "American singer and actor (born 1967)",
+   "source_url": "https://en.wikipedia.org/wiki/Christopher_Williams_(singer)",
+   "extract": "Christopher Lawrence Williams is an American singer and actor. Emerging in the late 1980s as a recording artist with Geffen Records, Williams became a notable figure in the new jack swing era with a series of R&B chart hits, including \"Talk to Myself\" (1989), \"I'm Dreamin'\" (1991), and \"Every Little Thing U Do\" (1993). He is also known for his work in film and theater, most notably for his role as Kareem Akbar in the 1991 crime drama New Jack City."
+  }
+ ]
+}

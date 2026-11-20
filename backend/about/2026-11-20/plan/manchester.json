@@ -1,0 +1,46 @@
+{
+ "city": "manchester",
+ "day": "2026-11-20",
+ "nights": [
+  {
+   "id": "6385348f-9b61-4873-9385-6f6eb180ae68",
+   "slug": "clara-mann-1b50a690",
+   "title": "Clara Mann",
+   "act": "Clara Mann",
+   "name": "Clara Mann",
+   "description": "British singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Clara_Mann",
+   "extract": "Clara Mann is a British singer-songwriter. She released her debut album Rift on state51 in March 2025. Her second album, Wishbone was released on 23 October 2026."
+  },
+  {
+   "id": "b8c8c075-f0fa-4e9b-8f8e-c31fbbec03fb",
+   "slug": "electric-six-403e203a",
+   "title": "Electric Six",
+   "act": "Electric Six",
+   "name": "Electric Six",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Electric_Six",
+   "extract": "Electric Six is an American rock band formed in Detroit in 1996. They are known for combining elements of rock, disco, garage rock, metal, new wave, and punk rock. Since achieving widespread recognition in 2003 with the singles \"Danger! High Voltage\" and \"Gay Bar\", they have released 20 studio albums, two rarities albums, one live album and one live DVD. Each band member is given a unique stage name. The line-up has undergone changes over the years: co-founder, lead vocalist, and primary songwriter Dick Valentine has been the only constant member. The current line-up consists of Valentine, lead guitarist Johnny Na$hinal, keyboardist Tait Nucleus?, rhythm guitarist Herb S. Flavourings, drummer Dr. Jay and bassist Mr. Poison."
+  },
+  {
+   "id": "47d47a92-8d06-49bb-a1db-844dc7d75429",
+   "slug": "chuck-strangers-5efa4019",
+   "title": "Chuck Strangers",
+   "act": "Chuck Strangers",
+   "name": "Chuck Strangers",
+   "description": "American rapper and producer (born 1992)",
+   "source_url": "https://en.wikipedia.org/wiki/Chuck_Strangers",
+   "extract": "Che Jessamy, known professionally as Chuck Strangers, is an American rapper and record producer who is a member of the Pro Era collective. He first began to gain prominence for his work on Joey Badass' debut mixtape 1999."
+  },
+  {
+   "id": "ed4c16f4-4314-4b3e-9ada-3a34e4235c43",
+   "slug": "phoebe-bridgers-bbc6530d",
+   "title": "Phoebe Bridgers",
+   "act": "Phoebe Bridgers",
+   "name": "Phoebe Bridgers",
+   "description": "American singer and songwriter (born 1994)",
+   "source_url": "https://en.wikipedia.org/wiki/Phoebe_Bridgers",
+   "extract": "Phoebe Lucille Bridgers is an American singer-songwriter, record producer, and actress. Her indie folk music typically centers on acoustic guitar and electronic production, with melancholic lyrical themes. She has won four Grammy Awards."
+  }
+ ]
+}

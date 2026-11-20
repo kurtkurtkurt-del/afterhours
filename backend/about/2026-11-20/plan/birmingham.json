@@ -1,0 +1,16 @@
+{
+ "city": "birmingham",
+ "day": "2026-11-20",
+ "nights": [
+  {
+   "id": "a2a0c9ee-06b9-4a86-b598-09916acdda81",
+   "slug": "blossoms-47ca879a",
+   "title": "Blossoms",
+   "act": "Blossoms",
+   "name": "Blossoms",
+   "description": "English indie pop group",
+   "source_url": "https://en.wikipedia.org/wiki/Blossoms_(band)",
+   "extract": "Blossoms are an English indie rock band from Stockport, Greater Manchester, England. Formed in 2013, the band consists of Tom Ogden, Charlie Salt, Josh Dewhurst, Joe Donovan (drums) and Myles Kellock."
+  }
+ ]
+}

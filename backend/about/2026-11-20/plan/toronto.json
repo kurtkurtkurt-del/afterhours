@@ -1,0 +1,16 @@
+{
+ "city": "toronto",
+ "day": "2026-11-20",
+ "nights": [
+  {
+   "id": "d3b937ee-b6ed-4313-9cd1-551d75938d32",
+   "slug": "giant-rooks-ada71d75",
+   "title": "Giant Rooks",
+   "act": "Giant Rooks",
+   "name": "Giant Rooks",
+   "description": "German indie band",
+   "source_url": "https://en.wikipedia.org/wiki/Giant_Rooks",
+   "extract": "Giant Rooks are a German indie rock band from Hamm, Germany founded in 2014. They are best known for their EP Wild Stare, their album How Have You Been? and their top-100 charting cover of \"Tom's Diner\" by Suzanne Vega."
+  }
+ ]
+}

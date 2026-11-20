@@ -1,0 +1,16 @@
+{
+ "city": "ankara",
+ "day": "2026-11-20",
+ "nights": [
+  {
+   "id": "b5ad00f7-63d5-46f7-b688-2136eb487184",
+   "slug": "gokhan-turkmen-unplugged-9c3c100f",
+   "title": "Gökhan Türkmen : Unplugged",
+   "act": "Gökhan Türkmen",
+   "name": "Gökhan Türkmen",
+   "description": "Turkish singer (born 1983)",
+   "source_url": "https://en.wikipedia.org/wiki/G%C3%B6khan_T%C3%BCrkmen",
+   "extract": "Gökhan Türkmen is a Turkish singer."
+  }
+ ]
+}

@@ -1,0 +1,76 @@
+{
+ "city": "san-francisco",
+ "day": "2026-11-20",
+ "nights": [
+  {
+   "id": "e2d90dc6-d8d1-4a94-a095-fb57582f0c93",
+   "slug": "san-francisco-symphony-youth-orchestra-7f98df73",
+   "title": "San Francisco Symphony Youth Orchestra",
+   "act": "San Francisco Symphony Youth Orchestra",
+   "name": "San Francisco Symphony Youth Orchestra",
+   "description": "Youth orchestra based in San Francisco, California",
+   "source_url": "https://en.wikipedia.org/wiki/San_Francisco_Symphony_Youth_Orchestra",
+   "extract": "The San Francisco Symphony Youth Orchestra (SFSYO) is a youth orchestra organized by the San Francisco Symphony. The SFSYO performs an annual concert series and has made several recordings. The orchestra rehearses in Louise M. Davies Symphony Hall and has been directed by Radu Paponiu since the 2024–2025 season."
+  },
+  {
+   "id": "978b6206-ba95-4594-8eb1-c55d28fa1e4e",
+   "slug": "qendresa-932c0dc4",
+   "title": "Qendresa",
+   "act": "Qendresa",
+   "name": "Qendresa",
+   "description": "British-Kosovan singer and producer",
+   "source_url": "https://en.wikipedia.org/wiki/Qendresa",
+   "extract": "Qendresa is a British-Kosovar singer, songwriter, and producer from North West London. She is known for her self-produced electronic soul and personal songwriting. She has released two studio albums: Midnight Request Line (2020) and Londra (2024). She gained mainstream recognition in 2026 through her collaborations with Canadian rapper Drake across his albums Habibti and Maid of Honour."
+  },
+  {
+   "id": "39c546ba-280b-42ea-8808-94dcac0d5d63",
+   "slug": "boston-manor-201ec05c",
+   "title": "Boston Manor",
+   "act": "Boston Manor",
+   "name": "Boston Manor",
+   "description": "British rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Boston_Manor_(band)",
+   "extract": "Boston Manor are a British rock band formed in Blackpool, Lancashire, England, in March 2013. They released a first EP, Here/Now, through Never Mend Records on Bandcamp, and in 2014 they signed with Failure By Design Records for their second EP, Driftwood. In 2015 the band signed with Pure Noise Records: with them, they released another EP, Saudade, as well as their full-length albums Be Nothing (2016), Welcome to the Neighbourhood (2018) and Glue (2020). The band's sound blends emo with heavier influences, reminiscent of '90s grunge and early 2000s post-hardcore. The band have been nominated for Best British Breakthrough at Kerrang! Awards in 2018 and Welcome to the Neighbourhood received a nomination for Best Album Artwork at Heavy Music Awards in 2019."
+  },
+  {
+   "id": "b35989c9-9015-4e58-873c-b7f9d4519b52",
+   "slug": "mark-william-lewis-ea33f218",
+   "title": "Mark William Lewis",
+   "act": "Mark William Lewis",
+   "name": "Mark William Lewis",
+   "description": "British indie musician",
+   "source_url": "https://en.wikipedia.org/wiki/Mark_William_Lewis",
+   "extract": "Mark William Lewis is a British musician and songwriter known for his multi-genre music, blending dream pop, indie rock, jazz, folk and experimental music. He is based in South London and has collaborated with artists like Mike, Nina Cristante, and Sokora Violetov. During his 2025 tour, he played with Samba Jean-Baptiste as his opener."
+  },
+  {
+   "id": "9916fcef-9a3b-4c88-b798-f0a5e95e5b8a",
+   "slug": "gary-numan-b3c9c40e",
+   "title": "Gary Numan",
+   "act": "Gary Numan",
+   "name": "Gary Numan",
+   "description": "British musician (born 1958)",
+   "source_url": "https://en.wikipedia.org/wiki/Gary_Numan",
+   "extract": "Gary Anthony James Webb, known professionally as Gary Numan, is an English musician. He entered the music industry as frontman of the new wave band Tubeway Army. The band's second and final album, 1979's Replicas, reached No. 1 on the UK Albums Chart, and spawned a UK No. 1 single with \"Are 'Friends' Electric?\". Following the band's split, he released his debut solo album The Pleasure Principle later in 1979, which also reached No. 1 in the UK and produced another UK No. 1 single with \"Cars\". Although his commercial popularity peaked in the late 1970s and early 1980s, he has maintained a strong cult following since then. He has sold over 10 million records."
+  },
+  {
+   "id": "a8825980-d3de-4bc4-8fba-fa075bf4e360",
+   "slug": "cocorosie-4a6e37fa",
+   "title": "CocoRosie",
+   "act": "CocoRosie",
+   "name": "CocoRosie",
+   "description": "American musical group",
+   "source_url": "https://en.wikipedia.org/wiki/CocoRosie",
+   "extract": "CocoRosie is an American musical group formed in 2003 by sisters Sierra Rose \"Rosie\" and Bianca Leilani \"Coco\" Casady. The group's music has been described as folktronica, freak folk and \"New Weird America\", and incorporates elements of pop, blues, opera, electronica, and hip hop. The group has released eight studio albums, La Maison de Mon Rêve (2004), Noah's Ark (2005), The Adventures of Ghosthorse and Stillborn (2007), Grey Oceans (2010), Tales of a GrassWidow (2013), Heartache City (2015), Put the Shine On (2020) and Little Death Wishes (2025), and two EPs, Beautiful Boyz (2004) and Coconuts, Plenty of Junk Food (2009). They released their sixth album Heartache City on their own record label, Lost Girl Records."
+  },
+  {
+   "id": "b9028560-6594-4c87-be04-e6e7ac9ca534",
+   "slug": "steve-lacy-oh-yeah-tour-3b730d09",
+   "title": "Steve Lacy: Oh yeah? Tour",
+   "act": "Steve Lacy",
+   "name": "Steve Lacy",
+   "description": "American musician (born 1998)",
+   "source_url": "https://en.wikipedia.org/wiki/Steve_Lacy",
+   "extract": "Steve Thomas Lacy-Moya is an American singer-songwriter, guitarist and record producer. He gained recognition as the guitarist of the alternative R&B band the Internet, which he joined in 2015. His self-produced debut EP, Steve Lacy's Demo (2017), was met with critical praise and became a sleeper hit. Lacy then guest performed alongside Frank Ocean on Tyler, the Creator's 2017 single \"911 / Mr. Lonely\", which received double platinum certification by the Recording Industry Association of America (RIAA). That year, he also co-wrote songs for artists including Solange Knowles, and Kendrick Lamar on his song \"Pride\"."
+  }
+ ]
+}

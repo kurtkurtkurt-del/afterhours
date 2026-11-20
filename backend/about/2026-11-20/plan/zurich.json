@@ -1,0 +1,16 @@
+{
+ "city": "zurich",
+ "day": "2026-11-20",
+ "nights": [
+  {
+   "id": "ebe6340c-6225-4ad8-ba29-f8f63b745086",
+   "slug": "our-mirage-e51cbe20",
+   "title": "Our Mirage",
+   "act": "Our Mirage",
+   "name": "Our Mirage",
+   "description": "German post-hardcore band",
+   "source_url": "https://en.wikipedia.org/wiki/Our_Mirage",
+   "extract": "Our Mirage is a German metalcore band from Marl, North Rhine-Westphalia."
+  }
+ ]
+}

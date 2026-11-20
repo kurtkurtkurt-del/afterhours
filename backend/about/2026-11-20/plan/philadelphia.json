@@ -1,0 +1,16 @@
+{
+ "city": "philadelphia",
+ "day": "2026-11-20",
+ "nights": [
+  {
+   "id": "7234294d-1621-46f0-91bc-d876ffb030bb",
+   "slug": "john-summit-ctrl-escape-arena-tour-702ec2e9",
+   "title": "JOHN SUMMIT - CTRL ESCAPE ARENA TOUR",
+   "act": "JOHN SUMMIT",
+   "name": "John Summit",
+   "description": "American DJ and record producer (born 1994)",
+   "source_url": "https://en.wikipedia.org/wiki/John_Summit",
+   "extract": "John Walter Schuster, better known by his stage name John Summit, is an American DJ and record producer, former accountant and current owner of the Experts Only label. His music includes original tracks and remixes, primarily focused in the genre of tech house."
+  }
+ ]
+}

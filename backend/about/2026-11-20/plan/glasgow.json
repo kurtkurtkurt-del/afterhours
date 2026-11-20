@@ -1,0 +1,46 @@
+{
+ "city": "glasgow",
+ "day": "2026-11-20",
+ "nights": [
+  {
+   "id": "6d88e968-87ef-4e00-a137-764ebd0f61d2",
+   "slug": "bleachers-c06ac144",
+   "title": "Bleachers",
+   "act": "Bleachers",
+   "name": "Bleachers",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Bleachers_(band)",
+   "extract": "Bleachers is an American rock band from New Jersey, formed in 2013 by musician Jack Antonoff. Antonoff was the only permanent member of the group until 2023, when longtime touring musicians Mikey Freedom Hart, Sean Hutchinson, Evan Smith, Michael Riddleberger, and Zem Audu became official members."
+  },
+  {
+   "id": "e29ea1bd-551e-466f-b58f-12050d1fc6ef",
+   "slug": "ferris-and-sylvester-05dcfccf",
+   "title": "Ferris & Sylvester",
+   "act": "Ferris & Sylvester",
+   "name": "Ferris & Sylvester",
+   "description": "British folk duo",
+   "source_url": "https://en.wikipedia.org/wiki/Ferris_%26_Sylvester",
+   "extract": "Ferris & Sylvester are a British folk duo from London. The group consists of Issy Ferris and Archie Sylvester. In 2019, they were named as one of Rolling Stone's Americana artists to watch; their debut album, released in 2022, won \"UK Album of the Year\" at the 2023 UK Americana Awards."
+  },
+  {
+   "id": "c2eef9ef-214f-4fea-9fc2-e894c83fcd79",
+   "slug": "dea-matrona-64ae1e83",
+   "title": "Dea Matrona",
+   "act": "Dea Matrona",
+   "name": "Dea Matrona",
+   "description": "Irish rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Dea_Matrona_(band)",
+   "extract": "Dea Matrona are an Irish rock band based in Belfast and led by Orláith Forsythe and Mollie McGinn."
+  },
+  {
+   "id": "4d976fdd-9633-4d7b-b47b-b112093e0886",
+   "slug": "dove-ellis-cd2ca58f",
+   "title": "Dove Ellis",
+   "act": "Dove Ellis",
+   "name": "Dove Ellis",
+   "description": "Irish indie folk musician",
+   "source_url": "https://en.wikipedia.org/wiki/Dove_Ellis",
+   "extract": "Thomas O'Donoghue, better known by his stage name Dove Ellis, is an Irish indie folk musician."
+  }
+ ]
+}

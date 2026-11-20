@@ -1,0 +1,46 @@
+{
+ "city": "amsterdam",
+ "day": "2026-11-20",
+ "nights": [
+  {
+   "id": "6493bf96-c027-44a8-a9c5-16fc808a5af5",
+   "slug": "tayc-afas-live-amsterdam-2b2031b9",
+   "title": "TAYC – AFAS Live Amsterdam",
+   "act": "TAYC",
+   "name": "Tayc",
+   "description": "French singer",
+   "source_url": "https://en.wikipedia.org/wiki/Tayc",
+   "extract": "Julien Franck Bouadjie Monono Kamgang, better known as Tayc, is a French singer."
+  },
+  {
+   "id": "b86e2df4-a7ab-4bbc-9656-a04574961bc9",
+   "slug": "beth-hart-3dd39285",
+   "title": "Beth Hart",
+   "act": "Beth Hart",
+   "name": "Beth Hart",
+   "description": "American blues rock musician (born 1972)",
+   "source_url": "https://en.wikipedia.org/wiki/Beth_Hart",
+   "extract": "Beth Hart is an American musician from Los Angeles, California. She rose to fame with the release of her 1999 single \"L.A. Song \" from her second album Screamin' for My Supper. The single was a number one hit in New Zealand, as well as reaching the top five of the US Adult Contemporary and Top 10 on the Billboard Adult Top 40 charts."
+  },
+  {
+   "id": "0968ec20-22f2-46f0-9300-39847c647678",
+   "slug": "nia-archives-aa13869a",
+   "title": "Nia Archives",
+   "act": "Nia Archives",
+   "name": "Nia Archives",
+   "description": "English record producer, DJ and songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Nia_Archives",
+   "extract": "Dehaney Nia Lishahn Hunt, known professionally as Nia Archives, is an English record producer, DJ, singer and songwriter. Born in Bradford in West Yorkshire, she moved to Leeds aged seven, out of the family home aged sixteen, and then to Greater Manchester, during which time she was inspired by jungle documentaries and the women within them."
+  },
+  {
+   "id": "da1133f9-4df7-46bc-b53b-4b269bfbed67",
+   "slug": "beabadoobee-premium-seats-c802d8c4",
+   "title": "Beabadoobee | Premium Seats",
+   "act": "Beabadoobee",
+   "name": "Beabadoobee",
+   "description": "Filipino and British singer (born 2000)",
+   "source_url": "https://en.wikipedia.org/wiki/Beabadoobee",
+   "extract": "Beatrice Kristi Ilejay Laus, known professionally as Beabadoobee, is a Filipino and British singer and songwriter. From 2018 to 2021, she released five extended plays (EPs) under the independent label Dirty Hit: Lice (2018), Patched Up (2018), Loveworm (2019), Space Cadet (2019) and Our Extended Play (2021). Her debut studio album Fake It Flowers was released in October 2020, and received critical acclaim. Her second studio album, Beatopia, was released on July 2022, and spawned the hit \"The Perfect Pair\". Her third studio album, This Is How Tomorrow Moves, was released in August 2024; it became her first album to peak atop the UK Albums Chart. In September 2026, her fourth studio album, Pylon topped the British and Australian charts."
+  }
+ ]
+}

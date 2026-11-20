@@ -1,0 +1,16 @@
+{
+ "city": "las-vegas",
+ "day": "2026-11-20",
+ "nights": [
+  {
+   "id": "945ccf7f-dc79-41ce-ad5d-4ae5afde22e5",
+   "slug": "human-nature-back-to-the-sound-of-motown-646ba11a",
+   "title": "Human Nature: Back To The Sound Of Motown",
+   "act": "Human Nature",
+   "name": "Human Nature",
+   "description": "Australian boy band",
+   "source_url": "https://en.wikipedia.org/wiki/Human_Nature_(band)",
+   "extract": "Human Nature are an Australian pop vocal group which formed in 1989. They are a quartet featuring Toby Allen, Phil Burton and brothers, Andrew and Mike Tierney. Originally they were established as a doo-wop group called the 4 Trax, when the members were schoolmates."
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "city": "vancouver",
+ "day": "2026-11-20",
+ "nights": [
+  {
+   "id": "fb2f57d7-7288-477a-83c2-8d44dd71ba3c",
+   "slug": "john-craigie-keep-it-warm-tour-2026-64092889",
+   "title": "John Craigie - Keep It Warm Tour 2026",
+   "act": "John Craigie",
+   "name": "John Craigie",
+   "description": "American musician and singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/John_Craigie_(musician)",
+   "extract": "John Harrold Craigie III is an American singer-songwriter and storyteller. Hailed as a \"Modern-Day Troubadour\" in the style of Woody Guthrie, Craigie's comedic storytelling style has been compared to Mitch Hedberg, while his music and commitment to living on the road has drawn comparisons to Guthrie, Ramblin' Jack Elliott and Pete Seeger."
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "city": "leipzig",
+ "day": "2026-11-20",
+ "nights": [
+  {
+   "id": "7e9a02b4-e4d2-4eb1-9d15-b606274d8e0c",
+   "slug": "current-swell-0858bc8b",
+   "title": "CURRENT SWELL",
+   "act": "CURRENT SWELL",
+   "name": "Current Swell",
+   "description": "Canadian indie rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Current_Swell",
+   "extract": "Current Swell is a Canadian indie rock band from Victoria, British Columbia, Canada. The band has released seven albums; So I Say, Trust Us Now, Protect Your Own, Long Time Ago, Ulysses, When to Talk and When to Listen and Buffalo."
+  },
+  {
+   "id": "15eaa333-3dd0-430b-a67b-9df9f458f137",
+   "slug": "the-coronas-germany-tour-2027-90fc3420",
+   "title": "The Coronas - Germany Tour 2027",
+   "act": "The Coronas",
+   "name": "The Coronas",
+   "description": "Irish rock band from Dublin",
+   "source_url": "https://en.wikipedia.org/wiki/The_Coronas",
+   "extract": "The Coronas are an Irish rock band that originated in Dublin. They release their music by their own independent record label, 3ú Records, and are based between Dublin and London. They have released seven studio albums, Heroes or Ghosts (2007), Tony Was an Ex-Con (2009), Closer to You (2011) The Long Way (2014), Trust The Wire (2017), True Love Waits (2020) Time Stopped (2022) Thoughts and Observations (2024)."
+  }
+ ]
+}

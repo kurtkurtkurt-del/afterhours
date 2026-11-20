@@ -1,0 +1,26 @@
+{
+ "city": "dallas",
+ "day": "2026-11-20",
+ "nights": [
+  {
+   "id": "4b80d80d-8876-47bc-aedb-0d1d76332ad1",
+   "slug": "deorro-ages-21-1bd87655",
+   "title": "Deorro - Ages 21+",
+   "act": "Deorro",
+   "name": "Deorro",
+   "description": "American DJ (born 1991)",
+   "source_url": "https://en.wikipedia.org/wiki/Deorro",
+   "extract": "Erick Orrosquieta, commonly known by his stage name Deorro, is a Mexican and American DJ and record producer signed to Ultra Records. He formerly used the name TON!C."
+  },
+  {
+   "id": "e96aea3c-4d28-4e5d-a9e3-6d8b3be17657",
+   "slug": "trivium-crown-in-the-grave-world-tour-6c113466",
+   "title": "TRIVIUM: CROWN IN THE GRAVE WORLD TOUR",
+   "act": "TRIVIUM",
+   "name": "Trivium",
+   "description": "American metal band",
+   "source_url": "https://en.wikipedia.org/wiki/Trivium_(band)",
+   "extract": "Trivium is an American heavy metal band from Orlando, Florida, formed in 1999. The band's creative core comprises three long-time members; vocalist and guitarist Matt Heafy, guitarist Corey Beaulieu, and bassist Paolo Gregoletto. The band has changed drummers numerous times, with Alex Rüdinger becoming the most recent addition in October 2025."
+  }
+ ]
+}

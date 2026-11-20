@@ -1,0 +1,16 @@
+{
+ "city": "los-angeles",
+ "day": "2026-11-20",
+ "nights": [
+  {
+   "id": "2a54a323-95de-4b89-9a05-62a9d25708ac",
+   "slug": "hurricane-wisdom-037f4588",
+   "title": "Hurricane Wisdom",
+   "act": "Hurricane Wisdom",
+   "name": "Hurricane Wisdom",
+   "description": "American rapper (born 2004)",
+   "source_url": "https://en.wikipedia.org/wiki/Hurricane_Wisdom",
+   "extract": "Wisdom Mikeal Oluola, known professionally as Hurricane Wisdom, is an American rapper, singer-songwriter, and social media personality. Born in Tallahassee, Florida, and growing up in Havana, Florida, Oluola started his music career in 2018 or 2019, although he started taking the career seriously in 2020, with his debut single being \"Granny's Baby\"."
+  }
+ ]
+}
