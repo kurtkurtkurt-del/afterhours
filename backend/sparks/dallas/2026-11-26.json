@@ -1,0 +1,14 @@
+{
+  "city": "dallas",
+  "day": "2026-11-26",
+  "sparks": [
+    {
+      "kind": "football",
+      "title": { "en": "cowboys host the eagles on thanksgiving afternoon.", "de": "cowboys gegen die eagles am thanksgiving-nachmittag.", "tr": "cowboys, şükran günü öğleden sonra eagles'ı ağırlıyor." },
+      "line": { "en": "cowboys vs philadelphia eagles on fox, thursday 26 nov from 15:30. the thanksgiving game at at&t stadium, arlington; leave the city early for the drive out.", "de": "cowboys gegen die philadelphia eagles auf fox, donnerstag 26.11. ab 15:30 uhr. das thanksgiving-spiel im at&t stadium, arlington; die fahrt früh einplanen.", "tr": "cowboys – philadelphia eagles, fox'ta perşembe 26 kasım 15:30'dan itibaren. at&t stadyumu, arlington'da şükran günü maçı; yola erken çık." },
+      "place": { "en": "at&t stadium, arlington", "de": "at&t stadium, arlington", "tr": "at&t stadium, arlington" },
+      "hour": 15, "minute": 30,
+      "why": "Cowboys vs Eagles on Thanksgiving, thu 26 nov, 3:30 pm local per the Cowboys app schedule on FOX (SeatGeek Thanksgiving guide also lists the game); the team gallery shows 3:25, so check the start."
+    }
+  ]
+}

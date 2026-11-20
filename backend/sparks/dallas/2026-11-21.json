@@ -1,0 +1,14 @@
+{
+  "city": "dallas",
+  "day": "2026-11-21",
+  "sparks": [
+    {
+      "kind": "flea",
+      "title": { "en": "flea harvey's art market in the cedars, free all day.", "de": "flea harvey's kunstmarkt in den cedars, eintritt frei.", "tr": "cedars'ta flea harvey's sanat pazarı, giriş ücretsiz." },
+      "line": { "en": "20-plus local art vendors from 11:00 to 18:00 at lee harvey's on gould street, the same day as the cedars open studios tour. breakfast tacos and mimosas, pets welcome.", "de": "über 20 lokale kunsthandwerker von 11:00 bis 18:00 uhr bei lee harvey's in der gould street, am selben tag wie die cedars open studios tour. frühstückstacos und mimosen, hunde willkommen.", "tr": "11:00-18:00 arası lee harvey's'ta (gould street) 20'den fazla yerel sanatçı, aynı gün cedars open studios turu da var. kahvaltılık tacolar ve mimosa var, evcil hayvanlar da gelebilir." },
+      "place": { "en": "lee harvey's, gould street", "de": "lee harvey's, gould street", "tr": "lee harvey's, gould street" },
+      "hour": 11, "minute": 0,
+      "why": "Flea Harvey's Cedars Open Studios Art Market, sat 21 nov 11:00 to 18:00 at 1807 Gould Street, free entry, per the Community Impact calendar and The Craft Map."
+    }
+  ]
+}
