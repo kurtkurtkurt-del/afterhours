@@ -1,0 +1,14 @@
+{
+  "city": "new-orleans",
+  "day": "2026-11-23",
+  "sparks": [
+    {
+      "kind": "walk",
+      "title": { "en": "the lights on bourbon street, second line in the sky.", "de": "die lichter der bourbon street, second line in the sky.", "tr": "bourbon street'in ışıkları, second line in the sky." },
+      "line": { "en": "the light installation over the 100 to 300 blocks of the french quarter returns today and runs to 3 jan. go after dark, the lights are the point.", "de": "die lichtinstallation über den blöcken 100 bis 300 im french quarter kehrt heute zurück und läuft bis 3. januar. geh nach einbruch der dunkelheit, die lichter sind der punkt.", "tr": "french quarter'ın 100 ila 300. blokları üzerindeki ışık düzeni bugün geri dönüyor ve 3 ocak'a kadar sürüyor. karanlıkta git, asıl mesele ışıklar." },
+      "place": { "en": "bourbon street, french quarter", "de": "bourbon street, french quarter", "tr": "bourbon street, french quarter" },
+      "hour": 18, "minute": 0,
+      "why": "Second Line in the Sky returns to Bourbon Street on 23 november 2026 through 3 january 2027 (neworleans.com press release); the start hour is not confirmed, 18:00 is a suggested evening start."
+    }
+  ]
+}
