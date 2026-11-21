@@ -1,0 +1,14 @@
+{
+  "city": "guadalajara",
+  "day": "2026-11-29",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "the book fair is open again on sunday.", "de": "die buchmesse ist am sonntag wieder offen.", "tr": "kitap fuarı pazar günü yine açık." },
+      "line": { "en": "second public day of fil guadalajara at expo guadalajara, entry 09:00 to 21:00. the fair runs until 6 december.", "de": "zweiter öffentlicher tag der fil guadalajara in expo guadalajara, eintritt 09:00 bis 21:00. die messe läuft bis 6. dezember.", "tr": "fil guadalajara'nın halka açık ikinci günü, expo guadalajara'da; giriş 09:00 ile 21:00 arası. fuar 6 aralık'a kadar sürüyor." },
+      "place": { "en": "expo guadalajara", "de": "expo guadalajara", "tr": "expo guadalajara" },
+      "hour": 17, "minute": 0,
+      "why": "FIL Guadalajara 2026 public entry 09:00 to 21:00 on 29 nov and fair dates 28 nov to 6 dec (informador.mx)."
+    }
+  ]
+}

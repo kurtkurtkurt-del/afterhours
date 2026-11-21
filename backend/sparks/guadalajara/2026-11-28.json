@@ -1,0 +1,14 @@
+{
+  "city": "guadalajara",
+  "day": "2026-11-28",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "the fil book fair opens its 40th edition.", "de": "die fil buchmesse startet in ihre 40. ausgabe.", "tr": "fil kitap fuarı 40. baskısına başlıyor." },
+      "line": { "en": "more than 3,000 activities, italy as guest of honour, rushdie and baricco among the writers. the public gets in from 09:00 to 21:00.", "de": "über 3.000 veranstaltungen, italien als ehrengast, unter anderem rushdie und baricco. der öffentliche eintritt ist von 09:00 bis 21:00.", "tr": "3.000'den fazla etkinlik, konuk ülke italya, yazarlar arasında rushdie ve baricco var. halka giriş 09:00 ile 21:00 arası." },
+      "place": { "en": "expo guadalajara", "de": "expo guadalajara", "tr": "expo guadalajara" },
+      "hour": 17, "minute": 0,
+      "why": "FIL Guadalajara 2026, edition 40, 28 nov to 6 dec (informador.mx, letralia.com); public admission 09:00 to 21:00 on 28 and 29 nov per informador. The opening ceremony is by invitation only."
+    }
+  ]
+}

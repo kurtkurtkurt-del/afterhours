@@ -1,0 +1,14 @@
+{
+  "city": "guadalajara",
+  "day": "2026-11-22",
+  "sparks": [
+    {
+      "kind": "football",
+      "title": { "en": "chivas – cruz azul at the estadio akron.", "de": "chivas – cruz azul im estadio akron.", "tr": "chivas – cruz azul, estadio akron'da." },
+      "line": { "en": "last round of the regular season, both sides fighting for first place. the press lists kick-off at 17:07; come early for the stadium and the bars nearby.", "de": "letzter spieltag der hauptrunde, beide teams kämpfen um den ersten platz. laut presse anpfiff um 17:07; früh kommen für stadion und bars in der nähe.", "tr": "normal sezonun son haftası, iki takım da birinciliğe oynuyor. basında başlama saati 17:07 yazıyor; stadyum ve yakın barlar için erken gelin." },
+      "place": { "en": "estadio akron", "de": "estadio akron", "tr": "estadio akron" },
+      "hour": 17, "minute": 0,
+      "why": "Liga MX Apertura 2026 jornada 17, Chivas vs Cruz Azul at the Estadio Akron on sun 22.11 (clarosports.com, la-lista.com, mediotiempo.com); the listed kick-off is 17:07, I used 17:00."
+    }
+  ]
+}
