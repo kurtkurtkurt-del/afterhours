@@ -1,0 +1,14 @@
+{
+  "city": "ciudad-de-mexico",
+  "day": "2026-11-23",
+  "sparks": [
+    {
+      "kind": "openmic",
+      "title": { "en": "comedy open mic, monday night.", "de": "comedy-open-mic, montagabend.", "tr": "pazartesi gecesi komedi open mic." },
+      "line": { "en": "the súper open mic at círculo in hipódromo, from 19:00. comedy rather than music, a weeknight open stage.", "de": "die súper open mic im círculo in hipódromo, ab 19:00. komödie statt musik, eine offene bühne unter der woche.", "tr": "hipódromo'daki círculo'da 19:00'dan itibaren süper open mic. müzik değil komedi; hafta içi açık sahne." },
+      "place": { "en": "círculo", "de": "círculo", "tr": "círculo" },
+      "hour": 19, "minute": 0,
+      "why": "Círculo's Súper Open Mic, Mon 23 Nov 19:00, Av. Nuevo León 139, Hipódromo (circulocomedy.com/open-mic); a comedy open mic, not music."
+    }
+  ]
+}

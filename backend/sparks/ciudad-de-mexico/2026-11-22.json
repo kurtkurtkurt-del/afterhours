@@ -1,0 +1,22 @@
+{
+  "city": "ciudad-de-mexico",
+  "day": "2026-11-22",
+  "sparks": [
+    {
+      "kind": "football",
+      "title": { "en": "49ers – vikings at estadio banorte.", "de": "49ers – vikings im estadio banorte.", "tr": "estadio banorte'da 49ers – vikings." },
+      "line": { "en": "nfl in mexico city, american football: the 49ers host the vikings at the former azteca, kick-off around 19:20 local time.", "de": "nfl in mexiko-stadt, american football: die 49ers empfangen die vikings im früheren azteca, anpfiff gegen 19:20 ortszeit.", "tr": "mexico city'de nfl, amerikan futbolu: 49ers, vikings'i eski azteca'da ağırlıyor; başlama saati yerel saatle yaklaşık 19:20." },
+      "place": { "en": "estadio banorte", "de": "estadio banorte", "tr": "estadio banorte" },
+      "hour": 19, "minute": 20,
+      "why": "NFL Mexico City Game, Vikings at 49ers, Sun 22 Nov at Estadio Banorte; most sources give 7:20 p.m. local (DAZN, 49ers.com), though one listing differs."
+    },
+    {
+      "kind": "cinema",
+      "title": { "en": "free indigenous and afro-descendant film showcase.", "de": "kostenlose schau indigener und afrodeszendenter filme.", "tr": "ücretsiz yerli ve afro-kökenli film gösterimi." },
+      "line": { "en": "four features and five shorts, free entry at the cineteca nacional chapultepec from 12:00. two talks with filmmakers; check each screening time first.", "de": "vier spielfilme und fünf kurzfilme, eintritt frei, in der cineteca nacional chapultepec ab 12:00. zwei gespräche mit filmschaffenden; zeiten pro film vorher prüfen.", "tr": "dört uzun metraj ve beş kısa film, giriş ücretsiz, cineteca nacional chapultepec'te 12:00'den itibaren. iki yönetmenle söyleşi var; film saatlerini önceden kontrol edin." },
+      "place": { "en": "cineteca nacional chapultepec", "de": "cineteca nacional chapultepec", "tr": "cineteca nacional chapultepec" },
+      "hour": 12, "minute": 0,
+      "why": "Muestra de Cine de los Pueblos Indígenas y Afrodescendientes 2026, free, from 12:00 on Sun 22 (IMCINE, Proceso, Maya Comunicación); per-film times not confirmed."
+    }
+  ]
+}

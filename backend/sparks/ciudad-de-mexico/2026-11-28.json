@@ -1,0 +1,14 @@
+{
+  "city": "ciudad-de-mexico",
+  "day": "2026-11-28",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "coca-cola flow fest, saturday.", "de": "coca-cola flow fest, samstag.", "tr": "coca-cola flow fest, cumartesi." },
+      "line": { "en": "the two-day flow fest at curva 4 of the autódromo, 14:00 to 02:00. lineups differ between sources, so check the official site before buying.", "de": "das zweitägige flow fest an curva 4 des autódromos, 14:00 bis 02:00. die lineups unterscheiden sich, vor dem kauf die offizielle seite prüfen.", "tr": "autódromo'nun curva 4 bölümünde iki günlük flow fest, 14:00-02:00. kadrolar kaynaklara göre farklı; bilet almadan önce resmi siteye bakın." },
+      "place": { "en": "autódromo hermanos rodríguez", "de": "autódromo hermanos rodríguez", "tr": "autódromo hermanos rodríguez" },
+      "hour": 14, "minute": 0,
+      "why": "Coca-Cola Flow Fest, Sat 28 and Sun 29 Nov at the Autódromo Hermanos Rodríguez, 14:00 start (Ticketmaster, official site); lineups differ by source."
+    }
+  ]
+}
