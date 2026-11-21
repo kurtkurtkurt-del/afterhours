@@ -1,0 +1,14 @@
+{
+  "city": "monterrey",
+  "day": "2026-11-22",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "tierra media medieval festival, sunday.", "de": "tierra media mittelalterfest, sonntag.", "tr": "tierra media ortaçağ festivali, pazar." },
+      "line": { "en": "jousts, music and a medieval market at rodeo el venado, la huasteca, 14:00 to 21:00. the weekend is cool, so bring a jacket.", "de": "turniere, musik und ein mittelalterlicher markt im rodeo el venado, la huasteca, 14:00 bis 21:00. das wochenende ist kühl, also jacke mitnehmen.", "tr": "rodeo el venado'da, la huasteca'da turnuvalar, müzik ve ortaçağ pazarı, 14:00-21:00. hafta sonu serin, ceket al." },
+      "place": { "en": "rodeo el venado, la huasteca", "de": "rodeo el venado, la huasteca", "tr": "rodeo el venado, la huasteca" },
+      "hour": 14, "minute": 0,
+      "why": "Festival Medieval Tierra Media, 21-22 Nov 2026, 14:00-21:00 at Rodeo El Venado Ranch in Parque Ecologico La Huasteca (posta.com.mx; playersoflife.com, third-party agenda). Sunday weather not confirmed; the forecast found covers only up to Saturday."
+    }
+  ]
+}
