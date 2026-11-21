@@ -1,0 +1,22 @@
+{
+  "city": "koln",
+  "day": "2026-11-28",
+  "sparks": [
+    {
+      "kind": "football",
+      "title": { "en": "köln – elversberg at the rheinenergiestadion.", "de": "köln – elversberg im rheinenergiestadion.", "tr": "köln – elversberg, rheinenergiestadion'da." },
+      "line": { "en": "bundesliga home game against sv 07 elversberg, kick-off 15:30. get to the stadium early and have a drink on the way in.", "de": "bundesliga-heimspiel gegen sv 07 elversberg, anpfiff 15:30. früh am stadion sein und vor dem einlass noch etwas trinken.", "tr": "bundesliga'da ev sahibi maçı, sv 07 elversberg'e karşı, başlama saati 15:30. stadyuma erken git ve girmeden önce bir şeyler iç." },
+      "place": { "en": "rheinenergiestadion", "de": "rheinenergiestadion", "tr": "rheinenergiestadion" },
+      "hour": 15, "minute": 30,
+      "why": "1. FC Köln vs SV 07 Elversberg, Bundesliga matchday 11, Sat 28.11.2026 15:30 (hessenschau.de, ran.joyn.de)."
+    },
+    {
+      "kind": "bike",
+      "title": { "en": "used bike market in ehrenfeld.", "de": "gebrauchtrad-markt in ehrenfeld.", "tr": "ehrenfeld'de ikinci el bisiklet pazarı." },
+      "line": { "en": "a used bike market at the neptunplatz, 8:00 to 16:00. go in the morning and take your time over the stalls.", "de": "ein gebrauchtrad-markt am neptunplatz, 8:00 bis 16:00. morgens hin und in ruhe an den ständen schauen.", "tr": "neptunplatz'ta 08:00'den 16:00'ya kadar ikinci el bisiklet pazarı. sabah git ve tezgâhlara acele etmeden bak." },
+      "place": { "en": "neptunplatz", "de": "neptunplatz", "tr": "neptunplatz" },
+      "hour": 9, "minute": 0,
+      "why": "Gebrauchtradmarkt Ehrenfeld at Neptunplatz, Sat 28.11.2026 8:00 to 16:00 (koeln.de event listing in search results; the event page itself could not be opened)."
+    }
+  ]
+}

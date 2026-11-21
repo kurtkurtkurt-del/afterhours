@@ -1,0 +1,14 @@
+{
+  "city": "koln",
+  "day": "2026-11-23",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "heinzels wintermärchen opens on the alter markt.", "de": "heinzels wintermärchen öffnet am alter markt.", "tr": "heinzels wintermärchen alter markt'ta açılıyor." },
+      "line": { "en": "the altstadt christmas market opens today, with the ice rink at the heumarkt; go after work for the stalls and mulled wine. 2026 hours are not confirmed yet, so check before you go.", "de": "der altstadt-weihnachtsmarkt öffnet heute, dazu die eisbahn am heumarkt; nach der arbeit zu den buden und zum glühwein. öffnungszeiten für 2026 sind noch nicht bestätigt, vorher prüfen.", "tr": "altstadt yılbaşı pazarı bugün açılıyor, heumarkt'taki buz pateni pistiyle birlikte; işten sonra tezgâhlara ve sıcak şaraba uğra. 2026 saatleri henüz doğrulanmadı, gitmeden önce kontrol et." },
+      "place": { "en": "alter markt", "de": "alter markt", "tr": "alter markt" },
+      "hour": 17, "minute": 0,
+      "why": "Heinzels Wintermärchen Altstadt market opens 23.11.2026 at Alter Markt and Heumarkt (festivalsindeutschland.de, koeln.de); 2026 opening hours not confirmed, 17:00 is a suggested evening start."
+    }
+  ]
+}

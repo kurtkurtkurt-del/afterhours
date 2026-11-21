@@ -1,0 +1,14 @@
+{
+  "city": "koln",
+  "day": "2026-11-26",
+  "sparks": [
+    {
+      "kind": "jazz",
+      "title": { "en": "hammond organ jam at the salon de jazz.", "de": "hammond-orgel-jam im salon de jazz.", "tr": "salon de jazz'ta hammond orgu jam seansı." },
+      "line": { "en": "a hammond organ concert, with an open jam session after it. the club is at severinskloster 3a. the start time is not confirmed, so check the venue before you go.", "de": "ein konzert mit hammond-orgel, danach eine offene jam session. der club ist im severinskloster 3a. die anfangszeit ist nicht bestätigt, bitte vorher beim club prüfen.", "tr": "hammond orgu konseri, ardından açık bir jam seansı. mekân severinskloster 3a. başlangıç saati doğrulanmadı, gitmeden önce mekânı kontrol et." },
+      "place": { "en": "salon de jazz", "de": "salon de jazz", "tr": "salon de jazz" },
+      "hour": 20, "minute": 0,
+      "why": "Hammond Organ Grooves and Jam Session, Salon de Jazz, Thu 26.11.2026 (mvp.de listing); 20:00 is a suggested start based on the series' usual time, not confirmed for this date."
+    }
+  ]
+}
