@@ -1,0 +1,14 @@
+{
+  "city": "ottawa",
+  "day": "2026-11-28",
+  "sparks": [
+    {
+      "kind": "flea",
+      "title": { "en": "ottawa christmas market at lansdowne.", "de": "ottawa christmas market in lansdowne.", "tr": "lansdowne'da ottawa christmas market." },
+      "line": { "en": "free outdoor market at aberdeen plaza in lansdowne park, part of the 27 to 29 nov weekend. gifts and food from the stalls.", "de": "freier open-air-markt am aberdeen plaza im lansdowne park, Teil des wochenendes 27. bis 29. nov. geschenke und essen von den ständen.", "tr": "lansdowne park'ta aberdeen plaza'da ücretsiz açık hava pazarı, 27–29 kasım haftasonunun bir parçası. stantlardan hediyeler ve yiyecekler." },
+      "place": { "en": "aberdeen plaza, lansdowne", "de": "aberdeen plaza, lansdowne", "tr": "aberdeen plaza, lansdowne" },
+      "hour": 12, "minute": 0,
+      "why": "Ottawa Christmas Market, free, Aberdeen Plaza at Lansdowne Park; the 27 to 29 Nov weekend per several listings (todocanada.ca; Park Indigo blog). Saturday hours of 10 to 22 come from one listing only, so 12:00 is a suggested start."
+    }
+  ]
+}
