@@ -1,0 +1,14 @@
+{
+  "city": "berlin",
+  "day": "2026-11-26",
+  "sparks": [
+    {
+      "kind": "jazz",
+      "title": { "en": "hannes zerbe jazz orchestra at the mim.", "de": "hannes zerbe jazz orchester im mim.", "tr": "hannes zerbe jazz orkestrası, mim'de." },
+      "line": { "en": "jazz im mim, a big band at the musical instrument museum. starts 19:00 in the curt-sachs hall and runs to about 21:00. the museum is on ben-gurion-strasse; tickets via berlin.de.", "de": "jazz im mim, ein großes jazzorchester im musikinstrumenten-museum. beginn 19 uhr im curt-sachs-saal, etwa bis 21 uhr. das museum liegt an der ben-gurion-straße; tickets über berlin.de.", "tr": "mim'de jazz, müzik aletleri müzesi'nde büyük orkestra. 19:00'da curt-sachs salonunda başlıyor, yaklaşık 21:00'e kadar sürüyor. müze ben-gurion-straße'de; biletler berlin.de üzerinden." },
+      "place": { "en": "musikinstrumenten-museum", "de": "musikinstrumenten-museum", "tr": "musikinstrumenten-museum" },
+      "hour": 19, "minute": 0,
+      "why": "Jazz im MIM, Hannes Zerbe Jazz Orchester Berlin, Thu 26.11 19:00 in the Curt-Sachs-Saal, per berlin.de ticket listing and the SIMPK event page."
+    }
+  ]
+}

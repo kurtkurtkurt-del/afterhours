@@ -1,0 +1,14 @@
+{
+  "city": "berlin",
+  "day": "2026-11-22",
+  "sparks": [
+    {
+      "kind": "flea",
+      "title": { "en": "sunday flea market at boxhagener platz.", "de": "sonntagsflohmarkt am boxhagener platz.", "tr": "boxhagener platz'ta pazar günü pire pazarı." },
+      "line": { "en": "the stalls on boxhagener platz run every sunday from 10:00 to 18:00, free entry. calmer than the mauerpark, with books, records and small antiques.", "de": "die stände am boxhagener platz sind jeden sonntag von 10 bis 18 uhr offen, der eintritt ist frei. ruhiger als der mauerpark, mit büchern, schallplatten und kleinen antiquitäten.", "tr": "boxhagener platz'taki tezgahlar her pazar 10:00 ile 18:00 arası açık, giriş ücretsiz. mauerpark'tan daha sakin; kitap, plak ve küçük antikalar var." },
+      "place": { "en": "boxhagener platz", "de": "boxhagener platz", "tr": "boxhagener platz" },
+      "hour": 10, "minute": 0,
+      "why": "Boxhagener Platz flea market listed on berlin.de as every Sunday 10:00 to 18:00, free entry; the 22 Nov date follows from the weekly schedule."
+    }
+  ]
+}

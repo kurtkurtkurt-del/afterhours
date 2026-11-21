@@ -1,0 +1,14 @@
+{
+  "city": "berlin",
+  "day": "2026-11-23",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "spandau's christmas market opens.", "de": "der spandauer weihnachtsmarkt öffnet.", "tr": "spandau noel pazarı açılıyor." },
+      "line": { "en": "the spandau old town christmas market runs 23 november to 22 december, 11:00 to 20:00 sunday to thursday and until 22:00 on friday and saturday. a good first walk of the season.", "de": "der spandauer weihnachtsmarkt in der altstadt läuft vom 23. november bis 22. dezember, montag bis donnerstag 11 bis 20 uhr, freitag und samstag bis 22 uhr. ein guter erster rundgang der saison.", "tr": "spandau altstadt noel pazarı 23 kasım ile 22 aralık arasında açık; pazartesi-perşembe 11:00-20:00, cuma ve cumartesi 22:00'ye kadar. sezonun ilk turu için iyi bir yer." },
+      "place": { "en": "spandauer weihnachtsmarkt", "de": "spandauer weihnachtsmarkt", "tr": "spandauer weihnachtsmarkt" },
+      "hour": 17, "minute": 0,
+      "why": "Spandauer Weihnachtsmarkt 2026, 23.11. to 22.12., hours per berlin.de event calendar and visitBerlin; the opening-day ceremony was not confirmed."
+    }
+  ]
+}
