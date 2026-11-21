@@ -1,0 +1,38 @@
+{
+  "city": "houston",
+  "day": "2026-11-21",
+  "nights": [
+    {
+      "id": "59b17077-dfb4-4e36-8347-3d72bd301a1e",
+      "slug": "trivium-6596f4ff",
+      "title": "Trivium",
+      "name": "Trivium",
+      "source_url": "https://en.wikipedia.org/wiki/Trivium_(band)",
+      "extract": "Trivium is an American heavy metal band from Orlando, Florida, formed in 1999. The band's creative core comprises three long-time members; vocalist and guitarist Matt Heafy, guitarist Corey Beaulieu, and bassist Paolo Gregoletto. The band has changed drummers numerous times, with Alex Rüdinger becoming the most recent addition in October 2025.",
+      "en": {
+        "kicker": "american metal band · orlando, florida, 1999",
+        "who": "Trivium is an American heavy metal band from Orlando, Florida, formed in 1999. The band's creative core comprises vocalist and guitarist Matt Heafy, guitarist Corey Beaulieu, and bassist Paolo Gregoletto.",
+        "facts": [
+          "The band has changed drummers numerous times, with Alex Rüdinger becoming the most recent addition in October 2025.",
+          "The band's creative core comprises three long-time members."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische metal-band · orlando, florida, 1999",
+        "who": "Trivium sind eine amerikanische heavy-metal-band aus orlando, florida, gegründet 1999. den kreativen kern bilden sänger und gitarrist matt heafy, gitarrist corey beaulieu und bassist paolo gregoletto.",
+        "facts": [
+          "die band hat den schlagzeuger schon mehrfach gewechselt; zuletzt kam im oktober 2025 alex rüdinger hinzu.",
+          "den kreativen kern bilden drei langjährige mitglieder."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı metal grubu · orlando, florida, 1999",
+        "who": "Trivium, 1999'da orlando, florida'da kurulmuş amerikalı bir heavy metal grubudur. grubun yaratıcı çekirdeğini vokalist ve gitarist matt heafy, gitarist corey beaulieu ve basçı paolo gregoletto oluşturur.",
+        "facts": [
+          "grup davulcusunu birçok kez değiştirdi; en son ekim 2025'te alex rüdinger katıldı.",
+          "grubun yaratıcı çekirdeği üç uzun soluklu üyeden oluşur."
+        ]
+      }
+    }
+  ]
+}

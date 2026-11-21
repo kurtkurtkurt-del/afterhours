@@ -1,0 +1,38 @@
+{
+  "city": "amsterdam",
+  "day": "2026-11-21",
+  "nights": [
+    {
+      "id": "abdcd007-f176-4207-90fc-9dbc1b169a93",
+      "slug": "beabadoobee-the-powerlines-tour-299289cf",
+      "title": "beabadoobee: The Powerlines Tour",
+      "name": "Beabadoobee",
+      "source_url": "https://en.wikipedia.org/wiki/Beabadoobee",
+      "extract": "Beatrice Kristi Ilejay Laus, known professionally as Beabadoobee, is a Filipino and British singer and songwriter. From 2018 to 2021, she released five extended plays (EPs) under the independent label Dirty Hit: Lice (2018), Patched Up (2018), Loveworm (2019), Space Cadet (2019) and Our Extended Play (2021). Her debut studio album Fake It Flowers was released in October 2020, and received critical acclaim. Her second studio album, Beatopia, was released on July 2022, and spawned the hit \"The Perfect Pair\". Her third studio album, This Is How Tomorrow Moves, was released in August 2024; it became her first album to peak atop the UK Albums Chart. In September 2026, her fourth studio album, Pyl",
+      "en": {
+        "kicker": "filipino and british singer and songwriter",
+        "who": "Beatrice Kristi Ilejay Laus, known professionally as Beabadoobee, is a Filipino and British singer and songwriter. From 2018 to 2021 she released five extended plays under the independent label Dirty Hit, and her debut album Fake It Flowers received critical acclaim.",
+        "facts": [
+          "Her third studio album, This Is How Tomorrow Moves, was released in August 2024; it became her first album to peak atop the UK Albums Chart.",
+          "Her debut studio album Fake It Flowers was released in October 2020, and received critical acclaim."
+        ]
+      },
+      "de": {
+        "kicker": "philippinisch-britische sängerin und songwriterin",
+        "who": "Beatrice Kristi Ilejay Laus, bekannt als Beabadoobee, ist eine philippinisch-britische sängerin und songwriterin. von 2018 bis 2021 veröffentlichte sie fünf EPs beim unabhängigen label Dirty Hit, ihr debütalbum Fake It Flowers fand viel anerkennung bei der kritik.",
+        "facts": [
+          "ihr drittes studioalbum This Is How Tomorrow Moves erschien im august 2024 und war ihr erstes album an der spitze der britischen albumcharts.",
+          "ihr debütalbum fake it flowers erschien im oktober 2020 und fand viel anerkennung bei der kritik."
+        ]
+      },
+      "tr": {
+        "kicker": "filipinli-britanyalı şarkıcı ve söz yazarı",
+        "who": "Beatrice Kristi Ilejay Laus, Beabadoobee adıyla tanınan, filipinli ve britanyalı bir şarkıcı ve söz yazarıdır. 2018 ile 2021 arasında bağımsız Dirty Hit etiketiyle beş EP yayımladı ve ilk albümü Fake It Flowers eleştirmenlerden övgü aldı.",
+        "facts": [
+          "üçüncü stüdyo albümü This Is How Tomorrow Moves, Ağustos 2024'te çıktı ve birleşik krallık albüm listesinin zirvesine çıkan ilk albümü oldu.",
+          "ilk stüdyo albümü fake it flowers ekim 2020'de çıktı ve eleştirmenlerden övgü aldı."
+        ]
+      }
+    }
+  ]
+}

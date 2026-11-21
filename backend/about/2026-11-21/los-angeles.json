@@ -1,0 +1,38 @@
+{
+  "city": "los-angeles",
+  "day": "2026-11-21",
+  "nights": [
+    {
+      "id": "e57581fa-b87f-4980-b850-257714055ecb",
+      "slug": "prateek-kuhad-e9687531",
+      "title": "Prateek Kuhad",
+      "name": "Prateek Kuhad",
+      "source_url": "https://en.wikipedia.org/wiki/Prateek_Kuhad",
+      "extract": "Prateek Kuhad is an Indian singer-songwriter and musician who makes independent music in Hindi and English. He is best known for his track \"Kasoor\" and \"Co2\".",
+      "en": {
+        "kicker": "indian singer-songwriter",
+        "who": "Prateek Kuhad is an Indian singer-songwriter and musician who makes independent music in Hindi and English.",
+        "facts": [
+          "He is best known for his track \"Kasoor\" and \"Co2\".",
+          "He makes independent music in Hindi and English."
+        ]
+      },
+      "de": {
+        "kicker": "indischer singer-songwriter",
+        "who": "Prateek Kuhad ist ein indischer singer-songwriter und musiker, der unabhängige musik auf hindi und englisch macht.",
+        "facts": [
+          "bekannt wurde er vor allem mit seinen tracks \"kasoor\" und \"co2\".",
+          "er macht unabhängige musik auf hindi und englisch."
+        ]
+      },
+      "tr": {
+        "kicker": "hintli şarkıcı ve söz yazarı",
+        "who": "Prateek Kuhad, hintçe ve ingilizce bağımsız müzik yapan hintli bir şarkıcı, söz yazarı ve müzisyendir.",
+        "facts": [
+          "en çok \"kasoor\" ve \"co2\" parçalarıyla tanınır.",
+          "hintçe ve ingilizce bağımsız müzik yapar."
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "city": "wien",
+  "day": "2026-11-21",
+  "nights": [
+    {
+      "id": "5e073bda-e42d-4697-b16b-f179ef40dd39",
+      "slug": "odetari-3ea1f3fb",
+      "title": "Odetari",
+      "name": "Odetari",
+      "source_url": "https://en.wikipedia.org/wiki/Odetari",
+      "extract": "Taha Othman Ahmad, also known as Odetari, is an American rapper, singer, songwriter, and record producer. He started making and releasing music at age 13. His music became popular on TikTok in 2023 and his songs \"Good Loyal Thots\", \"Narcissistic Personality Disorder\", \"Look Don't Touch\", \"I Love You Hoe\", \"GMFU\", and \"Hypnotic Data\" all reached the top 3 of the Billboard Hot Dance/Electronic Songs chart and were each certified gold by the Recording Industry Association of America (RIAA). Ahmad is of Palestinian origin.",
+      "en": {
+        "kicker": "american rapper and singer",
+        "who": "Taha Othman Ahmad, also known as Odetari, is an American rapper, singer, songwriter, and record producer. He started making and releasing music at age 13.",
+        "facts": [
+          "He started making and releasing music at age 13.",
+          "His music became popular on TikTok in 2023, and several of his songs reached the top 3 of the Billboard Hot Dance/Electronic Songs chart."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer rapper und sänger",
+        "who": "Taha Othman Ahmad, auch bekannt als odetari, ist ein amerikanischer rapper, sänger, songwriter und produzent. er begann im alter von 13 jahren, musik zu machen und zu veröffentlichen.",
+        "facts": [
+          "er begann im alter von 13 jahren, musik zu machen und zu veröffentlichen.",
+          "seine musik wurde 2023 auf tiktok populär, und mehrere seiner songs erreichten die top 3 der billboard-hot-dance/electronic-songs-charts."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı rapçi ve şarkıcı",
+        "who": "Taha Othman Ahmad, odetari adıyla da tanınan, amerikalı bir rapçi, şarkıcı, söz yazarı ve plak yapımcısıdır. 13 yaşında müzik yapmaya ve yayımlamaya başladı.",
+        "facts": [
+          "13 yaşında müzik yapmaya ve yayımlamaya başladı.",
+          "müziği 2023'te tiktok'ta popüler oldu; birkaç şarkısı billboard hot dance/electronic songs listesinin ilk üçüne girdi."
+        ]
+      }
+    }
+  ]
+}

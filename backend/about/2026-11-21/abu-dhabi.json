@@ -1,0 +1,38 @@
+{
+  "city": "abu-dhabi",
+  "day": "2026-11-21",
+  "nights": [
+    {
+      "id": "c5b18344-47d1-4ecf-96e3-f0394d461295",
+      "slug": "jennifer-lopez-friday-48e164f8",
+      "title": "Jennifer Lopez - Friday",
+      "name": "Jennifer Lopez",
+      "source_url": "https://en.wikipedia.org/wiki/Jennifer_Lopez",
+      "extract": "Jennifer Lynn Lopez is an American singer, songwriter, actress, dancer, and businesswoman. Lopez is regarded as one of the most influential entertainers of her time, credited with breaking barriers for Latino Americans in Hollywood and helping propel the Latin pop movement in music. She is also known for her cultural impact through fashion, branding, and shifting mainstream beauty standards.",
+      "en": {
+        "kicker": "american singer-songwriter and actress",
+        "who": "Jennifer Lynn Lopez is an American singer, songwriter, actress, dancer, and businesswoman. Lopez is regarded as one of the most influential entertainers of her time, and helped propel the Latin pop movement in music.",
+        "facts": [
+          "Lopez is credited with breaking barriers for Latino Americans in Hollywood.",
+          "She is also known for her cultural impact through fashion, branding, and shifting mainstream beauty standards."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische sängerin, songwriterin und schauspielerin",
+        "who": "Jennifer Lynn Lopez ist eine amerikanische sängerin, songwriterin, schauspielerin, tänzerin und unternehmerin. lopez gilt als eine der einflussreichsten unterhaltungskünstlerinnen ihrer zeit und half, die latin-pop-bewegung in der musik voranzubringen.",
+        "facts": [
+          "ihr wird zugeschrieben, in hollywood barrieren für latino-amerikaner durchbrochen zu haben.",
+          "ihr kultureller einfluss zeigt sich außerdem in mode, branding und im wandel der mainstream-schönheitsideale."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı şarkıcı, söz yazarı ve oyuncu",
+        "who": "Jennifer Lynn Lopez amerikalı bir şarkıcı, söz yazarı, oyuncu, dansçı ve iş insanıdır. lopez, döneminin en etkili eğlence sanatçılarından biri sayılır ve latin pop akımının müzikte yükselmesine katkı sağladı.",
+        "facts": [
+          "lopez, hollywood'da latin amerikalılar için engelleri aşmasıyla tanınır.",
+          "moda, markalaşma ve değişen ana akım güzellik standartları üzerindeki kültürel etkisiyle de bilinir."
+        ]
+      }
+    }
+  ]
+}

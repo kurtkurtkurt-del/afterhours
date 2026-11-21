@@ -1,0 +1,38 @@
+{
+  "city": "montreal",
+  "day": "2026-11-21",
+  "nights": [
+    {
+      "id": "c6234859-19b3-44ef-b0e5-f49d08f2ab31",
+      "slug": "dragonforce-inhuman-rampage-20th-anniversary-7c705380",
+      "title": "DragonForce: Inhuman Rampage 20th Anniversary",
+      "name": "DragonForce",
+      "source_url": "https://en.wikipedia.org/wiki/DragonForce",
+      "extract": "DragonForce are a British power metal band from London, formed in 1999. They are known for their long and fast guitar solos, fantasy-themed lyrics and retro video game-influenced sound. The band themselves refer to their music as \"extreme power metal\".",
+      "en": {
+        "kicker": "british power metal band · london, 1999",
+        "who": "DragonForce are a British power metal band from London, formed in 1999. They are known for their long and fast guitar solos, fantasy-themed lyrics and retro video game-influenced sound.",
+        "facts": [
+          "They are known for their long and fast guitar solos, fantasy-themed lyrics and retro video game-influenced sound.",
+          "The band themselves refer to their music as \"extreme power metal\"."
+        ]
+      },
+      "de": {
+        "kicker": "britische power-metal-band · london, 1999",
+        "who": "DragonForce sind eine britische power-metal-band aus london, gegründet 1999. sie sind bekannt für lange, schnelle gitarrensoli, fantasy-texte und einen von retro-videospielen beeinflussten sound.",
+        "facts": [
+          "bekannt sind sie für lange, schnelle gitarrensoli, fantasy-texte und einen von retro-videospielen beeinflussten sound.",
+          "die band selbst nennt ihre musik \"extreme power metal\"."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz power metal grubu · londra, 1999",
+        "who": "DragonForce, 1999'da londra'da kurulmuş ingiliz bir power metal grubudur. uzun ve hızlı gitar sololarıyla, fantezi temalı sözleri ve retro video oyunlarından etkilenen sesiyle tanınır.",
+        "facts": [
+          "uzun ve hızlı gitar sololarıyla, fantezi temalı sözleriyle ve retro video oyunlarından etkilenen sesiyle tanınırlar.",
+          "grubun kendisi müziğini \"extreme power metal\" olarak tanımlar."
+        ]
+      }
+    }
+  ]
+}

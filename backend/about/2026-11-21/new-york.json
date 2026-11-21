@@ -1,0 +1,38 @@
+{
+  "city": "new-york",
+  "day": "2026-11-21",
+  "nights": [
+    {
+      "id": "9cf98709-7e75-4e8d-9a07-6918d3428d8d",
+      "slug": "the-pineapple-thief-d4255b44",
+      "title": "The Pineapple Thief",
+      "name": "The Pineapple Thief",
+      "source_url": "https://en.wikipedia.org/wiki/The_Pineapple_Thief",
+      "extract": "The Pineapple Thief are an English progressive rock band founded in 1999 by Bruce Soord in Yeovil, Somerset. As of June 2024, the group consists of Soord on vocals, guitars, and keyboards, Jon Sykes on bass, Steve Kitch on keyboards, and Gavin Harrison on drums. They have released 16 studio albums, 6 EPs, and several live and compilation albums.",
+      "en": {
+        "kicker": "english progressive rock band · yeovil, 1999",
+        "who": "The Pineapple Thief are an English progressive rock band founded in 1999 by Bruce Soord in Yeovil, Somerset.",
+        "facts": [
+          "They have released 16 studio albums, 6 EPs, and several live and compilation albums.",
+          "As of June 2024, the group consists of Soord on vocals, guitars, and keyboards, Jon Sykes on bass, Steve Kitch on keyboards, and Gavin Harrison on drums."
+        ]
+      },
+      "de": {
+        "kicker": "englische progressive-rock-band · yeovil, 1999",
+        "who": "The Pineapple Thief sind eine englische progressive-rock-band, die 1999 von bruce soord in yeovil, somerset, gegründet wurde.",
+        "facts": [
+          "sie haben 16 studioalben, 6 EPs sowie mehrere live- und compilation-alben veröffentlicht.",
+          "stand juni 2024 besteht die gruppe aus soord (gesang, gitarren, keyboards), jon sykes (bass), steve kitch (keyboards) und gavin harrison (schlagzeug)."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz progresif rock grubu · yeovil, 1999",
+        "who": "The Pineapple Thief, 1999'da bruce soord tarafından somerset'in yeovil kasabasında kurulmuş ingiliz bir progresif rock grubudur.",
+        "facts": [
+          "16 stüdyo albümü, 6 EP'si ve birkaç canlı ile derleme albümü var.",
+          "haziran 2024 itibarıyla grup; vokal, gitar ve klavyede soord, basta jon sykes, klavyede steve kitch ve davulda gavin harrison'dan oluşuyor."
+        ]
+      }
+    }
+  ]
+}

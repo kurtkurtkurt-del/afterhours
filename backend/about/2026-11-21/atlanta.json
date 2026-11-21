@@ -1,0 +1,198 @@
+{
+  "city": "atlanta",
+  "day": "2026-11-21",
+  "nights": [
+    {
+      "id": "74fa3be7-d0d7-4e2f-a442-d959bab9c945",
+      "slug": "futurebirds-57746df1",
+      "title": "Futurebirds",
+      "name": "Futurebirds",
+      "source_url": "https://en.wikipedia.org/wiki/Futurebirds",
+      "extract": "Futurebirds are an American Rock and Roll band formed in 2008 from Athens, Georgia, United States. Founded by University of Georgia students Daniel Womack, Carter King, Thomas Johnson, Brannen Miles and Payton Bradford, the group emerged from Athens' longstanding independent music scene and developed a style that blends rock and roll, Americana, country rock, folk rock, and neo-psychedelia.",
+      "en": {
+        "kicker": "american rock and roll band · athens, georgia, 2008",
+        "who": "Futurebirds are an American rock and roll band formed in 2008 in Athens, Georgia. The band emerged from Athens' longstanding independent music scene and blends rock and roll, Americana, country rock, folk rock, and neo-psychedelia.",
+        "facts": [
+          "The five founders were University of Georgia students: Daniel Womack, Carter King, Thomas Johnson, Brannen Miles and Payton Bradford.",
+          "Their style blends rock and roll, Americana, country rock, folk rock, and neo-psychedelia."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische rock-'n'-roll-band · athens, georgia, 2008",
+        "who": "Futurebirds sind eine amerikanische rock-'n'-roll-band, die 2008 in athens, georgia, gegründet wurde. sie entstand aus der langjährigen unabhängigen musikszene von athens und verbindet rock 'n' roll, americana, country rock, folk rock und neo-psychedelia.",
+        "facts": [
+          "die fünf gründer waren studenten der university of georgia: daniel womack, carter king, thomas johnson, brannen miles und payton bradford.",
+          "ihr stil verbindet rock 'n' roll, americana, country rock, folk rock und neo-psychedelia."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı rock and roll grubu · athens, georgia, 2008",
+        "who": "Futurebirds, 2008'de athens, georgia'da kurulmuş amerikalı bir rock and roll grubudur. athens'in köklü bağımsız müzik sahnesinden çıkan grup rock and roll, americana, country rock, folk rock ve neo-psychedelia'yı harmanlar.",
+        "facts": [
+          "beş kurucu üye university of georgia öğrencisiydi: daniel womack, carter king, thomas johnson, brannen miles ve payton bradford.",
+          "tarzları rock and roll, americana, country rock, folk rock ve neo-psychedelia'yı birleştirir."
+        ]
+      }
+    },
+    {
+      "id": "ed286f56-2403-45e4-b34e-a9c284aa855c",
+      "slug": "the-steeldrivers-e3148ca1",
+      "title": "The SteelDrivers",
+      "name": "The SteelDrivers",
+      "source_url": "https://en.wikipedia.org/wiki/The_SteelDrivers",
+      "extract": "The SteelDrivers are a bluegrass band from Nashville, Tennessee. Members include fiddler Tammy Rogers, bassist Mike Fleming, guitarist/vocalist Matt Dame, mandolinist Brent Truitt, and banjoist Richard Bailey. Past members include Kelvin Damrell, Chris Stapleton, Gary Nichols, and Mike Henderson. The band has recorded four albums on the Rounder Records label and one independent live album recorded at The Station Inn. The band has received several Grammy nominations and won a Grammy for the album The Muscle Shoals Recordings.",
+      "en": {
+        "kicker": "american bluegrass band · nashville, tennessee",
+        "who": "The SteelDrivers are a bluegrass band from Nashville, Tennessee. Members include fiddler Tammy Rogers, bassist Mike Fleming, guitarist and vocalist Matt Dame, mandolinist Brent Truitt, and banjoist Richard Bailey.",
+        "facts": [
+          "The band has recorded four albums on the Rounder Records label and one independent live album recorded at The Station Inn.",
+          "The band has received several Grammy nominations and won a Grammy for the album The Muscle Shoals Recordings."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische bluegrass-band · nashville, tennessee",
+        "who": "The SteelDrivers sind eine bluegrass-band aus nashville, tennessee. zu den mitgliedern gehören geigerin tammy rogers, bassist mike fleming, gitarrist und sänger matt dame, mandolinist brent truitt und banjospieler richard bailey.",
+        "facts": [
+          "die band hat vier alben beim label rounder records aufgenommen sowie ein unabhängiges live-album im station inn.",
+          "die band wurde mehrfach für den grammy nominiert und gewann einen grammy für das album the muscle shoals recordings."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı bluegrass grubu · nashville, tennessee",
+        "who": "The SteelDrivers, nashville, tennessee'den bir bluegrass grubudur. kadrosunda kemancı tammy rogers, basçı mike fleming, gitarist ve vokalist matt dame, mandolinist brent truitt ve banjocu richard bailey yer alır.",
+        "facts": [
+          "grup rounder records etiketinde dört albüm kaydetti ve the station inn'de kaydedilen bağımsız bir canlı albümü var.",
+          "grup birçok kez grammy adayı oldu ve the muscle shoals recordings albümüyle bir grammy kazandı."
+        ]
+      }
+    },
+    {
+      "id": "aa106609-8be2-42e0-a02f-2acbfd09ee0f",
+      "slug": "stray-cats-4b286cce",
+      "title": "Stray Cats",
+      "name": "Stray Cats",
+      "source_url": "https://en.wikipedia.org/wiki/Stray_Cats",
+      "extract": "Stray Cats are an American rockabilly band formed in 1979 by guitarist and vocalist Brian Setzer, double bassist Lee Rocker, and drummer Slim Jim Phantom in the Long Island hamlet of Massapequa, New York. The group had numerous hit singles in the UK, Australia, Canada, and the U.S. including \"Stray Cat Strut\", \"(She's) Sexy + 17\", \"Look at That Cadillac\", \"I Won't Stand in Your Way\", \"Bring It Back Again\", and \"Rock This Town\", which the Rock and Roll Hall of Fame has listed as one of the songs that shaped rock and roll.",
+      "en": {
+        "kicker": "american rockabilly band · massapequa, new york, 1979",
+        "who": "Stray Cats are an American rockabilly band formed in 1979 by guitarist and vocalist Brian Setzer, double bassist Lee Rocker, and drummer Slim Jim Phantom. The group formed in the Long Island hamlet of Massapequa, New York.",
+        "facts": [
+          "The group had numerous hit singles in the UK, Australia, Canada, and the U.S., including \"Stray Cat Strut\" and \"Rock This Town\".",
+          "The Rock and Roll Hall of Fame has listed \"Rock This Town\" as one of the songs that shaped rock and roll."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische rockabilly-band · massapequa, new york, 1979",
+        "who": "Stray Cats sind eine amerikanische rockabilly-band, die 1979 von gitarrist und sänger brian setzer, kontrabassist lee rocker und schlagzeuger slim jim phantom gegründet wurde. die gruppe entstand im long-island-ort massapequa, new york.",
+        "facts": [
+          "die band hatte zahlreiche hitsingles in großbritannien, australien, kanada und den usa, darunter \"stray cat strut\" und \"rock this town\".",
+          "die rock and roll hall of fame hat \"rock this town\" als einen der songs aufgeführt, die den rock and roll geprägt haben."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı rockabilly grubu · massapequa, new york, 1979",
+        "who": "Stray Cats, 1979'da gitarist ve vokalist brian setzer, kontrbasçı lee rocker ve davulcu slim jim phantom tarafından kurulmuş amerikalı bir rockabilly grubudur. grup, long island'daki massapequa, new york'ta kuruldu.",
+        "facts": [
+          "grup birleşik krallık, avustralya, kanada ve abd'de \"stray cat strut\" ve \"rock this town\" dahil birçok hit single çıkardı.",
+          "rock and roll hall of fame, \"rock this town\"u rock and roll'u şekillendiren şarkılar arasında listeledi."
+        ]
+      }
+    },
+    {
+      "id": "e53ae55d-912a-474c-a23e-22911d201934",
+      "slug": "static-dress-1bdbc743",
+      "title": "Static Dress",
+      "name": "Static Dress",
+      "source_url": "https://en.wikipedia.org/wiki/Static_Dress",
+      "extract": "Static Dress are an English rock band from Leeds, West Yorkshire. Formed in 2018, Static Dress are a concept band with their material following a continuous story. They currently consist of lead vocalist Olli Appleyard, drummer Sam Ogden, guitarist Vincent Weight and bassist George Holding. They have released two full-length studio albums, three EPs and various standalone singles, as well as a comic book and three video games.",
+      "en": {
+        "kicker": "english rock band · leeds, 2018",
+        "who": "Static Dress are an English rock band from Leeds, West Yorkshire. Formed in 2018, they are a concept band whose material follows a continuous story.",
+        "facts": [
+          "They have released two full-length studio albums, three EPs and various standalone singles, as well as a comic book and three video games.",
+          "They currently consist of lead vocalist Olli Appleyard, drummer Sam Ogden, guitarist Vincent Weight and bassist George Holding."
+        ]
+      },
+      "de": {
+        "kicker": "englische rockband · leeds, 2018",
+        "who": "Static Dress sind eine englische rockband aus leeds, west yorkshire. 2018 gegründet, sind sie eine concept-band, deren musik einer durchgehenden geschichte folgt.",
+        "facts": [
+          "sie haben zwei vollständige studioalben, drei EPs und verschiedene einzelsingles veröffentlicht, dazu ein comicbuch und drei videospiele.",
+          "derzeit besteht die band aus sänger olli appleyard, schlagzeuger sam ogden, gitarrist vincent weight und bassist george holding."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz rock grubu · leeds, 2018",
+        "who": "Static Dress, west yorkshire'daki leeds'ten bir ingiliz rock grubudur. 2018'de kurulan grup, müziği sürekli bir hikâyeyi izleyen bir konsept gruptur.",
+        "facts": [
+          "iki tam uzunluklu stüdyo albümü, üç EP ve çeşitli tekil single'lar yayımladılar; ayrıca bir çizgi roman ve üç video oyunu çıkardılar.",
+          "grup şu anda vokalist olli appleyard, davulcu sam ogden, gitarist vincent weight ve basçı george holding'den oluşuyor."
+        ]
+      }
+    },
+    {
+      "id": "706b46a9-24ac-4f73-af2a-f5f5358cff3d",
+      "slug": "kwesi-arthur-32bac48c",
+      "title": "Kwesi Arthur",
+      "name": "Kwesi Arthur",
+      "source_url": "https://en.wikipedia.org/wiki/Kwesi_Arthur",
+      "extract": "Emmanuel Kwesi Danso Arthur, known professionally as Kwesi Arthur, is a Ghanaian rapper, singer and songwriter from Tema. He rose to fame in 2017 with the hit single \"Grind Day\", which received widespread acclaim, a co-sign and a chart-topping remix from rap heavyweights Sarkodie and Medikal. In 2019, his second EP, Live from Nkrumah Krom Vol II, garnered more than 2 million streams in the first week of its release.",
+      "en": {
+        "kicker": "ghanaian rapper and singer · tema",
+        "who": "Emmanuel Kwesi Danso Arthur, known professionally as Kwesi Arthur, is a Ghanaian rapper, singer and songwriter from Tema. He rose to fame in 2017 with the hit single \"Grind Day\".",
+        "facts": [
+          "He rose to fame in 2017 with the hit single \"Grind Day\", which received widespread acclaim, a co-sign and a chart-topping remix from rap heavyweights Sarkodie and Medikal.",
+          "In 2019, his second EP, Live from Nkrumah Krom Vol II, garnered more than 2 million streams in the first week of its release."
+        ]
+      },
+      "de": {
+        "kicker": "ghanaischer rapper und sänger · tema",
+        "who": "Emmanuel Kwesi Danso Arthur, bekannt als Kwesi Arthur, ist ein ghanaischer rapper, sänger und songwriter aus tema. 2017 wurde er mit dem hit \"Grind Day\" bekannt.",
+        "facts": [
+          "2017 wurde er mit dem hit \"Grind Day\" bekannt, der breite anerkennung fand und dessen remix mit den rap-schwergewichten sarkodie und medikal an die spitze der charts kam.",
+          "2019 sammelte seine zweite EP live from nkrumah krom vol ii in der ersten woche mehr als 2 millionen streams."
+        ]
+      },
+      "tr": {
+        "kicker": "ganalı rapçi ve şarkıcı · tema",
+        "who": "Emmanuel Kwesi Danso Arthur, Kwesi Arthur adıyla tanınan, tema'dan bir ganalı rapçi, şarkıcı ve söz yazarıdır. 2017'de \"Grind Day\" single'ıyla ün kazandı.",
+        "facts": [
+          "2017'de \"Grind Day\" single'ıyla ün kazandı; şarkı geniş beğeni topladı ve sarkodie ile medikal gibi rap isimlerinin remix'i listelerin zirvesine çıktı.",
+          "2019'da ikinci EP'si live from nkrumah krom vol ii, yayımlandığı ilk haftada 2 milyondan fazla dinlenme aldı."
+        ]
+      }
+    },
+    {
+      "id": "c9604951-a584-496e-a106-64d4ad5af3ec",
+      "slug": "blackberry-smoke-holiday-homecoming-8efbf5d9",
+      "title": "Blackberry Smoke: Holiday Homecoming",
+      "name": "Blackberry Smoke",
+      "source_url": "https://en.wikipedia.org/wiki/Blackberry_Smoke",
+      "extract": "Blackberry Smoke is an American rock band formed in Atlanta, Georgia, in 2001. The lineup consists of lead vocalist and lead guitarist Charlie Starr, lead/rhythm guitarist Paul Jackson, bassist Richard Turner and keyboardist Brandon Still. Richard's brother Brit Turner was the band's co-founder and drummer before his death in March 2024. Drumming duties have been covered during the band's tours since late 2023 by Atlanta drummer Kent Aberle. In 2018, they added touring members guitarist Benji Shanks and percussionist Preston Holcomb, with Holcomb retiring from touring in the spring of 2024. They have released eight studio albums, two live albums and five extended plays.",
+      "en": {
+        "kicker": "american rock band · atlanta, georgia, 2001",
+        "who": "Blackberry Smoke is an American rock band formed in Atlanta, Georgia, in 2001. The lineup consists of lead vocalist and lead guitarist Charlie Starr, lead and rhythm guitarist Paul Jackson, bassist Richard Turner and keyboardist Brandon Still.",
+        "facts": [
+          "They have released eight studio albums, two live albums and five extended plays.",
+          "Drumming duties have been covered during the band's tours since late 2023 by Atlanta drummer Kent Aberle."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische rockband · atlanta, georgia, 2001",
+        "who": "Blackberry Smoke sind eine amerikanische rockband, die 2001 in atlanta, georgia, gegründet wurde. zur besetzung gehören sänger und leadgitarrist charlie starr, gitarrist paul jackson, bassist richard turner und keyboarder brandon still.",
+        "facts": [
+          "sie haben acht studioalben, zwei live-alben und fünf EPs veröffentlicht.",
+          "seit ende 2023 übernimmt auf tourneen der atlantaer schlagzeuger kent aberle das schlagzeug."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı rock grubu · atlanta, georgia, 2001",
+        "who": "Blackberry Smoke, 2001'de atlanta, georgia'da kurulmuş amerikalı bir rock grubudur. kadroda vokalist ve solo gitarist charlie starr, ritim gitarist paul jackson, basçı richard turner ve klavyeci brandon still yer alır.",
+        "facts": [
+          "sekiz stüdyo albümü, iki canlı albümü ve beş EP'si var.",
+          "2023 sonundan beri turnelerde davulları atlantalı davulcu kent aberle çalıyor."
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,198 @@
+{
+  "city": "manchester",
+  "day": "2026-11-21",
+  "nights": [
+    {
+      "id": "2476c4b0-9d59-4bd0-bd92-0a5371079295",
+      "slug": "dakhabrakha-e0d8222f",
+      "title": "DakhaBrakha",
+      "name": "DakhaBrakha",
+      "source_url": "https://en.wikipedia.org/wiki/DakhaBrakha",
+      "extract": "DakhaBrakha are a world music quartet formed in Kyiv, Ukraine. The four musicians combine a variety of musical styles from across the globe, creating energetic and artistic performances that are uniquely their own. DakhaBrakha's eclectic sound seamlessly mesh ancient Ukrainian folk tunes with modern genres, such as pop, punk, electronica, hip hop, and soul, a musical fusion that they define as \"ethno-chaos\".",
+      "en": {
+        "kicker": "ukrainian world music quartet · kyiv",
+        "who": "DakhaBrakha are a world music quartet formed in Kyiv, Ukraine. The four musicians combine a variety of musical styles from across the globe.",
+        "facts": [
+          "DakhaBrakha's eclectic sound seamlessly meshes ancient Ukrainian folk tunes with modern genres, such as pop, punk, electronica, hip hop, and soul.",
+          "They define their fusion as \"ethno-chaos\"."
+        ]
+      },
+      "de": {
+        "kicker": "ukrainisches world-music-quartett · kiew",
+        "who": "DakhaBrakha sind ein world-music-quartett, das in kiew, ukraine, gegründet wurde. die vier musiker verbinden musikstile aus aller welt.",
+        "facts": [
+          "der eklektische sound von dakhabrakha verbindet alte ukrainische volksweisen nahtlos mit modernen genres wie pop, punk, electronica, hip hop und soul.",
+          "sie bezeichnen ihre mischung als \"ethno-chaos\"."
+        ]
+      },
+      "tr": {
+        "kicker": "ukraynalı dünya müziği dörtlüsü · kiev",
+        "who": "DakhaBrakha, ukrayna'nın kiev şehrinde kurulmuş bir dünya müziği dörtlüsüdür. dört müzisyen dünyanın dört bir yanından müzik tarzlarını harmanlar.",
+        "facts": [
+          "dakhabrakha'nın eklektik sesi, eski ukrayna halk ezgilerini pop, punk, electronica, hip hop ve soul gibi modern türlerle kusursuzca birleştirir.",
+          "kendi füzyonlarını \"ethno-chaos\" olarak tanımlarlar."
+        ]
+      }
+    },
+    {
+      "id": "c07124c1-cf56-412c-88fd-3d31ee92226f",
+      "slug": "pixel-grip-b6dd4031",
+      "title": "Pixel Grip",
+      "name": "Pixel Grip",
+      "source_url": "https://en.wikipedia.org/wiki/Pixel_Grip",
+      "extract": "Pixel Grip is an American electronic music group, formed in Chicago, Illinois. The band consists of vocalist Rita Lukea and producers Tyler Ommen and Jonathon Freund. The band is largely inspired by the queer music scene emerging from clubs and discos in the last several decades.",
+      "en": {
+        "kicker": "american electronic music group · chicago, illinois",
+        "who": "Pixel Grip is an American electronic music group, formed in Chicago, Illinois. The band consists of vocalist Rita Lukea and producers Tyler Ommen and Jonathon Freund.",
+        "facts": [
+          "The band consists of vocalist Rita Lukea and producers Tyler Ommen and Jonathon Freund.",
+          "The band is largely inspired by the queer music scene emerging from clubs and discos in the last several decades."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische elektronik-gruppe · chicago, illinois",
+        "who": "Pixel Grip ist eine amerikanische elektronik-gruppe aus chicago, illinois. die band besteht aus gesangsstimme rita lukea und den produzenten tyler ommen und jonathon freund.",
+        "facts": [
+          "die band besteht aus gesangsstimme rita lukea und den produzenten tyler ommen und jonathon freund.",
+          "sie lässt sich stark von der queeren musikszene inspirieren, die in den letzten jahrzehnten aus clubs und discos entstanden ist."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı elektronik müzik grubu · chicago, illinois",
+        "who": "Pixel Grip, chicago, illinois'de kurulmuş amerikalı bir elektronik müzik grubudur. grup vokalist rita lukea ile yapımcılar tyler ommen ve jonathon freund'dan oluşur.",
+        "facts": [
+          "grup vokalist rita lukea ile yapımcılar tyler ommen ve jonathon freund'dan oluşur.",
+          "grup, son onyıllarda kulüplerden ve diskolardan doğan queer müzik sahnesinden büyük ölçüde ilham alır."
+        ]
+      }
+    },
+    {
+      "id": "4164b164-6d93-4b1d-9468-17afd336790d",
+      "slug": "jungle-50098bf8",
+      "title": "Jungle",
+      "name": "Jungle",
+      "source_url": "https://en.wikipedia.org/wiki/Jungle_(band)",
+      "extract": "Jungle are a British band formed in early 2013 by London-based producers Josh Lloyd-Watson and Tom McFarland. Jungle have released five studio albums: Jungle (2014), which was shortlisted for the Mercury Prize; For Ever (2018); Loving in Stereo (2021); Volcano (2023); and Sunshine (2026). The first two albums were released through XL Recordings while the latter three via their independent label Caiola Records.",
+      "en": {
+        "kicker": "british band · london, 2013",
+        "who": "Jungle are a British band formed in early 2013 by London-based producers Josh Lloyd-Watson and Tom McFarland.",
+        "facts": [
+          "Jungle have released five studio albums: Jungle (2014), which was shortlisted for the Mercury Prize; For Ever (2018); Loving in Stereo (2021); Volcano (2023); and Sunshine (2026).",
+          "The first two albums were released through XL Recordings while the latter three via their independent label Caiola Records."
+        ]
+      },
+      "de": {
+        "kicker": "britische band · london, 2013",
+        "who": "Jungle sind eine britische band, die Anfang 2013 von den in london ansässigen produzenten josh lloyd-watson und tom mcfarland gegründet wurde.",
+        "facts": [
+          "jungle haben fünf studioalben veröffentlicht: jungle (2014), das für den mercury prize nominiert war; for ever (2018); loving in stereo (2021); volcano (2023) und sunshine (2026).",
+          "die ersten beiden alben erschienen bei xl recordings, die letzten drei beim eigenen label caiola records."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz grup · londra, 2013",
+        "who": "Jungle, 2013 başında londra merkezli yapımcılar josh lloyd-watson ve tom mcfarland tarafından kurulmuş bir ingiliz gruptur.",
+        "facts": [
+          "jungle beş stüdyo albümü yayımladı: jungle (2014), mercury ödülü kısa listesine girdi; for ever (2018); loving in stereo (2021); volcano (2023) ve sunshine (2026).",
+          "ilk iki albüm xl recordings ile, sonraki üçü ise bağımsız etiketleri caiola records ile çıktı."
+        ]
+      }
+    },
+    {
+      "id": "c2d21b3e-8420-4684-a051-5afebc69e9b1",
+      "slug": "royal-blood-478284f6",
+      "title": "Royal Blood",
+      "name": "Royal Blood",
+      "source_url": "https://en.wikipedia.org/wiki/Royal_Blood_(band)",
+      "extract": "Royal Blood are an English rock duo formed in Worthing in 2011. The lineup consists of Mike Kerr and Ben Thatcher (drums). Their signature sound is built around Kerr's bass playing style, which sees him using various effects pedals and amps to make his bass guitar sound like an electric guitar and bass guitar at the same time. The duo were signed by Warner Chappell Music in 2013 and have since released five studio albums: Royal Blood (2014), How Did We Get So Dark? (2017), Typhoons (2021), Back to the Water Below (2023) and Dead Company (2026).",
+      "en": {
+        "kicker": "english rock duo · worthing, 2011",
+        "who": "Royal Blood are an English rock duo formed in Worthing in 2011. The lineup consists of Mike Kerr and Ben Thatcher on drums.",
+        "facts": [
+          "Their signature sound is built around Kerr's bass playing style, which sees him using various effects pedals and amps to make his bass guitar sound like an electric guitar and bass guitar at the same time.",
+          "The duo have released five studio albums: Royal Blood (2014), How Did We Get So Dark? (2017), Typhoons (2021), Back to the Water Below (2023) and Dead Company (2026)."
+        ]
+      },
+      "de": {
+        "kicker": "englisches rock-duo · worthing, 2011",
+        "who": "Royal Blood sind ein englisches rock-duo, das 2011 in worthing gegründet wurde. zur besetzung gehören mike kerr und schlagzeuger ben thatcher.",
+        "facts": [
+          "ihr markenzeichen ist kerrs bassspiel: mit verschiedenen effektpedalen und verstärkern klingt sein bass gleichzeitig wie eine e-gitarre und ein bass.",
+          "das duo hat fünf studioalben veröffentlicht: royal blood (2014), how did we get so dark? (2017), typhoons (2021), back to the water below (2023) und dead company (2026)."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz rock ikilisi · worthing, 2011",
+        "who": "Royal Blood, 2011'de worthing'de kurulmuş ingiliz bir rock ikilisidir. kadroda mike kerr ile davulcu ben thatcher yer alır.",
+        "facts": [
+          "imza sesleri kerr'in bas çalma tarzına dayanır; çeşitli efekt pedalları ve amfiler kullanarak basını aynı anda elektro gitar ve bas gibi çalmasını sağlar.",
+          "ikili beş stüdyo albümü yayımladı: royal blood (2014), how did we get so dark? (2017), typhoons (2021), back to the water below (2023) ve dead company (2026)."
+        ]
+      }
+    },
+    {
+      "id": "8806f694-e98a-4136-b02e-d2a058908260",
+      "slug": "tinie-tempah-541a49c6",
+      "title": "Tinie Tempah",
+      "name": "Tinie Tempah",
+      "source_url": "https://en.wikipedia.org/wiki/Tinie_Tempah",
+      "extract": "Patrick Chukwuemeka Okogwu, better known by his stage name Tinie Tempah, is an English rapper, singer and television presenter. Born and raised in London, he created his own entertainment company Disturbing London in 2006, alongside Dumi Oburota. After signing with Parlophone in 2009 and releasing several mixtapes, he rose to fame with the UK number-one singles \"Pass Out\" and \"Written in the Stars\" in 2010.",
+      "en": {
+        "kicker": "english rapper, singer and presenter · london",
+        "who": "Patrick Chukwuemeka Okogwu, better known by his stage name Tinie Tempah, is an English rapper, singer and television presenter. Born and raised in London, he created his own entertainment company Disturbing London in 2006.",
+        "facts": [
+          "After signing with Parlophone in 2009 and releasing several mixtapes, he rose to fame with the UK number-one singles \"Pass Out\" and \"Written in the Stars\" in 2010.",
+          "Born and raised in London, he created his own entertainment company Disturbing London in 2006, alongside Dumi Oburota."
+        ]
+      },
+      "de": {
+        "kicker": "englischer rapper, sänger und moderator · london",
+        "who": "Patrick Chukwuemeka Okogwu, bekannt als Tinie Tempah, ist ein englischer rapper, sänger und fernsehmoderator. in london geboren und aufgewachsen, gründete er 2006 mit dumi oburota seine eigene unterhaltungsfirma disturbing london.",
+        "facts": [
+          "nach seinem vertrag bei parlophone 2009 und mehreren mixtapes wurde er 2010 mit den britischen nummer-eins-singles \"pass out\" und \"written in the stars\" bekannt.",
+          "in london geboren und aufgewachsen, gründete er 2006 zusammen mit dumi oburota die unterhaltungsfirma disturbing london."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz rapçi, şarkıcı ve sunucu · londra",
+        "who": "Sahne adı Tinie Tempah olan Patrick Chukwuemeka Okogwu, ingiliz bir rapçi, şarkıcı ve televizyon sunucusudur. londra'da doğup büyüdü ve 2006'da dumi oburota ile birlikte kendi eğlence şirketi disturbing london'ı kurdu.",
+        "facts": [
+          "2009'da parlophone ile anlaştıktan ve birkaç mixtape yayımladıktan sonra 2010'da birleşik krallık birincisi \"pass out\" ve \"written in the stars\" single'larıyla ün kazandı.",
+          "londra'da doğup büyüdü; 2006'da dumi oburota ile birlikte disturbing london şirketini kurdu."
+        ]
+      }
+    },
+    {
+      "id": "9804ae9c-8459-46e7-b01c-7a9ead4daf11",
+      "slug": "gorgon-city-0d5b2575",
+      "title": "Gorgon City",
+      "name": "Gorgon City",
+      "source_url": "https://en.wikipedia.org/wiki/Gorgon_City",
+      "extract": "Gorgon City are an English electronic music production duo consisting of two North London producers Kye \"Foamo\" Gibbon and Matt \"RackNRuin\" Robson-Scott. Their 2014 singles \"Ready for Your Love\" and \"Here for You\" reached the top 10 in the UK. They are currently signed to the UK-based record label Positiva Records which is a division of Universal Music Group.",
+      "en": {
+        "kicker": "english electronic music duo · north london",
+        "who": "Gorgon City are an English electronic music production duo consisting of two North London producers, Kye \"Foamo\" Gibbon and Matt \"RackNRuin\" Robson-Scott.",
+        "facts": [
+          "Their 2014 singles \"Ready for Your Love\" and \"Here for You\" reached the top 10 in the UK.",
+          "They are currently signed to the UK-based record label Positiva Records, which is a division of Universal Music Group."
+        ]
+      },
+      "de": {
+        "kicker": "englisches elektronik-duo · nordlondon",
+        "who": "Gorgon City sind ein englisches elektronik-produktionsduo aus zwei produzenten aus nordlondon: kye \"foamo\" gibbon und matt \"racknruin\" robson-scott.",
+        "facts": [
+          "ihre singles \"ready for your love\" und \"here for you\" aus dem jahr 2014 erreichten in großbritannien die top 10.",
+          "sie stehen derzeit bei positiva records unter vertrag, einer tochter der universal music group."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz elektronik müzik ikilisi · kuzey londra",
+        "who": "Gorgon City, kuzey londra'lı iki yapımcıdan oluşan ingiliz bir elektronik prodüksiyon ikilisidir: kye \"foamo\" gibbon ve matt \"racknruin\" robson-scott.",
+        "facts": [
+          "2014 single'ları \"ready for your love\" ve \"here for you\" birleşik krallık'ta ilk 10'a girdi.",
+          "şu anda birleşik krallık merkezli positiva records ile çalışıyorlar; plak şirketi universal music group'un bir bölümü."
+        ]
+      }
+    }
+  ]
+}

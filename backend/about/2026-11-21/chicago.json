@@ -1,0 +1,70 @@
+{
+  "city": "chicago",
+  "day": "2026-11-21",
+  "nights": [
+    {
+      "id": "4289b697-418e-4f70-bee5-57d58158f189",
+      "slug": "the-smithereens-42d4540e",
+      "title": "The Smithereens",
+      "name": "The Smithereens",
+      "source_url": "https://en.wikipedia.org/wiki/The_Smithereens",
+      "extract": "The Smithereens are an American rock band from Carteret, New Jersey. The group formed in 1980 with members Pat DiNizio, Jim Babjak, Mike Mesaros, and Dennis Diken. This original lineup continued until 2006, when Mesaros left the band and Severo Jornacion took over on bass guitar until Mesaros' return in 2016. After DiNizio died in 2017, the band continued performing live shows as a trio with various guest vocalists.",
+      "en": {
+        "kicker": "american rock band · carteret, new jersey, 1980",
+        "who": "The Smithereens are an American rock band from Carteret, New Jersey. The group formed in 1980 with members Pat DiNizio, Jim Babjak, Mike Mesaros, and Dennis Diken.",
+        "facts": [
+          "The group formed in 1980 with members Pat DiNizio, Jim Babjak, Mike Mesaros, and Dennis Diken.",
+          "After DiNizio died in 2017, the band continued performing live shows as a trio with various guest vocalists."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische rockband · carteret, new jersey, 1980",
+        "who": "The Smithereens sind eine amerikanische rockband aus carteret, new jersey. die gruppe wurde 1980 gegründet, mit pat dinizio, jim babjak, mike mesaros und dennis diken als mitgliedern.",
+        "facts": [
+          "die gruppe wurde 1980 mit den mitgliedern pat dinizio, jim babjak, mike mesaros und dennis diken gegründet.",
+          "nach dem tod von dinizio 2017 trat die band als trio mit wechselnden gastsängern weiter live auf."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı rock grubu · carteret, new jersey, 1980",
+        "who": "The Smithereens, new jersey'deki carteret'ten amerikalı bir rock grubudur. grup 1980'de pat dinizio, jim babjak, mike mesaros ve dennis diken ile kuruldu.",
+        "facts": [
+          "grup 1980'de pat dinizio, jim babjak, mike mesaros ve dennis diken ile kuruldu.",
+          "dinizio'nun 2017'de ölümünün ardından grup, çeşitli konuk vokallerle üçlü olarak canlı performanslarına devam etti."
+        ]
+      }
+    },
+    {
+      "id": "d454c75d-02e3-4592-8084-d07c827d4198",
+      "slug": "trivium-crown-in-the-grave-world-tour-87a95aca",
+      "title": "TRIVIUM: CROWN IN THE GRAVE WORLD TOUR",
+      "name": "Trivium",
+      "source_url": "https://en.wikipedia.org/wiki/Trivium_(band)",
+      "extract": "Trivium is an American heavy metal band from Orlando, Florida, formed in 1999. The band's creative core comprises three long-time members; vocalist and guitarist Matt Heafy, guitarist Corey Beaulieu, and bassist Paolo Gregoletto. The band has changed drummers numerous times, with Alex Rüdinger becoming the most recent addition in October 2025.",
+      "en": {
+        "kicker": "american metal band · orlando, florida, 1999",
+        "who": "Trivium is an American heavy metal band from Orlando, Florida, formed in 1999. The band's creative core comprises vocalist and guitarist Matt Heafy, guitarist Corey Beaulieu, and bassist Paolo Gregoletto.",
+        "facts": [
+          "The band has changed drummers numerous times, with Alex Rüdinger becoming the most recent addition in October 2025.",
+          "The band's creative core comprises three long-time members."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische metal-band · orlando, florida, 1999",
+        "who": "Trivium sind eine amerikanische heavy-metal-band aus orlando, florida, gegründet 1999. den kreativen kern bilden sänger und gitarrist matt heafy, gitarrist corey beaulieu und bassist paolo gregoletto.",
+        "facts": [
+          "die band hat den schlagzeuger schon mehrfach gewechselt; zuletzt kam im oktober 2025 alex rüdinger hinzu.",
+          "den kreativen kern bilden drei langjährige mitglieder."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı metal grubu · orlando, florida, 1999",
+        "who": "Trivium, 1999'da orlando, florida'da kurulmuş amerikalı bir heavy metal grubudur. grubun yaratıcı çekirdeğini vokalist ve gitarist matt heafy, gitarist corey beaulieu ve basçı paolo gregoletto oluşturur.",
+        "facts": [
+          "grup davulcusunu birçok kez değiştirdi; en son ekim 2025'te alex rüdinger katıldı.",
+          "grubun yaratıcı çekirdeği üç uzun soluklu üyeden oluşur."
+        ]
+      }
+    }
+  ]
+}

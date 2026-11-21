@@ -1,0 +1,38 @@
+{
+  "city": "warszawa",
+  "day": "2026-11-21",
+  "nights": [
+    {
+      "id": "1c662fbd-748a-4201-962f-1e80db01b298",
+      "slug": "dan-and-phil-hard-launch-world-tour-e41656c8",
+      "title": "Dan and Phil - Hard Launch World Tour",
+      "name": "Dan and Phil",
+      "source_url": "https://en.wikipedia.org/wiki/Dan_and_Phil",
+      "extract": "Daniel Howell and Phil Lester, known together as Dan and Phil, are an English entertainment and business duo. They are best known for their collaborative work on YouTube. Additionally, they have collaborated on television and radio presenting, books, tours, and original films.",
+      "en": {
+        "kicker": "english entertainment and business duo · youtube",
+        "who": "Daniel Howell and Phil Lester, known together as Dan and Phil, are an English entertainment and business duo. They are best known for their collaborative work on YouTube.",
+        "facts": [
+          "They are best known for their collaborative work on YouTube.",
+          "Additionally, they have collaborated on television and radio presenting, books, tours, and original films."
+        ]
+      },
+      "de": {
+        "kicker": "englisches entertainment- und business-duo · youtube",
+        "who": "Daniel Howell und Phil Lester, zusammen bekannt als Dan and Phil, sind ein englisches entertainment- und business-duo. am bekanntesten sind sie für ihre gemeinsame arbeit auf youtube.",
+        "facts": [
+          "am bekanntesten sind sie für ihre gemeinsame arbeit auf youtube.",
+          "außerdem haben sie bei tv- und radiomoderation, büchern, touren und eigenen filmen zusammengearbeitet."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz eğlence ve iş ikilisi · youtube",
+        "who": "Daniel Howell ve Phil Lester, birlikte Dan and Phil adıyla tanınan, ingiliz bir eğlence ve iş ikilisidir. en çok youtube'daki ortak işleriyle bilinirler.",
+        "facts": [
+          "en çok youtube'daki ortak işleriyle bilinirler.",
+          "ayrıca televizyon ve radyo sunuculuğunda, kitaplarda, turnelerde ve özgün filmlerde birlikte çalıştılar."
+        ]
+      }
+    }
+  ]
+}

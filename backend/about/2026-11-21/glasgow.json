@@ -1,0 +1,70 @@
+{
+  "city": "glasgow",
+  "day": "2026-11-21",
+  "nights": [
+    {
+      "id": "df56d4fe-ff94-4323-b01b-cc0038b8a728",
+      "slug": "nathan-carter-8a8d5176",
+      "title": "Nathan Carter",
+      "name": "Nathan Carter",
+      "source_url": "https://en.wikipedia.org/wiki/Nathan_Carter",
+      "extract": "Nathan Kane Tyrone Carter is an Irish country music singer based in Ireland and the UK. He has released thirteen studio albums and six live albums as of December 2022, five of which peaked at number one, and four live DVDs. He performs Irish folk and country. He rose to popularity with his 2012 cover of the American country song \"Wagon Wheel\".",
+      "en": {
+        "kicker": "irish country singer",
+        "who": "Nathan Kane Tyrone Carter is an Irish country music singer based in Ireland and the UK. He performs Irish folk and country.",
+        "facts": [
+          "He has released thirteen studio albums and six live albums as of December 2022, five of which peaked at number one, and four live DVDs.",
+          "He rose to popularity with his 2012 cover of the American country song \"Wagon Wheel\"."
+        ]
+      },
+      "de": {
+        "kicker": "irischer country-sänger",
+        "who": "Nathan Kane Tyrone Carter ist ein irischer country-sänger mit wohnsitz in irland und großbritannien. er spielt irischen folk und country.",
+        "facts": [
+          "bis dezember 2022 veröffentlichte er dreizehn studioalben und sechs live-alben, fünf davon erreichten platz eins, dazu vier live-DVDs.",
+          "bekannt wurde er mit seiner 2012 veröffentlichten coverversion des amerikanischen country-songs \"wagon wheel\"."
+        ]
+      },
+      "tr": {
+        "kicker": "irlandalı country şarkıcısı",
+        "who": "Nathan Kane Tyrone Carter, irlanda ve birleşik krallık'ta yaşayan irlandalı bir country müzik şarkıcısıdır. irlanda folk'u ve country çalar.",
+        "facts": [
+          "aralık 2022 itibarıyla on üç stüdyo ve altı canlı albüm yayımladı; bunlardan beşi birinci sıraya yükseldi, ayrıca dört canlı DVD'si var.",
+          "2012'de amerikalı country şarkısı \"wagon wheel\"in cover'ıyla ün kazandı."
+        ]
+      }
+    },
+    {
+      "id": "1c93302a-1b49-4a3a-b3dc-bdcf5724a739",
+      "slug": "phoebe-bridgers-117c771d",
+      "title": "Phoebe Bridgers",
+      "name": "Phoebe Bridgers",
+      "source_url": "https://en.wikipedia.org/wiki/Phoebe_Bridgers",
+      "extract": "Phoebe Lucille Bridgers is an American singer-songwriter, record producer, and actress. Her indie folk music typically centers on acoustic guitar and electronic production, with melancholic lyrical themes. She has won four Grammy Awards.",
+      "en": {
+        "kicker": "american singer-songwriter, producer and actress",
+        "who": "Phoebe Lucille Bridgers is an American singer-songwriter, record producer, and actress. Her indie folk music typically centers on acoustic guitar and electronic production, with melancholic lyrical themes.",
+        "facts": [
+          "Her indie folk music typically centers on acoustic guitar and electronic production, with melancholic lyrical themes.",
+          "She has won four Grammy Awards."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische singer-songwriterin, produzentin und schauspielerin",
+        "who": "Phoebe Lucille Bridgers ist eine amerikanische singer-songwriterin, musikproduzentin und schauspielerin. ihr indie-folk kreist meist um akustikgitarre und elektronische produktion, mit melancholischen texten.",
+        "facts": [
+          "ihre indie-folk-musik basiert meist auf akustikgitarre und elektronischer produktion, mit melancholischen textthemen.",
+          "sie hat vier grammys gewonnen."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı şarkıcı, söz yazarı, yapımcı ve oyuncu",
+        "who": "Phoebe Lucille Bridgers amerikalı bir şarkıcı, söz yazarı, müzik yapımcısı ve oyuncudur. indie folk müziği genellikle akustik gitar ve elektronik prodüksiyon üzerine kuruludur, melankolik sözlerle.",
+        "facts": [
+          "indie folk müziği genellikle akustik gitar ve elektronik prodüksiyon üzerine kuruludur, melankolik söz temalarıyla.",
+          "dört grammy ödülü kazandı."
+        ]
+      }
+    }
+  ]
+}

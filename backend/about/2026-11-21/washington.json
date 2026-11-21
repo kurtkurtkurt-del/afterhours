@@ -1,0 +1,70 @@
+{
+  "city": "washington",
+  "day": "2026-11-21",
+  "nights": [
+    {
+      "id": "ddbed9b2-7cac-46b7-adcc-e7e9cc4c85f6",
+      "slug": "deante-hitchcock-4190f7d4",
+      "title": "Deante' Hitchcock",
+      "name": "Deante' Hitchcock",
+      "source_url": "https://en.wikipedia.org/wiki/Deante'_Hitchcock",
+      "extract": "Deante' Van Hitchcock, is an American rapper from Riverdale, Georgia. He initially gained recognition as a rapper following the releases of three mixtapes: 19 Summers (2012), Wishful Thinking (2015) and Good (2016). He received widespread attention on the internet in 2016 after a weekly series of freestyles called New Atlanta Tuesday's. In 2017, he signed to ByStorm and RCA Records. His debut album Better was released on May 13, 2020.",
+      "en": {
+        "kicker": "american rapper · riverdale, georgia",
+        "who": "Deante' Van Hitchcock is an American rapper from Riverdale, Georgia. He initially gained recognition as a rapper following the releases of three mixtapes: 19 Summers (2012), Wishful Thinking (2015) and Good (2016).",
+        "facts": [
+          "In 2017, he signed to ByStorm and RCA Records.",
+          "His debut album Better was released on May 13, 2020."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer rapper · riverdale, georgia",
+        "who": "Deante' Van Hitchcock ist ein amerikanischer rapper aus riverdale, georgia. bekannt wurde er zunächst mit drei mixtapes: 19 summers (2012), wishful thinking (2015) und good (2016).",
+        "facts": [
+          "2017 unterschrieb er bei bystorm und rca records.",
+          "sein debütalbum better erschien am 13. mai 2020."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı rapçi · riverdale, georgia",
+        "who": "Deante' Van Hitchcock, riverdale, georgia'dan amerikalı bir rapçidir. üç mixtape ile tanındı: 19 summers (2012), wishful thinking (2015) ve good (2016).",
+        "facts": [
+          "2017'de bystorm ve rca records ile anlaştı.",
+          "ilk albümü better, 13 mayıs 2020'de yayımlandı."
+        ]
+      }
+    },
+    {
+      "id": "6f3cca16-c1da-4d95-9113-5848e08f83a5",
+      "slug": "loud-luxury-7a97423a",
+      "title": "Loud Luxury",
+      "name": "Loud Luxury",
+      "source_url": "https://en.wikipedia.org/wiki/Loud_Luxury",
+      "extract": "Loud Luxury are a Canadian music production and DJ duo consisting of Andrew Fedyk and Joe De Pace. They are currently based in Los Angeles, California. They gained recognition following their 2017 release \"Body\" and their remix of the Martin Garrix and Dua Lipa single \"Scared to Be Lonely\".",
+      "en": {
+        "kicker": "canadian dj duo · los angeles",
+        "who": "Loud Luxury are a Canadian music production and DJ duo consisting of Andrew Fedyk and Joe De Pace. They are currently based in Los Angeles, California.",
+        "facts": [
+          "They gained recognition following their 2017 release \"Body\" and their remix of the Martin Garrix and Dua Lipa single \"Scared to Be Lonely\".",
+          "They are currently based in Los Angeles, California."
+        ]
+      },
+      "de": {
+        "kicker": "kanadisches dj-duo · los angeles",
+        "who": "Loud Luxury sind ein kanadisches musikproduktions- und dj-duo aus andrew fedyk und joe de pace. sie sind derzeit in los angeles, kalifornien, ansässig.",
+        "facts": [
+          "bekannt wurden sie mit ihrer veröffentlichung \"body\" von 2017 und ihrem remix der martin-garrix-und-dua-lipa-single \"scared to be lonely\".",
+          "sie sind derzeit in los angeles, kalifornien, ansässig."
+        ]
+      },
+      "tr": {
+        "kicker": "kanadalı dj ikilisi · los angeles",
+        "who": "Loud Luxury, andrew fedyk ve joe de pace'den oluşan kanadalı bir müzik prodüksiyon ve dj ikilisidir. şu anda los angeles, kaliforniya'da yaşıyorlar.",
+        "facts": [
+          "2017 yapımı \"body\" ve martin garrix ile dua lipa'nın \"scared to be lonely\" single'ının remix'iyle ün kazandılar.",
+          "şu anda los angeles, kaliforniya'da yaşıyorlar."
+        ]
+      }
+    }
+  ]
+}

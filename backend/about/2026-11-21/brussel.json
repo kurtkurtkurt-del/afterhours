@@ -1,0 +1,38 @@
+{
+  "city": "brussel",
+  "day": "2026-11-21",
+  "nights": [
+    {
+      "id": "2c5f00c7-b66e-402c-bf46-98894ae426b3",
+      "slug": "kaleo-way-down-we-go-tour-b9c3d445",
+      "title": "KALEO - Way Down We Go Tour",
+      "name": "Kaleo",
+      "source_url": "https://en.wikipedia.org/wiki/Kaleo_(band)",
+      "extract": "KALEO is an Icelandic blues rock band which formed in Mosfellsbær in 2012. It consists of lead vocalist and guitarist Jökull Júlíusson, drummer Davíð Antonsson, bassist Daniel Kristjánsson, lead guitarist Rubin Pollock and harmonicist Þorleifur Gaukur Davíðsson. They have released four studio albums, Kaleo (2013), A/B (2016), Surface Sounds (2021), and Mixed Emotions (2025), as well as the EP Glasshouse (2013).",
+      "en": {
+        "kicker": "icelandic blues rock band · mosfellsbær, 2012",
+        "who": "KALEO is an Icelandic blues rock band which formed in Mosfellsbær in 2012. It consists of lead vocalist and guitarist Jökull Júlíusson, drummer Davíð Antonsson, bassist Daniel Kristjánsson, lead guitarist Rubin Pollock and harmonicist Þorleifur Gaukur Davíðsson.",
+        "facts": [
+          "They have released four studio albums, Kaleo (2013), A/B (2016), Surface Sounds (2021), and Mixed Emotions (2025), as well as the EP Glasshouse (2013).",
+          "KALEO's line-up is named in full: Jökull Júlíusson, Davíð Antonsson, Daniel Kristjánsson, Rubin Pollock and Þorleifur Gaukur Davíðsson."
+        ]
+      },
+      "de": {
+        "kicker": "isländische blues-rock-band · mosfellsbær, 2012",
+        "who": "KALEO ist eine isländische blues-rock-band, die sich 2012 in mosfellsbær gründete. zur besetzung gehören sänger und gitarrist jökull júlíusson, schlagzeuger davíð antonsson, bassist daniel kristjánsson, leadgitarrist rubin pollock und mundharmonikaspieler þorleifur gaukur davíðsson.",
+        "facts": [
+          "sie haben vier studioalben veröffentlicht, kaleo (2013), a/b (2016), surface sounds (2021) und mixed emotions (2025), dazu die EP glasshouse (2013).",
+          "zur band gehören jökull júlíusson, davíð antonsson, daniel kristjánsson, rubin pollock und þorleifur gaukur davíðsson."
+        ]
+      },
+      "tr": {
+        "kicker": "izlandalı blues rock grubu · mosfellsbær, 2012",
+        "who": "KALEO, 2012'de mosfellsbær'de kurulmuş izlandalı bir blues rock grubudur. kadroda vokalist ve gitarist jökull júlíusson, davulcu davíð antonsson, basçı daniel kristjánsson, solo gitarist rubin pollock ve armonikacı þorleifur gaukur davíðsson yer alır.",
+        "facts": [
+          "kaleo (2013), a/b (2016), surface sounds (2021) ve mixed emotions (2025) adlı dört stüdyo albümü ve glasshouse (2013) EP'si var.",
+          "grubun kadrosu jökull júlíusson, davíð antonsson, daniel kristjánsson, rubin pollock ve þorleifur gaukur davíðsson'dan oluşur."
+        ]
+      }
+    }
+  ]
+}

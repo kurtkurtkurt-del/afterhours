@@ -1,0 +1,38 @@
+{
+  "city": "san-francisco",
+  "day": "2026-11-21",
+  "nights": [
+    {
+      "id": "88c8ee9b-641f-43fa-947c-ec3cd244b047",
+      "slug": "andre-nickatina-7f0a4a70",
+      "title": "Andre Nickatina",
+      "name": "Andre Nickatina",
+      "source_url": "https://en.wikipedia.org/wiki/Andre_Nickatina",
+      "extract": "Andre Lamond Adams, known artistically as Andre Nickatina, is an American rapper and record producer from San Francisco, California. Nickatina is known for his distinctive voice, original flow, and lyrical exploration. He previously performed under the stage name Dre Dog.",
+      "en": {
+        "kicker": "american rapper and record producer · san francisco, california",
+        "who": "Andre Lamond Adams, known artistically as Andre Nickatina, is an American rapper and record producer from San Francisco, California. Nickatina is known for his distinctive voice, original flow, and lyrical exploration.",
+        "facts": [
+          "He previously performed under the stage name Dre Dog.",
+          "Nickatina is known for his distinctive voice, original flow, and lyrical exploration."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer rapper und musikproduzent · san francisco, kalifornien",
+        "who": "Andre Lamond Adams, künstlerisch bekannt als Andre Nickatina, ist ein amerikanischer rapper und musikproduzent aus san francisco, kalifornien. nickatina ist für seine markante stimme, seinen eigenen flow und seine lyrische erkundung bekannt.",
+        "facts": [
+          "früher trat er unter dem künstlernamen dre dog auf.",
+          "nickatina ist für seine markante stimme, seinen eigenen flow und seine lyrische erkundung bekannt."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı rapçi ve plak yapımcısı · san francisco, kaliforniya",
+        "who": "Andre Lamond Adams, sanatçı adı Andre Nickatina olan, san francisco, kaliforniya'dan amerikalı bir rapçi ve plak yapımcısıdır. nickatina, ayırt edici sesi, özgün akışı ve sözlerdeki derinliğiyle bilinir.",
+        "facts": [
+          "daha önce dre dog sahne adıyla sahne aldı.",
+          "nickatina, ayırt edici sesi, özgün akışı ve sözlerdeki derinliğiyle bilinir."
+        ]
+      }
+    }
+  ]
+}

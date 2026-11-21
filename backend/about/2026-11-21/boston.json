@@ -1,0 +1,70 @@
+{
+  "city": "boston",
+  "day": "2026-11-21",
+  "nights": [
+    {
+      "id": "b43b0385-df01-4be6-8457-737c2f9f38a8",
+      "slug": "dax-the-anger-management-tour-18-27286ffe",
+      "title": "DAX - The Anger Management Tour (18+)",
+      "name": "Dax",
+      "source_url": "https://en.wikipedia.org/wiki/Dax_(rapper)",
+      "extract": "Daniel Nwosu Jr., professionally known by his stage name Dax, is a Nigerian-Canadian and American singer and rapper. He has recorded three albums, Pain Paints Paintings (2021), From a Man's Perspective (2024) and Anger Management (2026). He has achieved certifications in Canada and the United States for his singles \"Dear God\", \"Dear Alcohol\" and \"To Be a Man.\"",
+      "en": {
+        "kicker": "nigerian-canadian and american singer and rapper",
+        "who": "Daniel Nwosu Jr., professionally known by his stage name Dax, is a Nigerian-Canadian and American singer and rapper. He has recorded three albums, the latest of which is Anger Management (2026).",
+        "facts": [
+          "He has recorded three albums: Pain Paints Paintings (2021), From a Man's Perspective (2024) and Anger Management (2026).",
+          "He has achieved certifications in Canada and the United States for his singles \"Dear God\", \"Dear Alcohol\" and \"To Be a Man.\""
+        ]
+      },
+      "de": {
+        "kicker": "nigerianisch-kanadischer und amerikanischer sänger und rapper",
+        "who": "Daniel Nwosu Jr., der unter seinem künstlernamen dax auftritt, ist ein nigerianisch-kanadischer und amerikanischer sänger und rapper. er hat drei alben aufgenommen, das neueste ist anger management (2026).",
+        "facts": [
+          "er hat drei alben aufgenommen: pain paints paintings (2021), from a man's perspective (2024) und anger management (2026).",
+          "für seine singles \"dear god\", \"dear alcohol\" und \"to be a man\" erhielt er zertifizierungen in kanada und den usa."
+        ]
+      },
+      "tr": {
+        "kicker": "nijeryalı-kanadalı ve amerikalı şarkıcı ve rapçi",
+        "who": "Daniel Nwosu Jr., sahne adı dax ile tanınan, nijeryalı-kanadalı ve amerikalı bir şarkıcı ve rapçidir. üç albüm kaydetti; en yenisi anger management (2026).",
+        "facts": [
+          "üç albüm kaydetti: pain paints paintings (2021), from a man's perspective (2024) ve anger management (2026).",
+          "\"dear god\", \"dear alcohol\" ve \"to be a man\" single'ları için kanada ve abd'de sertifikalar aldı."
+        ]
+      }
+    },
+    {
+      "id": "832bb16b-b1f5-43fd-977e-bb85a3f91f91",
+      "slug": "hunxho-2night-only-tour-28b49ef6",
+      "title": "Hunxho - 2Night Only Tour",
+      "name": "Hunxho",
+      "source_url": "https://en.wikipedia.org/wiki/Hunxho",
+      "extract": "Ibrahim Muhammad Dodo, known professionally as Hunxho is an American rapper, singer and songwriter. He is signed to 300 Entertainment. Hunxho initially rose to fame with the song \"Let's Get It\" in 2021, which spawned a remix with rapper 21 Savage. Later that year, he released the mixtape Street Poet 2.",
+      "en": {
+        "kicker": "american rapper, singer and songwriter",
+        "who": "Ibrahim Muhammad Dodo, known professionally as Hunxho, is an American rapper, singer and songwriter. He is signed to 300 Entertainment.",
+        "facts": [
+          "Hunxho initially rose to fame with the song \"Let's Get It\" in 2021, which spawned a remix with rapper 21 Savage.",
+          "Later that year, he released the mixtape Street Poet 2."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer rapper, sänger und songwriter",
+        "who": "Ibrahim Muhammad Dodo, bekannt als Hunxho, ist ein amerikanischer rapper, sänger und songwriter. er steht bei 300 entertainment unter vertrag.",
+        "facts": [
+          "hunxho wurde 2021 mit dem song \"let's get it\" bekannt, der einen remix mit dem rapper 21 savage hervorbrachte.",
+          "im selben jahr veröffentlichte er das mixtape street poet 2."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı rapçi, şarkıcı ve söz yazarı",
+        "who": "Ibrahim Muhammad Dodo, Hunxho adıyla tanınan, amerikalı bir rapçi, şarkıcı ve söz yazarıdır. 300 entertainment ile sözleşmelidir.",
+        "facts": [
+          "hunxho, 2021'de \"let's get it\" şarkısıyla ün kazandı; şarkının rapçi 21 savage'ın katıldığı bir remix'i de çıktı.",
+          "aynı yıl street poet 2 mixtape'ini yayımladı."
+        ]
+      }
+    }
+  ]
+}

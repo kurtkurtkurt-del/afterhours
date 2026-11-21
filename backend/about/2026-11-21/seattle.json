@@ -1,0 +1,70 @@
+{
+  "city": "seattle",
+  "day": "2026-11-21",
+  "nights": [
+    {
+      "id": "aa86b377-fd23-4c71-aa52-a6950216c71e",
+      "slug": "valentino-khan-ages-21-40035a12",
+      "title": "Valentino Khan - Ages 21+",
+      "name": "Valentino Khan",
+      "source_url": "https://en.wikipedia.org/wiki/Valentino_Khan",
+      "extract": "Valentino Khan is an American DJ and producer born and raised in Los Angeles. He is best known for releasing material through Diplo, Skrillex and Steve Aoki. His singles \"Deep Down Low\" and \"Make Some Noise\" peaked at number one and fifty respectively on the \"Billboard Twitter Emerging Artists\" chart.",
+      "en": {
+        "kicker": "american dj and music producer · los angeles",
+        "who": "Valentino Khan is an American DJ and producer born and raised in Los Angeles. He is best known for releasing material through Diplo, Skrillex and Steve Aoki.",
+        "facts": [
+          "His singles \"Deep Down Low\" and \"Make Some Noise\" peaked at number one and fifty respectively on the \"Billboard Twitter Emerging Artists\" chart.",
+          "He is best known for releasing material through Diplo, Skrillex and Steve Aoki."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer dj und musikproduzent · los angeles",
+        "who": "Valentino Khan ist ein amerikanischer dj und produzent, in los angeles geboren und aufgewachsen. er ist vor allem dafür bekannt, musik über diplo, skrillex und steve aoki zu veröffentlichen.",
+        "facts": [
+          "seine singles \"deep down low\" und \"make some noise\" erreichten im billboard-chart \"twitter emerging artists\" platz eins beziehungsweise platz fünfzig.",
+          "er veröffentlicht musik über diplo, skrillex und steve aoki."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı dj ve müzik yapımcısı · los angeles",
+        "who": "Valentino Khan, los angeles'ta doğup büyümüş amerikalı bir dj ve yapımcıdır. diplo, skrillex ve steve aoki aracılığıyla yayımladığı işlerle tanınır.",
+        "facts": [
+          "\"deep down low\" ve \"make some noise\" single'ları \"billboard twitter emerging artists\" listesinde sırasıyla birinci ve ellinci sıraya yükseldi.",
+          "diplo, skrillex ve steve aoki aracılığıyla müzik yayımlar."
+        ]
+      }
+    },
+    {
+      "id": "7022c3a7-0a6b-4868-a4ed-27a6d4d2fc45",
+      "slug": "steve-lacy-oh-yeah-tour-5ec0b1e4",
+      "title": "Steve Lacy: Oh yeah? Tour",
+      "name": "Steve Lacy",
+      "source_url": "https://en.wikipedia.org/wiki/Steve_Lacy",
+      "extract": "Steve Thomas Lacy-Moya is an American singer-songwriter, guitarist and record producer. He gained recognition as the guitarist of the alternative R&B band the Internet, which he joined in 2015. His self-produced debut EP, Steve Lacy's Demo (2017), was met with critical praise and became a sleeper hit. Lacy then guest performed alongside Frank Ocean on Tyler, the Creator's 2017 single \"911 / Mr. Lonely\", which received double platinum certification by the Recording Industry Association of America (RIAA). That year, he also co-wrote songs for artists including Solange Knowles, and Kendrick Lamar on his song \"Pride\".",
+      "en": {
+        "kicker": "american singer-songwriter and producer",
+        "who": "Steve Thomas Lacy-Moya is an American singer-songwriter, guitarist and record producer. He gained recognition as the guitarist of the alternative R&B band the Internet, which he joined in 2015.",
+        "facts": [
+          "He gained recognition as the guitarist of the alternative R&B band the Internet, which he joined in 2015.",
+          "Lacy guest performed alongside Frank Ocean on Tyler, the Creator's 2017 single \"911 / Mr. Lonely\", which received double platinum certification by the RIAA."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer singer-songwriter und produzent",
+        "who": "Steve Thomas Lacy-Moya ist ein amerikanischer singer-songwriter, gitarrist und musikproduzent. bekannt wurde er als gitarrist der alternative-r&b-band the internet, der er 2015 beitrat.",
+        "facts": [
+          "bekannt wurde er als gitarrist der alternative-r&b-band the internet, der er 2015 beitrat.",
+          "lacy trat als gast neben frank ocean auf tyler, the creators single \"911 / mr. lonely\" von 2017 auf, die in den usa doppelplatin erhielt."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı şarkıcı, söz yazarı ve yapımcı",
+        "who": "Steve Thomas Lacy-Moya, amerikalı bir şarkıcı, söz yazarı, gitarist ve plak yapımcısıdır. alternatif r&b grubu the internet'in gitaristi olarak tanındı; gruba 2015'te katıldı.",
+        "facts": [
+          "alternatif r&b grubu the internet'in gitaristi olarak tanındı; gruba 2015'te katıldı.",
+          "lacy, tyler, the creator'ın 2017 single'ı \"911 / mr. lonely\"de frank ocean ile konuk olarak yer aldı; şarkı abd'de çift platin sertifika aldı."
+        ]
+      }
+    }
+  ]
+}
