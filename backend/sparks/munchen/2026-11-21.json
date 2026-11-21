@@ -1,0 +1,657 @@
+{
+  "city": "munchen",
+  "day": "2026-11-21",
+  "sparks": [
+    {
+      "kind": "derby",
+      "title": {
+        "en": "a saturday night with the football on.",
+        "de": "samstagabend mit fußball.",
+        "tr": "futbol açık bir cumartesi gecesi."
+      },
+      "line": {
+        "en": "rain and 5 degrees, so a pub with screens. no confirmed bayern match today (it was friday); ask which game they put on.",
+        "de": "regen und 5 grad, also eine kneipe mit bildschirmen. heute kein bestätigtes bayern-spiel (das war freitag); frag, welches spiel läuft.",
+        "tr": "yağmur ve 5 derece, ekranlı bir pub iyi gelir. bugün onaylı bir bayern maçı yok (cuma oynandı); hangi maçın açık olduğunu sor."
+      },
+      "place": {
+        "en": "kilians irish pub",
+        "de": "kilians irish pub",
+        "tr": "kilians irish pub"
+      },
+      "hour": 18,
+      "minute": 30,
+      "why": "Bayern–Köln was Fri 20.11 20:30 per most sources; no confirmed match found for Sat 21.11, so a generic pub spark. Forecast: rain, 4-6°C all day (muenchen.de, wetter.com)."
+    },
+    {
+      "kind": "grill",
+      "title": {
+        "en": "a covered grill, if you must.",
+        "de": "ein grill unterm dach, wenn es sein muss.",
+        "tr": "gerekirse çatı altında bir mangal."
+      },
+      "line": {
+        "en": "rain and 5 degrees. only with a roof over the grill; sausages, a thermos, an hour. otherwise cook at home.",
+        "de": "regen und 5 grad. nur mit dach überm grill; würstchen, thermoskanne, eine stunde. sonst koch zu hause.",
+        "tr": "yağmur ve 5 derece. mangalın üstünde çatı yoksa olmaz; sosis, termos, bir saat. yoksa evde pişirin."
+      },
+      "place": {
+        "en": "flaucher",
+        "de": "flaucher",
+        "tr": "flaucher"
+      },
+      "hour": 17,
+      "minute": 0,
+      "why": "Wet and cold, so outdoor grilling is marginal. Forecast: rain, 4-6°C all day (muenchen.de, wetter.com)."
+    },
+    {
+      "kind": "hike",
+      "title": {
+        "en": "a wet walk in the forstenrieder park.",
+        "de": "ein nasser gang durch den forstenrieder park.",
+        "tr": "forstenrieder park'ta ıslak bir yürüyüş."
+      },
+      "line": {
+        "en": "rain, 5 degrees, soft ground. rain jackets, flat paths, home before the dark at half past four.",
+        "de": "regen, 5 grad, weicher boden. regenjacke an, flache wege, vor der dunkelheit um halb fünf zurück.",
+        "tr": "yağmur, 5 derece, yumuşak zemin. yağmurluk, düz yollar, dörtbuçukta hava kararmadan dönün."
+      },
+      "place": {
+        "en": "forstenrieder park",
+        "de": "forstenrieder park",
+        "tr": "forstenrieder park"
+      },
+      "hour": 10,
+      "minute": 0,
+      "why": "Rainy and cold, flat forest paths only; sunset about 16:30. Forecast: rain, 4-6°C all day (muenchen.de, wetter.com)."
+    },
+    {
+      "kind": "sunrise",
+      "title": {
+        "en": "a grey sunrise, or none.",
+        "de": "ein grauer sonnenaufgang, oder keiner.",
+        "tr": "gri bir gün doğumu, ya da hiç."
+      },
+      "line": {
+        "en": "sunrise is around 07:20 behind thick cloud and rain. only for the stubborn; go to the olympiaberg with a thermos.",
+        "de": "sonnenaufgang gegen 07:20 hinter dicken wolken und regen. nur für sture; mit thermoskanne auf den olympiaberg.",
+        "tr": "gün doğumu 07:20 civarı, kalın bulut ve yağmur arkasında. sadece inatçılar için; termosla olympiaberg'e çıkın."
+      },
+      "place": {
+        "en": "olympiaberg",
+        "de": "olympiaberg",
+        "tr": "olympiaberg"
+      },
+      "hour": 7,
+      "minute": 0,
+      "why": "Sunrise approx. 07:20 (estimated, not checked against an almanac); start set about 20 min before. Rain makes this a long shot. Forecast: rain, 4-6°C all day (muenchen.de, wetter.com)."
+    },
+    {
+      "kind": "breakfast",
+      "title": {
+        "en": "a long saturday breakfast indoors.",
+        "de": "ein langes frühstück am samstag, drinnen.",
+        "tr": "içeride uzun bir cumartesi kahvaltısı."
+      },
+      "line": {
+        "en": "rain outside, so take the long table and stay until noon. glockenbach and haidhausen have the good ones.",
+        "de": "draußen regen, also der lange tisch und bleiben bis mittag. im glockenbach und in haidhausen gibt es die guten.",
+        "tr": "dışarıda yağmur, uzun bir masa tutun ve öğlene kadar kalın. glockenbach ve haidhausen'da iyileri var."
+      },
+      "place": {
+        "en": "glockenbachviertel",
+        "de": "glockenbachviertel",
+        "tr": "glockenbachviertel"
+      },
+      "hour": 10,
+      "minute": 0,
+      "why": "Saturday morning, rain all day. Forecast: rain, 4-6°C all day (muenchen.de, wetter.com)."
+    },
+    {
+      "kind": "rooftop",
+      "title": {
+        "en": "a roof, but a closed one.",
+        "de": "ein dach, aber ein geschlossenes.",
+        "tr": "bir çatı, ama kapalı olanı."
+      },
+      "line": {
+        "en": "no rooftop in rain and 5 degrees. go up the olympiaturm instead and watch the city go dark at half past four.",
+        "de": "kein dachbar-wetter bei regen und 5 grad. fahr lieber auf den olympiaturm und sieh der stadt beim dunkelwerden zu.",
+        "tr": "yağmurda ve 5 derecede çatı barı olmaz. onun yerine olympiaturm'a çıkın, şehrin dörtbuçukta kararışını izleyin."
+      },
+      "place": {
+        "en": "olympiaturm",
+        "de": "olympiaturm",
+        "tr": "olympiaturm"
+      },
+      "hour": 15,
+      "minute": 30,
+      "why": "Rain, cold, sunset about 16:30; open-air rooftops are out so an indoor viewpoint. Opening hours not verified. Forecast: rain, 4-6°C all day (muenchen.de, wetter.com)."
+    },
+    {
+      "kind": "swim",
+      "title": {
+        "en": "a warm pool on a cold night.",
+        "de": "ein warmes becken an einem kalten abend.",
+        "tr": "soğuk bir akşamda sıcak bir havuz."
+      },
+      "line": {
+        "en": "5 degrees and rain, so the isar is out. the müller'sches volksbad is a hall with warm water and old tiles.",
+        "de": "5 grad und regen, die isar fällt aus. das müller'sche volksbad ist eine halle mit warmem wasser und alten fliesen.",
+        "tr": "5 derece ve yağmur, isar'a girilmez. müller'sches volksbad sıcak sulu, eski çinili bir salon."
+      },
+      "place": {
+        "en": "müller'sches volksbad",
+        "de": "müller'sches volksbad",
+        "tr": "müller'sches volksbad"
+      },
+      "hour": 18,
+      "minute": 0,
+      "why": "Too cold for open water, so an indoor pool; opening hours on Saturday not verified. Forecast: rain, 4-6°C all day (muenchen.de, wetter.com)."
+    },
+    {
+      "kind": "quiz",
+      "title": {
+        "en": "a pub quiz out of the rain.",
+        "de": "ein kneipenquiz weg vom regen.",
+        "tr": "yağmurdan uzak bir pub quizi."
+      },
+      "line": {
+        "en": "saturday night, rain, a team of four. find a pub with a quiz and bring a pen.",
+        "de": "samstagabend, regen, ein team aus vier. such dir eine kneipe mit quiz und bring einen stift mit.",
+        "tr": "cumartesi gecesi, yağmur, dört kişilik takım. quiz yapan bir pub bulun, kalem getirin."
+      },
+      "place": {
+        "en": "kilians irish pub",
+        "de": "kilians irish pub",
+        "tr": "kilians irish pub"
+      },
+      "hour": 20,
+      "minute": 0,
+      "why": "Generic indoor quiz night for a rainy Saturday; no specific quiz confirmed. Forecast: rain, 4-6°C all day (muenchen.de, wetter.com)."
+    },
+    {
+      "kind": "newplace",
+      "title": {
+        "en": "a place you have not been yet.",
+        "de": "ein ort, an dem du noch nicht warst.",
+        "tr": "henüz gitmediğin bir yer."
+      },
+      "line": {
+        "en": "pick a bar or café in a district you never go to and go there in the rain. umbrella, no plan.",
+        "de": "such dir eine bar oder ein café in einem viertel aus, in das du nie gehst, und geh bei regen hin. schirm, kein plan.",
+        "tr": "hiç gitmediğin bir semtte bir bar ya da kafe seç ve yağmurda git. şemsiye, plan yok."
+      },
+      "place": {
+        "en": "a district you never visit",
+        "de": "a district you never visit",
+        "tr": "a district you never visit"
+      },
+      "hour": 16,
+      "minute": 0,
+      "why": "Generic kind; indoors because of rain. Forecast: rain, 4-6°C all day (muenchen.de, wetter.com)."
+    },
+    {
+      "kind": "camera",
+      "title": {
+        "en": "a grey day for the camera.",
+        "de": "ein grauer tag für die kamera.",
+        "tr": "kamera için gri bir gün."
+      },
+      "line": {
+        "en": "wet streets and low light make good pictures. take the camera along the isar and under the bridges before dark.",
+        "de": "nasse straßen und weiches licht machen gute bilder. kamera mit, an die isar und unter die brücken, vor der dunkelheit.",
+        "tr": "ıslak sokaklar ve alçak ışık güzel kareler verir. kamerayı alıp karanlıktan önce isar boyunca köprülerin altına gidin."
+      },
+      "place": {
+        "en": "isar, reichenbachbrücke",
+        "de": "isar, reichenbachbrücke",
+        "tr": "isar, reichenbachbrücke"
+      },
+      "hour": 15,
+      "minute": 0,
+      "why": "Overcast and rainy, which suits moody street photography. Forecast: rain, 4-6°C all day (muenchen.de, wetter.com)."
+    },
+    {
+      "kind": "festival",
+      "title": {
+        "en": "the christkindlmarkt at marienplatz.",
+        "de": "der christkindlmarkt am marienplatz.",
+        "tr": "marienplatz'ta christkindlmarkt."
+      },
+      "line": {
+        "en": "the market opened yesterday and runs to 24 december. mulled wine in the rain under the town hall; the residenz christmas village is nearby.",
+        "de": "der markt hat gestern geöffnet und läuft bis 24. dezember. glühwein im regen vorm rathaus; das weihnachtsdorf in der residenz ist nah.",
+        "tr": "pazar dün açıldı ve 24 aralık'a kadar sürüyor. yağmurda belediye binasının önünde sıcak şarap; residenz weihnachtsdorf yakın."
+      },
+      "place": {
+        "en": "marienplatz",
+        "de": "marienplatz",
+        "tr": "marienplatz"
+      },
+      "hour": 17,
+      "minute": 0,
+      "why": "Christkindlmarkt Marienplatz runs 20.11-24.12, Weihnachtsdorf Residenz 16.11-22.12 (munich.travel, muenchen.de). Tollwood only opens 24.11."
+    },
+    {
+      "kind": "karaoke",
+      "title": {
+        "en": "a karaoke night to sing the rain away.",
+        "de": "ein karaokeabend gegen den regen.",
+        "tr": "yağmuru şarkıyla kovan bir karaoke gecesi."
+      },
+      "line": {
+        "en": "saturday night, rain, a room with a microphone. pick a bar with a booth and put your name on the list early.",
+        "de": "samstagabend, regen, ein raum mit mikrofon. such eine bar mit kabine und trag dich früh in die liste ein.",
+        "tr": "cumartesi gecesi, yağmur, mikrofonlu bir oda. kabinli bir bar seçin, listeye erken yazılın."
+      },
+      "place": {
+        "en": "a karaoke bar",
+        "de": "a karaoke bar",
+        "tr": "a karaoke bar"
+      },
+      "hour": 21,
+      "minute": 30,
+      "why": "Generic indoor night; no specific venue verified. Forecast: rain, 4-6°C all day (muenchen.de, wetter.com)."
+    },
+    {
+      "kind": "vinyl",
+      "title": {
+        "en": "an afternoon in the record shops.",
+        "de": "ein nachmittag in den plattenläden.",
+        "tr": "plak dükkânlarında bir öğleden sonra."
+      },
+      "line": {
+        "en": "rain, so crate-dig: the shops around gärtnerplatz and glockenbach, an hour each, one record each.",
+        "de": "regen, also kisten wühlen: die läden rund um gärtnerplatz und glockenbach, je eine stunde, je eine platte.",
+        "tr": "yağmur var, o zaman plak karıştırın: gärtnerplatz ve glockenbach çevresindeki dükkânlar, her birinde bir saat, bir plak."
+      },
+      "place": {
+        "en": "gärtnerplatz",
+        "de": "gärtnerplatz",
+        "tr": "gärtnerplatz"
+      },
+      "hour": 16,
+      "minute": 0,
+      "why": "Saturday shops are open (not a holiday); rain makes it an indoor kind. Forecast: rain, 4-6°C all day (muenchen.de, wetter.com)."
+    },
+    {
+      "kind": "openair",
+      "title": {
+        "en": "no open air today, only a roof.",
+        "de": "heute kein open air, nur ein dach.",
+        "tr": "bugün açık hava yok, sadece çatı."
+      },
+      "line": {
+        "en": "rain and 5 degrees. skip the park; a covered market stall or a warm hall with live music works better.",
+        "de": "regen und 5 grad. lass den park, ein überdachter marktstand oder eine warme halle mit livemusik passt besser.",
+        "tr": "yağmur ve 5 derece. parkı boş verin; kapalı bir pazar tezgâhı ya da canlı müzikli sıcak bir salon daha iyi."
+      },
+      "place": {
+        "en": "viktualienmarkt",
+        "de": "viktualienmarkt",
+        "tr": "viktualienmarkt"
+      },
+      "hour": 15,
+      "minute": 0,
+      "why": "Open-air is unrealistic in November rain; no specific open-air event found. Forecast: rain, 4-6°C all day (muenchen.de, wetter.com)."
+    },
+    {
+      "kind": "bike",
+      "title": {
+        "en": "a short ride in rain gear.",
+        "de": "eine kurze runde in regenzeug.",
+        "tr": "yağmurluklu kısa bir bisiklet turu."
+      },
+      "line": {
+        "en": "wet cobbles and 5 degrees, so keep it to the isar path from the deutsches museum to the flaucher. lights on, back by four.",
+        "de": "nasse pflastersteine und 5 grad, also nur der isarweg vom deutschen museum zum flaucher. licht an, um vier zurück.",
+        "tr": "ıslak parke taşları ve 5 derece, o yüzden deutsches museum'dan flaucher'e isar yolu yeter. ışıklar açık, dörtte dönün."
+      },
+      "place": {
+        "en": "isarweg",
+        "de": "isarweg",
+        "tr": "isarweg"
+      },
+      "hour": 14,
+      "minute": 0,
+      "why": "Rain and cold: short, familiar route only; dark by about 16:30. Forecast: rain, 4-6°C all day (muenchen.de, wetter.com)."
+    },
+    {
+      "kind": "cinema",
+      "title": {
+        "en": "a film in a dry seat.",
+        "de": "ein film im trockenen sessel.",
+        "tr": "kuru bir koltukta bir film."
+      },
+      "line": {
+        "en": "the best saturday for it. pick an arthouse cinema, the 19:30 show, and walk home through the rain after.",
+        "de": "der beste samstag dafür. such dir ein programmkino, die vorstellung um 19:30, und lauf danach im regen heim.",
+        "tr": "tam sırası. bir sanat sineması seçin, 19:30 seansı, sonra yağmurda yürüyerek eve dönün."
+      },
+      "place": {
+        "en": "theatiner film",
+        "de": "theatiner film",
+        "tr": "theatiner film"
+      },
+      "hour": 19,
+      "minute": 30,
+      "why": "Rainy Saturday evening; specific programme not checked. Forecast: rain, 4-6°C all day (muenchen.de, wetter.com)."
+    },
+    {
+      "kind": "boardgames",
+      "title": {
+        "en": "board games and something warm to drink.",
+        "de": "brettspiele und etwas warmes zu trinken.",
+        "tr": "kutu oyunları ve sıcak bir içecek."
+      },
+      "line": {
+        "en": "rain all day. take a café with a shelf of games, order a pot of tea and settle in for the evening.",
+        "de": "den ganzen tag regen. such dir ein café mit spieleregal, bestell eine kanne tee und bleib den abend.",
+        "tr": "gün boyu yağmur. oyun rafı olan bir kafe bulun, bir demlik çay söyleyin, akşam orada kalın."
+      },
+      "place": {
+        "en": "a games café",
+        "de": "a games café",
+        "tr": "a games café"
+      },
+      "hour": 18,
+      "minute": 0,
+      "why": "Generic indoor kind for a wet Saturday. Forecast: rain, 4-6°C all day (muenchen.de, wetter.com)."
+    },
+    {
+      "kind": "flea",
+      "title": {
+        "en": "a flea market in wet shoes.",
+        "de": "ein flohmarkt in nassen schuhen.",
+        "tr": "ıslak ayakkabılarla bir bit pazarı."
+      },
+      "line": {
+        "en": "outdoor flea markets are thin in november rain. try the ms-bazar at the mvg museum, 21 and 22 november, under a roof.",
+        "de": "freiluft-flohmärkte sind im novemberregen dünn besetzt. probier den ms-bazar im mvg museum, 21. und 22. november, unter dach.",
+        "tr": "açık hava bit pazarları kasım yağmurunda zayıf kalır. çatı altında mvg museum'daki ms-bazar'a bakın, 21 ve 22 kasım."
+      },
+      "place": {
+        "en": "mvg museum",
+        "de": "mvg museum",
+        "tr": "mvg museum"
+      },
+      "hour": 10,
+      "minute": 0,
+      "why": "MS-Bazar at the MVG Museum 21-22.11 (munich.travel); hours not verified. Forecast: rain, 4-6°C all day (muenchen.de, wetter.com)."
+    },
+    {
+      "kind": "skate",
+      "title": {
+        "en": "skate where the roof is.",
+        "de": "skaten, wo ein dach ist.",
+        "tr": "çatının olduğu yerde kaykay."
+      },
+      "line": {
+        "en": "wet concrete is no fun. find a covered spot or an indoor hall, or save it for a dry day.",
+        "de": "nasser beton macht keinen spaß. such einen überdachten spot oder eine halle, oder heb es dir für einen trockenen tag auf.",
+        "tr": "ıslak beton keyif vermez. kapalı bir nokta ya da salon bulun, yoksa kuru bir güne bırakın."
+      },
+      "place": {
+        "en": "a covered skate spot",
+        "de": "a covered skate spot",
+        "tr": "a covered skate spot"
+      },
+      "hour": 15,
+      "minute": 0,
+      "why": "Rain makes outdoor skating poor; no specific venue verified. Forecast: rain, 4-6°C all day (muenchen.de, wetter.com)."
+    },
+    {
+      "kind": "cook",
+      "title": {
+        "en": "cook together while it rains.",
+        "de": "kocht zusammen, während es regnet.",
+        "tr": "yağmur yağarken birlikte yemek yapın."
+      },
+      "line": {
+        "en": "everyone brings one thing and the kitchen does the rest. soup or pasta for six, at someone's place, from half past six.",
+        "de": "jeder bringt eine sache mit, den rest macht die küche. suppe oder nudeln für sechs, bei jemandem zu hause, ab halb sieben.",
+        "tr": "herkes bir şey getirsin, gerisini mutfak halleder. altı kişilik çorba ya da makarna, birinin evinde, altıbuçuktan itibaren."
+      },
+      "place": {
+        "en": "at someone's place",
+        "de": "at someone's place",
+        "tr": "at someone's place"
+      },
+      "hour": 18,
+      "minute": 30,
+      "why": "Generic indoor kind for a wet evening. Forecast: rain, 4-6°C all day (muenchen.de, wetter.com)."
+    },
+    {
+      "kind": "sauna",
+      "title": {
+        "en": "a sauna after the cold rain.",
+        "de": "eine sauna nach dem kalten regen.",
+        "tr": "soğuk yağmurdan sonra sauna."
+      },
+      "line": {
+        "en": "5 degrees and wet is the day for it. the olympia schwimmhalle has a sauna; take a towel, stay two rounds.",
+        "de": "5 grad und nass, dafür ist der tag gemacht. die olympia-schwimmhalle hat eine sauna; handtuch mit, zwei durchgänge.",
+        "tr": "5 derece ve ıslak, tam günü. olympia-schwimmhalle'de sauna var; havlu alın, iki tur kalın."
+      },
+      "place": {
+        "en": "olympia-schwimmhalle",
+        "de": "olympia-schwimmhalle",
+        "tr": "olympia-schwimmhalle"
+      },
+      "hour": 17,
+      "minute": 0,
+      "why": "Cold, wet day suits a sauna; opening hours and sauna availability not verified. Forecast: rain, 4-6°C all day (muenchen.de, wetter.com)."
+    },
+    {
+      "kind": "openmic",
+      "title": {
+        "en": "an open mic, rain or not.",
+        "de": "ein open mic, egal ob regen.",
+        "tr": "yağmur da olsa açık mikrofon."
+      },
+      "line": {
+        "en": "a saturday night room with a sign-up sheet. sing or just listen with a beer in the back.",
+        "de": "ein raum am samstagabend mit anmeldeliste. sing oder hör hinten mit einem bier zu.",
+        "tr": "cumartesi gecesi bir salon, bir kayıt listesi. şarkı söyleyin ya da arkada birayla dinleyin."
+      },
+      "place": {
+        "en": "an open mic bar",
+        "de": "an open mic bar",
+        "tr": "an open mic bar"
+      },
+      "hour": 20,
+      "minute": 0,
+      "why": "Generic indoor kind; no specific open mic confirmed. Forecast: rain, 4-6°C all day (muenchen.de, wetter.com)."
+    },
+    {
+      "kind": "pingpong",
+      "title": {
+        "en": "table tennis in the dry.",
+        "de": "tischtennis im trockenen.",
+        "tr": "kuru yerde masa tenisi."
+      },
+      "line": {
+        "en": "rain, so no park tables. find a bar or club with a table and play to eleven, winner buys.",
+        "de": "regen, also keine parktische. such eine bar oder einen verein mit tisch und spiel bis elf, der sieger zahlt.",
+        "tr": "yağmur var, park masaları yok. masası olan bir bar ya da kulüp bulun, on bire kadar oynayın, kazanan ısmarlar."
+      },
+      "place": {
+        "en": "a pingpong bar",
+        "de": "a pingpong bar",
+        "tr": "a pingpong bar"
+      },
+      "hour": 19,
+      "minute": 0,
+      "why": "Outdoor park tables unusable in rain; no specific venue verified. Forecast: rain, 4-6°C all day (muenchen.de, wetter.com)."
+    },
+    {
+      "kind": "bouldering",
+      "title": {
+        "en": "bouldering, because the wall is dry.",
+        "de": "bouldern, denn die wand ist trocken.",
+        "tr": "boulder, çünkü duvar kuru."
+      },
+      "line": {
+        "en": "5 degrees and rain, so the halls are full but the walls are dry. take chalk, book a slot and warm up properly.",
+        "de": "5 grad und regen, die hallen sind voll, aber die wände trocken. magnesia mit, slot buchen und richtig aufwärmen.",
+        "tr": "5 derece ve yağmur, salonlar dolu ama duvarlar kuru. magnezyum alın, saat ayırtın, iyice ısının."
+      },
+      "place": {
+        "en": "a bouldering hall",
+        "de": "a bouldering hall",
+        "tr": "a bouldering hall"
+      },
+      "hour": 16,
+      "minute": 0,
+      "why": "Indoor sport for a wet day; hall not specified. Forecast: rain, 4-6°C all day (muenchen.de, wetter.com)."
+    },
+    {
+      "kind": "picnic",
+      "title": {
+        "en": "an indoor picnic, honestly.",
+        "de": "ein picknick drinnen, ehrlich gesagt.",
+        "tr": "dürüst olalım, içeride bir piknik."
+      },
+      "line": {
+        "en": "no blanket in the park today. spread it on a floor at home or in a museum café and share what you brought.",
+        "de": "heute keine decke im park. breit sie zu hause oder in einem museumscafé aus und teilt, was ihr mitgebracht habt.",
+        "tr": "bugün parkta örtü yok. evde ya da bir müze kafesinde örtüyü serin, getirdiklerinizi paylaşın."
+      },
+      "place": {
+        "en": "at home",
+        "de": "at home",
+        "tr": "at home"
+      },
+      "hour": 14,
+      "minute": 0,
+      "why": "Rain and 5°C rule out a park picnic. Forecast: rain, 4-6°C all day (muenchen.de, wetter.com)."
+    },
+    {
+      "kind": "crawl",
+      "title": {
+        "en": "a short bar crawl, three stops.",
+        "de": "eine kurze kneipentour, drei stationen.",
+        "tr": "kısa bir bar turu, üç durak."
+      },
+      "line": {
+        "en": "keep it close so the rain doesn't matter: three bars within five minutes of each other, one drink each, around gärtnerplatz.",
+        "de": "bleib nah, damit der regen egal ist: drei bars, fünf minuten auseinander, je ein getränk, rund um den gärtnerplatz.",
+        "tr": "yakın tutun ki yağmur sorun olmasın: gärtnerplatz çevresinde birbirine beş dakika uzaklıkta üç bar, her birinde bir içki."
+      },
+      "place": {
+        "en": "gärtnerplatz",
+        "de": "gärtnerplatz",
+        "tr": "gärtnerplatz"
+      },
+      "hour": 20,
+      "minute": 0,
+      "why": "Rainy Saturday night, short walking distances. Forecast: rain, 4-6°C all day (muenchen.de, wetter.com)."
+    },
+    {
+      "kind": "stars",
+      "title": {
+        "en": "no stars tonight, so a planetarium.",
+        "de": "heute keine sterne, also ein planetarium.",
+        "tr": "bu gece yıldız yok, planetaryum var."
+      },
+      "line": {
+        "en": "thick cloud and rain hide the sky. the deutsches museum has the planetarium; check the evening show before you go.",
+        "de": "dicke wolken und regen verdecken den himmel. das deutsche museum hat das planetarium; schau vorher nach der abendvorstellung.",
+        "tr": "kalın bulut ve yağmur gökyüzünü kapatıyor. deutsches museum'da planetaryum var; gitmeden akşam seansına bakın."
+      },
+      "place": {
+        "en": "deutsches museum",
+        "de": "deutsches museum",
+        "tr": "deutsches museum"
+      },
+      "hour": 19,
+      "minute": 0,
+      "why": "Overcast and rainy, no star-gazing; planetarium schedule not verified. Forecast: rain, 4-6°C all day (muenchen.de, wetter.com)."
+    },
+    {
+      "kind": "football",
+      "title": {
+        "en": "a kickabout in the hall.",
+        "de": "ein bolzen in der halle.",
+        "tr": "salonda bir top oyunu."
+      },
+      "line": {
+        "en": "pitches are mud and 5 degrees. rent an indoor court or hall for an hour; five-a-side, then a beer.",
+        "de": "die plätze sind matsch und 5 grad. miete eine halle oder einen court für eine stunde; fünf gegen fünf, dann ein bier.",
+        "tr": "sahalar çamur, hava 5 derece. bir saatlik kapalı saha kiralayın; beşe beş, sonra bir bira."
+      },
+      "place": {
+        "en": "an indoor court",
+        "de": "an indoor court",
+        "tr": "an indoor court"
+      },
+      "hour": 17,
+      "minute": 0,
+      "why": "Wet pitches, so indoor five-a-side; no specific hall verified. Forecast: rain, 4-6°C all day (muenchen.de, wetter.com)."
+    },
+    {
+      "kind": "tram",
+      "title": {
+        "en": "a ride on the number 19.",
+        "de": "eine fahrt mit der linie 19.",
+        "tr": "19 numaralı tramvayla bir tur."
+      },
+      "line": {
+        "en": "rain makes the tram the best seat in town. ride the 19 from the hauptbahnhof to the maxmonument and see the lights come on.",
+        "de": "bei regen ist die tram der beste platz der stadt. fahr mit der 19 vom hauptbahnhof zum maxmonument und sieh die lichter angehen.",
+        "tr": "yağmurda tramvay şehrin en iyi koltuğu. 19'a hauptbahnhof'tan binip maxmonument'e gidin, ışıkların yanışını izleyin."
+      },
+      "place": {
+        "en": "tram 19",
+        "de": "tram 19",
+        "tr": "tram 19"
+      },
+      "hour": 15,
+      "minute": 0,
+      "why": "Rainy day, dark from about 16:30; the line 19 route is a known scenic one but check the day's timetable. Forecast: rain, 4-6°C all day (muenchen.de, wetter.com)."
+    },
+    {
+      "kind": "jazz",
+      "title": {
+        "en": "a jazz night in a warm cellar.",
+        "de": "ein jazzabend im warmen keller.",
+        "tr": "sıcak bir bodrumda caz gecesi."
+      },
+      "line": {
+        "en": "saturday night, rain, a low room with a trio. go to the unterfahrt in haidhausen; check the programme and bring cash.",
+        "de": "samstagabend, regen, ein niedriger raum mit trio. geh in die unterfahrt in haidhausen; schau ins programm und bring bargeld mit.",
+        "tr": "cumartesi gecesi, yağmur, trolu alçak tavanlı bir salon. haidhausen'daki unterfahrt'a gidin; programa bakın, nakit alın."
+      },
+      "place": {
+        "en": "unterfahrt",
+        "de": "unterfahrt",
+        "tr": "unterfahrt"
+      },
+      "hour": 20,
+      "minute": 30,
+      "why": "Unterfahrt is a well-known jazz club; tonight's programme not verified. Forecast: rain, 4-6°C all day (muenchen.de, wetter.com)."
+    },
+    {
+      "kind": "walk",
+      "title": {
+        "en": "a walk under an umbrella.",
+        "de": "ein spaziergang unterm schirm.",
+        "tr": "şemsiyeli bir yürüyüş."
+      },
+      "line": {
+        "en": "the english garden in rain is nearly empty. walk to the monopteros before the dark, then warm up with soup.",
+        "de": "der englische garten im regen ist fast leer. lauf zum monopteros, bevor es dunkel wird, und wärm dich danach mit suppe auf.",
+        "tr": "yağmurda englischer garten neredeyse boş. hava kararmadan monopteros'a yürüyün, sonra çorbayla ısının."
+      },
+      "place": {
+        "en": "monopteros",
+        "de": "monopteros",
+        "tr": "monopteros"
+      },
+      "hour": 16,
+      "minute": 0,
+      "why": "Rain and 5°C, dark at about 16:30; an easy short walk. Forecast: rain, 4-6°C all day (muenchen.de, wetter.com)."
+    }
+  ]
+}
