@@ -1,0 +1,14 @@
+{
+  "city": "hamburg",
+  "day": "2026-11-22",
+  "sparks": [
+    {
+      "kind": "jazz",
+      "title": { "en": "cosmic jazz at the planetarium.", "de": "cosmic jazz im planetarium.", "tr": "planetaryum'da cosmic jazz." },
+      "line": { "en": "a jazz show under the planetarium dome at 11:00, about 60 minutes. book on the planetarium site; tickets start around 11 euro.", "de": "eine jazz-show unter der planetariumskuppel um 11:00, rund 60 minuten. tickets über die seite des planetariums; ab etwa 11 euro.", "tr": "planetaryum kubbesinin altında saat 11:00'de bir caz gösterisi, yaklaşık 60 dakika. biletleri planetaryum sitesinden al; fiyat yaklaşık 11 euro'dan başlıyor." },
+      "place": { "en": "planetarium hamburg", "de": "planetarium hamburg", "tr": "planetarium hamburg" },
+      "hour": 11, "minute": 0,
+      "why": "Cosmic Jazz at the Planetarium Hamburg, sun 22.11 11:00, about 60 min (planetarium-hamburg.de Spielplan, hamburg-tourism.de, ticketonline.de). Prices differ by source, so 'around 11 euro' is approximate."
+    }
+  ]
+}

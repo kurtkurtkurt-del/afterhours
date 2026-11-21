@@ -1,0 +1,14 @@
+{
+  "city": "hamburg",
+  "day": "2026-11-27",
+  "sparks": [
+    {
+      "kind": "flea",
+      "title": { "en": "night flea market in the gleishalle.", "de": "nachtflohmarkt in der gleishalle.", "tr": "gleishalle'de gece pire pazarı." },
+      "line": { "en": "vintage, secondhand, records and handmade pieces, with streetfood and live music, 17:00 to 22:00 in the hafencity. a 2 euro culture fee at the door.", "de": "vintage, secondhand, schallplatten und handgemachtes, dazu streetfood und live-musik, 17:00 bis 22:00 in der hafencity. 2 euro kulturbeitrag am eingang.", "tr": "vintage, ikinci el, plaklar ve el yapımı parçalar; streetfood ve canlı müzik eşliğinde, hafencity'de 17:00 ile 22:00 arası. girişte 2 euro kültür katkısı." },
+      "place": { "en": "gleishalle oberhafen", "de": "gleishalle oberhafen", "tr": "gleishalle oberhafen" },
+      "hour": 17, "minute": 0,
+      "why": "Nachtflohmarkt in der Gleishalle Oberhafen, Fri 27.11 17:00 to 22:00, EUR 2 fee (hamburg.de, hamburg-tourism.de, hamburg-magazin.de)."
+    }
+  ]
+}

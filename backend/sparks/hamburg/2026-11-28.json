@@ -1,0 +1,22 @@
+{
+  "city": "hamburg",
+  "day": "2026-11-28",
+  "sparks": [
+    {
+      "kind": "football",
+      "title": { "en": "hsv – bayern at the volkspark.", "de": "hsv – bayern im volkspark.", "tr": "volkspark'ta hsv – bayern." },
+      "line": { "en": "bundesliga matchday 11, 15:30 kick-off at the volksparkstadion. check hsv.de for tickets before you plan the evening.", "de": "bundesliga, spieltag 11, anstoß 15:30 im volksparkstadion. tickets auf hsv.de prüfen, bevor du den abend planst.", "tr": "bundesliga 11. hafta, 15:30 başlangıçlı maç, volksparkstadion'da. akşamı planlamadan önce biletleri hsv.de'den kontrol et." },
+      "place": { "en": "volksparkstadion", "de": "volksparkstadion", "tr": "volksparkstadion" },
+      "hour": 15, "minute": 30,
+      "why": "HSV vs FC Bayern, Bundesliga matchday 11, sat 28.11 15:30 at the Volksparkstadion (hsv.de schedule, bulibox.de)."
+    },
+    {
+      "kind": "stars",
+      "title": { "en": "deep space night at the planetarium.", "de": "deep space night im planetarium.", "tr": "planetaryum'da deep space night." },
+      "line": { "en": "an indoor sky show under the dome, about 75 minutes, with late music. starts 22:00 on saturday; book on the planetarium site.", "de": "eine sternenshow in der kuppel, rund 75 minuten, mit später musik. beginn 22:00 am samstag; tickets auf der seite des planetariums.", "tr": "kubbenin altında yaklaşık 75 dakikalık, müzikli bir gökyüzü gösterisi. cumartesi 22:00'de başlıyor; biletleri planetaryum sitesinden al." },
+      "place": { "en": "planetarium hamburg", "de": "planetarium hamburg", "tr": "planetarium hamburg" },
+      "hour": 22, "minute": 0,
+      "why": "Best of Deep Space Night at the Planetarium Hamburg, sat 28.11 22:00, about 75 min (planetarium-hamburg.de Spielplan, hamburg-tourism.de). Prices vary by source; the anniversary claim on one listing was left out as inconsistent."
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "city": "hamburg",
+  "day": "2026-11-26",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "winterdom on the heiligengeistfeld.", "de": "winterdom auf dem heiligengeistfeld.", "tr": "heiligengeistfeld'de winterdom." },
+      "line": { "en": "the winter funfair on the heiligengeistfeld, open until 6 december, free to enter. a walk through it after work.", "de": "der winterdom auf dem heiligengeistfeld ist bis 6. dezember geöffnet, der eintritt ist frei. ein spaziergang durch ihn nach der arbeit.", "tr": "heiligengeistfeld'deki kış lunaparkı 6 aralığa kadar açık, girişi ücretsiz. iş çıkışında bir dolaşma." },
+      "place": { "en": "winterdom heiligengeistfeld", "de": "winterdom heiligengeistfeld", "tr": "winterdom heiligengeistfeld" },
+      "hour": 18, "minute": 0,
+      "why": "Winterdom on the Heiligengeistfeld, open 6.11 to 6.12.2026 with free entry (weihnachtszeit-hamburg.de). Thu 26.11 chosen for an evening walk; ride hours not checked."
+    }
+  ]
+}
