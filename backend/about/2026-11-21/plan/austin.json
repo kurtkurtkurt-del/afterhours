@@ -1,0 +1,56 @@
+{
+ "city": "austin",
+ "day": "2026-11-21",
+ "nights": [
+  {
+   "id": "89f4d105-20ec-48ff-9ee0-ddb2fa36b10c",
+   "slug": "eric-benet-56daed4d",
+   "title": "Eric Benet",
+   "act": "Eric Benet",
+   "name": "Eric Benét",
+   "description": "American musician (born 1966)",
+   "source_url": "https://en.wikipedia.org/wiki/Eric_Ben%C3%A9t",
+   "extract": "Eric Benét Jordan is an American R&B singer-songwriter and musician. He has been nominated for four Grammy Awards."
+  },
+  {
+   "id": "a8a0dc83-6510-46ad-bc65-2fbca3d82622",
+   "slug": "victoria-monet-frequency-of-love-tour-781179d7",
+   "title": "Victoria Monet - Frequency Of Love Tour",
+   "act": "Victoria Monet",
+   "name": "Victoria Monét",
+   "description": "American singer-songwriter (born 1989)",
+   "source_url": "https://en.wikipedia.org/wiki/Victoria_Mon%C3%A9t",
+   "extract": "Victoria Monét McCants is an American singer-songwriter. First gaining recognition for her songwriting work, Monét pursued a recording career with the release of a series of extended plays (EPs); her fifth, Jaguar (2020) was met with critical acclaim. Her debut studio album, Jaguar II (2023), became her commercial breakthrough and was supported by the hit single \"On My Mama\", which peaked within the top 40 of the Billboard Hot 100 and earned a Grammy Award nomination for Record of the Year. The nomination was among seven she received at the 66th Annual Grammy Awards, from which she won Best New Artist, Best R&B Album and Best Engineered Album, Non-Classical."
+  },
+  {
+   "id": "c718d2a8-fcf5-47ea-9c23-bb5d3fa38f78",
+   "slug": "victoria-monet-frequency-of-love-tour-93a918ad",
+   "title": "Victoria Monét - Frequency Of Love Tour",
+   "act": "Victoria Monét",
+   "name": "Victoria Monét",
+   "description": "American singer-songwriter (born 1989)",
+   "source_url": "https://en.wikipedia.org/wiki/Victoria_Mon%C3%A9t",
+   "extract": "Victoria Monét McCants is an American singer-songwriter. First gaining recognition for her songwriting work, Monét pursued a recording career with the release of a series of extended plays (EPs); her fifth, Jaguar (2020) was met with critical acclaim. Her debut studio album, Jaguar II (2023), became her commercial breakthrough and was supported by the hit single \"On My Mama\", which peaked within the top 40 of the Billboard Hot 100 and earned a Grammy Award nomination for Record of the Year. The nomination was among seven she received at the 66th Annual Grammy Awards, from which she won Best New Artist, Best R&B Album and Best Engineered Album, Non-Classical."
+  },
+  {
+   "id": "3de276d4-d720-459e-b647-f97493c414ac",
+   "slug": "los-tucanes-de-tijuana-0368c9ab",
+   "title": "Los Tucanes de Tijuana",
+   "act": "Los Tucanes de Tijuana",
+   "name": "Los Tucanes de Tijuana",
+   "description": "Mexican norteño band",
+   "source_url": "https://en.wikipedia.org/wiki/Los_Tucanes_de_Tijuana",
+   "extract": "Los Tucanes De Tijuana are a Mexican norteño band led by Mario Quintero Lara. The band was founded in Tijuana, Baja California in 1987. They, along with Los Tigres del Norte, were pioneers in playing their music in a rougher manner as opposed to the traditional norteño music of northeastern Mexico, subsequently influencing many other norteño artists from Mexico’s pacific states and giving that region of the country its signature norteño sound. During their career, Los Tucanes de Tijuana have garnered several awards and recognitions, including a Latin Grammy in 2012 for the album 365 Días, five Grammy Award nominations, nine Lo Nuestro Awards nominations and multiple BMI Awards for Quintero as a composer. They are the first norteño music band to obtain an international film award by winning the Un Certain Regard Angel Film award at the Monaco International Film Festival for their participation in the documentary Los ilegales. In 2008, the group received a star on the Las Vegas Walk of Fame."
+  },
+  {
+   "id": "ed9f6af3-103d-4bbd-8d16-f36662890bc1",
+   "slug": "danny-brown-mohawk-20th-anniversary-a9a609f0",
+   "title": "Danny Brown - Mohawk 20th Anniversary",
+   "act": "Danny Brown",
+   "name": "Danny Brown",
+   "description": "American rapper (born 1981)",
+   "source_url": "https://en.wikipedia.org/wiki/Danny_Brown",
+   "extract": "Daniel Dewan Sewell, better known by his stage name Danny Brown, is an American rapper, songwriter, actor and podcaster."
+  }
+ ]
+}

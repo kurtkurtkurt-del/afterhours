@@ -1,0 +1,16 @@
+{
+ "city": "new-york",
+ "day": "2026-11-21",
+ "nights": [
+  {
+   "id": "9cf98709-7e75-4e8d-9a07-6918d3428d8d",
+   "slug": "the-pineapple-thief-d4255b44",
+   "title": "The Pineapple Thief",
+   "act": "The Pineapple Thief",
+   "name": "The Pineapple Thief",
+   "description": "British progressive rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Pineapple_Thief",
+   "extract": "The Pineapple Thief are an English progressive rock band founded in 1999 by Bruce Soord in Yeovil, Somerset. As of June 2024, the group consists of Soord on vocals, guitars, and keyboards, Jon Sykes on bass, Steve Kitch on keyboards, and Gavin Harrison on drums. They have released 16 studio albums, 6 EPs, and several live and compilation albums."
+  }
+ ]
+}

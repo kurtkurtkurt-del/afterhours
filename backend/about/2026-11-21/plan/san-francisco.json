@@ -1,0 +1,26 @@
+{
+ "city": "san-francisco",
+ "day": "2026-11-21",
+ "nights": [
+  {
+   "id": "88c8ee9b-641f-43fa-947c-ec3cd244b047",
+   "slug": "andre-nickatina-7f0a4a70",
+   "title": "Andre Nickatina",
+   "act": "Andre Nickatina",
+   "name": "Andre Nickatina",
+   "description": "American rapper (born 1970)",
+   "source_url": "https://en.wikipedia.org/wiki/Andre_Nickatina",
+   "extract": "Andre Lamond Adams, known artistically as Andre Nickatina, is an American rapper and record producer from San Francisco, California. Nickatina is known for his distinctive voice, original flow, and lyrical exploration. He previously performed under the stage name Dre Dog."
+  },
+  {
+   "id": "911e53ee-ac01-4f4c-ace2-72178f6db2e6",
+   "slug": "andy-c-ages-21-0718031e",
+   "title": "Andy C - Ages 21+",
+   "act": "Andy C",
+   "name": "Andy C",
+   "description": "English DJ and record producer (born 1976)",
+   "source_url": "https://en.wikipedia.org/wiki/Andy_C",
+   "extract": "Andy C is an English DJ and record producer. He co-founded RAM Records, a drum and bass label."
+  }
+ ]
+}

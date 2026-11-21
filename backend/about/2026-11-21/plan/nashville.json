@@ -1,0 +1,36 @@
+{
+ "city": "nashville",
+ "day": "2026-11-21",
+ "nights": [
+  {
+   "id": "8c28876f-da57-4224-9cee-935df967591e",
+   "slug": "wage-war-eb9d553c",
+   "title": "Wage War",
+   "act": "Wage War",
+   "name": "Wage War",
+   "description": "American metalcore band",
+   "source_url": "https://en.wikipedia.org/wiki/Wage_War",
+   "extract": "Wage War is an American metalcore band formed in Ocala, Florida in 2010 under the name Empires. The band consists of lead vocalist Briton Bond, lead guitarist Seth Blake, rhythm guitarist and clean vocalist Cody Quistad, bassist Chris Gaylord, and drummer Stephen Kluesener."
+  },
+  {
+   "id": "04653119-164d-4cda-a730-edefca09e394",
+   "slug": "wage-war-emergency-broadcast-tour-c451626b",
+   "title": "WAGE WAR - EMERGENCY BROADCAST TOUR",
+   "act": "WAGE WAR",
+   "name": "Wage War",
+   "description": "American metalcore band",
+   "source_url": "https://en.wikipedia.org/wiki/Wage_War",
+   "extract": "Wage War is an American metalcore band formed in Ocala, Florida in 2010 under the name Empires. The band consists of lead vocalist Briton Bond, lead guitarist Seth Blake, rhythm guitarist and clean vocalist Cody Quistad, bassist Chris Gaylord, and drummer Stephen Kluesener."
+  },
+  {
+   "id": "0ba2a19d-1a9f-4d1a-a8a2-8c1df4c9476e",
+   "slug": "catie-turner-523aed42",
+   "title": "Catie Turner",
+   "act": "Catie Turner",
+   "name": "Catie Turner",
+   "description": "American singer (born 2000)",
+   "source_url": "https://en.wikipedia.org/wiki/Catie_Turner",
+   "extract": "Catie Virginia Turner is an American pop singer. She rose to prominence as a contestant on sixteenth season of American Idol, placing in the top seven. In September 2019, Turner further gained notoriety after her song \"Prom Queen\" was used in the trailer for Shane Dawson's web series The Beautiful World of Jeffree Star, which gained over 11 million views in just one week. She has released four EPs: The Sad Vegan as an independent artist, followed by Heartbroken and Milking It, Comedy & Tragedy: Act I, and Comedy & Tragedy: Act II with Atlantic Records."
+  }
+ ]
+}

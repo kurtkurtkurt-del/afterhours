@@ -1,0 +1,36 @@
+{
+ "city": "washington",
+ "day": "2026-11-21",
+ "nights": [
+  {
+   "id": "ce36633f-a166-4254-81e8-3cf79011fff9",
+   "slug": "bryce-alakai-ages-21-a68e9805",
+   "title": "Bryce Alakai - Ages 21+",
+   "act": "Bryce Alakai",
+   "name": "Bryce Alakai",
+   "description": "American DJ (born 1996)",
+   "source_url": "https://en.wikipedia.org/wiki/Bryce_Alakai",
+   "extract": "Bryce Alakai is an American DJ, music producer, model and television personality, known for winning the eighth season of the Peacock dating show Love Island USA in 2026."
+  },
+  {
+   "id": "ddbed9b2-7cac-46b7-adcc-e7e9cc4c85f6",
+   "slug": "deante-hitchcock-4190f7d4",
+   "title": "Deante' Hitchcock",
+   "act": "Deante' Hitchcock",
+   "name": "Deante' Hitchcock",
+   "description": "American rapper",
+   "source_url": "https://en.wikipedia.org/wiki/Deante'_Hitchcock",
+   "extract": "Deante' Van Hitchcock, is an American rapper from Riverdale, Georgia. He initially gained recognition as a rapper following the releases of three mixtapes: 19 Summers (2012), Wishful Thinking (2015) and Good (2016). He received widespread attention on the internet in 2016 after a weekly series of freestyles called New Atlanta Tuesday's. In 2017, he signed to ByStorm and RCA Records. His debut album Better was released on May 13, 2020."
+  },
+  {
+   "id": "6f3cca16-c1da-4d95-9113-5848e08f83a5",
+   "slug": "loud-luxury-7a97423a",
+   "title": "Loud Luxury",
+   "act": "Loud Luxury",
+   "name": "Loud Luxury",
+   "description": "Canadian DJ duo",
+   "source_url": "https://en.wikipedia.org/wiki/Loud_Luxury",
+   "extract": "Loud Luxury are a Canadian music production and DJ duo consisting of Andrew Fedyk and Joe De Pace. They are currently based in Los Angeles, California. They gained recognition following their 2017 release \"Body\" and their remix of the Martin Garrix and Dua Lipa single \"Scared to Be Lonely\"."
+  }
+ ]
+}

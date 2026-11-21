@@ -1,0 +1,26 @@
+{
+ "city": "birmingham",
+ "day": "2026-11-21",
+ "nights": [
+  {
+   "id": "24329042-62a5-4738-9660-38bfc7ad5d31",
+   "slug": "hard-fi-3909c72b",
+   "title": "Hard-Fi",
+   "act": "Hard-Fi",
+   "name": "Hard-Fi",
+   "description": "English indie rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Hard-Fi",
+   "extract": "Hard-Fi are an English indie rock band, formed in 2003 in Staines-upon-Thames, Surrey. The band consists of Richard Archer, Ross Phillips, Kai Stephens and Steve Kemp."
+  },
+  {
+   "id": "64a42b26-260e-4f56-a318-b8ce5d5a02db",
+   "slug": "the-blackout-0aa513b2",
+   "title": "The Blackout",
+   "act": "The Blackout",
+   "name": "The Blackout",
+   "description": "Welsh rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Blackout_(band)",
+   "extract": "The Blackout are a Welsh rock band from Merthyr Tydfil, formed in 2003. In 2007, the band released their debut album, We Are the Dynamite. Their second record, The Best in Town, was released in 2009. The band's third album, Hope, was released in 2011 and charted at number 27 in the UK album chart. Their fourth studio album, Start the Party, was released in 2013. The Blackout's final release was a five-track EP entitled Wolves, with their farewell tour held in early 2015, finishing in their hometown of Merthyr Tydfil in March 2015."
+  }
+ ]
+}

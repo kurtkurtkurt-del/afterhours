@@ -1,0 +1,26 @@
+{
+ "city": "dallas",
+ "day": "2026-11-21",
+ "nights": [
+  {
+   "id": "599769fc-b823-4b20-a32a-384bc15ced0d",
+   "slug": "trippie-redd-d16e1093",
+   "title": "Trippie Redd",
+   "act": "Trippie Redd",
+   "name": "Trippie Redd",
+   "description": "American rapper (born 1999)",
+   "source_url": "https://en.wikipedia.org/wiki/Trippie_Redd",
+   "extract": "Michael Lamar White II, known professionally as Trippie Redd, is an American rapper, singer, and songwriter. Born and raised in Canton, Ohio, he has contributed to the progression of emo rap and rage, a subgenre of trap music."
+  },
+  {
+   "id": "3e2e4d32-c4a6-4913-ad77-903e9b46bd32",
+   "slug": "eric-benet-45a1c7d0",
+   "title": "Eric Benet",
+   "act": "Eric Benet",
+   "name": "Eric Benét",
+   "description": "American musician (born 1966)",
+   "source_url": "https://en.wikipedia.org/wiki/Eric_Ben%C3%A9t",
+   "extract": "Eric Benét Jordan is an American R&B singer-songwriter and musician. He has been nominated for four Grammy Awards."
+  }
+ ]
+}

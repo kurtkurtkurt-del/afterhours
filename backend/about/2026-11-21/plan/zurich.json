@@ -1,0 +1,16 @@
+{
+ "city": "zurich",
+ "day": "2026-11-21",
+ "nights": [
+  {
+   "id": "293c4b56-e940-4567-bb5b-9918e47b4374",
+   "slug": "odetari-20cec22b",
+   "title": "Odetari",
+   "act": "Odetari",
+   "name": "Odetari",
+   "description": "American rapper and singer (born 2000)",
+   "source_url": "https://en.wikipedia.org/wiki/Odetari",
+   "extract": "Taha Othman Ahmad, also known as Odetari, is an American rapper, singer, songwriter, and record producer. He started making and releasing music at age 13. His music became popular on TikTok in 2023 and his songs \"Good Loyal Thots\", \"Narcissistic Personality Disorder\", \"Look Don't Touch\", \"I Love You Hoe\", \"GMFU\", and \"Hypnotic Data\" all reached the top 3 of the Billboard Hot Dance/Electronic Songs chart and were each certified gold by the Recording Industry Association of America (RIAA). Ahmad is of Palestinian origin."
+  }
+ ]
+}

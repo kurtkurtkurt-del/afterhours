@@ -1,0 +1,26 @@
+{
+ "city": "montreal",
+ "day": "2026-11-21",
+ "nights": [
+  {
+   "id": "1946b6b6-e48d-4210-bd04-b3f963efed96",
+   "slug": "michael-jackson-legacy-d86d1ba9",
+   "title": "Michael Jackson  - Legacy",
+   "act": "Michael Jackson",
+   "name": "Michael Jackson",
+   "description": "American singer and songwriter (1958–2009)",
+   "source_url": "https://en.wikipedia.org/wiki/Michael_Jackson",
+   "extract": "Michael Joseph Jackson was an American singer, songwriter, dancer, and philanthropist. Dubbed the \"King of Pop\", he is widely regarded as one of the most significant cultural figures of the 20th century. His musical achievements broke American racial barriers and made him a dominant figure worldwide. Through his songs, music videos, concerts, and fashion, he transformed visual performance in popular music, popularizing street dance moves such as the moonwalk, the robot, and the anti-gravity lean. Jackson is often deemed the greatest entertainer of all time."
+  },
+  {
+   "id": "c6234859-19b3-44ef-b0e5-f49d08f2ab31",
+   "slug": "dragonforce-inhuman-rampage-20th-anniversary-7c705380",
+   "title": "DragonForce: Inhuman Rampage 20th Anniversary",
+   "act": "DragonForce",
+   "name": "DragonForce",
+   "description": "British power metal band",
+   "source_url": "https://en.wikipedia.org/wiki/DragonForce",
+   "extract": "DragonForce are a British power metal band from London, formed in 1999. They are known for their long and fast guitar solos, fantasy-themed lyrics and retro video game-influenced sound. The band themselves refer to their music as \"extreme power metal\"."
+  }
+ ]
+}

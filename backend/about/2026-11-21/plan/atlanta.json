@@ -1,0 +1,66 @@
+{
+ "city": "atlanta",
+ "day": "2026-11-21",
+ "nights": [
+  {
+   "id": "74fa3be7-d0d7-4e2f-a442-d959bab9c945",
+   "slug": "futurebirds-57746df1",
+   "title": "Futurebirds",
+   "act": "Futurebirds",
+   "name": "Futurebirds",
+   "description": "US musical group",
+   "source_url": "https://en.wikipedia.org/wiki/Futurebirds",
+   "extract": "Futurebirds are an American Rock and Roll band formed in 2008 from Athens, Georgia, United States. Founded by University of Georgia students Daniel Womack, Carter King, Thomas Johnson, Brannen Miles and Payton Bradford, the group emerged from Athens' longstanding independent music scene and developed a style that blends rock and roll, Americana, country rock, folk rock, and neo-psychedelia."
+  },
+  {
+   "id": "ed286f56-2403-45e4-b34e-a9c284aa855c",
+   "slug": "the-steeldrivers-e3148ca1",
+   "title": "The SteelDrivers",
+   "act": "The SteelDrivers",
+   "name": "The SteelDrivers",
+   "description": "American bluegrass band",
+   "source_url": "https://en.wikipedia.org/wiki/The_SteelDrivers",
+   "extract": "The SteelDrivers are a bluegrass band from Nashville, Tennessee. Members include fiddler Tammy Rogers, bassist Mike Fleming, guitarist/vocalist Matt Dame, mandolinist Brent Truitt, and banjoist Richard Bailey. Past members include Kelvin Damrell, Chris Stapleton, Gary Nichols, and Mike Henderson. The band has recorded four albums on the Rounder Records label and one independent live album recorded at The Station Inn. The band has received several Grammy nominations and won a Grammy for the album The Muscle Shoals Recordings."
+  },
+  {
+   "id": "aa106609-8be2-42e0-a02f-2acbfd09ee0f",
+   "slug": "stray-cats-4b286cce",
+   "title": "Stray Cats",
+   "act": "Stray Cats",
+   "name": "Stray Cats",
+   "description": "American rockabilly band",
+   "source_url": "https://en.wikipedia.org/wiki/Stray_Cats",
+   "extract": " Stray Cats are an American rockabilly band formed in 1979 by guitarist and vocalist Brian Setzer, double bassist Lee Rocker, and drummer Slim Jim Phantom in the Long Island hamlet of Massapequa, New York. The group had numerous hit singles in the UK, Australia, Canada, and the U.S. including \"Stray Cat Strut\", \"(She's) Sexy + 17\", \"Look at That Cadillac\", \"I Won't Stand in Your Way\", \"Bring It Back Again\", and \"Rock This Town\", which the Rock and Roll Hall of Fame has listed as one of the songs that shaped rock and roll."
+  },
+  {
+   "id": "e53ae55d-912a-474c-a23e-22911d201934",
+   "slug": "static-dress-1bdbc743",
+   "title": "Static Dress",
+   "act": "Static Dress",
+   "name": "Static Dress",
+   "description": "English rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Static_Dress",
+   "extract": "Static Dress are an English rock band from Leeds, West Yorkshire. Formed in 2018, Static Dress are a concept band with their material following a continuous story. They currently consist of lead vocalist Olli Appleyard, drummer Sam Ogden, guitarist Vincent Weight and bassist George Holding. They have released two full-length studio albums, three EPs and various standalone singles, as well as a comic book and three video games."
+  },
+  {
+   "id": "706b46a9-24ac-4f73-af2a-f5f5358cff3d",
+   "slug": "kwesi-arthur-32bac48c",
+   "title": "Kwesi Arthur",
+   "act": "Kwesi Arthur",
+   "name": "Kwesi Arthur",
+   "description": "Ghanaian rapper and singer (born 1999)",
+   "source_url": "https://en.wikipedia.org/wiki/Kwesi_Arthur",
+   "extract": "Emmanuel Kwesi Danso Arthur, known professionally as Kwesi Arthur, is a Ghanaian rapper, singer and songwriter from Tema. He rose to fame in 2017 with the hit single \"Grind Day\", which received widespread acclaim, a co-sign and a chart-topping remix from rap heavyweights Sarkodie and Medikal. In 2019, his second EP, Live from Nkrumah Krom Vol II, garnered more than 2 million streams in the first week of its release."
+  },
+  {
+   "id": "c9604951-a584-496e-a106-64d4ad5af3ec",
+   "slug": "blackberry-smoke-holiday-homecoming-8efbf5d9",
+   "title": "Blackberry Smoke: Holiday Homecoming",
+   "act": "Blackberry Smoke",
+   "name": "Blackberry Smoke",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Blackberry_Smoke",
+   "extract": "Blackberry Smoke is an American rock band formed in Atlanta, Georgia, in 2001. The lineup consists of lead vocalist and lead guitarist Charlie Starr, lead/rhythm guitarist Paul Jackson, bassist Richard Turner and keyboardist Brandon Still. Richard's brother Brit Turner was the band's co-founder and drummer before his death in March 2024. Drumming duties have been covered during the band's tours since late 2023 by Atlanta drummer Kent Aberle. In 2018, they added touring members guitarist Benji Shanks and percussionist Preston Holcomb, with Holcomb retiring from touring in the spring of 2024. They have released eight studio albums, two live albums and five extended plays."
+  }
+ ]
+}

@@ -1,0 +1,36 @@
+{
+ "city": "los-angeles",
+ "day": "2026-11-21",
+ "nights": [
+  {
+   "id": "e57581fa-b87f-4980-b850-257714055ecb",
+   "slug": "prateek-kuhad-e9687531",
+   "title": "Prateek Kuhad",
+   "act": "Prateek Kuhad",
+   "name": "Prateek Kuhad",
+   "description": "Indian singer-songwriter (born 1990)",
+   "source_url": "https://en.wikipedia.org/wiki/Prateek_Kuhad",
+   "extract": "Prateek Kuhad is an Indian singer-songwriter and musician who makes independent music in Hindi and English. He is best known for his track \"Kasoor\" and \"Co2\"."
+  },
+  {
+   "id": "b4241dce-018c-4908-9977-55b9879b5758",
+   "slug": "sabrina-claudio-8ba9fa86",
+   "title": "Sabrina Claudio",
+   "act": "Sabrina Claudio",
+   "name": "Sabrina Claudio",
+   "description": "American singer and songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Sabrina_Claudio",
+   "extract": "Sabrina Claudio is an American singer and songwriter. In late 2016, Claudio uploaded several songs to SoundCloud, before compiling a select collection as part of her debut extended play, Confidently Lost, which was released independently in March 2017."
+  },
+  {
+   "id": "1076bd5e-c7b3-432f-a5f1-15b5df7b7bf0",
+   "slug": "beauty-school-dropout-23f979ff",
+   "title": "Beauty School Dropout",
+   "act": "Beauty School Dropout",
+   "name": "Beauty School Dropout",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Beauty_School_Dropout_(band)",
+   "extract": "Beauty School Dropout is an American rock band formed in Los Angeles, California, in 2020 by lead vocalist Cole \"Colie\" Hutzler, bassist Brent \"Beepus\" Burdett, producer/guitarist Bardo Novotny and drummer Colton Flurry."
+  }
+ ]
+}

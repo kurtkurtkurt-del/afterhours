@@ -1,0 +1,16 @@
+{
+ "city": "ankara",
+ "day": "2026-11-21",
+ "nights": [
+  {
+   "id": "b60283a7-38f9-4b50-9401-99eddc86a2f7",
+   "slug": "mabel-matiz-60d1c3a2",
+   "title": "Mabel Matiz",
+   "act": "Mabel Matiz",
+   "name": "Mabel Matiz",
+   "description": "Turkish singer-songwriter (born 1985)",
+   "source_url": "https://en.wikipedia.org/wiki/Mabel_Matiz",
+   "extract": "Fatih Karaca, better known by his stage name Mabel Matiz, is a Turkish pop music singer-songwriter."
+  }
+ ]
+}

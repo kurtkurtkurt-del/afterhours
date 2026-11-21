@@ -1,0 +1,86 @@
+{
+ "city": "manchester",
+ "day": "2026-11-21",
+ "nights": [
+  {
+   "id": "2476c4b0-9d59-4bd0-bd92-0a5371079295",
+   "slug": "dakhabrakha-e0d8222f",
+   "title": "DakhaBrakha",
+   "act": "DakhaBrakha",
+   "name": "DakhaBrakha",
+   "description": "Ukrainian folk music group",
+   "source_url": "https://en.wikipedia.org/wiki/DakhaBrakha",
+   "extract": "DakhaBrakha are a world music quartet formed in Kyiv, Ukraine. The four musicians combine a variety of musical styles from across the globe, creating energetic and artistic performances that are uniquely their own. DakhaBrakha's eclectic sound seamlessly mesh ancient Ukrainian folk tunes with modern genres, such as pop, punk, electronica, hip hop, and soul, a musical fusion that they define as \"ethno-chaos\"."
+  },
+  {
+   "id": "c07124c1-cf56-412c-88fd-3d31ee92226f",
+   "slug": "pixel-grip-b6dd4031",
+   "title": "Pixel Grip",
+   "act": "Pixel Grip",
+   "name": "Pixel Grip",
+   "description": "American electronic music band",
+   "source_url": "https://en.wikipedia.org/wiki/Pixel_Grip",
+   "extract": "Pixel Grip is an American electronic music group, formed in Chicago, Illinois. The band consists of vocalist Rita Lukea and producers Tyler Ommen and Jonathon Freund. The band is largely inspired by the queer music scene emerging from clubs and discos in the last several decades."
+  },
+  {
+   "id": "229ee4a8-e4dc-4ef4-8c8e-d8239cbc2398",
+   "slug": "bunt-a683702c",
+   "title": "BUNT.",
+   "act": "BUNT.",
+   "name": "Bunt",
+   "description": "German DJ (born 1994)",
+   "source_url": "https://en.wikipedia.org/wiki/Bunt_(DJ)",
+   "extract": "Levi Wijk, better known as Bunt, is a German country-folk DJ and record producer."
+  },
+  {
+   "id": "6dd7205d-9d24-47ae-b705-e3e345cbb96c",
+   "slug": "dea-matrona-a001b867",
+   "title": "Dea Matrona",
+   "act": "Dea Matrona",
+   "name": "Dea Matrona",
+   "description": "Irish rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Dea_Matrona_(band)",
+   "extract": "Dea Matrona are an Irish rock band based in Belfast and led by Orláith Forsythe and Mollie McGinn."
+  },
+  {
+   "id": "4164b164-6d93-4b1d-9468-17afd336790d",
+   "slug": "jungle-50098bf8",
+   "title": "Jungle",
+   "act": "Jungle",
+   "name": "Jungle",
+   "description": "English modern soul band",
+   "source_url": "https://en.wikipedia.org/wiki/Jungle_(band)",
+   "extract": "Jungle are a British band formed in early 2013 by London-based producers Josh Lloyd-Watson and Tom McFarland. Jungle have released five studio albums: Jungle (2014), which was shortlisted for the Mercury Prize; For Ever (2018); Loving in Stereo (2021); Volcano (2023); and Sunshine (2026). The first two albums were released through XL Recordings while the latter three via their independent label Caiola Records."
+  },
+  {
+   "id": "c2d21b3e-8420-4684-a051-5afebc69e9b1",
+   "slug": "royal-blood-478284f6",
+   "title": "Royal Blood",
+   "act": "Royal Blood",
+   "name": "Royal Blood",
+   "description": "English rock duo",
+   "source_url": "https://en.wikipedia.org/wiki/Royal_Blood_(band)",
+   "extract": "Royal Blood are an English rock duo formed in Worthing in 2011. The lineup consists of Mike Kerr and Ben Thatcher (drums). Their signature sound is built around Kerr's bass playing style, which sees him using various effects pedals and amps to make his bass guitar sound like an electric guitar and bass guitar at the same time. The duo were signed by Warner Chappell Music in 2013 and have since released five studio albums: Royal Blood (2014), How Did We Get So Dark? (2017), Typhoons (2021), Back to the Water Below (2023) and Dead Company (2026)."
+  },
+  {
+   "id": "8806f694-e98a-4136-b02e-d2a058908260",
+   "slug": "tinie-tempah-541a49c6",
+   "title": "Tinie Tempah",
+   "act": "Tinie Tempah",
+   "name": "Tinie Tempah",
+   "description": "British rapper and singer (born 1988)",
+   "source_url": "https://en.wikipedia.org/wiki/Tinie_Tempah",
+   "extract": "Patrick Chukwuemeka Okogwu, better known by his stage name Tinie Tempah, is an English rapper, singer and television presenter. Born and raised in London, he created his own entertainment company Disturbing London in 2006, alongside Dumi Oburota. After signing with Parlophone in 2009 and releasing several mixtapes, he rose to fame with the UK number-one singles \"Pass Out\" and \"Written in the Stars\" in 2010."
+  },
+  {
+   "id": "9804ae9c-8459-46e7-b01c-7a9ead4daf11",
+   "slug": "gorgon-city-0d5b2575",
+   "title": "Gorgon City",
+   "act": "Gorgon City",
+   "name": "Gorgon City",
+   "description": "English electronic music duo",
+   "source_url": "https://en.wikipedia.org/wiki/Gorgon_City",
+   "extract": "Gorgon City are an English electronic music production duo consisting of two North London producers Kye \"Foamo\" Gibbon and Matt \"RackNRuin\" Robson-Scott. Their 2014 singles \"Ready for Your Love\" and \"Here for You\" reached the top 10 in the UK. They are currently signed to the UK-based record label Positiva Records which is a division of Universal Music Group."
+  }
+ ]
+}

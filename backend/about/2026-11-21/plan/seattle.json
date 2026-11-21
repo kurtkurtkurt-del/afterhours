@@ -1,0 +1,26 @@
+{
+ "city": "seattle",
+ "day": "2026-11-21",
+ "nights": [
+  {
+   "id": "aa86b377-fd23-4c71-aa52-a6950216c71e",
+   "slug": "valentino-khan-ages-21-40035a12",
+   "title": "Valentino Khan - Ages 21+",
+   "act": "Valentino Khan",
+   "name": "Valentino Khan",
+   "description": "American DJ and music producer",
+   "source_url": "https://en.wikipedia.org/wiki/Valentino_Khan",
+   "extract": "Valentino Khan is an American DJ and producer born and raised in Los Angeles. He is best known for releasing material through Diplo, Skrillex and Steve Aoki. His singles \"Deep Down Low\" and \"Make Some Noise\" peaked at number one and fifty respectively on the \"Billboard Twitter Emerging Artists\" chart."
+  },
+  {
+   "id": "7022c3a7-0a6b-4868-a4ed-27a6d4d2fc45",
+   "slug": "steve-lacy-oh-yeah-tour-5ec0b1e4",
+   "title": "Steve Lacy: Oh yeah? Tour",
+   "act": "Steve Lacy",
+   "name": "Steve Lacy",
+   "description": "American musician (born 1998)",
+   "source_url": "https://en.wikipedia.org/wiki/Steve_Lacy",
+   "extract": "Steve Thomas Lacy-Moya is an American singer-songwriter, guitarist and record producer. He gained recognition as the guitarist of the alternative R&B band the Internet, which he joined in 2015. His self-produced debut EP, Steve Lacy's Demo (2017), was met with critical praise and became a sleeper hit. Lacy then guest performed alongside Frank Ocean on Tyler, the Creator's 2017 single \"911 / Mr. Lonely\", which received double platinum certification by the Recording Industry Association of America (RIAA). That year, he also co-wrote songs for artists including Solange Knowles, and Kendrick Lamar on his song \"Pride\"."
+  }
+ ]
+}

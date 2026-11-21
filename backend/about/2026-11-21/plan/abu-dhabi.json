@@ -1,0 +1,16 @@
+{
+ "city": "abu-dhabi",
+ "day": "2026-11-21",
+ "nights": [
+  {
+   "id": "c5b18344-47d1-4ecf-96e3-f0394d461295",
+   "slug": "jennifer-lopez-friday-48e164f8",
+   "title": "Jennifer Lopez - Friday",
+   "act": "Jennifer Lopez",
+   "name": "Jennifer Lopez",
+   "description": "American singer-songwriter and actress (born 1969)",
+   "source_url": "https://en.wikipedia.org/wiki/Jennifer_Lopez",
+   "extract": "Jennifer Lynn Lopez is an American singer, songwriter, actress, dancer, and businesswoman. Lopez is regarded as one of the most influential entertainers of her time, credited with breaking barriers for Latino Americans in Hollywood and helping propel the Latin pop movement in music. She is also known for her cultural impact through fashion, branding, and shifting mainstream beauty standards."
+  }
+ ]
+}

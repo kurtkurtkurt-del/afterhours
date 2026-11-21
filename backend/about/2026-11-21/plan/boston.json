@@ -1,0 +1,26 @@
+{
+ "city": "boston",
+ "day": "2026-11-21",
+ "nights": [
+  {
+   "id": "b43b0385-df01-4be6-8457-737c2f9f38a8",
+   "slug": "dax-the-anger-management-tour-18-27286ffe",
+   "title": "DAX - The Anger Management Tour (18+)",
+   "act": "DAX",
+   "name": "Dax",
+   "description": "Canadian rapper, singer, and songwriter (born 1994)",
+   "source_url": "https://en.wikipedia.org/wiki/Dax_(rapper)",
+   "extract": "Daniel Nwosu Jr., professionally known by his stage name Dax, is a Nigerian-Canadian and American singer and rapper. He has recorded three albums, Pain Paints Paintings (2021), From a Man's Perspective (2024) and Anger Management (2026). He has achieved certifications in Canada and the United States for his singles \"Dear God\", \"Dear Alcohol\" and \"To Be a Man.\""
+  },
+  {
+   "id": "832bb16b-b1f5-43fd-977e-bb85a3f91f91",
+   "slug": "hunxho-2night-only-tour-28b49ef6",
+   "title": "Hunxho - 2Night Only Tour",
+   "act": "Hunxho",
+   "name": "Hunxho",
+   "description": "American rapper (born 1999)",
+   "source_url": "https://en.wikipedia.org/wiki/Hunxho",
+   "extract": "Ibrahim Muhammad Dodo, known professionally as Hunxho is an American rapper, singer and songwriter. He is signed to 300 Entertainment. Hunxho initially rose to fame with the song \"Let's Get It\" in 2021, which spawned a remix with rapper 21 Savage. Later that year, he released the mixtape Street Poet 2."
+  }
+ ]
+}

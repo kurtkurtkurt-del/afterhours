@@ -1,0 +1,26 @@
+{
+ "city": "glasgow",
+ "day": "2026-11-21",
+ "nights": [
+  {
+   "id": "df56d4fe-ff94-4323-b01b-cc0038b8a728",
+   "slug": "nathan-carter-8a8d5176",
+   "title": "Nathan Carter",
+   "act": "Nathan Carter",
+   "name": "Nathan Carter",
+   "description": "Irish country singer (born 1990)",
+   "source_url": "https://en.wikipedia.org/wiki/Nathan_Carter",
+   "extract": "Nathan Kane Tyrone Carter is an Irish country music singer based in Ireland and the UK. He has released thirteen studio albums and six live albums as of December 2022, five of which peaked at number one, and four live DVDs. He performs Irish folk and country. He rose to popularity with his 2012 cover of the American country song \"Wagon Wheel\"."
+  },
+  {
+   "id": "1c93302a-1b49-4a3a-b3dc-bdcf5724a739",
+   "slug": "phoebe-bridgers-117c771d",
+   "title": "Phoebe Bridgers",
+   "act": "Phoebe Bridgers",
+   "name": "Phoebe Bridgers",
+   "description": "American singer and songwriter (born 1994)",
+   "source_url": "https://en.wikipedia.org/wiki/Phoebe_Bridgers",
+   "extract": "Phoebe Lucille Bridgers is an American singer-songwriter, record producer, and actress. Her indie folk music typically centers on acoustic guitar and electronic production, with melancholic lyrical themes. She has won four Grammy Awards."
+  }
+ ]
+}

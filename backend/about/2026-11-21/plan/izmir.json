@@ -1,0 +1,16 @@
+{
+ "city": "izmir",
+ "day": "2026-11-21",
+ "nights": [
+  {
+   "id": "4562cfb2-50c0-4c48-a155-690025aad5aa",
+   "slug": "faz-l-say-2027-beethoven-y-l-konserleri-781a1a44",
+   "title": "Fazıl Say: 2027 Beethoven Yılı Konserleri",
+   "act": "Fazıl Say",
+   "name": "Fazıl Say",
+   "description": "Turkish pianist and composer",
+   "source_url": "https://en.wikipedia.org/wiki/Faz%C4%B1l_Say",
+   "extract": "Fazıl Say is a Turkish classical concert pianist and composer. He is known to often play his own compositions in his concerts, on top of a repertoire that includes Beethoven, Chopin, Bach and Mozart."
+  }
+ ]
+}

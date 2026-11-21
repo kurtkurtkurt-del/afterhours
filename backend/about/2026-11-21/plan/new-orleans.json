@@ -1,0 +1,16 @@
+{
+ "city": "new-orleans",
+ "day": "2026-11-21",
+ "nights": [
+  {
+   "id": "7f1a21f5-24f9-4d22-bd65-7532f1c36fdc",
+   "slug": "trippie-redd-the-nda-tour-c488c2bd",
+   "title": "Trippie Redd: The NDA Tour",
+   "act": "Trippie Redd",
+   "name": "Trippie Redd",
+   "description": "American rapper (born 1999)",
+   "source_url": "https://en.wikipedia.org/wiki/Trippie_Redd",
+   "extract": "Michael Lamar White II, known professionally as Trippie Redd, is an American rapper, singer, and songwriter. Born and raised in Canton, Ohio, he has contributed to the progression of emo rap and rage, a subgenre of trap music."
+  }
+ ]
+}

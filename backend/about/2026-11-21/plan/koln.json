@@ -1,0 +1,16 @@
+{
+ "city": "koln",
+ "day": "2026-11-21",
+ "nights": [
+  {
+   "id": "d90a118f-f64d-4738-b59f-283462542395",
+   "slug": "quadeca-life-1-tour-11b4d94b",
+   "title": "Quadeca - Life 1 Tour",
+   "act": "Quadeca",
+   "name": "Quadeca",
+   "description": "American musician, producer, and YouTuber (born 2000)",
+   "source_url": "https://en.wikipedia.org/wiki/Quadeca",
+   "extract": "Benjamin Fernando Barajas Lasky, better known by his stage name Quadeca, is an American singer-songwriter, record producer and rapper. Lasky began uploading songs and videos to his YouTube channel in the 2010s and began pursuing his musical career in the 2020s, which has since been met with critical acclaim."
+  }
+ ]
+}

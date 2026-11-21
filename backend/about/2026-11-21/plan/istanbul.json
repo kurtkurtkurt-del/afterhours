@@ -1,0 +1,16 @@
+{
+ "city": "istanbul",
+ "day": "2026-11-21",
+ "nights": [
+  {
+   "id": "0120b374-f95a-4ec8-b924-699e7ec25cc6",
+   "slug": "sibel-can-3c4dcd3a",
+   "title": "Sibel Can",
+   "act": "Sibel Can",
+   "name": "Sibel Can",
+   "description": "Turkish singer and actress (born 1970)",
+   "source_url": "https://en.wikipedia.org/wiki/Sibel_Can",
+   "extract": "Sibel Can is a Turkish singer and actress. She became a dancer at the age of 14 and later started her music career."
+  }
+ ]
+}

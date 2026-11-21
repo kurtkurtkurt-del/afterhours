@@ -1,0 +1,16 @@
+{
+ "city": "ottawa",
+ "day": "2026-11-21",
+ "nights": [
+  {
+   "id": "fac66fd1-9d75-41c4-9944-ea9129d3dbd8",
+   "slug": "gza-e976f6e9",
+   "title": "Gza",
+   "act": "Gza",
+   "name": "GZA",
+   "description": "American rapper (born 1966)",
+   "source_url": "https://en.wikipedia.org/wiki/GZA",
+   "extract": "Gary Eldridge Grice, better known by his stage names GZA and the Genius, is an American rapper. A founding member of the hip-hop group Wu-Tang Clan, GZA is the group's \"spiritual head\", being both the first member in the group to receive a record deal and being the oldest member. He has appeared on his fellow Wu-Tang members' solo projects, and has maintained a successful solo career starting with his second album Liquid Swords (1995)."
+  }
+ ]
+}

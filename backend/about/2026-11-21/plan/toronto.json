@@ -1,0 +1,46 @@
+{
+ "city": "toronto",
+ "day": "2026-11-21",
+ "nights": [
+  {
+   "id": "e23dd0fb-484d-42a1-80e7-cd3fe8b12fb3",
+   "slug": "whitechapel-20th-anniversary-tour-b600972e",
+   "title": "Whitechapel - 20th Anniversary Tour",
+   "act": "Whitechapel",
+   "name": "Whitechapel",
+   "description": "American deathcore band",
+   "source_url": "https://en.wikipedia.org/wiki/Whitechapel_(band)",
+   "extract": "Whitechapel is an American deathcore band from Knoxville, Tennessee. The band is named after the Whitechapel district in east London, England, where Jack the Ripper committed a series of murders. The group comprises vocalist Phil Bozeman, guitarists Ben Savage, Alex Wade, and Zach Householder, bassist Gabe Crisp and drummer Brandon Zackey. Their core lineup, with the exception of the drummer, has remained consistent since Householder replaced original guitarist Brandon Cagle in 2007. Founded in 2006 by Bozeman and Savage, the band has released nine studio albums and twenty-two music videos, and is currently signed to Metal Blade Records. Whitechapel's 2010 album A New Era of Corruption, sold around 10,600 copies in the United States in its first week of release and debuted at position No. 43 on the Billboard 200 chart. The band's self-titled fourth album was released in 2012 and debuted at No. 47 on the Billboard 200, selling roughly 9,200 copies in its first week. In 2014 the band released their fifth full-length album, Our Endless War to generally positive reviews. The album sold roughly 16,000 copies in its first week and debuted at No. 10 on the Billboard 200. They released their sixth full-length album Mark of the Blade in 2016 to greater critical acclaim, selling roughly 8,000 copies in the first week of its release. In 2019, Whitechapel released their seventh album, The Valley, which debuted at No. 143 on the Billboard 200 also to critical acclaim. Their newest album, "
+  },
+  {
+   "id": "bd1a5f87-7feb-4be3-8f23-55faf69fa6fe",
+   "slug": "midwxst-7abe27bb",
+   "title": "midwxst",
+   "act": "midwxst",
+   "name": "Midwxst",
+   "description": "American rapper and singer from Indiana (born 2003)",
+   "source_url": "https://en.wikipedia.org/wiki/Midwxst",
+   "extract": "Edgar Nathaniel Sarratt III, known professionally as Midwxst, is an American musician. Initially presenting a digicore sound, he began releasing music as $uspect in 2018 and released several extended plays between 2020 and 2022, including Back In Action (2021), Summer03 (2021), Better Luck Next Time. (2022), and Back In Action 3.0 (2022). Midwxst's debut studio album, E3, was released in September 2023. On Midwxst's musical style, sources mostly defined it as hyperpop, but he makes rap music as well. His second album, Archangel, was released in June 2025. His third album, Solitude In Silence was released in July 2026."
+  },
+  {
+   "id": "10bba04e-e249-49a6-8ce8-af4512380b76",
+   "slug": "jessie-reyez-a-little-vengeance-tour-b34c89fd",
+   "title": "Jessie Reyez: A Little Vengeance Tour",
+   "act": "Jessie Reyez",
+   "name": "Jessie Reyez",
+   "description": "Canadian singer-songwriter (born 1991)",
+   "source_url": "https://en.wikipedia.org/wiki/Jessie_Reyez",
+   "extract": "Jessica Reyez is a Canadian singer-songwriter. Her 2016 single, \"Figures\", peaked at number 58 on the Canadian Hot 100 and received triple platinum certification by Music Canada (MC) and platinum by the Recording Industry Association of America (RIAA). Her debut extended play (EP), Kiddo (2017), led her to win Breakthrough Artist from four nominations at the 2018 Juno Awards. Her second EP, Being Human in Public (2018), was released the following year, won R&B/Soul Recording of the Year at the 2019 Juno Awards, and was nominated for Best Urban Contemporary Album at the 2020 Grammy Awards."
+  },
+  {
+   "id": "c8fecb7e-05b5-4740-9e4f-9cf30b653c81",
+   "slug": "the-pineapple-thief-f520f1a2",
+   "title": "The Pineapple Thief",
+   "act": "The Pineapple Thief",
+   "name": "The Pineapple Thief",
+   "description": "British progressive rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Pineapple_Thief",
+   "extract": "The Pineapple Thief are an English progressive rock band founded in 1999 by Bruce Soord in Yeovil, Somerset. As of June 2024, the group consists of Soord on vocals, guitars, and keyboards, Jon Sykes on bass, Steve Kitch on keyboards, and Gavin Harrison on drums. They have released 16 studio albums, 6 EPs, and several live and compilation albums."
+  }
+ ]
+}

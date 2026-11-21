@@ -1,0 +1,36 @@
+{
+ "city": "las-vegas",
+ "day": "2026-11-21",
+ "nights": [
+  {
+   "id": "a16f7bd2-9c3a-41fd-ba44-aeb1903925bd",
+   "slug": "ivy-queen-f589d3c5",
+   "title": "Ivy Queen",
+   "act": "Ivy Queen",
+   "name": "Ivy Queen",
+   "description": "Puerto Rican rapper (born 1972)",
+   "source_url": "https://en.wikipedia.org/wiki/Ivy_Queen",
+   "extract": "Martha Ivelisse Pesante Rodríguez, known professionally as Ivy Queen, is a Puerto Rican rapper and singer. She is considered one of the pioneers of the reggaeton genre. Dubbed the Queen of Reggaeton, she is one of the most influential reggaeton artists of all time."
+  },
+  {
+   "id": "28cefa87-e564-46ca-8356-9f8ecffc270f",
+   "slug": "marc-anthony-official-fontainebleau-ticket-hotel-afc4fde3",
+   "title": "Marc Anthony | Official Fontainebleau Ticket + Hotel Packages",
+   "act": "Marc Anthony",
+   "name": "Marc Anthony",
+   "description": "American singer (born 1968)",
+   "source_url": "https://en.wikipedia.org/wiki/Marc_Anthony",
+   "extract": "Marco Antonio Muñiz, known by the stage name Marc Anthony, is an American singer and actor. The top-selling salsa artist of all time, he has won four Grammy Awards, eight Latin Grammy Awards, and 29 Lo Nuestro Awards. As of 2014, he had sold more than 12 million albums worldwide."
+  },
+  {
+   "id": "8e198368-4f42-482c-9721-17ff1849442c",
+   "slug": "marc-anthony-vegas-my-way-19ce5f76",
+   "title": "Marc Anthony - Vegas... My Way!",
+   "act": "Marc Anthony",
+   "name": "Marc Anthony",
+   "description": "American singer (born 1968)",
+   "source_url": "https://en.wikipedia.org/wiki/Marc_Anthony",
+   "extract": "Marco Antonio Muñiz, known by the stage name Marc Anthony, is an American singer and actor. The top-selling salsa artist of all time, he has won four Grammy Awards, eight Latin Grammy Awards, and 29 Lo Nuestro Awards. As of 2014, he had sold more than 12 million albums worldwide."
+  }
+ ]
+}

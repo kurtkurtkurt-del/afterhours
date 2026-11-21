@@ -1,0 +1,26 @@
+{
+ "city": "brussel",
+ "day": "2026-11-21",
+ "nights": [
+  {
+   "id": "d536ed8e-0078-4323-85a0-a561993a3e73",
+   "slug": "calogero-4d0db8b4",
+   "title": "Calogero",
+   "act": "Calogero",
+   "name": "Calogero",
+   "description": "French singer (born 1971)",
+   "source_url": "https://en.wikipedia.org/wiki/Calogero_(singer)",
+   "extract": "Calogero Joseph Salvatore Maurici, known mononymously as Calogero, is a French singer."
+  },
+  {
+   "id": "2c5f00c7-b66e-402c-bf46-98894ae426b3",
+   "slug": "kaleo-way-down-we-go-tour-b9c3d445",
+   "title": "KALEO - Way Down We Go Tour",
+   "act": "KALEO",
+   "name": "Kaleo",
+   "description": "Icelandic rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Kaleo_(band)",
+   "extract": "KALEO is an Icelandic blues rock band which formed in Mosfellsbær in 2012. It consists of lead vocalist and guitarist Jökull Júlíusson, drummer Davíð Antonsson, bassist Daniel Kristjánsson, lead guitarist Rubin Pollock and harmonicist Þorleifur Gaukur Davíðsson. They have released four studio albums, Kaleo (2013), A/B (2016), Surface Sounds (2021), and Mixed Emotions (2025), as well as the EP Glasshouse (2013)."
+  }
+ ]
+}

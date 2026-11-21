@@ -1,0 +1,16 @@
+{
+ "city": "hamburg",
+ "day": "2026-11-21",
+ "nights": [
+  {
+   "id": "cb99f8a3-689e-429c-9138-310d21967e3d",
+   "slug": "lauren-sanderson-come-say-sum-tour-eu-uk-2027-4b7efd8b",
+   "title": "Lauren Sanderson - Come Say Sum Tour EU/UK 2027",
+   "act": "Lauren Sanderson",
+   "name": "Lauren Sanderson",
+   "description": "American singer and songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Lauren_Sanderson",
+   "extract": "Lauren Sanderson is an American singer and songwriter originally from Fort Wayne, Indiana, currently based in Nashville. Her music blends influences from pop, R&B and hip hop, and through it she aims to empower her fans and be \"the voice for people who may not be able to speak\"."
+  }
+ ]
+}

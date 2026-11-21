@@ -1,0 +1,16 @@
+{
+ "city": "warszawa",
+ "day": "2026-11-21",
+ "nights": [
+  {
+   "id": "1c662fbd-748a-4201-962f-1e80db01b298",
+   "slug": "dan-and-phil-hard-launch-world-tour-e41656c8",
+   "title": "Dan and Phil - Hard Launch World Tour",
+   "act": "Dan and Phil",
+   "name": "Dan and Phil",
+   "description": "English entertainment and business duo",
+   "source_url": "https://en.wikipedia.org/wiki/Dan_and_Phil",
+   "extract": "Daniel Howell and Phil Lester, known together as Dan and Phil, are an English entertainment and business duo. They are best known for their collaborative work on YouTube. Additionally, they have collaborated on television and radio presenting, books, tours, and original films."
+  }
+ ]
+}

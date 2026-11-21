@@ -1,0 +1,16 @@
+{
+ "city": "houston",
+ "day": "2026-11-21",
+ "nights": [
+  {
+   "id": "59b17077-dfb4-4e36-8347-3d72bd301a1e",
+   "slug": "trivium-6596f4ff",
+   "title": "Trivium",
+   "act": "Trivium",
+   "name": "Trivium",
+   "description": "American metal band",
+   "source_url": "https://en.wikipedia.org/wiki/Trivium_(band)",
+   "extract": "Trivium is an American heavy metal band from Orlando, Florida, formed in 1999. The band's creative core comprises three long-time members; vocalist and guitarist Matt Heafy, guitarist Corey Beaulieu, and bassist Paolo Gregoletto. The band has changed drummers numerous times, with Alex Rüdinger becoming the most recent addition in October 2025."
+  }
+ ]
+}
