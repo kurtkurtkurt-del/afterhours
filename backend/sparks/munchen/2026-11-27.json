@@ -1,0 +1,27 @@
+{
+  "city": "munchen",
+  "day": "2026-11-27",
+  "sparks": [
+    {
+      "kind": "jazz",
+      "title": {
+        "en": "nils landgren with the münchner symphoniker.",
+        "de": "nils landgren mit den münchner symphonikern.",
+        "tr": "nils landgren, münchner symphoniker ile."
+      },
+      "line": {
+        "en": "nils 70, love of my life, at 20:00 in the isarphilharmonie. come early for the doors; tickets from about 61.50 euro.",
+        "de": "nils 70, love of my life, um 20 uhr in der isarphilharmonie. früh da sein für den einlass; tickets ab ca. 61,50 euro.",
+        "tr": "nils 70, love of my life, saat 20:00'de isarphilharmonie'de. kapılar için erken gel; biletler yaklaşık 61,50 euro'dan."
+      },
+      "place": {
+        "en": "isarphilharmonie im gasteig",
+        "de": "isarphilharmonie im gasteig",
+        "tr": "isarphilharmonie im gasteig"
+      },
+      "hour": 19,
+      "minute": 30,
+      "why": "NILS 70 – Love of my life, Fri 27.11 20:00, Isarphilharmonie HP8 (mvp.de, in-muenchen.de). A concert rather than a jam, filed under jazz."
+    }
+  ]
+}

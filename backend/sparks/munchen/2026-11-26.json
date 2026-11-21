@@ -1,0 +1,27 @@
+{
+  "city": "munchen",
+  "day": "2026-11-26",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": {
+        "en": "the christkindlmarkt is open at the marienplatz.",
+        "de": "der christkindlmarkt ist offen am marienplatz.",
+        "tr": "marienplatz'taki noel pazarı açık."
+      },
+      "line": {
+        "en": "open since friday 20 nov, to 24 dec. go after work for the glühwein and the lit tree; the tree stays lit until 6 jan.",
+        "de": "seit freitag 20.11. offen, bis 24.12. nach der arbeit auf glühwein und den beleuchteten baum. der baum leuchtet bis 6. januar.",
+        "tr": "20 kasım cuması'ndan beri açık, 24 aralık'a kadar. iş çıkışı gel, sıcak şarap ve ışıklı ağaç. ağaç 6 ocak'a kadar yanar."
+      },
+      "place": {
+        "en": "christkindlmarkt marienplatz",
+        "de": "christkindlmarkt marienplatz",
+        "tr": "christkindlmarkt marienplatz"
+      },
+      "hour": 17,
+      "minute": 30,
+      "why": "Munich Christkindlmarkt at Marienplatz runs 20 Nov to 24 Dec, tree lit to 6 Jan (muenchen.de, munich.travel). Opening hours come from a third-party page, so the evening time is a suggestion."
+    }
+  ]
+}
