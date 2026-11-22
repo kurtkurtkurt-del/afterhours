@@ -1,0 +1,14 @@
+{
+  "city": "istanbul",
+  "day": "2026-11-25",
+  "sparks": [
+    {
+      "kind": "jazz",
+      "title": { "en": "free jazz on the terrace at istanbul kitapçısı.", "de": "kostenloser jazz auf der terrasse der istanbul kitapçısı.", "tr": "istanbul kitapçısı'nda ücretsiz caz, terasta." },
+      "line": { "en": "free wednesday concert at 19:00, on 25 november the gücüm sezer guitar project. the bookshop is in kadıköy.", "de": "kostenloses mittwochskonzert um 19:00, am 25. november das gücüm sezer guitar project. die buchhandlung liegt in kadıköy.", "tr": "çarşamba günleri saat 19.00'da ücretsiz konser. 25 kasım'da gücüm sezer guitar project çalıyor. kitapçı kadıköy'de." },
+      "place": { "en": "istanbul kitapçısı kadıköy", "de": "istanbul kitapçısı kadıköy", "tr": "istanbul kitapçısı kadıköy" },
+      "hour": 19, "minute": 0,
+      "why": "Terasta Caz at İstanbul Kitapçısı Kadıköy, free Wednesday 19:00 concerts, 25 Nov Gücüm Sezer Guitar Project (evrensel.net, 3 Nov 2026 programme announcement)."
+    }
+  ]
+}

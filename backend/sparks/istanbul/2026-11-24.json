@@ -1,0 +1,14 @@
+{
+  "city": "istanbul",
+  "day": "2026-11-24",
+  "sparks": [
+    {
+      "kind": "football",
+      "title": { "en": "galatasaray – aston villa, champions league night.", "de": "galatasaray – aston villa, champions-league-abend.", "tr": "galatasaray – aston villa, şampiyonlar ligi gecesi." },
+      "line": { "en": "champions league matchday 5 at rams park, kick-off 20:45 istanbul time. check tickets before you go.", "de": "champions league, spieltag 5 im rams park, anpfiff 20:45 ortszeit istanbul. vorher tickets prüfen.", "tr": "şampiyonlar ligi 5. hafta, rams park'ta, başlama saati 20.45 (istanbul saati). gitmeden önce biletleri kontrol et." },
+      "place": { "en": "rams park", "de": "rams park", "tr": "rams park" },
+      "hour": 20, "minute": 45,
+      "why": "Galatasaray vs Aston Villa, UEFA Champions League matchday 5, Tue 24 Nov 2026, 20:45 at Rams Park (sporx.com and yenisafak.com both give 20:45)."
+    }
+  ]
+}
