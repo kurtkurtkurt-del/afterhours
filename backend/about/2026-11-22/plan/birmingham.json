@@ -1,0 +1,36 @@
+{
+ "city": "birmingham",
+ "day": "2026-11-22",
+ "nights": [
+  {
+   "id": "65f51ee3-eb67-4b3d-864c-fb3f3497d31a",
+   "slug": "gabriella-cilmi-ecd834c2",
+   "title": "Gabriella Cilmi",
+   "act": "Gabriella Cilmi",
+   "name": "Gabriella Cilmi",
+   "description": "Australian pop singer and songwriter (born 1991)",
+   "source_url": "https://en.wikipedia.org/wiki/Gabriella_Cilmi",
+   "extract": "Gabriella Lucia Cilmi is an Australian and Italian pop singer and songwriter. A contralto, Cilmi is known for her distinctive raspy singing voice."
+  },
+  {
+   "id": "1b5a275d-d3bf-426e-bc6d-82c87fab3c3f",
+   "slug": "fat-dog-2ed4d24d",
+   "title": "Fat Dog",
+   "act": "Fat Dog",
+   "name": "Fat Dog",
+   "description": "English band",
+   "source_url": "https://en.wikipedia.org/wiki/Fat_Dog",
+   "extract": "Fat Dog are an English band, currently consisting of Joe Love, Chris Hughes, Morgan Wallace, and Ellis D. The band formed in 2020 in South East London."
+  },
+  {
+   "id": "40e1e7d3-4a7e-42d9-9d26-98d30861471d",
+   "slug": "the-damned-final-damnation-50-06f7d408",
+   "title": "The Damned - Final Damnation 50",
+   "act": "The Damned",
+   "name": "The Damned",
+   "description": "English rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Damned_(band)",
+   "extract": "The Damned are an English rock band formed in London in 1976 by lead vocalist Dave Vanian, guitarist Brian James, bassist Captain Sensible and drummer Rat Scabies. They were the first punk band from the United Kingdom to release a single, \"New Rose\" (1976), release a studio album, Damned Damned Damned (1977) and tour the United States. The band briefly dissolved after their second album, Music for Pleasure (1977), was critically dismissed. They re-formed without Brian James and released Machine Gun Etiquette (1979)."
+  }
+ ]
+}

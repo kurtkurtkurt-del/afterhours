@@ -1,0 +1,26 @@
+{
+ "city": "miami",
+ "day": "2026-11-22",
+ "nights": [
+  {
+   "id": "3d23dba7-680a-4d67-bf1f-abea4e2bb56e",
+   "slug": "chromeo-ages-18-644b8443",
+   "title": "Chromeo - Ages 18+",
+   "act": "Chromeo",
+   "name": "Chromeo",
+   "description": "Canadian electro-funk musical duo",
+   "source_url": "https://en.wikipedia.org/wiki/Chromeo",
+   "extract": "Chromeo is a Canadian electro-funk duo from Montreal, formed in 2002 by musicians David \"Dave 1\" Macklovitch and Patrick \"P-Thugg\" Gemayel. Their sound draws from soul music, dance music, rock, synth-pop, disco and funk."
+  },
+  {
+   "id": "793ae174-dc3c-495c-8c26-62abd528f6ce",
+   "slug": "booker-t-jones-64368c40",
+   "title": "Booker T Jones",
+   "act": "Booker T Jones",
+   "name": "Booker T. Jones",
+   "description": "American musician (born 1944)",
+   "source_url": "https://en.wikipedia.org/wiki/Booker_T._Jones",
+   "extract": "Booker Taliaferro Jones Jr. is an American musician, songwriter, record producer and arranger, best known as the frontman of the band Booker T. & the M.G.'s. He has also worked as a session musician with many well-known artists of the 20th and 21st centuries, earning him a Grammy Award for Lifetime Achievement."
+  }
+ ]
+}

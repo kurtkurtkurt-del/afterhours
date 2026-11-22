@@ -1,0 +1,56 @@
+{
+ "city": "los-angeles",
+ "day": "2026-11-22",
+ "nights": [
+  {
+   "id": "bebc93b8-0ccc-4c8f-8110-30e49d08e8ef",
+   "slug": "jackson-browne-21887671",
+   "title": "Jackson Browne",
+   "act": "Jackson Browne",
+   "name": "Jackson Browne",
+   "description": "American singer, songwriter and political activist (born 1948)",
+   "source_url": "https://en.wikipedia.org/wiki/Jackson_Browne",
+   "extract": "Clyde Jackson Browne is an American rock musician, singer, songwriter, and political activist who has sold over 30 million albums in the United States."
+  },
+  {
+   "id": "a2c836e4-6ce1-46ad-9406-1abba6931cb1",
+   "slug": "cocorosie-ae0c03b5",
+   "title": "CocoRosie",
+   "act": "CocoRosie",
+   "name": "CocoRosie",
+   "description": "American musical group",
+   "source_url": "https://en.wikipedia.org/wiki/CocoRosie",
+   "extract": "CocoRosie is an American musical group formed in 2003 by sisters Sierra Rose \"Rosie\" and Bianca Leilani \"Coco\" Casady. The group's music has been described as folktronica, freak folk and \"New Weird America\", and incorporates elements of pop, blues, opera, electronica, and hip hop. The group has released eight studio albums, La Maison de Mon Rêve (2004), Noah's Ark (2005), The Adventures of Ghosthorse and Stillborn (2007), Grey Oceans (2010), Tales of a GrassWidow (2013), Heartache City (2015), Put the Shine On (2020) and Little Death Wishes (2025), and two EPs, Beautiful Boyz (2004) and Coconuts, Plenty of Junk Food (2009). They released their sixth album Heartache City on their own record label, Lost Girl Records."
+  },
+  {
+   "id": "b31e14c3-ea3d-4862-8977-ee61b8cccd13",
+   "slug": "the-mountain-goats-d7b09952",
+   "title": "The Mountain Goats",
+   "act": "The Mountain Goats",
+   "name": "The Mountain Goats",
+   "description": "American indie folk band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Mountain_Goats",
+   "extract": "The Mountain Goats are an American indie folk band formed in Claremont, California, by singer-songwriter John Darnielle. Since 2003, the band has been based in Durham, North Carolina. For many years, the sole member of the Mountain Goats was Darnielle, despite the plural moniker. Although he remains the core member of the band, he has worked with a variety of collaborators over time, including bassist and vocalist Peter Hughes, drummer Jon Wurster, multi-instrumentalist Matt Douglas, singer-songwriter Franklin Bruno, bassist and vocalist Rachel Ware, singer-songwriter/producer John Vanderslice, guitarist Kaki King, and multi-instrumentalist Annie Clark."
+  },
+  {
+   "id": "4edecd16-9d4b-4756-945e-8ce17aaffb0b",
+   "slug": "fenix-flexin-77e58763",
+   "title": "Fenix Flexin",
+   "act": "Fenix Flexin",
+   "name": "Fenix Flexin",
+   "description": "American rapper (born 1995)",
+   "source_url": "https://en.wikipedia.org/wiki/Fenix_Flexin",
+   "extract": "Fenixomar \"Fenix\" Rypinski, known professionally as Fenix Flexin, is an American rapper from Los Angeles. He is a founding member of the hip hop group Shoreline Mafia. In April 2020, Fenix announced that he would be leaving Shoreline Mafia later that year, after the release of their first studio album, Mafia Bidness. After the group's disbandment, Fenix released multiple mixtapes and an album as a solo artist. Fenix resumed performing as part of Shoreline Mafia in October 2023, rejoining the group as a member in May 2024."
+  },
+  {
+   "id": "1edfdd10-33b1-4960-8352-1d3f001b6bec",
+   "slug": "ezcodylee-make-america-stunt-4-life-tour-d130fc9d",
+   "title": "ezcodylee: Make America Stunt 4 Life Tour",
+   "act": "ezcodylee",
+   "name": "Ezcodylee",
+   "description": "American rapper and singer (born 2004)",
+   "source_url": "https://en.wikipedia.org/wiki/Ezcodylee",
+   "extract": "Ethan Codylee Graham, known professionally as ezcodylee, is an American rapper from Los Angeles, California. He first rose to popularity in 2025 with the release of his project Stunt and Die 3, a project that has been described as digicore and rage rap, backed by electric guitar riffs."
+  }
+ ]
+}

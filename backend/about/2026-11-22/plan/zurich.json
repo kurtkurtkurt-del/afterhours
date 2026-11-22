@@ -1,0 +1,26 @@
+{
+ "city": "zurich",
+ "day": "2026-11-22",
+ "nights": [
+  {
+   "id": "2ff4bedc-0988-4acf-958e-47d4912efdba",
+   "slug": "thundermother-f57ec4ba",
+   "title": "Thundermother",
+   "act": "Thundermother",
+   "name": "Thundermother",
+   "description": "Swedish hard rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Thundermother",
+   "extract": "Thundermother is an all-female Swedish hard rock band founded by Filippa Nässil and Moa Munoz in Växjö 2009. The band has toured with Scorpions across Europe and North America, played with Kiss, Danish rock band D-A-D and Swedish rock band Backyard Babies. Thundermother has produced seven albums, the first album Rock'N'Roll Disaster came out in 2014 and the latest album Dirty and Divine was released February 2025."
+  },
+  {
+   "id": "df52f7d7-6790-4afd-9bef-e2ecdfb7c285",
+   "slug": "fimiguerrero-b12d32c8",
+   "title": "Fimiguerrero",
+   "act": "Fimiguerrero",
+   "name": "Fimiguerrero",
+   "description": "British-Nigerian rapper (born 2001)",
+   "source_url": "https://en.wikipedia.org/wiki/Fimiguerrero",
+   "extract": "Fimihan Uthman Akinola, better known as Fimiguerrero, is a British-Nigerian rapper. A member of the UK underground rap scene, he has released multiple mixtapes, including Conglomerate, a collaboration with Lancey Foux and Len. Akinola's music has been described as a blend of rage and \"eclectic hyper-jerk\"."
+  }
+ ]
+}

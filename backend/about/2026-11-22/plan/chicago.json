@@ -1,0 +1,26 @@
+{
+ "city": "chicago",
+ "day": "2026-11-22",
+ "nights": [
+  {
+   "id": "a789996b-b2f5-4be3-b1a5-84e475b8ceab",
+   "slug": "yuki-chiba-08bfc480",
+   "title": "Yuki Chiba",
+   "act": "Yuki Chiba",
+   "name": "Yuki Chiba",
+   "description": "Japanese rapper and singer (born 1990)",
+   "source_url": "https://en.wikipedia.org/wiki/Yuki_Chiba",
+   "extract": "Yuki Chiba , formerly known by his stage name Kohh, is a Japanese rapper, singer, and songwriter."
+  },
+  {
+   "id": "8c48f04a-232f-435e-afc2-4720c42036cd",
+   "slug": "yung-gravy-the-joyrider-tour-db11ec3c",
+   "title": "Yung Gravy: The Joyrider Tour",
+   "act": "Yung Gravy",
+   "name": "Yung Gravy",
+   "description": "American rapper (born 1996)",
+   "source_url": "https://en.wikipedia.org/wiki/Yung_Gravy",
+   "extract": "Matthew Raymond Hauri, better known by his stage name Yung Gravy, is an American rapper."
+  }
+ ]
+}

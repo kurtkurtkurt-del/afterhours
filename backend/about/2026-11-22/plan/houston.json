@@ -1,0 +1,26 @@
+{
+ "city": "houston",
+ "day": "2026-11-22",
+ "nights": [
+  {
+   "id": "4043d984-f525-45f2-aed6-ddef31683cbf",
+   "slug": "waterparks-3856a293",
+   "title": "Waterparks",
+   "act": "Waterparks",
+   "name": "Waterparks",
+   "description": "American pop rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Waterparks_(band)",
+   "extract": "Waterparks is an American pop rock band formed in Houston, Texas in 2011. The group currently consists of lead vocalist and rhythm guitarist Awsten Knight, backing vocalist and lead guitarist Geoff Wigington, and backing vocalist and drummer Otto Wood."
+  },
+  {
+   "id": "f9c781a4-592f-41f9-8d43-dc66294aea3b",
+   "slug": "giovannie-and-the-hired-guns-ages-21-e5638973",
+   "title": "Giovannie and The Hired Guns - Ages 21+",
+   "act": "Giovannie and The Hired Guns",
+   "name": "Giovannie and the Hired Guns",
+   "description": "American country rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Giovannie_and_the_Hired_Guns",
+   "extract": "Giovannie and the Hired Guns is an American country rock band from Stephenville, Texas. The band was formed in 2017 by Giovannie Yanez, who serves as the lead vocalist and songwriter. The other members of the band include Carlos Villa, Jerrod Flusche, Alex Trejo, and Milton Toles (drums)."
+  }
+ ]
+}

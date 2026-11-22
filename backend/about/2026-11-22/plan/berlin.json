@@ -1,0 +1,36 @@
+{
+ "city": "berlin",
+ "day": "2026-11-22",
+ "nights": [
+  {
+   "id": "718cfe85-0b5f-4bb9-a63e-850ace07f1dc",
+   "slug": "julia-wolf-deep-end-world-tour-2026-7c3c30be",
+   "title": "JULIA WOLF - Deep End World Tour 2026",
+   "act": "JULIA WOLF",
+   "name": "Julia Wolf",
+   "description": "American singer",
+   "source_url": "https://en.wikipedia.org/wiki/Julia_Wolf_(musician)",
+   "extract": "Julia Jade Capello, known professionally as Julia Wolf, is an American singer. Known for her ethereal vocals and self-produced alt-pop sound, she blends elements of indie pop, alternative rock, and R&B. Capello gained early attention on TikTok before releasing her debut EP Girls in Purgatory (2021) and her studio albums Good Thing We Stayed (2023) and Pressure (2025)."
+  },
+  {
+   "id": "62e54b19-4256-49b0-adda-ed3b34e80633",
+   "slug": "polyphia-be-not-afraid-world-tour-0fde0ee5",
+   "title": "Polyphia - BE NOT AFRAID World Tour",
+   "act": "Polyphia",
+   "name": "Polyphia",
+   "description": "American progressive rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Polyphia",
+   "extract": "Polyphia is an American rock band based in Plano, Texas, formed in 2010. The group consists of guitarists Tim Henson and Scott LePage, bassist Clay Gober, and drummer Clay Aeschliman. Rooted in a heavy metal sound in their early releases, the band's music evolved into a more progressive rock style in their later productions, combining elements of electronic and hip-hop music. Polyphia has released five studio albums, one live record, two EPs, and numerous singles."
+  },
+  {
+   "id": "cecf23ab-76b9-4416-8274-c495f3cd60ce",
+   "slug": "beabadoobee-the-powerlines-tour-a0dc8746",
+   "title": "beabadoobee: The Powerlines Tour",
+   "act": "beabadoobee",
+   "name": "Beabadoobee",
+   "description": "Filipino and British singer (born 2000)",
+   "source_url": "https://en.wikipedia.org/wiki/Beabadoobee",
+   "extract": "Beatrice Kristi Ilejay Laus, known professionally as Beabadoobee, is a Filipino and British singer and songwriter. From 2018 to 2021, she released five extended plays (EPs) under the independent label Dirty Hit: Lice (2018), Patched Up (2018), Loveworm (2019), Space Cadet (2019) and Our Extended Play (2021). Her debut studio album Fake It Flowers was released in October 2020, and received critical acclaim. Her second studio album, Beatopia, was released on July 2022, and spawned the hit \"The Perfect Pair\". Her third studio album, This Is How Tomorrow Moves, was released in August 2024; it became her first album to peak atop the UK Albums Chart. In September 2026, her fourth studio album, Pylon topped the British and Australian charts."
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "city": "austin",
+ "day": "2026-11-22",
+ "nights": [
+  {
+   "id": "61e18bf0-f8ed-42cb-8a09-21e23641b71b",
+   "slug": "eyes-set-to-kill-b74bb0a7",
+   "title": "Eyes Set To Kill",
+   "act": "Eyes Set To Kill",
+   "name": "Eyes Set to Kill",
+   "description": "American metalcore band",
+   "source_url": "https://en.wikipedia.org/wiki/Eyes_Set_to_Kill",
+   "extract": "Eyes Set to Kill is an American metalcore band from Tempe, Arizona. The Rodriguez sisters, lead guitarist Alexia and bassist Anissa, along with vocalist Lindsey Vogt started the band in 2003. After Lindsey's departure, Alexia assumed her position as lead vocalist as well as guitarist. Anissa left in late 2016 but returned to the band in 2023."
+  },
+  {
+   "id": "809e8739-d09a-49dc-bbff-7a2616fe872c",
+   "slug": "cory-morrow-a6c3d8fb",
+   "title": "Cory Morrow",
+   "act": "Cory Morrow",
+   "name": "Cory Morrow",
+   "description": "American singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Cory_Morrow",
+   "extract": "Cory Morrow is a Texas Country singer-songwriter."
+  }
+ ]
+}

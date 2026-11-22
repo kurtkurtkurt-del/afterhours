@@ -1,0 +1,36 @@
+{
+ "city": "milano",
+ "day": "2026-11-22",
+ "nights": [
+  {
+   "id": "d5526e20-5d38-41c4-9c6d-7d3619ea7ca6",
+   "slug": "marco-mengoni-residency-allo-sbagliato-647a7fc9",
+   "title": "Marco Mengoni - Residency Allo Sbagliato",
+   "act": "Marco Mengoni",
+   "name": "Marco Mengoni",
+   "description": "Italian singer (born 1988)",
+   "source_url": "https://en.wikipedia.org/wiki/Marco_Mengoni",
+   "extract": "Marco Mengoni is an Italian singer-songwriter who rose to fame in 2009 after winning the third season of the Italian talent show X Factor. Since then he has sold over 2.8 million records in Italy, peaking the Italian albums chart seven consecutive times and entering the Top 10 Italian Singles Chart fifteen times. He won the Sanremo Music Festival in 2013 and again in 2023, therefore representing Italy in the Eurovision Song Contest in both years."
+  },
+  {
+   "id": "1e26730c-7447-4d36-a147-2744da621d6b",
+   "slug": "ayra-starr-starrgirl-world-tour-ed4ddb07",
+   "title": "Ayra Starr: Starrgirl World Tour",
+   "act": "Ayra Starr",
+   "name": "Ayra Starr",
+   "description": "Beninese-born Nigerian singer (born 2002)",
+   "source_url": "https://en.wikipedia.org/wiki/Ayra_Starr",
+   "extract": "Oyinkansola Sarah Aderibigbe, known professionally as Ayra Starr, is a Beninese-born Nigerian singer-songwriter and producer."
+  },
+  {
+   "id": "9c297b7d-2c1e-4b18-9e52-48287be4f54a",
+   "slug": "ghinzu-wowa-euro-tour-2027-55ffd361",
+   "title": "Ghinzu - WOWA EURO TOUR 2027",
+   "act": "Ghinzu",
+   "name": "Ghinzu",
+   "description": "Belgian alternative rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Ghinzu",
+   "extract": "Ghinzu is a Belgian alternative rock band founded in 1999 in Brussels."
+  }
+ ]
+}

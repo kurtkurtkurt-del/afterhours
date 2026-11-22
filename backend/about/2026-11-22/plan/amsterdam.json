@@ -1,0 +1,46 @@
+{
+ "city": "amsterdam",
+ "day": "2026-11-22",
+ "nights": [
+  {
+   "id": "6c9bba8c-65b2-493d-840b-3a926ff193f6",
+   "slug": "westlife-comfort-seats-5425c210",
+   "title": "Westlife | Comfort Seats",
+   "act": "Westlife",
+   "name": "Westlife",
+   "description": "Irish boy band",
+   "source_url": "https://en.wikipedia.org/wiki/Westlife",
+   "extract": "Westlife are an Irish pop group formed in Sligo in 1998. The group was originally known under the names '6as1' and 'I.O.YOU' with several other members. Westlife consists of members Nicky Byrne, Shane Filan, Kian Egan and Mark Feehily. Brian McFadden was a member of the band before leaving to pursue a solo career in March 2004. Mark Feehily is a member, but is temporarily away from the group due to health issues. The group disbanded in 2012 and later reunited in 2018."
+  },
+  {
+   "id": "d9aceae0-47e6-4c46-afd8-448b02709073",
+   "slug": "westlife-vinyl-room-package-40dfad03",
+   "title": "Westlife | Vinyl Room Package",
+   "act": "Westlife",
+   "name": "Westlife",
+   "description": "Irish boy band",
+   "source_url": "https://en.wikipedia.org/wiki/Westlife",
+   "extract": "Westlife are an Irish pop group formed in Sligo in 1998. The group was originally known under the names '6as1' and 'I.O.YOU' with several other members. Westlife consists of members Nicky Byrne, Shane Filan, Kian Egan and Mark Feehily. Brian McFadden was a member of the band before leaving to pursue a solo career in March 2004. Mark Feehily is a member, but is temporarily away from the group due to health issues. The group disbanded in 2012 and later reunited in 2018."
+  },
+  {
+   "id": "b26077b0-3bb6-4743-bfc4-22ac4461dfc5",
+   "slug": "swae-lee-166b8eb4",
+   "title": "Swae Lee",
+   "act": "Swae Lee",
+   "name": "Swae Lee",
+   "description": "American rapper and singer (born 1993)",
+   "source_url": "https://en.wikipedia.org/wiki/Swae_Lee",
+   "extract": "Khalif Malik Ibn Shaman Brown, known professionally as Swae Lee, is an American rapper and singer from Inglewood, California. Known for his wide-ranged, reverb-heavy vocals and genre-blending, Lee is one half of the Mississippi-based hip-hop duo Rae Sremmurd, which he formed in 2010 with his older brother Slim Jxmmi."
+  },
+  {
+   "id": "670e4bdb-a2cc-45ff-806e-b26eb45ac6bd",
+   "slug": "kingfishr-6c718629",
+   "title": "Kingfishr",
+   "act": "Kingfishr",
+   "name": "Kingfishr",
+   "description": "Musical group",
+   "source_url": "https://en.wikipedia.org/wiki/Kingfishr",
+   "extract": "Kingfishr are an Irish indie folk group formed in Letterkenny Co Donegal in 2022 comprising members Eddie Keogh, Eoghan \"McGoo\" McGrath, and Eoin \"Fitz\" Fitzgibbon. The band's breakout success was their song \"Killeagh\", which reached number one on the Irish Singles Chart on 2 May 2025. Their debut studio album Halcyon was released in August 2025. The group's second studio album Weight of the Feather is scheduled for release in April 2027."
+  }
+ ]
+}

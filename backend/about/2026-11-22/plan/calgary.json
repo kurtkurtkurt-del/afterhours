@@ -1,0 +1,36 @@
+{
+ "city": "calgary",
+ "day": "2026-11-22",
+ "nights": [
+  {
+   "id": "85531968-b7ea-434c-b341-3b7007b39618",
+   "slug": "jacques-greene-jg-tour-7d923616",
+   "title": "Jacques Greene - JG Tour",
+   "act": "Jacques Greene",
+   "name": "Jacques Greene",
+   "description": "Canadian musician (born 1989)",
+   "source_url": "https://en.wikipedia.org/wiki/Jacques_Greene",
+   "extract": "Philippe Aubin-Dionne, better known by the stage name Jacques Greene, is a Canadian electronic musician based in Toronto. He has released music on the LuckyMe and Night Slugs labels and co-owns Vase Records."
+  },
+  {
+   "id": "fee50b38-e0fb-473a-bded-81b6686a5176",
+   "slug": "hilary-duff-the-lucky-me-tour-610416fd",
+   "title": "Hilary Duff: the lucky me tour",
+   "act": "Hilary Duff",
+   "name": "Hilary Duff",
+   "description": "American actress and singer (born 1987)",
+   "source_url": "https://en.wikipedia.org/wiki/Hilary_Duff",
+   "extract": "Hilary Erhard Duff is an American actress, singer-songwriter, businesswoman, and author. Duff began her acting career at a young age, and was soon labeled a teen idol after playing the title character in the Disney Channel comedy series Lizzie McGuire (2001–2004) and the film based on the series, The Lizzie McGuire Movie (2003). Thereafter, she appeared in numerous mainstream films such as Cadet Kelly (2002), Agent Cody Banks (2003), Cheaper by the Dozen (2003), A Cinderella Story (2004), and Cheaper by the Dozen 2 (2005).\nIn 2026, Time named her one of the 100 most influential people in the world."
+  },
+  {
+   "id": "256024d4-e556-40fe-945d-c09e5922f403",
+   "slug": "men-without-hats-ccb854d2",
+   "title": "Men Without Hats",
+   "act": "Men Without Hats",
+   "name": "Men Without Hats",
+   "description": "Canadian synthpop and new wave band",
+   "source_url": "https://en.wikipedia.org/wiki/Men_Without_Hats",
+   "extract": "Men Without Hats are a Canadian new wave and synth-pop band, originally from Montreal, Quebec. Their music is characterized by the baritone voice of their lead singer Ivan Doroschuk, as well as their elaborate use of synthesizers and electronic processing. The band achieved their greatest popularity in the 1980s with \"The Safety Dance\", a worldwide top ten hit, and \"Pop Goes the World\"."
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "city": "krakow",
+ "day": "2026-11-22",
+ "nights": [
+  {
+   "id": "6a1de345-1848-4d50-b546-ba7d880d4464",
+   "slug": "dakhabrakha-9ccadbd2",
+   "title": "Dakhabrakha",
+   "act": "Dakhabrakha",
+   "name": "DakhaBrakha",
+   "description": "Ukrainian folk music group",
+   "source_url": "https://en.wikipedia.org/wiki/DakhaBrakha",
+   "extract": "DakhaBrakha are a world music quartet formed in Kyiv, Ukraine. The four musicians combine a variety of musical styles from across the globe, creating energetic and artistic performances that are uniquely their own. DakhaBrakha's eclectic sound seamlessly mesh ancient Ukrainian folk tunes with modern genres, such as pop, punk, electronica, hip hop, and soul, a musical fusion that they define as \"ethno-chaos\"."
+  }
+ ]
+}

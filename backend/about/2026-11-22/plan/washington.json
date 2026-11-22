@@ -1,0 +1,26 @@
+{
+ "city": "washington",
+ "day": "2026-11-22",
+ "nights": [
+  {
+   "id": "5455bf65-ee6c-4793-8743-8da4b1d3707d",
+   "slug": "they-might-be-giants-98edab6c",
+   "title": "They Might Be Giants",
+   "act": "They Might Be Giants",
+   "name": "They Might Be Giants",
+   "description": "American alternative rock duo",
+   "source_url": "https://en.wikipedia.org/wiki/They_Might_Be_Giants",
+   "extract": "They Might Be Giants, often abbreviated as TMBG, is an American alternative rock band formed in Brooklyn in 1982 by vocalist and guitarist John Flansburgh and vocalist and multi-instrumentalist John Linnell. During the band's early years, Flansburgh and Linnell frequently performed as a musical duo, often accompanied by a tape machine or a drum machine. In 1992, They Might Be Giants expanded to include a backing band. The group's current backing band consists of Danny Weinkauf, Dan Miller, and Marty Beller, and their horn section consists of Dan Levine, Stan Harrison, and Mark Pender."
+  },
+  {
+   "id": "50be63d9-d0ea-4ebf-84d3-bc91b9403c4b",
+   "slug": "static-dress-c81880a6",
+   "title": "Static Dress",
+   "act": "Static Dress",
+   "name": "Static Dress",
+   "description": "English rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Static_Dress",
+   "extract": "Static Dress are an English rock band from Leeds, West Yorkshire. Formed in 2018, Static Dress are a concept band with their material following a continuous story. They currently consist of lead vocalist Olli Appleyard, drummer Sam Ogden, guitarist Vincent Weight and bassist George Holding. They have released two full-length studio albums, three EPs and various standalone singles, as well as a comic book and three video games."
+  }
+ ]
+}

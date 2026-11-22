@@ -1,0 +1,26 @@
+{
+ "city": "madrid",
+ "day": "2026-11-22",
+ "nights": [
+  {
+   "id": "ff94bbff-6ee0-4ba6-9c69-5d0fab4d40cc",
+   "slug": "freya-skye-stars-align-tour-7108758b",
+   "title": "Freya Skye - Stars Align Tour",
+   "act": "Freya Skye",
+   "name": "Freya Skye",
+   "description": "English singer and actress (born 2009)",
+   "source_url": "https://en.wikipedia.org/wiki/Freya_Skye",
+   "extract": "Freya Skye is an English singer and actress. She represented the United Kingdom in the Junior Eurovision Song Contest 2022, after which she was signed to Hollywood Records. Skye also has a talent holding deal for projects with Disney Branded Television. As an actress, she has appeared in The Next Step and made her film debut starring as Nova Bright in Zombies 4: Dawn of the Vampires. As a musician, Skye has released a number of singles since 2020 and released her debut extended play Stardust in 2026 and embarked on her first headlining tour, the Stars Align Tour."
+  },
+  {
+   "id": "2fc06c6f-f07f-4cd4-b30e-694584081450",
+   "slug": "baron-rojo-65140143",
+   "title": "Baron Rojo",
+   "act": "Baron Rojo",
+   "name": "Barón Rojo",
+   "description": "Spanish heavy metal band",
+   "source_url": "https://en.wikipedia.org/wiki/Bar%C3%B3n_Rojo",
+   "extract": "Barón Rojo is a Spanish heavy metal band from Madrid that achieved international success in the 1980s. The band is led by siblings Carlos and Armando de Castro, previously from the band Coz, and is considered one of the most important representatives of Spanish hard rock. Barón Rojo in Spanish means \"red baron\", the name of the band being an homage to Manfred von Richthofen; the 1981 eponymous song \"Barón Rojo\" is about him. In 2017, they were ranked number 18 on Rolling Stone's \"50 Greatest Spanish Rock Bands\"."
+  }
+ ]
+}

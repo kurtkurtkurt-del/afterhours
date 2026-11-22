@@ -1,0 +1,26 @@
+{
+ "city": "ottawa",
+ "day": "2026-11-22",
+ "nights": [
+  {
+   "id": "cd595ef8-257c-4550-ba68-1500fa2a28f9",
+   "slug": "houndmouth-the-lordy-tour-b5b0d944",
+   "title": "Houndmouth: The Lordy Tour",
+   "act": "Houndmouth",
+   "name": "Houndmouth",
+   "description": "American alternative blues band",
+   "source_url": "https://en.wikipedia.org/wiki/Houndmouth",
+   "extract": "Houndmouth is an American alternative blues and rock band from New Albany, Indiana, formed in 2011, consisting of Matt Myers, Caleb Hickman, Zac Anderson, and Noah Denney (drums)."
+  },
+  {
+   "id": "db4d2440-8da2-4d8a-8492-eff34f4f27a3",
+   "slug": "simple-plan-bigger-than-you-think-canada-tour-a76d291b",
+   "title": "SIMPLE PLAN: BIGGER THAN YOU THINK! Canada Tour",
+   "act": "SIMPLE PLAN",
+   "name": "Simple Plan",
+   "description": "Canadian rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Simple_Plan",
+   "extract": "Simple Plan is a Canadian rock band formed in Montreal, Quebec, in 1999. The band's current lineup consists of Pierre Bouvier, Chuck Comeau (drums), Jeff Stinco, and Sébastien Lefebvre."
+  }
+ ]
+}

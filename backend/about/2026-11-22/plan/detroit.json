@@ -1,0 +1,36 @@
+{
+ "city": "detroit",
+ "day": "2026-11-22",
+ "nights": [
+  {
+   "id": "b2cdf0f1-2def-4465-9c60-0be56eb8e5d2",
+   "slug": "belly-gang-kushington-6163793f",
+   "title": "Belly Gang Kushington",
+   "act": "Belly Gang Kushington",
+   "name": "Belly Gang Kushington",
+   "description": "American rapper",
+   "source_url": "https://en.wikipedia.org/wiki/Belly_Gang_Kushington",
+   "extract": "Victor Thomas, known professionally as Belly Gang Kushington, an American rapper. Hailing from Atlanta, Georgia, he began his recording career in 2016 and signed with Love Renaissance in 2024."
+  },
+  {
+   "id": "b95552f3-65a5-4765-9499-7195f8bba09c",
+   "slug": "rhye-bb3a841d",
+   "title": "Rhye",
+   "act": "Rhye",
+   "name": "Rhye",
+   "description": "R&B musical project",
+   "source_url": "https://en.wikipedia.org/wiki/Rhye",
+   "extract": "Rhye is an R&B musical project of Canadian singer Mike Milosh. It originally consisted of him and Danish instrumentalist Robin Hannibal. They released the singles \"Open\" and \"The Fall\" online without much detail, which led to speculation about the band. Their debut album, Woman, was released on March 4, 2013. In June 2013, the album was longlisted for the 2013 Polaris Music Prize. In 2017, it was reported that Robin Hannibal was no longer a member of Rhye and that the project had evolved into a music collective led by Milosh and focused around the associated live band. Their second album, Blood, was released on February 2, 2018, and was largely written, produced, and performed by Milosh."
+  },
+  {
+   "id": "1d1c5b88-a92a-4b1b-b156-a9fb52e1cda4",
+   "slug": "jon-b-e15a250f",
+   "title": "Jon B.",
+   "act": "Jon B.",
+   "name": "Jon B.",
+   "description": "American R&B singer",
+   "source_url": "https://en.wikipedia.org/wiki/Jon_B.",
+   "extract": "Jonathan David Buck is an American R&B singer, songwriter and record producer. His debut album Bonafide (1995) spawned the hit singles \"Pretty Girl\" and \"Someone to Love\", the latter of which reached the top ten on the Billboard Hot 100 and was nominated at the Grammys Awards for Best Pop Collaboration with Vocals. His second album Cool Relax (1997), was certified platinum by the Recording Industry Association of America (RIAA). Cool Relax included the hit singles \"Are U Still Down\" and \"They Don't Know\". His third album, Pleasures U Like (2001) reached the top ten on the Billboard 200 chart."
+  }
+ ]
+}

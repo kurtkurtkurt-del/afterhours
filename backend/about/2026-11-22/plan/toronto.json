@@ -1,0 +1,86 @@
+{
+ "city": "toronto",
+ "day": "2026-11-22",
+ "nights": [
+  {
+   "id": "a8a80e05-5ecf-4f33-b580-a8f49558759a",
+   "slug": "suicide-silence-reminders-of-hell-tour-00ce1216",
+   "title": "Suicide Silence: REMINDERS OF HELL TOUR",
+   "act": "Suicide Silence",
+   "name": "Suicide Silence",
+   "description": "American deathcore band",
+   "source_url": "https://en.wikipedia.org/wiki/Suicide_Silence",
+   "extract": "Suicide Silence is an American deathcore band from Riverside, California. The band was established in 2002, and has released seven studio albums, three EPs, and nineteen music videos. They were awarded the Revolver Golden God award for \"Best New Talent\" in 2009. The group currently consists of guitarists Chris Garza and Mark Heylmun, bassist Dan Kenny, vocalist Hernan \"Eddie\" Hermida and drummer Ernie Iniguez."
+  },
+  {
+   "id": "6dbdf821-e9eb-48aa-b9d6-95eb84439514",
+   "slug": "doja-cat-tour-ma-vie-world-tour-7ac1463a",
+   "title": "Doja Cat - Tour Ma Vie World Tour",
+   "act": "Doja Cat",
+   "name": "Doja Cat",
+   "description": "American rapper (born 1995)",
+   "source_url": "https://en.wikipedia.org/wiki/Doja_Cat",
+   "extract": "Amala Ratna Zandile Dlamini, known professionally as Doja Cat, is an American rapper and singer-songwriter. Regarded as the \"Queen of Pop-Rap\", she is known for her musical versatility, live performance skills and humorous internet presence. Billboard named her \"one of the world's biggest pop stars\" and \"one of the defining pop stars of this era\", and Time listed her as one of the world's most influential people in 2023."
+  },
+  {
+   "id": "e150f27d-f6f4-4ad5-8234-6efc8d6dd623",
+   "slug": "mack-geiger-when-it-s-pouring-2026-tour-9a2ec31b",
+   "title": "Mack Geiger - When It's Pouring 2026 Tour",
+   "act": "Mack Geiger",
+   "name": "Mack Geiger",
+   "description": "Australian country musician",
+   "source_url": "https://en.wikipedia.org/wiki/Mack_Geiger",
+   "extract": "William Mack Geiger is an Australian country singer-songwriter from Mount Larcom, Australia."
+  },
+  {
+   "id": "8c9795cd-d1e2-43ef-b0a6-554ea678c7e7",
+   "slug": "bonobo-distance-in-static-live-north-american-to-28dcd8fc",
+   "title": "Bonobo: Distance in Static Live North American Tour",
+   "act": "Bonobo",
+   "name": "Bonobo",
+   "description": "English musician, producer, and DJ (born 1976)",
+   "source_url": "https://en.wikipedia.org/wiki/Bonobo_(musician)",
+   "extract": "Simon Charles Green, known by his stage name Bonobo, is an English musician, producer, and DJ based in Los Angeles. He debuted with a trip hop aesthetic and has since explored more upbeat approaches as well as jazz and world music influences. His electronic sound incorporates the use of organic instrumentation and is recreated by a full band in live performances."
+  },
+  {
+   "id": "21789119-444e-44be-ab3e-6eefff7ae2c5",
+   "slug": "tyla-the-a-pop-world-tour-35905c18",
+   "title": "TYLA - THE A*POP WORLD TOUR",
+   "act": "TYLA",
+   "name": "Tyla",
+   "description": "South African singer-songwriter (born 2002)",
+   "source_url": "https://en.wikipedia.org/wiki/Tyla",
+   "extract": "Tyla Laura Seethal known mononymously as Tyla, is a South African singer-songwriter. Dubbed the \"Queen of Popiano\", her musical style is characterised by a fusion of pop and amapiano."
+  },
+  {
+   "id": "e7e19ce2-05fb-49be-8eeb-15e04d69943f",
+   "slug": "underoath-define-the-great-line-20th-anniversary-89606fcb",
+   "title": "Underoath - Define the Great Line 20th Anniversary Tour",
+   "act": "Underoath",
+   "name": "Underoath",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Underoath",
+   "extract": "Underoath is an American rock band from Tampa, Florida. It was founded by lead vocalist Dallas Taylor and guitarist Luke Morton in 1997 in Ocala, Florida; subsequently, its additional members were from Tampa, including drummer, singer and last remaining original member Aaron Gillespie. The band's current lineup consists of Gillespie, keyboardist Christopher Dudley, lead guitarist Timothy McTague, bassist Grant Brandell, and lead vocalist Spencer Chamberlain."
+  },
+  {
+   "id": "e2138686-348a-42e1-a42c-2a13641dc833",
+   "slug": "tiny-habits-65842e10",
+   "title": "Tiny Habits",
+   "act": "Tiny Habits",
+   "name": "Tiny Habits",
+   "description": "American folk-pop trio",
+   "source_url": "https://en.wikipedia.org/wiki/Tiny_Habits",
+   "extract": "Tiny Habits is an American folk-pop music group formed in Boston in 2022. The trio consists of Berklee College of Music alumni Cinya Khan, Maya Rae, and Judah Mayowa. Their first EP, Tiny Things, was released in April 2023. Their debut studio album All For Something was released in May 2024. Their second album Keepers came out in August 2026."
+  },
+  {
+   "id": "f0d39d5b-8cb3-43ce-8dfe-fc6e64627d5c",
+   "slug": "steven-page-steven-s-greetings-2026-tour-4bdc4a8c",
+   "title": "Steven Page - Steven's Greetings 2026 Tour",
+   "act": "Steven Page",
+   "name": "Steven Page",
+   "description": "Canadian singer and songwriter (born 1970)",
+   "source_url": "https://en.wikipedia.org/wiki/Steven_Page",
+   "extract": "Steven Jay Page is a Canadian singer, songwriter, and musician. He co-founded the rock band Barenaked Ladies with Ed Robertson in 1988 and served as one of its principal vocalists and songwriters until his departure in 2009. His compositions for the group include \"Brian Wilson\", \"The Old Apartment\", and \"It's All Been Done\"; he also co-wrote such songs as \"If I Had $1000000\" and \"Pinch Me\"."
+  }
+ ]
+}

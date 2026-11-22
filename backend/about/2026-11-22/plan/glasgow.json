@@ -1,0 +1,46 @@
+{
+ "city": "glasgow",
+ "day": "2026-11-22",
+ "nights": [
+  {
+   "id": "8ccf8f74-87c0-4500-b3fb-6c67f41c744e",
+   "slug": "jungle-3838b809",
+   "title": "Jungle",
+   "act": "Jungle",
+   "name": "Jungle",
+   "description": "English modern soul band",
+   "source_url": "https://en.wikipedia.org/wiki/Jungle_(band)",
+   "extract": "Jungle are a British band formed in early 2013 by London-based producers Josh Lloyd-Watson and Tom McFarland. Jungle have released five studio albums: Jungle (2014), which was shortlisted for the Mercury Prize; For Ever (2018); Loving in Stereo (2021); Volcano (2023); and Sunshine (2026). The first two albums were released through XL Recordings while the latter three via their independent label Caiola Records."
+  },
+  {
+   "id": "bb4bbe69-9886-4c6f-8aae-a8d8e56bdd29",
+   "slug": "royal-blood-9a15ac6b",
+   "title": "Royal Blood",
+   "act": "Royal Blood",
+   "name": "Royal Blood",
+   "description": "English rock duo",
+   "source_url": "https://en.wikipedia.org/wiki/Royal_Blood_(band)",
+   "extract": "Royal Blood are an English rock duo formed in Worthing in 2011. The lineup consists of Mike Kerr and Ben Thatcher (drums). Their signature sound is built around Kerr's bass playing style, which sees him using various effects pedals and amps to make his bass guitar sound like an electric guitar and bass guitar at the same time. The duo were signed by Warner Chappell Music in 2013 and have since released five studio albums: Royal Blood (2014), How Did We Get So Dark? (2017), Typhoons (2021), Back to the Water Below (2023) and Dead Company (2026)."
+  },
+  {
+   "id": "5aff020c-cb55-4f07-ad8a-7ca077ba36e5",
+   "slug": "jamie-lenman-d1334dd2",
+   "title": "Jamie Lenman",
+   "act": "Jamie Lenman",
+   "name": "Jamie Lenman",
+   "description": "English musician",
+   "source_url": "https://en.wikipedia.org/wiki/Jamie_Lenman",
+   "extract": "Jamie Edward Lenman is an English musician and illustrator. He is the lead singer, guitarist and main songwriter for British alternative rock trio Reuben from 2001 to 2008. Following the band's disbandment, Lenman shifted his focus to illustration. In 2008, he began his solo career, releasing and has since produced five studio albums."
+  },
+  {
+   "id": "9aca83db-0c4d-4797-b9b8-b70e5ce77499",
+   "slug": "tony-hadley-the-christmas-big-band-tour-2026-b33a892f",
+   "title": "TONY HADLEY - The Christmas Big Band Tour 2026",
+   "act": "TONY HADLEY",
+   "name": "Tony Hadley",
+   "description": "English pop/rock singer (born 1960)",
+   "source_url": "https://en.wikipedia.org/wiki/Tony_Hadley",
+   "extract": "Anthony Patrick Hadley is an English pop singer. He rose to fame in the 1980s as the lead singer of the new wave band Spandau Ballet and launched a solo career following the group's split in 1990. Hadley returned to the band in 2009 but left again in 2017, and has since toured regularly as a solo artist. Hadley has been noted for his expressive voice and vocal range."
+  }
+ ]
+}

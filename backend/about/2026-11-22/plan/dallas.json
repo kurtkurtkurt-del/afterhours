@@ -1,0 +1,56 @@
+{
+ "city": "dallas",
+ "day": "2026-11-22",
+ "nights": [
+  {
+   "id": "6b7d1a0c-eb14-48a1-bb4f-c20bf132ec4f",
+   "slug": "better-than-ezra-legends-of-the-fall-closer-to-t-0ffffcaf",
+   "title": "Better Than Ezra - Legends of the Fall: Closer To The Edge",
+   "act": "Better Than Ezra",
+   "name": "Better Than Ezra",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Better_Than_Ezra",
+   "extract": "Better Than Ezra is an American alternative rock band based in New Orleans, Louisiana, and signed with Round Hill Music. The band formed in 1988 in Baton Rouge, Louisiana, and consists of Kevin Griffin, Tom Drummond, Michael Jerome (drums), and James Arthur Payne Jr.. The band has released nine studio albums, most recently 2024's Super Magick. They are best known for their 1993 multi-platinum album Deluxe and the 1995 single \"Good\", which reached number 1 on the Billboard Modern Rock Tracks chart."
+  },
+  {
+   "id": "2b07ea05-910d-4256-a620-c7133280ae59",
+   "slug": "rl-grime-ages-18-a9b044aa",
+   "title": "RL GRIME - Ages 18+",
+   "act": "RL GRIME",
+   "name": "RL Grime",
+   "description": "American DJ and producer (born 1991)",
+   "source_url": "https://en.wikipedia.org/wiki/RL_Grime",
+   "extract": "Henry Alfred Steinway, better known by his stage name RL Grime, is an American record producer and DJ. RL Grime specializes in trap and bass music and is a member of the Los Angeles electronic music collective WeDidIt. His debut Grapes EP was released in April 2012 on WeDidIt. RL Grime premiered a popular Halloween mix in October 2012, which have continued to be released annually through 2023. His follow-up EP High Beams was released in July 2013 on Fool's Gold Records, which debuted at No. 8 on Billboard's Dance/Electronic Albums chart, and No. 1 on the iTunes Electronic Chart. RL Grime has produced remixes for Benny Benassi, Chief Keef, Jamie Lidell, and Shlohmo. His second studio album, Nova, was released in 2018. In February 2019, RL Grime announced the founding of his record label Sable Valley."
+  },
+  {
+   "id": "9aa62e43-0959-4238-abb7-945e84c25aa8",
+   "slug": "pi-erre-bourne-e5fbe813",
+   "title": "Pi'erre Bourne",
+   "act": "Pi'erre Bourne",
+   "name": "Pi'erre Bourne",
+   "description": "American record producer and rapper (born 1993)",
+   "source_url": "https://en.wikipedia.org/wiki/Pi'erre_Bourne",
+   "extract": "Jordan Timothy Jenks, known professionally as Pi'erre Bourne, is an American record producer, rapper, singer, songwriter, and audio engineer. He is known for producing the 2017 singles \"Magnolia\" for Playboi Carti and \"Gummo\" for 6ix9ine, both of which entered the top 30 of the U.S. Billboard Hot 100. He has worked extensively with artists including Playboi Carti, Lil Uzi Vert, Lil Yachty, Young Thug, Juice Wrld, Young Nudy, Trippie Redd, Kanye West, Drake, Nav, 6ix9ine, Duwap Kaine, and 21 Savage."
+  },
+  {
+   "id": "d5fcad5c-b4ac-42c5-8252-14f88c739fd3",
+   "slug": "upon-a-burning-body-05703541",
+   "title": "Upon a Burning Body",
+   "act": "Upon a Burning Body",
+   "name": "Upon a Burning Body",
+   "description": "American metalcore band",
+   "source_url": "https://en.wikipedia.org/wiki/Upon_a_Burning_Body",
+   "extract": "Upon a Burning Body is an American metalcore band from San Antonio, Texas, formed in 2005. It currently consists of vocalist Danny Leal, guitarist Ruben Alvarez and bassist Thomas Alvarez."
+  },
+  {
+   "id": "f0cae147-239d-420c-aaa1-cd35189410c7",
+   "slug": "jd-mcpherson-bcbf651a",
+   "title": "JD McPherson",
+   "act": "JD McPherson",
+   "name": "JD McPherson",
+   "description": "American rock musician (born 1977)",
+   "source_url": "https://en.wikipedia.org/wiki/JD_McPherson",
+   "extract": "Jonathan David \"JD\" McPherson is an American singer-songwriter and guitarist from Broken Arrow, Oklahoma. He is known for a retro sound rooted in the rock and roll, rockabilly, and rhythm and blues music of the 1950s. Among influences such as Little Richard and Fats Domino, McPherson also draws inspiration from artists as diverse as the Wu-Tang Clan, Pixies, and Led Zeppelin."
+  }
+ ]
+}

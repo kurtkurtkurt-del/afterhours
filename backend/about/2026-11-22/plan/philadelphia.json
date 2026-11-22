@@ -1,0 +1,46 @@
+{
+ "city": "philadelphia",
+ "day": "2026-11-22",
+ "nights": [
+  {
+   "id": "2fe5f840-03b9-4a4c-b57c-b5e5b439b02a",
+   "slug": "doja-cat-tour-ma-vie-world-tour-44bd7632",
+   "title": "Doja Cat - Tour Ma Vie World Tour",
+   "act": "Doja Cat",
+   "name": "Doja Cat",
+   "description": "American rapper (born 1995)",
+   "source_url": "https://en.wikipedia.org/wiki/Doja_Cat",
+   "extract": "Amala Ratna Zandile Dlamini, known professionally as Doja Cat, is an American rapper and singer-songwriter. Regarded as the \"Queen of Pop-Rap\", she is known for her musical versatility, live performance skills and humorous internet presence. Billboard named her \"one of the world's biggest pop stars\" and \"one of the defining pop stars of this era\", and Time listed her as one of the world's most influential people in 2023."
+  },
+  {
+   "id": "28e1cbd4-5cf5-4843-ac4a-6f653b3bf833",
+   "slug": "underoath-define-the-great-line-20th-anniversary-a31f6052",
+   "title": "Underoath - Define the Great Line 20th Anniversary Tour",
+   "act": "Underoath",
+   "name": "Underoath",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Underoath",
+   "extract": "Underoath is an American rock band from Tampa, Florida. It was founded by lead vocalist Dallas Taylor and guitarist Luke Morton in 1997 in Ocala, Florida; subsequently, its additional members were from Tampa, including drummer, singer and last remaining original member Aaron Gillespie. The band's current lineup consists of Gillespie, keyboardist Christopher Dudley, lead guitarist Timothy McTague, bassist Grant Brandell, and lead vocalist Spencer Chamberlain."
+  },
+  {
+   "id": "41fbc65e-49ae-490c-a03b-0332ef4c63f4",
+   "slug": "lindsey-stirling-the-snow-waltz-tour-c18dc3a4",
+   "title": "Lindsey Stirling - The Snow Waltz Tour",
+   "act": "Lindsey Stirling",
+   "name": "Lindsey Stirling",
+   "description": "American musician (born 1986)",
+   "source_url": "https://en.wikipedia.org/wiki/Lindsey_Stirling",
+   "extract": "Lindsey Stirling is an American violinist and songwriter. She presents choreographed violin performances, in live and music videos found on her official YouTube channel, which she created in 2007."
+  },
+  {
+   "id": "1c625706-2d85-4a3d-9de2-ac012200018c",
+   "slug": "we-are-scientists-20-years-of-with-love-and-squa-ef50c6d0",
+   "title": "We Are Scientists: 20 Years of With Love And Squalor",
+   "act": "We Are Scientists",
+   "name": "We Are Scientists",
+   "description": "American indie rock band",
+   "source_url": "https://en.wikipedia.org/wiki/We_Are_Scientists",
+   "extract": "We Are Scientists is a New York City-based rock band that formed in Berkeley, California, in 1999. It consists primarily of guitarist and vocalist Keith Murray and bass guitarist Chris Cain, with drummer Keith Carne joining the band in the studio and for live performances since 2013."
+  }
+ ]
+}

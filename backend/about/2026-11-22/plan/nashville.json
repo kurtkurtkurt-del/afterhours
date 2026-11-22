@@ -1,0 +1,46 @@
+{
+ "city": "nashville",
+ "day": "2026-11-22",
+ "nights": [
+  {
+   "id": "9f596bef-9e43-40a6-8e0a-843a923aaa4c",
+   "slug": "blue-october-0aa0a6fc",
+   "title": "Blue October",
+   "act": "Blue October",
+   "name": "Blue October",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Blue_October",
+   "extract": "Blue October is an American rock band originally from Houston, Texas, formed in 1995. It currently consists of singer/guitarist Justin Furstenfeld, drummer Jeremy Furstenfeld, multi-instrumentalist Ryan Delahoussaye, bassist Matt Noveskey, and lead guitarist Will Knaak."
+  },
+  {
+   "id": "a25d0bf0-8179-445c-8bfa-9321a7d23ad9",
+   "slug": "brett-eldredge-bad0f83a",
+   "title": "Brett Eldredge",
+   "act": "Brett Eldredge",
+   "name": "Brett Eldredge",
+   "description": "American country singer-songwriter and producer (born 1986)",
+   "source_url": "https://en.wikipedia.org/wiki/Brett_Eldredge",
+   "extract": "Brett Ryan Eldredge is an American country music singer, songwriter and record producer. Eldredge has had five No. 1 singles on the Billboard Country Airplay chart, three of which came from his debut album, Bring You Back: \"Don't Ya\", \"Beat of the Music\", and \"Mean to Me\"."
+  },
+  {
+   "id": "e3a704a4-cc95-43d9-baf4-ba4704ad84b7",
+   "slug": "angine-de-poitrine-4811f94b",
+   "title": "Angine de Poitrine",
+   "act": "Angine de Poitrine",
+   "name": "Angine de Poitrine",
+   "description": "Canadian rock duo",
+   "source_url": "https://en.wikipedia.org/wiki/Angine_de_Poitrine",
+   "extract": "Angine de Poitrine is a Canadian rock duo formed in Saguenay, Quebec, in 2019. The members are anonymous and perform under the pseudonyms Khn de Poitrine and Klek de Poitrine (drums). They perform complex microtonal compositions in the style of math rock and experimental rock, with an absurdist image involving oversized papier-mâché masks and black-and-white polka-dotted costumes."
+  },
+  {
+   "id": "2f5f138c-1809-4803-aa22-ebe15b84b74a",
+   "slug": "crankdat-8bf07faf",
+   "title": "Crankdat",
+   "act": "Crankdat",
+   "name": "Crankdat",
+   "description": "American electronic music producer",
+   "source_url": "https://en.wikipedia.org/wiki/Crankdat",
+   "extract": "Christian Smith, known professionally as Crankdat, is an American DJ and electronic dance music producer."
+  }
+ ]
+}

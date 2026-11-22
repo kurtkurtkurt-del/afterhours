@@ -1,0 +1,46 @@
+{
+ "city": "ankara",
+ "day": "2026-11-22",
+ "nights": [
+  {
+   "id": "8f721438-5a76-45be-8e05-6fcf0c0fd195",
+   "slug": "bengu-74b50530",
+   "title": "Bengü",
+   "act": "Bengü",
+   "name": "Bengü",
+   "description": "Turkish singer (born 1979)",
+   "source_url": "https://en.wikipedia.org/wiki/Beng%C3%BC",
+   "extract": "Bengü Erden is a Turkish singer. She became first familiar with music during her time at the İzmir State Symphony Orchestra. In İzmir, she was cast in a leading role in the musical \"Oliver Twist\". She later took singing lessons with İzmir State Conservatory's general manager, Müfit Bayraş. In 1998, by performing a song by Müfit Bayşara, she ranked second at the competition Pop Show '98, organized by Mü-Yap and Show TV. She then studied music at Istanbul Academy. She worked as a backing vocalist for Kenan Doğulu for three years. In 2007, Bengü became the winner of Show TV's singing competition Bak Kim Dans Ediyor. Her first album, Hoş Geldin, was produced by Kenan Doğulu and Ozan Doğulu and released in July 2000. Her second studio album, Bağlasan Durmam, was released in 2005.\nAfter two years, she released her third studio album, Taktik. With the song \"Korkma Kalbim\" from this album, she received a digital certification from Mü-Yap and the album became one of the best-selling albums of the year."
+  },
+  {
+   "id": "b568ca9c-b43f-4113-8297-617fea4150e6",
+   "slug": "hande-mehan-cea80b60",
+   "title": "Hande Mehan",
+   "act": "Hande Mehan",
+   "name": "Hande Mehan",
+   "description": "Turkish musician and songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Hande_Mehan",
+   "extract": "Hande Mehan is a Turkish musician and songwriter. Mehan, who had become a producer for Cem Adrian after meeting him during her university years, started her own music career the song \"Sen Beni Güzel Hatırla\", which was written and composed by herself."
+  },
+  {
+   "id": "9d5b285d-c08d-4bf8-af80-b379ccc9d791",
+   "slug": "gokhan-k-rdar-kurtlar-vadisi-soundtrack-symphony-7b3934bd",
+   "title": "Gökhan Kırdar : Kurtlar Vadisi Soundtrack Symphony",
+   "act": "Gökhan Kırdar",
+   "name": "Gökhan Kırdar",
+   "description": "Turkish musician and composer (born 1970)",
+   "source_url": "https://en.wikipedia.org/wiki/G%C3%B6khan_K%C4%B1rdar",
+   "extract": "Gökhan Kırdar is a Turkish musician and film score composer."
+  },
+  {
+   "id": "aa445216-9846-4401-a425-7972bab4208a",
+   "slug": "serdar-ortac-8ddef57a",
+   "title": "Serdar Ortaç",
+   "act": "Serdar Ortaç",
+   "name": "Serdar Ortaç",
+   "description": "Kurdish-Turkish singer, songwriter, and composer (born 1970)",
+   "source_url": "https://en.wikipedia.org/wiki/Serdar_Orta%C3%A7",
+   "extract": "Serdar Ortaç is a Turkish singer, songwriter and composer from Istanbul.\nHe is known as one of the most popular singers in Turkish pop-music history."
+  }
+ ]
+}

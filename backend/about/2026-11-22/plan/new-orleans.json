@@ -1,0 +1,26 @@
+{
+ "city": "new-orleans",
+ "day": "2026-11-22",
+ "nights": [
+  {
+   "id": "339bf890-25dc-4254-8e59-bfb46f0be410",
+   "slug": "shakey-graves-d120d001",
+   "title": "Shakey Graves",
+   "act": "Shakey Graves",
+   "name": "Shakey Graves",
+   "description": "American Americana musician",
+   "source_url": "https://en.wikipedia.org/wiki/Shakey_Graves",
+   "extract": "Shakey Graves is an American musician and actor from Austin, Texas."
+  },
+  {
+   "id": "e89c03fe-ba5a-407b-a960-648262bc1f0e",
+   "slug": "jodeci-35th-anniversary-tour-of-forever-my-lady-9f108566",
+   "title": "Jodeci - 35th Anniversary Tour of Forever My Lady",
+   "act": "Jodeci",
+   "name": "Jodeci",
+   "description": "American R&B quartet",
+   "source_url": "https://en.wikipedia.org/wiki/Jodeci",
+   "extract": "Jodeci is an American R&B quartet consisting of members JoJo, DeVanté Swing, K-Ci, and Mr. Dalvin. Formed in 1988 in Charlotte, North Carolina, Jodeci began as a duo of DeVanté Swing and JoJo but later both added their brothers. After signing with Uptown Records in 1990, the group finished work on their debut album, Forever My Lady (1991), which brought them mainstream success with three straight Billboard R&B No. 1 hit singles: the album's titular track, \"Stay\" and \"Come and Talk to Me\"."
+  }
+ ]
+}

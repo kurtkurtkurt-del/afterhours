@@ -1,0 +1,26 @@
+{
+ "city": "atlanta",
+ "day": "2026-11-22",
+ "nights": [
+  {
+   "id": "8312b3ef-4d3f-47f1-98a9-cd3bf1b49196",
+   "slug": "american-aquarium-0ba06f2e",
+   "title": "American Aquarium",
+   "act": "American Aquarium",
+   "name": "American Aquarium",
+   "description": "American alternative country band",
+   "source_url": "https://en.wikipedia.org/wiki/American_Aquarium",
+   "extract": "American Aquarium is an American alternative country band from Raleigh, North Carolina, United States."
+  },
+  {
+   "id": "ba1bd8b4-e379-4b3c-bf9b-33748e24b6a0",
+   "slug": "pouya-the-foreverglades-tour-fb90ea8f",
+   "title": "Pouya: The Foreverglades Tour",
+   "act": "Pouya",
+   "name": "Pouya",
+   "description": "American rapper (born 1994)",
+   "source_url": "https://en.wikipedia.org/wiki/Pouya",
+   "extract": "Kevin Pouya, known mononymously as Pouya, is an American rapper. Considered as a pioneer of the underground rap scene that began on SoundCloud in 2012, along with discovering the well known hip-hop duo Suicideboys in their early career, Pouya has developed a long-lasting core fanbase as an independent artist."
+  }
+ ]
+}

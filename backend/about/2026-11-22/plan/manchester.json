@@ -1,0 +1,46 @@
+{
+ "city": "manchester",
+ "day": "2026-11-22",
+ "nights": [
+  {
+   "id": "d67ecef0-c401-4744-aee7-43b0a7d49582",
+   "slug": "del-amitri-past-to-present-four-decades-of-their-e270a326",
+   "title": "Del Amitri: Past to Present - Four Decades Of Their Greatest Music",
+   "act": "Del Amitri",
+   "name": "Del Amitri",
+   "description": "Scottish alternative rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Del_Amitri",
+   "extract": "Del Amitri are a Scottish alternative rock band formed in Glasgow in 1980. \nThey are best known for their 1990 single \"Nothing Ever Happens\", which reached No. 11 in the UK, and their 1995 hit \"Roll to Me\", which reached the top 10 in both Canada and the United States. They have released seven studio albums, five of which have reached the UK top 10. Del Amitri has sold over six million albums worldwide."
+  },
+  {
+   "id": "106b1718-7140-4820-8f84-9cbec6b6cd02",
+   "slug": "piri-8d108219",
+   "title": "PIRI",
+   "act": "PIRI",
+   "name": "Piri",
+   "description": "English singer (born 1999)",
+   "source_url": "https://en.wikipedia.org/wiki/Piri",
+   "extract": "Sophie McBurnie, known professionally as Piri, is an English musician. Raised in Rochdale, Greater Manchester, she was half of the duo Piri & Tommy, who appeared on multiple \"ones to watch\" lists between November 2022 and January 2023 including the BBC's Sound of 2023, and an original member of the female and genderqueer collective Loud LDN. She also co-wrote the Illit song \"Magnetic\" and has been named as an influence by Caity Baser."
+  },
+  {
+   "id": "b56f3d87-d68b-42ed-82d7-3b65f6bb2f0a",
+   "slug": "ocean-colour-scene-400253fe",
+   "title": "Ocean Colour Scene",
+   "act": "Ocean Colour Scene",
+   "name": "Ocean Colour Scene",
+   "description": "English rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Ocean_Colour_Scene",
+   "extract": "Ocean Colour Scene are an English rock band formed in Moseley, Birmingham in 1989. They have had five top 10 albums, including a number one in 1997. They have also achieved seventeen top 40 singles and six top 10 singles to date."
+  },
+  {
+   "id": "24de1552-024b-4995-adc8-195eb5fd25f5",
+   "slug": "blossoms-b19635e8",
+   "title": "Blossoms",
+   "act": "Blossoms",
+   "name": "Blossoms",
+   "description": "English indie pop group",
+   "source_url": "https://en.wikipedia.org/wiki/Blossoms_(band)",
+   "extract": "Blossoms are an English indie rock band from Stockport, Greater Manchester, England. Formed in 2013, the band consists of Tom Ogden, Charlie Salt, Josh Dewhurst, Joe Donovan (drums) and Myles Kellock."
+  }
+ ]
+}
