@@ -1,0 +1,14 @@
+{
+  "city": "leipzig",
+  "day": "2026-11-29",
+  "sparks": [
+    {
+      "kind": "jazz",
+      "title": { "en": "jazzrausch bigband, am weihnachtsabend.", "de": "jazzrausch bigband, am weihnachtsabend.", "tr": "jazzrausch bigband, noel akşamında." },
+      "line": { "en": "the jazzrausch big band plays its christmas-eve programme at the kupfersaal on sunday at 18:00. tickets via eventim.", "de": "die jazzrausch bigband spielt am sonntag um 18:00 uhr im kupfersaal ihr programm am weihnachtsabend. karten über eventim.", "tr": "jazzrausch bigband pazar günü saat 18:00'de kupfersaal'da noel akşamı programını çalıyor. biletler eventim üzerinden." },
+      "place": { "en": "kupfersaal", "de": "kupfersaal", "tr": "kupfersaal" },
+      "hour": 18, "minute": 0,
+      "why": "Jazzrausch BigBand 'Am Weihnachtsabend', Kupfersaal (Kupfergasse 2), Sun 29 Nov 2026 18:00, from the mvp.de event page; eventim and regioactive listings agree."
+    }
+  ]
+}
