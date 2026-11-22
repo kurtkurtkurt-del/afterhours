@@ -1,0 +1,657 @@
+{
+  "city": "munchen",
+  "day": "2026-11-22",
+  "sparks": [
+    {
+      "kind": "derby",
+      "title": {
+        "en": "a sunday with the football, quietly.",
+        "de": "ein sonntag mit fußball, ganz leise.",
+        "tr": "sessiz bir pazar, futbol açık."
+      },
+      "line": {
+        "en": "no confirmed bayern match today; the pub is open, the sleet outside is not. ask which game they put on.",
+        "de": "heute kein bestätigtes bayern-spiel; die kneipe hat auf, draußen schneeregen. frag, welches spiel läuft.",
+        "tr": "bugün onaylı bir bayern maçı yok; pub açık, dışarıda sulu kar var. hangi maçın açık olduğunu sor."
+      },
+      "place": {
+        "en": "kilians irish pub",
+        "de": "kilians irish pub",
+        "tr": "kilians irish pub"
+      },
+      "hour": 18,
+      "minute": 30,
+      "why": "Sun 22.11 is Totensonntag, a Bavarian stiller Tag: no dancing or loud public events, Christkindlmarkt shut (muenchen.de). Bayern–Köln was 21.11, no confirmed Bayern match found for 22.11. Forecast 0-4°C, fog early, rain from midday turning to sleet in the evening (muenchen.de, wetterdienst.de)."
+    },
+    {
+      "kind": "grill",
+      "title": {
+        "en": "a grill only under a roof.",
+        "de": "ein grill nur unterm dach.",
+        "tr": "sadece çatı altında bir mangal."
+      },
+      "line": {
+        "en": "0 to 4 degrees and sleet later. sausages, a thermos, an hour at midday before the rain. or cook at home.",
+        "de": "0 bis 4 grad, später schneeregen. würstchen, eine thermoskanne, eine stunde mittags vor dem regen. oder koch zuhause.",
+        "tr": "0 ile 4 derece, akşama sulu kar. sosis, termos, öğlen yağmurdan önce bir saat. ya da evde pişir."
+      },
+      "place": {
+        "en": "flaucher",
+        "de": "flaucher",
+        "tr": "flaucher"
+      },
+      "hour": 14,
+      "minute": 0,
+      "why": "Forecast 0-4°C, fog early, rain from midday turning to sleet in the evening (muenchen.de, wetterdienst.de). Cold, so short and covered."
+    },
+    {
+      "kind": "hike",
+      "title": {
+        "en": "a foggy walk before the rain.",
+        "de": "ein nebliger gang vor dem regen.",
+        "tr": "yağmurdan önce sisli bir yürüyüş."
+      },
+      "line": {
+        "en": "fog until noon, rain after. get out in the morning, two hours, warm socks, and be home by the time it turns.",
+        "de": "nebel bis mittag, danach regen. morgens los, zwei stunden, warme socken, zurück bevor es kippt.",
+        "tr": "öğleye kadar sis, sonra yağmur. sabah çık, iki saat, kalın çorap, hava dönmeden eve dön."
+      },
+      "place": {
+        "en": "forstenrieder park",
+        "de": "forstenrieder park",
+        "tr": "forstenrieder park"
+      },
+      "hour": 10,
+      "minute": 0,
+      "why": "Forecast 0-4°C, fog early, rain from midday turning to sleet in the evening (muenchen.de, wetterdienst.de)."
+    },
+    {
+      "kind": "sunrise",
+      "title": {
+        "en": "a grey sunrise, if the fog lets you.",
+        "de": "ein grauer sonnenaufgang, wenn der nebel will.",
+        "tr": "sis izin verirse gri bir gün doğumu."
+      },
+      "line": {
+        "en": "sunrise about 07:30, near freezing and foggy. you may see nothing; the hill is quiet at least.",
+        "de": "sonnenaufgang gegen 07:30, knapp über null und neblig. vielleicht siehst du nichts; der berg ist wenigstens still.",
+        "tr": "gün doğumu 07:30 civarı, sıfıra yakın ve sisli. belki hiçbir şey görmezsin; en azından tepe sessiz."
+      },
+      "place": {
+        "en": "olympiaberg",
+        "de": "olympiaberg",
+        "tr": "olympiaberg"
+      },
+      "hour": 7,
+      "minute": 10,
+      "why": "Sunrise ~07:30 (wetterprognose, newsflash24), so 07:10. Morning fog, 0-4°C."
+    },
+    {
+      "kind": "breakfast",
+      "title": {
+        "en": "a slow sunday breakfast.",
+        "de": "ein langsames sonntagsfrühstück.",
+        "tr": "yavaş bir pazar kahvaltısı."
+      },
+      "line": {
+        "en": "shops are shut, the town is quiet. a long table, coffee, nothing planned until the afternoon.",
+        "de": "die läden sind zu, die stadt ist still. ein langer tisch, kaffee, bis nachmittag nichts vor.",
+        "tr": "dükkanlar kapalı, şehir sessiz. uzun bir masa, kahve, öğleden sonraya kadar plan yok."
+      },
+      "place": {
+        "en": "glockenbachviertel",
+        "de": "glockenbachviertel",
+        "tr": "glockenbachviertel"
+      },
+      "hour": 10,
+      "minute": 30,
+      "why": "Sunday, shops shut; cold grey day suits a long breakfast indoors. Sun 22.11 is Totensonntag, a Bavarian stiller Tag: no dancing or loud public events, Christkindlmarkt shut (muenchen.de)."
+    },
+    {
+      "kind": "rooftop",
+      "title": {
+        "en": "a roof, but a closed one.",
+        "de": "ein dach, aber ein geschlossenes.",
+        "tr": "bir çatı, ama kapalı olanı."
+      },
+      "line": {
+        "en": "too cold and wet for a terrace. go up the olympiaturm for the view over a grey city, then down for something warm.",
+        "de": "zu kalt und nass für eine terrasse. rauf auf den olympiaturm, blick über die graue stadt, dann runter zu etwas warmem.",
+        "tr": "teras için fazla soğuk ve ıslak. olympiaturm'a çık, gri şehre bak, sonra sıcak bir şey için in."
+      },
+      "place": {
+        "en": "olympiaturm",
+        "de": "olympiaturm",
+        "tr": "olympiaturm"
+      },
+      "hour": 15,
+      "minute": 30,
+      "why": "Forecast 0-4°C, fog early, rain from midday turning to sleet in the evening (muenchen.de, wetterdienst.de). Opening hours not checked; confirm on the day."
+    },
+    {
+      "kind": "swim",
+      "title": {
+        "en": "a warm pool on a cold day.",
+        "de": "ein warmes becken an einem kalten tag.",
+        "tr": "soğuk bir günde sıcak bir havuz."
+      },
+      "line": {
+        "en": "the lakes are long closed. an indoor pool, a few lengths while the sleet comes in.",
+        "de": "die seen sind lange vorbei. ein hallenbad, ein paar bahnen, während der schneeregen kommt.",
+        "tr": "göller çoktan kapandı. kapalı bir havuz, sulu kar gelirken birkaç kulaç."
+      },
+      "place": {
+        "en": "müller'sches volksbad",
+        "de": "müller'sches volksbad",
+        "tr": "müller'sches volksbad"
+      },
+      "hour": 17,
+      "minute": 0,
+      "why": "Indoor pool only, 0-4°C outside (muenchen.de). Hours not checked."
+    },
+    {
+      "kind": "quiz",
+      "title": {
+        "en": "a pub quiz, if one is on.",
+        "de": "ein pub-quiz, falls eins läuft.",
+        "tr": "varsa bir pub quizi."
+      },
+      "line": {
+        "en": "sunday evening, sleet outside. ask at the pub whether a quiz is on; if not, bring your own questions.",
+        "de": "sonntagabend, draußen schneeregen. frag in der kneipe, ob ein quiz läuft; sonst bring eigene fragen mit.",
+        "tr": "pazar akşamı, dışarıda sulu kar. pubda quiz var mı diye sor; yoksa kendi sorularını getir."
+      },
+      "place": {
+        "en": "kilians irish pub",
+        "de": "kilians irish pub",
+        "tr": "kilians irish pub"
+      },
+      "hour": 19,
+      "minute": 30,
+      "why": "No specific quiz night confirmed. Forecast 0-4°C, fog early, rain from midday turning to sleet in the evening (muenchen.de, wetterdienst.de)."
+    },
+    {
+      "kind": "newplace",
+      "title": {
+        "en": "a place you have not been yet.",
+        "de": "ein ort, an dem du noch nie warst.",
+        "tr": "henüz gitmediğin bir yer."
+      },
+      "line": {
+        "en": "a museum you skipped. many state museums cost one euro on sundays, and it is dry inside.",
+        "de": "ein museum, das du ausgelassen hast. viele staatliche museen kosten sonntags einen euro, und drinnen ist es trocken.",
+        "tr": "atladığın bir müze. pazar günleri birçok devlet müzesi bir euro, içerisi de kuru."
+      },
+      "place": {
+        "en": "pinakothek der moderne",
+        "de": "pinakothek der moderne",
+        "tr": "pinakothek der moderne"
+      },
+      "hour": 15,
+      "minute": 0,
+      "why": "Sunday museum price of 1 euro at many state museums (muenchen.de). Pick a museum open that day."
+    },
+    {
+      "kind": "camera",
+      "title": {
+        "en": "a foggy morning for the camera.",
+        "de": "ein nebliger morgen für die kamera.",
+        "tr": "kamera için sisli bir sabah."
+      },
+      "line": {
+        "en": "fog on the isar makes soft pictures. go before noon, before the rain.",
+        "de": "nebel an der isar gibt weiche bilder. geh vormittags, vor dem regen.",
+        "tr": "isar üzerindeki sis yumuşak kareler verir. öğleden önce, yağmurdan önce git."
+      },
+      "place": {
+        "en": "isar, reichenbachbrücke",
+        "de": "isar, reichenbachbrücke",
+        "tr": "isar, reichenbachbrücke"
+      },
+      "hour": 11,
+      "minute": 0,
+      "why": "Morning fog forecast, rain from midday (muenchen.de, newsflash24)."
+    },
+    {
+      "kind": "festival",
+      "title": {
+        "en": "the christkindlmarkt is shut today.",
+        "de": "der christkindlmarkt hat heute zu.",
+        "tr": "christkindlmarkt bugün kapalı."
+      },
+      "line": {
+        "en": "totensonntag: the marienplatz market stays closed, it opens again tomorrow. walk through the quiet centre instead.",
+        "de": "totensonntag: der markt am marienplatz bleibt zu, morgen öffnet er wieder. geh stattdessen durch die stille innenstadt.",
+        "tr": "totensonntag: marienplatz pazarı kapalı, yarın yeniden açılıyor. onun yerine sessiz merkezde yürü."
+      },
+      "place": {
+        "en": "marienplatz",
+        "de": "marienplatz",
+        "tr": "marienplatz"
+      },
+      "hour": 14,
+      "minute": 0,
+      "why": "Christkindlmarkt at Marienplatz closed on Totensonntag 22.11, reopens 23.11 (muenchen.de)."
+    },
+    {
+      "kind": "karaoke",
+      "title": {
+        "en": "a quiet night, so karaoke at home.",
+        "de": "ein stiller tag, also karaoke zuhause.",
+        "tr": "sessiz bir gün, karaoke evde."
+      },
+      "line": {
+        "en": "stiller tag: public music events are restricted. sing in a living room with friends.",
+        "de": "stiller tag: öffentliche musikveranstaltungen sind eingeschränkt. singt im wohnzimmer mit freunden.",
+        "tr": "sessiz gün: halka açık müzik etkinlikleri kısıtlı. arkadaşlarla bir oturma odasında söyleyin."
+      },
+      "place": {
+        "en": "at someone's place",
+        "de": "at someone's place",
+        "tr": "at someone's place"
+      },
+      "hour": 19,
+      "minute": 0,
+      "why": "Sun 22.11 is Totensonntag, a Bavarian stiller Tag: no dancing or loud public events, Christkindlmarkt shut (muenchen.de)."
+    },
+    {
+      "kind": "vinyl",
+      "title": {
+        "en": "an afternoon with records at home.",
+        "de": "ein nachmittag mit schallplatten zuhause.",
+        "tr": "evde plaklarla bir öğleden sonra."
+      },
+      "line": {
+        "en": "the record shops are shut on sunday. bring your own, put them on in turns, make tea.",
+        "de": "die plattenläden haben sonntags zu. bring deine eigenen mit, legt sie abwechselnd auf, kocht tee.",
+        "tr": "plakçılar pazar günü kapalı. kendi plaklarını getir, sırayla çalın, çay demle."
+      },
+      "place": {
+        "en": "at someone's place",
+        "de": "at someone's place",
+        "tr": "at someone's place"
+      },
+      "hour": 15,
+      "minute": 0,
+      "why": "Shops shut on Sunday; rain from midday."
+    },
+    {
+      "kind": "openair",
+      "title": {
+        "en": "no open air today.",
+        "de": "heute kein open air.",
+        "tr": "bugün açık hava yok."
+      },
+      "line": {
+        "en": "sleet and a quiet day. nothing outdoors is confirmed; take the music inside.",
+        "de": "schneeregen und ein stiller tag. draußen ist nichts bestätigt; hol die musik nach drinnen.",
+        "tr": "sulu kar ve sessiz bir gün. dışarıda onaylı bir şey yok; müziği içeri al."
+      },
+      "place": {
+        "en": "a warm room",
+        "de": "a warm room",
+        "tr": "a warm room"
+      },
+      "hour": 12,
+      "minute": 0,
+      "why": "Sun 22.11 is Totensonntag, a Bavarian stiller Tag: no dancing or loud public events, Christkindlmarkt shut (muenchen.de). Forecast 0-4°C, fog early, rain from midday turning to sleet in the evening (muenchen.de, wetterdienst.de)."
+    },
+    {
+      "kind": "bike",
+      "title": {
+        "en": "a short ride before the rain.",
+        "de": "eine kurze runde vor dem regen.",
+        "tr": "yağmurdan önce kısa bir tur."
+      },
+      "line": {
+        "en": "cold, 0 to 4 degrees, with fog. an hour along the isar in gloves, home before the rain.",
+        "de": "kalt, 0 bis 4 grad, mit nebel. eine stunde an der isar entlang, mit handschuhen, vor dem regen zuhause.",
+        "tr": "soğuk, 0 ile 4 derece ve sis. eldivenle isar boyunca bir saat, yağmurdan önce evde."
+      },
+      "place": {
+        "en": "isarweg",
+        "de": "isarweg",
+        "tr": "isarweg"
+      },
+      "hour": 11,
+      "minute": 0,
+      "why": "Forecast 0-4°C, fog early, rain from midday turning to sleet in the evening (muenchen.de, wetterdienst.de)."
+    },
+    {
+      "kind": "cinema",
+      "title": {
+        "en": "a film in a dry seat.",
+        "de": "ein film im trockenen sitz.",
+        "tr": "kuru bir koltukta bir film."
+      },
+      "line": {
+        "en": "totensonntag limits which films may be shown, so check the programme first. a small cinema is a good bet.",
+        "de": "am totensonntag dürfen nicht alle filme laufen, schau also vorher ins programm. ein kleines kino ist eine gute wahl.",
+        "tr": "totensonntag'ta her film gösterilemez, önce programa bak. küçük bir sinema iyi bir seçim."
+      },
+      "place": {
+        "en": "theatiner film",
+        "de": "theatiner film",
+        "tr": "theatiner film"
+      },
+      "hour": 18,
+      "minute": 30,
+      "why": "Stiller Tag film restrictions apply in Bavaria; programme not checked. Forecast 0-4°C, fog early, rain from midday turning to sleet in the evening (muenchen.de, wetterdienst.de)."
+    },
+    {
+      "kind": "boardgames",
+      "title": {
+        "en": "board games and something warm.",
+        "de": "brettspiele und etwas warmes.",
+        "tr": "kutu oyunları ve sıcak bir şey."
+      },
+      "line": {
+        "en": "a quiet sunday and sleet outside. a long game, tea, nobody looks at the clock.",
+        "de": "ein ruhiger sonntag, draußen schneeregen. ein langes spiel, tee, keiner schaut auf die uhr.",
+        "tr": "sakin bir pazar, dışarıda sulu kar. uzun bir oyun, çay, kimse saate bakmaz."
+      },
+      "place": {
+        "en": "a games café",
+        "de": "a games café",
+        "tr": "a games café"
+      },
+      "hour": 16,
+      "minute": 0,
+      "why": "Indoor day, Forecast 0-4°C, fog early, rain from midday turning to sleet in the evening (muenchen.de, wetterdienst.de)."
+    },
+    {
+      "kind": "flea",
+      "title": {
+        "en": "flea markets are cold today.",
+        "de": "flohmärkte sind heute kalt.",
+        "tr": "bit pazarları bugün soğuk."
+      },
+      "line": {
+        "en": "not confirmed and cold. if you go, go early, in a coat, and cash only.",
+        "de": "nicht bestätigt und kalt. wenn, dann früh, im mantel und mit bargeld.",
+        "tr": "onaylı değil ve soğuk. gidersen erken, montla ve nakitle git."
+      },
+      "place": {
+        "en": "olympiapark",
+        "de": "olympiapark",
+        "tr": "olympiapark"
+      },
+      "hour": 10,
+      "minute": 0,
+      "why": "No flea market confirmed for 22.11; Totensonntag also closed the medieval market (muenchen.de)."
+    },
+    {
+      "kind": "skate",
+      "title": {
+        "en": "skate where the roof is.",
+        "de": "skate dort, wo ein dach ist.",
+        "tr": "çatının olduğu yerde kaykay."
+      },
+      "line": {
+        "en": "wet ground and sleet later. an indoor hall or a covered spot only.",
+        "de": "nasser boden, später schneeregen. nur eine halle oder ein überdachter spot.",
+        "tr": "ıslak zemin, akşam sulu kar. sadece kapalı salon ya da çatılı yer."
+      },
+      "place": {
+        "en": "a covered skate spot",
+        "de": "a covered skate spot",
+        "tr": "a covered skate spot"
+      },
+      "hour": 14,
+      "minute": 0,
+      "why": "Forecast 0-4°C, fog early, rain from midday turning to sleet in the evening (muenchen.de, wetterdienst.de)."
+    },
+    {
+      "kind": "cook",
+      "title": {
+        "en": "cook together while it sleets.",
+        "de": "kocht zusammen, während es schneeregnet.",
+        "tr": "sulu kar yağarken birlikte pişirin."
+      },
+      "line": {
+        "en": "sunday means shut shops, so shop saturday. a big pot, one recipe, everyone chops something.",
+        "de": "sonntag heißt geschlossene läden, also samstag einkaufen. ein großer topf, ein rezept, jeder schneidet etwas.",
+        "tr": "pazar dükkanlar kapalı, alışverişi cumartesi yap. büyük bir tencere, bir tarif, herkes bir şey doğrasın."
+      },
+      "place": {
+        "en": "at someone's place",
+        "de": "at someone's place",
+        "tr": "at someone's place"
+      },
+      "hour": 18,
+      "minute": 0,
+      "why": "Sunday, shops shut; Forecast 0-4°C, fog early, rain from midday turning to sleet in the evening (muenchen.de, wetterdienst.de)."
+    },
+    {
+      "kind": "sauna",
+      "title": {
+        "en": "a sauna after the cold.",
+        "de": "eine sauna nach der kälte.",
+        "tr": "soğuğun ardından bir sauna."
+      },
+      "line": {
+        "en": "0 to 4 degrees and rain coming. heat, a cold plunge, then tea. check the opening hours.",
+        "de": "0 bis 4 grad und regen im anmarsch. hitze, kaltes tauchbecken, dann tee. schau vorher nach den öffnungszeiten.",
+        "tr": "0 ile 4 derece ve yağmur geliyor. sıcak, soğuk dalış, sonra çay. önce açılış saatlerine bak."
+      },
+      "place": {
+        "en": "olympia-schwimmhalle",
+        "de": "olympia-schwimmhalle",
+        "tr": "olympia-schwimmhalle"
+      },
+      "hour": 16,
+      "minute": 30,
+      "why": "Opening hours not checked. Forecast 0-4°C, fog early, rain from midday turning to sleet in the evening (muenchen.de, wetterdienst.de)."
+    },
+    {
+      "kind": "openmic",
+      "title": {
+        "en": "an open mic is unlikely tonight.",
+        "de": "ein open mic ist heute unwahrscheinlich.",
+        "tr": "bu akşam açık mikrofon pek olası değil."
+      },
+      "line": {
+        "en": "stiller tag: live music in public is restricted. play for each other at home, or wait until next week.",
+        "de": "stiller tag: live-musik in der öffentlichkeit ist eingeschränkt. spielt euch zuhause etwas vor, oder wartet bis nächste woche.",
+        "tr": "sessiz gün: halka açık canlı müzik kısıtlı. evde birbirinize çalın ya da gelecek haftayı bekleyin."
+      },
+      "place": {
+        "en": "at someone's place",
+        "de": "at someone's place",
+        "tr": "at someone's place"
+      },
+      "hour": 19,
+      "minute": 0,
+      "why": "Sun 22.11 is Totensonntag, a Bavarian stiller Tag: no dancing or loud public events, Christkindlmarkt shut (muenchen.de)."
+    },
+    {
+      "kind": "pingpong",
+      "title": {
+        "en": "table tennis in the dry.",
+        "de": "tischtennis im trockenen.",
+        "tr": "kuru bir yerde masa tenisi."
+      },
+      "line": {
+        "en": "sunday and sleet. a hall with a table, a few quick games, a drink after.",
+        "de": "sonntag und schneeregen. eine halle mit tisch, ein paar schnelle spiele, danach ein getränk.",
+        "tr": "pazar ve sulu kar. masası olan bir salon, birkaç hızlı oyun, sonra bir içecek."
+      },
+      "place": {
+        "en": "a pingpong bar",
+        "de": "a pingpong bar",
+        "tr": "a pingpong bar"
+      },
+      "hour": 18,
+      "minute": 0,
+      "why": "Indoor, venue not confirmed. Forecast 0-4°C, fog early, rain from midday turning to sleet in the evening (muenchen.de, wetterdienst.de)."
+    },
+    {
+      "kind": "bouldering",
+      "title": {
+        "en": "bouldering, because the wall is dry.",
+        "de": "bouldern, weil die wand trocken ist.",
+        "tr": "bouldering, çünkü duvar kuru."
+      },
+      "line": {
+        "en": "sport is allowed on totensonntag. a sunday afternoon on the wall while the sleet falls outside.",
+        "de": "sport ist am totensonntag erlaubt. ein sonntagnachmittag an der wand, während draußen schneeregen fällt.",
+        "tr": "totensonntag'ta spor serbest. dışarıda sulu kar yağarken duvarda bir pazar öğleden sonrası."
+      },
+      "place": {
+        "en": "a bouldering hall",
+        "de": "a bouldering hall",
+        "tr": "a bouldering hall"
+      },
+      "hour": 15,
+      "minute": 0,
+      "why": "Sport is allowed on the stiller Tag (muenchen.de). Forecast 0-4°C, fog early, rain from midday turning to sleet in the evening (muenchen.de, wetterdienst.de)."
+    },
+    {
+      "kind": "picnic",
+      "title": {
+        "en": "an indoor picnic, honestly.",
+        "de": "ein indoor-picknick, ehrlich gesagt.",
+        "tr": "açıkçası kapalı alanda bir piknik."
+      },
+      "line": {
+        "en": "blanket on the floor, bread, cheese, a flask. it is 4 degrees out.",
+        "de": "decke auf dem boden, brot, käse, eine thermoskanne. draußen sind es 4 grad.",
+        "tr": "yerde bir battaniye, ekmek, peynir, termos. dışarısı 4 derece."
+      },
+      "place": {
+        "en": "at home",
+        "de": "at home",
+        "tr": "at home"
+      },
+      "hour": 13,
+      "minute": 0,
+      "why": "Forecast 0-4°C, fog early, rain from midday turning to sleet in the evening (muenchen.de, wetterdienst.de)."
+    },
+    {
+      "kind": "crawl",
+      "title": {
+        "en": "a short quiet crawl, three stops.",
+        "de": "ein kurzer stiller zug, drei stationen.",
+        "tr": "kısa, sessiz bir tur, üç durak."
+      },
+      "line": {
+        "en": "no dancing today, but bars are open. three stops, one drink each, no clubs.",
+        "de": "heute wird nicht getanzt, aber die bars haben auf. drei stationen, je ein getränk, keine clubs.",
+        "tr": "bugün dans yok ama barlar açık. üç durak, birer içecek, kulüp yok."
+      },
+      "place": {
+        "en": "gärtnerplatz",
+        "de": "gärtnerplatz",
+        "tr": "gärtnerplatz"
+      },
+      "hour": 19,
+      "minute": 0,
+      "why": "Sun 22.11 is Totensonntag, a Bavarian stiller Tag: no dancing or loud public events, Christkindlmarkt shut (muenchen.de)."
+    },
+    {
+      "kind": "stars",
+      "title": {
+        "en": "no stars tonight, so a planetarium.",
+        "de": "heute keine sterne, also ein planetarium.",
+        "tr": "bu gece yıldız yok, o yüzden planetaryum."
+      },
+      "line": {
+        "en": "overcast and sleet, nothing to see. check the deutsches museum for what is open on sunday.",
+        "de": "bedeckt und schneeregen, nichts zu sehen. schau im deutschen museum, was sonntags offen ist.",
+        "tr": "kapalı hava ve sulu kar, görecek bir şey yok. pazar günü neyin açık olduğuna deutsches museum'dan bak."
+      },
+      "place": {
+        "en": "deutsches museum",
+        "de": "deutsches museum",
+        "tr": "deutsches museum"
+      },
+      "hour": 17,
+      "minute": 30,
+      "why": "Overcast all day (muenchen.de). Planetarium hours not checked."
+    },
+    {
+      "kind": "football",
+      "title": {
+        "en": "a kickabout in the hall.",
+        "de": "ein kick in der halle.",
+        "tr": "salonda bir top oyunu."
+      },
+      "line": {
+        "en": "wet pitches and sleet later. an indoor court, five a side, home for dinner.",
+        "de": "nasse plätze und später schneeregen. ein hallenplatz, fünf gegen fünf, zum essen wieder zuhause.",
+        "tr": "ıslak sahalar ve akşam sulu kar. kapalı bir saha, beşe beş, akşam yemeğine evde."
+      },
+      "place": {
+        "en": "an indoor court",
+        "de": "an indoor court",
+        "tr": "an indoor court"
+      },
+      "hour": 15,
+      "minute": 0,
+      "why": "Sport is allowed on Totensonntag. Forecast 0-4°C, fog early, rain from midday turning to sleet in the evening (muenchen.de, wetterdienst.de)."
+    },
+    {
+      "kind": "tram",
+      "title": {
+        "en": "a ride on the number 19.",
+        "de": "eine fahrt mit der 19.",
+        "tr": "19 numaralı tramvayla bir tur."
+      },
+      "line": {
+        "en": "grey, cold, rain later. a window seat, from pasing to the east, nothing to do but look.",
+        "de": "grau, kalt, später regen. ein fensterplatz, quer durch die stadt, nichts zu tun außer schauen.",
+        "tr": "gri, soğuk, akşama yağmur. cam kenarı, şehri baştan başa, yapacak tek şey bakmak."
+      },
+      "place": {
+        "en": "tram 19",
+        "de": "tram 19",
+        "tr": "tram 19"
+      },
+      "hour": 14,
+      "minute": 0,
+      "why": "Generic spark; Forecast 0-4°C, fog early, rain from midday turning to sleet in the evening (muenchen.de, wetterdienst.de)."
+    },
+    {
+      "kind": "jazz",
+      "title": {
+        "en": "a jazz night, if a cellar is open.",
+        "de": "ein jazzabend, wenn ein keller offen ist.",
+        "tr": "bir mekan açıksa bir caz gecesi."
+      },
+      "line": {
+        "en": "totensonntag limits public music, so check first whether the unterfahrt has a quiet set today.",
+        "de": "am totensonntag ist öffentliche musik beschränkt, frag vorher, ob die unterfahrt heute ein stilles konzert hat.",
+        "tr": "totensonntag'ta halka açık müzik kısıtlı, önce unterfahrt'ta bugün sakin bir konser var mı diye bak."
+      },
+      "place": {
+        "en": "unterfahrt",
+        "de": "unterfahrt",
+        "tr": "unterfahrt"
+      },
+      "hour": 19,
+      "minute": 30,
+      "why": "Programme not checked. Sun 22.11 is Totensonntag, a Bavarian stiller Tag: no dancing or loud public events, Christkindlmarkt shut (muenchen.de)."
+    },
+    {
+      "kind": "walk",
+      "title": {
+        "en": "a quiet walk before dark.",
+        "de": "ein stiller spaziergang vor der dämmerung.",
+        "tr": "hava kararmadan sessiz bir yürüyüş."
+      },
+      "line": {
+        "en": "totensonntag is a quiet day anyway. the englischer garten in grey light, home before the rain.",
+        "de": "totensonntag ist sowieso ein stiller tag. der englische garten im grauen licht, vor dem regen zuhause.",
+        "tr": "totensonntag zaten sessiz bir gün. gri ışıkta englischer garten, yağmurdan önce evde."
+      },
+      "place": {
+        "en": "monopteros",
+        "de": "monopteros",
+        "tr": "monopteros"
+      },
+      "hour": 16,
+      "minute": 0,
+      "why": "Sun 22.11 is Totensonntag, a Bavarian stiller Tag: no dancing or loud public events, Christkindlmarkt shut (muenchen.de). Forecast 0-4°C, fog early, rain from midday turning to sleet in the evening (muenchen.de, wetterdienst.de)."
+    }
+  ]
+}
