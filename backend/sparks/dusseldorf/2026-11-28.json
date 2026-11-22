@@ -1,0 +1,27 @@
+{
+  "city": "dusseldorf",
+  "day": "2026-11-28",
+  "sparks": [
+    {
+      "kind": "flea",
+      "title": {
+        "en": "flea market at the schützenplatz in benrath.",
+        "de": "flohmarkt auf dem schützenplatz in benrath.",
+        "tr": "benrath'ta schützenplatz'da bit pazarı."
+      },
+      "line": {
+        "en": "the saturday trödelmarkt on the schützenplatz in benrath, from 08:00, run by melan macht märkte. a morning option; check the stall times on melan.de first.",
+        "de": "der samstägliche trödelmarkt auf dem schützenplatz in benrath, ab 08:00, veranstaltet von melan macht märkte. eine morgenoption; vorher die standzeiten auf melan.de prüfen.",
+        "tr": "benrath'taki schützenplatz'da cumartesi trödelmarkt'ı, 08:00'den itibaren, melan macht märkte tarafından düzenleniyor. sabah seçeneği; önce standların saatlerini melan.de'den kontrol et."
+      },
+      "place": {
+        "en": "schützenplatz benrath",
+        "de": "schützenplatz benrath",
+        "tr": "schützenplatz benrath"
+      },
+      "hour": 8,
+      "minute": 0,
+      "why": "Saturday Trödelmarkt Schützenplatz Benrath, sat 28.11.2026 from 08:00, organiser Melan macht Märkte, per kindaling.de (https://www.kindaling.de/flohmaerkte/flohmarkt-troedelmarkt-auf-dem-schuetzenplatz/duesseldorf-benrath)."
+    }
+  ]
+}

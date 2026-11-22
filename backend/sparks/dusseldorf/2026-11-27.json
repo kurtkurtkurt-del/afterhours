@@ -1,0 +1,14 @@
+{
+  "city": "dusseldorf",
+  "day": "2026-11-27",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "the altstadt christmas market, open until 30 december.", "de": "der altstadt-weihnachtsmarkt, bis 30. dezember geöffnet.", "tr": "altstadt noel pazarı, 30 aralık'a kadar açık." },
+      "line": { "en": "the düsseldorf christmas market runs on the altstadt marktplatz from 19 november to 30 december, closed only on totensonntag and 25 december. an evening walk through it on friday.", "de": "der weihnachtsmarkt auf dem altstadt-marktplatz läuft vom 19. november bis 30. dezember und ist nur am totensonntag und am 25. dezember geschlossen. ein abendlicher rundgang am freitag.", "tr": "düsseldorf noel pazarı 19 kasım'dan 30 aralık'a kadar altstadt marktplatz'ta kurulu; yalnızca totensonntag ve 25 aralık'ta kapalı. cuma akşamı orada bir gezinti." },
+      "place": { "en": "altstadt marktplatz", "de": "altstadt marktplatz", "tr": "altstadt marktplatz" },
+      "hour": 17, "minute": 0,
+      "why": "Düsseldorf Christmas market, 19.11.2026 to 30.12.2026, closed 22.11 and 25.12, per visitduesseldorf.de (https://www.visitduesseldorf.de/erleben/veranstaltungen/weihnachtsmarkt) and the city press release on its opening on the Marktplatz."
+    }
+  ]
+}
