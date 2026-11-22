@@ -1,0 +1,14 @@
+{
+  "city": "wien",
+  "day": "2026-11-26",
+  "sparks": [
+    {
+      "kind": "openmic",
+      "title": { "en": "comedy open mic at the kulturcafé henriette.", "de": "comedy open mic im kulturcafé henriette.", "tr": "kulturcafé henriette'te comedy open mic." },
+      "line": { "en": "eight comedians with seven minutes each, hosted by sebastian haring. free entry, but the listing asks you to reserve. the cafe is in brigittenau, staudingergasse 10.", "de": "acht comedians mit je sieben minuten, moderiert von sebastian haring. eintritt frei, laut ankündigung bitte reservieren. das café liegt in der brigittenau, staudingergasse 10.", "tr": "sebastian haring'in sunduğu, her biri yedi dakikalık sekiz komedyen. giriş ücretsiz, ilanda istendiği gibi yer ayırtmak iyi olur. kafe brigittenau'da, staudingergasse 10'da." },
+      "place": { "en": "kulturcafé henriette", "de": "kulturcafé henriette", "tr": "kulturcafé henriette" },
+      "hour": 20, "minute": 0,
+      "why": "Feucht & Fröhlich comedy open mic, 26.11.2026 from 20:00 to 23:00, free with reservation, at Kulturcafé Henriette, per the City of Vienna event listing (wien.gv.at/veranstaltungen/feucht-und-froehlich-comedy-open-mic-3)."
+    }
+  ]
+}
