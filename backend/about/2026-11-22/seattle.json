@@ -1,0 +1,70 @@
+{
+  "city": "seattle",
+  "day": "2026-11-22",
+  "nights": [
+    {
+      "id": "02b83ea0-ee17-48e0-bde9-1935885c46dd",
+      "slug": "wolf-parade-5f0c5a3c",
+      "title": "Wolf Parade",
+      "name": "Wolf Parade",
+      "source_url": "https://en.wikipedia.org/wiki/Wolf_Parade",
+      "extract": "Wolf Parade is a Canadian indie rock band formed in Montreal, in 2003. The band consists of Spencer Krug, Dan Boeckner and Arlen Thompson (drums). During live performances, the band are currently joined by Arcade Fire's Tim Kingsbury on various instruments. Multi-instrumentalist Dante DeCaro and synth-player Hadji Bakara are both recurring former members of the band.",
+      "en": {
+        "kicker": "Canadian indie rock band · 2003, Montreal",
+        "who": "Wolf Parade is a Canadian indie rock band formed in Montreal in 2003. the band consists of Spencer Krug, Dan Boeckner and Arlen Thompson (drums). during live performances, the band are currently joined by Arcade Fire's Tim Kingsbury on various instruments.",
+        "facts": [
+          "Wolf Parade is a Canadian indie rock band formed in Montreal, in 2003.",
+          "the band consists of Spencer Krug, Dan Boeckner and Arlen Thompson (drums)."
+        ]
+      },
+      "de": {
+        "kicker": "kanadische indie-rockband · 2003, Montreal",
+        "who": "Wolf Parade ist eine kanadische indie-rockband, die 2003 in Montreal gegründet wurde. zur band gehören Spencer Krug, Dan Boeckner und Arlen Thompson (schlagzeug). bei live-auftritten wird die band derzeit von Tim Kingsbury von Arcade Fire an verschiedenen instrumenten unterstützt.",
+        "facts": [
+          "Wolf Parade ist eine kanadische indie-rockband, die 2003 in Montreal gegründet wurde.",
+          "zur band gehören Spencer Krug, Dan Boeckner und Arlen Thompson (schlagzeug)."
+        ]
+      },
+      "tr": {
+        "kicker": "Kanadalı indie rock grubu · 2003, Montreal",
+        "who": "Wolf Parade, 2003 yılında Montreal'de kurulan Kanadalı bir indie rock grubudur. grup Spencer Krug, Dan Boeckner ve davulcu Arlen Thompson'dan oluşur. canlı performanslarda grup, şu anda Arcade Fire'dan Tim Kingsbury ile birlikte çeşitli enstrümanlar çalmaktadır.",
+        "facts": [
+          "Wolf Parade, 2003 yılında Montreal'de kurulan Kanadalı bir indie rock grubudur.",
+          "grup Spencer Krug, Dan Boeckner ve davulcu Arlen Thompson'dan oluşur."
+        ]
+      }
+    },
+    {
+      "id": "8eac4bdc-81ba-483c-9d55-2db6e41321a0",
+      "slug": "neurosis-ages-21-32238241",
+      "title": "Neurosis - Ages 21+",
+      "name": "Neurosis",
+      "source_url": "https://en.wikipedia.org/wiki/Neurosis_(band)",
+      "extract": "Neurosis is an American post-metal band from Oakland, California. It was formed in 1985 by guitarist Scott Kelly, bassist Dave Edwardson, and drummer Jason Roeder, initially as a crust punk band. Chad Salter joined as a second guitarist and appeared on the band's 1987 debut Pain of Mind, and then Steve Von Till replaced him in 1989. The following year, the lineup further expanded to include a keyboardist and a visual artist. Beginning with their third album Souls at Zero (1992), Neurosis transformed their hardcore sound by incorporating diverse influences including doom metal and industrial music, becoming a major force in the emergence of the post-metal and sludge metal genres.",
+      "en": {
+        "kicker": "American post-metal band · 1985, Oakland",
+        "who": "Neurosis is an American post-metal band from Oakland, California. the band was formed in 1985 by guitarist Scott Kelly, bassist Dave Edwardson and drummer Jason Roeder, initially as a crust punk band. beginning with their third album Souls at Zero (1992), Neurosis transformed their hardcore sound by incorporating doom metal and industrial music.",
+        "facts": [
+          "Neurosis is an American post-metal band from Oakland, California.",
+          "it was formed in 1985 by guitarist Scott Kelly, bassist Dave Edwardson, and drummer Jason Roeder, initially as a crust punk band."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische post-metal-band · 1985, Oakland",
+        "who": "Neurosis ist eine amerikanische post-metal-band aus Oakland, Kalifornien. die band wurde 1985 von gitarrist Scott Kelly, bassist Dave Edwardson und schlagzeuger Jason Roeder gegründet, zunächst als crust-punk-band. beginnend mit dem dritten album Souls at Zero (1992) veränderte Neurosis ihren hardcore-sound durch doom metal und industrial music.",
+        "facts": [
+          "Neurosis ist eine amerikanische post-metal-band aus Oakland, Kalifornien.",
+          "die band wurde 1985 von gitarrist Scott Kelly, bassist Dave Edwardson und schlagzeuger Jason Roeder gegründet, zunächst als crust-punk-band."
+        ]
+      },
+      "tr": {
+        "kicker": "Amerikalı post-metal grubu · 1985, Oakland",
+        "who": "Neurosis, Oakland, Kaliforniya'dan Amerikalı bir post-metal grubudur. grup, 1985'te gitarist Scott Kelly, basçı Dave Edwardson ve davulcu Jason Roeder tarafından, başlangıçta bir crust punk grubu olarak kuruldu. üçüncü albümleri Souls at Zero (1992) ile başlayarak Neurosis, hardcore sesini doom metal ve endüstriyel müzik etkileriyle dönüştürdü.",
+        "facts": [
+          "Neurosis, Oakland, Kaliforniya'dan Amerikalı bir post-metal grubudur.",
+          "grup, 1985'te gitarist Scott Kelly, basçı Dave Edwardson ve davulcu Jason Roeder tarafından, başlangıçta bir crust punk grubu olarak kuruldu."
+        ]
+      }
+    }
+  ]
+}

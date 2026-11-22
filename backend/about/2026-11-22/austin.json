@@ -1,0 +1,38 @@
+{
+  "city": "austin",
+  "day": "2026-11-22",
+  "nights": [
+    {
+      "id": "61e18bf0-f8ed-42cb-8a09-21e23641b71b",
+      "slug": "eyes-set-to-kill-b74bb0a7",
+      "title": "Eyes Set To Kill",
+      "name": "Eyes Set to Kill",
+      "source_url": "https://en.wikipedia.org/wiki/Eyes_Set_to_Kill",
+      "extract": "Eyes Set to Kill is an American metalcore band from Tempe, Arizona. The Rodriguez sisters, lead guitarist Alexia and bassist Anissa, along with vocalist Lindsey Vogt started the band in 2003. After Lindsey's departure, Alexia assumed her position as lead vocalist as well as guitarist. Anissa left in late 2016 but returned to the band in 2023.",
+      "en": {
+        "kicker": "american metalcore band · 2003, tempe, arizona",
+        "who": "Eyes Set to Kill is an american metalcore band from Tempe, Arizona. the Rodriguez sisters, lead guitarist Alexia and bassist Anissa, along with vocalist Lindsey Vogt, started the band in 2003.",
+        "facts": [
+          "the Rodriguez sisters, lead guitarist Alexia and bassist Anissa, along with vocalist Lindsey Vogt started the band in 2003.",
+          "after Lindsey's departure, Alexia assumed her position as lead vocalist as well as guitarist."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische metalcore-band · 2003, tempe, arizona",
+        "who": "Eyes Set to Kill ist eine amerikanische Metalcore-Band aus Tempe, Arizona. Die Rodriguez-Schwestern, Alexia an der Leadgitarre und Anissa am Bass, gründeten die Band 2003 zusammen mit Lindsey Vogt am Gesang.",
+        "facts": [
+          "die Rodriguez-Schwestern, Alexia an der Leadgitarre und Anissa am Bass, sowie Lindsey Vogt am Gesang gründeten die Band 2003.",
+          "nach Lindseys Weggang übernahm Alexia die Position am Leadgesang und spielte weiterhin Gitarre."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı metalcore grubu · 2003, tempe, arizona",
+        "who": "Eyes Set to Kill, Arizona eyaletinin Tempe kentinden amerikalı bir metalcore grubudur. Rodriguez kız kardeşler, lead gitarist Alexia ve bas gitarist Anissa, vokalist Lindsey Vogt ile birlikte grubu 2003 yılında kurdu.",
+        "facts": [
+          "Rodriguez kız kardeşler, lead gitarist Alexia ve bas gitarist Anissa, vokalist Lindsey Vogt ile birlikte grubu 2003 yılında kurdu.",
+          "Lindsey'nin ayrılmasının ardından Alexia, onun yerine hem baş vokalist hem de gitarist olarak görev üstlendi."
+        ]
+      }
+    }
+  ]
+}

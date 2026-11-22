@@ -1,0 +1,102 @@
+{
+ "city": "berlin",
+ "day": "2026-11-22",
+ "nights": [
+  {
+   "id": "718cfe85-0b5f-4bb9-a63e-850ace07f1dc",
+   "slug": "julia-wolf-deep-end-world-tour-2026-7c3c30be",
+   "title": "JULIA WOLF - Deep End World Tour 2026",
+   "name": "Julia Wolf",
+   "source_url": "https://en.wikipedia.org/wiki/Julia_Wolf_(musician)",
+   "extract": "Julia Jade Capello, known professionally as Julia Wolf, is an American singer. Known for her ethereal vocals and self-produced alt-pop sound, she blends elements of indie pop, alternative rock, and R&B. Capello gained early attention on TikTok before releasing her debut EP Girls in Purgatory (2021) and her studio albums Good Thing We Stayed (2023) and Pressure (2025).",
+   "en": {
+    "kicker": "American singer · debut EP, 2021",
+    "who": "Julia Jade Capello, known professionally as Julia Wolf, is an American singer. known for her ethereal vocals and self-produced alt-pop sound, she blends elements of indie pop, alternative rock, and R&B.",
+    "facts": [
+     "Capello gained early attention on TikTok before releasing her debut EP Girls in Purgatory (2021).",
+     "Her studio albums are Good Thing We Stayed (2023) and Pressure (2025)."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische Sängerin · Debüt-EP, 2021",
+    "who": "Julia Jade Capello, unter dem Künstlernamen Julia Wolf bekannt, ist eine amerikanische Sängerin. Bekannt für ihren ätherischen Gesang und ihren selbstproduzierten Alt-Pop-Sound, verbindet sie Elemente aus Indie-Pop, Alternative Rock und R&B.",
+    "facts": [
+     "Capello erhielt früh Aufmerksamkeit auf TikTok, bevor sie ihre Debüt-EP Girls in Purgatory (2021) veröffentlichte.",
+     "Zu ihren Studioalben gehören Good Thing We Stayed (2023) und Pressure (2025)."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı şarkıcı · ilk EP, 2021",
+    "who": "Julia Jade Capello, Julia Wolf adıyla profesyonel olarak tanınan bir amerikalı şarkıcıdır. Eterik vokalleri ve kendi yapımı alt-pop sesiyle bilinen Capello, indie pop, alternatif rock ve R&B öğelerini harmanlar.",
+    "facts": [
+     "Capello, ilk EP'si Girls in Purgatory'yi (2021) yayımlamadan önce TikTok'ta erken dönemde ilgi gördü.",
+     "Stüdyo albümleri arasında Good Thing We Stayed (2023) ve Pressure (2025) yer alıyor."
+    ]
+   }
+  },
+  {
+   "id": "62e54b19-4256-49b0-adda-ed3b34e80633",
+   "slug": "polyphia-be-not-afraid-world-tour-0fde0ee5",
+   "title": "Polyphia - BE NOT AFRAID World Tour",
+   "name": "Polyphia",
+   "source_url": "https://en.wikipedia.org/wiki/Polyphia",
+   "extract": "Polyphia is an American rock band based in Plano, Texas, formed in 2010. The group consists of guitarists Tim Henson and Scott LePage, bassist Clay Gober, and drummer Clay Aeschliman. Rooted in a heavy metal sound in their early releases, the band's music evolved into a more progressive rock style in their later productions, combining elements of electronic and hip-hop music. Polyphia has released five studio albums, one live record, two EPs, and numerous singles.",
+   "en": {
+    "kicker": "American rock band · formed 2010, Plano, Texas",
+    "who": "Polyphia is an American rock band based in Plano, Texas, formed in 2010. The group consists of guitarists Tim Henson and Scott LePage, bassist Clay Gober, and drummer Clay Aeschliman.",
+    "facts": [
+     "Rooted in a heavy metal sound in their early releases, the band's music evolved into a more progressive rock style in their later productions.",
+     "Polyphia has released five studio albums, one live record, two EPs, and numerous singles."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische Rockband · gegründet 2010, Plano, Texas",
+    "who": "Polyphia ist eine amerikanische Rockband mit Sitz in Plano, Texas, die 2010 gegründet wurde. Zur Gruppe gehören die Gitarristen Tim Henson und Scott LePage, der Bassist Clay Gober und der Schlagzeuger Clay Aeschliman.",
+    "facts": [
+     "In ihren frühen Veröffentlichungen basierte der Sound der Band auf Heavy Metal, in ihren späteren Produktionen entwickelte sich ihre Musik zu einem progressiveren Rockstil.",
+     "Polyphia hat fünf Studioalben, ein Livealbum, zwei EPs und zahlreiche Singles veröffentlicht."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı rock grubu · 2010, Plano, Texas",
+    "who": "Polyphia, 2010 yılında kurulan ve Plano, Texas merkezli amerikalı bir rock grubudur. Grubun üyeleri gitarist Tim Henson ve Scott LePage, basçı Clay Gober ve davulcu Clay Aeschliman'dır.",
+    "facts": [
+     "Erken dönem yapımlarında ağır metal sesine dayanan grubun müziği, sonraki çalışmalarında daha progresif bir rock tarzına evrildi.",
+     "Polyphia beş stüdyo albümü, bir canlı kayıt, iki EP ve çok sayıda single yayımladı."
+    ]
+   }
+  },
+  {
+   "id": "cecf23ab-76b9-4416-8274-c495f3cd60ce",
+   "slug": "beabadoobee-the-powerlines-tour-a0dc8746",
+   "title": "beabadoobee: The Powerlines Tour",
+   "name": "Beabadoobee",
+   "source_url": "https://en.wikipedia.org/wiki/Beabadoobee",
+   "extract": "Beatrice Kristi Ilejay Laus, known professionally as Beabadoobee, is a Filipino and British singer and songwriter. From 2018 to 2021, she released five extended plays (EPs) under the independent label Dirty Hit: Lice (2018), Patched Up (2018), Loveworm (2019), Space Cadet (2019) and Our Extended Play (2021). Her debut studio album Fake It Flowers was released in October 2020, and received critical acclaim. Her second studio album, Beatopia, was released on July 2022, and spawned the hit \"The Perfect Pair\". Her third studio album, This Is How Tomorrow Moves, was released in August 2024; it became her first album to peak atop the UK Albums Chart. In September 2026, her fourth studio album, Pyl",
+   "en": {
+    "kicker": "Filipino and British singer · debut album, 2020",
+    "who": "Beatrice Kristi Ilejay Laus, known professionally as Beabadoobee, is a Filipino and British singer and songwriter. From 2018 to 2021, she released five extended plays (EPs) under the independent label Dirty Hit.",
+    "facts": [
+     "Her debut studio album Fake It Flowers was released in October 2020, and received critical acclaim.",
+     "Her third studio album, This Is How Tomorrow Moves, was released in August 2024."
+    ]
+   },
+   "de": {
+    "kicker": "philippinisch-britische Sängerin · Debütalbum, 2020",
+    "who": "Beatrice Kristi Ilejay Laus, unter dem Künstlernamen Beabadoobee bekannt, ist eine philippinisch-britische Sängerin und Songwriterin. Von 2018 bis 2021 veröffentlichte sie fünf Extended Plays (EPs) beim unabhängigen Label Dirty Hit.",
+    "facts": [
+     "Ihr Debütalbum Fake It Flowers erschien im Oktober 2020 und erhielt viel Lob von der Kritik.",
+     "Ihr drittes Studioalbum This Is How Tomorrow Moves erschien im August 2024."
+    ]
+   },
+   "tr": {
+    "kicker": "filipinli ve İngiliz şarkıcı · ilk albüm, 2020",
+    "who": "Beatrice Kristi Ilejay Laus, Beabadoobee adıyla profesyonel olarak tanınan, filipinli ve İngiliz bir şarkıcı ve söz yazarıdır. 2018 ile 2021 arasında bağımsız plak şirketi Dirty Hit altında beş genişletilmiş plak (EP) yayımladı.",
+    "facts": [
+     "İlk stüdyo albümü Fake It Flowers, Ekim 2020'de yayımlandı ve eleştirmenlerden büyük beğeni topladı.",
+     "Üçüncü stüdyo albümü This Is How Tomorrow Moves, Ağustos 2024'te yayımlandı."
+    ]
+   }
+  }
+ ]
+}

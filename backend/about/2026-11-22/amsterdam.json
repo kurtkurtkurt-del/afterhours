@@ -1,0 +1,134 @@
+{
+  "city": "amsterdam",
+  "day": "2026-11-22",
+  "nights": [
+    {
+      "id": "6c9bba8c-65b2-493d-840b-3a926ff193f6",
+      "slug": "westlife-comfort-seats-5425c210",
+      "title": "Westlife | Comfort Seats",
+      "name": "Westlife",
+      "source_url": "https://en.wikipedia.org/wiki/Westlife",
+      "extract": "Westlife are an Irish pop group formed in Sligo in 1998. The group was originally known under the names '6as1' and 'I.O.YOU' with several other members. Westlife consists of members Nicky Byrne, Shane Filan, Kian Egan and Mark Feehily. Brian McFadden was a member of the band before leaving to pursue a solo career in March 2004. Mark Feehily is a member, but is temporarily away from the group due to health issues. The group disbanded in 2012 and later reunited in 2018.",
+      "en": {
+        "kicker": "Irish pop group · formed 1998, Sligo",
+        "who": "Westlife are an Irish pop group formed in Sligo in 1998. Westlife consists of members Nicky Byrne, Shane Filan, Kian Egan and Mark Feehily. Mark Feehily is a member, but is temporarily away from the group due to health issues.",
+        "facts": [
+          "The group disbanded in 2012 and later reunited in 2018.",
+          "Brian McFadden was a member of the band before leaving to pursue a solo career in March 2004."
+        ]
+      },
+      "de": {
+        "kicker": "Irische Popgruppe · gegründet 1998, Sligo",
+        "who": "Westlife sind eine irische Popgruppe, die 1998 in Sligo gegründet wurde. Zur Band gehören Nicky Byrne, Shane Filan, Kian Egan und Mark Feehily. Mark Feehily gehört zur Band, ist derzeit aber wegen gesundheitlicher Probleme vorübergehend nicht dabei.",
+        "facts": [
+          "Die Gruppe löste sich 2012 auf und fand 2018 wieder zusammen.",
+          "Brian McFadden war Mitglied der Band, bevor er im März 2004 ging, um eine Solokarriere zu verfolgen."
+        ]
+      },
+      "tr": {
+        "kicker": "İrlandalı pop grubu · 1998, Sligo",
+        "who": "Westlife, 1998 yılında Sligo'da kurulmuş İrlandalı bir pop grubudur. Grubun üyeleri Nicky Byrne, Shane Filan, Kian Egan ve Mark Feehily'dir. Mark Feehily üyedir, ancak sağlık sorunları nedeniyle geçici olarak gruptan uzaktadır.",
+        "facts": [
+          "Grup 2012'de dağıldı ve 2018'de yeniden bir araya geldi.",
+          "Brian McFadden, solo kariyer peşinde koşmak için Mart 2004'te ayrılmadan önce grubun üyesiydi."
+        ]
+      }
+    },
+    {
+      "id": "d9aceae0-47e6-4c46-afd8-448b02709073",
+      "slug": "westlife-vinyl-room-package-40dfad03",
+      "title": "Westlife | Vinyl Room Package",
+      "name": "Westlife",
+      "source_url": "https://en.wikipedia.org/wiki/Westlife",
+      "extract": "Westlife are an Irish pop group formed in Sligo in 1998. The group was originally known under the names '6as1' and 'I.O.YOU' with several other members. Westlife consists of members Nicky Byrne, Shane Filan, Kian Egan and Mark Feehily. Brian McFadden was a member of the band before leaving to pursue a solo career in March 2004. Mark Feehily is a member, but is temporarily away from the group due to health issues. The group disbanded in 2012 and later reunited in 2018.",
+      "en": {
+        "kicker": "Irish pop group · formed 1998, Sligo",
+        "who": "Westlife are an Irish pop group formed in Sligo in 1998. Westlife consists of members Nicky Byrne, Shane Filan, Kian Egan and Mark Feehily. Mark Feehily is a member, but is temporarily away from the group due to health issues.",
+        "facts": [
+          "The group disbanded in 2012 and later reunited in 2018.",
+          "Brian McFadden was a member of the band before leaving to pursue a solo career in March 2004."
+        ]
+      },
+      "de": {
+        "kicker": "Irische Popgruppe · gegründet 1998, Sligo",
+        "who": "Westlife sind eine irische Popgruppe, die 1998 in Sligo gegründet wurde. Zur Band gehören Nicky Byrne, Shane Filan, Kian Egan und Mark Feehily. Mark Feehily gehört zur Band, ist derzeit aber wegen gesundheitlicher Probleme vorübergehend nicht dabei.",
+        "facts": [
+          "Die Gruppe löste sich 2012 auf und fand 2018 wieder zusammen.",
+          "Brian McFadden war Mitglied der Band, bevor er im März 2004 ging, um eine Solokarriere zu verfolgen."
+        ]
+      },
+      "tr": {
+        "kicker": "İrlandalı pop grubu · 1998, Sligo",
+        "who": "Westlife, 1998 yılında Sligo'da kurulmuş İrlandalı bir pop grubudur. Grubun üyeleri Nicky Byrne, Shane Filan, Kian Egan ve Mark Feehily'dir. Mark Feehily üyedir, ancak sağlık sorunları nedeniyle geçici olarak gruptan uzaktadır.",
+        "facts": [
+          "Grup 2012'de dağıldı ve 2018'de yeniden bir araya geldi.",
+          "Brian McFadden, solo kariyer peşinde koşmak için Mart 2004'te ayrılmadan önce grubun üyesiydi."
+        ]
+      }
+    },
+    {
+      "id": "b26077b0-3bb6-4743-bfc4-22ac4461dfc5",
+      "slug": "swae-lee-166b8eb4",
+      "title": "Swae Lee",
+      "name": "Swae Lee",
+      "source_url": "https://en.wikipedia.org/wiki/Swae_Lee",
+      "extract": "Khalif Malik Ibn Shaman Brown, known professionally as Swae Lee, is an American rapper and singer from Inglewood, California. Known for his wide-ranged, reverb-heavy vocals and genre-blending, Lee is one half of the Mississippi-based hip-hop duo Rae Sremmurd, which he formed in 2010 with his older brother Slim Jxmmi.",
+      "en": {
+        "kicker": "American rapper and singer · Inglewood, California",
+        "who": "Khalif Malik Ibn Shaman Brown, known professionally as Swae Lee, is an American rapper and singer from Inglewood, California. Known for his wide-ranged, reverb-heavy vocals and genre-blending, Lee is one half of the Mississippi-based hip-hop duo Rae Sremmurd.",
+        "facts": [
+          "Lee is one half of the Mississippi-based hip-hop duo Rae Sremmurd.",
+          "Lee formed Rae Sremmurd in 2010 with his older brother Slim Jxmmi."
+        ]
+      },
+      "de": {
+        "kicker": "Amerikanischer Rapper und Sänger · Inglewood, California",
+        "who": "Khalif Malik Ibn Shaman Brown, professionell bekannt als Swae Lee, ist ein amerikanischer Rapper und Sänger aus Inglewood, California. Bekannt für seine weiten, halllastigen Vocals und seinen genreübergreifenden Stil, ist Lee die eine Hälfte des in Mississippi ansässigen Hip-Hop-Duos Rae Sremmurd.",
+        "facts": [
+          "Lee ist eine Hälfte des in Mississippi ansässigen Hip-Hop-Duos Rae Sremmurd.",
+          "Lee gründete Rae Sremmurd 2010 mit seinem älteren Bruder Slim Jxmmi."
+        ]
+      },
+      "tr": {
+        "kicker": "Amerikalı rapçi ve şarkıcı · Inglewood, California",
+        "who": "Khalif Malik Ibn Shaman Brown, profesyonel olarak Swae Lee adıyla tanınır; California'nın Inglewood şehrinden bir Amerikalı rapçi ve şarkıcıdır. Geniş vokal aralığı ve yankı ağırlıklı sesiyle bilinen Lee, Mississippi merkezli hip-hop ikilisi Rae Sremmurd'un yarısıdır.",
+        "facts": [
+          "Lee, Mississippi merkezli hip-hop ikilisi Rae Sremmurd'un yarısıdır.",
+          "Lee, Rae Sremmurd'u 2010 yılında ağabeyi Slim Jxmmi ile birlikte kurmuştur."
+        ]
+      }
+    },
+    {
+      "id": "670e4bdb-a2cc-45ff-806e-b26eb45ac6bd",
+      "slug": "kingfishr-6c718629",
+      "title": "Kingfishr",
+      "name": "Kingfishr",
+      "source_url": "https://en.wikipedia.org/wiki/Kingfishr",
+      "extract": "Kingfishr are an Irish indie folk group formed in Letterkenny Co Donegal in 2022 comprising members Eddie Keogh, Eoghan \"McGoo\" McGrath, and Eoin \"Fitz\" Fitzgibbon. The band's breakout success was their song \"Killeagh\", which reached number one on the Irish Singles Chart on 2 May 2025. Their debut studio album Halcyon was released in August 2025. The group's second studio album Weight of the Feather is scheduled for release in April 2027.",
+      "en": {
+        "kicker": "Irish indie folk group · formed 2022, Letterkenny",
+        "who": "Kingfishr are an Irish indie folk group formed in Letterkenny Co Donegal in 2022. The group comprises members Eddie Keogh, Eoghan \"McGoo\" McGrath, and Eoin \"Fitz\" Fitzgibbon.",
+        "facts": [
+          "The band's breakout success was their song \"Killeagh\", which reached number one on the Irish Singles Chart on 2 May 2025.",
+          "Their debut studio album Halcyon was released in August 2025."
+        ]
+      },
+      "de": {
+        "kicker": "Irische Indie-Folk-Gruppe · gegründet 2022, Letterkenny",
+        "who": "Kingfishr sind eine irische Indie-Folk-Gruppe, die 2022 in Letterkenny, Co Donegal, gegründet wurde. Zur Gruppe gehören Eddie Keogh, Eoghan \"McGoo\" McGrath und Eoin \"Fitz\" Fitzgibbon.",
+        "facts": [
+          "Der Durchbruch der Band war ihr Song \"Killeagh\", der am 2. Mai 2025 Platz eins der irischen Singles-Charts erreichte.",
+          "Ihr Debütalbum Halcyon erschien im August 2025."
+        ]
+      },
+      "tr": {
+        "kicker": "İrlandalı indie folk grubu · 2022, Letterkenny",
+        "who": "Kingfishr, 2022 yılında Letterkenny, Co Donegal'de kurulmuş İrlandalı bir indie folk grubudur. Grubun üyeleri Eddie Keogh, Eoghan \"McGoo\" McGrath ve Eoin \"Fitz\" Fitzgibbon'dır.",
+        "facts": [
+          "Grubun çıkış başarısı, 2 Mayıs 2025'te İrlanda Single Listesi'nde birinci sıraya yükselen \"Killeagh\" adlı şarkısı oldu.",
+          "Debut stüdyo albümleri Halcyon, Ağustos 2025'te yayımlandı."
+        ]
+      }
+    }
+  ]
+}

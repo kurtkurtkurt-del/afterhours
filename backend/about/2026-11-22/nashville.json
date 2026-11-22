@@ -1,0 +1,70 @@
+{
+  "city": "nashville",
+  "day": "2026-11-22",
+  "nights": [
+    {
+      "id": "9f596bef-9e43-40a6-8e0a-843a923aaa4c",
+      "slug": "blue-october-0aa0a6fc",
+      "title": "Blue October",
+      "name": "Blue October",
+      "source_url": "https://en.wikipedia.org/wiki/Blue_October",
+      "extract": "Blue October is an American rock band originally from Houston, Texas, formed in 1995. It currently consists of singer/guitarist Justin Furstenfeld, drummer Jeremy Furstenfeld, multi-instrumentalist Ryan Delahoussaye, bassist Matt Noveskey, and lead guitarist Will Knaak.",
+      "en": {
+        "kicker": "american rock band · formed 1995, houston, texas",
+        "who": "Blue October is an American rock band originally from Houston, Texas, formed in 1995. It currently consists of singer/guitarist Justin Furstenfeld, drummer Jeremy Furstenfeld, multi-instrumentalist Ryan Delahoussaye, bassist Matt Noveskey, and lead guitarist Will Knaak.",
+        "facts": [
+          "the band is originally from Houston, Texas.",
+          "it currently consists of singer/guitarist Justin Furstenfeld, drummer Jeremy Furstenfeld, multi-instrumentalist Ryan Delahoussaye, bassist Matt Noveskey, and lead guitarist Will Knaak."
+        ]
+      },
+      "de": {
+        "kicker": "Amerikanische Rockband · gegründet 1995, Houston, Texas",
+        "who": "Blue October ist eine amerikanische Rockband, die ursprünglich aus Houston, Texas stammt und 1995 gegründet wurde. Derzeit besteht sie aus Sänger und Gitarrist Justin Furstenfeld, Schlagzeuger Jeremy Furstenfeld, Multiinstrumentalist Ryan Delahoussaye, Bassist Matt Noveskey und Leadgitarrist Will Knaak.",
+        "facts": [
+          "Die Band stammt ursprünglich aus Houston, Texas.",
+          "Sie besteht derzeit aus Sänger und Gitarrist Justin Furstenfeld, Schlagzeuger Jeremy Furstenfeld, Multiinstrumentalist Ryan Delahoussaye, Bassist Matt Noveskey und Leadgitarrist Will Knaak."
+        ]
+      },
+      "tr": {
+        "kicker": "Amerikalı rock grubu · 1995'te kuruldu, Houston, Texas",
+        "who": "Blue October, aslen Houston, Texas'tan olan Amerikalı bir rock grubudur ve 1995'te kurulmuştur. Grup şu anda şarkıcı ve gitarist Justin Furstenfeld, davulcu Jeremy Furstenfeld, çok enstrümanlı müzisyen Ryan Delahoussaye, basçı Matt Noveskey ve baş gitarist Will Knaak'tan oluşmaktadır.",
+        "facts": [
+          "Grup aslen Houston, Texas'tan gelmektedir.",
+          "Grup şu anda şarkıcı ve gitarist Justin Furstenfeld, davulcu Jeremy Furstenfeld, çok enstrümanlı müzisyen Ryan Delahoussaye, basçı Matt Noveskey ve baş gitarist Will Knaak'tan oluşmaktadır."
+        ]
+      }
+    },
+    {
+      "id": "a25d0bf0-8179-445c-8bfa-9321a7d23ad9",
+      "slug": "brett-eldredge-bad0f83a",
+      "title": "Brett Eldredge",
+      "name": "Brett Eldredge",
+      "source_url": "https://en.wikipedia.org/wiki/Brett_Eldredge",
+      "extract": "Brett Ryan Eldredge is an American country music singer, songwriter and record producer. Eldredge has had five No. 1 singles on the Billboard Country Airplay chart, three of which came from his debut album, Bring You Back: \"Don't Ya\", \"Beat of the Music\", and \"Mean to Me\".",
+      "en": {
+        "kicker": "american country music singer · record producer",
+        "who": "Brett Ryan Eldredge is an American country music singer, songwriter and record producer. His debut album is Bring You Back.",
+        "facts": [
+          "Eldredge has had five No. 1 singles on the Billboard Country Airplay chart.",
+          "three of which came from his debut album, Bring You Back: \"Don't Ya\", \"Beat of the Music\", and \"Mean to Me\"."
+        ]
+      },
+      "de": {
+        "kicker": "Amerikanischer Country-Sänger · Musikproduzent",
+        "who": "Brett Ryan Eldredge ist ein amerikanischer Country-Sänger, Songwriter und Musikproduzent. Sein Debütalbum heißt Bring You Back.",
+        "facts": [
+          "Eldredge hatte fünf Nummer-eins-Singles in den Billboard Country Airplay Charts.",
+          "Drei davon stammten von seinem Debütalbum Bring You Back: \"Don't Ya\", \"Beat of the Music\" und \"Mean to Me\"."
+        ]
+      },
+      "tr": {
+        "kicker": "Amerikalı country müzik şarkıcısı · plak yapımcısı",
+        "who": "Brett Ryan Eldredge, Amerikalı bir country müzik şarkıcısı, söz yazarı ve plak yapımcısıdır. İlk albümü Bring You Back'tir.",
+        "facts": [
+          "Eldredge'in Billboard Country Airplay listesinde beş adet 1 numaralı single'ı olmuştur.",
+          "Bunlardan üçü ilk albümü Bring You Back'ten gelmiştir: \"Don't Ya\", \"Beat of the Music\" ve \"Mean to Me\"."
+        ]
+      }
+    }
+  ]
+}

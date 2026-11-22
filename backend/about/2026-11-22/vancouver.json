@@ -1,0 +1,70 @@
+{
+ "city": "vancouver",
+ "day": "2026-11-22",
+ "nights": [
+  {
+   "id": "7a17cbfb-95fc-4d26-9683-7e05874ccf1c",
+   "slug": "tyson-yoshi-c0ca7416",
+   "title": "TYSON YOSHI",
+   "name": "Tyson Yoshi",
+   "source_url": "https://en.wikipedia.org/wiki/Tyson_Yoshi",
+   "extract": "Ben Cheng Tsun Yin, better known by his stage name Tyson Yoshi, is a Hong Kong singer-songwriter, and MV director. He made his debut in 2018 with his single \"To My Queen\".",
+   "en": {
+    "kicker": "Hong Kong singer-songwriter · debut 2018",
+    "who": "Tyson Yoshi is the stage name of Ben Cheng Tsun Yin. He is a Hong Kong singer-songwriter and MV director.",
+    "facts": [
+     "Ben Cheng Tsun Yin, better known by his stage name Tyson Yoshi, is a Hong Kong singer-songwriter, and MV director.",
+     "He made his debut in 2018 with his single \"To My Queen\"."
+    ]
+   },
+   "de": {
+    "kicker": "hongkonger singer-songwriter · debüt 2018",
+    "who": "Tyson Yoshi ist der künstlername von Ben Cheng Tsun Yin. er ist ein hongkonger singer-songwriter und mv-regisseur.",
+    "facts": [
+     "Ben Cheng Tsun Yin, besser bekannt unter seinem künstlernamen Tyson Yoshi, ist ein hongkonger singer-songwriter und mv-regisseur.",
+     "er gab sein debüt 2018 mit der single \"To My Queen\"."
+    ]
+   },
+   "tr": {
+    "kicker": "Hong Kong'lu singer-songwriter · 2018'de debüt",
+    "who": "Tyson Yoshi, Ben Cheng Tsun Yin'in sahne adıdır. Hong Kong'lu bir singer-songwriter ve mv yönetmenidir.",
+    "facts": [
+     "Sahne adı Tyson Yoshi olan Ben Cheng Tsun Yin, bir Hong Kong'lu singer-songwriter ve mv yönetmenidir.",
+     "2018'de \"To My Queen\" adlı single'ıyla debüt yaptı."
+    ]
+   }
+  },
+  {
+   "id": "ae8075be-7cb0-4c63-9fad-c7814422cb1a",
+   "slug": "andrew-bayer-95963749",
+   "title": "Andrew Bayer",
+   "name": "Andrew Bayer",
+   "source_url": "https://en.wikipedia.org/wiki/Andrew_Bayer",
+   "extract": "Andrew Michael Bayer is an American DJ and Grammy-nominated music producer. He is best known for working with Anjunabeats as a multi-genre artist and English deep house sublabel Anjunadeep.",
+   "en": {
+    "kicker": "American dj and producer · Anjunabeats",
+    "who": "Andrew Michael Bayer is an American dj and Grammy-nominated music producer. He has worked with Anjunabeats as a multi-genre artist.",
+    "facts": [
+     "Andrew Michael Bayer is an American DJ and Grammy-nominated music producer.",
+     "He is best known for working with Anjunabeats as a multi-genre artist and English deep house sublabel Anjunadeep."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer dj und produzent · Anjunabeats",
+    "who": "Andrew Michael Bayer ist ein amerikanischer dj und Grammy-nominierter musikproduzent. er hat als multi-genre-künstler mit Anjunabeats gearbeitet.",
+    "facts": [
+     "Andrew Michael Bayer ist ein amerikanischer dj und Grammy-nominierter musikproduzent.",
+     "er ist vor allem für seine arbeit mit Anjunabeats als multi-genre-künstler und mit Anjunadeep, dem englischen deep-house-sublabel, bekannt."
+    ]
+   },
+   "tr": {
+    "kicker": "Amerikalı dj ve prodüktör · Anjunabeats",
+    "who": "Andrew Michael Bayer amerikalı bir dj ve müzik prodüktörüdür. Anjunabeats ile çok türlü bir sanatçı olarak çalışmıştır.",
+    "facts": [
+     "Andrew Michael Bayer, amerikalı bir dj ve Grammy'ye aday gösterilmiş bir müzik prodüktörüdür.",
+     "en çok Anjunabeats ile çok türlü bir sanatçı olarak, İngiliz deep house alt etiketi Anjunadeep ile de çalışmasıyla tanınır."
+    ]
+   }
+  }
+]
+}

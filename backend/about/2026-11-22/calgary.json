@@ -1,0 +1,102 @@
+{
+  "city": "calgary",
+  "day": "2026-11-22",
+  "nights": [
+    {
+      "id": "85531968-b7ea-434c-b341-3b7007b39618",
+      "slug": "jacques-greene-jg-tour-7d923616",
+      "title": "Jacques Greene - JG Tour",
+      "name": "Jacques Greene",
+      "source_url": "https://en.wikipedia.org/wiki/Jacques_Greene",
+      "extract": "Philippe Aubin-Dionne, better known by the stage name Jacques Greene, is a Canadian electronic musician based in Toronto. He has released music on the LuckyMe and Night Slugs labels and co-owns Vase Records.",
+      "en": {
+        "kicker": "canadian electronic musician · Toronto",
+        "who": "Philippe Aubin-Dionne, better known by the stage name Jacques Greene, is a Canadian electronic musician based in Toronto. He has released music on the LuckyMe and Night Slugs labels and co-owns Vase Records.",
+        "facts": [
+          "He has released music on the LuckyMe and Night Slugs labels.",
+          "He co-owns Vase Records."
+        ]
+      },
+      "de": {
+        "kicker": "kanadischer elektronischer musiker · Toronto",
+        "who": "Philippe Aubin-Dionne, besser bekannt unter dem künstlernamen Jacques Greene, ist ein kanadischer elektronischer musiker mit sitz in Toronto. er hat musik auf den labels LuckyMe und Night Slugs veröffentlicht und ist mitbesitzer von Vase Records.",
+        "facts": [
+          "er hat musik auf den labels LuckyMe und Night Slugs veröffentlicht.",
+          "er ist mitbesitzer von Vase Records."
+        ]
+      },
+      "tr": {
+        "kicker": "kanadalı elektronik müzisyen · Toronto",
+        "who": "Philippe Aubin-Dionne, Jacques Greene sahne adıyla tanınan, Toronto merkezli kanadalı bir elektronik müzisyendir. LuckyMe ve Night Slugs etiketlerinde müzik yayımladı ve Vase Records'un ortak sahibidir.",
+        "facts": [
+          "LuckyMe ve Night Slugs etiketlerinde müzik yayımladı.",
+          "Vase Records'un ortak sahibidir."
+        ]
+      }
+    },
+    {
+      "id": "fee50b38-e0fb-473a-bded-81b6686a5176",
+      "slug": "hilary-duff-the-lucky-me-tour-610416fd",
+      "title": "Hilary Duff: the lucky me tour",
+      "name": "Hilary Duff",
+      "source_url": "https://en.wikipedia.org/wiki/Hilary_Duff",
+      "extract": "Hilary Erhard Duff is an American actress, singer-songwriter, businesswoman, and author. Duff began her acting career at a young age, and was soon labeled a teen idol after playing the title character in the Disney Channel comedy series Lizzie McGuire (2001–2004) and the film based on the series, The Lizzie McGuire Movie (2003). Thereafter, she appeared in numerous mainstream films such as Cadet Kelly (2002), Agent Cody Banks (2003), Cheaper by the Dozen (2003), A Cinderella Story (2004), and Cheaper by the Dozen 2 (2005).\nIn 2026, Time named her one of the 100 most influential people in the world.",
+      "en": {
+        "kicker": "american actress and singer-songwriter · Disney Channel",
+        "who": "Hilary Erhard Duff is an American actress, singer-songwriter, businesswoman, and author. She began her acting career at a young age.",
+        "facts": [
+          "She was soon labeled a teen idol after playing the title character in the Disney Channel comedy series Lizzie McGuire (2001–2004).",
+          "Thereafter, she appeared in numerous mainstream films such as Cadet Kelly (2002), Agent Cody Banks (2003), Cheaper by the Dozen (2003), A Cinderella Story (2004), and Cheaper by the Dozen 2 (2005)."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische schauspielerin und sängerin · Disney Channel",
+        "who": "Hilary Erhard Duff ist eine amerikanische schauspielerin, singer-songwriterin, geschäftsfrau und autorin. sie begann schon in jungen jahren mit der schauspielerei.",
+        "facts": [
+          "sie wurde bald als teen-idol bezeichnet, nachdem sie die titelfigur in der disney-channel-comedyserie lizzie mcguire (2001–2004) gespielt hatte.",
+          "danach trat sie in zahlreichen mainstream-filmen auf, darunter cadet kelly (2002), agent cody banks (2003), cheaper by the dozen (2003), a cinderella story (2004) und cheaper by the dozen 2 (2005)."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı oyuncu ve şarkıcı · Disney Channel",
+        "who": "Hilary Erhard Duff amerikalı bir oyuncu, şarkıcı-söz yazarı, iş kadını ve yazardır. oyunculuk kariyerine küçük yaşta başladı.",
+        "facts": [
+          "disney channel komedi dizisi Lizzie McGuire'da (2001–2004) ana karakteri canlandırdıktan sonra genç bir idol olarak anıldı.",
+          "bunun ardından Cadet Kelly (2002), Agent Cody Banks (2003), Cheaper by the Dozen (2003), A Cinderella Story (2004) ve Cheaper by the Dozen 2 (2005) gibi birçok ana akım filmde yer aldı."
+        ]
+      }
+    },
+    {
+      "id": "256024d4-e556-40fe-945d-c09e5922f403",
+      "slug": "men-without-hats-ccb854d2",
+      "title": "Men Without Hats",
+      "name": "Men Without Hats",
+      "source_url": "https://en.wikipedia.org/wiki/Men_Without_Hats",
+      "extract": "Men Without Hats are a Canadian new wave and synth-pop band, originally from Montreal, Quebec. Their music is characterized by the baritone voice of their lead singer Ivan Doroschuk, as well as their elaborate use of synthesizers and electronic processing. The band achieved their greatest popularity in the 1980s with \"The Safety Dance\", a worldwide top ten hit, and \"Pop Goes the World\".",
+      "en": {
+        "kicker": "canadian new wave and synth-pop band · Montreal",
+        "who": "Men Without Hats are a Canadian new wave and synth-pop band, originally from Montreal, Quebec. Their lead singer is Ivan Doroschuk.",
+        "facts": [
+          "Their music is characterized by the baritone voice of their lead singer Ivan Doroschuk, as well as their elaborate use of synthesizers and electronic processing.",
+          "The band achieved their greatest popularity in the 1980s with \"The Safety Dance\", a worldwide top ten hit, and \"Pop Goes the World\"."
+        ]
+      },
+      "de": {
+        "kicker": "kanadische new-wave- und synth-pop-band · Montreal",
+        "who": "Men Without Hats sind eine kanadische new-wave- und synth-pop-band aus Montreal, Quebec. ihr leadsänger ist Ivan Doroschuk.",
+        "facts": [
+          "ihre musik zeichnet sich durch die bariton-stimme ihres leadsängers Ivan Doroschuk aus, sowie durch ihren aufwendigen einsatz von synthesizern und elektronischer klangbearbeitung.",
+          "die band erreichte ihre größte popularität in den 1980er jahren mit \"The Safety Dance\", einem weltweiten top-ten-hit, und \"Pop Goes the World\"."
+        ]
+      },
+      "tr": {
+        "kicker": "kanadalı new wave ve synth-pop grubu · Montreal",
+        "who": "Men Without Hats, Montreal, Quebec kökenli kanadalı bir new wave ve synth-pop grubudur. grubun ön vokalisti Ivan Doroschuk'tur.",
+        "facts": [
+          "müzikleri, ön vokalist Ivan Doroschuk'un bariton sesi ve sentezleyicilerin ile elektronik işlemenin ayrıntılı kullanımıyla karakterize edilir.",
+          "grup, 1980'lerde dünya çapında bir top ten hiti olan \"The Safety Dance\" ve \"Pop Goes the World\" ile en büyük popülerliğine ulaştı."
+        ]
+      }
+    }
+  ]
+}

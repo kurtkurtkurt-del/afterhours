@@ -1,0 +1,38 @@
+{
+  "city": "warszawa",
+  "day": "2026-11-22",
+  "nights": [
+    {
+      "id": "f16be706-cd72-4f45-b4ae-b6d60c887294",
+      "slug": "seb-lowe-c15e2806",
+      "title": "Seb Lowe",
+      "name": "Seb Lowe",
+      "source_url": "https://en.wikipedia.org/wiki/Seb_Lowe",
+      "extract": "Sebastian Lowe is an English singer-songwriter from Saddleworth, Greater Manchester. He is known for incorporating politics into his music, having started out uploading videos of his songs to TikTok.",
+      "en": {
+        "kicker": "English singer-songwriter · Saddleworth",
+        "who": "Sebastian Lowe is an English singer-songwriter from Saddleworth, Greater Manchester. he is known for incorporating politics into his music. he started out uploading videos of his songs to TikTok.",
+        "facts": [
+          "he is known for incorporating politics into his music.",
+          "he started out uploading videos of his songs to TikTok."
+        ]
+      },
+      "de": {
+        "kicker": "englischer Singer-Songwriter · Saddleworth",
+        "who": "Sebastian Lowe ist ein englischer Singer-Songwriter aus Saddleworth, Greater Manchester. Er ist dafür bekannt, Politik in seine Musik einzubauen. Er hat damit angefangen, Videos seiner Songs auf TikTok hochzuladen.",
+        "facts": [
+          "Er ist dafür bekannt, Politik in seine Musik einzubauen.",
+          "Er hat damit angefangen, Videos seiner Songs auf TikTok hochzuladen."
+        ]
+      },
+      "tr": {
+        "kicker": "İngiliz şarkıcı ve söz yazarı · Saddleworth",
+        "who": "Sebastian Lowe, Saddleworth, Greater Manchester'dan İngiliz bir şarkıcı ve söz yazarıdır. Müziğine siyaset katmasıyla tanınır. Şarkılarının videolarını TikTok'a yükleyerek başlamıştır.",
+        "facts": [
+          "Müziğine siyaset katmasıyla tanınır.",
+          "Şarkılarının videolarını TikTok'a yükleyerek başlamıştır."
+        ]
+      }
+    }
+  ]
+}

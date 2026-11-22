@@ -1,0 +1,70 @@
+{
+  "city": "zurich",
+  "day": "2026-11-22",
+  "nights": [
+    {
+      "id": "2ff4bedc-0988-4acf-958e-47d4912efdba",
+      "slug": "thundermother-f57ec4ba",
+      "title": "Thundermother",
+      "name": "Thundermother",
+      "source_url": "https://en.wikipedia.org/wiki/Thundermother",
+      "extract": "Thundermother is an all-female Swedish hard rock band founded by Filippa Nässil and Moa Munoz in Växjö 2009. The band has toured with Scorpions across Europe and North America, played with Kiss, Danish rock band D-A-D and Swedish rock band Backyard Babies. Thundermother has produced seven albums, the first album Rock'N'Roll Disaster came out in 2014 and the latest album Dirty and Divine was released February 2025.",
+      "en": {
+        "kicker": "all-female swedish hard rock band · växjö, 2009",
+        "who": "thundermother is an all-female swedish hard rock band. it was founded by filippa nässil and moa munoz in växjö in 2009. the band has produced seven albums.",
+        "facts": [
+          "the band has toured with scorpions across europe and north america.",
+          "the first album rock'n'roll disaster came out in 2014."
+        ]
+      },
+      "de": {
+        "kicker": "rein weibliche schwedische hard-rock-band · växjö, 2009",
+        "who": "Thundermother ist eine rein weibliche schwedische Hard-Rock-Band. Sie wurde 2009 in Växjö von Filippa Nässil und Moa Munoz gegründet. Die Band hat bislang sieben Alben veröffentlicht.",
+        "facts": [
+          "Die Band ist mit Scorpions durch Europa und Nordamerika getourt.",
+          "Das erste Album Rock'N'Roll Disaster erschien 2014."
+        ]
+      },
+      "tr": {
+        "kicker": "tamamen kadın İsveçli hard rock grubu · växjö, 2009",
+        "who": "Thundermother, tamamen kadınlardan oluşan bir İsveç hard rock grubudur. Grup, 2009 yılında Växjö'de Filippa Nässil ve Moa Munoz tarafından kurulmuştur. Grup şimdiye kadar yedi albüm yayımlamıştır.",
+        "facts": [
+          "Grup, Scorpions ile Avrupa ve Kuzey Amerika'da tur yapmıştır.",
+          "İlk albümleri Rock'N'Roll Disaster 2014 yılında çıkmıştır."
+        ]
+      }
+    },
+    {
+      "id": "df52f7d7-6790-4afd-9bef-e2ecdfb7c285",
+      "slug": "fimiguerrero-b12d32c8",
+      "title": "Fimiguerrero",
+      "name": "Fimiguerrero",
+      "source_url": "https://en.wikipedia.org/wiki/Fimiguerrero",
+      "extract": "Fimihan Uthman Akinola, better known as Fimiguerrero, is a British-Nigerian rapper. A member of the UK underground rap scene, he has released multiple mixtapes, including Conglomerate, a collaboration with Lancey Foux and Len. Akinola's music has been described as a blend of rage and \"eclectic hyper-jerk\".",
+      "en": {
+        "kicker": "british-nigerian rapper · uk underground rap scene",
+        "who": "fimihan uthman akinola, better known as fimiguerrero, is a british-nigerian rapper. he is a member of the uk underground rap scene. his music has been described as a blend of rage and \"eclectic hyper-jerk\".",
+        "facts": [
+          "he has released multiple mixtapes, including conglomerate, a collaboration with lancey foux and len.",
+          "akinola's music has been described as a blend of rage and \"eclectic hyper-jerk\"."
+        ]
+      },
+      "de": {
+        "kicker": "britisch-nigerianischer rapper · uk-underground-szene",
+        "who": "Fimihan Uthman Akinola, besser bekannt als Fimiguerrero, ist ein britisch-nigerianischer Rapper. Er gehört zur britischen Underground-Rapszene. Seine Musik wird als Mischung aus Rage und „eclectic hyper-jerk“ beschrieben.",
+        "facts": [
+          "Er hat mehrere Mixtapes veröffentlicht, darunter Conglomerate, eine Zusammenarbeit mit Lancey Foux und Len.",
+          "Seine Musik wird als Mischung aus Rage und „eclectic hyper-jerk“ beschrieben."
+        ]
+      },
+      "tr": {
+        "kicker": "Britanyalı-Nijeryalı rapçi · UK underground rap sahnesi",
+        "who": "Fimihan Uthman Akinola, Fimiguerrero adıyla tanınan Britanyalı-Nijeryalı bir rapçidir. UK underground rap sahnesinin bir üyesidir. Müziği, rage ile „eclectic hyper-jerk“ karışımı olarak tanımlanmaktadır.",
+        "facts": [
+          "Conglomerate dahil birden fazla mixtape yayımlamıştır; bu, Lancey Foux ve Len ile bir işbirliğidir.",
+          "Müziği, rage ile „eclectic hyper-jerk“ karışımı olarak tanımlanmıştır."
+        ]
+      }
+    }
+  ]
+}

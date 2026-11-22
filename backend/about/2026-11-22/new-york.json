@@ -1,0 +1,70 @@
+{
+ "city": "new-york",
+ "day": "2026-11-22",
+ "nights": [
+  {
+   "id": "51be5bb3-e793-4b55-ac4b-e82a8532dad5",
+   "slug": "tiny-habits-5da32041",
+   "title": "Tiny Habits",
+   "name": "Tiny Habits",
+   "source_url": "https://en.wikipedia.org/wiki/Tiny_Habits",
+   "extract": "Tiny Habits is an American folk-pop music group formed in Boston in 2022. The trio consists of Berklee College of Music alumni Cinya Khan, Maya Rae, and Judah Mayowa. Their first EP, Tiny Things, was released in April 2023. Their debut studio album All For Something was released in May 2024. Their second album Keepers came out in August 2026.",
+   "en": {
+    "kicker": "American folk-pop trio · formed in Boston, 2022",
+    "who": "tiny habits is an American folk-pop music group formed in Boston in 2022. the trio consists of Berklee College of Music alumni Cinya Khan, Maya Rae, and Judah Mayowa.",
+    "facts": [
+     "their debut studio album All For Something was released in May 2024.",
+     "their second album Keepers came out in August 2026."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanisches folk-pop-trio · gegründet in Boston, 2022",
+    "who": "tiny habits ist eine amerikanische folk-pop-musikgruppe, die 2022 in Boston gegründet wurde. das trio besteht aus Cinya Khan, Maya Rae und Judah Mayowa, die alle drei ehemalige studierende des Berklee College of Music sind.",
+    "facts": [
+     "ihr debütalbum All For Something erschien im mai 2024.",
+     "ihr zweites album Keepers erschien im august 2026."
+    ]
+   },
+   "tr": {
+    "kicker": "Amerikalı folk-pop üçlüsü · 2022'de Boston'da kuruldu",
+    "who": "tiny habits, 2022'de Boston'da kurulmuş bir Amerikalı folk-pop müzik grubudur. üçlü, cinya khan, maya rae ve judah mayowa'dan oluşuyor ve üçü de Berklee College of Music mezunudur.",
+    "facts": [
+     "debut stüdyo albümleri All For Something, mayıs 2024'te yayımlandı.",
+     "ikinci albümleri Keepers, ağustos 2026'da çıktı."
+    ]
+   }
+  },
+  {
+   "id": "90feb2b4-5131-45c3-953f-6915045db25e",
+   "slug": "buena-vista-social-club-79836365",
+   "title": "Buena Vista Social Club",
+   "name": "Buena Vista Social Club",
+   "source_url": "https://en.wikipedia.org/wiki/Buena_Vista_Social_Club",
+   "extract": "Buena Vista Social Club was a musical ensemble primarily made up of Cuban musicians, formed in 1996. The project was organized by World Circuit executive Nick Gold, produced by American guitarist Ry Cooder and directed by Juan de Marcos González. They named the group after the members' club of the same name in the Buenavista quarter of Havana, a popular music venue in the 1940s. To showcase the popular styles of the time, such as son, bolero and danzón, they recruited a dozen veteran musicians, some of whom had been retired for many years.",
+   "en": {
+    "kicker": "Cuban musical ensemble · formed in 1996",
+    "who": "buena vista social club was a musical ensemble made up primarily of Cuban musicians, formed in 1996. the project was organized by World Circuit executive Nick Gold, produced by American guitarist Ry Cooder and directed by Juan de Marcos González.",
+    "facts": [
+     "they named the group after the members' club of the same name in the Buenavista quarter of Havana.",
+     "they recruited a dozen veteran musicians, some of whom had been retired for many years."
+    ]
+   },
+   "de": {
+    "kicker": "kubanisches musikensemble · gegründet 1996",
+    "who": "Buena Vista Social Club war ein musikensemble, das überwiegend aus kubanischen musikern bestand und 1996 gegründet wurde. das projekt wurde von der World-Circuit-führungskraft Nick Gold organisiert, vom amerikanischen gitarristen Ry Cooder produziert und von Juan de Marcos González geleitet.",
+    "facts": [
+     "sie benannten die gruppe nach dem gleichnamigen club der mitglieder im viertel Buenavista in Havanna.",
+     "sie holten ein dutzend erfahrener musiker, von denen einige seit vielen jahren im ruhestand waren."
+    ]
+   },
+   "tr": {
+    "kicker": "Kübalı müzik topluluğu · 1996'da kuruldu",
+    "who": "Buena Vista Social Club, ağırlıklı olarak Kübalı müzisyenlerden oluşan bir müzik topluluğuydu ve 1996'da kuruldu. proje, World Circuit yöneticisi Nick Gold tarafından organize edildi, Amerikalı gitarist Ry Cooder tarafından yapımcılığı üstlenildi ve Juan de Marcos González tarafından yönetildi.",
+    "facts": [
+     "grubun adı, üyelerin Havana'nın Buenavista semtindeki aynı adlı kulübünden geliyor.",
+     "on iki kadar deneyimli müzisyen topladılar; bunların bazıları uzun yıllardır emekli durumdaydı."
+    ]
+   }
+  }
+ ]
+}

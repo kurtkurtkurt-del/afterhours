@@ -1,0 +1,102 @@
+{
+  "city": "manchester",
+  "day": "2026-11-22",
+  "nights": [
+    {
+      "id": "106b1718-7140-4820-8f84-9cbec6b6cd02",
+      "slug": "piri-8d108219",
+      "title": "PIRI",
+      "name": "Piri",
+      "source_url": "https://en.wikipedia.org/wiki/Piri",
+      "extract": "Sophie McBurnie, known professionally as Piri, is an English musician. Raised in Rochdale, Greater Manchester, she was half of the duo Piri & Tommy, who appeared on multiple \"ones to watch\" lists between November 2022 and January 2023 including the BBC's Sound of 2023, and an original member of the female and genderqueer collective Loud LDN. She also co-wrote the Illit song \"Magnetic\" and has been named as an influence by Caity Baser.",
+      "en": {
+        "kicker": "English musician · Rochdale, Greater Manchester",
+        "who": "Sophie McBurnie, known professionally as Piri, is an English musician. Raised in Rochdale, Greater Manchester, she was half of the duo Piri & Tommy. She also co-wrote the Illit song \"Magnetic\".",
+        "facts": [
+          "She was half of the duo Piri & Tommy, who appeared on multiple \"ones to watch\" lists between November 2022 and January 2023.",
+          "She also co-wrote the Illit song \"Magnetic\"."
+        ]
+      },
+      "de": {
+        "kicker": "englische musikerin · Rochdale, Greater Manchester",
+        "who": "Sophie McBurnie, bekannt als Piri, ist eine englische musikerin. Sie wuchs in Rochdale, Greater Manchester, auf und war die hälfte des duos Piri & Tommy. Außerdem schrieb sie den Illit-song \"Magnetic\" mit.",
+        "facts": [
+          "Sie war die hälfte des duos Piri & Tommy, das zwischen november 2022 und januar 2023 auf mehreren \"ones to watch\"-listen stand.",
+          "Sie schrieb außerdem den Illit-song \"Magnetic\" mit."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz müzisyen · Rochdale, Greater Manchester",
+        "who": "Sophie McBurnie, Piri adıyla tanınan bir ingiliz müzisyendir. Rochdale, Greater Manchester'da büyüdü ve Piri & Tommy ikilisinin yarısıydı. Ayrıca Illit şarkısı \"Magnetic\"i birlikte yazdı.",
+        "facts": [
+          "Piri, Piri & Tommy ikilisinin yarısıydı; bu ikili kasım 2022 ile ocak 2023 arasında birçok \"ones to watch\" listesinde yer aldı.",
+          "Ayrıca Illit şarkısı \"Magnetic\"i birlikte yazdı."
+        ]
+      }
+    },
+    {
+      "id": "b56f3d87-d68b-42ed-82d7-3b65f6bb2f0a",
+      "slug": "ocean-colour-scene-400253fe",
+      "title": "Ocean Colour Scene",
+      "name": "Ocean Colour Scene",
+      "source_url": "https://en.wikipedia.org/wiki/Ocean_Colour_Scene",
+      "extract": "Ocean Colour Scene are an English rock band formed in Moseley, Birmingham in 1989. They have had five top 10 albums, including a number one in 1997. They have also achieved seventeen top 40 singles and six top 10 singles to date.",
+      "en": {
+        "kicker": "English rock band · formed 1989, Moseley, Birmingham",
+        "who": "Ocean Colour Scene are an English rock band formed in Moseley, Birmingham in 1989. Their chart record includes albums and singles that reached the top 10.",
+        "facts": [
+          "They have had five top 10 albums, including a number one in 1997.",
+          "They have also achieved seventeen top 40 singles and six top 10 singles to date."
+        ]
+      },
+      "de": {
+        "kicker": "englische rockband · gegründet 1989, Moseley, Birmingham",
+        "who": "Ocean Colour Scene sind eine englische rockband, die 1989 in Moseley, Birmingham gegründet wurde. Ihre chartbilanz umfasst alben und singles, die die top 10 erreichten.",
+        "facts": [
+          "Sie hatten fünf top-10-alben, darunter ein nummer-eins-album im jahr 1997.",
+          "Außerdem erreichten sie siebzehn top-40-singles und sechs top-10-singles bis heute."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz rock grubu · 1989, Moseley, Birmingham",
+        "who": "Ocean Colour Scene, 1989 yılında Moseley, Birmingham'da kurulan bir ingiliz rock grubudur. Grup, listelerde ilk 10'a giren çok sayıda albüm ve single'a imza attı.",
+        "facts": [
+          "Grup beş ilk 10 albüme sahip; bunların arasında 1997'de birinci sıraya yükselen bir albüm de var.",
+          "Ayrıca bugüne kadar on yedi single ilk 40'a, altı single ilk 10'a girdi."
+        ]
+      }
+    },
+    {
+      "id": "24de1552-024b-4995-adc8-195eb5fd25f5",
+      "slug": "blossoms-b19635e8",
+      "title": "Blossoms",
+      "name": "Blossoms",
+      "source_url": "https://en.wikipedia.org/wiki/Blossoms_(band)",
+      "extract": "Blossoms are an English indie rock band from Stockport, Greater Manchester, England. Formed in 2013, the band consists of Tom Ogden, Charlie Salt, Josh Dewhurst, Joe Donovan (drums) and Myles Kellock.",
+      "en": {
+        "kicker": "English indie rock band · formed 2013, Stockport",
+        "who": "Blossoms are an English indie rock band from Stockport, Greater Manchester. The band was formed in 2013 and has five members.",
+        "facts": [
+          "Formed in 2013, the band consists of Tom Ogden, Charlie Salt, Josh Dewhurst, Joe Donovan (drums) and Myles Kellock.",
+          "Blossoms are an English indie rock band from Stockport, Greater Manchester, England."
+        ]
+      },
+      "de": {
+        "kicker": "englische indie-rock-band · gegründet 2013, Stockport",
+        "who": "Blossoms sind eine englische indie-rock-band aus Stockport, Greater Manchester. Die band wurde 2013 gegründet und hat fünf mitglieder.",
+        "facts": [
+          "gegründet 2013, besteht die band aus Tom Ogden, Charlie Salt, Josh Dewhurst, Joe Donovan (schlagzeug) und Myles Kellock.",
+          "Blossoms sind eine englische indie-rock-band aus Stockport, Greater Manchester, England."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz indie rock grubu · 2013, Stockport",
+        "who": "Blossoms, Stockport, Greater Manchester'dan bir ingiliz indie rock grubudur. Grup 2013 yılında kuruldu ve beş üyesi var.",
+        "facts": [
+          "2013 yılında kurulan grup; Tom Ogden, Charlie Salt, Josh Dewhurst, Joe Donovan (davul) ve Myles Kellock'tan oluşuyor.",
+          "Blossoms, Stockport, Greater Manchester, İngiltere'den bir indie rock grubudur."
+        ]
+      }
+    }
+  ]
+}

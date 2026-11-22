@@ -1,0 +1,70 @@
+{
+  "city": "ottawa",
+  "day": "2026-11-22",
+  "nights": [
+    {
+      "id": "cd595ef8-257c-4550-ba68-1500fa2a28f9",
+      "slug": "houndmouth-the-lordy-tour-b5b0d944",
+      "title": "Houndmouth: The Lordy Tour",
+      "name": "Houndmouth",
+      "source_url": "https://en.wikipedia.org/wiki/Houndmouth",
+      "extract": "Houndmouth is an American alternative blues and rock band from New Albany, Indiana, formed in 2011, consisting of Matt Myers, Caleb Hickman, Zac Anderson, and Noah Denney (drums).",
+      "en": {
+        "kicker": "alternative blues and rock band · 2011, New Albany, Indiana",
+        "who": "Houndmouth is an American alternative blues and rock band. its members are Matt Myers, Caleb Hickman, Zac Anderson, and Noah Denney (drums).",
+        "facts": [
+          "the band formed in 2011.",
+          "the band is from New Albany, Indiana."
+        ]
+      },
+      "de": {
+        "kicker": "alternative blues- und rockband · 2011, New Albany, Indiana",
+        "who": "Houndmouth ist eine amerikanische alternative-blues- und rockband. die besetzung besteht aus Matt Myers, Caleb Hickman, Zac Anderson und Noah Denney (schlagzeug).",
+        "facts": [
+          "die band wurde 2011 gegründet.",
+          "die band stammt aus New Albany, Indiana."
+        ]
+      },
+      "tr": {
+        "kicker": "alternatif blues ve rock grubu · 2011, New Albany, Indiana",
+        "who": "Houndmouth bir amerikan alternatif blues ve rock grubudur. grubun üyeleri şunlardır: Matt Myers, Caleb Hickman, Zac Anderson ve Noah Denney (davul).",
+        "facts": [
+          "grup 2011 yılında kuruldu.",
+          "grup New Albany, Indiana kökenlidir."
+        ]
+      }
+    },
+    {
+      "id": "db4d2440-8da2-4d8a-8492-eff34f4f27a3",
+      "slug": "simple-plan-bigger-than-you-think-canada-tour-a76d291b",
+      "title": "SIMPLE PLAN: BIGGER THAN YOU THINK! Canada Tour",
+      "name": "Simple Plan",
+      "source_url": "https://en.wikipedia.org/wiki/Simple_Plan",
+      "extract": "Simple Plan is a Canadian rock band formed in Montreal, Quebec, in 1999. The band's current lineup consists of Pierre Bouvier, Chuck Comeau (drums), Jeff Stinco, and Sébastien Lefebvre.",
+      "en": {
+        "kicker": "Canadian rock band · 1999, Montreal, Quebec",
+        "who": "Simple Plan is a Canadian rock band. its current lineup is Pierre Bouvier, Chuck Comeau (drums), Jeff Stinco, and Sébastien Lefebvre.",
+        "facts": [
+          "the band formed in Montreal, Quebec, in 1999.",
+          "the band's current lineup consists of Pierre Bouvier, Chuck Comeau (drums), Jeff Stinco, and Sébastien Lefebvre."
+        ]
+      },
+      "de": {
+        "kicker": "kanadische rockband · 1999, Montreal, Quebec",
+        "who": "Simple Plan ist eine kanadische rockband. die aktuelle besetzung besteht aus Pierre Bouvier, Chuck Comeau (schlagzeug), Jeff Stinco und Sébastien Lefebvre.",
+        "facts": [
+          "die band wurde 1999 in Montreal, Quebec, gegründet.",
+          "die aktuelle besetzung besteht aus Pierre Bouvier, Chuck Comeau (schlagzeug), Jeff Stinco und Sébastien Lefebvre."
+        ]
+      },
+      "tr": {
+        "kicker": "kanadalı rock grubu · 1999, Montreal, Quebec",
+        "who": "Simple Plan bir kanadalı rock grubudur. grubun güncel kadrosu Pierre Bouvier, Chuck Comeau (davul), Jeff Stinco ve Sébastien Lefebvre'dir.",
+        "facts": [
+          "grup 1999'da Montreal, Quebec'te kuruldu.",
+          "grubun güncel kadrosu Pierre Bouvier, Chuck Comeau (davul), Jeff Stinco ve Sébastien Lefebvre'den oluşur."
+        ]
+      }
+    }
+  ]
+}

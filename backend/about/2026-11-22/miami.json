@@ -1,0 +1,38 @@
+{
+  "city": "miami",
+  "day": "2026-11-22",
+  "nights": [
+    {
+      "id": "793ae174-dc3c-495c-8c26-62abd528f6ce",
+      "slug": "booker-t-jones-64368c40",
+      "title": "Booker T Jones",
+      "name": "Booker T. Jones",
+      "source_url": "https://en.wikipedia.org/wiki/Booker_T._Jones",
+      "extract": "Booker Taliaferro Jones Jr. is an American musician, songwriter, record producer and arranger, best known as the frontman of the band Booker T. & the M.G.'s. He has also worked as a session musician with many well-known artists of the 20th and 21st centuries, earning him a Grammy Award for Lifetime Achievement.",
+      "en": {
+        "kicker": "american musician · songwriter, record producer, arranger",
+        "who": "Booker Taliaferro Jones Jr. is an american musician, songwriter, record producer and arranger. He is best known as the frontman of the band Booker T. & the M.G.'s.",
+        "facts": [
+          "he has also worked as a session musician with many well-known artists of the 20th and 21st centuries.",
+          "he earned a Grammy Award for Lifetime Achievement."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer musiker · songwriter, produzent",
+        "who": "Booker Taliaferro Jones Jr. ist ein amerikanischer musiker, songwriter, musikproduzent und arrangeur. Er ist vor allem als frontmann der band Booker T. & the M.G.'s bekannt.",
+        "facts": [
+          "er hat auch als session-musiker mit vielen bekannten künstlern des 20. und 21. jahrhunderts gearbeitet.",
+          "er erhielt den Grammy Award for Lifetime Achievement."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı müzisyen · söz yazarı, yapımcı, düzenleyici",
+        "who": "Booker Taliaferro Jones Jr. amerikalı bir müzisyen, söz yazarı, plak yapımcısı ve düzenleyicidir. Özellikle Booker T. & the M.G.'s grubunun ön plandaki ismi olarak tanınır.",
+        "facts": [
+          "ayrıca birçok ünlü sanatçıyla 20. ve 21. yüzyıllarda session müzisyeni olarak çalıştı.",
+          "bu çalışmalar ona Grammy Award for Lifetime Achievement ödülünü kazandırdı."
+        ]
+      }
+    }
+  ]
+}

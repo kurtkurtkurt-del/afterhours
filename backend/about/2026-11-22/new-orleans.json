@@ -1,0 +1,38 @@
+{
+  "city": "new-orleans",
+  "day": "2026-11-22",
+  "nights": [
+    {
+      "id": "e89c03fe-ba5a-407b-a960-648262bc1f0e",
+      "slug": "jodeci-35th-anniversary-tour-of-forever-my-lady-9f108566",
+      "title": "Jodeci - 35th Anniversary Tour of Forever My Lady",
+      "name": "Jodeci",
+      "source_url": "https://en.wikipedia.org/wiki/Jodeci",
+      "extract": "Jodeci is an American R&B quartet consisting of members JoJo, DeVanté Swing, K-Ci, and Mr. Dalvin. Formed in 1988 in Charlotte, North Carolina, Jodeci began as a duo of DeVanté Swing and JoJo but later both added their brothers. After signing with Uptown Records in 1990, the group finished work on their debut album, Forever My Lady (1991), which brought them mainstream success with three straight Billboard R&B No. 1 hit singles: the album's titular track, \"Stay\" and \"Come and Talk to Me\".",
+      "en": {
+        "kicker": "american r&b quartet · 1988, charlotte",
+        "who": "Jodeci is an American R&B quartet consisting of members JoJo, DeVanté Swing, K-Ci, and Mr. Dalvin. The group began as a duo of DeVanté Swing and JoJo before both added their brothers.",
+        "facts": [
+          "Formed in 1988 in Charlotte, North Carolina, Jodeci began as a duo of DeVanté Swing and JoJo but later both added their brothers.",
+          "After signing with Uptown Records in 1990, the group finished work on their debut album, Forever My Lady (1991), which brought them mainstream success with three straight Billboard R&B No. 1 hit singles."
+        ]
+      },
+      "de": {
+        "kicker": "Amerikanisches R&B-Quartett · 1988, Charlotte",
+        "who": "Jodeci ist ein amerikanisches R&B-Quartett mit den Mitgliedern JoJo, DeVanté Swing, K-Ci und Mr. Dalvin. Die Gruppe begann als Duo aus DeVanté Swing und JoJo, bevor beide ihre Brüder hinzufügten.",
+        "facts": [
+          "Die Gruppe wurde 1988 in Charlotte, North Carolina, gegründet und begann als Duo aus DeVanté Swing und JoJo, bevor später beide ihre Brüder hinzufügten.",
+          "Nach der Unterzeichnung bei Uptown Records im Jahr 1990 schloss die Gruppe die Arbeit an ihrem Debütalbum Forever My Lady (1991) ab, das ihr mit drei aufeinanderfolgenden Billboard-R&B-Hits auf Platz 1 den Durchbruch im Mainstream brachte."
+        ]
+      },
+      "tr": {
+        "kicker": "Amerikalı R&B dörtlüsü · 1988, Charlotte",
+        "who": "Jodeci, JoJo, DeVanté Swing, K-Ci ve Mr. Dalvin'den oluşan Amerikalı bir R&B dörtlüsüdür. Grup, DeVanté Swing ile JoJo'nun oluşturduğu bir ikili olarak başladı, sonra ikisi de kardeşlerini gruba kattı.",
+        "facts": [
+          "1988'de Charlotte, North Carolina'da kurulan Jodeci, başlangıçta DeVanté Swing ve JoJo'nun oluşturduğu bir ikili olarak başladı, ancak daha sonra ikisi de kardeşlerini ekledi.",
+          "1990'da Uptown Records ile anlaşma imzalayan grup, ilk albümü Forever My Lady (1991) üzerindeki çalışmaları tamamladı; bu albüm, Billboard R&B listesinde art arda üç numara bir hit single ile grubu ana akım başarıya taşıdı."
+        ]
+      }
+    }
+  ]
+}

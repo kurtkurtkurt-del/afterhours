@@ -1,0 +1,38 @@
+{
+  "city": "krakow",
+  "day": "2026-11-22",
+  "nights": [
+    {
+      "id": "6a1de345-1848-4d50-b546-ba7d880d4464",
+      "slug": "dakhabrakha-9ccadbd2",
+      "title": "Dakhabrakha",
+      "name": "DakhaBrakha",
+      "source_url": "https://en.wikipedia.org/wiki/DakhaBrakha",
+      "extract": "DakhaBrakha are a world music quartet formed in Kyiv, Ukraine. The four musicians combine a variety of musical styles from across the globe, creating energetic and artistic performances that are uniquely their own. DakhaBrakha's eclectic sound seamlessly mesh ancient Ukrainian folk tunes with modern genres, such as pop, punk, electronica, hip hop, and soul, a musical fusion that they define as \"ethno-chaos\".",
+      "en": {
+        "kicker": "world music quartet · formed in Kyiv, Ukraine",
+        "who": "DakhaBrakha are a world music quartet formed in Kyiv, Ukraine. the four musicians combine a variety of musical styles from across the globe. their eclectic sound draws on ancient Ukrainian folk tunes and modern genres.",
+        "facts": [
+          "the four musicians combine a variety of musical styles from across the globe.",
+          "they seamlessly mesh ancient Ukrainian folk tunes with modern genres, such as pop, punk, electronica, hip hop, and soul."
+        ]
+      },
+      "de": {
+        "kicker": "Weltmusik-Quartett · gegründet in Kiew, Ukraine",
+        "who": "DakhaBrakha ist ein Weltmusik-Quartett, das in Kiew, Ukraine gegründet wurde. Die vier Musiker verbinden eine Vielfalt musikalischer Stile aus aller Welt. Ihr eklektischer Klang verschmilzt alte ukrainische Volksweisen nahtlos mit modernen Genres.",
+        "facts": [
+          "Die vier Musiker kombinieren eine Vielfalt musikalischer Stile aus der ganzen Welt.",
+          "Sie verschmelzen alte ukrainische Volksweisen nahtlos mit modernen Genres wie Pop, Punk, Elektronik, Hip-Hop und Soul."
+        ]
+      },
+      "tr": {
+        "kicker": "dünya müziği dörtlüsü · Kiev, Ukrayna'da kuruldu",
+        "who": "DakhaBrakha, Kiev, Ukrayna'da kurulmuş bir dünya müziği dörtlüsüdür. Dört müzisyen, dünyanın dört bir yanından çok çeşitli müzik tarzlarını bir araya getirir. Eklektik sesleri, eski Ukrayna halk ezgilerini modern türlerle kusursuz biçimde harmanlar.",
+        "facts": [
+          "Dört müzisyen, dünyanın dört bir yanından gelen çok çeşitli müzik tarzlarını bir araya getirir.",
+          "Eski Ukrayna halk ezgilerini pop, punk, elektronik, hip hop ve soul gibi modern türlerle kusursuz biçimde harmanlarlar."
+        ]
+      }
+    }
+  ]
+}

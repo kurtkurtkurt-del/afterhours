@@ -1,0 +1,38 @@
+{
+  "city": "utrecht",
+  "day": "2026-11-22",
+  "nights": [
+    {
+      "id": "57b6af41-6daa-4a23-8853-25882c711364",
+      "slug": "noga-erez-ea96e867",
+      "title": "Noga Erez",
+      "name": "Noga Erez",
+      "source_url": "https://en.wikipedia.org/wiki/Noga_Erez",
+      "extract": "Noga Erez is an Israeli singer, songwriter and producer known for a mix of electronic pop, hip-hop and alternative music. She released her debut album Off the Radar in 2017. Her third album,The Vandalist, was released on Neon Gold Records/Atlantic Records in 2024. She has collaborated and performed with artists including Missy Elliott, Robbie Williams, Armani White, and Florence + the Machine, and appeared at major festivals including Coachella, Lollapalooza, Austin City Limits, and Primavera Sound.",
+      "en": {
+        "kicker": "Israeli singer, songwriter and producer · debut album 2017",
+        "who": "Noga Erez is an Israeli singer, songwriter and producer known for a mix of electronic pop, hip-hop and alternative music. She has collaborated and performed with artists including Missy Elliott, Robbie Williams, Armani White, and Florence + the Machine. She appeared at major festivals including Coachella, Lollapalooza, Austin City Limits, and Primavera Sound.",
+        "facts": [
+          "She released her debut album Off the Radar in 2017.",
+          "Her third album, The Vandalist, was released on Neon Gold Records/Atlantic Records in 2024."
+        ]
+      },
+      "de": {
+        "kicker": "israelische Sängerin, Songwriterin und Produzentin · Debütalbum 2017",
+        "who": "Noga Erez ist eine israelische Sängerin, Songwriterin und Produzentin, die für eine Mischung aus Electronic Pop, Hip-Hop und alternativer Musik bekannt ist. Sie hat mit Künstlern wie Missy Elliott, Robbie Williams, Armani White und Florence + the Machine zusammengearbeitet und mit ihnen aufgetreten. Außerdem trat sie auf großen Festivals wie Coachella, Lollapalooza, Austin City Limits und Primavera Sound auf.",
+        "facts": [
+          "Sie veröffentlichte 2017 ihr Debütalbum Off the Radar.",
+          "Ihr drittes Album The Vandalist erschien 2024 bei Neon Gold Records/Atlantic Records."
+        ]
+      },
+      "tr": {
+        "kicker": "İsrailli şarkıcı, söz yazarı ve yapımcı · 2017 ilk albümü",
+        "who": "Noga Erez, elektronik pop, hip-hop ve alternatif müziği bir araya getiren işleriyle tanınan bir İsrailli şarkıcı, söz yazarı ve yapımcıdır. Missy Elliott, Robbie Williams, Armani White ve Florence + the Machine gibi sanatçılarla iş birliği yapmış ve sahne almıştır. Coachella, Lollapalooza, Austin City Limits ve Primavera Sound gibi büyük festivallerde de yer almıştır.",
+        "facts": [
+          "2017'de ilk albümü Off the Radar'ı yayımladı.",
+          "Üçüncü albümü The Vandalist, 2024'te Neon Gold Records/Atlantic Records etiketiyle yayımlandı."
+        ]
+      }
+    }
+  ]
+}

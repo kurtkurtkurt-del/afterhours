@@ -1,0 +1,70 @@
+{
+ "city": "san-francisco",
+ "day": "2026-11-22",
+ "nights": [
+  {
+   "id": "671eed40-8031-48a4-a436-5abb41d7deb1",
+   "slug": "journey-final-frontier-tour-an-evening-with-98e6f0e1",
+   "title": "JOURNEY - Final Frontier Tour (An Evening With)",
+   "name": "Journey",
+   "source_url": "https://en.wikipedia.org/wiki/Journey_(band)",
+   "extract": "Journey is an American rock band formed in San Francisco in 1973 by former members of Santana, the Steve Miller Band, and Frumious Bandersnatch. The band as of 2026 consists of Neal Schon on guitars and vocals; Jonathan Cain on keyboards, guitars and vocals; Deen Castronovo on drums and vocals; Arnel Pineda on lead vocals; Jason Derlatka on keyboards and vocals; and Todd Jensen on bass and vocals.",
+   "en": {
+    "kicker": "american rock band · formed in San Francisco, 1973",
+    "who": "Journey is an american rock band. As of 2026 the band consists of Neal Schon, Jonathan Cain, Deen Castronovo, Arnel Pineda, Jason Derlatka and Todd Jensen.",
+    "facts": [
+     "Journey is an american rock band formed in San Francisco in 1973 by former members of Santana, the Steve Miller Band, and Frumious Bandersnatch.",
+     "The band as of 2026 consists of Neal Schon on guitars and vocals; Jonathan Cain on keyboards, guitars and vocals; Deen Castronovo on drums and vocals; Arnel Pineda on lead vocals; Jason Derlatka on keyboards and vocals; and Todd Jensen on bass and vocals."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische Rockband · gegründet 1973 in San Francisco",
+    "who": "Journey ist eine amerikanische Rockband. Stand 2026 besteht die Band aus Neal Schon, Jonathan Cain, Deen Castronovo, Arnel Pineda, Jason Derlatka und Todd Jensen.",
+    "facts": [
+     "Journey ist eine amerikanische Rockband, die 1973 in San Francisco von ehemaligen Mitgliedern von Santana, der Steve Miller Band und Frumious Bandersnatch gegründet wurde.",
+     "Die Band besteht Stand 2026 aus Neal Schon an Gitarren und Gesang, Jonathan Cain an Keyboards, Gitarren und Gesang, Deen Castronovo an Schlagzeug und Gesang, Arnel Pineda an Lead-Gesang, Jason Derlatka an Keyboards und Gesang sowie Todd Jensen an Bass und Gesang."
+    ]
+   },
+   "tr": {
+    "kicker": "Amerikan rock grubu · 1973, San Francisco",
+    "who": "Journey, Amerikan bir rock grubudur. 2026 itibarıyla grup; Neal Schon, Jonathan Cain, Deen Castronovo, Arnel Pineda, Jason Derlatka ve Todd Jensen'den oluşuyor.",
+    "facts": [
+     "Journey, 1973'te San Francisco'da Santana, Steve Miller Band ve Frumious Bandersnatch'in eski üyeleri tarafından kurulmuş Amerikan bir rock grubudur.",
+     "Grup 2026 itibarıyla Neal Schon gitar ve vokalde, Jonathan Cain klavye, gitar ve vokalde, Deen Castronovo davul ve vokalde, Arnel Pineda lead vokalde, Jason Derlatka klavye ve vokalde, Todd Jensen ise bas ve vokalde yer alıyor."
+    ]
+   }
+  },
+  {
+   "id": "e8530025-8e1d-47d9-9a33-0892ca95321f",
+   "slug": "jackie-greene-1a845b2b",
+   "title": "Jackie Greene",
+   "name": "Jackie Greene",
+   "source_url": "https://en.wikipedia.org/wiki/Jackie_Greene",
+   "extract": "Jackie Greene is an American singer-songwriter and musician. He has a solo career and became a member of The Black Crowes in 2013, though the band broke up in 2015 before he could contribute any studio work.",
+   "en": {
+    "kicker": "american singer-songwriter · The Black Crowes, 2013",
+    "who": "Jackie Greene is an american singer-songwriter and musician. He has a solo career and became a member of The Black Crowes in 2013.",
+    "facts": [
+     "He has a solo career and became a member of The Black Crowes in 2013.",
+     "Though the band broke up in 2015 before he could contribute any studio work."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer Singer-Songwriter · The Black Crowes, 2013",
+    "who": "Jackie Greene ist ein amerikanischer Singer-Songwriter und Musiker. Er hat eine Solokarriere und wurde 2013 Mitglied von The Black Crowes.",
+    "facts": [
+     "Er hat eine Solokarriere und wurde 2013 Mitglied von The Black Crowes.",
+     "Obwohl sich die Band 2015 auflöste, bevor er Studioarbeit beisteuern konnte."
+    ]
+   },
+   "tr": {
+    "kicker": "Amerikalı şarkıcı-söz yazarı · The Black Crowes, 2013",
+    "who": "Jackie Greene, Amerikalı bir şarkıcı-söz yazarı ve müzisyendir. Solo bir kariyeri vardır ve 2013'te The Black Crowes'un üyesi olmuştur.",
+    "facts": [
+     "Solo bir kariyeri vardır ve 2013'te The Black Crowes'un üyesi olmuştur.",
+     "Grup, o stüdyo çalışmasına katkıda bulunamadan 2015'te dağıldı."
+    ]
+   }
+  }
+ ]
+}

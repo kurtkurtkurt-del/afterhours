@@ -1,0 +1,70 @@
+{
+  "city": "houston",
+  "day": "2026-11-22",
+  "nights": [
+    {
+      "id": "4043d984-f525-45f2-aed6-ddef31683cbf",
+      "slug": "waterparks-3856a293",
+      "title": "Waterparks",
+      "name": "Waterparks",
+      "source_url": "https://en.wikipedia.org/wiki/Waterparks_(band)",
+      "extract": "Waterparks is an American pop rock band formed in Houston, Texas in 2011. The group currently consists of lead vocalist and rhythm guitarist Awsten Knight, backing vocalist and lead guitarist Geoff Wigington, and backing vocalist and drummer Otto Wood.",
+      "en": {
+        "kicker": "American pop rock band · 2011, Houston, Texas",
+        "who": "Waterparks is an American pop rock band. The group currently consists of lead vocalist and rhythm guitarist Awsten Knight, backing vocalist and lead guitarist Geoff Wigington, and backing vocalist and drummer Otto Wood.",
+        "facts": [
+          "Waterparks was formed in Houston, Texas in 2011.",
+          "Awsten Knight is the lead vocalist and rhythm guitarist."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische pop-rock-band · 2011, Houston, Texas",
+        "who": "Waterparks ist eine amerikanische pop-rock-band. die gruppe besteht derzeit aus leadsänger und rhythmusgitarrist Awsten Knight, backgroundsänger und leadgitarrist Geoff Wigington sowie backgroundsänger und schlagzeuger Otto Wood.",
+        "facts": [
+          "Waterparks wurde 2011 in Houston, Texas gegründet.",
+          "Awsten Knight ist leadsänger und rhythmusgitarrist."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı pop rock grubu · 2011, Houston, Texas",
+        "who": "Waterparks, 2011 yılında Houston, Texas'te kurulmuş amerikalı bir pop rock grubudur. grup şu anda lider vokalist ve ritim gitaristi Awsten Knight, geri vokalist ve solo gitarist Geoff Wigington ile geri vokalist ve davulcu Otto Wood'dan oluşuyor.",
+        "facts": [
+          "Waterparks, 2011 yılında Houston, Texas'te kuruldu.",
+          "Awsten Knight, grubun lider vokalisti ve ritim gitaristidir."
+        ]
+      }
+    },
+    {
+      "id": "f9c781a4-592f-41f9-8d43-dc66294aea3b",
+      "slug": "giovannie-and-the-hired-guns-ages-21-e5638973",
+      "title": "Giovannie and The Hired Guns - Ages 21+",
+      "name": "Giovannie and the Hired Guns",
+      "source_url": "https://en.wikipedia.org/wiki/Giovannie_and_the_Hired_Guns",
+      "extract": "Giovannie and the Hired Guns is an American country rock band from Stephenville, Texas. The band was formed in 2017 by Giovannie Yanez, who serves as the lead vocalist and songwriter. The other members of the band include Carlos Villa, Jerrod Flusche, Alex Trejo, and Milton Toles (drums).",
+      "en": {
+        "kicker": "American country rock band · 2017, Stephenville, Texas",
+        "who": "Giovannie and the Hired Guns is an American country rock band. The band was formed in 2017 by Giovannie Yanez, who serves as the lead vocalist and songwriter.",
+        "facts": [
+          "The other members of the band include Carlos Villa, Jerrod Flusche, Alex Trejo, and Milton Toles (drums).",
+          "The band is from Stephenville, Texas."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische country-rock-band · 2017, Stephenville, Texas",
+        "who": "Giovannie and the Hired Guns ist eine amerikanische country-rock-band aus Stephenville, Texas. die band wurde 2017 von Giovannie Yanez gegründet, der als leadsänger und songwriter tätig ist.",
+        "facts": [
+          "zu den weiteren mitgliedern der band gehören Carlos Villa, Jerrod Flusche, Alex Trejo und Milton Toles (schlagzeug).",
+          "die band stammt aus Stephenville, Texas."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı country rock grubu · 2017, Stephenville, Texas",
+        "who": "Giovannie and the Hired Guns, Stephenville, Texas'ten çıkmış amerikalı bir country rock grubudur. grup 2017 yılında, lider vokalist ve söz yazarı olarak görev yapan Giovannie Yanez tarafından kuruldu.",
+        "facts": [
+          "grubun diğer üyeleri arasında Carlos Villa, Jerrod Flusche, Alex Trejo ve Milton Toles (davul) yer alıyor.",
+          "grup Stephenville, Texas'ten çıkmıştır."
+        ]
+      }
+    }
+  ]
+}

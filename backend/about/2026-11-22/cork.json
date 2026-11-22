@@ -1,0 +1,38 @@
+{
+  "city": "cork",
+  "day": "2026-11-22",
+  "nights": [
+    {
+      "id": "ffc6b962-4664-4b04-8475-e10e5f9692c6",
+      "slug": "garth-brooks-the-irish-tour-2027-c0e2e94e",
+      "title": "Garth Brooks - the Irish Tour 2027",
+      "name": "Garth Brooks",
+      "source_url": "https://en.wikipedia.org/wiki/Garth_Brooks",
+      "extract": "Troyal Garth Brooks is an American country singer and songwriter. His musical style blends traditional country with pop and rock elements, which has earned him his immense popularity, particularly in the United States, with success on the country music single and album charts, multi-platinum recordings and record-breaking live performances, while also crossing over into the mainstream pop arena.",
+      "en": {
+        "kicker": "american country singer and songwriter",
+        "who": "Troyal Garth Brooks is an american country singer and songwriter. His musical style blends traditional country with pop and rock elements. He is also crossing over into the mainstream pop arena.",
+        "facts": [
+          "His musical style blends traditional country with pop and rock elements.",
+          "He has had success on the country music single and album charts, with multi-platinum recordings and record-breaking live performances."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer country-sänger und songwriter",
+        "who": "Troyal Garth Brooks ist ein amerikanischer country-sänger und songwriter. sein musikalischer stil verbindet traditionellen country mit pop- und rock-elementen. er überschreitet außerdem die grenzen hin zur mainstream-pop-arena.",
+        "facts": [
+          "sein musikalischer stil verbindet traditionellen country mit pop- und rock-elementen.",
+          "er hatte erfolg in den country-single- und album-charts, mit multiplatin-aufnahmen und rekordbrechenden live-auftritten."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı country şarkıcı ve söz yazarı",
+        "who": "Troyal Garth Brooks amerikalı bir country şarkıcı ve söz yazarıdır. müzik tarzı geleneksel country'yi pop ve rock öğeleriyle harmanlar. ayrıca ana akım pop alanına doğru geçiş yapmaktadır.",
+        "facts": [
+          "müzik tarzı geleneksel country'yi pop ve rock öğeleriyle harmanlar.",
+          "country müzik single ve albüm listelerinde, çok katlı platin kayıtlar ve rekor kıran canlı performanslarla başarı elde etti."
+        ]
+      }
+    }
+  ]
+}

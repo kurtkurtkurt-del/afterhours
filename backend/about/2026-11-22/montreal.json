@@ -1,0 +1,70 @@
+{
+  "city": "montreal",
+  "day": "2026-11-22",
+  "nights": [
+    {
+      "id": "5874ea2a-ceb1-4bcd-8dbc-210a6186ca8c",
+      "slug": "whitechapel-20th-anniversary-tour-1ca3c3cb",
+      "title": "Whitechapel - 20th Anniversary Tour",
+      "name": "Whitechapel",
+      "source_url": "https://en.wikipedia.org/wiki/Whitechapel_(band)",
+      "extract": "Whitechapel is an American deathcore band from Knoxville, Tennessee. The band is named after the Whitechapel district in east London, England, where Jack the Ripper committed a series of murders. The group comprises vocalist Phil Bozeman, guitarists Ben Savage, Alex Wade, and Zach Householder, bassist Gabe Crisp and drummer Brandon Zackey. Their core lineup, with the exception of the drummer, has remained consistent since Householder replaced original guitarist Brandon Cagle in 2007. Founded in 2006 by Bozeman and Savage, the band has released nine studio albums and twenty-two music videos, and is currently signed to Metal Blade Records. Whitechapel's 2010 album A New Era of Corruption, sold",
+      "en": {
+        "kicker": "American deathcore band · Knoxville, Tennessee",
+        "who": "Whitechapel is an American deathcore band from Knoxville, Tennessee. The group comprises vocalist Phil Bozeman, guitarists Ben Savage, Alex Wade, and Zach Householder, bassist Gabe Crisp and drummer Brandon Zackey. Founded in 2006 by Bozeman and Savage, the band has released nine studio albums and twenty-two music videos, and is currently signed to Metal Blade Records.",
+        "facts": [
+          "The band is named after the Whitechapel district in east London, England, where Jack the Ripper committed a series of murders.",
+          "Founded in 2006 by Bozeman and Savage, the band has released nine studio albums and twenty-two music videos."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische Deathcore-Band · Knoxville, Tennessee",
+        "who": "Whitechapel ist eine amerikanische Deathcore-Band aus Knoxville, Tennessee. Zur Gruppe gehören Sänger Phil Bozeman, die Gitarristen Ben Savage, Alex Wade und Zach Householder, Bassist Gabe Crisp und Schlagzeuger Brandon Zackey. Die 2006 von Bozeman und Savage gegründete Band hat neun Studioalben und zweiundzwanzig Musikvideos veröffentlicht und steht derzeit bei Metal Blade Records unter Vertrag.",
+        "facts": [
+          "Der Bandname bezieht sich auf den Stadtteil Whitechapel im Osten Londons, England, wo Jack the Ripper eine Reihe von Morden beging.",
+          "Die 2006 von Bozeman und Savage gegründete Band hat neun Studioalben und zweiundzwanzig Musikvideos veröffentlicht."
+        ]
+      },
+      "tr": {
+        "kicker": "Amerikalı deathcore grubu · Knoxville, Tennessee",
+        "who": "Whitechapel, Knoxville, Tennessee'den bir Amerikalı deathcore grubudur. Grubun kadrosunda vokalist Phil Bozeman, gitaristler Ben Savage, Alex Wade ve Zach Householder, basçı Gabe Crisp ve davulcu Brandon Zackey yer alıyor. Grup, Bozeman ve Savage tarafından 2006'da kuruldu; dokuz stüdyo albümü ve yirmi iki müzik videosu yayımladı ve şu anda Metal Blade Records ile sözleşmeli.",
+        "facts": [
+          "Grubun adı, İngiltere'nin doğu Londra bölgesindeki Whitechapel semtinden alınmıştır; Jack the Ripper bu semtte bir dizi cinayet işlemiştir.",
+          "Bozeman ve Savage tarafından 2006'da kurulan grup dokuz stüdyo albümü ve yirmi iki müzik videosu yayımladı."
+        ]
+      }
+    },
+    {
+      "id": "5505e75a-8806-43f2-9144-ebd9d7a46b1f",
+      "slug": "les-louanges-f0a55200",
+      "title": "Les Louanges",
+      "name": "Les Louanges",
+      "source_url": "https://en.wikipedia.org/wiki/Les_Louanges",
+      "extract": "Les Louanges is a Canadian indie pop act from Québec, created and performed by Vincent Roberge. He currently has 3 released albums with his label Bonsound.",
+      "en": {
+        "kicker": "Canadian indie pop act · Québec",
+        "who": "Les Louanges is a Canadian indie pop act from Québec. The act is created and performed by Vincent Roberge. He currently has 3 released albums with his label Bonsound.",
+        "facts": [
+          "Les Louanges is a Canadian indie pop act from Québec, created and performed by Vincent Roberge.",
+          "He currently has 3 released albums with his label Bonsound."
+        ]
+      },
+      "de": {
+        "kicker": "kanadischer Indie-Pop-Act · Québec",
+        "who": "Les Louanges ist ein kanadischer Indie-Pop-Act aus Québec. Der Act wird von Vincent Roberge geschaffen und aufgeführt. Derzeit hat er 3 veröffentlichte Alben bei seinem Label Bonsound.",
+        "facts": [
+          "Les Louanges ist ein kanadischer Indie-Pop-Act aus Québec, geschaffen und aufgeführt von Vincent Roberge.",
+          "Derzeit hat er 3 veröffentlichte Alben bei seinem Label Bonsound."
+        ]
+      },
+      "tr": {
+        "kicker": "Kanadalı indie pop projesi · Québec",
+        "who": "Les Louanges, Québec'ten bir Kanadalı indie pop projesidir. Proje, Vincent Roberge tarafından yaratılmış ve icra ediliyor. Şu anda Bonsound etiketiyle yayımlanmış 3 albümü bulunuyor.",
+        "facts": [
+          "Les Louanges, Québec'ten bir Kanadalı indie pop projesidir ve Vincent Roberge tarafından yaratılmış ve icra edilmektedir.",
+          "Şu anda Bonsound etiketiyle yayımlanmış 3 albümü bulunuyor."
+        ]
+      }
+    }
+  ]
+}

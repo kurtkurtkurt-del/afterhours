@@ -1,0 +1,38 @@
+{
+  "city": "munchen",
+  "day": "2026-11-22",
+  "nights": [
+    {
+      "id": "5f1a0c7b-6c95-4d37-9440-b6e0785fb279",
+      "slug": "night-lovell-my-blood-as-the-ink-tour-618cca26",
+      "title": "Night Lovell - My Blood As The Ink Tour",
+      "name": "Night Lovell",
+      "source_url": "https://en.wikipedia.org/wiki/Night_Lovell",
+      "extract": "Shermar Cuba Paul, known professionally as Night Lovell, is a Canadian rapper, songwriter and record producer. He initially gained fame after his song Dark Light went viral in 2014. He has released four studio albums named Red Teenage Melody released on June 13, 2016, Goodnight Lovell released on February 22, 2019, Just Say You Don't Care, released May 6, 2021, and I Hope You're Happy released on December 8, 2023. He was a featured artist on American YouTuber and musician Corpse Husband's \"Hot Demon Bitches Near U ! ! !\", which released on September 3, 2021.",
+      "en": {
+        "kicker": "canadian rapper, songwriter and record producer",
+        "who": "Shermar Cuba Paul, known professionally as Night Lovell, is a Canadian rapper, songwriter and record producer. He initially gained fame after his song Dark Light went viral in 2014.",
+        "facts": [
+          "He has released four studio albums named Red Teenage Melody, Goodnight Lovell, Just Say You Don't Care, and I Hope You're Happy.",
+          "He was a featured artist on American YouTuber and musician Corpse Husband's song, which released on September 3, 2021."
+        ]
+      },
+      "de": {
+        "kicker": "kanadischer rapper, songwriter und musikproduzent",
+        "who": "Shermar Cuba Paul, unter dem künstlernamen Night Lovell bekannt, ist ein kanadischer rapper, songwriter und musikproduzent. Er wurde bekannt, nachdem sein song Dark Light 2014 viral ging.",
+        "facts": [
+          "er hat vier studioalben veröffentlicht: Red Teenage Melody, Goodnight Lovell, Just Say You Don't Care und I Hope You're Happy.",
+          "er war als featured artist an einem song des amerikanischen youtubers und musikers Corpse Husband beteiligt, der am 3. September 2021 veröffentlicht wurde."
+        ]
+      },
+      "tr": {
+        "kicker": "kanadalı rapçi, söz yazarı ve müzik yapımcısı",
+        "who": "Shermar Cuba Paul, sahne adıyla Night Lovell, kanadalı bir rapçi, söz yazarı ve müzik yapımcısıdır. Şarkısı Dark Light 2014'te viral olunca ün kazanmaya başladı.",
+        "facts": [
+          "dört stüdyo albümü yayımladı: Red Teenage Melody, Goodnight Lovell, Just Say You Don't Care ve I Hope You're Happy.",
+          "amerikalı youtuber ve müzisyen Corpse Husband'in şarkısında öne çıkan sanatçıydı; bu şarkı 3 Eylül 2021'de yayımlandı."
+        ]
+      }
+    }
+  ]
+}

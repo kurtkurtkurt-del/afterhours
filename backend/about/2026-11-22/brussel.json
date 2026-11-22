@@ -1,0 +1,38 @@
+{
+ "city": "brussel",
+ "day": "2026-11-22",
+ "nights": [
+  {
+   "id": "b4ec6ee8-e5ba-4da5-bb55-1291cf0b848a",
+   "slug": "emeli-sande-d04e13e0",
+   "title": "Emeli Sandé",
+   "name": "Emeli Sandé",
+   "source_url": "https://en.wikipedia.org/wiki/Emeli_Sand%C3%A9",
+   "extract": "Adele Emily Sandé, known professionally as Emeli Sandé, is a British singer and songwriter. Born in Sunderland, Tyne and Wear, England and raised in Alford, Aberdeenshire, Scotland, Sandé rose to prominence after her guest appearance on Chipmunk's 2009 single \"Diamond Rings\", which peaked within the top ten of the UK singles chart. The following year, she guest appeared on Wiley's single \"Never Be Your Woman\", which also peaked within the chart's top ten. In 2012, she received the Brit Awards' Critics' Choice Award.",
+   "en": {
+    "kicker": "British singer and songwriter · Sunderland, England",
+    "who": "Adele Emily Sandé, known professionally as Emeli Sandé, is a British singer and songwriter. Born in Sunderland, Tyne and Wear, England and raised in Alford, Aberdeenshire, Scotland, she rose to prominence after a guest appearance on Chipmunk's 2009 single \"Diamond Rings\".",
+    "facts": [
+     "Sandé rose to prominence after her guest appearance on Chipmunk's 2009 single \"Diamond Rings\", which peaked within the top ten of the UK singles chart.",
+     "In 2012, she received the Brit Awards' Critics' Choice Award."
+    ]
+   },
+   "de": {
+    "kicker": "britische sängerin und songwriterin · Sunderland, England",
+    "who": "Adele Emily Sandé, bekannt als Emeli Sandé, ist eine britische sängerin und songwriterin. Geboren in Sunderland, Tyne and Wear, England, und aufgewachsen in Alford, Aberdeenshire, Schottland, wurde sie nach einem gastauftritt auf Chipmunks single „Diamond Rings“ bekannt.",
+    "facts": [
+     "Sandé wurde nach ihrem gastauftritt auf Chipmunks 2009 erschienener single „Diamond Rings“ bekannt, die sich in den top ten der britischen singlecharts platzierte.",
+     "2012 erhielt sie den critics' choice award der Brit Awards."
+    ]
+   },
+   "tr": {
+    "kicker": "britanyalı şarkıcı ve söz yazarı · Sunderland, İngiltere",
+    "who": "Adele Emily Sandé, sahne adıyla Emeli Sandé, britanyalı bir şarkıcı ve söz yazarıdır. Sunderland, Tyne and Wear, İngiltere'de doğdu ve Alford, Aberdeenshire, İskoçya'da büyüdü; Chipmunk'ın 2009 çıkan „Diamond Rings“ tekli ile öne çıktı.",
+    "facts": [
+     "Chipmunk'ın 2009 tekli „Diamond Rings“ şarkısına konuk olarak katılmasıyla öne çıktı ve bu şarkı İngiltere tekli listesinde ilk on içinde yer aldı.",
+     "2012'de Brit Awards'un Critics' Choice Award ödülünü aldı."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,70 @@
+{
+  "city": "koln",
+  "day": "2026-11-22",
+  "nights": [
+    {
+      "id": "181ae8b1-c8ae-4bdf-be60-214e058db5d2",
+      "slug": "alex-sampson-the-nonstop-flight-tour-c72b0ec1",
+      "title": "Alex Sampson - The Nonstop Flight Tour",
+      "name": "Alex Sampson",
+      "source_url": "https://en.wikipedia.org/wiki/Alex_Sampson",
+      "extract": "Alex Darren Sampson is a Canadian singer and songwriter, best known for finishing as a semi-finalist on the 19th season of America's Got Talent. His sophomore EP Hopeless Romantic (2024) was released by Warner Music Group, and featured his single \"Pretty Baby\". He was featured on People magazine's \"Emerging Artists\" list in 2023.",
+      "en": {
+        "kicker": "canadian singer and songwriter · hopeless romantic (2024)",
+        "who": "Alex Darren Sampson is a Canadian singer and songwriter, best known for finishing as a semi-finalist on the 19th season of America's Got Talent. His sophomore EP Hopeless Romantic (2024) was released by Warner Music Group. He was featured on People magazine's \"Emerging Artists\" list in 2023.",
+        "facts": [
+          "His sophomore EP Hopeless Romantic (2024) was released by Warner Music Group.",
+          "He was featured on People magazine's \"Emerging Artists\" list in 2023."
+        ]
+      },
+      "de": {
+        "kicker": "kanadischer sänger und songwriter · hopeless romantic (2024)",
+        "who": "Alex Darren Sampson ist ein kanadischer Sänger und Songwriter, der vor allem dafür bekannt ist, die 19. Staffel von America's Got Talent als Halbfinalist abgeschlossen zu haben. Seine zweite EP Hopeless Romantic (2024) wurde von Warner Music Group veröffentlicht. 2023 wurde er in die Liste „Emerging Artists“ des People Magazine aufgenommen.",
+        "facts": [
+          "Seine zweite EP Hopeless Romantic (2024) wurde von Warner Music Group veröffentlicht.",
+          "2023 wurde er in die Liste „Emerging Artists“ des People Magazine aufgenommen."
+        ]
+      },
+      "tr": {
+        "kicker": "kanadalı şarkıcı ve söz yazarı · hopeless romantic (2024)",
+        "who": "Alex Darren Sampson, America's Got Talent'ın 19. sezonunda yarı finalist olarak yarışmayı tamamlamasıyla tanınan kanadalı bir şarkıcı ve söz yazarıdır. İkinci EP'si Hopeless Romantic (2024), Warner Music Group tarafından yayımlandı. 2023'te People dergisinin \"Emerging Artists\" listesinde yer aldı.",
+        "facts": [
+          "İkinci EP'si Hopeless Romantic (2024), Warner Music Group tarafından yayımlandı.",
+          "2023'te People dergisinin \"Emerging Artists\" listesinde yer aldı."
+        ]
+      }
+    },
+    {
+      "id": "b21b552a-74d5-4984-b37b-9b0ce5d8c156",
+      "slug": "flowerovlove-3d12a226",
+      "title": "Flowerovlove",
+      "name": "Flowerovlove",
+      "source_url": "https://en.wikipedia.org/wiki/Flowerovlove",
+      "extract": "Joyce Cissé, known professionally as Flowerovlove, is an English singer-songwriter, producer and model. She debuted as a teenager in 2020 and released two EPs independently. She signed to Capitol Records in 2023, under which her third EP Ache in My Tooth (2024) and debut studio album Mini Skirt Warrior (2026) were released.",
+      "en": {
+        "kicker": "english singer-songwriter · mini skirt warrior (2026)",
+        "who": "Joyce Cissé, known professionally as Flowerovlove, is an English singer-songwriter, producer and model. She debuted as a teenager in 2020 and released two EPs independently. She signed to Capitol Records in 2023.",
+        "facts": [
+          "She signed to Capitol Records in 2023, under which her third EP Ache in My Tooth (2024) and debut studio album Mini Skirt Warrior (2026) were released.",
+          "She debuted as a teenager in 2020 and released two EPs independently."
+        ]
+      },
+      "de": {
+        "kicker": "englische singer-songwriterin · mini skirt warrior (2026)",
+        "who": "Joyce Cissé, unter dem Künstlernamen Flowerovlove bekannt, ist eine englische Singer-Songwriterin, Produzentin und Model. Sie debütierte als Teenager im Jahr 2020 und veröffentlichte zwei EPs unabhängig. 2023 unterschrieb sie bei Capitol Records.",
+        "facts": [
+          "Sie unterschrieb 2023 bei Capitol Records, wo ihre dritte EP Ache in My Tooth (2024) und ihr Debütstudioalbum Mini Skirt Warrior (2026) erschienen.",
+          "Sie debütierte als Teenager im Jahr 2020 und veröffentlichte zwei EPs unabhängig."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz şarkıcı ve söz yazarı · mini skirt warrior (2026)",
+        "who": "Joyce Cissé, Flowerovlove adıyla tanınan bir İngiliz şarkıcı, söz yazarı, yapımcı ve modeldir. Müzik kariyerine genç yaşta, 2020'de başladı ve iki EP'yi bağımsız olarak yayımladı. 2023'te Capitol Records ile sözleşme imzaladı.",
+        "facts": [
+          "2023'te Capitol Records ile sözleşme imzaladı; bu şirket altında üçüncü EP'si Ache in My Tooth (2024) ve ilk stüdyo albümü Mini Skirt Warrior (2026) yayımlandı.",
+          "Müzik kariyerine genç yaşta, 2020'de başladı ve iki EP'yi bağımsız olarak yayımladı."
+        ]
+      }
+    }
+  ]
+}
