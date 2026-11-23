@@ -1,0 +1,36 @@
+{
+ "city": "birmingham",
+ "day": "2026-11-23",
+ "nights": [
+  {
+   "id": "71507606-5f9d-4145-a656-47a54ba95c8c",
+   "slug": "jamie-t-4a1956c0",
+   "title": "Jamie T",
+   "act": "Jamie T",
+   "name": "Jamie T",
+   "description": "English musician (born 1986)",
+   "source_url": "https://en.wikipedia.org/wiki/Jamie_T",
+   "extract": "Jamie Alexander Treays, better known by his stage name Jamie T, is an English singer, songwriter, rapper, guitarist and record producer from Wimbledon, South London."
+  },
+  {
+   "id": "557314a0-c2e0-4099-810b-9532bcaecdae",
+   "slug": "tori-kelly-god-must-really-love-me-europe-tour-05b1fbcf",
+   "title": "Tori Kelly - God Must Really Love Me Europe Tour",
+   "act": "Tori Kelly",
+   "name": "Tori Kelly",
+   "description": "American singer-songwriter (born 1992)",
+   "source_url": "https://en.wikipedia.org/wiki/Tori_Kelly",
+   "extract": "Victoria Loren \"Tori\" Kelly is an American singer-songwriter. She first gained recognition on YouTube before making it through to Hollywood week on the ninth season of American Idol in 2010 and eventually releasing her debut EP, Handmade Songs (2012)."
+  },
+  {
+   "id": "5db5a283-9573-4558-9730-5ea98de94df1",
+   "slug": "the-snuts-21badbe0",
+   "title": "The Snuts",
+   "act": "The Snuts",
+   "name": "The Snuts",
+   "description": "Scottish indie rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Snuts",
+   "extract": "The Snuts are a Scottish indie rock band formed in 2015, originating from West Lothian, Scotland. They have performed across the United Kingdom and Ireland. The band consists of Jack Cochrane, Joe McGillveray (guitar), Callum '29' Wilson (bass) and Jordan 'Joko' Mackay (drums) and was formed when the members were in school."
+  }
+ ]
+}

@@ -1,0 +1,46 @@
+{
+ "city": "manchester",
+ "day": "2026-11-23",
+ "nights": [
+  {
+   "id": "20ac6c29-9ef6-4068-a3ec-2ed02437f225",
+   "slug": "getdown-services-f735c501",
+   "title": "Getdown Services",
+   "act": "Getdown Services",
+   "name": "Getdown Services",
+   "description": "British rock and pop duo",
+   "source_url": "https://en.wikipedia.org/wiki/Getdown_Services",
+   "extract": "Getdown Services are a British rock and pop duo from Minehead, consisting of Ben Sadler and Josh Law. They have described their sound as \"disco and eighties and like seventies infused groove based music\" with other influences, including classic rock."
+  },
+  {
+   "id": "dca79365-1cd8-42e2-9a92-4002d0c0cee8",
+   "slug": "chris-hawkins-xmas-party-557bfea9",
+   "title": "Chris Hawkins - XMAS Party",
+   "act": "Chris Hawkins",
+   "name": "Chris Hawkins",
+   "description": "British DJ and radio presenter",
+   "source_url": "https://en.wikipedia.org/wiki/Chris_Hawkins",
+   "extract": "Chris Hawkins is a British radio presenter on BBC Radio 6 Music and the host of the podcast How To DJ."
+  },
+  {
+   "id": "03ec447a-2633-4265-9ce2-0e6680d72821",
+   "slug": "the-pretty-reckless-722c2e40",
+   "title": "The Pretty Reckless",
+   "act": "The Pretty Reckless",
+   "name": "The Pretty Reckless",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Pretty_Reckless",
+   "extract": "The Pretty Reckless is an American rock band from New York City, formed in 2009. The band consists of Taylor Momsen, Ben Phillips, Mark Damon (bass), and Jamie Perkins (drums). In August 2010, the band released their debut studio album, Light Me Up. The album spawned three moderately successful singles, most notably \"Make Me Wanna Die\". The band released the Hit Me Like a Man EP in early 2012. In March 2014, the band released their second studio album, Going to Hell, which included the singles \"Heaven Knows\" and \"Messed Up World \", both of which topped the US and UK rock charts."
+  },
+  {
+   "id": "4ec25818-6e85-4753-a2b9-9d2dbf7aae0f",
+   "slug": "swae-lee-event-moved-to-manchester-academy-ac068130",
+   "title": "Swae Lee - Event moved to Manchester Academy",
+   "act": "Swae Lee",
+   "name": "Swae Lee",
+   "description": "American rapper and singer (born 1993)",
+   "source_url": "https://en.wikipedia.org/wiki/Swae_Lee",
+   "extract": "Khalif Malik Ibn Shaman Brown, known professionally as Swae Lee, is an American rapper and singer from Inglewood, California. Known for his wide-ranged, reverb-heavy vocals and genre-blending, Lee is one half of the Mississippi-based hip-hop duo Rae Sremmurd, which he formed in 2010 with his older brother Slim Jxmmi."
+  }
+ ]
+}

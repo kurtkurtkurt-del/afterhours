@@ -1,0 +1,46 @@
+{
+ "city": "los-angeles",
+ "day": "2026-11-23",
+ "nights": [
+  {
+   "id": "a4ea3532-9430-4d9a-9602-44d068b0c3f1",
+   "slug": "terrace-martin-12aa4b94",
+   "title": "Terrace Martin",
+   "act": "Terrace Martin",
+   "name": "Terrace Martin",
+   "description": "American musician (born 1978)",
+   "source_url": "https://en.wikipedia.org/wiki/Terrace_Martin",
+   "extract": "Terrace Jamahl Martin is an American musician, rapper, singer, and record producer. He is perhaps best known for producing records for several prominent artists in the music industry, including Kendrick Lamar, Snoop Dogg, the Game, Busta Rhymes, Stevie Wonder, Charlie Wilson, Raphael Saadiq and YG, among others. Martin is a multi-instrumentalist whose music production embodies funk, jazz, classical and soul. Martin released his sixth studio album, Velvet Portraits, on his label, Sounds of Crenshaw Records, through Ropeadope Records."
+  },
+  {
+   "id": "b014b3dd-7a5b-42b3-8f33-3c9790bb5182",
+   "slug": "song-dongye-0574b4d4",
+   "title": "Song Dongye",
+   "act": "Song Dongye",
+   "name": "Song Dongye",
+   "description": "Chinese folk and ballad singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Song_Dongye",
+   "extract": "Song Dongye is a Chinese folk and ballad singer-songwriter. He was born in Haidian District, Beijing."
+  },
+  {
+   "id": "65168571-6f55-4216-9e73-1fce5ec7f3eb",
+   "slug": "amtrac-704445ed",
+   "title": "Amtrac",
+   "act": "Amtrac",
+   "name": "Amtrac",
+   "description": "American DJ and electronic music producer (born 1987)",
+   "source_url": "https://en.wikipedia.org/wiki/Amtrac_(musician)",
+   "extract": "Caleb Cornett, known professionally as Amtrac, is an American DJ, electronic music producer, singer, multi-instrumentalist, and songwriter."
+  },
+  {
+   "id": "a2f2e21c-7bd2-4ed9-878d-3104c8834984",
+   "slug": "kenny-garrett-9be29e96",
+   "title": "Kenny Garrett",
+   "act": "Kenny Garrett",
+   "name": "Kenny Garrett",
+   "description": "American jazz musician and composer (born 1960)",
+   "source_url": "https://en.wikipedia.org/wiki/Kenny_Garrett",
+   "extract": "Kenny Garrett is an American post-bop jazz musician and composer who gained recognition in his youth as a member of the Duke Ellington Orchestra and for his time with Miles Davis's band. Garrett's primary instruments are alto and soprano saxophone and flute. Since 1985, he has pursued a solo career."
+  }
+ ]
+}

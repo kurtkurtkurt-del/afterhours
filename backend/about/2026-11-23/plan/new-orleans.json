@@ -1,0 +1,26 @@
+{
+ "city": "new-orleans",
+ "day": "2026-11-23",
+ "nights": [
+  {
+   "id": "29cd1a9a-5b3e-4c62-9422-a38e7ed211cb",
+   "slug": "boney-james-db64356a",
+   "title": "Boney James",
+   "act": "Boney James",
+   "name": "Boney James",
+   "description": "American saxophonist and songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Boney_James",
+   "extract": "Boney James is an American saxophonist, recording artist, songwriter and record producer."
+  },
+  {
+   "id": "ec718f28-2ec9-4789-819d-2de6d288ae79",
+   "slug": "billy-strings-36cc7b9b",
+   "title": "Billy Strings",
+   "act": "Billy Strings",
+   "name": "Billy Strings",
+   "description": "American bluegrass musician (born 1992)",
+   "source_url": "https://en.wikipedia.org/wiki/Billy_Strings",
+   "extract": "William Lee Apostol, known by the stage name Billy Strings, is an American guitarist, singer, songwriter, and bluegrass musician. Three of his albums, Home, Live Vol. 1, and Highway Prayers, won the Grammy Award for Best Bluegrass Album, in 2021, 2025, and 2026 respectively."
+  }
+ ]
+}

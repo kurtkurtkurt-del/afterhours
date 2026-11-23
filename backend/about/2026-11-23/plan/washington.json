@@ -1,0 +1,76 @@
+{
+ "city": "washington",
+ "day": "2026-11-23",
+ "nights": [
+  {
+   "id": "39a1bf22-76f7-49a8-99d7-b0704cc24559",
+   "slug": "eelke-kleijn-4b8b1335",
+   "title": "Eelke Kleijn",
+   "act": "Eelke Kleijn",
+   "name": "Eelke Kleijn",
+   "description": "Dutch producer and DJ",
+   "source_url": "https://en.wikipedia.org/wiki/Eelke_Kleijn",
+   "extract": "Eelke van Kleijn is a Dutch producer and DJ from Rotterdam, Netherlands. He is known mostly for his electronic dance music and also produces music for other media, such as television series, commercials, movie trailers and animation."
+  },
+  {
+   "id": "1c23550a-717d-4401-a871-29783604e03e",
+   "slug": "tyla-the-a-pop-world-tour-4a5129ae",
+   "title": "TYLA - THE A*POP WORLD TOUR",
+   "act": "TYLA",
+   "name": "Tyla",
+   "description": "South African singer-songwriter (born 2002)",
+   "source_url": "https://en.wikipedia.org/wiki/Tyla",
+   "extract": "Tyla Laura Seethal known mononymously as Tyla, is a South African singer-songwriter. Dubbed the \"Queen of Popiano\", her musical style is characterised by a fusion of pop and amapiano."
+  },
+  {
+   "id": "de283fa9-a4cd-4d9a-8c8c-5b1a0b03b5c4",
+   "slug": "kim-petras-de-tour-23e37b08",
+   "title": "Kim Petras: De-Tour",
+   "act": "Kim Petras",
+   "name": "Kim Petras",
+   "description": "German singer and songwriter (born 1992)",
+   "source_url": "https://en.wikipedia.org/wiki/Kim_Petras",
+   "extract": "Kim Petras is a German singer and songwriter based in Los Angeles. After gaining international media attention for transitioning as a teenager, she released her debut EP, One Piece of Tape (2011), and wrote tracks for Fergie, JoJo, Skylar Simone, and Twice. In 2017, Petras released her debut single \"I Don't Want It at All\", which charted at No. 54 on Billboard's Dance Club Songs chart. She followed this with her second EP, Turn Off the Light, Vol. 1 (2018), the mixtapes Clarity and Turn Off the Light, and the single \"How It's Done\" (2019); the last of these featured on the soundtrack of the 2019 film Charlie's Angels. Petras was featured on Kygo's \"Broken Glass\" (2020), which charted at No. 13 on Billboard's Dance/Electronic Songs chart."
+  },
+  {
+   "id": "0e3ae4d7-9010-4dd1-9ca2-f5df56d78dc3",
+   "slug": "pigeons-playing-ping-pong-23c2d0f0",
+   "title": "Pigeons Playing Ping Pong",
+   "act": "Pigeons Playing Ping Pong",
+   "name": "Pigeons Playing Ping Pong",
+   "description": "American jam band",
+   "source_url": "https://en.wikipedia.org/wiki/Pigeons_Playing_Ping_Pong",
+   "extract": "Pigeons Playing Ping Pong is an American funk jam band from Baltimore, Maryland. The band has garnered a following as a result of their consistent touring, playing as many as two hundred shows a year."
+  },
+  {
+   "id": "ee52b566-ffdc-44f2-85e9-a77ac797f0d7",
+   "slug": "pigeons-playing-ping-pong-2-nightpass-12-3-atlan-dfed4005",
+   "title": "Pigeons Playing Ping Pong - 2 NIGHTPASS 12/3 Atlantis + 12/4 9:30 Club",
+   "act": "Pigeons Playing Ping Pong",
+   "name": "Pigeons Playing Ping Pong",
+   "description": "American jam band",
+   "source_url": "https://en.wikipedia.org/wiki/Pigeons_Playing_Ping_Pong",
+   "extract": "Pigeons Playing Ping Pong is an American funk jam band from Baltimore, Maryland. The band has garnered a following as a result of their consistent touring, playing as many as two hundred shows a year."
+  },
+  {
+   "id": "07fe79c1-2d83-4b63-af3f-34bfd038e416",
+   "slug": "pigeons-playing-ping-pong-3-night-pass-26f823ab",
+   "title": "Pigeons Playing Ping Pong - 3 NIGHT PASS!",
+   "act": "Pigeons Playing Ping Pong",
+   "name": "Pigeons Playing Ping Pong",
+   "description": "American jam band",
+   "source_url": "https://en.wikipedia.org/wiki/Pigeons_Playing_Ping_Pong",
+   "extract": "Pigeons Playing Ping Pong is an American funk jam band from Baltimore, Maryland. The band has garnered a following as a result of their consistent touring, playing as many as two hundred shows a year."
+  },
+  {
+   "id": "02b36648-bb89-4046-8906-a0fec7a652f9",
+   "slug": "nimino-keep-me-awake-tour-7825b16b",
+   "title": "nimino: keep me awake tour",
+   "act": "nimino",
+   "name": "Nimino",
+   "description": "British musician and DJ",
+   "source_url": "https://en.wikipedia.org/wiki/Nimino",
+   "extract": "Nimino, born Milo Evans, is a British producer and DJ. Nimino's music sits in the intersection of house, hip-hop, and garage music."
+  }
+ ]
+}

@@ -1,0 +1,36 @@
+{
+ "city": "houston",
+ "day": "2026-11-23",
+ "nights": [
+  {
+   "id": "29598521-eed0-4fd6-9c49-31786e4f228c",
+   "slug": "pretty-sick-eae41668",
+   "title": "Pretty Sick",
+   "act": "Pretty Sick",
+   "name": "Pretty Sick",
+   "description": "American rock band from New York City",
+   "source_url": "https://en.wikipedia.org/wiki/Pretty_Sick",
+   "extract": "Pretty Sick is an American indie rock band from New York City, New York. It currently consists of vocalist and bassist Sabrina Fuentes, drummer Eva Kaufman, and guitarist Benjamin Arauz."
+  },
+  {
+   "id": "24cbad0d-77df-4fc8-9ac1-1e50e1f820a9",
+   "slug": "jodeci-35th-anniversary-tour-of-forever-my-lady-d3c229eb",
+   "title": "Jodeci - 35th Anniversary Tour of Forever My Lady",
+   "act": "Jodeci",
+   "name": "Jodeci",
+   "description": "American R&B quartet",
+   "source_url": "https://en.wikipedia.org/wiki/Jodeci",
+   "extract": "Jodeci is an American R&B quartet consisting of members JoJo, DeVanté Swing, K-Ci, and Mr. Dalvin. Formed in 1988 in Charlotte, North Carolina, Jodeci began as a duo of DeVanté Swing and JoJo but later both added their brothers. After signing with Uptown Records in 1990, the group finished work on their debut album, Forever My Lady (1991), which brought them mainstream success with three straight Billboard R&B No. 1 hit singles: the album's titular track, \"Stay\" and \"Come and Talk to Me\"."
+  },
+  {
+   "id": "76f248de-6ba1-4fab-99bc-9d0c1850c183",
+   "slug": "trippie-redd-the-non-disclosure-agreement-tour-4afe51b4",
+   "title": "Trippie Redd - The Non-disclosure Agreement Tour",
+   "act": "Trippie Redd",
+   "name": "Trippie Redd",
+   "description": "American rapper (born 1999)",
+   "source_url": "https://en.wikipedia.org/wiki/Trippie_Redd",
+   "extract": "Michael Lamar White II, known professionally as Trippie Redd, is an American rapper, singer, and songwriter. Born and raised in Canton, Ohio, he has contributed to the progression of emo rap and rage, a subgenre of trap music."
+  }
+ ]
+}

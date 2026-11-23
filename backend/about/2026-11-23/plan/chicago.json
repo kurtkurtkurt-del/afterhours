@@ -1,0 +1,66 @@
+{
+ "city": "chicago",
+ "day": "2026-11-23",
+ "nights": [
+  {
+   "id": "a432fa04-4361-4c3a-84b4-33bccf89d2e8",
+   "slug": "tyla-the-a-pop-world-tour-252765bc",
+   "title": "TYLA - THE A*POP WORLD TOUR",
+   "act": "TYLA",
+   "name": "Tyla",
+   "description": "South African singer-songwriter (born 2002)",
+   "source_url": "https://en.wikipedia.org/wiki/Tyla",
+   "extract": "Tyla Laura Seethal known mononymously as Tyla, is a South African singer-songwriter. Dubbed the \"Queen of Popiano\", her musical style is characterised by a fusion of pop and amapiano."
+  },
+  {
+   "id": "5df46e88-f2d5-43cf-b57d-706c217f48fd",
+   "slug": "jorja-smith-ages-18-c5984e15",
+   "title": "Jorja Smith - Ages 18+",
+   "act": "Jorja Smith",
+   "name": "Jorja Smith",
+   "description": "British singer and songwriter (born 1997)",
+   "source_url": "https://en.wikipedia.org/wiki/Jorja_Smith",
+   "extract": "Jorja Alice Smith is an English singer and songwriter. Born and raised in Walsall, West Midlands, she has been writing songs since the age of 11. In 2012, Smith's friend uploaded her cover of Labrinth's \"Earthquake\" to YouTube, which led to her discovery by record producer Guy Moot. After her first two singles received broader recognition, she signed with Sony/ATV in early 2016, releasing two EPs throughout later that year and into 2017."
+  },
+  {
+   "id": "b80ae466-a1c6-4eb4-9012-060216b76004",
+   "slug": "underoath-define-the-great-line-20th-anniversary-86979e5b",
+   "title": "Underoath - Define the Great Line 20th Anniversary Tour",
+   "act": "Underoath",
+   "name": "Underoath",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Underoath",
+   "extract": "Underoath is an American rock band from Tampa, Florida. It was founded by lead vocalist Dallas Taylor and guitarist Luke Morton in 1997 in Ocala, Florida; subsequently, its additional members were from Tampa, including drummer, singer and last remaining original member Aaron Gillespie. The band's current lineup consists of Gillespie, keyboardist Christopher Dudley, lead guitarist Timothy McTague, bassist Grant Brandell, and lead vocalist Spencer Chamberlain."
+  },
+  {
+   "id": "8420f25d-773f-4d52-b607-767ac8d87b03",
+   "slug": "john-summit-ctrl-escape-arena-tour-c1237402",
+   "title": "JOHN SUMMIT - CTRL ESCAPE ARENA TOUR",
+   "act": "JOHN SUMMIT",
+   "name": "John Summit",
+   "description": "American DJ and record producer (born 1994)",
+   "source_url": "https://en.wikipedia.org/wiki/John_Summit",
+   "extract": "John Walter Schuster, better known by his stage name John Summit, is an American DJ and record producer, former accountant and current owner of the Experts Only label. His music includes original tracks and remixes, primarily focused in the genre of tech house."
+  },
+  {
+   "id": "36b1d6eb-0156-403b-a1d2-7a54a7a90d83",
+   "slug": "sabaton-legends-on-tour-b1f3477f",
+   "title": "Sabaton: Legends on Tour",
+   "act": "Sabaton",
+   "name": "Sabaton",
+   "description": "Swedish power metal band",
+   "source_url": "https://en.wikipedia.org/wiki/Sabaton_(band)",
+   "extract": "Sabaton is a Swedish power metal band from Falun, formed in 1999 by lead singer Joakim Brodén, bassist Pär Sundström, guitarists Oskar Montelius and Rikard Sundén, and drummer Richard Larsson. The band has gone through multiple lineup changes with Brodén and Sundström remaining the only consistent members. The vast majority of their songs are about historical events, mainly wars and significant battles. As of 2026, the band has released eleven studio albums, four live albums, five live DVDs and thirty music videos."
+  },
+  {
+   "id": "e6e6b74f-c614-4bbd-96f8-80b976df2121",
+   "slug": "black-label-society-moved-to-ramova-8e734a91",
+   "title": "Black Label Society - Moved To Ramova",
+   "act": "Black Label Society",
+   "name": "Black Label Society",
+   "description": "American heavy metal band",
+   "source_url": "https://en.wikipedia.org/wiki/Black_Label_Society",
+   "extract": "Black Label Society is an American heavy metal band formed in Los Angeles in 1998 by guitarist/singer Zakk Wylde. To date, the band has released twelve studio albums, two live albums, two compilation albums, one EP, and three video albums."
+  }
+ ]
+}

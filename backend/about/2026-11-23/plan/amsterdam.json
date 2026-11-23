@@ -1,0 +1,46 @@
+{
+ "city": "amsterdam",
+ "day": "2026-11-23",
+ "nights": [
+  {
+   "id": "44b18441-5bea-4f1d-94c3-1eec8c3e6f15",
+   "slug": "tinie-tempah-c648d529",
+   "title": "Tinie Tempah",
+   "act": "Tinie Tempah",
+   "name": "Tinie Tempah",
+   "description": "British rapper and singer (born 1988)",
+   "source_url": "https://en.wikipedia.org/wiki/Tinie_Tempah",
+   "extract": "Patrick Chukwuemeka Okogwu, better known by his stage name Tinie Tempah, is an English rapper, singer and television presenter. Born and raised in London, he created his own entertainment company Disturbing London in 2006, alongside Dumi Oburota. After signing with Parlophone in 2009 and releasing several mixtapes, he rose to fame with the UK number-one singles \"Pass Out\" and \"Written in the Stars\" in 2010."
+  },
+  {
+   "id": "2b5420b4-6cb3-4e6e-887c-353d7ddb9494",
+   "slug": "taemin-premium-seats-7c80b6ea",
+   "title": "Taemin | Premium Seats",
+   "act": "Taemin",
+   "name": "Taemin",
+   "description": "South Korean singer and actor (born 1993)",
+   "source_url": "https://en.wikipedia.org/wiki/Taemin",
+   "extract": "Lee Tae-min, known mononymously as Taemin, is a South Korean singer and actor. He debuted as a member of the South Korean boy band Shinee in May 2008 and the supergroup SuperM in 2019, both under SM Entertainment, and has subsequently been labeled by media outlets as the \"Idol's Idol\" due to the large number of idols citing him as an inspiration. As an actor, Taemin's first role was as Junsu in the 2009 MBC comedy Hilarious Housewives."
+  },
+  {
+   "id": "4012d7c5-61ea-44fe-924c-78b1cbd4be8a",
+   "slug": "tiffany-day-23b3b579",
+   "title": "Tiffany Day",
+   "act": "Tiffany Day",
+   "name": "Tiffany Day",
+   "description": "American singer and songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Tiffany_Day_(musician)",
+   "extract": "Tiffany Day Ruan, is a Canadian-American singer, songwriter, and record producer. Raised in Wichita, Kansas, she began independently releasing music after a 2017 video of her singing into a well in Italy went viral on Twitter. She released her debut studio album, Lover Tofu Fruit, in 2024. She signed to Broke Records the following year, through which she released her second studio album, Halo, in 2026."
+  },
+  {
+   "id": "b9052044-49ac-4ff9-afa3-921416ead274",
+   "slug": "skepta-the-fork-and-knife-tour-a6eec43b",
+   "title": "Skepta - The Fork and Knife Tour",
+   "act": "Skepta",
+   "name": "Skepta",
+   "description": "English rapper, producer and DJ (born 1982)",
+   "source_url": "https://en.wikipedia.org/wiki/Skepta",
+   "extract": "Joseph Olaitan Adenuga Jr, known professionally as Skepta, is a British grime music MC, rapper, record producer, fashion designer, film director and DJ. Alongside his younger brother Jme, he briefly joined Roll Deep before founding Boy Better Know in 2005. With Boy Better Know, Skepta clashed with fellow Grime MC Devilman for the video release Lord of the Mics 2, in what is remembered as one of the biggest clashes in grime history."
+  }
+ ]
+}

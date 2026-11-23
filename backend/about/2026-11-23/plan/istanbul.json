@@ -1,0 +1,66 @@
+{
+ "city": "istanbul",
+ "day": "2026-11-23",
+ "nights": [
+  {
+   "id": "f0e565b7-ebdb-4538-8bda-b6461cedb845",
+   "slug": "emrah-5ed7cb11",
+   "title": "Emrah",
+   "act": "Emrah",
+   "name": "Emrah",
+   "description": "Turkish singer and actor (born 1971)",
+   "source_url": "https://en.wikipedia.org/wiki/Emrah_(singer)",
+   "extract": "Emrah Erdoğan İpek is a Turkish-Kurdish singer, actor and child star during 1980's from Turkey.."
+  },
+  {
+   "id": "a7149b01-6225-4f3d-80d9-70976a1a00c1",
+   "slug": "gokhan-turkmen-d15a54f1",
+   "title": "Gökhan Türkmen",
+   "act": "Gökhan Türkmen",
+   "name": "Gökhan Türkmen",
+   "description": "Turkish singer (born 1983)",
+   "source_url": "https://en.wikipedia.org/wiki/G%C3%B6khan_T%C3%BCrkmen",
+   "extract": "Gökhan Türkmen is a Turkish singer."
+  },
+  {
+   "id": "e4704fb5-4ace-4908-b141-67a980b9a9ea",
+   "slug": "serdar-ortac-f84db914",
+   "title": "Serdar Ortaç",
+   "act": "Serdar Ortaç",
+   "name": "Serdar Ortaç",
+   "description": "Kurdish-Turkish singer, songwriter, and composer (born 1970)",
+   "source_url": "https://en.wikipedia.org/wiki/Serdar_Orta%C3%A7",
+   "extract": "Serdar Ortaç is a Turkish singer, songwriter and composer from Istanbul.\nHe is known as one of the most popular singers in Turkish pop-music history."
+  },
+  {
+   "id": "40e65433-cb43-47b0-b6e0-7adfa18692da",
+   "slug": "ask-n-nur-yengi-d3ceb52f",
+   "title": "Aşkın Nur Yengi",
+   "act": "Aşkın Nur Yengi",
+   "name": "Aşkın Nur Yengi",
+   "description": "Turkish singer and actress (born 1970)",
+   "source_url": "https://en.wikipedia.org/wiki/A%C5%9Fk%C4%B1n_Nur_Yengi",
+   "extract": "Aşkın Nur Yengi is a Turkish singer, composer, and actress.\nShe started working as a backing vocalist for Sezen Aksu and with Aksu's help, released her first studio album in 1990. With her debut album Sevgiliye in 1990, she became one of the most successful Turkish singers of the '90s."
+  },
+  {
+   "id": "7b1ab936-c4f3-43e4-8ca2-d758fe1ac361",
+   "slug": "lil-zey-5ce4bfe1",
+   "title": "Lil Zey",
+   "act": "Lil Zey",
+   "name": "Lil Zey",
+   "description": "Turkish singer and rapper (born 1994)",
+   "source_url": "https://en.wikipedia.org/wiki/Lil_Zey",
+   "extract": "Zeynep Tanyalçın, better known by her stage name Lil Zey, is a Turkish rapper, singer and songwriter."
+  },
+  {
+   "id": "8b18948a-8eb3-4c1c-b1d9-929f18f839a3",
+   "slug": "zakkum-89626d61",
+   "title": "Zakkum",
+   "act": "Zakkum",
+   "name": "Zakkum",
+   "description": "Turkish rock group",
+   "source_url": "https://en.wikipedia.org/wiki/Zakkum_(band)",
+   "extract": "Zakkum are a Turkish rock group. It was created in 1999 under the name Raindog in Ankara. Raindog had many stage performances, before they started working on an album and chose a Turkish name \"Zakkum\" for their band."
+  }
+ ]
+}

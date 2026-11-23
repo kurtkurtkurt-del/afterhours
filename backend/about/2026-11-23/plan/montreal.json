@@ -1,0 +1,36 @@
+{
+ "city": "montreal",
+ "day": "2026-11-23",
+ "nights": [
+  {
+   "id": "48d8c262-f431-435f-b665-3159d252a8a9",
+   "slug": "michael-jackson-legacy-07527ba5",
+   "title": "Michael Jackson  - Legacy",
+   "act": "Michael Jackson",
+   "name": "Michael Jackson",
+   "description": "American singer and songwriter (1958–2009)",
+   "source_url": "https://en.wikipedia.org/wiki/Michael_Jackson",
+   "extract": "Michael Joseph Jackson was an American singer, songwriter, dancer, and philanthropist. Dubbed the \"King of Pop\", he is widely regarded as one of the most significant cultural figures of the 20th century. His musical achievements broke American racial barriers and made him a dominant figure worldwide. Through his songs, music videos, concerts, and fashion, he transformed visual performance in popular music, popularizing street dance moves such as the moonwalk, the robot, and the anti-gravity lean. Jackson is often deemed the greatest entertainer of all time."
+  },
+  {
+   "id": "076e5e9a-e165-46cf-836e-8f8e0cea3ccc",
+   "slug": "blood-for-blood-282923a9",
+   "title": "BLOOD FOR BLOOD",
+   "act": "BLOOD FOR BLOOD",
+   "name": "Blood for Blood",
+   "description": "American hardcore punk band",
+   "source_url": "https://en.wikipedia.org/wiki/Blood_for_Blood",
+   "extract": "Blood for Blood is an American hardcore punk band from Boston, Massachusetts. It was formed in 1994 by Erick \"Buddha\" Medina and \"White Trash\" Rob Lind, drawing inspiration from the hardcore scene in Boston and New York. In 1997, they were signed to Victory Records. The band describes its sound as influenced by Sheer Terror, Breakdown, Carnivore and Killing Time."
+  },
+  {
+   "id": "b3b611e6-5618-4ef1-a7a8-92121b44ac44",
+   "slug": "riot-ten-2b1d8ad4",
+   "title": "Riot Ten",
+   "act": "Riot Ten",
+   "name": "Riot Ten",
+   "description": "American DJ and record producer (born 1992)",
+   "source_url": "https://en.wikipedia.org/wiki/Riot_Ten",
+   "extract": "Christopher Wilson, better known by his stage name Riot Ten, is an American DJ and record producer based in El Paso, Texas. He is best known for his dubstep and hardtrap production and is currently signed to Steve Aoki's Dim Mak, with additional music out on Excision's Rotten Recordings, Never Say Die Records, Disciple Records, and Firepower, as well as remixes on Atlantic Records, Interscope Records, and RCA Records. Since 2016, Wilson has toured alongside Yellow Claw, Adventure Club, Steve Aoki, Kayzo, Pegboard Nerds, and Excision."
+  }
+ ]
+}

@@ -1,0 +1,46 @@
+{
+ "city": "zurich",
+ "day": "2026-11-23",
+ "nights": [
+  {
+   "id": "2cdad80e-99a6-4d82-9e67-6aa86b72ab0d",
+   "slug": "og-keemo-cd9c6717",
+   "title": "OG Keemo",
+   "act": "OG Keemo",
+   "name": "OG Keemo",
+   "description": "German rapper",
+   "source_url": "https://en.wikipedia.org/wiki/OG_Keemo",
+   "extract": "Karim Joel Martin, known professionally as OG Keemo, is a German rapper."
+  },
+  {
+   "id": "4f04f945-81c8-45e4-87bd-350bd19c65d1",
+   "slug": "south-arcade-2484068b",
+   "title": "South Arcade",
+   "act": "South Arcade",
+   "name": "South Arcade",
+   "description": "English rock band",
+   "source_url": "https://en.wikipedia.org/wiki/South_Arcade",
+   "extract": "South Arcade are an English rock band from Oxford. Formed in 2021, the band went viral for videos of their band practices. Their debut EP, 2005, was inspired by various genres and artists from the 2000s and was received positively by critics. Their works are usually described as pop-punk or alternative rock and have been likened to those by Pale Waves, Avril Lavigne, and Bring Me the Horizon."
+  },
+  {
+   "id": "7e9e0007-8d18-47eb-89ea-1c426b1b0365",
+   "slug": "palaye-royale-99b19bdd",
+   "title": "Palaye Royale",
+   "act": "Palaye Royale",
+   "name": "Palaye Royale",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Palaye_Royale",
+   "extract": "Palaye Royale is an American rock band from Las Vegas, formed in 2008 by brothers Remington Leith, Sebastian Danzig, and Emerson Barrett. Formed under the name Kropp Circle, the band released one EP and two singles before changing their name to Palaye Royale in 2011. Under this name, they have released five full-length albums and four EPs through Sumerian Records."
+  },
+  {
+   "id": "b04fd30f-d6e1-481b-b53d-5b35c3cf7f8e",
+   "slug": "haiden-henderson-33c49ff2",
+   "title": "Haiden Henderson",
+   "act": "Haiden Henderson",
+   "name": "Haiden Henderson",
+   "description": "American singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Haiden_Henderson",
+   "extract": "Haiden Henderson, is an American singer-songwriter and musician based in Los Angeles."
+  }
+ ]
+}

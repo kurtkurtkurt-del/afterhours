@@ -1,0 +1,26 @@
+{
+ "city": "seattle",
+ "day": "2026-11-23",
+ "nights": [
+  {
+   "id": "a1d8d71a-b817-4b57-b88d-60396f0a0feb",
+   "slug": "mor-ve-otesi-ages-21-5170a877",
+   "title": "mor ve otesi - Ages 21+",
+   "act": "mor ve otesi",
+   "name": "Mor ve ötesi",
+   "description": "Turkish alternative rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Mor_ve_%C3%B6tesi",
+   "extract": "Mor ve Ötesi is a Turkish alternative rock band from Istanbul. Its four current members are Harun Tekin, Kerem Kabadayı (drums), Burak Güven (bass) and Kerem Özyeğen. Former members include Alper Tekin and Derin Esmer. The band achieved mainstream success with the release of the album Dünya Yalan Söylüyor. In 2008, the band represented Turkey in the Eurovision Song Contest in Belgrade with the song \"Deli\" (Lunatic)."
+  },
+  {
+   "id": "763a277d-2bb4-4aaf-8b45-9bf43c958758",
+   "slug": "feeble-little-horse-624f73d5",
+   "title": "feeble little horse",
+   "act": "feeble little horse",
+   "name": "Feeble Little Horse",
+   "description": "American indie rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Feeble_Little_Horse",
+   "extract": "feeble little horse is an American indie rock band from Pittsburgh, Pennsylvania, that formed in 2021. It currently comprises three founding members: multi-instrumentalist Sebastian Kinsler, drummer Jake Kelley, and vocalist-bassist Lydia Slocum. Guitarist Ryan Walchonski was also a founding member but left the group in 2025. The band is currently signed to Saddle Creek Records; they have three albums and one EP."
+  }
+ ]
+}

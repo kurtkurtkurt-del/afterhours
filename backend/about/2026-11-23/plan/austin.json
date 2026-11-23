@@ -1,0 +1,16 @@
+{
+ "city": "austin",
+ "day": "2026-11-23",
+ "nights": [
+  {
+   "id": "87485581-f68d-4eab-8e5f-5393f7ae3958",
+   "slug": "american-aquarium-1df60ed5",
+   "title": "American Aquarium",
+   "act": "American Aquarium",
+   "name": "American Aquarium",
+   "description": "American alternative country band",
+   "source_url": "https://en.wikipedia.org/wiki/American_Aquarium",
+   "extract": "American Aquarium is an American alternative country band from Raleigh, North Carolina, United States."
+  }
+ ]
+}

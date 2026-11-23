@@ -1,0 +1,46 @@
+{
+ "city": "dallas",
+ "day": "2026-11-23",
+ "nights": [
+  {
+   "id": "afce33dc-9033-4c09-9348-82199d5ebbbe",
+   "slug": "rupaul-ages-18-17de71da",
+   "title": "RUPAUL - Ages 18+",
+   "act": "RUPAUL",
+   "name": "RuPaul",
+   "description": "American drag queen, actor and musician (born 1960)",
+   "source_url": "https://en.wikipedia.org/wiki/RuPaul",
+   "extract": "RuPaul Andre Charles is an American drag queen, television host, singer, producer, writer, and actor. He produces, hosts, and judges the reality competition series RuPaul's Drag Race and has received several accolades, including 14 Primetime Emmy Awards and a Tony Award, in addition to two Billboard Music Awards, a Critics' Choice Television Award, five GLAAD Media Awards, and a Guinness World Records title. He has been dubbed the \"Queen of Drag\" and is considered the most commercially successful drag queen in the United States, with Fortune saying that he is \"easily the world's most famous drag queen.\" In 2017, RuPaul was included in the annual Time 100 list of the most influential people in the world."
+  },
+  {
+   "id": "78b857ac-c07f-4edd-b152-28c8e5d7c1bc",
+   "slug": "yung-gravy-the-joyrider-tour-e4cd3bac",
+   "title": "Yung Gravy: The Joyrider Tour",
+   "act": "Yung Gravy",
+   "name": "Yung Gravy",
+   "description": "American rapper (born 1996)",
+   "source_url": "https://en.wikipedia.org/wiki/Yung_Gravy",
+   "extract": "Matthew Raymond Hauri, better known by his stage name Yung Gravy, is an American rapper."
+  },
+  {
+   "id": "66b15c6b-e749-4555-9c98-2a99c60b399e",
+   "slug": "key-glock-big5-live-6b2f1db8",
+   "title": "Key Glock - Big5 Live!",
+   "act": "Key Glock",
+   "name": "Key Glock",
+   "description": "American rapper (born 1997)",
+   "source_url": "https://en.wikipedia.org/wiki/Key_Glock",
+   "extract": "Markeyvius LaShun Cathey, known professionally as Key Glock, is an American rapper, songwriter, and record producer. The cousin of late Memphis rapper Young Dolph, Cathey signed with his record label, Paper Route Empire, to release his commercial mixtape, Glock Season (2017). His debut studio album, Yellow Tape (2020), peaked at number 14 on the Billboard 200 and received gold certification by the Recording Industry Association of America (RIAA). His second album, Yellow Tape 2 (2021), peaked at number seven on the chart and spawned the multi-platinum-certified single \"Ambition for Cash\", as well as \"Proud\", which was released in the wake of Dolph's death and marked his first entry on the Billboard Hot 100. His third album, Glockoma 2 (2023), spawned the sleeper hit single \"Let's Go\"—his second entry on the chart."
+  },
+  {
+   "id": "252fd32b-c60b-4a4a-8f5e-91bf82ea5b8c",
+   "slug": "beartooth-pure-ecstasy-world-tour-d61adc3c",
+   "title": "Beartooth: Pure Ecstasy World Tour",
+   "act": "Beartooth",
+   "name": "Beartooth",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Beartooth_(band)",
+   "extract": "Beartooth is an American rock band founded by vocalist and multi-instrumentalist Caleb Shomo in Columbus, Ohio, in 2012. Originally, Beartooth was a studio project with Shomo performing all instruments, before expanding to a group with four or five members over their existence. They are known for relatively more conventional songwriting than some of Shomo's other work, with an emphasis on melodic hooks and catchy choruses. Beartooth has been signed to Red Bull Records since 2013; their debut EP Sick was released on July 26, 2013, followed by the debut full-length album Disgusting on June 10, 2014. Since then, Shomo has released a further five studio albums under the Beartooth moniker: Aggressive (2016), Disease (2018), Below (2021), The Surface (2023), and Pure Ecstasy (2026)."
+  }
+ ]
+}

@@ -1,0 +1,66 @@
+{
+ "city": "atlanta",
+ "day": "2026-11-23",
+ "nights": [
+  {
+   "id": "00524a37-8c7c-44ba-94fc-265ddd7cc404",
+   "slug": "musiq-soulchild-d015c898",
+   "title": "Musiq Soulchild",
+   "act": "Musiq Soulchild",
+   "name": "Musiq Soulchild",
+   "description": "American singer and songwriter (born 1977)",
+   "source_url": "https://en.wikipedia.org/wiki/Musiq_Soulchild",
+   "extract": "Taalib Hassan Johnson, better known by his stage name Musiq Soulchild is an American singer-songwriter. His music blends R&B, funk, blues, jazz, and gospel influences fused with hip hop."
+  },
+  {
+   "id": "5e05181f-3267-4873-83b9-f71ba1ad6f1f",
+   "slug": "beartooth-pure-ecstasy-world-tour-24edc228",
+   "title": "Beartooth: Pure Ecstasy World Tour",
+   "act": "Beartooth",
+   "name": "Beartooth",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Beartooth_(band)",
+   "extract": "Beartooth is an American rock band founded by vocalist and multi-instrumentalist Caleb Shomo in Columbus, Ohio, in 2012. Originally, Beartooth was a studio project with Shomo performing all instruments, before expanding to a group with four or five members over their existence. They are known for relatively more conventional songwriting than some of Shomo's other work, with an emphasis on melodic hooks and catchy choruses. Beartooth has been signed to Red Bull Records since 2013; their debut EP Sick was released on July 26, 2013, followed by the debut full-length album Disgusting on June 10, 2014. Since then, Shomo has released a further five studio albums under the Beartooth moniker: Aggressive (2016), Disease (2018), Below (2021), The Surface (2023), and Pure Ecstasy (2026)."
+  },
+  {
+   "id": "7b7e27e2-a90f-4e75-8d0b-3712913b373c",
+   "slug": "men-without-hats-88efcf3d",
+   "title": "Men Without Hats",
+   "act": "Men Without Hats",
+   "name": "Men Without Hats",
+   "description": "Canadian synthpop and new wave band",
+   "source_url": "https://en.wikipedia.org/wiki/Men_Without_Hats",
+   "extract": "Men Without Hats are a Canadian new wave and synth-pop band, originally from Montreal, Quebec. Their music is characterized by the baritone voice of their lead singer Ivan Doroschuk, as well as their elaborate use of synthesizers and electronic processing. The band achieved their greatest popularity in the 1980s with \"The Safety Dance\", a worldwide top ten hit, and \"Pop Goes the World\"."
+  },
+  {
+   "id": "13e930a8-82e3-4d5a-939a-f3b8f2ce8354",
+   "slug": "montell-fish-9c35aa0b",
+   "title": "Montell Fish",
+   "act": "Montell Fish",
+   "name": "Montell Fish",
+   "description": "American singer-songwriter (born 1997)",
+   "source_url": "https://en.wikipedia.org/wiki/Montell_Fish",
+   "extract": "Montell James Frazier, also known as Montell Fish, is an American singer-songwriter. Formerly making music under the CCM genre, he switched to alternative R&B and neo soul. He has since signed to Virgin Music Group for distribution and released two albums under the deal: Jamie in 2022 and Charlotte in 2024."
+  },
+  {
+   "id": "341e4d36-4082-4b46-8fb9-5efbdb8dabb6",
+   "slug": "pretty-sick-2949b25b",
+   "title": "Pretty Sick",
+   "act": "Pretty Sick",
+   "name": "Pretty Sick",
+   "description": "American rock band from New York City",
+   "source_url": "https://en.wikipedia.org/wiki/Pretty_Sick",
+   "extract": "Pretty Sick is an American indie rock band from New York City, New York. It currently consists of vocalist and bassist Sabrina Fuentes, drummer Eva Kaufman, and guitarist Benjamin Arauz."
+  },
+  {
+   "id": "31ae37a2-7457-4939-b402-f648b1abfbbd",
+   "slug": "ezcodylee-cce1159e",
+   "title": "ezcodylee",
+   "act": "ezcodylee",
+   "name": "Ezcodylee",
+   "description": "American rapper and singer (born 2004)",
+   "source_url": "https://en.wikipedia.org/wiki/Ezcodylee",
+   "extract": "Ethan Codylee Graham, known professionally as ezcodylee, is an American rapper from Los Angeles, California. He first rose to popularity in 2025 with the release of his project Stunt and Die 3, a project that has been described as digicore and rage rap, backed by electric guitar riffs."
+  }
+ ]
+}

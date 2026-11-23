@@ -1,0 +1,16 @@
+{
+ "city": "san-francisco",
+ "day": "2026-11-23",
+ "nights": [
+  {
+   "id": "2d73ce82-b674-4f62-9654-83a2ae749550",
+   "slug": "unkle-5c9e322a",
+   "title": "UNKLE",
+   "act": "UNKLE",
+   "name": "Unkle",
+   "description": "British electronica band",
+   "source_url": "https://en.wikipedia.org/wiki/Unkle",
+   "extract": "Unkle is a British musical act founded in 1992 by James Lavelle. Originally categorised as trip hop, the group once included producer DJ Shadow and have employed a variety of guest artists and producers."
+  }
+ ]
+}

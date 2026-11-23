@@ -1,0 +1,16 @@
+{
+ "city": "toronto",
+ "day": "2026-11-23",
+ "nights": [
+  {
+   "id": "34f9b08c-f6f0-497c-a3fa-277421d45f07",
+   "slug": "brkn-love-73c5ecd1",
+   "title": "BRKN Love",
+   "act": "BRKN Love",
+   "name": "Brkn Love",
+   "description": "Canadian rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Brkn_Love",
+   "extract": "BRKN LOVE is a Canadian alternative rock band from Toronto, formed in 2018."
+  }
+ ]
+}

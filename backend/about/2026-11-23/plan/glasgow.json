@@ -1,0 +1,36 @@
+{
+ "city": "glasgow",
+ "day": "2026-11-23",
+ "nights": [
+  {
+   "id": "25bdfc26-9fbf-4cda-9e53-797ae65b0d40",
+   "slug": "electric-six-07bb249a",
+   "title": "Electric Six",
+   "act": "Electric Six",
+   "name": "Electric Six",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Electric_Six",
+   "extract": "Electric Six is an American rock band formed in Detroit in 1996. They are known for combining elements of rock, disco, garage rock, metal, new wave, and punk rock. Since achieving widespread recognition in 2003 with the singles \"Danger! High Voltage\" and \"Gay Bar\", they have released 20 studio albums, two rarities albums, one live album and one live DVD. Each band member is given a unique stage name. The line-up has undergone changes over the years: co-founder, lead vocalist, and primary songwriter Dick Valentine has been the only constant member. The current line-up consists of Valentine, lead guitarist Johnny Na$hinal, keyboardist Tait Nucleus?, rhythm guitarist Herb S. Flavourings, drummer Dr. Jay and bassist Mr. Poison."
+  },
+  {
+   "id": "2e697e71-1faa-41cd-b98b-188230ca5336",
+   "slug": "placebo-30th-anniversary-tour-093b4575",
+   "title": "Placebo - 30th Anniversary Tour",
+   "act": "Placebo",
+   "name": "Placebo",
+   "description": "British alternative rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Placebo_(band)",
+   "extract": "Placebo are a British alternative rock band, formed in London in 1994 by vocalist-guitarist Brian Molko and bassist-guitarist Stefan Olsdal, who have remained the two constant members, with three full-time drummers throughout the band's existence."
+  },
+  {
+   "id": "aad09eb3-4f84-482c-b9d6-934ca15a39a5",
+   "slug": "the-fat-lady-sings-aa58029d",
+   "title": "The Fat Lady Sings",
+   "act": "The Fat Lady Sings",
+   "name": "The Fat Lady Sings",
+   "description": "Rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Fat_Lady_Sings",
+   "extract": "\n\nThe Fat Lady Sings were a rock band from Dublin, Ireland, fronted by singer and songwriter Nick Kelly. Almost immediately after forming in March 1986, they relocated to London, and remained there for the rest of their career. Despite this, they gained more media attention and commercial success in their native Ireland, with a series of five top 20 singles in 1990/91, than they did in the UK."
+  }
+ ]
+}

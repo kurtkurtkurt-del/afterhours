@@ -1,0 +1,56 @@
+{
+ "city": "nashville",
+ "day": "2026-11-23",
+ "nights": [
+  {
+   "id": "d101dceb-2bd0-4f5e-afe9-37a374e769d7",
+   "slug": "beartooth-pure-ecstasy-world-tour-b4e4f5bd",
+   "title": "Beartooth: Pure Ecstasy World Tour",
+   "act": "Beartooth",
+   "name": "Beartooth",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Beartooth_(band)",
+   "extract": "Beartooth is an American rock band founded by vocalist and multi-instrumentalist Caleb Shomo in Columbus, Ohio, in 2012. Originally, Beartooth was a studio project with Shomo performing all instruments, before expanding to a group with four or five members over their existence. They are known for relatively more conventional songwriting than some of Shomo's other work, with an emphasis on melodic hooks and catchy choruses. Beartooth has been signed to Red Bull Records since 2013; their debut EP Sick was released on July 26, 2013, followed by the debut full-length album Disgusting on June 10, 2014. Since then, Shomo has released a further five studio albums under the Beartooth moniker: Aggressive (2016), Disease (2018), Below (2021), The Surface (2023), and Pure Ecstasy (2026)."
+  },
+  {
+   "id": "a65f35e8-d16e-4805-9338-550b37e2c3e1",
+   "slug": "hunxho-2night-only-tour-b02f27fc",
+   "title": "Hunxho - 2Night Only Tour",
+   "act": "Hunxho",
+   "name": "Hunxho",
+   "description": "American rapper (born 1999)",
+   "source_url": "https://en.wikipedia.org/wiki/Hunxho",
+   "extract": "Ibrahim Muhammad Dodo, known professionally as Hunxho is an American rapper, singer and songwriter. He is signed to 300 Entertainment. Hunxho initially rose to fame with the song \"Let's Get It\" in 2021, which spawned a remix with rapper 21 Savage. Later that year, he released the mixtape Street Poet 2."
+  },
+  {
+   "id": "18348fed-0a31-41c2-9f6e-3ec48cfe42f2",
+   "slug": "pouya-the-foreverglades-tour-1d02e908",
+   "title": "Pouya - The Foreverglades Tour",
+   "act": "Pouya",
+   "name": "Pouya",
+   "description": "American rapper (born 1994)",
+   "source_url": "https://en.wikipedia.org/wiki/Pouya",
+   "extract": "Kevin Pouya, known mononymously as Pouya, is an American rapper. Considered as a pioneer of the underground rap scene that began on SoundCloud in 2012, along with discovering the well known hip-hop duo Suicideboys in their early career, Pouya has developed a long-lasting core fanbase as an independent artist."
+  },
+  {
+   "id": "cec65416-2ac8-4262-be9a-6fda66e61ea3",
+   "slug": "kirk-franklin-08078cea",
+   "title": "Kirk Franklin",
+   "act": "Kirk Franklin",
+   "name": "Kirk Franklin",
+   "description": "American gospel musician (born 1970)",
+   "source_url": "https://en.wikipedia.org/wiki/Kirk_Franklin",
+   "extract": "Kirk Dewayne Franklin is an American gospel singer-songwriter, rapper, record producer, choir director, and actor. Franklin's accolades include 20 Grammy Awards, and Variety has called him a \"Reigning King of Urban Gospel\", with Franklin being one of the inaugural inductees into the Black Music & Entertainment Walk of Fame. In his earlier career, his act included choirs such as the Family, God's Property, and One Nation Crew (1NC)."
+  },
+  {
+   "id": "3a168f62-7a36-44ad-bb54-3c209b0b97e1",
+   "slug": "lupita-infante-b1c30ff0",
+   "title": "Lupita Infante",
+   "act": "Lupita Infante",
+   "name": "Lupita Infante",
+   "description": "American singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Lupita_Infante",
+   "extract": "Lupita Infante Esparza is a Mexican-American singer-songwriter. She sings traditional mariachi, norteño, and ranchera music. Her work blends classic Mexican musical traditions with a contemporary perspective. Infante's debut studio album \"La Serenata\" (2019) was nominated for a Grammy Award for Best Regional Mexican Music Album. In 2020, her song \"Dejaré\" was nominated for a Latin Grammy Award. In 2025, her song \"¿Seguimos o No?\" was nominated for a Latin Grammy Award. Infante advocates for women's empowerment through her music."
+  }
+ ]
+}

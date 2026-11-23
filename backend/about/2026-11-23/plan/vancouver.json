@@ -1,0 +1,36 @@
+{
+ "city": "vancouver",
+ "day": "2026-11-23",
+ "nights": [
+  {
+   "id": "dfc9fe09-3577-4b7c-af28-828d08942214",
+   "slug": "chelsea-handler-the-high-and-mighty-tour-181a6399",
+   "title": "CHELSEA HANDLER: THE HIGH AND MIGHTY TOUR",
+   "act": "CHELSEA HANDLER",
+   "name": "Chelsea Handler",
+   "description": "American comedian, actress, writer, and producer (born 1975)",
+   "source_url": "https://en.wikipedia.org/wiki/Chelsea_Handler",
+   "extract": "Chelsea Joy Handler is an American stand-up comedian, actress, writer, television host, and producer. She hosted the late-night talk show Chelsea Lately on the E! network from 2007 to 2014 and released a documentary series, Chelsea Does, on Netflix in January 2016. From 2016 to 2017, Handler hosted the talk show Chelsea on Netflix."
+  },
+  {
+   "id": "eddf2994-b9d9-4864-aa13-16b11f113aa8",
+   "slug": "tiny-habits-7ce11468",
+   "title": "Tiny Habits",
+   "act": "Tiny Habits",
+   "name": "Tiny Habits",
+   "description": "American folk-pop trio",
+   "source_url": "https://en.wikipedia.org/wiki/Tiny_Habits",
+   "extract": "Tiny Habits is an American folk-pop music group formed in Boston in 2022. The trio consists of Berklee College of Music alumni Cinya Khan, Maya Rae, and Judah Mayowa. Their first EP, Tiny Things, was released in April 2023. Their debut studio album All For Something was released in May 2024. Their second album Keepers came out in August 2026."
+  },
+  {
+   "id": "4c1ac58f-2072-4a05-8119-abcef90a0f5f",
+   "slug": "trivium-crown-in-the-grave-world-tour-c2f8ca94",
+   "title": "TRIVIUM: CROWN IN THE GRAVE WORLD TOUR",
+   "act": "TRIVIUM",
+   "name": "Trivium",
+   "description": "American metal band",
+   "source_url": "https://en.wikipedia.org/wiki/Trivium_(band)",
+   "extract": "Trivium is an American heavy metal band from Orlando, Florida, formed in 1999. The band's creative core comprises three long-time members; vocalist and guitarist Matt Heafy, guitarist Corey Beaulieu, and bassist Paolo Gregoletto. The band has changed drummers numerous times, with Alex Rüdinger becoming the most recent addition in October 2025."
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "city": "detroit",
+ "day": "2026-11-23",
+ "nights": [
+  {
+   "id": "0193d023-0ee3-4574-9e94-dc029dc0c77c",
+   "slug": "eric-benet-you-do-tour-813c1910",
+   "title": "Eric Benét - You Do Tour",
+   "act": "Eric Benét",
+   "name": "Eric Benét",
+   "description": "American musician (born 1966)",
+   "source_url": "https://en.wikipedia.org/wiki/Eric_Ben%C3%A9t",
+   "extract": "Eric Benét Jordan is an American R&B singer-songwriter and musician. He has been nominated for four Grammy Awards."
+  },
+  {
+   "id": "cd516e5d-8327-4568-8c11-7090079d9dda",
+   "slug": "mannheim-steamroller-suite-rental-57467332",
+   "title": "Mannheim Steamroller - Suite Rental",
+   "act": "Mannheim Steamroller",
+   "name": "Mannheim Steamroller",
+   "description": "American neoclassical new-age music band",
+   "source_url": "https://en.wikipedia.org/wiki/Mannheim_Steamroller",
+   "extract": "Mannheim Steamroller is an American neoclassical new-age music ensemble founded and directed by percussionist/composer Chip Davis in 1974. The group is known primarily for its Fresh Aire series of albums, which blend classical music with elements of new age and rock, and for its modern recordings of Christmas music. The group has sold 28 million albums in the U.S. alone."
+  }
+ ]
+}

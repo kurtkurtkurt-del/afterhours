@@ -1,0 +1,16 @@
+{
+ "city": "madrid",
+ "day": "2026-11-23",
+ "nights": [
+  {
+   "id": "bca815c4-4921-49c3-843f-89d076d01bbc",
+   "slug": "los-fabulosos-cadillacs-f379e850",
+   "title": "Los Fabulosos Cadillacs",
+   "act": "Los Fabulosos Cadillacs",
+   "name": "Los Fabulosos Cadillacs",
+   "description": "Ska and rock band from Argentina",
+   "source_url": "https://en.wikipedia.org/wiki/Los_Fabulosos_Cadillacs",
+   "extract": "Los Fabulosos Cadillacs is an Argentine musical group from Buenos Aires. Their music fuses ska with Latin rock and various other styles."
+  }
+ ]
+}

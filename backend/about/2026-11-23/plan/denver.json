@@ -1,0 +1,26 @@
+{
+ "city": "denver",
+ "day": "2026-11-23",
+ "nights": [
+  {
+   "id": "5fb00438-b973-4a1c-8737-9445bda6df7f",
+   "slug": "machinedrum-f5fdd273",
+   "title": "Machinedrum",
+   "act": "Machinedrum",
+   "name": "Machinedrum",
+   "description": "American record producer (born 1982)",
+   "source_url": "https://en.wikipedia.org/wiki/Machinedrum",
+   "extract": "Travis Stewart, better known as Machinedrum, is an American electronic record producer and performer from North Carolina. He has also recorded as Syndrone and Tstewart. He is one half of Sepalcure, with Praveen Sharma, one half of JETS, with Jimmy Edgar, as well as half of Dream Continuum with Jim Coles, a.k.a. Om Unit."
+  },
+  {
+   "id": "25520fbc-c956-4db9-a103-65673a05cdbd",
+   "slug": "key-glock-big5-live-930cb5e5",
+   "title": "Key Glock - Big5 Live!",
+   "act": "Key Glock",
+   "name": "Key Glock",
+   "description": "American rapper (born 1997)",
+   "source_url": "https://en.wikipedia.org/wiki/Key_Glock",
+   "extract": "Markeyvius LaShun Cathey, known professionally as Key Glock, is an American rapper, songwriter, and record producer. The cousin of late Memphis rapper Young Dolph, Cathey signed with his record label, Paper Route Empire, to release his commercial mixtape, Glock Season (2017). His debut studio album, Yellow Tape (2020), peaked at number 14 on the Billboard 200 and received gold certification by the Recording Industry Association of America (RIAA). His second album, Yellow Tape 2 (2021), peaked at number seven on the chart and spawned the multi-platinum-certified single \"Ambition for Cash\", as well as \"Proud\", which was released in the wake of Dolph's death and marked his first entry on the Billboard Hot 100. His third album, Glockoma 2 (2023), spawned the sleeper hit single \"Let's Go\"—his second entry on the chart."
+  }
+ ]
+}

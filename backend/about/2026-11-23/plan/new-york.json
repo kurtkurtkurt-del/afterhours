@@ -1,0 +1,16 @@
+{
+ "city": "new-york",
+ "day": "2026-11-23",
+ "nights": [
+  {
+   "id": "71286471-7a9f-418c-9c57-7b03ed9bf4d7",
+   "slug": "keenan-te-9d059e29",
+   "title": "Keenan Te",
+   "act": "Keenan Te",
+   "name": "Keenan Te",
+   "description": "Australian singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Keenan_Te",
+   "extract": "Keenan Te is an Australian singer-songwriter of Vietnamese and Cambodian heritage. He is known for piano-driven ballads and songs that gained popularity through TikTok."
+  }
+ ]
+}

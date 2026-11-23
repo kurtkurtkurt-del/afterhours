@@ -1,0 +1,36 @@
+{
+ "city": "ciudad-de-mexico",
+ "day": "2026-11-23",
+ "nights": [
+  {
+   "id": "17a97766-5f55-45e2-863e-792dd83df926",
+   "slug": "bruno-mars-the-romantic-tour-b57719d1",
+   "title": "Bruno Mars - The Romantic Tour",
+   "act": "Bruno Mars",
+   "name": "Bruno Mars",
+   "description": "American singer-songwriter (born 1985)",
+   "source_url": "https://en.wikipedia.org/wiki/Bruno_Mars",
+   "extract": "Peter Gene Hernandez, known professionally as Bruno Mars, is an American singer-songwriter, record producer, and dancer. Regarded as a pop icon, he is known for his three-octave tenor vocal range, retro showmanship, musical versatility, and live performances, accompanied by his band, the Hooligans. Raised in Honolulu, Mars gained recognition in Hawaii as a child for his impersonation of Elvis Presley, before moving to Los Angeles in 2003 to pursue a musical career."
+  },
+  {
+   "id": "af56962d-8b19-458f-b00c-ee08ed4bbbf4",
+   "slug": "caifanes-77fa040f",
+   "title": "Caifanes",
+   "act": "Caifanes",
+   "name": "Caifanes",
+   "description": "Mexican rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Caifanes",
+   "extract": "Caifanes is a Mexican rock band formed in Mexico City in 1986. The group achieved commercial success during the late 1980s and early 1990s. The original lineup of members consisted of Saúl Hernández, Sabo Romo (bass), Alfonso André (drums) and Diego Herrera. Alejandro Marcovich later joined as lead guitarist. Caifanes' style can be described as a hybrid of British new wave, progressive rock and Latin percussion underscored by deep, somber and Latin, Mexican Spanish-influenced lyrics and the vocal style of Saúl Hernández. Members of Caifanes have cited The Cure, The Beatles and King Crimson as major influences. Adrian Belew produced their third studio album, El Silencio, and made a guest appearance on the track Piedra."
+  },
+  {
+   "id": "2fb30a48-4fd1-49aa-86ae-bdeeb30246c2",
+   "slug": "david-bisbal-c9eca3d3",
+   "title": "David Bisbal",
+   "act": "David Bisbal",
+   "name": "David Bisbal",
+   "description": "Spanish singer (born 1979)",
+   "source_url": "https://en.wikipedia.org/wiki/David_Bisbal",
+   "extract": "David Bisbal Ferre is a Spanish singer and actor. He gained his initial fame as the runner-up on the first edition of the reality television talent show Operación Triunfo."
+  }
+ ]
+}
