@@ -1,0 +1,27 @@
+{
+  "city": "zurich",
+  "day": "2026-11-25",
+  "sparks": [
+    {
+      "kind": "jazz",
+      "title": {
+        "en": "jazzbaragge jam at moods im schiffbau.",
+        "de": "jazzbaragge-jam im moods im schiffbau.",
+        "tr": "moods im schiffbau'da jazzbaragge jam."
+      },
+      "line": {
+        "en": "the wednesday jam session from 20:30, chf 14, tickets only at the door. musicians who meet on stage start the jam, so you can play or just listen.",
+        "de": "die mittwochs-jamsession ab 20:30, chf 14, tickets nur an der kasse. wer auf der bühne dazukommt, spielt mit, sonst einfach zuhören.",
+        "tr": "çarşamba caz jam seansı, 20:30'dan itibaren, 14 chf, biletler yalnızca kapıda. sahnede bir araya gelen müzisyenler çalmaya başlıyor, sen de katılabilir ya da dinleyebilirsin."
+      },
+      "place": {
+        "en": "moods im schiffbau",
+        "de": "moods im schiffbau",
+        "tr": "moods im schiffbau"
+      },
+      "hour": 20,
+      "minute": 30,
+      "why": "JazzBaragge Wednesday Jam at Moods im Schiffbau, Wed 25 Nov 2026 20:30, CHF 14, box office only (guidle.com listing); line-up not confirmed on moods.ch."
+    }
+  ]
+}

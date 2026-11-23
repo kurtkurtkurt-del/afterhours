@@ -1,0 +1,27 @@
+{
+  "city": "zurich",
+  "day": "2026-11-26",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": {
+        "en": "polarzauber christmas market at the hauptbahnhof.",
+        "de": "polarzauber-weihnachtsmarkt im hauptbahnhof.",
+        "tr": "hauptbahnhof'ta polarzauber noel pazarı."
+      },
+      "line": {
+        "en": "the christmas market under the main station, open until 22:00 on thursdays, fridays and saturdays. it runs until 24 december, so there is time later in the month too.",
+        "de": "der weihnachtsmarkt unter dem hauptbahnhof, donnerstag bis samstag bis 22:00 geöffnet. er läuft bis 24. dezember, also bleibt auch später im monat zeit.",
+        "tr": "ana istasyonun altındaki noel pazarı, perşembe, cuma ve cumartesi 22:00'ye kadar açık. 24 aralık'a kadar sürüyor, ayın ilerleyen günlerinde de vakit var."
+      },
+      "place": {
+        "en": "polarzauber, hauptbahnhof",
+        "de": "polarzauber, hauptbahnhof",
+        "tr": "polarzauber, hauptbahnhof"
+      },
+      "hour": 17,
+      "minute": 0,
+      "why": "Polarzauber (former Christkindlimarkt) at Zürich Hauptbahnhof, 19 Nov to 24 Dec 2026, Thu to Sat 11:00 to 22:00 (twtravel.de); dates also in swissactivities.com; hours from one source only."
+    }
+  ]
+}
