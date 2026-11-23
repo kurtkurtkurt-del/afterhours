@@ -1,0 +1,14 @@
+{
+  "city": "salzburg",
+  "day": "2026-11-29",
+  "sparks": [
+    {
+      "kind": "football",
+      "title": { "en": "salzburg against lask at the red bull arena.", "de": "salzburg gegen lask in der red bull arena.", "tr": "salzburg, red bull arena'da lask ile." },
+      "line": { "en": "the only home bundesliga match left in november, kick-off at 17:00 per bundesliga.at. laola1 lists 16:00, so check before you go.", "de": "das einzige bundesliga-heimspiel im november, anpfiff um 17:00 laut bundesliga.at. laola1 nennt 16:00, also vor dem losgehen prüfen.", "tr": "kasım ayında kalan tek bundesliga iç saha maçı, bundesliga.at'e göre saat 17:00'de başlıyor. laola1 16:00 yazıyor, gitmeden önce kontrol et." },
+      "place": { "en": "red bull arena", "de": "red bull arena", "tr": "red bull arena" },
+      "hour": 17, "minute": 0,
+      "why": "Red Bull Salzburg home vs LASK, round 14, Sun 29.11 at 17:00 per bundesliga.at and the club calendar."
+    }
+  ]
+}
