@@ -1,0 +1,70 @@
+{
+  "city": "seattle",
+  "day": "2026-11-23",
+  "nights": [
+    {
+      "id": "a1d8d71a-b817-4b57-b88d-60396f0a0feb",
+      "slug": "mor-ve-otesi-ages-21-5170a877",
+      "title": "mor ve otesi - Ages 21+",
+      "name": "Mor ve ötesi",
+      "source_url": "https://en.wikipedia.org/wiki/Mor_ve_%C3%B6tesi",
+      "extract": "Mor ve Ötesi is a Turkish alternative rock band from Istanbul. Its four current members are Harun Tekin, Kerem Kabadayı (drums), Burak Güven (bass) and Kerem Özyeğen. Former members include Alper Tekin and Derin Esmer. The band achieved mainstream success with the release of the album Dünya Yalan Söylüyor. In 2008, the band represented Turkey in the Eurovision Song Contest in Belgrade with the song \"Deli\" (Lunatic).",
+      "en": {
+        "kicker": "turkish alternative rock band · istanbul",
+        "who": "Mor ve Ötesi is a Turkish alternative rock band from Istanbul. Its four current members are Harun Tekin, Kerem Kabadayı, Burak Güven and Kerem Özyeğen. The band achieved mainstream success with the album Dünya Yalan Söylüyor, and in 2008 represented Turkey at Eurovision with \"Deli\".",
+        "facts": [
+          "The band achieved mainstream success with the release of the album Dünya Yalan Söylüyor.",
+          "In 2008, the band represented Turkey in the Eurovision Song Contest in Belgrade with the song \"Deli\" (Lunatic)."
+        ]
+      },
+      "de": {
+        "kicker": "türkische alternative-rockband · istanbul",
+        "who": "Mor ve Ötesi ist eine türkische Alternative-Rockband aus Istanbul. Die vier aktuellen Mitglieder sind Harun Tekin, Kerem Kabadayı, Burak Güven und Kerem Özyeğen. Den Mainstream-Erfolg erreichte die Band mit dem Album Dünya Yalan Söylüyor; 2008 vertrat sie die Türkei mit \"Deli\" beim Eurovision Song Contest.",
+        "facts": [
+          "Den Mainstream-Erfolg erreichte die Band mit der Veröffentlichung des Albums Dünya Yalan Söylüyor.",
+          "2008 vertrat die Band die Türkei beim Eurovision Song Contest in Belgrad mit dem Song \"Deli\" (Verrückt)."
+        ]
+      },
+      "tr": {
+        "kicker": "türk alternatif rock grubu · istanbul",
+        "who": "Mor ve Ötesi, İstanbul'dan Türk bir alternatif rock grubudur. Dört aktif üyesi Harun Tekin, Kerem Kabadayı, Burak Güven ve Kerem Özyeğen'dir. Dünya Yalan Söylüyor albümüyle ana akım başarıya ulaştı; 2008'de \"Deli\" şarkısıyla Belgrad'daki Eurovision'da Türkiye'yi temsil etti.",
+        "facts": [
+          "Grup, Dünya Yalan Söylüyor albümünün yayımlanmasıyla ana akım başarıya ulaştı.",
+          "2008'de grup, Belgrad'daki Eurovision Şarkı Yarışması'nda \"Deli\" (Deli) şarkısıyla Türkiye'yi temsil etti."
+        ]
+      }
+    },
+    {
+      "id": "763a277d-2bb4-4aaf-8b45-9bf43c958758",
+      "slug": "feeble-little-horse-624f73d5",
+      "title": "feeble little horse",
+      "name": "Feeble Little Horse",
+      "source_url": "https://en.wikipedia.org/wiki/Feeble_Little_Horse",
+      "extract": "feeble little horse is an American indie rock band from Pittsburgh, Pennsylvania, that formed in 2021. It currently comprises three founding members: multi-instrumentalist Sebastian Kinsler, drummer Jake Kelley, and vocalist-bassist Lydia Slocum. Guitarist Ryan Walchonski was also a founding member but left the group in 2025. The band is currently signed to Saddle Creek Records; they have three albums and one EP.",
+      "en": {
+        "kicker": "american indie rock band · pittsburgh, 2021",
+        "who": "feeble little horse is an American indie rock band from Pittsburgh, Pennsylvania, formed in 2021. It currently comprises multi-instrumentalist Sebastian Kinsler, drummer Jake Kelley and vocalist-bassist Lydia Slocum. The band is signed to Saddle Creek Records and has three albums and one EP.",
+        "facts": [
+          "feeble little horse is an American indie rock band from Pittsburgh, Pennsylvania, that formed in 2021.",
+          "The band is currently signed to Saddle Creek Records; they have three albums and one EP."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische indie-rockband · pittsburgh, 2021",
+        "who": "feeble little horse ist eine amerikanische Indie-Rockband aus Pittsburgh, Pennsylvania, die 2021 gegründet wurde. Derzeit gehören Sebastian Kinsler, Schlagzeuger Jake Kelley und Sängerin und Bassistin Lydia Slocum zur Band. Sie steht bei Saddle Creek Records unter Vertrag und hat drei Alben sowie eine EP veröffentlicht.",
+        "facts": [
+          "feeble little horse ist eine amerikanische Indie-Rockband aus Pittsburgh, Pennsylvania, die 2021 gegründet wurde.",
+          "Die Band steht derzeit bei Saddle Creek Records unter Vertrag; sie hat drei Alben und eine EP veröffentlicht."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı indie rock grubu · pittsburgh, 2021",
+        "who": "feeble little horse, 2021'de kurulmuş, Pittsburgh, Pennsylvania'dan Amerikalı bir indie rock grubudur. Şu an çok enstrümanlı Sebastian Kinsler, davulcu Jake Kelley ve vokalist-basçı Lydia Slocum'dan oluşuyor. Grup Saddle Creek Records ile çalışıyor; üç albümü ve bir EP'si var.",
+        "facts": [
+          "feeble little horse, 2021'de kurulmuş, Pittsburgh, Pennsylvania'dan Amerikalı bir indie rock grubudur.",
+          "Grup şu anda Saddle Creek Records ile çalışıyor; üç albümü ve bir EP'si var."
+        ]
+      }
+    }
+  ]
+}

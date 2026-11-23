@@ -1,0 +1,70 @@
+{
+  "city": "los-angeles",
+  "day": "2026-11-23",
+  "nights": [
+    {
+      "id": "a4ea3532-9430-4d9a-9602-44d068b0c3f1",
+      "slug": "terrace-martin-12aa4b94",
+      "title": "Terrace Martin",
+      "name": "Terrace Martin",
+      "source_url": "https://en.wikipedia.org/wiki/Terrace_Martin",
+      "extract": "Terrace Jamahl Martin is an American musician, rapper, singer, and record producer. He is perhaps best known for producing records for several prominent artists in the music industry, including Kendrick Lamar, Snoop Dogg, the Game, Busta Rhymes, Stevie Wonder, Charlie Wilson, Raphael Saadiq and YG, among others. Martin is a multi-instrumentalist whose music production embodies funk, jazz, classical and soul. Martin released his sixth studio album, Velvet Portraits, on his label, Sounds of Crenshaw Records, through Ropeadope Records.",
+      "en": {
+        "kicker": "american musician and record producer · sounds of crenshaw",
+        "who": "Terrace Jamahl Martin is an American musician, rapper, singer and record producer. He is best known for producing records for artists including Kendrick Lamar, Snoop Dogg and Stevie Wonder. His music embodies funk, jazz, classical and soul, and his sixth studio album, Velvet Portraits, came out on Ropeadope Records.",
+        "facts": [
+          "He is perhaps best known for producing records for several prominent artists in the music industry, including Kendrick Lamar, Snoop Dogg, the Game, Busta Rhymes, Stevie Wonder, Charlie Wilson, Raphael Saadiq and YG, among others.",
+          "Martin released his sixth studio album, Velvet Portraits, on his label, Sounds of Crenshaw Records, through Ropeadope Records."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer musiker und produzent · sounds of crenshaw",
+        "who": "Terrace Jamahl Martin ist ein amerikanischer Musiker, Rapper, Sänger und Musikproduzent. Am bekanntesten ist er für Produktionen für Künstler wie Kendrick Lamar, Snoop Dogg und Stevie Wonder. Seine Musik verbindet Funk, Jazz, Klassik und Soul; sein sechstes Studioalbum Velvet Portraits erschien über Ropeadope Records.",
+        "facts": [
+          "Er ist vielleicht am bekanntesten dafür, Platten für mehrere prominente Künstler der Musikindustrie produziert zu haben, darunter Kendrick Lamar, Snoop Dogg, Stevie Wonder und YG.",
+          "Sein sechstes Studioalbum Velvet Portraits erschien auf seinem Label Sounds of Crenshaw Records über Ropeadope Records."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı müzisyen ve yapımcı · sounds of crenshaw",
+        "who": "Terrace Jamahl Martin, Amerikalı bir müzisyen, rapçi, şarkıcı ve plak yapımcısıdır. En çok Kendrick Lamar, Snoop Dogg ve Stevie Wonder gibi sanatçılara yaptığı prodüksiyonlarla tanınır. Müziği funk, caz, klasik ve soul'u bir araya getirir; altıncı stüdyo albümü Velvet Portraits Ropeadope Records üzerinden çıktı.",
+        "facts": [
+          "Kendrick Lamar, Snoop Dogg, The Game, Busta Rhymes, Stevie Wonder, Charlie Wilson, Raphael Saadiq ve YG gibi pek çok sanatçıya prodüksiyon yaptı.",
+          "Altıncı stüdyo albümü Velvet Portraits'i kendi etiketi Sounds of Crenshaw Records'ta, Ropeadope Records aracılığıyla yayımladı."
+        ]
+      }
+    },
+    {
+      "id": "a2f2e21c-7bd2-4ed9-878d-3104c8834984",
+      "slug": "kenny-garrett-9be29e96",
+      "title": "Kenny Garrett",
+      "name": "Kenny Garrett",
+      "source_url": "https://en.wikipedia.org/wiki/Kenny_Garrett",
+      "extract": "Kenny Garrett is an American post-bop jazz musician and composer who gained recognition in his youth as a member of the Duke Ellington Orchestra and for his time with Miles Davis's band. Garrett's primary instruments are alto and soprano saxophone and flute. Since 1985, he has pursued a solo career.",
+      "en": {
+        "kicker": "american jazz saxophonist and composer · post-bop",
+        "who": "Kenny Garrett is an American post-bop jazz musician and composer. He gained recognition in his youth as a member of the Duke Ellington Orchestra and for his time with Miles Davis's band. His primary instruments are alto and soprano saxophone and flute, and he has pursued a solo career since 1985.",
+        "facts": [
+          "Kenny Garrett is an American post-bop jazz musician and composer who gained recognition in his youth as a member of the Duke Ellington Orchestra and for his time with Miles Davis's band.",
+          "Garrett's primary instruments are alto and soprano saxophone and flute."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer jazzmusiker und komponist · post-bop",
+        "who": "Kenny Garrett ist ein amerikanischer Post-Bop-Jazzmusiker und Komponist. In seiner Jugend wurde er als Mitglied des Duke Ellington Orchestra bekannt, außerdem durch seine Zeit in der Band von Miles Davis. Seine Hauptinstrumente sind Alt- und Sopransaxophon sowie Flöte; seit 1985 verfolgt er eine Solokarriere.",
+        "facts": [
+          "Kenny Garrett ist ein amerikanischer Post-Bop-Jazzmusiker und Komponist, der in seiner Jugend als Mitglied des Duke Ellington Orchestra Anerkennung fand.",
+          "Seine Hauptinstrumente sind Alt- und Sopransaxophon sowie Flöte."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı caz saksafoncusu ve besteci · post-bop",
+        "who": "Kenny Garrett, Amerikalı bir post-bop caz müzisyeni ve bestecisidir. Gençliğinde Duke Ellington Orkestrası üyesi olarak ve Miles Davis'in grubundaki dönemiyle tanındı. Başlıca enstrümanları alto ve soprano saksafon ile flüttür; 1985'ten beri solo kariyer izliyor.",
+        "facts": [
+          "Kenny Garrett, Amerikalı bir post-bop caz müzisyeni ve bestecisidir; gençliğinde Duke Ellington Orkestrası üyesi olarak tanındı.",
+          "Başlıca enstrümanları alto ve soprano saksafon ile flüttür."
+        ]
+      }
+    }
+  ]
+}

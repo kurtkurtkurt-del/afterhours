@@ -1,0 +1,38 @@
+{
+  "city": "milano",
+  "day": "2026-11-23",
+  "nights": [
+    {
+      "id": "bf8fd67d-ff1f-42f9-9e5f-b43c33c8f587",
+      "slug": "jpegmafia-experimental-rap-tour-cefe416a",
+      "title": "JPEGMAFIA - ‘Experimental Rap’ tour",
+      "name": "JPEGMafia",
+      "source_url": "https://en.wikipedia.org/wiki/JPEGMafia",
+      "extract": "Barrington DeVaughn Hendricks, known professionally as JPEGMafia, is an American rapper, singer, and record producer. Born in Flatbush, Brooklyn, he released his debut studio album, Black Ben Carson (2016) independently as well as his second album Veteran (2018), which received widespread critical acclaim. His third album, All My Heroes Are Cornballs (2019) entered the Billboard 200, and had signed to Republic for the release of his fourth album LP! (2021); both were met with continued critical acclaim. In 2023, he released his collaborative studio album Scaring the Hoes (2023) through AWAL. In 2024, he released his fifth studio album I Lay Down My Life for You (2024). On May 21, 2026, he re",
+      "en": {
+        "kicker": "american rapper and producer · brooklyn, 2016",
+        "who": "Barrington DeVaughn Hendricks, known professionally as JPEGMafia, is an American rapper, singer and record producer born in Flatbush, Brooklyn. He released his debut album, Black Ben Carson, independently in 2016, and his album Veteran in 2018 received widespread critical acclaim. His sixth studio album, Experimental Rap, came out on May 21, 2026.",
+        "facts": [
+          "Born in Flatbush, Brooklyn, he released his debut studio album, Black Ben Carson (2016) independently as well as his second album Veteran (2018), which received widespread critical acclaim.",
+          "In 2024, he released his fifth studio album I Lay Down My Life for You."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer rapper und produzent · brooklyn, 2016",
+        "who": "Barrington DeVaughn Hendricks, bekannt als JPEGMafia, ist ein amerikanischer Rapper, Sänger und Musikproduzent aus Flatbush, Brooklyn. Sein Debütalbum Black Ben Carson (2016) erschien unabhängig, sein zweites Album Veteran (2018) erhielt breite Anerkennung der Kritik. Am 21. Mai 2026 erschien sein sechstes Studioalbum Experimental Rap.",
+        "facts": [
+          "In Flatbush, Brooklyn, geboren, veröffentlichte er sein Debütalbum Black Ben Carson (2016) unabhängig und sein zweites Album Veteran (2018), das breite Anerkennung der Kritik erhielt.",
+          "2024 veröffentlichte er sein fünftes Studioalbum I Lay Down My Life for You."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı rapçi ve yapımcı · brooklyn, 2016",
+        "who": "Barrington DeVaughn Hendricks, sahne adıyla JPEGMafia, Brooklyn'in Flatbush semtinde doğan Amerikalı bir rapçi, şarkıcı ve yapımcıdır. Debut albümü Black Ben Carson'ı (2016) bağımsız olarak yayımladı; ikinci albümü Veteran (2018) büyük eleştirmen beğenisi topladı. Altıncı stüdyo albümü Experimental Rap, 21 Mayıs 2026'da çıktı.",
+        "facts": [
+          "Flatbush, Brooklyn'de doğan JPEGMafia, debut stüdyo albümü Black Ben Carson'ı (2016) bağımsız olarak, ikinci albümü Veteran'ı (2018) ise büyük eleştirmen beğenisiyle yayımladı.",
+          "2024'te beşinci stüdyo albümü I Lay Down My Life for You'u yayımladı."
+        ]
+      }
+    }
+  ]
+}

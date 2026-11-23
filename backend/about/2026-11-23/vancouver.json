@@ -1,0 +1,102 @@
+{
+  "city": "vancouver",
+  "day": "2026-11-23",
+  "nights": [
+    {
+      "id": "dfc9fe09-3577-4b7c-af28-828d08942214",
+      "slug": "chelsea-handler-the-high-and-mighty-tour-181a6399",
+      "title": "CHELSEA HANDLER: THE HIGH AND MIGHTY TOUR",
+      "name": "Chelsea Handler",
+      "source_url": "https://en.wikipedia.org/wiki/Chelsea_Handler",
+      "extract": "Chelsea Joy Handler is an American stand-up comedian, actress, writer, television host, and producer. She hosted the late-night talk show Chelsea Lately on the E! network from 2007 to 2014 and released a documentary series, Chelsea Does, on Netflix in January 2016. From 2016 to 2017, Handler hosted the talk show Chelsea on Netflix.",
+      "en": {
+        "kicker": "american comedian and talk show host · e network, 2007",
+        "who": "Chelsea Joy Handler is an American stand-up comedian, actress, writer, television host and producer. She hosted the late-night talk show Chelsea Lately on the E network from 2007 to 2014. She released the Netflix documentary series Chelsea Does in January 2016.",
+        "facts": [
+          "She released a documentary series, Chelsea Does, on Netflix in January 2016.",
+          "From 2016 to 2017, Handler hosted the talk show Chelsea on Netflix."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische comedian und talkshow-moderatorin · e, 2007",
+        "who": "Chelsea Joy Handler ist eine amerikanische Stand-up-Comedian, Schauspielerin, Autorin, Fernsehmoderatorin und Produzentin. Sie moderierte von 2007 bis 2014 die Late-Night-Show Chelsea Lately beim Sender E. Im Januar 2016 erschien die Dokuserie Chelsea Does bei Netflix.",
+        "facts": [
+          "Von 2007 bis 2014 moderierte sie die Late-Night-Show Chelsea Lately beim Sender E und veröffentlichte im Januar 2016 die Dokuserie Chelsea Does bei Netflix.",
+          "Von 2016 bis 2017 moderierte Handler die Talkshow Chelsea bei Netflix."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı komedyen ve talk show sunucusu · e, 2007",
+        "who": "Chelsea Joy Handler, Amerikalı bir stand-up komedyen, oyuncu, yazar, televizyon sunucusu ve yapımcıdır. 2007'den 2014'e kadar E kanalında gece talk show'u Chelsea Lately'yi sundu. Ocak 2016'da Netflix'te Chelsea Does belgesel dizisini yayımladı.",
+        "facts": [
+          "2007'den 2014'e kadar E kanalında gece talk show'u Chelsea Lately'yi sundu ve Ocak 2016'da Netflix'te Chelsea Does belgesel dizisini yayımladı.",
+          "2016 ile 2017 arasında Netflix'te Chelsea adlı talk show'u sundu."
+        ]
+      }
+    },
+    {
+      "id": "eddf2994-b9d9-4864-aa13-16b11f113aa8",
+      "slug": "tiny-habits-7ce11468",
+      "title": "Tiny Habits",
+      "name": "Tiny Habits",
+      "source_url": "https://en.wikipedia.org/wiki/Tiny_Habits",
+      "extract": "Tiny Habits is an American folk-pop music group formed in Boston in 2022. The trio consists of Berklee College of Music alumni Cinya Khan, Maya Rae, and Judah Mayowa. Their first EP, Tiny Things, was released in April 2023. Their debut studio album All For Something was released in May 2024. Their second album Keepers came out in August 2026.",
+      "en": {
+        "kicker": "american folk-pop trio · boston, 2022",
+        "who": "Tiny Habits is an American folk-pop music group formed in Boston in 2022. The trio consists of Berklee College of Music alumni Cinya Khan, Maya Rae and Judah Mayowa. Their debut studio album, All For Something, was released in May 2024.",
+        "facts": [
+          "Tiny Habits is an American folk-pop music group formed in Boston in 2022.",
+          "Their debut studio album All For Something was released in May 2024."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanisches folk-pop-trio · boston, 2022",
+        "who": "Tiny Habits ist eine amerikanische Folk-Pop-Gruppe, die 2022 in Boston gegründet wurde. Das Trio besteht aus Berklee-Alumni Cinya Khan, Maya Rae und Judah Mayowa. Ihr Debütalbum All For Something erschien im Mai 2024.",
+        "facts": [
+          "Tiny Habits ist eine amerikanische Folk-Pop-Gruppe, die 2022 in Boston gegründet wurde.",
+          "Ihr Debütalbum All For Something erschien im Mai 2024."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı folk-pop üçlüsü · boston, 2022",
+        "who": "Tiny Habits, 2022'de Boston'da kurulmuş Amerikalı bir folk-pop grubudur. Üçlü, Berklee College of Music mezunları Cinya Khan, Maya Rae ve Judah Mayowa'dan oluşuyor. Debut stüdyo albümleri All For Something Mayıs 2024'te yayımlandı.",
+        "facts": [
+          "Tiny Habits, 2022'de Boston'da kurulmuş Amerikalı bir folk-pop grubudur.",
+          "Debut stüdyo albümleri All For Something Mayıs 2024'te yayımlandı."
+        ]
+      }
+    },
+    {
+      "id": "4c1ac58f-2072-4a05-8119-abcef90a0f5f",
+      "slug": "trivium-crown-in-the-grave-world-tour-c2f8ca94",
+      "title": "TRIVIUM: CROWN IN THE GRAVE WORLD TOUR",
+      "name": "Trivium",
+      "source_url": "https://en.wikipedia.org/wiki/Trivium_(band)",
+      "extract": "Trivium is an American heavy metal band from Orlando, Florida, formed in 1999. The band's creative core comprises three long-time members; vocalist and guitarist Matt Heafy, guitarist Corey Beaulieu, and bassist Paolo Gregoletto. The band has changed drummers numerous times, with Alex Rüdinger becoming the most recent addition in October 2025.",
+      "en": {
+        "kicker": "american metal band · orlando, florida, 1999",
+        "who": "Trivium is an American heavy metal band from Orlando, Florida, formed in 1999. Its creative core is vocalist and guitarist Matt Heafy, guitarist Corey Beaulieu and bassist Paolo Gregoletto. The band has changed drummers numerous times, most recently adding Alex Rüdinger in October 2025.",
+        "facts": [
+          "Trivium is an American heavy metal band from Orlando, Florida, formed in 1999.",
+          "The band has changed drummers numerous times, with Alex Rüdinger becoming the most recent addition in October 2025."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische metal-band · orlando, florida, 1999",
+        "who": "Trivium ist eine amerikanische Heavy-Metal-Band aus Orlando, Florida, die 1999 gegründet wurde. Den kreativen Kern bilden Sänger und Gitarrist Matt Heafy, Gitarrist Corey Beaulieu und Bassist Paolo Gregoletto. Die Band hat mehrfach den Schlagzeuger gewechselt; der jüngste Neuzugang ist Alex Rüdinger seit Oktober 2025.",
+        "facts": [
+          "Trivium ist eine amerikanische Heavy-Metal-Band aus Orlando, Florida, die 1999 gegründet wurde.",
+          "Die Band hat mehrfach den Schlagzeuger gewechselt; der jüngste Zugang ist Alex Rüdinger im Oktober 2025."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı metal grubu · orlando, florida, 1999",
+        "who": "Trivium, 1999'da kurulmuş, Orlando, Florida'dan Amerikalı bir heavy metal grubudur. Yaratıcı çekirdeğini vokalist ve gitarist Matt Heafy, gitarist Corey Beaulieu ve basçı Paolo Gregoletto oluşturuyor. Grup davulcuyu defalarca değiştirdi; en son Ekim 2025'te Alex Rüdinger katıldı.",
+        "facts": [
+          "Trivium, 1999'da kurulmuş, Orlando, Florida'dan Amerikalı bir heavy metal grubudur.",
+          "Grup davulcuyu defalarca değiştirdi; en son katılan Alex Rüdinger Ekim 2025'te aramıza katıldı."
+        ]
+      }
+    }
+  ]
+}

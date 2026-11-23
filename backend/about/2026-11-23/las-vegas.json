@@ -1,0 +1,38 @@
+{
+  "city": "las-vegas",
+  "day": "2026-11-23",
+  "nights": [
+    {
+      "id": "2147ed28-8dc6-44ff-be81-59c098de8765",
+      "slug": "human-nature-back-to-the-sound-of-motown-77a21a37",
+      "title": "Human Nature: Back To The Sound Of Motown",
+      "name": "Human Nature",
+      "source_url": "https://en.wikipedia.org/wiki/Human_Nature_(band)",
+      "extract": "Human Nature are an Australian pop vocal group which formed in 1989. They are a quartet featuring Toby Allen, Phil Burton and brothers, Andrew and Mike Tierney. Originally they were established as a doo-wop group called the 4 Trax, when the members were schoolmates.",
+      "en": {
+        "kicker": "australian pop vocal group · formed 1989",
+        "who": "Human Nature are an Australian pop vocal group formed in 1989. They are a quartet featuring Toby Allen, Phil Burton and brothers Andrew and Mike Tierney. They were originally established as a doo-wop group called the 4 Trax, when the members were schoolmates.",
+        "facts": [
+          "Human Nature are an Australian pop vocal group which formed in 1989.",
+          "Originally they were established as a doo-wop group called the 4 Trax, when the members were schoolmates."
+        ]
+      },
+      "de": {
+        "kicker": "australische pop-vokalgruppe · gegründet 1989",
+        "who": "Human Nature sind eine australische Pop-Vokalgruppe, die 1989 gegründet wurde. Das Quartett besteht aus Toby Allen, Phil Burton sowie den Brüdern Andrew und Mike Tierney. Ursprünglich gründeten sie als Schulfreunde eine Doo-Wop-Gruppe namens 4 Trax.",
+        "facts": [
+          "Human Nature sind eine australische Pop-Vokalgruppe, die 1989 gegründet wurde.",
+          "Ursprünglich gründeten sie als Schulfreunde eine Doo-Wop-Gruppe namens 4 Trax."
+        ]
+      },
+      "tr": {
+        "kicker": "avustralyalı pop vokal grubu · 1989",
+        "who": "Human Nature, 1989'da kurulmuş bir Avustralya pop vokal grubudur. Toby Allen, Phil Burton ve kardeşler Andrew ve Mike Tierney'den oluşan bir dörtlüdür. Başlangıçta üyeler okul arkadaşıyken 4 Trax adlı bir doo-wop grubu olarak kuruldular.",
+        "facts": [
+          "Human Nature, 1989'da kurulmuş bir Avustralya pop vokal grubudur.",
+          "Başlangıçta üyeler okul arkadaşıyken 4 Trax adlı bir doo-wop grubu olarak kuruldular."
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "city": "zurich",
+  "day": "2026-11-23",
+  "nights": [
+    {
+      "id": "4f04f945-81c8-45e4-87bd-350bd19c65d1",
+      "slug": "south-arcade-2484068b",
+      "title": "South Arcade",
+      "name": "South Arcade",
+      "source_url": "https://en.wikipedia.org/wiki/South_Arcade",
+      "extract": "South Arcade are an English rock band from Oxford. Formed in 2021, the band went viral for videos of their band practices. Their debut EP, 2005, was inspired by various genres and artists from the 2000s and was received positively by critics. Their works are usually described as pop-punk or alternative rock and have been likened to those by Pale Waves, Avril Lavigne, and Bring Me the Horizon.",
+      "en": {
+        "kicker": "english rock band · oxford, 2021",
+        "who": "South Arcade are an English rock band from Oxford, formed in 2021. The band went viral for videos of their band practices. Their debut EP, 2005, was inspired by genres and artists from the 2000s and was received positively by critics.",
+        "facts": [
+          "South Arcade are an English rock band from Oxford.",
+          "Their works are usually described as pop-punk or alternative rock and have been likened to those by Pale Waves, Avril Lavigne, and Bring Me the Horizon."
+        ]
+      },
+      "de": {
+        "kicker": "englische rockband · oxford, 2021",
+        "who": "South Arcade sind eine englische Rockband aus Oxford, die 2021 gegründet wurde. Die Band wurde durch Videos ihrer Bandproben viral. Ihre Debüt-EP 2005 ist von Genres und Künstlern der 2000er inspiriert und wurde von der Kritik positiv aufgenommen.",
+        "facts": [
+          "South Arcade sind eine englische Rockband aus Oxford.",
+          "Ihre Werke werden meist als Pop-Punk oder Alternative Rock beschrieben und mit Pale Waves, Avril Lavigne und Bring Me the Horizon verglichen."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz rock grubu · oxford, 2021",
+        "who": "South Arcade, 2021'de kurulmuş, Oxford'dan İngiliz bir rock grubudur. Prova videolarıyla viral oldular. Debut EP'leri 2005, 2000'lerin türlerinden ve sanatçılarından ilham alıyor ve eleştirmenlerce olumlu karşılandı.",
+        "facts": [
+          "South Arcade, Oxford'dan İngiliz bir rock grubudur.",
+          "Eserleri genellikle pop-punk veya alternatif rock olarak tanımlanır ve Pale Waves, Avril Lavigne ve Bring Me the Horizon'a benzetilir."
+        ]
+      }
+    },
+    {
+      "id": "7e9e0007-8d18-47eb-89ea-1c426b1b0365",
+      "slug": "palaye-royale-99b19bdd",
+      "title": "Palaye Royale",
+      "name": "Palaye Royale",
+      "source_url": "https://en.wikipedia.org/wiki/Palaye_Royale",
+      "extract": "Palaye Royale is an American rock band from Las Vegas, formed in 2008 by brothers Remington Leith, Sebastian Danzig, and Emerson Barrett. Formed under the name Kropp Circle, the band released one EP and two singles before changing their name to Palaye Royale in 2011. Under this name, they have released five full-length albums and four EPs through Sumerian Records.",
+      "en": {
+        "kicker": "american rock band · las vegas, 2008",
+        "who": "Palaye Royale is an American rock band from Las Vegas, formed in 2008 by brothers Remington Leith, Sebastian Danzig and Emerson Barrett. It was first formed as Kropp Circle and changed its name in 2011. Under the new name it has released five full-length albums and four EPs through Sumerian Records.",
+        "facts": [
+          "Palaye Royale is an American rock band from Las Vegas, formed in 2008 by brothers Remington Leith, Sebastian Danzig, and Emerson Barrett.",
+          "Under this name, they have released five full-length albums and four EPs through Sumerian Records."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische rockband · las vegas, 2008",
+        "who": "Palaye Royale ist eine amerikanische Rockband aus Las Vegas, die 2008 von den Brüdern Remington Leith, Sebastian Danzig und Emerson Barrett gegründet wurde. Gegründet wurde sie unter dem Namen Kropp Circle; 2011 änderte sie ihren Namen. Unter dem neuen Namen veröffentlichte sie über Sumerian Records fünf Studioalben und vier EPs.",
+        "facts": [
+          "Palaye Royale ist eine amerikanische Rockband aus Las Vegas, die 2008 von den Brüdern Remington Leith, Sebastian Danzig und Emerson Barrett gegründet wurde.",
+          "Unter diesem Namen veröffentlichte sie fünf Alben in voller Länge und vier EPs über Sumerian Records."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı rock grubu · las vegas, 2008",
+        "who": "Palaye Royale, 2008'de kardeşler Remington Leith, Sebastian Danzig ve Emerson Barrett tarafından kurulmuş, Las Vegas'tan Amerikalı bir rock grubudur. Önce Kropp Circle adıyla kuruldu; 2011'de adını değiştirdi. Yeni adıyla Sumerian Records üzerinden beş uzun çalar ve dört EP yayımladı.",
+        "facts": [
+          "Palaye Royale, 2008'de kardeşler Remington Leith, Sebastian Danzig ve Emerson Barrett tarafından kurulmuş, Las Vegas'tan Amerikalı bir rock grubudur.",
+          "Bu adla Sumerian Records üzerinden beş uzun çalar ve dört EP yayımladı."
+        ]
+      }
+    }
+  ]
+}

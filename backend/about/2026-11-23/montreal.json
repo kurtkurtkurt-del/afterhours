@@ -1,0 +1,70 @@
+{
+  "city": "montreal",
+  "day": "2026-11-23",
+  "nights": [
+    {
+      "id": "076e5e9a-e165-46cf-836e-8f8e0cea3ccc",
+      "slug": "blood-for-blood-282923a9",
+      "title": "BLOOD FOR BLOOD",
+      "name": "Blood for Blood",
+      "source_url": "https://en.wikipedia.org/wiki/Blood_for_Blood",
+      "extract": "Blood for Blood is an American hardcore punk band from Boston, Massachusetts. It was formed in 1994 by Erick \"Buddha\" Medina and \"White Trash\" Rob Lind, drawing inspiration from the hardcore scene in Boston and New York. In 1997, they were signed to Victory Records. The band describes its sound as influenced by Sheer Terror, Breakdown, Carnivore and Killing Time.",
+      "en": {
+        "kicker": "american hardcore punk band · boston, 1994",
+        "who": "Blood for Blood is an American hardcore punk band from Boston, Massachusetts, formed in 1994 by Erick \"Buddha\" Medina and \"White Trash\" Rob Lind. They were signed to Victory Records in 1997. The band describes its sound as influenced by Sheer Terror, Breakdown, Carnivore and Killing Time.",
+        "facts": [
+          "It was formed in 1994 by Erick \"Buddha\" Medina and \"White Trash\" Rob Lind, drawing inspiration from the hardcore scene in Boston and New York.",
+          "In 1997, they were signed to Victory Records."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische hardcore-punkband · boston, 1994",
+        "who": "Blood for Blood ist eine amerikanische Hardcore-Punkband aus Boston, Massachusetts. Gegründet wurde sie 1994 von Erick \"Buddha\" Medina und \"White Trash\" Rob Lind. 1997 unterschrieb die Band bei Victory Records; ihr Sound ist von Sheer Terror, Breakdown, Carnivore und Killing Time beeinflusst.",
+        "facts": [
+          "Gegründet wurde die Band 1994 von Erick \"Buddha\" Medina und \"White Trash\" Rob Lind, inspiriert von der Hardcore-Szene in Boston und New York.",
+          "1997 wurde die Band bei Victory Records unter Vertrag genommen."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı hardcore punk grubu · boston, 1994",
+        "who": "Blood for Blood, Boston, Massachusetts'ten Amerikalı bir hardcore punk grubudur. 1994'te Erick \"Buddha\" Medina ve \"White Trash\" Rob Lind tarafından kuruldu. 1997'de Victory Records ile anlaştı; sesleri Sheer Terror, Breakdown, Carnivore ve Killing Time'dan etkilenir.",
+        "facts": [
+          "1994'te Erick \"Buddha\" Medina ve \"White Trash\" Rob Lind tarafından kuruldu; Boston ve New York'taki hardcore sahnesinden ilham aldı.",
+          "1997'de Victory Records ile anlaştılar."
+        ]
+      }
+    },
+    {
+      "id": "b3b611e6-5618-4ef1-a7a8-92121b44ac44",
+      "slug": "riot-ten-2b1d8ad4",
+      "title": "Riot Ten",
+      "name": "Riot Ten",
+      "source_url": "https://en.wikipedia.org/wiki/Riot_Ten",
+      "extract": "Christopher Wilson, better known by his stage name Riot Ten, is an American DJ and record producer based in El Paso, Texas. He is best known for his dubstep and hardtrap production and is currently signed to Steve Aoki's Dim Mak, with additional music out on Excision's Rotten Recordings, Never Say Die Records, Disciple Records, and Firepower, as well as remixes on Atlantic Records, Interscope Records, and RCA Records. Since 2016, Wilson has toured alongside Yellow Claw, Adventure Club, Steve Aoki, Kayzo, Pegboard Nerds, and Excision.",
+      "en": {
+        "kicker": "american dj and producer · el paso, texas",
+        "who": "Christopher Wilson, known as Riot Ten, is an American DJ and record producer based in El Paso, Texas. He is best known for dubstep and hardtrap production and is signed to Steve Aoki's Dim Mak. Since 2016 he has toured alongside Yellow Claw, Adventure Club, Steve Aoki, Kayzo, Pegboard Nerds and Excision.",
+        "facts": [
+          "He is best known for his dubstep and hardtrap production and is currently signed to Steve Aoki's Dim Mak.",
+          "Since 2016, Wilson has toured alongside Yellow Claw, Adventure Club, Steve Aoki, Kayzo, Pegboard Nerds, and Excision."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer dj und produzent · el paso, texas",
+        "who": "Christopher Wilson, bekannt als Riot Ten, ist ein amerikanischer DJ und Musikproduzent mit Sitz in El Paso, Texas. Bekannt ist er vor allem für Dubstep- und Hardtrap-Produktionen; er steht bei Steve Aokis Label Dim Mak unter Vertrag. Seit 2016 tourt er unter anderem mit Yellow Claw, Adventure Club, Steve Aoki, Kayzo, Pegboard Nerds und Excision.",
+        "facts": [
+          "Bekannt ist er vor allem für seine Dubstep- und Hardtrap-Produktionen und er steht bei Steve Aokis Label Dim Mak unter Vertrag.",
+          "Seit 2016 tourt Wilson unter anderem mit Yellow Claw, Adventure Club, Steve Aoki, Kayzo, Pegboard Nerds und Excision."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı dj ve yapımcı · el paso, texas",
+        "who": "Christopher Wilson, sahne adıyla Riot Ten, Texas'ın El Paso kentinde yaşayan Amerikalı bir DJ ve plak yapımcısıdır. En çok dubstep ve hardtrap prodüksiyonlarıyla tanınır; Steve Aoki'nin Dim Mak etiketine bağlıdır. 2016'dan beri Yellow Claw, Adventure Club, Steve Aoki, Kayzo, Pegboard Nerds ve Excision ile turneye çıkıyor.",
+        "facts": [
+          "En çok dubstep ve hardtrap prodüksiyonlarıyla tanınır ve şu anda Steve Aoki'nin Dim Mak etiketine bağlıdır.",
+          "2016'dan beri Wilson, Yellow Claw, Adventure Club, Steve Aoki, Kayzo, Pegboard Nerds ve Excision ile turneye çıkıyor."
+        ]
+      }
+    }
+  ]
+}

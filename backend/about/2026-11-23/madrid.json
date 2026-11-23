@@ -1,0 +1,38 @@
+{
+  "city": "madrid",
+  "day": "2026-11-23",
+  "nights": [
+    {
+      "id": "bca815c4-4921-49c3-843f-89d076d01bbc",
+      "slug": "los-fabulosos-cadillacs-f379e850",
+      "title": "Los Fabulosos Cadillacs",
+      "name": "Los Fabulosos Cadillacs",
+      "source_url": "https://en.wikipedia.org/wiki/Los_Fabulosos_Cadillacs",
+      "extract": "Los Fabulosos Cadillacs is an Argentine musical group from Buenos Aires. Their music fuses ska with Latin rock and various other styles.",
+      "en": {
+        "kicker": "argentine ska and rock band · buenos aires",
+        "who": "Los Fabulosos Cadillacs are an Argentine musical group from Buenos Aires. Their music fuses ska with Latin rock and various other styles.",
+        "facts": [
+          "Los Fabulosos Cadillacs is an Argentine musical group from Buenos Aires.",
+          "Their music fuses ska with Latin rock and various other styles."
+        ]
+      },
+      "de": {
+        "kicker": "argentinische ska- und rockband · buenos aires",
+        "who": "Los Fabulosos Cadillacs sind eine argentinische Musikgruppe aus Buenos Aires. Ihre Musik verbindet Ska mit Latin Rock und verschiedenen anderen Stilen.",
+        "facts": [
+          "Los Fabulosos Cadillacs sind eine argentinische Musikgruppe aus Buenos Aires.",
+          "Ihre Musik verbindet Ska mit Latin Rock und verschiedenen anderen Stilen."
+        ]
+      },
+      "tr": {
+        "kicker": "arjantinli ska ve rock grubu · buenos aires",
+        "who": "Los Fabulosos Cadillacs, Buenos Aires'ten bir Arjantin müzik grubudur. Müzikleri ska'yı Latin rock ve başka çeşitli tarzlarla harmanlar.",
+        "facts": [
+          "Los Fabulosos Cadillacs, Buenos Aires'ten bir Arjantin müzik grubudur.",
+          "Müzikleri ska'yı Latin rock ve başka çeşitli tarzlarla harmanlar."
+        ]
+      }
+    }
+  ]
+}

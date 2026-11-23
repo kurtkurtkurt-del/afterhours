@@ -1,0 +1,38 @@
+{
+  "city": "calgary",
+  "day": "2026-11-23",
+  "nights": [
+    {
+      "id": "2f03fda5-a587-42f2-b549-c01869d7eac4",
+      "slug": "simple-plan-bigger-than-you-think-canada-tour-c004ed6e",
+      "title": "SIMPLE PLAN:  BIGGER THAN YOU THINK! Canada Tour",
+      "name": "Simple Plan",
+      "source_url": "https://en.wikipedia.org/wiki/Simple_Plan",
+      "extract": "Simple Plan is a Canadian rock band formed in Montreal, Quebec, in 1999. The band's current lineup consists of Pierre Bouvier, Chuck Comeau (drums), Jeff Stinco, and Sébastien Lefebvre.",
+      "en": {
+        "kicker": "canadian rock band · montreal, 1999",
+        "who": "Simple Plan is a Canadian rock band formed in Montreal, Quebec, in 1999. The band's current lineup consists of Pierre Bouvier, Chuck Comeau (drums), Jeff Stinco and Sébastien Lefebvre.",
+        "facts": [
+          "Simple Plan is a Canadian rock band formed in Montreal, Quebec, in 1999.",
+          "The band's current lineup consists of Pierre Bouvier, Chuck Comeau (drums), Jeff Stinco, and Sébastien Lefebvre."
+        ]
+      },
+      "de": {
+        "kicker": "kanadische rockband · montreal, 1999",
+        "who": "Simple Plan ist eine kanadische Rockband, die 1999 in Montreal, Quebec, gegründet wurde. Ihre aktuelle Besetzung besteht aus Pierre Bouvier, Chuck Comeau (Schlagzeug), Jeff Stinco und Sébastien Lefebvre.",
+        "facts": [
+          "Simple Plan ist eine kanadische Rockband, die 1999 in Montreal, Quebec, gegründet wurde.",
+          "Die aktuelle Besetzung besteht aus Pierre Bouvier, Chuck Comeau (Schlagzeug), Jeff Stinco und Sébastien Lefebvre."
+        ]
+      },
+      "tr": {
+        "kicker": "kanadalı rock grubu · montreal, 1999",
+        "who": "Simple Plan, 1999'da Quebec'in Montreal kentinde kurulmuş bir Kanadalı rock grubudur. Grubun güncel kadrosunu Pierre Bouvier, Chuck Comeau (davul), Jeff Stinco ve Sébastien Lefebvre oluşturuyor.",
+        "facts": [
+          "Simple Plan, 1999'da Quebec'in Montreal kentinde kurulmuş bir Kanadalı rock grubudur.",
+          "Grubun güncel kadrosu Pierre Bouvier, Chuck Comeau (davul), Jeff Stinco ve Sébastien Lefebvre'den oluşuyor."
+        ]
+      }
+    }
+  ]
+}

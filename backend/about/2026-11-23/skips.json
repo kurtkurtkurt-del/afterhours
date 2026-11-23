@@ -2730,6 +2730,102 @@
    "slug": "scorpion-gang-abc3a15b",
    "city": "zurich",
    "why": "no page of that name (nearest: The Scorpion King)"
+  },
+  {
+   "id": "341e4d36-4082-4b46-8fb9-5efbdb8dabb6",
+   "slug": "pretty-sick-2949b25b",
+   "city": "atlanta",
+   "why": "thin extract: line-up only, no history"
+  },
+  {
+   "id": "87485581-f68d-4eab-8e5f-5393f7ae3958",
+   "slug": "american-aquarium-1df60ed5",
+   "city": "austin",
+   "why": "thin extract: one sentence"
+  },
+  {
+   "id": "78b857ac-c07f-4edd-b152-28c8e5d7c1bc",
+   "slug": "yung-gravy-the-joyrider-tour-e4cd3bac",
+   "city": "dallas",
+   "why": "thin extract: one sentence"
+  },
+  {
+   "id": "0193d023-0ee3-4574-9e94-dc029dc0c77c",
+   "slug": "eric-benet-you-do-tour-813c1910",
+   "city": "detroit",
+   "why": "thin extract: no facts beyond a Grammy count"
+  },
+  {
+   "id": "29598521-eed0-4fd6-9c49-31786e4f228c",
+   "slug": "pretty-sick-eae41668",
+   "city": "houston",
+   "why": "thin extract: line-up only, no history"
+  },
+  {
+   "id": "f0e565b7-ebdb-4538-8bda-b6461cedb845",
+   "slug": "emrah-5ed7cb11",
+   "city": "istanbul",
+   "why": "thin extract: one sentence"
+  },
+  {
+   "id": "a7149b01-6225-4f3d-80d9-70976a1a00c1",
+   "slug": "gokhan-turkmen-d15a54f1",
+   "city": "istanbul",
+   "why": "thin extract: one sentence"
+  },
+  {
+   "id": "7b1ab936-c4f3-43e4-8ca2-d758fe1ac361",
+   "slug": "lil-zey-5ce4bfe1",
+   "city": "istanbul",
+   "why": "thin extract: one sentence"
+  },
+  {
+   "id": "b014b3dd-7a5b-42b3-8f33-3c9790bb5182",
+   "slug": "song-dongye-0574b4d4",
+   "city": "los-angeles",
+   "why": "thin extract: two sentences, no story"
+  },
+  {
+   "id": "65168571-6f55-4216-9e73-1fce5ec7f3eb",
+   "slug": "amtrac-704445ed",
+   "city": "los-angeles",
+   "why": "thin extract: one sentence"
+  },
+  {
+   "id": "48d8c262-f431-435f-b665-3159d252a8a9",
+   "slug": "michael-jackson-legacy-07527ba5",
+   "city": "montreal",
+   "why": "tribute show named Legacy, not the act"
+  },
+  {
+   "id": "29cd1a9a-5b3e-4c62-9422-a38e7ed211cb",
+   "slug": "boney-james-db64356a",
+   "city": "new-orleans",
+   "why": "thin extract: one sentence"
+  },
+  {
+   "id": "3bf5272d-bce0-4113-9327-9af03dafc748",
+   "slug": "senza-cri-live-2027-09bf5079",
+   "city": "roma",
+   "why": "thin extract: one sentence"
+  },
+  {
+   "id": "34f9b08c-f6f0-497c-a3fa-277421d45f07",
+   "slug": "brkn-love-73c5ecd1",
+   "city": "toronto",
+   "why": "thin extract: one sentence"
+  },
+  {
+   "id": "2cdad80e-99a6-4d82-9e67-6aa86b72ab0d",
+   "slug": "og-keemo-cd9c6717",
+   "city": "zurich",
+   "why": "thin extract: one sentence"
+  },
+  {
+   "id": "b04fd30f-d6e1-481b-b53d-5b35c3cf7f8e",
+   "slug": "haiden-henderson-33c49ff2",
+   "city": "zurich",
+   "why": "thin extract: one sentence"
   }
  ]
 }

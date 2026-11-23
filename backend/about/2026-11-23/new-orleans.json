@@ -1,0 +1,38 @@
+{
+  "city": "new-orleans",
+  "day": "2026-11-23",
+  "nights": [
+    {
+      "id": "ec718f28-2ec9-4789-819d-2de6d288ae79",
+      "slug": "billy-strings-36cc7b9b",
+      "title": "Billy Strings",
+      "name": "Billy Strings",
+      "source_url": "https://en.wikipedia.org/wiki/Billy_Strings",
+      "extract": "William Lee Apostol, known by the stage name Billy Strings, is an American guitarist, singer, songwriter, and bluegrass musician. Three of his albums, Home, Live Vol. 1, and Highway Prayers, won the Grammy Award for Best Bluegrass Album, in 2021, 2025, and 2026 respectively.",
+      "en": {
+        "kicker": "american bluegrass guitarist · grammy winner",
+        "who": "William Lee Apostol, known by the stage name Billy Strings, is an American guitarist, singer, songwriter and bluegrass musician. Three of his albums, Home, Live Vol. 1 and Highway Prayers, won the Grammy Award for Best Bluegrass Album, in 2021, 2025 and 2026 respectively.",
+        "facts": [
+          "Three of his albums, Home, Live Vol. 1, and Highway Prayers, won the Grammy Award for Best Bluegrass Album, in 2021, 2025, and 2026 respectively.",
+          "William Lee Apostol, known by the stage name Billy Strings, is an American guitarist, singer, songwriter, and bluegrass musician."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer bluegrass-gitarrist · grammy-gewinner",
+        "who": "William Lee Apostol, bekannt als Billy Strings, ist ein amerikanischer Gitarrist, Sänger, Songwriter und Bluegrass-Musiker. Drei seiner Alben, Home, Live Vol. 1 und Highway Prayers, gewannen den Grammy in der Kategorie Best Bluegrass Album, und zwar 2021, 2025 bzw. 2026.",
+        "facts": [
+          "Drei seiner Alben, Home, Live Vol. 1 und Highway Prayers, gewannen den Grammy in der Kategorie Best Bluegrass Album, und zwar 2021, 2025 bzw. 2026.",
+          "William Lee Apostol, bekannt als Billy Strings, ist ein amerikanischer Gitarrist, Sänger, Songwriter und Bluegrass-Musiker."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı bluegrass gitaristi · grammy ödüllü",
+        "who": "William Lee Apostol, sahne adıyla Billy Strings, Amerikalı bir gitarist, şarkıcı, söz yazarı ve bluegrass müzisyenidir. Home, Live Vol. 1 ve Highway Prayers adlı üç albümü, sırasıyla 2021, 2025 ve 2026'da Grammy'nin En İyi Bluegrass Albümü ödülünü kazandı.",
+        "facts": [
+          "Home, Live Vol. 1 ve Highway Prayers adlı üç albümü, sırasıyla 2021, 2025 ve 2026'da En İyi Bluegrass Albümü Grammy'sini kazandı.",
+          "William Lee Apostol, sahne adıyla Billy Strings, Amerikalı bir gitarist, şarkıcı, söz yazarı ve bluegrass müzisyenidir."
+        ]
+      }
+    }
+  ]
+}

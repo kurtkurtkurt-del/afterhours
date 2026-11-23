@@ -1,0 +1,102 @@
+{
+  "city": "glasgow",
+  "day": "2026-11-23",
+  "nights": [
+    {
+      "id": "25bdfc26-9fbf-4cda-9e53-797ae65b0d40",
+      "slug": "electric-six-07bb249a",
+      "title": "Electric Six",
+      "name": "Electric Six",
+      "source_url": "https://en.wikipedia.org/wiki/Electric_Six",
+      "extract": "Electric Six is an American rock band formed in Detroit in 1996. They are known for combining elements of rock, disco, garage rock, metal, new wave, and punk rock. Since achieving widespread recognition in 2003 with the singles \"Danger! High Voltage\" and \"Gay Bar\", they have released 20 studio albums, two rarities albums, one live album and one live DVD. Each band member is given a unique stage name. The line-up has undergone changes over the years: co-founder, lead vocalist, and primary songwriter Dick Valentine has been the only constant member. The current line-up consists of Valentine, lead guitarist Johnny Na$hinal, keyboardist Tait Nucleus?, rhythm guitarist Herb S. Flavourings, drumme",
+      "en": {
+        "kicker": "american rock band · detroit, 1996",
+        "who": "Electric Six is an American rock band formed in Detroit in 1996. They combine rock, disco, garage rock, metal, new wave and punk rock. Since their 2003 breakthrough, Dick Valentine has been the only constant member.",
+        "facts": [
+          "They are known for combining elements of rock, disco, garage rock, metal, new wave, and punk rock.",
+          "They have released 20 studio albums, two rarities albums, one live album and one live DVD."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische rockband · detroit, 1996",
+        "who": "Electric Six ist eine amerikanische Rockband, die 1996 in Detroit gegründet wurde. Sie verbinden Rock, Disco, Garage Rock, Metal, New Wave und Punk. Seit dem Durchbruch 2003 ist Dick Valentine das einzige konstante Mitglied.",
+        "facts": [
+          "Sie kombinieren Elemente aus Rock, Disco, Garage Rock, Metal, New Wave und Punk Rock.",
+          "Sie haben 20 Studioalben, zwei Rarities-Alben, ein Livealbum und eine Live-DVD veröffentlicht."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı rock grubu · detroit, 1996",
+        "who": "Electric Six, 1996'da Detroit'te kurulmuş Amerikalı bir rock grubudur. Rock, disco, garage rock, metal, new wave ve punk rock öğelerini birleştirirler. 2003'te geniş çapta tanındılar; Dick Valentine tek kalıcı üye.",
+        "facts": [
+          "Rock, disco, garage rock, metal, new wave ve punk rock öğelerini birleştirmesiyle bilinirler.",
+          "20 stüdyo albümü, iki rarities albümü, bir canlı albüm ve bir canlı DVD yayımladılar."
+        ]
+      }
+    },
+    {
+      "id": "2e697e71-1faa-41cd-b98b-188230ca5336",
+      "slug": "placebo-30th-anniversary-tour-093b4575",
+      "title": "Placebo - 30th Anniversary Tour",
+      "name": "Placebo",
+      "source_url": "https://en.wikipedia.org/wiki/Placebo_(band)",
+      "extract": "Placebo are a British alternative rock band, formed in London in 1994 by vocalist-guitarist Brian Molko and bassist-guitarist Stefan Olsdal, who have remained the two constant members, with three full-time drummers throughout the band's existence.",
+      "en": {
+        "kicker": "british alternative rock band · london, 1994",
+        "who": "Placebo are a British alternative rock band formed in London in 1994 by vocalist-guitarist Brian Molko and bassist-guitarist Stefan Olsdal. The two have remained the constant members. The band has had three full-time drummers throughout its existence.",
+        "facts": [
+          "Placebo are a British alternative rock band, formed in London in 1994 by vocalist-guitarist Brian Molko and bassist-guitarist Stefan Olsdal.",
+          "They have had three full-time drummers throughout the band's existence."
+        ]
+      },
+      "de": {
+        "kicker": "britische alternative-rockband · london, 1994",
+        "who": "Placebo ist eine britische Alternative-Rockband, die 1994 in London von Sänger und Gitarrist Brian Molko und Bassist und Gitarrist Stefan Olsdal gegründet wurde. Die beiden sind die einzigen konstanten Mitglieder. Im Laufe des Bestehens der Band spielten drei festangestellte Schlagzeuger.",
+        "facts": [
+          "Placebo ist eine britische Alternative-Rockband, die 1994 in London von Brian Molko und Stefan Olsdal gegründet wurde.",
+          "Die Band hatte im Laufe ihres Bestehens drei festangestellte Schlagzeuger."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz alternatif rock grubu · londra, 1994",
+        "who": "Placebo, 1994'te Londra'da vokalist-gitarist Brian Molko ve basçı-gitarist Stefan Olsdal tarafından kurulmuş bir İngiliz alternatif rock grubudur. İkisi grubun değişmeyen tek üyeleri; grubun varlığı boyunca üç tam zamanlı davulcu görev yaptı.",
+        "facts": [
+          "Placebo, 1994'te Londra'da Brian Molko ve Stefan Olsdal tarafından kurulmuş bir İngiliz alternatif rock grubudur.",
+          "Grubun varlığı boyunca üç tam zamanlı davulcusu oldu."
+        ]
+      }
+    },
+    {
+      "id": "aad09eb3-4f84-482c-b9d6-934ca15a39a5",
+      "slug": "the-fat-lady-sings-aa58029d",
+      "title": "The Fat Lady Sings",
+      "name": "The Fat Lady Sings",
+      "source_url": "https://en.wikipedia.org/wiki/The_Fat_Lady_Sings",
+      "extract": "\n\nThe Fat Lady Sings were a rock band from Dublin, Ireland, fronted by singer and songwriter Nick Kelly. Almost immediately after forming in March 1986, they relocated to London, and remained there for the rest of their career. Despite this, they gained more media attention and commercial success in their native Ireland, with a series of five top 20 singles in 1990/91, than they did in the UK.",
+      "en": {
+        "kicker": "irish rock band · dublin, 1986",
+        "who": "The Fat Lady Sings were a rock band from Dublin, Ireland, fronted by singer and songwriter Nick Kelly. They formed in March 1986 and soon relocated to London, where they remained for the rest of their career. They had a series of five top 20 singles in Ireland in 1990/91.",
+        "facts": [
+          "Almost immediately after forming in March 1986, they relocated to London, and remained there for the rest of their career.",
+          "Despite this, they gained more media attention and commercial success in their native Ireland, with a series of five top 20 singles in 1990/91, than they did in the UK."
+        ]
+      },
+      "de": {
+        "kicker": "irische rockband · dublin, 1986",
+        "who": "The Fat Lady Sings waren eine Rockband aus Dublin, Irland, mit Sänger und Songwriter Nick Kelly als Frontmann. Sie gründeten sich im März 1986 und zogen bald nach London, wo sie den Rest ihrer Karriere blieben. In Irland hatten sie 1990/91 eine Reihe von fünf Singles in den Top 20.",
+        "facts": [
+          "Fast unmittelbar nach ihrer Gründung im März 1986 zogen sie nach London, wo sie den Rest ihrer Karriere blieben.",
+          "Trotzdem erhielten sie in ihrer Heimat Irland mehr mediale Aufmerksamkeit und kommerziellen Erfolg als in Großbritannien, mit fünf Singles in den Top 20 in den Jahren 1990/91."
+        ]
+      },
+      "tr": {
+        "kicker": "irlandalı rock grubu · dublin, 1986",
+        "who": "The Fat Lady Sings, Dublin, İrlanda'dan, şarkıcı ve söz yazarı Nick Kelly'nin önderliğindeki bir rock grubuydu. Mart 1986'da kuruldular ve kısa süre sonra kariyerlerinin geri kalanı için Londra'ya taşındılar. Memleketleri İrlanda'da 1990/91'de beş top 20 single'a ulaştılar.",
+        "facts": [
+          "Mart 1986'da kurulduktan hemen sonra Londra'ya taşındılar ve kariyerlerinin geri kalanında orada kaldılar.",
+          "Buna rağmen, 1990/91'de İrlanda'da beş top 20 single ile Birleşik Krallık'tan daha fazla ilgi ve ticari başarı kazandılar."
+        ]
+      }
+    }
+  ]
+}

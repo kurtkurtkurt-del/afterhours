@@ -1,0 +1,102 @@
+{
+  "city": "birmingham",
+  "day": "2026-11-23",
+  "nights": [
+    {
+      "id": "71507606-5f9d-4145-a656-47a54ba95c8c",
+      "slug": "jamie-t-4a1956c0",
+      "title": "Jamie T",
+      "name": "Jamie T",
+      "source_url": "https://en.wikipedia.org/wiki/Jamie_T",
+      "extract": "Jamie Alexander Treays, better known by his stage name Jamie T, is an English singer, songwriter, rapper, guitarist and record producer from Wimbledon, South London.",
+      "en": {
+        "kicker": "english singer-songwriter · wimbledon, south london",
+        "who": "Jamie Alexander Treays, known as Jamie T, is an English singer, songwriter, rapper, guitarist and record producer. He comes from Wimbledon in South London.",
+        "facts": [
+          "Jamie Alexander Treays, better known by his stage name Jamie T, is an English singer, songwriter, rapper, guitarist and record producer.",
+          "Jamie T is from Wimbledon, South London."
+        ]
+      },
+      "de": {
+        "kicker": "englischer musiker · wimbledon, süd-london",
+        "who": "Jamie Alexander Treays, bekannt als Jamie T, ist ein englischer Sänger, Songwriter, Rapper, Gitarrist und Musikproduzent. Er stammt aus Wimbledon in Süd-London.",
+        "facts": [
+          "Jamie Alexander Treays, besser bekannt unter dem Künstlernamen Jamie T, ist ein englischer Sänger, Songwriter, Rapper, Gitarrist und Musikproduzent.",
+          "Jamie T stammt aus Wimbledon in Süd-London."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz müzisyen · wimbledon, güney londra",
+        "who": "Jamie Alexander Treays, sahne adıyla Jamie T, İngiliz bir şarkıcı, söz yazarı, rapçi, gitarist ve plak yapımcısıdır. Güney Londra'daki Wimbledon'dan geliyor.",
+        "facts": [
+          "Jamie Alexander Treays, daha çok Jamie T sahne adıyla bilinen İngiliz bir şarkıcı, söz yazarı, rapçi, gitarist ve plak yapımcısıdır.",
+          "Jamie T, Güney Londra'daki Wimbledon'dan geliyor."
+        ]
+      }
+    },
+    {
+      "id": "557314a0-c2e0-4099-810b-9532bcaecdae",
+      "slug": "tori-kelly-god-must-really-love-me-europe-tour-05b1fbcf",
+      "title": "Tori Kelly - God Must Really Love Me Europe Tour",
+      "name": "Tori Kelly",
+      "source_url": "https://en.wikipedia.org/wiki/Tori_Kelly",
+      "extract": "Victoria Loren \"Tori\" Kelly is an American singer-songwriter. She first gained recognition on YouTube before making it through to Hollywood week on the ninth season of American Idol in 2010 and eventually releasing her debut EP, Handmade Songs (2012).",
+      "en": {
+        "kicker": "american singer-songwriter · debut ep 2012",
+        "who": "Victoria Loren \"Tori\" Kelly is an American singer-songwriter. She first gained recognition on YouTube before making it through to Hollywood week on the ninth season of American Idol in 2010. She later released her debut EP, Handmade Songs (2012).",
+        "facts": [
+          "She first gained recognition on YouTube before making it through to Hollywood week on the ninth season of American Idol in 2010.",
+          "She eventually released her debut EP, Handmade Songs (2012)."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische singer-songwriterin · debüt-ep 2012",
+        "who": "Victoria Loren \"Tori\" Kelly ist eine amerikanische Singer-Songwriterin. Bekannt wurde sie zunächst über YouTube, bevor sie 2010 in der neunten Staffel von American Idol bis zur Hollywood-Woche kam. Ihre Debüt-EP Handmade Songs erschien 2012.",
+        "facts": [
+          "Zunächst wurde sie über YouTube bekannt, bevor sie 2010 in der neunten Staffel von American Idol bis zur Hollywood-Woche kam.",
+          "Schließlich veröffentlichte sie ihre Debüt-EP Handmade Songs (2012)."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı şarkıcı-söz yazarı · ilk ep 2012",
+        "who": "Victoria Loren \"Tori\" Kelly, Amerikalı bir şarkıcı ve söz yazarıdır. Önce YouTube'da tanındı, 2010'da American Idol'un dokuzuncu sezonunda Hollywood haftasına kadar yükseldi. Ardından ilk EP'si Handmade Songs'u (2012) yayımladı.",
+        "facts": [
+          "Önce YouTube'da tanındı, ardından 2010'da American Idol'un dokuzuncu sezonunda Hollywood haftasına kadar ilerledi.",
+          "Sonunda ilk EP'si Handmade Songs'u (2012) yayımladı."
+        ]
+      }
+    },
+    {
+      "id": "5db5a283-9573-4558-9730-5ea98de94df1",
+      "slug": "the-snuts-21badbe0",
+      "title": "The Snuts",
+      "name": "The Snuts",
+      "source_url": "https://en.wikipedia.org/wiki/The_Snuts",
+      "extract": "The Snuts are a Scottish indie rock band formed in 2015, originating from West Lothian, Scotland. They have performed across the United Kingdom and Ireland. The band consists of Jack Cochrane, Joe McGillveray (guitar), Callum '29' Wilson (bass) and Jordan 'Joko' Mackay (drums) and was formed when the members were in school.",
+      "en": {
+        "kicker": "scottish indie rock band · west lothian, 2015",
+        "who": "The Snuts are a Scottish indie rock band formed in 2015 in West Lothian, Scotland. The band consists of Jack Cochrane, Joe McGillveray, Callum '29' Wilson and Jordan 'Joko' Mackay. They have performed across the United Kingdom and Ireland.",
+        "facts": [
+          "The Snuts are a Scottish indie rock band formed in 2015, originating from West Lothian, Scotland.",
+          "They have performed across the United Kingdom and Ireland."
+        ]
+      },
+      "de": {
+        "kicker": "schottische indie-rockband · west lothian, 2015",
+        "who": "The Snuts sind eine schottische Indie-Rockband, die 2015 in West Lothian gegründet wurde. Zur Band gehören Jack Cochrane, Joe McGillveray, Callum '29' Wilson und Jordan 'Joko' Mackay. Sie haben in Großbritannien und Irland gespielt.",
+        "facts": [
+          "The Snuts sind eine schottische Indie-Rockband, die 2015 gegründet wurde und aus West Lothian in Schottland stammt.",
+          "Sie sind im Vereinigten Königreich und in Irland aufgetreten."
+        ]
+      },
+      "tr": {
+        "kicker": "iskoç indie rock grubu · west lothian, 2015",
+        "who": "The Snuts, 2015'te İskoçya'nın West Lothian bölgesinde kurulmuş bir İskoç indie rock grubudur. Grubu Jack Cochrane, Joe McGillveray, Callum '29' Wilson ve Jordan 'Joko' Mackay oluşturuyor. Birleşik Krallık ve İrlanda'da sahne aldılar.",
+        "facts": [
+          "The Snuts, 2015'te kurulmuş, West Lothian, İskoçya kökenli bir İskoç indie rock grubudur.",
+          "Birleşik Krallık ve İrlanda genelinde sahne aldılar."
+        ]
+      }
+    }
+  ]
+}

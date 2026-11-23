@@ -1,0 +1,38 @@
+{
+  "city": "philadelphia",
+  "day": "2026-11-23",
+  "nights": [
+    {
+      "id": "4454d256-93dc-4d3e-a8a7-503045085613",
+      "slug": "sabaton-legends-on-tour-86528bd5",
+      "title": "Sabaton: Legends on Tour",
+      "name": "Sabaton",
+      "source_url": "https://en.wikipedia.org/wiki/Sabaton_(band)",
+      "extract": "Sabaton is a Swedish power metal band from Falun, formed in 1999 by lead singer Joakim Brodén, bassist Pär Sundström, guitarists Oskar Montelius and Rikard Sundén, and drummer Richard Larsson. The band has gone through multiple lineup changes with Brodén and Sundström remaining the only consistent members. The vast majority of their songs are about historical events, mainly wars and significant battles. As of 2026, the band has released eleven studio albums, four live albums, five live DVDs and thirty music videos.",
+      "en": {
+        "kicker": "swedish power metal band · falun, 1999",
+        "who": "Sabaton is a Swedish power metal band from Falun, formed in 1999 by lead singer Joakim Brodén and others. Brodén and bassist Pär Sundström are the only consistent members. Most of their songs are about historical events, mainly wars and significant battles.",
+        "facts": [
+          "The vast majority of their songs are about historical events, mainly wars and significant battles.",
+          "As of 2026, the band has released eleven studio albums, four live albums, five live DVDs and thirty music videos."
+        ]
+      },
+      "de": {
+        "kicker": "schwedische power-metal-band · falun, 1999",
+        "who": "Sabaton ist eine schwedische Power-Metal-Band aus Falun, die 1999 von Sänger Joakim Brodén und anderen gegründet wurde. Brodén und Bassist Pär Sundström sind die einzigen beständigen Mitglieder. Die meisten Songs handeln von historischen Ereignissen, vor allem Kriegen und bedeutenden Schlachten.",
+        "facts": [
+          "Der allergrößte Teil ihrer Songs handelt von historischen Ereignissen, vor allem von Kriegen und bedeutenden Schlachten.",
+          "Stand 2026 hat die Band elf Studioalben, vier Livealben, fünf Live-DVDs und dreißig Musikvideos veröffentlicht."
+        ]
+      },
+      "tr": {
+        "kicker": "isveçli power metal grubu · falun, 1999",
+        "who": "Sabaton, 1999'da Falun'da Joakim Brodén ve diğerleri tarafından kurulmuş bir İsveç power metal grubudur. Brodén ve basçı Pär Sundström kadroda değişmeyen tek üyeler. Şarkılarının büyük çoğunluğu tarihi olaylar, özellikle savaşlar ve önemli muharebeler hakkında.",
+        "facts": [
+          "Şarkılarının büyük çoğunluğu tarihi olaylar, özellikle savaşlar ve önemli muharebeler hakkında.",
+          "2026 itibarıyla grup on bir stüdyo albümü, dört canlı albümü, beş canlı DVD'yi ve otuz müzik videosunu yayımladı."
+        ]
+      }
+    }
+  ]
+}

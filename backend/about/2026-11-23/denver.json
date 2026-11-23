@@ -1,0 +1,70 @@
+{
+  "city": "denver",
+  "day": "2026-11-23",
+  "nights": [
+    {
+      "id": "5fb00438-b973-4a1c-8737-9445bda6df7f",
+      "slug": "machinedrum-f5fdd273",
+      "title": "Machinedrum",
+      "name": "Machinedrum",
+      "source_url": "https://en.wikipedia.org/wiki/Machinedrum",
+      "extract": "Travis Stewart, better known as Machinedrum, is an American electronic record producer and performer from North Carolina. He has also recorded as Syndrone and Tstewart. He is one half of Sepalcure, with Praveen Sharma, one half of JETS, with Jimmy Edgar, as well as half of Dream Continuum with Jim Coles, a.k.a. Om Unit.",
+      "en": {
+        "kicker": "american record producer · north carolina",
+        "who": "Travis Stewart, known as Machinedrum, is an American electronic record producer and performer from North Carolina. He has also recorded as Syndrone and Tstewart. He is one half of Sepalcure and JETS, and half of Dream Continuum with Om Unit.",
+        "facts": [
+          "He is one half of Sepalcure, with Praveen Sharma, one half of JETS, with Jimmy Edgar, as well as half of Dream Continuum with Jim Coles, a.k.a. Om Unit.",
+          "He has also recorded as Syndrone and Tstewart."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer produzent · north carolina",
+        "who": "Travis Stewart, bekannt als Machinedrum, ist ein amerikanischer Elektronik-Produzent und Performer aus North Carolina. Er hat auch unter den Namen Syndrone und Tstewart aufgenommen. Er ist Teil von Sepalcure und JETS sowie Hälfte des Projekts Dream Continuum.",
+        "facts": [
+          "Er ist eine Hälfte von Sepalcure, zusammen mit Praveen Sharma, und eine Hälfte von JETS, zusammen mit Jimmy Edgar.",
+          "Er hat auch unter den Namen Syndrone und Tstewart aufgenommen."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı yapımcı · north carolina",
+        "who": "Travis Stewart, sahne adıyla Machinedrum, North Carolina'dan Amerikalı bir elektronik yapımcı ve icracıdır. Syndrone ve Tstewart adlarıyla da kayıt yaptı. Sepalcure ve JETS'in yarısı, Dream Continuum'un ise Om Unit ile birlikte yarısıdır.",
+        "facts": [
+          "Sepalcure'ın Praveen Sharma ile birlikte yarısı, JETS'in ise Jimmy Edgar ile birlikte yarısıdır.",
+          "Syndrone ve Tstewart adlarıyla da kayıt yaptı."
+        ]
+      }
+    },
+    {
+      "id": "25520fbc-c956-4db9-a103-65673a05cdbd",
+      "slug": "key-glock-big5-live-930cb5e5",
+      "title": "Key Glock - Big5 Live!",
+      "name": "Key Glock",
+      "source_url": "https://en.wikipedia.org/wiki/Key_Glock",
+      "extract": "Markeyvius LaShun Cathey, known professionally as Key Glock, is an American rapper, songwriter, and record producer. The cousin of late Memphis rapper Young Dolph, Cathey signed with his record label, Paper Route Empire, to release his commercial mixtape, Glock Season (2017). His debut studio album, Yellow Tape (2020), peaked at number 14 on the Billboard 200 and received gold certification by the Recording Industry Association of America (RIAA). His second album, Yellow Tape 2 (2021), peaked at number seven on the chart and spawned the multi-platinum-certified single \"Ambition for Cash\", as well as \"Proud\", which was released in the wake of Dolph's death and marked his first entry on the Bi",
+      "en": {
+        "kicker": "american rapper · yellow tape, 2020",
+        "who": "Markeyvius LaShun Cathey, known professionally as Key Glock, is an American rapper, songwriter and record producer. He is the cousin of the late Memphis rapper Young Dolph and signed with Paper Route Empire. His debut studio album, Yellow Tape (2020), peaked at number 14 on the Billboard 200.",
+        "facts": [
+          "His debut studio album, Yellow Tape (2020), peaked at number 14 on the Billboard 200 and received gold certification by the Recording Industry Association of America (RIAA).",
+          "The cousin of late Memphis rapper Young Dolph, Cathey signed with his record label, Paper Route Empire, to release his commercial mixtape, Glock Season (2017)."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer rapper · yellow tape, 2020",
+        "who": "Markeyvius LaShun Cathey, bekannt als Key Glock, ist ein amerikanischer Rapper, Songwriter und Produzent. Er ist ein Cousin des verstorbenen Memphis-Rappers Young Dolph und unterschrieb bei Paper Route Empire. Sein Debütalbum Yellow Tape (2020) erreichte Platz 14 der Billboard 200.",
+        "facts": [
+          "Sein Debütalbum Yellow Tape (2020) erreichte Platz 14 der Billboard 200 und wurde von der RIAA mit Gold ausgezeichnet.",
+          "Als Cousin des verstorbenen Memphis-Rappers Young Dolph unterschrieb Cathey bei seinem Label Paper Route Empire, um sein kommerzielles Mixtape Glock Season (2017) zu veröffentlichen."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı rapçi · yellow tape, 2020",
+        "who": "Markeyvius LaShun Cathey, sahne adıyla Key Glock, Amerikalı bir rapçi, söz yazarı ve yapımcıdır. Rahmetli Memphis rapçisi Young Dolph'un kuzenidir ve Paper Route Empire ile çalıştı. Debut albümü Yellow Tape (2020), Billboard 200'de 14. sıraya yükseldi.",
+        "facts": [
+          "Debut stüdyo albümü Yellow Tape (2020), Billboard 200'de 14. sıraya ulaştı ve RIAA'dan altın sertifika aldı.",
+          "Rahmetli Memphis rapçisi Young Dolph'un kuzeni olan Cathey, Glock Season (2017) mixtape'ini yayımlamak için Paper Route Empire ile anlaştı."
+        ]
+      }
+    }
+  ]
+}

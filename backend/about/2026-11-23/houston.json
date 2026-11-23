@@ -1,0 +1,70 @@
+{
+  "city": "houston",
+  "day": "2026-11-23",
+  "nights": [
+    {
+      "id": "24cbad0d-77df-4fc8-9ac1-1e50e1f820a9",
+      "slug": "jodeci-35th-anniversary-tour-of-forever-my-lady-d3c229eb",
+      "title": "Jodeci - 35th Anniversary Tour of Forever My Lady",
+      "name": "Jodeci",
+      "source_url": "https://en.wikipedia.org/wiki/Jodeci",
+      "extract": "Jodeci is an American R&B quartet consisting of members JoJo, DeVanté Swing, K-Ci, and Mr. Dalvin. Formed in 1988 in Charlotte, North Carolina, Jodeci began as a duo of DeVanté Swing and JoJo but later both added their brothers. After signing with Uptown Records in 1990, the group finished work on their debut album, Forever My Lady (1991), which brought them mainstream success with three straight Billboard R&B No. 1 hit singles: the album's titular track, \"Stay\" and \"Come and Talk to Me\".",
+      "en": {
+        "kicker": "american r&b quartet · charlotte, north carolina, 1988",
+        "who": "Jodeci is an American R&B quartet formed in Charlotte, North Carolina, in 1988. It began as a duo of DeVanté Swing and JoJo before both added their brothers. Their debut album, Forever My Lady (1991), brought them mainstream success.",
+        "facts": [
+          "Formed in 1988 in Charlotte, North Carolina, Jodeci began as a duo of DeVanté Swing and JoJo but later both added their brothers.",
+          "After signing with Uptown Records in 1990, the group finished work on their debut album, Forever My Lady (1991), which brought them mainstream success with three straight Billboard R&B No. 1 hit singles."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanisches R&B-Quartett · charlotte, north carolina, 1988",
+        "who": "Jodeci ist ein amerikanisches R&B-Quartett, das 1988 in Charlotte, North Carolina, gegründet wurde. Es begann als Duo aus DeVanté Swing und JoJo, bevor beide ihre Brüder aufnahmen. Mit dem Debütalbum Forever My Lady (1991) gelang der Durchbruch.",
+        "facts": [
+          "1988 in Charlotte, North Carolina, gegründet, begann Jodeci als Duo aus DeVanté Swing und JoJo, später nahmen beide ihre Brüder dazu.",
+          "Nach dem Vertrag bei Uptown Records 1990 schloss die Gruppe ihr Debütalbum Forever My Lady (1991) ab, das ihr mit drei Billboard-R&B-Nummer-eins-Singles den Mainstream-Erfolg brachte."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı r&b dörtlüsü · charlotte, north carolina, 1988",
+        "who": "Jodeci, 1988'de Charlotte, North Carolina'da kurulmuş Amerikalı bir R&B dörtlüsüdür. DeVanté Swing ve JoJo'nun ikilisi olarak başladı, sonra ikisi de kardeşlerini gruba kattı. Debut albümleri Forever My Lady (1991) onlara ana akım başarı getirdi.",
+        "facts": [
+          "1988'de Charlotte, North Carolina'da kuruldu; DeVanté Swing ve JoJo'nun ikilisi olarak başladı, sonra ikisi de kardeşlerini ekledi.",
+          "Uptown Records ile 1990'da anlaşan grup, debut albümü Forever My Lady'yi (1991) tamamladı; album üç Billboard R&B bir numara single ile ana akım başarı getirdi."
+        ]
+      }
+    },
+    {
+      "id": "76f248de-6ba1-4fab-99bc-9d0c1850c183",
+      "slug": "trippie-redd-the-non-disclosure-agreement-tour-4afe51b4",
+      "title": "Trippie Redd - The Non-disclosure Agreement Tour",
+      "name": "Trippie Redd",
+      "source_url": "https://en.wikipedia.org/wiki/Trippie_Redd",
+      "extract": "Michael Lamar White II, known professionally as Trippie Redd, is an American rapper, singer, and songwriter. Born and raised in Canton, Ohio, he has contributed to the progression of emo rap and rage, a subgenre of trap music.",
+      "en": {
+        "kicker": "american rapper · canton, ohio",
+        "who": "Michael Lamar White II, known professionally as Trippie Redd, is an American rapper, singer and songwriter. He was born and raised in Canton, Ohio. He has contributed to the progression of emo rap and rage, a subgenre of trap music.",
+        "facts": [
+          "Born and raised in Canton, Ohio, he has contributed to the progression of emo rap and rage, a subgenre of trap music.",
+          "Michael Lamar White II, known professionally as Trippie Redd, is an American rapper, singer, and songwriter."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer rapper · canton, ohio",
+        "who": "Michael Lamar White II, bekannt als Trippie Redd, ist ein amerikanischer Rapper, Sänger und Songwriter. Er ist in Canton, Ohio, aufgewachsen und hat die Entwicklung von Emo-Rap und Rage mitgeprägt, einem Subgenre des Trap.",
+        "facts": [
+          "In Canton, Ohio, geboren und aufgewachsen, hat er die Entwicklung von Emo-Rap und Rage, einem Subgenre des Trap, mitgeprägt.",
+          "Michael Lamar White II, bekannt als Trippie Redd, ist ein amerikanischer Rapper, Sänger und Songwriter."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı rapçi · canton, ohio",
+        "who": "Michael Lamar White II, sahne adıyla Trippie Redd, Amerikalı bir rapçi, şarkıcı ve söz yazarıdır. Canton, Ohio'da doğup büyüdü ve trap müziğin bir alt türü olan emo rap ile rage'in gelişimine katkıda bulundu.",
+        "facts": [
+          "Canton, Ohio'da doğup büyüdü ve trap müziğin bir alt türü olan emo rap ile rage'in gelişimine katkıda bulundu.",
+          "Michael Lamar White II, sahne adıyla Trippie Redd, Amerikalı bir rapçi, şarkıcı ve söz yazarıdır."
+        ]
+      }
+    }
+  ]
+}

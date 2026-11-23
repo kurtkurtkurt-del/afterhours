@@ -1,0 +1,102 @@
+{
+  "city": "istanbul",
+  "day": "2026-11-23",
+  "nights": [
+    {
+      "id": "e4704fb5-4ace-4908-b141-67a980b9a9ea",
+      "slug": "serdar-ortac-f84db914",
+      "title": "Serdar Ortaç",
+      "name": "Serdar Ortaç",
+      "source_url": "https://en.wikipedia.org/wiki/Serdar_Orta%C3%A7",
+      "extract": "Serdar Ortaç is a Turkish singer, songwriter and composer from Istanbul.\nHe is known as one of the most popular singers in Turkish pop-music history.",
+      "en": {
+        "kicker": "turkish singer, songwriter and composer · istanbul",
+        "who": "Serdar Ortaç is a Turkish singer, songwriter and composer from Istanbul. He is known as one of the most popular singers in Turkish pop-music history.",
+        "facts": [
+          "Serdar Ortaç is a Turkish singer, songwriter and composer from Istanbul.",
+          "He is known as one of the most popular singers in Turkish pop-music history."
+        ]
+      },
+      "de": {
+        "kicker": "türkischer sänger, songwriter und komponist · istanbul",
+        "who": "Serdar Ortaç ist ein türkischer Sänger, Songwriter und Komponist aus Istanbul. Er gilt als einer der beliebtesten Sänger der türkischen Popmusik-Geschichte.",
+        "facts": [
+          "Serdar Ortaç ist ein türkischer Sänger, Songwriter und Komponist aus Istanbul.",
+          "Er gilt als einer der beliebtesten Sänger der türkischen Popmusik-Geschichte."
+        ]
+      },
+      "tr": {
+        "kicker": "türk şarkıcı, söz yazarı ve besteci · istanbul",
+        "who": "Serdar Ortaç, İstanbul'dan Türk bir şarkıcı, söz yazarı ve bestecidir. Türk pop müziği tarihinin en popüler şarkıcılarından biri olarak tanınır.",
+        "facts": [
+          "Serdar Ortaç, İstanbul'dan Türk bir şarkıcı, söz yazarı ve bestecidir.",
+          "Türk pop müziği tarihinin en popüler şarkıcılarından biri olarak tanınır."
+        ]
+      }
+    },
+    {
+      "id": "40e65433-cb43-47b0-b6e0-7adfa18692da",
+      "slug": "ask-n-nur-yengi-d3ceb52f",
+      "title": "Aşkın Nur Yengi",
+      "name": "Aşkın Nur Yengi",
+      "source_url": "https://en.wikipedia.org/wiki/A%C5%9Fk%C4%B1n_Nur_Yengi",
+      "extract": "Aşkın Nur Yengi is a Turkish singer, composer, and actress.\nShe started working as a backing vocalist for Sezen Aksu and with Aksu's help, released her first studio album in 1990. With her debut album Sevgiliye in 1990, she became one of the most successful Turkish singers of the '90s.",
+      "en": {
+        "kicker": "turkish singer and actress · debut 1990",
+        "who": "Aşkın Nur Yengi is a Turkish singer, composer and actress. She started as a backing vocalist for Sezen Aksu and, with Aksu's help, released her first studio album in 1990. Her debut album, Sevgiliye, made her one of the most successful Turkish singers of the '90s.",
+        "facts": [
+          "She started working as a backing vocalist for Sezen Aksu and with Aksu's help, released her first studio album in 1990.",
+          "With her debut album Sevgiliye in 1990, she became one of the most successful Turkish singers of the '90s."
+        ]
+      },
+      "de": {
+        "kicker": "türkische sängerin und schauspielerin · debüt 1990",
+        "who": "Aşkın Nur Yengi ist eine türkische Sängerin, Komponistin und Schauspielerin. Sie begann als Background-Sängerin von Sezen Aksu und veröffentlichte mit deren Hilfe 1990 ihr erstes Studioalbum. Mit dem Debüt Sevgiliye wurde sie in den 90ern eine der erfolgreichsten türkischen Sängerinnen.",
+        "facts": [
+          "Sie begann als Background-Sängerin für Sezen Aksu und veröffentlichte mit Aksus Hilfe 1990 ihr erstes Studioalbum.",
+          "Mit ihrem Debütalbum Sevgiliye 1990 wurde sie zu einer der erfolgreichsten türkischen Sängerinnen der 90er."
+        ]
+      },
+      "tr": {
+        "kicker": "türk şarkıcı ve oyuncu · debut 1990",
+        "who": "Aşkın Nur Yengi, Türk bir şarkıcı, besteci ve oyuncudur. Sezen Aksu'nun arka vokalistliğiyle başladı ve Aksu'nun yardımıyla 1990'da ilk stüdyo albümünü çıkardı. Debut albümü Sevgiliye ile 90'larda en başarılı Türk şarkıcılardan biri oldu.",
+        "facts": [
+          "Sezen Aksu'nun arka vokalisti olarak çalışmaya başladı ve Aksu'nun yardımıyla 1990'da ilk stüdyo albümünü yayımladı.",
+          "1990'daki debut albümü Sevgiliye ile 90'larda en başarılı Türk şarkıcılardan biri oldu."
+        ]
+      }
+    },
+    {
+      "id": "8b18948a-8eb3-4c1c-b1d9-929f18f839a3",
+      "slug": "zakkum-89626d61",
+      "title": "Zakkum",
+      "name": "Zakkum",
+      "source_url": "https://en.wikipedia.org/wiki/Zakkum_(band)",
+      "extract": "Zakkum are a Turkish rock group. It was created in 1999 under the name Raindog in Ankara. Raindog had many stage performances, before they started working on an album and chose a Turkish name \"Zakkum\" for their band.",
+      "en": {
+        "kicker": "turkish rock band · ankara, 1999",
+        "who": "Zakkum is a Turkish rock group. It was created in 1999 under the name Raindog in Ankara, and performed on stage many times before recording an album. The group then chose the Turkish name Zakkum.",
+        "facts": [
+          "It was created in 1999 under the name Raindog in Ankara.",
+          "Raindog had many stage performances, before they started working on an album and chose a Turkish name \"Zakkum\" for their band."
+        ]
+      },
+      "de": {
+        "kicker": "türkische rockband · ankara, 1999",
+        "who": "Zakkum ist eine türkische Rockgruppe. Sie entstand 1999 in Ankara unter dem Namen Raindog und trat viel auf, bevor sie an einem Album arbeitete. Danach wählte die Band den türkischen Namen Zakkum.",
+        "facts": [
+          "Sie entstand 1999 in Ankara unter dem Namen Raindog.",
+          "Raindog hatte viele Auftritte, bevor sie an einem Album arbeiteten und den türkischen Namen \"Zakkum\" für ihre Band wählten."
+        ]
+      },
+      "tr": {
+        "kicker": "türk rock grubu · ankara, 1999",
+        "who": "Zakkum, bir Türk rock grubudur. 1999'da Ankara'da Raindog adıyla kuruldu; albüm çalışmalarından önce sahnede çok sayıda konser verdi. Ardından grup Türkçe Zakkum adını seçti.",
+        "facts": [
+          "1999'da Ankara'da Raindog adıyla kuruldu.",
+          "Raindog, bir albüm üzerinde çalışmaya başlamadan önce birçok sahne performansı yaptı ve grup için \"Zakkum\" adını seçti."
+        ]
+      }
+    }
+  ]
+}

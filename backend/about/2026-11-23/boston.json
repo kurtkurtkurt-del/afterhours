@@ -1,0 +1,70 @@
+{
+  "city": "boston",
+  "day": "2026-11-23",
+  "nights": [
+    {
+      "id": "01553357-1340-409c-8861-ec05b79e9ef5",
+      "slug": "cyrus-chestnut-897a9430",
+      "title": "CYRUS CHESTNUT",
+      "name": "Cyrus Chestnut",
+      "source_url": "https://en.wikipedia.org/wiki/Cyrus_Chestnut",
+      "extract": "Cyrus Chestnut is an American jazz pianist, composer and producer. In 2006, Josh Tyrangiel, music critic for Time, wrote: \"What makes Chestnut the best jazz pianist of his generation is a willingness to abandon notes and play space.\"",
+      "en": {
+        "kicker": "american jazz pianist and composer · jazz",
+        "who": "Cyrus Chestnut is an American jazz pianist, composer and producer. In 2006, Time music critic Josh Tyrangiel wrote that what makes him the best jazz pianist of his generation is a willingness to abandon notes and play space.",
+        "facts": [
+          "Cyrus Chestnut is an American jazz pianist, composer and producer.",
+          "In 2006, Josh Tyrangiel, music critic for Time, wrote: \"What makes Chestnut the best jazz pianist of his generation is a willingness to abandon notes and play space.\""
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer jazzpianist und komponist · jazz",
+        "who": "Cyrus Chestnut ist ein amerikanischer Jazzpianist, Komponist und Produzent. 2006 schrieb der Time-Musikkritiker Josh Tyrangiel, was ihn zum besten Jazzpianisten seiner Generation mache, sei seine Bereitschaft, Noten wegzulassen und mit dem Raum zu spielen.",
+        "facts": [
+          "Cyrus Chestnut ist ein amerikanischer Jazzpianist, Komponist und Produzent.",
+          "2006 schrieb Josh Tyrangiel, Musikkritiker des Time-Magazins: \"Was Chestnut zum besten Jazzpianisten seiner Generation macht, ist die Bereitschaft, Noten aufzugeben und den Raum zu bespielen.\""
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı caz piyanisti ve besteci · caz",
+        "who": "Cyrus Chestnut, Amerikalı bir caz piyanisti, besteci ve yapımcıdır. 2006'da Time dergisinin müzik eleştirmeni Josh Tyrangiel, onu kuşağının en iyi caz piyanisti yapanın notalardan vazgeçme ve boşluğu çalma isteği olduğunu yazdı.",
+        "facts": [
+          "Cyrus Chestnut, Amerikalı bir caz piyanisti, besteci ve yapımcıdır.",
+          "2006'da Time'ın müzik eleştirmeni Josh Tyrangiel şöyle yazdı: \"Chestnut'u kuşağının en iyi caz piyanisti yapan şey, notaları bırakma ve boşluğu çalma isteğidir.\""
+        ]
+      }
+    },
+    {
+      "id": "274d8d66-ed33-447c-b1e5-0e297564a82e",
+      "slug": "meek-mill-dream-chasers-nights-31293e2d",
+      "title": "Meek Mill: Dream Chasers Nights",
+      "name": "Meek Mill",
+      "source_url": "https://en.wikipedia.org/wiki/Meek_Mill",
+      "extract": "Robert Rihmeek Williams, known professionally as Meek Mill, is an American rapper. Born and raised in Philadelphia, Pennsylvania, he embarked on his career as a battle rapper, and later formed the short-lived rap group the Bloodhoundz. He signed with T.I.'s Grand Hustle Records as a solo act in 2008, but parted ways with the label in 2011 without any releases. He then signed with Rick Ross's Maybach Music Group (MMG) later that year, and rose to further recognition following his appearances on the label's Self Made Vol. 1 (2011) compilation album; his song \"Tupac Back\" served as the album's lead single, while its follow-up, \"Ima Boss\", became his first entry on the Billboard Hot 100.",
+      "en": {
+        "kicker": "american rapper · philadelphia",
+        "who": "Robert Rihmeek Williams, known professionally as Meek Mill, is an American rapper. Born and raised in Philadelphia, he started as a battle rapper and later formed the short-lived group the Bloodhoundz. He signed with Rick Ross's Maybach Music Group later in 2011 and rose to recognition on Self Made Vol. 1.",
+        "facts": [
+          "Born and raised in Philadelphia, Pennsylvania, he embarked on his career as a battle rapper, and later formed the short-lived rap group the Bloodhoundz.",
+          "His song \"Tupac Back\" served as the album's lead single, while its follow-up, \"Ima Boss\", became his first entry on the Billboard Hot 100."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer rapper · philadelphia",
+        "who": "Robert Rihmeek Williams, bekannt als Meek Mill, ist ein amerikanischer Rapper. In Philadelphia geboren und aufgewachsen, begann er als Battle-Rapper und gründete später die kurzlebige Gruppe Bloodhoundz. 2011 unterschrieb er bei Rick Ross' Maybach Music Group und wurde durch Self Made Vol. 1 bekannt.",
+        "facts": [
+          "In Philadelphia, Pennsylvania geboren und aufgewachsen, begann er als Battle-Rapper und gründete später die kurzlebige Rap-Gruppe Bloodhoundz.",
+          "Sein Song \"Tupac Back\" war die Lead-Single des Albums Self Made Vol. 1, \"Ima Boss\" wurde sein erster Eintrag in den Billboard Hot 100."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı rapçi · philadelphia",
+        "who": "Robert Rihmeek Williams, sahne adıyla Meek Mill, Amerikalı bir rapçidir. Philadelphia'da doğup büyüdü; battle rapper olarak başladı ve kısa ömürlü Bloodhoundz grubunu kurdu. 2011'de Rick Ross'un Maybach Music Group'una imzaladı.",
+        "facts": [
+          "Philadelphia, Pennsylvania'da doğup büyüdü; battle rapper olarak kariyerine başladı ve sonra kısa ömürlü Bloodhoundz grubunu kurdu.",
+          "\"Tupac Back\" Self Made Vol. 1 albümünün ilk single'ı oldu; \"Ima Boss\" ise onun Billboard Hot 100'e ilk girişi oldu."
+        ]
+      }
+    }
+  ]
+}

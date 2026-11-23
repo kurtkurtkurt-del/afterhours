@@ -1,0 +1,38 @@
+{
+  "city": "new-york",
+  "day": "2026-11-23",
+  "nights": [
+    {
+      "id": "71286471-7a9f-418c-9c57-7b03ed9bf4d7",
+      "slug": "keenan-te-9d059e29",
+      "title": "Keenan Te",
+      "name": "Keenan Te",
+      "source_url": "https://en.wikipedia.org/wiki/Keenan_Te",
+      "extract": "Keenan Te is an Australian singer-songwriter of Vietnamese and Cambodian heritage. He is known for piano-driven ballads and songs that gained popularity through TikTok.",
+      "en": {
+        "kicker": "australian singer-songwriter · vietnamese and cambodian heritage",
+        "who": "Keenan Te is an Australian singer-songwriter of Vietnamese and Cambodian heritage. He is known for piano-driven ballads and songs that gained popularity through TikTok.",
+        "facts": [
+          "Keenan Te is an Australian singer-songwriter of Vietnamese and Cambodian heritage.",
+          "He is known for piano-driven ballads and songs that gained popularity through TikTok."
+        ]
+      },
+      "de": {
+        "kicker": "australischer singer-songwriter · vietnamesisch-kambodschanische wurzeln",
+        "who": "Keenan Te ist ein australischer Singer-Songwriter mit vietnamesisch-kambodschanischen Wurzeln. Bekannt ist er für klavierbetonte Balladen und Songs, die über TikTok populär wurden.",
+        "facts": [
+          "Keenan Te ist ein australischer Singer-Songwriter mit vietnamesisch-kambodschanischen Wurzeln.",
+          "Bekannt ist er für klavierbetonte Balladen und Songs, die über TikTok populär wurden."
+        ]
+      },
+      "tr": {
+        "kicker": "avustralyalı şarkıcı-söz yazarı · vietnam ve kamboçya kökenli",
+        "who": "Keenan Te, Vietnam ve Kamboçya kökenli Avustralyalı bir şarkıcı ve söz yazarıdır. Piyano ağırlıklı baladlarıyla ve TikTok üzerinden popüler olan şarkılarıyla tanınır.",
+        "facts": [
+          "Keenan Te, Vietnam ve Kamboçya kökenli Avustralyalı bir şarkıcı ve söz yazarıdır.",
+          "Piyano ağırlıklı baladlarıyla ve TikTok üzerinden popüler olan şarkılarıyla tanınır."
+        ]
+      }
+    }
+  ]
+}

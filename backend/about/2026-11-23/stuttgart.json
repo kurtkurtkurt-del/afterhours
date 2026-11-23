@@ -1,0 +1,38 @@
+{
+  "city": "stuttgart",
+  "day": "2026-11-23",
+  "nights": [
+    {
+      "id": "d66a4b0e-ada9-4358-ad2a-d4816134ce7a",
+      "slug": "allie-sherlock-now-i-ve-said-it-tour-21bd0209",
+      "title": "Allie Sherlock - Now I've Said It Tour",
+      "name": "Allie Sherlock",
+      "source_url": "https://en.wikipedia.org/wiki/Allie_Sherlock",
+      "extract": "Allie Sherlock is an Irish singer, guitarist, songwriter, and busker. A video of her performing a cover of Ed Sheeran's \"Supermarket Flowers\" went viral on YouTube in June 2017. Sherlock has performed frequently on Grafton Street in Dublin, Ireland.",
+      "en": {
+        "kicker": "irish singer, guitarist and busker · dublin",
+        "who": "Allie Sherlock is an Irish singer, guitarist, songwriter and busker. A video of her performing a cover of Ed Sheeran's \"Supermarket Flowers\" went viral on YouTube in June 2017. She has performed frequently on Grafton Street in Dublin.",
+        "facts": [
+          "Allie Sherlock is an Irish singer, guitarist, songwriter, and busker.",
+          "A video of her performing a cover of Ed Sheeran's \"Supermarket Flowers\" went viral on YouTube in June 2017."
+        ]
+      },
+      "de": {
+        "kicker": "irische sängerin, gitarristin und straßenmusikerin · dublin",
+        "who": "Allie Sherlock ist eine irische Sängerin, Gitarristin, Songwriterin und Straßenmusikerin. Im Juni 2017 ging auf YouTube ein Video viral, in dem sie einen Cover von Ed Sheerans \"Supermarket Flowers\" spielt. Sie tritt häufig in der Grafton Street in Dublin auf.",
+        "facts": [
+          "Allie Sherlock ist eine irische Sängerin, Gitarristin, Songwriterin und Straßenmusikerin.",
+          "Im Juni 2017 ging auf YouTube ein Video viral, in dem sie ein Cover von Ed Sheerans \"Supermarket Flowers\" spielt."
+        ]
+      },
+      "tr": {
+        "kicker": "irlandalı şarkıcı, gitarist ve sokak müzisyeni · dublin",
+        "who": "Allie Sherlock, İrlandalı bir şarkıcı, gitarist, söz yazarı ve sokak müzisyenidir. Ed Sheeran'ın \"Supermarket Flowers\" şarkısının cover'ını söylediği bir video Haziran 2017'de YouTube'da viral oldu. Dublin'deki Grafton Street'te sık sık sahne alıyor.",
+        "facts": [
+          "Allie Sherlock, İrlandalı bir şarkıcı, gitarist, söz yazarı ve sokak müzisyenidir.",
+          "Ed Sheeran'ın \"Supermarket Flowers\" şarkısının cover'ını söylediği bir video Haziran 2017'de YouTube'da viral oldu."
+        ]
+      }
+    }
+  ]
+}

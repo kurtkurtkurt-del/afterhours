@@ -1,0 +1,38 @@
+{
+  "city": "san-francisco",
+  "day": "2026-11-23",
+  "nights": [
+    {
+      "id": "2d73ce82-b674-4f62-9654-83a2ae749550",
+      "slug": "unkle-5c9e322a",
+      "title": "UNKLE",
+      "name": "Unkle",
+      "source_url": "https://en.wikipedia.org/wiki/Unkle",
+      "extract": "Unkle is a British musical act founded in 1992 by James Lavelle. Originally categorised as trip hop, the group once included producer DJ Shadow and have employed a variety of guest artists and producers.",
+      "en": {
+        "kicker": "british electronica act · founded 1992",
+        "who": "UNKLE is a British musical act founded in 1992 by James Lavelle. Originally categorised as trip hop, the group once included producer DJ Shadow and has employed a variety of guest artists and producers.",
+        "facts": [
+          "Unkle is a British musical act founded in 1992 by James Lavelle.",
+          "Originally categorised as trip hop, the group once included producer DJ Shadow."
+        ]
+      },
+      "de": {
+        "kicker": "britische electronica-formation · gegründet 1992",
+        "who": "UNKLE ist eine britische Musikformation, die 1992 von James Lavelle gegründet wurde. Ursprünglich dem Trip-Hop zugeordnet, gehörte der Produzent DJ Shadow einst zur Gruppe; außerdem arbeitete sie mit wechselnden Gastkünstlern und Produzenten.",
+        "facts": [
+          "UNKLE ist eine britische Musikformation, die 1992 von James Lavelle gegründet wurde.",
+          "Ursprünglich dem Trip-Hop zugeordnet, gehörte der Produzent DJ Shadow einst zur Gruppe."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz electronica grubu · 1992",
+        "who": "UNKLE, 1992'de James Lavelle tarafından kurulmuş bir İngiliz müzik projesidir. Başlangıçta trip hop olarak sınıflandırıldı; bir dönem prodüktör DJ Shadow de grubun içindeydi ve çeşitli konuk sanatçılarla çalıştı.",
+        "facts": [
+          "UNKLE, 1992'de James Lavelle tarafından kurulmuş bir İngiliz müzik projesidir.",
+          "Başlangıçta trip hop olarak sınıflandırılan grup bir dönem prodüktör DJ Shadow'u da bünyesinde barındırdı."
+        ]
+      }
+    }
+  ]
+}

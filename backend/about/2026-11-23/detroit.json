@@ -1,0 +1,38 @@
+{
+  "city": "detroit",
+  "day": "2026-11-23",
+  "nights": [
+    {
+      "id": "cd516e5d-8327-4568-8c11-7090079d9dda",
+      "slug": "mannheim-steamroller-suite-rental-57467332",
+      "title": "Mannheim Steamroller - Suite Rental",
+      "name": "Mannheim Steamroller",
+      "source_url": "https://en.wikipedia.org/wiki/Mannheim_Steamroller",
+      "extract": "Mannheim Steamroller is an American neoclassical new-age music ensemble founded and directed by percussionist/composer Chip Davis in 1974. The group is known primarily for its Fresh Aire series of albums, which blend classical music with elements of new age and rock, and for its modern recordings of Christmas music. The group has sold 28 million albums in the U.S. alone.",
+      "en": {
+        "kicker": "american neoclassical new-age band · 1974",
+        "who": "Mannheim Steamroller is an American neoclassical new-age music ensemble founded and directed by percussionist and composer Chip Davis in 1974. It is known for its Fresh Aire series of albums and its modern recordings of Christmas music. The group has sold 28 million albums in the U.S. alone.",
+        "facts": [
+          "The group is known primarily for its Fresh Aire series of albums, which blend classical music with elements of new age and rock, and for its modern recordings of Christmas music.",
+          "The group has sold 28 million albums in the U.S. alone."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanisches neoklassik-new-age-ensemble · 1974",
+        "who": "Mannheim Steamroller ist ein amerikanisches Ensemble für neoklassische New-Age-Musik, das 1974 vom Perkussionisten und Komponisten Chip Davis gegründet und geleitet wird. Bekannt ist es vor allem für die Fresh-Aire-Alben und moderne Weihnachtsaufnahmen. In den USA allein hat die Gruppe 28 Millionen Alben verkauft.",
+        "facts": [
+          "Die Gruppe ist vor allem für ihre Fresh-Aire-Alben bekannt, die klassische Musik mit New Age und Rock verbinden, sowie für moderne Weihnachtsaufnahmen.",
+          "In den USA allein hat die Gruppe 28 Millionen Alben verkauft."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı neoklasik new-age topluluğu · 1974",
+        "who": "Mannheim Steamroller, perküsyonist ve besteci Chip Davis tarafından 1974'te kurulan ve yönetilen Amerikalı bir neoklasik new-age topluluğudur. Fresh Aire albüm serisi ve modern Noel müzikleriyle tanınır. Yalnızca ABD'de 28 milyon albüm sattı.",
+        "facts": [
+          "Grup en çok klasik müziği new age ve rock öğeleriyle harmanlayan Fresh Aire albüm serisiyle ve modern Noel kayıtlarıyla tanınır.",
+          "Yalnızca ABD'de 28 milyon albüm sattı."
+        ]
+      }
+    }
+  ]
+}

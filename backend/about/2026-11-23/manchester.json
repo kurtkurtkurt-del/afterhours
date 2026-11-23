@@ -1,0 +1,134 @@
+{
+  "city": "manchester",
+  "day": "2026-11-23",
+  "nights": [
+    {
+      "id": "20ac6c29-9ef6-4068-a3ec-2ed02437f225",
+      "slug": "getdown-services-f735c501",
+      "title": "Getdown Services",
+      "name": "Getdown Services",
+      "source_url": "https://en.wikipedia.org/wiki/Getdown_Services",
+      "extract": "Getdown Services are a British rock and pop duo from Minehead, consisting of Ben Sadler and Josh Law. They have described their sound as \"disco and eighties and like seventies infused groove based music\" with other influences, including classic rock.",
+      "en": {
+        "kicker": "british rock and pop duo · minehead",
+        "who": "Getdown Services are a British rock and pop duo from Minehead, consisting of Ben Sadler and Josh Law. They describe their sound as \"disco and eighties and like seventies infused groove based music\", with other influences including classic rock.",
+        "facts": [
+          "Getdown Services are a British rock and pop duo from Minehead, consisting of Ben Sadler and Josh Law.",
+          "They have described their sound as \"disco and eighties and like seventies infused groove based music\" with other influences, including classic rock."
+        ]
+      },
+      "de": {
+        "kicker": "britisches rock- und pop-duo · minehead",
+        "who": "Getdown Services sind ein britisches Rock- und Pop-Duo aus Minehead, bestehend aus Ben Sadler und Josh Law. Sie beschreiben ihren Sound als groovebasierte Musik, geprägt von Disco und den Siebzigern und Achtzigern, mit Einflüssen unter anderem aus klassischem Rock.",
+        "facts": [
+          "Getdown Services sind ein britisches Rock- und Pop-Duo aus Minehead, bestehend aus Ben Sadler und Josh Law.",
+          "Sie beschreiben ihren Sound als groovebasierte Musik, die von Disco und den Siebzigern und Achtzigern geprägt ist, mit Einflüssen unter anderem aus klassischem Rock."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz rock ve pop ikilisi · minehead",
+        "who": "Getdown Services, Minehead'den Ben Sadler ve Josh Law'dan oluşan bir İngiliz rock ve pop ikilisidir. Seslerini disko, seksenler ve yetmişlerden beslenen groove temelli bir müzik olarak tanımlarlar; klasik rock gibi başka etkileri de vardır.",
+        "facts": [
+          "Getdown Services, Minehead'den Ben Sadler ve Josh Law'dan oluşan bir İngiliz rock ve pop ikilisidir.",
+          "Seslerini disko, seksenler ve yetmişlerden beslenen groove temelli bir müzik olarak tanımlarlar."
+        ]
+      }
+    },
+    {
+      "id": "dca79365-1cd8-42e2-9a92-4002d0c0cee8",
+      "slug": "chris-hawkins-xmas-party-557bfea9",
+      "title": "Chris Hawkins - XMAS Party",
+      "name": "Chris Hawkins",
+      "source_url": "https://en.wikipedia.org/wiki/Chris_Hawkins",
+      "extract": "Chris Hawkins is a British radio presenter on BBC Radio 6 Music and the host of the podcast How To DJ.",
+      "en": {
+        "kicker": "british radio presenter and dj · 6 music",
+        "who": "Chris Hawkins is a British radio presenter on BBC Radio 6 Music. He is also the host of the podcast How To DJ.",
+        "facts": [
+          "Chris Hawkins is a British radio presenter on BBC Radio 6 Music.",
+          "Chris Hawkins is the host of the podcast How To DJ."
+        ]
+      },
+      "de": {
+        "kicker": "britischer radiomoderator und dj · 6 music",
+        "who": "Chris Hawkins ist ein britischer Radiomoderator bei BBC Radio 6 Music. Er moderiert außerdem den Podcast How To DJ.",
+        "facts": [
+          "Chris Hawkins ist ein britischer Radiomoderator bei BBC Radio 6 Music.",
+          "Er ist Gastgeber des Podcasts How To DJ."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz radyo sunucusu ve dj · 6 music",
+        "who": "Chris Hawkins, BBC Radio 6 Music'te yayın yapan bir İngiliz radyo sunucusudur. Ayrıca How To DJ podcast'inin sunucusudur.",
+        "facts": [
+          "Chris Hawkins, BBC Radio 6 Music'te yayın yapan bir İngiliz radyo sunucusudur.",
+          "How To DJ podcast'inin sunucusudur."
+        ]
+      }
+    },
+    {
+      "id": "03ec447a-2633-4265-9ce2-0e6680d72821",
+      "slug": "the-pretty-reckless-722c2e40",
+      "title": "The Pretty Reckless",
+      "name": "The Pretty Reckless",
+      "source_url": "https://en.wikipedia.org/wiki/The_Pretty_Reckless",
+      "extract": "The Pretty Reckless is an American rock band from New York City, formed in 2009. The band consists of Taylor Momsen, Ben Phillips, Mark Damon (bass), and Jamie Perkins (drums). In August 2010, the band released their debut studio album, Light Me Up. The album spawned three moderately successful singles, most notably \"Make Me Wanna Die\". The band released the Hit Me Like a Man EP in early 2012. In March 2014, the band released their second studio album, Going to Hell, which included the singles \"Heaven Knows\" and \"Messed Up World \", both of which topped the US and UK rock charts.",
+      "en": {
+        "kicker": "american rock band · new york city, 2009",
+        "who": "The Pretty Reckless is an American rock band from New York City, formed in 2009. Its members include Taylor Momsen, Ben Phillips, Mark Damon and Jamie Perkins. Their second studio album, Going to Hell, was released in March 2014.",
+        "facts": [
+          "The Pretty Reckless is an American rock band from New York City, formed in 2009.",
+          "In March 2014, the band released their second studio album, Going to Hell, which included the singles \"Heaven Knows\" and \"Messed Up World\", both of which topped the US and UK rock charts."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische rockband · new york city, 2009",
+        "who": "The Pretty Reckless ist eine amerikanische Rockband aus New York City, die 2009 gegründet wurde. Zur Band gehören Taylor Momsen, Ben Phillips, Mark Damon und Jamie Perkins. Ihr zweites Studioalbum Going to Hell erschien im März 2014.",
+        "facts": [
+          "The Pretty Reckless ist eine amerikanische Rockband aus New York City, die 2009 gegründet wurde.",
+          "Im März 2014 veröffentlichte die Band ihr zweites Studioalbum Going to Hell mit den Singles \"Heaven Knows\" und \"Messed Up World\", die beide die Rock-Charts der USA und Großbritanniens anführten."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı rock grubu · new york city, 2009",
+        "who": "The Pretty Reckless, 2009'da kurulmuş, New York City'den Amerikalı bir rock grubudur. Üyeleri arasında Taylor Momsen, Ben Phillips, Mark Damon ve Jamie Perkins var. İkinci stüdyo albümü Going to Hell Mart 2014'te yayımlandı.",
+        "facts": [
+          "The Pretty Reckless, 2009'da kurulmuş, New York City'den Amerikalı bir rock grubudur.",
+          "Mart 2014'te ikinci stüdyo albümü Going to Hell'i yayımladı; albümdeki \"Heaven Knows\" ve \"Messed Up World\" single'ları ABD ve İngiltere rock listelerinin zirvesine çıktı."
+        ]
+      }
+    },
+    {
+      "id": "4ec25818-6e85-4753-a2b9-9d2dbf7aae0f",
+      "slug": "swae-lee-event-moved-to-manchester-academy-ac068130",
+      "title": "Swae Lee - Event moved to Manchester Academy",
+      "name": "Swae Lee",
+      "source_url": "https://en.wikipedia.org/wiki/Swae_Lee",
+      "extract": "Khalif Malik Ibn Shaman Brown, known professionally as Swae Lee, is an American rapper and singer from Inglewood, California. Known for his wide-ranged, reverb-heavy vocals and genre-blending, Lee is one half of the Mississippi-based hip-hop duo Rae Sremmurd, which he formed in 2010 with his older brother Slim Jxmmi.",
+      "en": {
+        "kicker": "american rapper and singer · inglewood, california",
+        "who": "Khalif Malik Ibn Shaman Brown, known professionally as Swae Lee, is an American rapper and singer from Inglewood, California. He is known for his wide-ranged, reverb-heavy vocals. He is one half of the Mississippi-based hip-hop duo Rae Sremmurd, which he formed in 2010 with his older brother Slim Jxmmi.",
+        "facts": [
+          "Known for his wide-ranged, reverb-heavy vocals and genre-blending, Lee is one half of the Mississippi-based hip-hop duo Rae Sremmurd, which he formed in 2010 with his older brother Slim Jxmmi.",
+          "Khalif Malik Ibn Shaman Brown, known professionally as Swae Lee, is an American rapper and singer from Inglewood, California."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer rapper und sänger · inglewood, california",
+        "who": "Khalif Malik Ibn Shaman Brown, bekannt als Swae Lee, ist ein amerikanischer Rapper und Sänger aus Inglewood, Kalifornien. Bekannt ist er für seinen weiten Stimmumfang und hallreichen Gesang. Er ist eine Hälfte des in Mississippi ansässigen Hip-Hop-Duos Rae Sremmurd, das er 2010 mit seinem älteren Bruder Slim Jxmmi gründete.",
+        "facts": [
+          "Bekannt für seinen weiten, hallreichen Gesang und genreübergreifende Musik, ist Lee eine Hälfte des in Mississippi ansässigen Hip-Hop-Duos Rae Sremmurd, das er 2010 mit seinem älteren Bruder Slim Jxmmi gründete.",
+          "Khalif Malik Ibn Shaman Brown, bekannt als Swae Lee, ist ein amerikanischer Rapper und Sänger aus Inglewood, Kalifornien."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı rapçi ve şarkıcı · inglewood, california",
+        "who": "Khalif Malik Ibn Shaman Brown, sahne adıyla Swae Lee, Kaliforniya'nın Inglewood kentinden Amerikalı bir rapçi ve şarkıcıdır. Geniş vokal aralığı ve yankılı sesiyle tanınır. 2010'da büyük kardeşi Slim Jxmmi ile kurduğu, Mississippi merkezli hip-hop ikilisi Rae Sremmurd'un yarısıdır.",
+        "facts": [
+          "Kaliforniya'nın Inglewood kentinden Amerikalı bir rapçi ve şarkıcıdır.",
+          "2010'da büyük kardeşi Slim Jxmmi ile kurduğu Mississippi merkezli hip-hop ikilisi Rae Sremmurd'un yarısıdır."
+        ]
+      }
+    }
+  ]
+}

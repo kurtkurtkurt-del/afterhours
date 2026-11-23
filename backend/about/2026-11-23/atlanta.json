@@ -1,0 +1,166 @@
+{
+  "city": "atlanta",
+  "day": "2026-11-23",
+  "nights": [
+    {
+      "id": "00524a37-8c7c-44ba-94fc-265ddd7cc404",
+      "slug": "musiq-soulchild-d015c898",
+      "title": "Musiq Soulchild",
+      "name": "Musiq Soulchild",
+      "source_url": "https://en.wikipedia.org/wiki/Musiq_Soulchild",
+      "extract": "Taalib Hassan Johnson, better known by his stage name Musiq Soulchild is an American singer-songwriter. His music blends R&B, funk, blues, jazz, and gospel influences fused with hip hop.",
+      "en": {
+        "kicker": "american singer-songwriter · r&b, funk, jazz",
+        "who": "Taalib Hassan Johnson, better known by his stage name Musiq Soulchild, is an American singer-songwriter. His music blends R&B, funk, blues, jazz and gospel influences fused with hip hop.",
+        "facts": [
+          "Taalib Hassan Johnson, better known by his stage name Musiq Soulchild is an American singer-songwriter.",
+          "His music blends R&B, funk, blues, jazz, and gospel influences fused with hip hop."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer singer-songwriter · r&b, funk, jazz",
+        "who": "Taalib Hassan Johnson, besser bekannt unter dem Künstlernamen Musiq Soulchild, ist ein amerikanischer Singer-Songwriter. Seine Musik verbindet Einflüsse aus R&B, Funk, Blues, Jazz und Gospel mit Hip-Hop.",
+        "facts": [
+          "Taalib Hassan Johnson, besser bekannt als Musiq Soulchild, ist ein amerikanischer Singer-Songwriter.",
+          "Seine Musik verbindet Einflüsse aus R&B, Funk, Blues, Jazz und Gospel mit Hip-Hop."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı şarkıcı-söz yazarı · r&b, funk, caz",
+        "who": "Taalib Hassan Johnson, daha çok Musiq Soulchild sahne adıyla tanınan Amerikalı bir şarkıcı ve söz yazarıdır. Müziği R&B, funk, blues, caz ve gospel etkilerini hip hop ile harmanlıyor.",
+        "facts": [
+          "Taalib Hassan Johnson, daha çok Musiq Soulchild sahne adıyla tanınan Amerikalı bir şarkıcı ve söz yazarıdır.",
+          "Müziği R&B, funk, blues, caz ve gospel etkilerini hip hop ile harmanlıyor."
+        ]
+      }
+    },
+    {
+      "id": "5e05181f-3267-4873-83b9-f71ba1ad6f1f",
+      "slug": "beartooth-pure-ecstasy-world-tour-24edc228",
+      "title": "Beartooth: Pure Ecstasy World Tour",
+      "name": "Beartooth",
+      "source_url": "https://en.wikipedia.org/wiki/Beartooth_(band)",
+      "extract": "Beartooth is an American rock band founded by vocalist and multi-instrumentalist Caleb Shomo in Columbus, Ohio, in 2012. Originally, Beartooth was a studio project with Shomo performing all instruments, before expanding to a group with four or five members over their existence. They are known for relatively more conventional songwriting than some of Shomo's other work, with an emphasis on melodic hooks and catchy choruses. Beartooth has been signed to Red Bull Records since 2013; their debut EP Sick was released on July 26, 2013, followed by the debut full-length album Disgusting on June 10, 2014. Since then, Shomo has released a further five studio albums under the Beartooth moniker: Aggres",
+      "en": {
+        "kicker": "american rock band · columbus, ohio, 2012",
+        "who": "Beartooth is an American rock band founded by vocalist and multi-instrumentalist Caleb Shomo in Columbus, Ohio, in 2012. It began as a studio project with Shomo playing all the instruments, before becoming a group of four or five members. The band has been signed to Red Bull Records since 2013.",
+        "facts": [
+          "Originally, Beartooth was a studio project with Shomo performing all instruments, before expanding to a group with four or five members over their existence.",
+          "Beartooth has been signed to Red Bull Records since 2013; their debut EP Sick was released on July 26, 2013."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische rockband · columbus, ohio, 2012",
+        "who": "Beartooth ist eine amerikanische Rockband, die 2012 in Columbus, Ohio, von Sänger und Multiinstrumentalist Caleb Shomo gegründet wurde. Anfangs war sie ein Studioprojekt, bei dem Shomo alle Instrumente spielte, später wurde sie eine Gruppe mit vier oder fünf Mitgliedern. Seit 2013 steht die Band bei Red Bull Records unter Vertrag.",
+        "facts": [
+          "Ursprünglich war Beartooth ein Studioprojekt, bei dem Shomo alle Instrumente spielte, bevor daraus eine Gruppe mit vier oder fünf Mitgliedern wurde.",
+          "Seit 2013 steht Beartooth bei Red Bull Records unter Vertrag; ihre Debüt-EP Sick erschien am 26. Juli 2013."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı rock grubu · columbus, ohio, 2012",
+        "who": "Beartooth, 2012'de Columbus, Ohio'da vokalist ve çok çalgıcı Caleb Shomo tarafından kurulmuş bir Amerikalı rock grubudur. Önce Shomo'nun tüm enstrümanları çaldığı bir stüdyo projesiydi, sonra dört-beş üyeli bir gruba dönüştü. 2013'ten beri Red Bull Records ile çalışıyor.",
+        "facts": [
+          "Başlangıçta Beartooth, Shomo'nun tüm enstrümanları çaldığı bir stüdyo projesiydi; sonra dört ya da beş üyeli bir gruba genişledi.",
+          "Grup 2013'ten beri Red Bull Records ile çalışıyor; ilk EP'leri Sick 26 Temmuz 2013'te yayımlandı."
+        ]
+      }
+    },
+    {
+      "id": "7b7e27e2-a90f-4e75-8d0b-3712913b373c",
+      "slug": "men-without-hats-88efcf3d",
+      "title": "Men Without Hats",
+      "name": "Men Without Hats",
+      "source_url": "https://en.wikipedia.org/wiki/Men_Without_Hats",
+      "extract": "Men Without Hats are a Canadian new wave and synth-pop band, originally from Montreal, Quebec. Their music is characterized by the baritone voice of their lead singer Ivan Doroschuk, as well as their elaborate use of synthesizers and electronic processing. The band achieved their greatest popularity in the 1980s with \"The Safety Dance\", a worldwide top ten hit, and \"Pop Goes the World\".",
+      "en": {
+        "kicker": "canadian new wave band · montreal",
+        "who": "Men Without Hats are a Canadian new wave and synth-pop band, originally from Montreal, Quebec. Their music is characterized by the baritone voice of lead singer Ivan Doroschuk and elaborate use of synthesizers. They achieved their greatest popularity in the 1980s with \"The Safety Dance\", a worldwide top ten hit.",
+        "facts": [
+          "Men Without Hats are a Canadian new wave and synth-pop band, originally from Montreal, Quebec.",
+          "They achieved their greatest popularity in the 1980s with \"The Safety Dance\", a worldwide top ten hit."
+        ]
+      },
+      "de": {
+        "kicker": "kanadische new-wave-band · montreal",
+        "who": "Men Without Hats sind eine kanadische New-Wave- und Synthpop-Band, ursprünglich aus Montreal, Quebec. Ihre Musik ist vom Bariton des Sängers Ivan Doroschuk und ihrem aufwendigen Einsatz von Synthesizern geprägt. Ihren größten Erfolg hatten sie in den 1980ern mit \"The Safety Dance\", einem weltweiten Top-Ten-Hit.",
+        "facts": [
+          "Men Without Hats sind eine kanadische New-Wave- und Synthpop-Band, ursprünglich aus Montreal, Quebec.",
+          "Ihren größten Erfolg hatten sie in den 1980ern mit \"The Safety Dance\", einem weltweiten Top-Ten-Hit."
+        ]
+      },
+      "tr": {
+        "kicker": "kanadalı new wave grubu · montreal",
+        "who": "Men Without Hats, aslen Montreal, Quebec'ten bir Kanadalı new wave ve synth-pop grubudur. Müziklerinde vokalist Ivan Doroschuk'un bariton sesi ve yoğun synthesizer kullanımı öne çıkar. En büyük başarılarını 1980'lerde, dünya çapında top ten'e giren \"The Safety Dance\" ile yaptılar.",
+        "facts": [
+          "Men Without Hats, aslen Quebec'in Montreal kentinden bir Kanadalı new wave ve synth-pop grubudur.",
+          "En büyük başarılarını 1980'lerde, dünya çapında top ten'e giren \"The Safety Dance\" ile yaptılar."
+        ]
+      }
+    },
+    {
+      "id": "13e930a8-82e3-4d5a-939a-f3b8f2ce8354",
+      "slug": "montell-fish-9c35aa0b",
+      "title": "Montell Fish",
+      "name": "Montell Fish",
+      "source_url": "https://en.wikipedia.org/wiki/Montell_Fish",
+      "extract": "Montell James Frazier, also known as Montell Fish, is an American singer-songwriter. Formerly making music under the CCM genre, he switched to alternative R&B and neo soul. He has since signed to Virgin Music Group for distribution and released two albums under the deal: Jamie in 2022 and Charlotte in 2024.",
+      "en": {
+        "kicker": "american singer-songwriter · alternative r&b",
+        "who": "Montell James Frazier, also known as Montell Fish, is an American singer-songwriter. He switched from the CCM genre to alternative R&B and neo soul. He has since signed to Virgin Music Group for distribution and released the albums Jamie in 2022 and Charlotte in 2024.",
+        "facts": [
+          "Formerly making music under the CCM genre, he switched to alternative R&B and neo soul.",
+          "He has since signed to Virgin Music Group for distribution and released two albums under the deal: Jamie in 2022 and Charlotte in 2024."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer singer-songwriter · alternative r&b",
+        "who": "Montell James Frazier, auch bekannt als Montell Fish, ist ein amerikanischer Singer-Songwriter. Er wechselte vom CCM-Genre zu Alternative R&B und Neo-Soul. Danach unterschrieb er für den Vertrieb bei Virgin Music Group und veröffentlichte die Alben Jamie (2022) und Charlotte (2024).",
+        "facts": [
+          "Früher machte er Musik im CCM-Genre, dann wechselte er zu Alternative R&B und Neo-Soul.",
+          "Danach unterschrieb er für den Vertrieb bei Virgin Music Group und veröffentlichte im Rahmen des Deals die Alben Jamie (2022) und Charlotte (2024)."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı şarkıcı-söz yazarı · alternatif r&b",
+        "who": "Montell James Frazier, diğer adıyla Montell Fish, Amerikalı bir şarkıcı ve söz yazarıdır. CCM türünden alternatif R&B ve neo soul'a yöneldi. Dağıtım için Virgin Music Group ile anlaştı ve bu kapsamda Jamie (2022) ve Charlotte (2024) albümlerini yayımladı.",
+        "facts": [
+          "Önceden CCM türünde müzik yapan Frazier, alternatif R&B ve neo soul'a yöneldi.",
+          "Bu anlaşma kapsamında Jamie (2022) ve Charlotte (2024) albümlerini yayımladı."
+        ]
+      }
+    },
+    {
+      "id": "31ae37a2-7457-4939-b402-f648b1abfbbd",
+      "slug": "ezcodylee-cce1159e",
+      "title": "ezcodylee",
+      "name": "Ezcodylee",
+      "source_url": "https://en.wikipedia.org/wiki/Ezcodylee",
+      "extract": "Ethan Codylee Graham, known professionally as ezcodylee, is an American rapper from Los Angeles, California. He first rose to popularity in 2025 with the release of his project Stunt and Die 3, a project that has been described as digicore and rage rap, backed by electric guitar riffs.",
+      "en": {
+        "kicker": "american rapper and singer · los angeles",
+        "who": "Ethan Codylee Graham, known professionally as ezcodylee, is an American rapper from Los Angeles, California. He first rose to popularity in 2025 with the release of his project Stunt and Die 3. The project has been described as digicore and rage rap, backed by electric guitar riffs.",
+        "facts": [
+          "He first rose to popularity in 2025 with the release of his project Stunt and Die 3, a project that has been described as digicore and rage rap, backed by electric guitar riffs.",
+          "Ethan Codylee Graham, known professionally as ezcodylee, is an American rapper from Los Angeles, California."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer rapper und sänger · los angeles",
+        "who": "Ethan Codylee Graham, bekannt als ezcodylee, ist ein amerikanischer Rapper aus Los Angeles, Kalifornien. 2025 wurde er mit seinem Projekt Stunt and Die 3 bekannt. Das Projekt wird als Digicore und Rage Rap mit E-Gitarren-Riffs beschrieben.",
+        "facts": [
+          "2025 wurde er mit dem Projekt Stunt and Die 3 bekannt, das als Digicore und Rage Rap mit E-Gitarren-Riffs beschrieben wird.",
+          "Ethan Codylee Graham, bekannt als ezcodylee, ist ein amerikanischer Rapper aus Los Angeles, Kalifornien."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı rapçi ve şarkıcı · los angeles",
+        "who": "Ethan Codylee Graham, sanatçı adıyla ezcodylee, Los Angeles, Kaliforniya'dan Amerikalı bir rapçidir. 2025'te Stunt and Die 3 projesiyle öne çıktı. Proje digicore ve rage rap olarak tanımlanıyor ve elektro gitar riffleriyle destekleniyor.",
+        "facts": [
+          "2025'te Stunt and Die 3 projesiyle öne çıktı; proje digicore ve rage rap olarak tanımlanıyor ve elektro gitar riffleriyle destekleniyor.",
+          "Ethan Codylee Graham, sanatçı adıyla ezcodylee, Los Angeles, Kaliforniya'dan Amerikalı bir rapçidir."
+        ]
+      }
+    }
+  ]
+}
