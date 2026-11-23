@@ -1,0 +1,14 @@
+{
+  "city": "geneva",
+  "day": "2026-11-28",
+  "sparks": [
+    {
+      "kind": "flea",
+      "title": { "en": "the plainpalais brocante and flea market.", "de": "brocante und flohmarkt auf der plaine de plainpalais.", "tr": "plainpalais'te brocante ve bit pazarı." },
+      "line": { "en": "a weekly vide-greniers and flea market, open 06:00 to 18:00 in winter hours, free entry. a good saturday morning to walk round and browse.", "de": "ein wöchentlicher brocante- und flohmarkt, winterzeiten 06:00 bis 18:00 uhr, eintritt frei. ein guter samstagvormittag zum stöbern.", "tr": "haftalık bir brocante ve bit pazarı, kış saatlerinde 06:00 ile 18:00 arası açık, giriş ücretsiz. cumartesi sabahı dolaşıp bakınmak için iyi bir zaman." },
+      "place": { "en": "plaine de plainpalais", "de": "plaine de plainpalais", "tr": "plaine de plainpalais" },
+      "hour": 10, "minute": 0,
+      "why": "Brocante de Plainpalais listed for Sat 28.11.2026, 6h to 18h winter hours, free entry, per vide-greniers.org and brocabrac.fr; the series recurs weekly, so the date was checked against the calendar."
+    }
+  ]
+}
