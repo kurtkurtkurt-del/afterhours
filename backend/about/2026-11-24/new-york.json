@@ -1,0 +1,70 @@
+{
+ "city": "new-york",
+ "day": "2026-11-24",
+ "nights": [
+  {
+   "id": "03ebbbe5-4e63-4053-840b-712939f997ff",
+   "slug": "arlo-mckinley-110638d8",
+   "title": "Arlo McKinley",
+   "name": "Arlo McKinley",
+   "source_url": "https://en.wikipedia.org/wiki/Arlo_McKinley",
+   "extract": "Arlo McKinley is an American country singer and singer/songwriter. He has released three albums, the most recent release being This Mess We're In on John Prine’s record label Oh Boy Records, released July 15, 2022.",
+   "en": {
+    "kicker": "american country musician · singer-songwriter",
+    "who": "Arlo McKinley is an American country singer and singer-songwriter. He has released three albums, the most recent being This Mess We're In on John Prine's record label Oh Boy Records.",
+    "facts": [
+     "He has released three albums.",
+     "His most recent album, This Mess We're In, was released on John Prine's record label Oh Boy Records in July 2022."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer countrymusiker · singer-songwriter",
+    "who": "arlo mckinley ist ein amerikanischer country-sänger und singer-songwriter. er hat drei alben veröffentlicht, das neueste ist This Mess We're In beim label Oh Boy Records von John Prine.",
+    "facts": [
+     "er hat drei alben veröffentlicht.",
+     "sein neuestes album This Mess We're In erschien im juli 2022 bei Oh Boy Records, dem label von John Prine."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı country müzisyeni · şarkıcı-söz yazarı",
+    "who": "Arlo McKinley, amerikalı bir country şarkıcısı ve şarkıcı-söz yazarıdır. üç albüm yayımladı; en son albümü, John Prine'ın plak şirketi Oh Boy Records'taki This Mess We're In.",
+    "facts": [
+     "üç albüm yayımladı.",
+     "en son albümü This Mess We're In, temmuz 2022'de John Prine'ın Oh Boy Records etiketinde yayımlandı."
+    ]
+   }
+  },
+  {
+   "id": "34672b28-e90d-46dc-a42b-2dafd7a10288",
+   "slug": "alyssa-grace-dadb6599",
+   "title": "Alyssa Grace",
+   "name": "Alyssa Grace",
+   "source_url": "https://en.wikipedia.org/wiki/Alyssa_Grace",
+   "extract": "Alyssa Grace Proffitt is an American singer-songwriter based in California. She made her recording debut in 2026 with \"Dog with a Bone\" and gained wider recognition through the singles \"Picking Petals\" and \"Bloodstream\".",
+   "en": {
+    "kicker": "american singer-songwriter · california",
+    "who": "Alyssa Grace Proffitt is an American singer-songwriter based in California. She made her recording debut in 2026 with \"Dog with a Bone\".",
+    "facts": [
+     "She made her recording debut in 2026 with \"Dog with a Bone\".",
+     "She gained wider recognition through the singles \"Picking Petals\" and \"Bloodstream\"."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische singer-songwriterin · kalifornien",
+    "who": "alyssa grace proffitt ist eine amerikanische singer-songwriterin mit sitz in kalifornien. ihr aufnahmedebüt gab sie 2026 mit \"Dog with a Bone\".",
+    "facts": [
+     "ihr aufnahmedebüt gab sie 2026 mit \"Dog with a Bone\".",
+     "größere bekanntheit erlangte sie durch die singles \"Picking Petals\" und \"Bloodstream\"."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı şarkıcı-söz yazarı · kaliforniya",
+    "who": "Alyssa Grace Proffitt, kaliforniya merkezli amerikalı bir şarkıcı ve söz yazarıdır. kayıt çalışmalarına 2026'da \"Dog with a Bone\" ile başladı.",
+    "facts": [
+     "kayıt çalışmalarına 2026'da \"Dog with a Bone\" ile başladı.",
+     "\"Picking Petals\" ve \"Bloodstream\" singleleriyle daha geniş bir kitleye ulaştı."
+    ]
+   }
+  }
+ ]
+}

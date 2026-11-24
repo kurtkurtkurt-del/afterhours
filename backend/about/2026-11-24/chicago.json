@@ -1,0 +1,70 @@
+{
+ "city": "chicago",
+ "day": "2026-11-24",
+ "nights": [
+  {
+   "id": "fe3ac68d-5f33-44bc-b780-28018f1167ff",
+   "slug": "bonobo-ages-18-0a4b1126",
+   "title": "Bonobo - Ages 18+",
+   "name": "Bonobo",
+   "source_url": "https://en.wikipedia.org/wiki/Bonobo_(musician)",
+   "extract": "Simon Charles Green, known by his stage name Bonobo, is an English musician, producer, and DJ based in Los Angeles. He debuted with a trip hop aesthetic and has since explored more upbeat approaches as well as jazz and world music influences. His electronic sound incorporates the use of organic instrumentation and is recreated by a full band in live performances.",
+   "en": {
+    "kicker": "english musician, producer and dj · los angeles",
+    "who": "Simon Charles Green, known as Bonobo, is an English musician, producer and DJ based in Los Angeles. He debuted with a trip hop aesthetic and has since explored more upbeat approaches as well as jazz and world music influences.",
+    "facts": [
+     "His electronic sound incorporates the use of organic instrumentation.",
+     "It is recreated by a full band in live performances."
+    ]
+   },
+   "de": {
+    "kicker": "englischer musiker, produzent und dj · los angeles",
+    "who": "simon charles green, bekannt als bonobo, ist ein englischer musiker, produzent und dj mit sitz in los angeles. er debütierte mit einer trip-hop-ästhetik und erkundete seitdem auch betont heitere ansätze sowie einflüsse aus jazz und weltmusik.",
+    "facts": [
+     "sein elektronischer klang setzt auf organische instrumentierung.",
+     "bei live-auftritten wird er von einer kompletten band umgesetzt."
+    ]
+   },
+   "tr": {
+    "kicker": "ingiliz müzisyen, yapımcı ve dj · los angeles",
+    "who": "Bonobo olarak bilinen Simon Charles Green, los angeles merkezli bir ingiliz müzisyen, yapımcı ve dj'dir. trip hop estetiğiyle başladı, sonrasında daha neşeli yaklaşımların yanı sıra caz ve dünya müziği etkilerini de keşfetti.",
+    "facts": [
+     "elektronik sesi organik enstrümantasyon kullanımını içerir.",
+     "canlı performanslarda tam bir grup tarafından yeniden üretilir."
+    ]
+   }
+  },
+  {
+   "id": "f4e28293-1024-4f45-9ccd-e2231c16bc49",
+   "slug": "turnover-down-on-earth-tour-ffd9d1f6",
+   "title": "Turnover - Down On Earth Tour",
+   "name": "Turnover",
+   "source_url": "https://en.wikipedia.org/wiki/Turnover_(band)",
+   "extract": "Turnover is an American rock band from Virginia Beach, Virginia. The band were formed in 2009 by brothers Austin and Casey (drums) Getz alongside longtime friend Danny Dempsey (bass); the three have gone on to oversee every iteration of the band to date. The three are currently joined in the band by lead guitarist Nick Rayfield, who began touring with the band in 2017 and was later officially inducted as a full-time member in 2022. Turnover have released six studio albums and four EPs across their career. Their most recent album, Down on Earth, was released on May 29th 2026.",
+   "en": {
+    "kicker": "american rock band · virginia beach, 2009",
+    "who": "Turnover is an American rock band from Virginia Beach, Virginia, formed in 2009 by brothers Austin and Casey Getz alongside Danny Dempsey. Nick Rayfield has been a full-time member since 2022.",
+    "facts": [
+     "Their most recent album, Down on Earth, was released on May 29th 2026.",
+     "Turnover have released six studio albums and four EPs across their career."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische rockband · virginia beach, 2009",
+    "who": "turnover ist eine amerikanische rockband aus virginia beach, virginia, 2009 von den brüdern austin und casey getz zusammen mit danny dempsey gegründet. nick rayfield ist seit 2022 festes mitglied.",
+    "facts": [
+     "ihr jüngstes album Down on Earth erschien am 29. mai 2026.",
+     "turnover haben im laufe ihrer karriere sechs studioalben und vier eps veröffentlicht."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı rock grubu · virginia beach, 2009",
+    "who": "Turnover, virginia eyaletinin virginia beach kentinden 2009'da kardeşler Austin ve Casey Getz ile Danny Dempsey tarafından kurulmuş amerikan bir rock grubudur. Nick Rayfield 2022'den beri tam zamanlı üye.",
+    "facts": [
+     "en son albümleri Down on Earth, 29 mayıs 2026'da yayımlandı.",
+     "kariyerleri boyunca altı stüdyo albümü ve dört ep yayımladılar."
+    ]
+   }
+  }
+ ]
+}

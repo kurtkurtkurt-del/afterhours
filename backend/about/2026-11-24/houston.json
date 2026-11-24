@@ -1,0 +1,70 @@
+{
+ "city": "houston",
+ "day": "2026-11-24",
+ "nights": [
+  {
+   "id": "84deddaa-bdac-4525-b11c-101a3589e5fc",
+   "slug": "for-king-and-country-12a6bbac",
+   "title": "For King & Country",
+   "name": "For King & Country",
+   "source_url": "https://en.wikipedia.org/wiki/For_King_%26_Country_(band)",
+   "extract": "For King & Country, formerly known as Joel & Luke as well as Austoville, is a Christian pop duo composed of brothers Joel and Luke Smallbone. The brothers were born in Australia and immigrated to the United States as children, settling in the Nashville area.",
+   "en": {
+    "kicker": "australian-american christian pop duo · nashville",
+    "who": "For King & Country is a Christian pop duo composed of brothers Joel and Luke Smallbone. The brothers were born in Australia and immigrated to the United States as children, settling in the Nashville area.",
+    "facts": [
+     "The duo was formerly known as Joel & Luke as well as Austoville.",
+     "The brothers were born in Australia and immigrated to the United States as children."
+    ]
+   },
+   "de": {
+    "kicker": "australisch-amerikanisches christliches popduo · nashville",
+    "who": "for king & country ist ein christliches popduo aus den brüdern Joel und Luke Smallbone. die brüder wurden in australien geboren und kamen als kinder in die vereinigten staaten, wo sie sich im raum nashville niederließen.",
+    "facts": [
+     "das duo hieß früher Joel & Luke sowie Austoville.",
+     "die brüder wurden in australien geboren und kamen als kinder in die vereinigten staaten."
+    ]
+   },
+   "tr": {
+    "kicker": "avustralyalı-amerikalı hristiyan pop ikilisi · nashville",
+    "who": "For King & Country, kardeşler Joel ve Luke Smallbone'dan oluşan hristiyan bir pop ikilisidir. kardeşler avustralya'da doğdu ve çocukken amerika birleşik devletleri'ne göç ederek nashville bölgesine yerleşti.",
+    "facts": [
+     "ikili daha önce Joel & Luke ve Austoville adlarıyla biliniyordu.",
+     "kardeşler avustralya'da doğdu ve çocukken amerika birleşik devletleri'ne göç etti."
+    ]
+   }
+  },
+  {
+   "id": "2e21619c-96a2-4cf9-b122-614c2a321386",
+   "slug": "the-black-angels-37d4df0f",
+   "title": "The Black Angels",
+   "name": "The Black Angels",
+   "source_url": "https://en.wikipedia.org/wiki/The_Black_Angels_(band)",
+   "extract": "The Black Angels are an American psychedelic rock band from Austin, Texas. Formed in May 2004, they took their name from the Velvet Underground's \"The Black Angel's Death Song\". They have released six studio albums and one compilation album.",
+   "en": {
+    "kicker": "american psychedelic rock band · austin, 2004",
+    "who": "The Black Angels are an American psychedelic rock band from Austin, Texas. They took their name from the Velvet Underground's \"The Black Angel's Death Song\".",
+    "facts": [
+     "Formed in May 2004, they took their name from the Velvet Underground's \"The Black Angel's Death Song\".",
+     "They have released six studio albums and one compilation album."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische psychedelic-rockband · austin, 2004",
+    "who": "the black angels sind eine amerikanische psychedelic-rockband aus austin, texas. ihren namen haben sie vom Velvet-Underground-song \"The Black Angel's Death Song\".",
+    "facts": [
+     "gegründet im mai 2004, nahmen sie ihren namen vom Velvet-Underground-stück \"The Black Angel's Death Song\".",
+     "sie haben sechs studioalben und ein compilation-album veröffentlicht."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı psychedelic rock grubu · austin, 2004",
+    "who": "The Black Angels, texas'ın austin kentinden bir amerikan psychedelic rock grubudur. adlarını Velvet Underground'ın \"The Black Angel's Death Song\" şarkısından aldılar.",
+    "facts": [
+     "mayıs 2004'te kurulan grup adını Velvet Underground'ın \"The Black Angel's Death Song\" şarkısından aldı.",
+     "altı stüdyo albümü ve bir derleme albüm yayımladılar."
+    ]
+   }
+  }
+ ]
+}

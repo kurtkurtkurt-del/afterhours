@@ -1,0 +1,38 @@
+{
+ "city": "birmingham",
+ "day": "2026-11-24",
+ "nights": [
+  {
+   "id": "07ff004a-d472-4527-b7b8-292b9f0ad722",
+   "slug": "westside-cowboy-4db72f48",
+   "title": "Westside Cowboy",
+   "name": "Westside Cowboy",
+   "source_url": "https://en.wikipedia.org/wiki/Westside_Cowboy",
+   "extract": "Westside Cowboy are an English rock band formed in Manchester in 2023. The band members are Jimmy Bradbury, Reuben Haycocks, Aoife Anson O'Connell and Paddy Murphy.",
+   "en": {
+    "kicker": "english rock band · manchester, 2023",
+    "who": "Westside Cowboy are an English rock band formed in Manchester in 2023. The band members are Jimmy Bradbury, Reuben Haycocks, Aoife Anson O'Connell and Paddy Murphy.",
+    "facts": [
+     "Westside Cowboy are an English rock band formed in Manchester in 2023.",
+     "The band members are Jimmy Bradbury, Reuben Haycocks, Aoife Anson O'Connell and Paddy Murphy."
+    ]
+   },
+   "de": {
+    "kicker": "englische rockband · manchester, 2023",
+    "who": "westside cowboy ist eine englische rockband, 2023 in manchester gegründet. zu den mitgliedern gehören Jimmy Bradbury, Reuben Haycocks, Aoife Anson O'Connell und Paddy Murphy.",
+    "facts": [
+     "die band wurde 2023 in manchester gegründet.",
+     "die mitglieder sind Jimmy Bradbury, Reuben Haycocks, Aoife Anson O'Connell und Paddy Murphy."
+    ]
+   },
+   "tr": {
+    "kicker": "ingiliz rock grubu · manchester, 2023",
+    "who": "Westside Cowboy, 2023'te manchester'da kurulmuş bir ingiliz rock grubudur. grubun üyeleri Jimmy Bradbury, Reuben Haycocks, Aoife Anson O'Connell ve Paddy Murphy'dir.",
+    "facts": [
+     "grup 2023'te manchester'da kuruldu.",
+     "grubun üyeleri Jimmy Bradbury, Reuben Haycocks, Aoife Anson O'Connell ve Paddy Murphy."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,38 @@
+{
+ "city": "nashville",
+ "day": "2026-11-24",
+ "nights": [
+  {
+   "id": "762958f1-7152-447b-ae3a-babc0250d104",
+   "slug": "victoria-monet-frequency-of-love-tour-7bb38c19",
+   "title": "Victoria Monét: Frequency Of Love Tour",
+   "name": "Victoria Monét",
+   "source_url": "https://en.wikipedia.org/wiki/Victoria_Mon%C3%A9t",
+   "extract": "Victoria Monét McCants is an American singer-songwriter. First gaining recognition for her songwriting work, Monét pursued a recording career with the release of a series of extended plays (EPs); her fifth, Jaguar (2020) was met with critical acclaim. Her debut studio album, Jaguar II (2023), became her commercial breakthrough and was supported by the hit single \"On My Mama\", which peaked within the top 40 of the Billboard Hot 100 and earned a Grammy Award nomination for Record of the Year. The nomination was among seven she received at the 66th Annual Grammy Awards, from which she won Best New Artist, Best R&B Album and Best Engineered Album, Non-Classical.",
+   "en": {
+    "kicker": "american singer-songwriter",
+    "who": "Victoria Monét McCants is an American singer-songwriter. First gaining recognition for her songwriting work, she pursued a recording career with a series of extended plays.",
+    "facts": [
+     "Her debut studio album, Jaguar II (2023), became her commercial breakthrough.",
+     "She won Best New Artist, Best R&B Album and Best Engineered Album, Non-Classical at the 66th Annual Grammy Awards."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische singer-songwriterin",
+    "who": "victoria monét mccants ist eine amerikanische singer-songwriterin. zunächst durch ihre arbeit als songwriterin bekannt, verfolgte sie eine aufnahmekarriere mit einer reihe von eps.",
+    "facts": [
+     "ihr debütalbum Jaguar II (2023) brachte ihr den kommerziellen durchbruch.",
+     "bei den 66. Grammy Awards gewann sie in den kategorien Best New Artist, Best R&B Album und Best Engineered Album, Non-Classical."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı şarkıcı-söz yazarı",
+    "who": "Victoria Monét McCants, amerikalı bir şarkıcı ve söz yazarıdır. önce söz yazarlığıyla tanınan Monét, bir dizi ep ile kayıt kariyerine yöneldi.",
+    "facts": [
+     "debut stüdyo albümü Jaguar II (2023), ticari atılımı oldu.",
+     "66. Grammy Ödülleri'nde En İyi Yeni Sanatçı, En İyi R&B Albümü ve En İyi Mühendislik Albümü ödüllerini kazandı."
+    ]
+   }
+  }
+ ]
+}

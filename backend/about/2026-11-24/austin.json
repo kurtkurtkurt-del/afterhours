@@ -1,0 +1,70 @@
+{
+ "city": "austin",
+ "day": "2026-11-24",
+ "nights": [
+  {
+   "id": "3f1de9f9-eb3c-4c6b-bf4f-47de7ca31acd",
+   "slug": "poi-dog-pondering-8e9a5fb8",
+   "title": "Poi Dog Pondering",
+   "name": "Poi Dog Pondering",
+   "source_url": "https://en.wikipedia.org/wiki/Poi_Dog_Pondering",
+   "extract": "Poi Dog Pondering is an American musical group which is noted for its cross-pollination of diverse musical genres, including various forms of acoustic and electronic music. Frank Orrall founded the band in Hawaii in 1984, initially as a solo project, and as his music production alias. In 1986 Orrall formed the first line-up of PDP to perform its first concert at the Honolulu Academy of Arts. The band then embarked on a yearlong street performance busking tour across North America. They eventually settled down in Austin, Texas in 1988, where they recorded 2 E.P. albums for Texas Hotel Records, and 2 subsequent full-length albums for Columbia Records. In 1992, the band relocated to Chicago and",
+   "en": {
+    "kicker": "american band · hawaii, 1984",
+    "who": "Poi Dog Pondering is an American musical group known for mixing acoustic and electronic music with many other genres. Frank Orrall founded the band in Hawaii in 1984 as a solo project, and the group settled in Austin, Texas in 1988.",
+    "facts": [
+     "The band recorded two EPs for Texas Hotel Records and two full-length albums for Columbia Records in Austin.",
+     "In 1992 the band relocated to Chicago."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische band · hawaii, 1984",
+    "who": "poi dog pondering ist eine amerikanische musikgruppe, die akustische und elektronische musik mit vielen anderen genres verbindet. frank orrall gründete die band 1984 auf hawaii als soloprojekt, 1988 ließ sich die gruppe in austin, texas nieder.",
+    "facts": [
+     "die band nahm in austin zwei eps für texas hotel records und zwei alben für columbia records auf.",
+     "1992 zog die band nach chicago."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı grup · hawaii, 1984",
+    "who": "Poi Dog Pondering, akustik ve elektronik müziği birçok başka türle harmanlamasıyla bilinen bir amerikan müzik grubudur. Frank Orrall grubu 1984'te hawaii'de solo bir proje olarak kurdu; grup 1988'de texas'ın austin kentine yerleşti.",
+    "facts": [
+     "grup austin'de texas hotel records için iki ep, columbia records için iki tam uzunluklu albüm kaydetti.",
+     "1992'de grup chicago'ya taşındı."
+    ]
+   }
+  },
+  {
+   "id": "0f38ba32-6e53-4657-928a-c71562d3e818",
+   "slug": "beartooth-pure-ecstasy-world-tour-9dea9dd0",
+   "title": "Beartooth: Pure Ecstasy World Tour",
+   "name": "Beartooth",
+   "source_url": "https://en.wikipedia.org/wiki/Beartooth_(band)",
+   "extract": "Beartooth is an American rock band founded by vocalist and multi-instrumentalist Caleb Shomo in Columbus, Ohio, in 2012. Originally, Beartooth was a studio project with Shomo performing all instruments, before expanding to a group with four or five members over their existence. They are known for relatively more conventional songwriting than some of Shomo's other work, with an emphasis on melodic hooks and catchy choruses. Beartooth has been signed to Red Bull Records since 2013; their debut EP Sick was released on July 26, 2013, followed by the debut full-length album Disgusting on June 10, 2014. Since then, Shomo has released a further five studio albums under the Beartooth moniker: Aggres",
+   "en": {
+    "kicker": "american rock band · columbus, ohio, 2012",
+    "who": "Beartooth is an American rock band founded by vocalist and multi-instrumentalist Caleb Shomo in Columbus, Ohio, in 2012. They are known for relatively conventional songwriting, with an emphasis on melodic hooks and catchy choruses.",
+    "facts": [
+     "Beartooth has been signed to Red Bull Records since 2013.",
+     "Shomo has released a further five studio albums under the Beartooth moniker."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische rockband · columbus, ohio, 2012",
+    "who": "beartooth ist eine amerikanische rockband, 2012 in columbus, ohio, von sänger und multiinstrumentalist caleb shomo gegründet. sie sind für eher konventionelles songwriting mit melodischen hooks und eingängigen refrains bekannt.",
+    "facts": [
+     "beartooth ist seit 2013 bei red bull records unter vertrag.",
+     "shomo hat unter dem namen beartooth fünf weitere studioalben veröffentlicht."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı rock grubu · columbus, ohio, 2012",
+    "who": "Beartooth, 2012'de ohio'nun columbus kentinde vokalist ve çok enstrümantalist Caleb Shomo tarafından kurulmuş amerikan bir rock grubudur. görece geleneksel şarkı yazımları ve melodik nakaratlarıyla bilinirler.",
+    "facts": [
+     "Beartooth 2013'ten beri Red Bull Records ile anlaşmalı.",
+     "Shomo, Beartooth adıyla beş stüdyo albümü daha çıkardı."
+    ]
+   }
+  }
+ ]
+}

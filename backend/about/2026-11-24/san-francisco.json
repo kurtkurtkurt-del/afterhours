@@ -1,0 +1,70 @@
+{
+ "city": "san-francisco",
+ "day": "2026-11-24",
+ "nights": [
+  {
+   "id": "5bc138a1-a6b0-4770-b32e-1a9be74574fd",
+   "slug": "jalen-ngonda-doctrine-of-love-tour-9006036d",
+   "title": "Jalen Ngonda: Doctrine of Love Tour",
+   "name": "Jalen Ngonda",
+   "source_url": "https://en.wikipedia.org/wiki/Jalen_Ngonda",
+   "extract": "Jalen N'Gonda is an American musician based in England. He came to prominence with the release of his debut studio album Come Around and Love Me (2023), and is known for his Motown-inspired soul music. N'Gonda is primarily a singer, but also plays various instruments during live performances.",
+   "en": {
+    "kicker": "american soul musician · england",
+    "who": "Jalen N'Gonda is an American musician based in England. He came to prominence with his debut studio album Come Around and Love Me (2023), and is known for his Motown-inspired soul music.",
+    "facts": [
+     "He came to prominence with the release of his debut studio album Come Around and Love Me (2023).",
+     "N'Gonda is primarily a singer, but also plays various instruments during live performances."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer soulmusiker · england",
+    "who": "jalen n'gonda ist ein amerikanischer musiker mit sitz in england. bekannt wurde er mit seinem debütalbum Come Around and Love Me (2023), und er ist für seinen von Motown inspirierten soul bekannt.",
+    "facts": [
+     "bekannt wurde er mit der veröffentlichung seines debütalbums Come Around and Love Me (2023).",
+     "n'gonda ist vor allem sänger, spielt bei live-auftritten aber auch verschiedene instrumente."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı soul müzisyeni · ingiltere",
+    "who": "Jalen N'Gonda, ingiltere'de yaşayan amerikalı bir müzisyendir. debut stüdyo albümü Come Around and Love Me (2023) ile öne çıktı ve Motown esintili soul müziğiyle tanınır.",
+    "facts": [
+     "debut stüdyo albümü Come Around and Love Me (2023) ile öne çıktı.",
+     "N'Gonda esas olarak şarkıcıdır, ancak canlı performanslarda çeşitli enstrümanlar da çalar."
+    ]
+   }
+  },
+  {
+   "id": "dbd1804c-e07d-42ce-9311-eb98f007e664",
+   "slug": "the-neighbourhood-the-wourld-tour-e158b8a4",
+   "title": "The Neighbourhood: THE WOURLD TOUR",
+   "name": "The Neighbourhood",
+   "source_url": "https://en.wikipedia.org/wiki/The_Neighbourhood",
+   "extract": "The Neighbourhood is an American alternative rock band formed in Newbury Park, California, in 2011. The band consists of vocalist Jesse Rutherford, guitarists Jeremy Fredman and Zach Abels, bassist Mikey Margott and drummer Brandon Fried. After releasing two EPs, I'm Sorry... and Thank You, The Neighbourhood signed with Columbia Records to release their debut studio album, I Love You. in 2013. \"Sweater Weather\", the album's third single, became the only song from the project on the Billboard Hot 100, peaking at number 14, and resurged in popularity nearly a decade later on radio airplay and Spotify. Other notable hits from the band include \"Afraid\", \"Daddy Issues\", \"Baby Come Home 2/Valentin",
+   "en": {
+    "kicker": "american alternative rock band · newbury park, 2011",
+    "who": "The Neighbourhood is an American alternative rock band formed in Newbury Park, California, in 2011. The band consists of vocalist Jesse Rutherford and four others.",
+    "facts": [
+     "Their debut studio album, I Love You., was released in 2013 with Columbia Records.",
+     "\"Sweater Weather\" peaked at number 14 on the Billboard Hot 100."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische alternative-rockband · newbury park, 2011",
+    "who": "the neighbourhood ist eine amerikanische alternative-rockband, 2011 in newbury park, kalifornien, gegründet. zur band gehören sänger Jesse Rutherford und vier weitere musiker.",
+    "facts": [
+     "ihr debütalbum I Love You. erschien 2013 bei Columbia Records.",
+     "\"Sweater Weather\" erreichte platz 14 der Billboard Hot 100."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı alternatif rock grubu · newbury park, 2011",
+    "who": "The Neighbourhood, 2011'de kaliforniya'nın newbury park kentinde kurulmuş amerikan bir alternatif rock grubudur. grup, vokalist Jesse Rutherford ve dört üyeden oluşur.",
+    "facts": [
+     "debut stüdyo albümü I Love You. 2013'te Columbia Records ile yayımlandı.",
+     "\"Sweater Weather\" Billboard Hot 100'de on dördüncü sıraya yükseldi."
+    ]
+   }
+  }
+ ]
+}

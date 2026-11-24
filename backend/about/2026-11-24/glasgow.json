@@ -1,0 +1,102 @@
+{
+ "city": "glasgow",
+ "day": "2026-11-24",
+ "nights": [
+  {
+   "id": "9053be3a-72b2-4399-b586-19b965b35582",
+   "slug": "the-almighty-05b11d77",
+   "title": "The Almighty",
+   "name": "The Almighty",
+   "source_url": "https://en.wikipedia.org/wiki/The_Almighty_(band)",
+   "extract": "The Almighty are a Scottish hard rock/heavy metal band from Glasgow formed in 1988. After disbanding for the first time in 1996, they were reunited from 1999 to 2002, again from 2006 to 2009 and reformed for the third time in 2023. Three of the founding members, Ricky Warwick, Stump Monroe and Floyd London were friends who met at school. Although the band members musical roots were in punk, the Almighty adopted a more heavy metal/hard rock oriented musical direction in their early years. Later albums saw the band's musical style move towards the band members' original punk roots. They have released seven studio albums, two anthologies and three live albums.",
+   "en": {
+    "kicker": "scottish rock band · glasgow, 1988",
+    "who": "The Almighty are a Scottish hard rock and heavy metal band from Glasgow, formed in 1988. Three founding members, Ricky Warwick, Stump Monroe and Floyd London, were friends who met at school.",
+    "facts": [
+     "They have released seven studio albums, two anthologies and three live albums.",
+     "The band reformed for a third time in 2023 after disbanding in 1996, reuniting from 1999 to 2002 and again from 2006 to 2009."
+    ]
+   },
+   "de": {
+    "kicker": "schottische rockband · glasgow, 1988",
+    "who": "the almighty sind eine schottische hard-rock- und heavy-metal-band aus glasgow, 1988 gegründet. drei gründungsmitglieder, Ricky Warwick, Stump Monroe und Floyd London, waren schon in der schule befreundet.",
+    "facts": [
+     "sie haben sieben studioalben, zwei anthologien und drei livealben veröffentlicht.",
+     "die band löste sich 1996 zum ersten mal auf, war von 1999 bis 2002 und erneut von 2006 bis 2009 wieder vereint und formierte sich 2023 zum dritten mal."
+    ]
+   },
+   "tr": {
+    "kicker": "iskoç rock grubu · glasgow, 1988",
+    "who": "The Almighty, glasgow'dan 1988'de kurulmuş bir iskoç hard rock ve heavy metal grubudur. kurucu üyelerden Ricky Warwick, Stump Monroe ve Floyd London okulda tanışmış arkadaşlardı.",
+    "facts": [
+     "yedi stüdyo albümü, iki antoloji ve üç canlı albüm yayımladılar.",
+     "grup 1996'da ilk kez dağıldı; 1999–2002 ve 2006–2009 arasında yeniden bir araya geldi, 2023'te üçüncü kez yeniden kuruldu."
+    ]
+   }
+  },
+  {
+   "id": "22fa99ca-158a-4611-b5d8-f19471521463",
+   "slug": "tinie-tempah-ea6adcad",
+   "title": "Tinie Tempah",
+   "name": "Tinie Tempah",
+   "source_url": "https://en.wikipedia.org/wiki/Tinie_Tempah",
+   "extract": "Patrick Chukwuemeka Okogwu, better known by his stage name Tinie Tempah, is an English rapper, singer and television presenter. Born and raised in London, he created his own entertainment company Disturbing London in 2006, alongside Dumi Oburota. After signing with Parlophone in 2009 and releasing several mixtapes, he rose to fame with the UK number-one singles \"Pass Out\" and \"Written in the Stars\" in 2010.",
+   "en": {
+    "kicker": "british rapper and singer · london",
+    "who": "Patrick Chukwuemeka Okogwu, known as Tinie Tempah, is an English rapper, singer and television presenter. Born and raised in London, he created his own entertainment company Disturbing London in 2006.",
+    "facts": [
+     "He rose to fame with the UK number-one singles \"Pass Out\" and \"Written in the Stars\" in 2010.",
+     "After signing with Parlophone in 2009 he released several mixtapes."
+    ]
+   },
+   "de": {
+    "kicker": "britischer rapper und sänger · london",
+    "who": "patrick chukwuemeka okogwu, bekannt als tinie tempah, ist ein englischer rapper, sänger und fernsehmoderator. in london geboren und aufgewachsen, gründete er 2006 seine eigene unterhaltungsfirma Disturbing London.",
+    "facts": [
+     "er wurde 2010 mit den britischen nummer-eins-singles \"Pass Out\" und \"Written in the Stars\" berühmt.",
+     "nach seiner unterschrift bei Parlophone 2009 veröffentlichte er mehrere mixtapes."
+    ]
+   },
+   "tr": {
+    "kicker": "ingiliz rapçi ve şarkıcı · londra",
+    "who": "Tinie Tempah olarak bilinen Patrick Chukwuemeka Okogwu, ingiliz bir rapçi, şarkıcı ve televizyon sunucusudur. londra'da doğup büyüdü ve 2006'da Disturbing London adlı eğlence şirketini kurdu.",
+    "facts": [
+     "2010'da \"Pass Out\" ve \"Written in the Stars\" şarkılarıyla birleşik krallık'ta bir numaralı şarkılara ulaşarak ünlendi.",
+     "2009'da Parlophone ile anlaşmasının ardından birkaç mixtape yayımladı."
+    ]
+   }
+  },
+  {
+   "id": "42b9c107-7f6f-4924-aa86-21d239b821a8",
+   "slug": "evergrey-86b84e31",
+   "title": "Evergrey",
+   "name": "Evergrey",
+   "source_url": "https://en.wikipedia.org/wiki/Evergrey",
+   "extract": "Evergrey is a Swedish progressive metal band from Gothenburg, formed in 1993 by guitarist and vocalist Tom S. Englund and guitarist Dan Bronell. The band is known for combining progressive metal and power metal with dark lyrical themes and imagery.",
+   "en": {
+    "kicker": "swedish progressive metal band · gothenburg, 1993",
+    "who": "Evergrey is a Swedish progressive metal band from Gothenburg, formed in 1993 by guitarist and vocalist Tom S. Englund and guitarist Dan Bronell. The band is known for combining progressive metal and power metal with dark lyrical themes and imagery.",
+    "facts": [
+     "The band is known for combining progressive metal and power metal with dark lyrical themes and imagery.",
+     "Evergrey is a Swedish progressive metal band from Gothenburg, formed in 1993."
+    ]
+   },
+   "de": {
+    "kicker": "schwedische progressive-metal-band · göteborg, 1993",
+    "who": "evergrey ist eine schwedische progressive-metal-band aus göteborg, 1993 von gitarrist und sänger Tom S. Englund und gitarrist Dan Bronell gegründet. die band verbindet progressive metal und power metal mit düsteren texten und bildern.",
+    "facts": [
+     "die band verbindet progressive metal und power metal mit düsteren texten und bildern.",
+     "evergrey ist eine schwedische progressive-metal-band aus göteborg, 1993 gegründet."
+    ]
+   },
+   "tr": {
+    "kicker": "isveçli progresif metal grubu · göteborg, 1993",
+    "who": "Evergrey, göteborg'dan 1993'te gitarist ve vokalist Tom S. Englund ile gitarist Dan Bronell tarafından kurulmuş bir isveçli progresif metal grubudur. grup progresif metal ve power metali karanlık sözler ve imgelerle harmanlamasıyla bilinir.",
+    "facts": [
+     "grup progresif metal ve power metali karanlık sözler ve imgelerle harmanlamasıyla bilinir.",
+     "Evergrey, 1993'te göteborg'da kurulmuş bir isveçli progresif metal grubudur."
+    ]
+   }
+  }
+ ]
+}

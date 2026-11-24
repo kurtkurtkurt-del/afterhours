@@ -1,0 +1,38 @@
+{
+ "city": "ottawa",
+ "day": "2026-11-24",
+ "nights": [
+  {
+   "id": "ae45a128-f66a-43a3-bc33-ed0b163323a4",
+   "slug": "luca-fogale-7a3bdce4",
+   "title": "Luca Fogale",
+   "name": "Luca Fogale",
+   "source_url": "https://en.wikipedia.org/wiki/Luca_Fogale",
+   "extract": "Luca Fogale is a Canadian pop singer-songwriter from Burnaby, British Columbia. He is most noted for his 2020 album Nothing Is Lost, which was a Juno Award nominee for Adult Contemporary Album of the Year at the Juno Awards of 2022.",
+   "en": {
+    "kicker": "canadian pop singer-songwriter · burnaby, british columbia",
+    "who": "Luca Fogale is a Canadian pop singer-songwriter from Burnaby, British Columbia. He is most noted for his 2020 album Nothing Is Lost.",
+    "facts": [
+     "His 2020 album Nothing Is Lost was a Juno Award nominee for Adult Contemporary Album of the Year.",
+     "The nomination came at the Juno Awards of 2022."
+    ]
+   },
+   "de": {
+    "kicker": "kanadischer pop-singer-songwriter · burnaby, british columbia",
+    "who": "luca fogale ist ein kanadischer pop-singer-songwriter aus burnaby, british columbia. bekannt wurde er vor allem durch sein album Nothing Is Lost aus dem jahr 2020.",
+    "facts": [
+     "sein album Nothing Is Lost (2020) war nominiert für das Juno Award als Adult Contemporary Album of the Year.",
+     "die nominierung erfolgte bei den Juno Awards 2022."
+    ]
+   },
+   "tr": {
+    "kicker": "kanadalı pop şarkıcı-söz yazarı · burnaby, british columbia",
+    "who": "Luca Fogale, british columbia'nın burnaby kentinden kanadalı bir pop şarkıcı-söz yazarıdır. en çok 2020 tarihli albümü Nothing Is Lost ile tanınır.",
+    "facts": [
+     "2020 albümü Nothing Is Lost, Adult Contemporary Album of the Year dalında Juno Ödülü adayıydı.",
+     "aday gösterilme, 2022 Juno Ödülleri'nde gerçekleşti."
+    ]
+   }
+  }
+ ]
+}

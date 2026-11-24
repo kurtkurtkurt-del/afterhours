@@ -1,0 +1,70 @@
+{
+ "city": "denver",
+ "day": "2026-11-24",
+ "nights": [
+  {
+   "id": "ee637c45-b71d-4b49-8912-06b4763bd1a9",
+   "slug": "celtic-woman-0abd3d39",
+   "title": "Celtic Woman",
+   "name": "Celtic Woman",
+   "source_url": "https://en.wikipedia.org/wiki/Celtic_Woman",
+   "extract": "Celtic Woman is an all-female Irish musical ensemble, formed in 2004 for a one-time event held in Dublin, Ireland. They started touring internationally as a group after multiple airings on PBS helped to boost the group's popularity.",
+   "en": {
+    "kicker": "irish musical ensemble · dublin, 2004",
+    "who": "Celtic Woman is an all-female Irish musical ensemble, formed in 2004 for a one-time event held in Dublin. The group started touring internationally after multiple airings on PBS helped to boost its popularity.",
+    "facts": [
+     "Celtic Woman is an all-female Irish musical ensemble, formed in 2004 for a one-time event held in Dublin.",
+     "They started touring internationally as a group after multiple airings on PBS helped to boost the group's popularity."
+    ]
+   },
+   "de": {
+    "kicker": "irisches musikensemble · dublin, 2004",
+    "who": "celtic woman ist ein rein weibliches irisches musikensemble, 2004 für eine einmalige veranstaltung in dublin gegründet. nach mehreren ausstrahlungen auf PBS begann die gruppe, international zu touren.",
+    "facts": [
+     "celtic woman ist ein rein weibliches irisches musikensemble, 2004 für eine einmalige veranstaltung in dublin gegründet.",
+     "nach mehreren ausstrahlungen auf PBS begann die gruppe, international auf tour zu gehen."
+    ]
+   },
+   "tr": {
+    "kicker": "irlandalı müzik topluluğu · dublin, 2004",
+    "who": "Celtic Woman, tamamı kadınlardan oluşan bir irlanda müzik topluluğudur; 2004'te dublin'de tek seferlik bir etkinlik için kuruldu. PBS'te birkaç kez yayınlanmaları popülaritelerini artırınca grup uluslararası turnelere başladı.",
+    "facts": [
+     "Celtic Woman, 2004'te dublin'de tek seferlik bir etkinlik için kurulmuş, tamamı kadınlardan oluşan bir irlanda müzik topluluğudur.",
+     "PBS'teki birkaç yayın popülariteyi artırmaya yardımcı olduktan sonra grup uluslararası turnelere başladı."
+    ]
+   }
+  },
+  {
+   "id": "5f91b83e-cd2d-4158-829b-b1d70f2f3038",
+   "slug": "gracie-abrams-the-look-at-my-life-tour-presented-bc219c2f",
+   "title": "Gracie Abrams: The Look at My Life Tour presented by Capital One",
+   "name": "Gracie Abrams",
+   "source_url": "https://en.wikipedia.org/wiki/Gracie_Abrams",
+   "extract": "Gracie Madigan Abrams is an American singer and songwriter. She signed with Interscope Records in 2019 and gained recognition after releasing her debut extended play, Minor (2020), and its follow-up, This Is What It Feels Like (2021), alongside various singles including \"I Miss You, I'm Sorry\". Abrams released her debut album, Good Riddance (2023), and was nominated for the Grammy Award for Best New Artist. She also performed as an opening act on Olivia Rodrigo's Sour Tour (2022) and Taylor Swift's Eras Tour (2023–2024).",
+   "en": {
+    "kicker": "american singer and songwriter",
+    "who": "Gracie Madigan Abrams is an American singer and songwriter. She signed with Interscope Records in 2019 and gained recognition after releasing her debut extended play, Minor (2020).",
+    "facts": [
+     "Her debut album, Good Riddance (2023), earned her a nomination for the Grammy Award for Best New Artist.",
+     "She also performed as an opening act on Olivia Rodrigo's Sour Tour (2022) and Taylor Swift's Eras Tour (2023–2024)."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische singer-songwriterin",
+    "who": "gracie madigan abrams ist eine amerikanische singer-songwriterin. sie unterschrieb 2019 bei Interscope Records und wurde mit ihrer debüt-ep Minor (2020) bekannt.",
+    "facts": [
+     "ihr debütalbum Good Riddance (2023) brachte ihr eine nominierung für den Grammy in der kategorie Best New Artist ein.",
+     "sie war vorprogramm auf Olivia Rodrigos Sour Tour (2022) und Taylor Swifts Eras Tour (2023–2024)."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı şarkıcı ve söz yazarı",
+    "who": "Gracie Madigan Abrams, amerikalı bir şarkıcı ve söz yazarıdır. 2019'da Interscope Records ile anlaştı ve debut ep'i Minor (2020) ile tanınmaya başladı.",
+    "facts": [
+     "debut albümü Good Riddance (2023) ona En İyi Yeni Sanatçı dalında Grammy adaylığı kazandırdı.",
+     "Olivia Rodrigo'nun Sour Tour'unda (2022) ve Taylor Swift'in Eras Tour'unda (2023–2024) açılış sanatçısı olarak sahne aldı."
+    ]
+   }
+  }
+ ]
+}

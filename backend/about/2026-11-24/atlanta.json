@@ -1,0 +1,38 @@
+{
+ "city": "atlanta",
+ "day": "2026-11-24",
+ "nights": [
+  {
+   "id": "22eaf409-f504-42be-8ab7-69cbdc213470",
+   "slug": "midwxst-ecb9debd",
+   "title": "midwxst",
+   "name": "Midwxst",
+   "source_url": "https://en.wikipedia.org/wiki/Midwxst",
+   "extract": "Edgar Nathaniel Sarratt III, known professionally as Midwxst, is an American musician. Initially presenting a digicore sound, he began releasing music as $uspect in 2018 and released several extended plays between 2020 and 2022, including Back In Action (2021), Summer03 (2021), Better Luck Next Time. (2022), and Back In Action 3.0 (2022). Midwxst's debut studio album, E3, was released in September 2023. On Midwxst's musical style, sources mostly defined it as hyperpop, but he makes rap music as well. His second album, Archangel, was released in June 2025. His third album, Solitude In Silence was released in July 2026.",
+   "en": {
+    "kicker": "american musician and rapper",
+    "who": "Edgar Nathaniel Sarratt III, known professionally as Midwxst, is an American musician. He began releasing music as $uspect in 2018 and has since released several extended plays and albums.",
+    "facts": [
+     "His debut studio album, E3, was released in September 2023.",
+     "His third album, Solitude In Silence, was released in July 2026."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer musiker und rapper",
+    "who": "edgar nathaniel sarratt iii, professionell bekannt als midwxst, ist ein amerikanischer musiker. er begann 2018 unter dem namen $uspect musik zu veröffentlichen und hat seitdem mehrere ep und alben herausgebracht.",
+    "facts": [
+     "sein debütalbum E3 erschien im september 2023.",
+     "sein drittes album Solitude In Silence erschien im juli 2026."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı müzisyen ve rapçi",
+    "who": "Midwxst olarak tanınan Edgar Nathaniel Sarratt III, amerikalı bir müzisyendir. 2018'de $uspect adıyla müzik yayımlamaya başladı ve o tarihten beri birkaç ep ve albüm çıkardı.",
+    "facts": [
+     "debut stüdyo albümü E3, eylül 2023'te yayımlandı.",
+     "üçüncü albümü Solitude In Silence, temmuz 2026'da yayımlandı."
+    ]
+   }
+  }
+ ]
+}

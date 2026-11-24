@@ -1,0 +1,38 @@
+{
+ "city": "izmir",
+ "day": "2026-11-24",
+ "nights": [
+  {
+   "id": "084b837f-91db-4caf-85b6-79ece19f7321",
+   "slug": "buyuk-ev-ablukada-a55847b4",
+   "title": "Büyük Ev Ablukada",
+   "name": "Büyük Ev Ablukada",
+   "source_url": "https://en.wikipedia.org/wiki/B%C3%BCy%C3%BCk_Ev_Ablukada",
+   "extract": "Büyük Ev Ablukada is a Turkish rock band founded in Istanbul in 2008. The band was started by Cem Yılmazer and Bartu Küçükçağlayan After some time the band turned into an electrical version, which is described by Full Faça. Büyük Ev Ablukada became well-known in a very short time with the help of their own songs and special concerts. The band members use aliases instead of their own names and some of the original names of the members are still unknown. They first released a concert record named \"Ay Şuram Ağrıyo\" and an album named \"Olmadı Kaçarız\", and then on 21 December 2012, they released their debut album \"Full Faça,\" which was issued in both CD and vinyl by their own record company, Olm",
+   "en": {
+    "kicker": "turkish rock band · istanbul, 2008",
+    "who": "Büyük Ev Ablukada is a Turkish rock band founded in Istanbul in 2008 by Cem Yılmazer and Bartu Küçükçağlayan. The members use aliases instead of their own names, and some of their original names are still unknown.",
+    "facts": [
+     "Their debut album \"Full Faça\" was released on 21 December 2012.",
+     "They first released a concert record named \"Ay Şuram Ağrıyo\" and an album named \"Olmadı Kaçarız\"."
+    ]
+   },
+   "de": {
+    "kicker": "türkische rockband · istanbul, 2008",
+    "who": "büyük ev ablukada ist eine türkische rockband, 2008 in istanbul von Cem Yılmazer und Bartu Küçükçağlayan gegründet. die mitglieder benutzen decknamen statt ihrer echten namen, einige ursprüngliche namen sind bis heute unbekannt.",
+    "facts": [
+     "ihr debütalbum \"Full Faça\" erschien am 21. dezember 2012.",
+     "zuerst veröffentlichten sie ein konzertalbum mit dem titel \"Ay Şuram Ağrıyo\" und ein album namens \"Olmadı Kaçarız\"."
+    ]
+   },
+   "tr": {
+    "kicker": "türk rock grubu · istanbul, 2008",
+    "who": "Büyük Ev Ablukada, 2008'de istanbul'da Cem Yılmazer ve Bartu Küçükçağlayan tarafından kurulmuş bir türk rock grubudur. üyeler gerçek adları yerine takma ad kullanır; bazı özgün adları hâlâ bilinmemektedir.",
+    "facts": [
+     "debut albümleri \"Full Faça\", 21 aralık 2012'de yayımlandı.",
+     "önce \"Ay Şuram Ağrıyo\" adlı bir konser kaydı, ardından \"Olmadı Kaçarız\" adlı bir albüm yayımladılar."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,38 @@
+{
+ "city": "philadelphia",
+ "day": "2026-11-24",
+ "nights": [
+  {
+   "id": "bc1adb22-c53e-4c3c-b3f0-74bbb1683faa",
+   "slug": "carbon-leaf-8250c797",
+   "title": "Carbon Leaf",
+   "name": "Carbon Leaf",
+   "source_url": "https://en.wikipedia.org/wiki/Carbon_Leaf",
+   "extract": "Carbon Leaf is an American musical quintet from Richmond, Virginia, known for their alt-country, Celtic and folk-infused indie rock. Though some of the band members have changed through the years, Carbon Leaf has been consistently creating and performing music since the early 1990s. The band currently consists of founding members Barry Privett, Carter Gravatt, and Terry Clark, as well as Jon Markel and Jesse Humphrey. Carbon Leaf is best known for the song \"Life Less Ordinary\", which debuted in 2004 and reached number five on Billboard's Adult Alternative charts.",
+   "en": {
+    "kicker": "american rock band · richmond, virginia",
+    "who": "Carbon Leaf is an American musical quintet from Richmond, Virginia, known for their alt-country, Celtic and folk-infused indie rock. The band has been performing music since the early 1990s.",
+    "facts": [
+     "Carbon Leaf is best known for the song \"Life Less Ordinary\".",
+     "\"Life Less Ordinary\" debuted in 2004 and reached number five on Billboard's Adult Alternative charts."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische rockband · richmond, virginia",
+    "who": "carbon leaf ist ein amerikanisches musikquintett aus richmond, virginia, bekannt für indie-rock mit alt-country-, celtic- und folk-einflüssen. die band macht seit den frühen 1990er-jahren musik.",
+    "facts": [
+     "carbon leaf ist vor allem für den song \"Life Less Ordinary\" bekannt.",
+     "\"Life Less Ordinary\" erschien 2004 und erreichte platz fünf der Billboard-Adult-Alternative-charts."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı rock grubu · richmond, virginia",
+    "who": "Carbon Leaf, virginia'nın richmond kentinden amerikan bir beşli müzik grubudur; alt-country, celtic ve folk etkili indie rock'ıyla bilinir. grup 1990'ların başından beri müzik yapıyor.",
+    "facts": [
+     "Carbon Leaf en çok \"Life Less Ordinary\" şarkısıyla bilinir.",
+     "\"Life Less Ordinary\" 2004'te çıktı ve Billboard Adult Alternative listesinde beşinci sıraya yükseldi."
+    ]
+   }
+  }
+ ]
+}

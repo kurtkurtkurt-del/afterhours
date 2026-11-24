@@ -1,0 +1,134 @@
+{
+ "city": "manchester",
+ "day": "2026-11-24",
+ "nights": [
+  {
+   "id": "ca468f4d-cae6-4ab9-97c9-84546ffd2889",
+   "slug": "swae-lee-5e095f1f",
+   "title": "Swae Lee",
+   "name": "Swae Lee",
+   "source_url": "https://en.wikipedia.org/wiki/Swae_Lee",
+   "extract": "Khalif Malik Ibn Shaman Brown, known professionally as Swae Lee, is an American rapper and singer from Inglewood, California. Known for his wide-ranged, reverb-heavy vocals and genre-blending, Lee is one half of the Mississippi-based hip-hop duo Rae Sremmurd, which he formed in 2010 with his older brother Slim Jxmmi.",
+   "en": {
+    "kicker": "american rapper and singer · inglewood, california",
+    "who": "Khalif Malik Ibn Shaman Brown, known as Swae Lee, is an American rapper and singer from Inglewood, California. He is known for his wide-ranged, reverb-heavy vocals and genre-blending.",
+    "facts": [
+     "Swae Lee is one half of the Mississippi-based hip-hop duo Rae Sremmurd.",
+     "He formed Rae Sremmurd in 2010 with his older brother Slim Jxmmi."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer rapper und sänger · inglewood, kalifornien",
+    "who": "khalif malik ibn shaman brown, bekannt als swae lee, ist ein amerikanischer rapper und sänger aus inglewood, kalifornien. er ist für seine weit gespannten, hallreichen vocals und seine genre-übergreifende musik bekannt.",
+    "facts": [
+     "lee ist die eine hälfte des mississippi-basierten hip-hop-duos Rae Sremmurd.",
+     "er gründete Rae Sremmurd 2010 mit seinem älteren bruder Slim Jxmmi."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı rapçi ve şarkıcı · inglewood, kaliforniya",
+    "who": "Swae Lee olarak bilinen Khalif Malik Ibn Shaman Brown, kaliforniya'nın inglewood kentinden amerikalı bir rapçi ve şarkıcıdır. geniş yelpazeli, yankılı vokalleri ve türler arası müziğiyle tanınır.",
+    "facts": [
+     "Lee, Mississippi merkezli hip-hop ikilisi Rae Sremmurd'un yarısıdır.",
+     "Rae Sremmurd'u 2010'da büyük erkek kardeşi Slim Jxmmi ile kurdu."
+    ]
+   }
+  },
+  {
+   "id": "7480d599-46b5-4214-a124-61af9e728a60",
+   "slug": "lil-peep-34e5447a",
+   "title": "Lil Peep",
+   "name": "Lil Peep",
+   "source_url": "https://en.wikipedia.org/wiki/Lil_Peep",
+   "extract": "Gustav Elijah Åhr, known professionally as Lil Peep, was an American rapper and singer-songwriter. He was a member of the hip-hop collective GothBoiClique, and is credited as being a leading figure of the emo rap sub-genre and an inspiration in alternative youth subcultures.",
+   "en": {
+    "kicker": "american rapper and singer-songwriter · emo rap",
+    "who": "Gustav Elijah Åhr, known as Lil Peep, was an American rapper and singer-songwriter. He was a member of the hip-hop collective GothBoiClique.",
+    "facts": [
+     "He is credited as being a leading figure of the emo rap sub-genre.",
+     "He was a member of the hip-hop collective GothBoiClique."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer rapper und singer-songwriter · emo-rap",
+    "who": "gustav elijah åhr, bekannt als lil peep, war ein amerikanischer rapper und singer-songwriter. er war mitglied des hip-hop-kollektivs GothBoiClique.",
+    "facts": [
+     "er gilt als führende figur des emo-rap-subgenres.",
+     "er war mitglied des hip-hop-kollektivs GothBoiClique."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı rapçi ve şarkıcı-söz yazarı · emo rap",
+    "who": "Lil Peep olarak bilinen Gustav Elijah Åhr, amerikalı bir rapçi ve şarkıcı-söz yazarıydı. hip-hop kolektifi GothBoiClique'in üyesiydi.",
+    "facts": [
+     "emo rap alt türünün önde gelen isimlerinden biri olarak kabul edilir.",
+     "hip-hop kolektifi GothBoiClique'in bir üyesiydi."
+    ]
+   }
+  },
+  {
+   "id": "47dcda70-e0f1-4a77-a57b-315f3437371c",
+   "slug": "the-damned-final-damnation-50-a8ad36ef",
+   "title": "The Damned - Final Damnation 50",
+   "name": "The Damned",
+   "source_url": "https://en.wikipedia.org/wiki/The_Damned_(band)",
+   "extract": "The Damned are an English rock band formed in London in 1976 by lead vocalist Dave Vanian, guitarist Brian James, bassist Captain Sensible and drummer Rat Scabies. They were the first punk band from the United Kingdom to release a single, \"New Rose\" (1976), release a studio album, Damned Damned Damned (1977) and tour the United States. The band briefly dissolved after their second album, Music for Pleasure (1977), was critically dismissed. They re-formed without Brian James and released Machine Gun Etiquette (1979).",
+   "en": {
+    "kicker": "english rock band · london, 1976",
+    "who": "The Damned are an English rock band formed in London in 1976 by Dave Vanian, Brian James, Captain Sensible and Rat Scabies. They were the first punk band from the United Kingdom to release a single, \"New Rose\".",
+    "facts": [
+     "They were the first punk band from the United Kingdom to release a single, \"New Rose\" (1976).",
+     "They released a studio album, Damned Damned Damned (1977), and toured the United States."
+    ]
+   },
+   "de": {
+    "kicker": "englische rockband · london, 1976",
+    "who": "the damned sind eine englische rockband, 1976 in london von Dave Vanian, Brian James, Captain Sensible und Rat Scabies gegründet. sie waren die erste punkband aus dem vereinigten königreich, die eine single veröffentlichte, \"New Rose\".",
+    "facts": [
+     "sie waren die erste punkband aus dem vereinigten königreich, die eine single, \"New Rose\" (1976), veröffentlichte.",
+     "sie veröffentlichten das studioalbum Damned Damned Damned (1977) und gingen in den vereinigten staaten auf tour."
+    ]
+   },
+   "tr": {
+    "kicker": "ingiliz rock grubu · londra, 1976",
+    "who": "The Damned, 1976'da londra'da Dave Vanian, Brian James, Captain Sensible ve Rat Scabies tarafından kurulmuş bir ingiliz rock grubudur. birleşik krallık'tan tek şarkı yayımlayan ilk punk grubuydular: \"New Rose\".",
+    "facts": [
+     "birleşik krallık'tan tek şarkı yayımlayan ilk punk grubuydu: \"New Rose\" (1976).",
+     "Damned Damned Damned (1977) stüdyo albümünü yayımladılar ve amerika birleşik devletleri'nde turneye çıktılar."
+    ]
+   }
+  },
+  {
+   "id": "fbb381bd-59fb-405b-ad44-966637b88045",
+   "slug": "boy-harsher-the-heartbreak-tour-2466da68",
+   "title": "Boy Harsher - The Heartbreak Tour",
+   "name": "Boy Harsher",
+   "source_url": "https://en.wikipedia.org/wiki/Boy_Harsher",
+   "extract": "Boy Harsher is an American electronic music group formed in 2013 in Savannah, Georgia. Currently based in Northampton, Massachusetts, the band consists of vocalist Jae Matthews and producer Augustus Muller. The band has amassed a cult following since their formation, and their song \"Pain\" has become an underground hit. Matthews and Muller own and run the label Nude Club, which is exclusively devoted to Boy Harsher and related artists.",
+   "en": {
+    "kicker": "american electronic music band · savannah, 2013",
+    "who": "Boy Harsher is an American electronic music group formed in 2013 in Savannah, Georgia. The band consists of vocalist Jae Matthews and producer Augustus Muller, and they run the label Nude Club.",
+    "facts": [
+     "Their song \"Pain\" has become an underground hit.",
+     "Matthews and Muller own and run the label Nude Club, which is exclusively devoted to Boy Harsher and related artists."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische electronic-music-band · savannah, 2013",
+    "who": "boy harsher ist eine amerikanische electronic-music-band, 2013 in savannah, georgia, gegründet. sie besteht aus vokalist Jae Matthews und produzent Augustus Muller, die das label Nude Club betreiben.",
+    "facts": [
+     "ihr song \"Pain\" wurde zu einem underground-hit.",
+     "matthews und muller besitzen und betreiben das label Nude Club, das sich ausschließlich boy harsher und verwandten künstlern widmet."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı electronic müzik grubu · savannah, 2013",
+    "who": "Boy Harsher, 2013'te georgia'nın savannah kentinde kurulmuş amerikan bir electronic müzik grubudur. grup, vokalist Jae Matthews ve yapımcı Augustus Muller'dan oluşur ve Nude Club etiketini yönetir.",
+    "facts": [
+     "\"Pain\" şarkıları bir underground hit oldu.",
+     "Matthews ve Muller, yalnızca Boy Harsher ve ilgili sanatçılara adanmış Nude Club etiketinin sahibi ve yöneticisi."
+    ]
+   }
+  }
+ ]
+}
