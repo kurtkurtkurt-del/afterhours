@@ -1,0 +1,14 @@
+{
+  "city": "london",
+  "day": "2026-11-26",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "southbank winter market under hungerford bridge.", "de": "southbank winter market unter der hungerford bridge.", "tr": "hungerford bridge altında southbank winter market." },
+      "line": { "en": "chalets and bars along the queen's walk, with stalls open until ten at night. a thursday evening, before the weekend crowds; walk the river afterwards.", "de": "hütten und bars am queen's walk, die stände sind bis 22 uhr offen. ein donnerstagabend, vor dem wochenendgedränge; danach am fluss entlang gehen.", "tr": "queen's walk boyunca kulübeler ve barlar; standlar gece 22'ye kadar açık. hafta sonu kalabalığından önce bir perşembe akşamı; sonra nehir boyunca yürü." },
+      "place": { "en": "southbank centre winter market", "de": "southbank centre winter market", "tr": "southbank centre winter market" },
+      "hour": 17, "minute": 0,
+      "why": "Southbank Centre Winter Market listed for 2 Nov 2026 to 3 Jan 2027 by South Bank London, stall hours 11:00 to 22:00 per Time Out and EcoFlow; not checked on the official site, and Visit London still shows the dates as expected."
+    }
+  ]
+}

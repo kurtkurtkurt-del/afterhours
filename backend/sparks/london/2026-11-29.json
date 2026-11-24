@@ -1,0 +1,27 @@
+{
+  "city": "london",
+  "day": "2026-11-29",
+  "sparks": [
+    {
+      "kind": "flea",
+      "title": {
+        "en": "sunday upmarket at the old truman brewery.",
+        "de": "sunday upmarket im old truman brewery.",
+        "tr": "old truman brewery'de sunday upmarket."
+      },
+      "line": {
+        "en": "street food and a retail section, open 10:00 to 18:00 on sundays. a late-morning start from brick lane, then lunch under the arches.",
+        "de": "streetfood und ein verkaufsbereich, sonntags 10 bis 18 uhr offen. ein später vormittag ab der brick lane, dann mittagessen unter den bögen.",
+        "tr": "sokak yemekleri ve bir satış bölümü, pazar günleri 10:00 ile 18:00 arası açık. brick lane'den öğlene doğru başla, sonra kemerlerde öğle yemeği ye."
+      },
+      "place": {
+        "en": "truman brewery",
+        "de": "truman brewery",
+        "tr": "truman brewery"
+      },
+      "hour": 11,
+      "minute": 0,
+      "why": "Sunday Upmarket at the Old Truman Brewery, Brick Lane, Sunday 10:00 to 18:00 per Visit London and Tripomatic; not checked on the venue site for 29 Nov."
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "city": "london",
+  "day": "2026-11-25",
+  "sparks": [
+    {
+      "kind": "skate",
+      "title": { "en": "skate at somerset house, evening session.", "de": "eislaufen im somerset house, abendsession.", "tr": "somerset house'ta pist, akşam seansı." },
+      "line": { "en": "the rink in the central courtyard runs until 10 january, with late sessions and djs. book a 45-minute slot; a wednesday evening is quieter than the weekend.", "de": "die bahn im zentralen innenhof läuft bis 10. januar, mit späten sessions und djs. ein 45-minütiges zeitfenster buchen; ein mittwochabend ist ruhiger als das wochenende.", "tr": "merkez avludaki pist 10 ocak'a kadar açık, geç seanslar ve djler var. 45 dakikalık bir zaman seç; çarşamba akşamı hafta sonundan sakin." },
+      "place": { "en": "somerset house", "de": "somerset house", "tr": "somerset house" },
+      "hour": 18, "minute": 0,
+      "why": "Skate at Somerset House runs 11 Nov 2026 to 10 Jan 2027, with late DJ sessions per somersethouse.org.uk; the 2026 evening session times were not confirmed, so 18:00 is a suggested start."
+    }
+  ]
+}
