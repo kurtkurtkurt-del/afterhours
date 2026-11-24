@@ -1,0 +1,22 @@
+{
+  "city": "glasgow",
+  "day": "2026-11-28",
+  "sparks": [
+    {
+      "kind": "football",
+      "title": { "en": "rangers – falkirk at ibrox.", "de": "rangers – falkirk im ibrox.", "tr": "rangers – falkirk, ibrox'ta." },
+      "line": { "en": "scottish premiership, gameweek 15, kick-off 15:00 at ibrox. the ibrox subway station is right by the stadium; allow time for the crowds.", "de": "scottish premiership, spieltag 15, anpfiff 15:00 im ibrox. die u-bahn-station ibrox liegt direkt am stadion; zeit für die menge einplanen.", "tr": "scottish premiership, 15. hafta, başlama 15:00, ibrox'ta. ibrox metro istasyonu stadyumun hemen yanında; kalabalık için zaman ayır." },
+      "place": { "en": "ibrox stadium", "de": "ibrox stadium", "tr": "ibrox stadium" },
+      "hour": 15, "minute": 0,
+      "why": "Rangers v Falkirk, Scottish Premiership gameweek 15, Sat 28 Nov at Ibrox; 15:00 kick-off per Football Web Pages (Sports Mole lists the same fixture without a time), so check the SPFL or Rangers site before going."
+    },
+    {
+      "kind": "flea",
+      "title": { "en": "the barras, saturday market.", "de": "der barras, samstagsmarkt.", "tr": "barras, cumartesi pazarı." },
+      "line": { "en": "glasgow's saturday market on gallowgate, open 10:00 to 16:00. vintage, records, old things; go before lunch for the best stalls.", "de": "glasgows samstagsmarkt an der gallowgate, 10 bis 16 uhr. vintage, schallplatten, trödel; geh vor dem mittag für die besten stände.", "tr": "glasgow'un cumartesi pazarı, gallowgate'te; 10:00 ile 16:00 arası açık. vintage, plak, eski eşya; en iyi stantlar için öğleden önce git." },
+      "place": { "en": "the barras, gallowgate", "de": "the barras, gallowgate", "tr": "the barras, gallowgate" },
+      "hour": 10, "minute": 0,
+      "why": "The Barras is a regular Saturday market on Gallowgate, 10:00 to 16:00, per the Barrowland market's own site as cited for the 7 November file; not re-checked for this date."
+    }
+  ]
+}
