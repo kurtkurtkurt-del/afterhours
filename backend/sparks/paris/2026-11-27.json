@@ -1,0 +1,14 @@
+{
+  "city": "paris",
+  "day": "2026-11-27",
+  "sparks": [
+    {
+      "kind": "jazz",
+      "title": { "en": "jazz at the jass club, srdjan ivanovic quartet.", "de": "jazz im jass club, srdjan ivanovic quartett.", "tr": "jass club'da caz, srdjan ivanovic kuartet." },
+      "line": { "en": "the srdjan ivanovic blazin' quartet plays cosmogonie at the jass club, first set at 19:30 and a second at 21:30. acoustic and electronic music mixed; come early for a table.", "de": "das srdjan ivanovic blazin' quartett spielt cosmogonie im jass club, erstes set um 19:30, zweites um 21:30. akustik und elektronik gemischt; früh kommen für einen tisch.", "tr": "srdjan ivanovic blazin' kuartet, jass club'da cosmogonie çalıyor; ilk set 19:30, ikinci set 21:30. akustik ve elektronik bir arada; masa için erken gel." },
+      "place": { "en": "jass club paris", "de": "jass club paris", "tr": "jass club paris" },
+      "hour": 19, "minute": 30,
+      "why": "Srdjan Ivanovic Blazin' Quartet, Cosmogonie, Jass Club Paris, Fri 27 Nov 2026, sets at 19:30 and 21:30 (75.agendaculturel.fr)."
+    }
+  ]
+}

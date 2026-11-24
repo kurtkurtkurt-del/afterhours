@@ -1,0 +1,14 @@
+{
+  "city": "paris",
+  "day": "2026-11-25",
+  "sparks": [
+    {
+      "kind": "football",
+      "title": { "en": "psg against as roma in the champions league.", "de": "psg gegen as rom in der champions league.", "tr": "psg, as roma ile şampiyonlar ligi'nde." },
+      "line": { "en": "champions league matchday 5: psg against as roma at the parc des princes, kick-off 21:00. the tickets we found were resale listings only, so check psg.fr before you plan around it.", "de": "champions league, 5. spieltag: psg gegen as rom im parc des princes, anpfiff 21:00. die karten, die wir fanden, waren nur im zweitmarkt; vor der planung auf psg.fr prüfen.", "tr": "şampiyonlar ligi 5. hafta: psg, as roma ile parc des princes'te karşılaşıyor, başlama 21:00. bulduğumuz biletler yalnızca ikinci el ilanlardı; plan yapmadan önce psg.fr'ye bak." },
+      "place": { "en": "parc des princes", "de": "parc des princes", "tr": "parc des princes" },
+      "hour": 19, "minute": 0,
+      "why": "PSG vs AS Roma, Champions League matchday 5, Wed 25 Nov 2026 at 21:00, Parc des Princes (sortiraparis.com); only resale ticket listings were found, official availability not confirmed."
+    }
+  ]
+}

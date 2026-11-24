@@ -1,0 +1,14 @@
+{
+  "city": "paris",
+  "day": "2026-11-29",
+  "sparks": [
+    {
+      "kind": "flea",
+      "title": { "en": "saint-ouen flea market, sunday morning.", "de": "flohmarkt saint-ouen, sonntagvormittag.", "tr": "saint-ouen pire pazarı, pazar sabahı." },
+      "line": { "en": "the puces de saint-ouen sell antiques and vintage on sundays, roughly 10:00 to 18:00; go in the morning before the aisles fill up.", "de": "die puces de saint-ouen verkaufen sonntags antiquitäten und vintage, etwa 10:00 bis 18:00; morgens hingehen, bevor die gänge voll sind.", "tr": "puces de saint-ouen pazar günleri antika ve vintage satıyor, kabaca 10:00 ile 18:00 arası; gangalar dolmadan sabah git." },
+      "place": { "en": "marché aux puces de saint-ouen", "de": "marché aux puces de saint-ouen", "tr": "marché aux puces de saint-ouen" },
+      "hour": 10, "minute": 0,
+      "why": "Marché aux puces de Saint-Ouen, open Sundays, general hours 10:00 to 18:00 (offi.fr, visitparisregion); no November-specific hours confirmed."
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "city": "paris",
+  "day": "2026-11-26",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "christmas market opens at notre-dame, square viviani.", "de": "weihnachtsmarkt an notre-dame eröffnet, square viviani.", "tr": "notre-dame'da noel pazarı açılıyor, square viviani." },
+      "line": { "en": "the marché de noël notre-dame opens on thursday in the square viviani by the cathedral: about 40 makers, free entry, 10:00 to 20:00, until 21:00 on friday to sunday. it runs to 27 december.", "de": "der weihnachtsmarkt notre-dame öffnet am donnerstag am square viviani neben der kathedrale: 40 aussteller, eintritt frei, 10:00 bis 20:00, freitag bis sonntag bis 21:00. er läuft bis 27. dezember.", "tr": "notre-dame'ın yanındaki square viviani'de noel pazarı perşembe günü açılıyor: yaklaşık 40 zanaatkâr, giriş ücretsiz, 10:00 ile 20:00 arası, cuma ile pazar 21:00'e kadar. 27 aralık'a kadar açık." },
+      "place": { "en": "square rené viviani", "de": "square rené viviani", "tr": "square rené viviani" },
+      "hour": 17, "minute": 0,
+      "why": "Marché de Noël Notre-Dame, 26 Nov to 27 Dec 2026, Square René Viviani, 10:00 to 20:00, free (75.agendaculturel.fr, parisselectbook.com)."
+    }
+  ]
+}
