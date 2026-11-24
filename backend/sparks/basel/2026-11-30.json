@@ -1,0 +1,27 @@
+{
+  "city": "basel",
+  "day": "2026-11-30",
+  "sparks": [
+    {
+      "kind": "skate",
+      "title": {
+        "en": "ice skating at margarethen, after work.",
+        "de": "schlittschuhlaufen im margarethen, nach der arbeit.",
+        "tr": "margarethen'da buz pateni, iş çıkışı."
+      },
+      "line": {
+        "en": "the margarethen rink is open monday 10:00 to 22:00 in the winter season, running since 31 october. the eis-disco season starts saturday 28 november; a weeknight is quieter.",
+        "de": "die kunsteisbahn margarethen ist montags 10 bis 22 uhr offen, seit 31. oktober in der wintersaison. die eis-disco-saison beginnt am 28. november; unter der woche ist es ruhiger.",
+        "tr": "margarethen buz pisti pazartesi 10:00 ile 22:00 arası açık; kış sezonu 31 ekim'den beri sürüyor. eis-disco sezonu 28 kasım'da başlıyor; hafta içi daha sakin."
+      },
+      "place": {
+        "en": "kunsteisbahn margarethen",
+        "de": "kunsteisbahn margarethen",
+        "tr": "kunsteisbahn margarethen"
+      },
+      "hour": 18,
+      "minute": 0,
+      "why": "Kunsteisbahn Margarethen regular hours Mon 10:00-22:00 in the winter season from 31 Oct; Eis-Disco season from 28 Nov (bs.ch ice rink media releases)."
+    }
+  ]
+}
