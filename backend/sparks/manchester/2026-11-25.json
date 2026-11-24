@@ -1,0 +1,14 @@
+{
+  "city": "manchester",
+  "day": "2026-11-25",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "christmas markets are open on albert square.", "de": "die weihnachtsmärkte sind am albert square offen.", "tr": "noel pazarları albert square'de açık." },
+      "line": { "en": "the christmas markets run on albert square until early january. go in the late afternoon, before dark and the evening crowd.", "de": "die weihnachtsmärkte laufen am albert square bis anfang januar. am späten nachmittag hingehen, bevor es dunkel wird und der abendtrubel kommt.", "tr": "noel pazarları ocak başına kadar albert square'de sürüyor. öğleden sonra, hava kararmadan ve akşam kalabalığından önce gidin." },
+      "place": { "en": "albert square", "de": "albert square", "tr": "albert square" },
+      "hour": 16, "minute": 0,
+      "why": "Manchester Christmas Markets opened 6 Nov 2026, with Albert Square listed to 3 Jan 2027 (Visit Manchester; Melia guide). Stall hours for this week were not confirmed, so the time is only a suggested start."
+    }
+  ]
+}
