@@ -1,0 +1,14 @@
+{
+  "city": "birmingham",
+  "day": "2026-11-27",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "christmas market in victoria square.", "de": "weihnachtsmarkt auf dem victoria square.", "tr": "victoria square'de noel pazarı." },
+      "line": { "en": "the frankfurt christmas market is open 11:00 to 21:30 on friday, stalls from victoria square down new street. go after work.", "de": "der frankfurter weihnachtsmarkt in birmingham hat freitag von 11:00 bis 21:30 geöffnet, die stände reichen vom victoria square die new street hinunter. nach der arbeit hingehen.", "tr": "birmingham frankfurt noel pazarı cuma günü 11:00 ile 21:30 arası açık, tezgahlar victoria square'den new street boyunca uzanıyor. iş çıkışı uğra." },
+      "place": { "en": "victoria square", "de": "victoria square", "tr": "victoria square" },
+      "hour": 17, "minute": 0,
+      "why": "Birmingham Frankfurt Christmas Market runs 5 Nov to 24 Dec 2026; Friday hours 11:00 to 21:30 per the official BFCM 'Getting Here' page (thebfcm.co.uk) and the Express & Star market guide."
+    }
+  ]
+}
