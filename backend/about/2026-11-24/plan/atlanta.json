@@ -1,0 +1,26 @@
+{
+ "city": "atlanta",
+ "day": "2026-11-24",
+ "nights": [
+  {
+   "id": "42f4c67b-066d-4dfb-b664-f4bd62583443",
+   "slug": "yuki-chiba-18a99e65",
+   "title": "Yuki Chiba",
+   "act": "Yuki Chiba",
+   "name": "Yuki Chiba",
+   "description": "Japanese rapper and singer (born 1990)",
+   "source_url": "https://en.wikipedia.org/wiki/Yuki_Chiba",
+   "extract": "Yuki Chiba , formerly known by his stage name Kohh, is a Japanese rapper, singer, and songwriter."
+  },
+  {
+   "id": "22eaf409-f504-42be-8ab7-69cbdc213470",
+   "slug": "midwxst-ecb9debd",
+   "title": "midwxst",
+   "act": "midwxst",
+   "name": "Midwxst",
+   "description": "American rapper and singer from Indiana (born 2003)",
+   "source_url": "https://en.wikipedia.org/wiki/Midwxst",
+   "extract": "Edgar Nathaniel Sarratt III, known professionally as Midwxst, is an American musician. Initially presenting a digicore sound, he began releasing music as $uspect in 2018 and released several extended plays between 2020 and 2022, including Back In Action (2021), Summer03 (2021), Better Luck Next Time. (2022), and Back In Action 3.0 (2022). Midwxst's debut studio album, E3, was released in September 2023. On Midwxst's musical style, sources mostly defined it as hyperpop, but he makes rap music as well. His second album, Archangel, was released in June 2025. His third album, Solitude In Silence was released in July 2026."
+  }
+ ]
+}

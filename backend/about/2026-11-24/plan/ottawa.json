@@ -1,0 +1,16 @@
+{
+ "city": "ottawa",
+ "day": "2026-11-24",
+ "nights": [
+  {
+   "id": "ae45a128-f66a-43a3-bc33-ed0b163323a4",
+   "slug": "luca-fogale-7a3bdce4",
+   "title": "Luca Fogale",
+   "act": "Luca Fogale",
+   "name": "Luca Fogale",
+   "description": "Canadian pop singer",
+   "source_url": "https://en.wikipedia.org/wiki/Luca_Fogale",
+   "extract": "Luca Fogale is a Canadian pop singer-songwriter from Burnaby, British Columbia. He is most noted for his 2020 album Nothing Is Lost, which was a Juno Award nominee for Adult Contemporary Album of the Year at the Juno Awards of 2022."
+  }
+ ]
+}

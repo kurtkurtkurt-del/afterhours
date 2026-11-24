@@ -1,0 +1,46 @@
+{
+ "city": "manchester",
+ "day": "2026-11-24",
+ "nights": [
+  {
+   "id": "ca468f4d-cae6-4ab9-97c9-84546ffd2889",
+   "slug": "swae-lee-5e095f1f",
+   "title": "Swae Lee",
+   "act": "Swae Lee",
+   "name": "Swae Lee",
+   "description": "American rapper and singer (born 1993)",
+   "source_url": "https://en.wikipedia.org/wiki/Swae_Lee",
+   "extract": "Khalif Malik Ibn Shaman Brown, known professionally as Swae Lee, is an American rapper and singer from Inglewood, California. Known for his wide-ranged, reverb-heavy vocals and genre-blending, Lee is one half of the Mississippi-based hip-hop duo Rae Sremmurd, which he formed in 2010 with his older brother Slim Jxmmi."
+  },
+  {
+   "id": "7480d599-46b5-4214-a124-61af9e728a60",
+   "slug": "lil-peep-34e5447a",
+   "title": "Lil Peep",
+   "act": "Lil Peep",
+   "name": "Lil Peep",
+   "description": "American rapper (1996–2017)",
+   "source_url": "https://en.wikipedia.org/wiki/Lil_Peep",
+   "extract": "Gustav Elijah Åhr, known professionally as Lil Peep, was an American rapper and singer-songwriter. He was a member of the hip-hop collective GothBoiClique, and is credited as being a leading figure of the emo rap sub-genre and an inspiration in alternative youth subcultures."
+  },
+  {
+   "id": "47dcda70-e0f1-4a77-a57b-315f3437371c",
+   "slug": "the-damned-final-damnation-50-a8ad36ef",
+   "title": "The Damned - Final Damnation 50",
+   "act": "The Damned",
+   "name": "The Damned",
+   "description": "English rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Damned_(band)",
+   "extract": "The Damned are an English rock band formed in London in 1976 by lead vocalist Dave Vanian, guitarist Brian James, bassist Captain Sensible and drummer Rat Scabies. They were the first punk band from the United Kingdom to release a single, \"New Rose\" (1976), release a studio album, Damned Damned Damned (1977) and tour the United States. The band briefly dissolved after their second album, Music for Pleasure (1977), was critically dismissed. They re-formed without Brian James and released Machine Gun Etiquette (1979)."
+  },
+  {
+   "id": "fbb381bd-59fb-405b-ad44-966637b88045",
+   "slug": "boy-harsher-the-heartbreak-tour-2466da68",
+   "title": "Boy Harsher - The Heartbreak Tour",
+   "act": "Boy Harsher",
+   "name": "Boy Harsher",
+   "description": "American electronic music band",
+   "source_url": "https://en.wikipedia.org/wiki/Boy_Harsher",
+   "extract": "Boy Harsher is an American electronic music group formed in 2013 in Savannah, Georgia. Currently based in Northampton, Massachusetts, the band consists of vocalist Jae Matthews and producer Augustus Muller. The band has amassed a cult following since their formation, and their song \"Pain\" has become an underground hit. Matthews and Muller own and run the label Nude Club, which is exclusively devoted to Boy Harsher and related artists."
+  }
+ ]
+}

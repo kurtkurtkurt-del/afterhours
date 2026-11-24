@@ -1,0 +1,56 @@
+{
+ "city": "toronto",
+ "day": "2026-11-24",
+ "nights": [
+  {
+   "id": "bacc0196-eef2-4566-952f-9b4a027f383f",
+   "slug": "54-40-6792935e",
+   "title": "54.40",
+   "act": "54.40",
+   "name": "54-40",
+   "description": "Canadian rock band",
+   "source_url": "https://en.wikipedia.org/wiki/54-40_(band)",
+   "extract": "54-40 is a Canadian rock band from Tsawwassen, Delta, British Columbia. The band takes its name from the slogan \"54-40 or Fight!\", coined to express the unsuccessful expansionist agenda of James K. Polk's presidency, which was intent upon controlling a contested U.S.-Canada border area in the Oregon boundary dispute. 54-40 has had a successful career, with four of their albums being certified platinum in Canada. The band has been nominated for eight Juno Awards. Between 1996 and 2016, 54-40 were among the top 150 best-selling Canadian artists in Canada and among the top 50 best-selling Canadian bands in Canada."
+  },
+  {
+   "id": "feef329d-603f-4e2b-8855-9be49938ae32",
+   "slug": "lilyisthatyou-the-flowers-have-feelings-tour-f5235c0f",
+   "title": "Lilyisthatyou - The Flowers Have Feelings Tour",
+   "act": "Lilyisthatyou",
+   "name": "Lilyisthatyou",
+   "description": "Canadian pop musician",
+   "source_url": "https://en.wikipedia.org/wiki/Lilyisthatyou",
+   "extract": "Lillian Davies, known professionally as Lilyisthatyou is a singer songwriter from Toronto, Canada. She best known for her breakthrough debut single \"FMRN\" in 2022, which went viral on TikTok. She released her debut EP, The Character in 2022 and has since went on to release 5 more EPs with From The Garden I Grew being her most recent release as of August 2026."
+  },
+  {
+   "id": "09807f4a-f733-475c-88cb-c108655990af",
+   "slug": "josh-baker-20749b85",
+   "title": "Josh Baker",
+   "act": "Josh Baker",
+   "name": "Josh Baker",
+   "description": "British DJ and producer",
+   "source_url": "https://en.wikipedia.org/wiki/Josh_Baker_(musician)",
+   "extract": "Josh Baker is a British musician, DJ and record producer from Manchester, England. In 2024, he was named Breakthrough Producer at the DJ Mag Best of British awards, and several of his singles have charted on the UK Singles Chart. He is a co-founder of the record label and events series You&Me and of the Hide & Seek festival, and the founder of the electronic music-production education platform Syntho."
+  },
+  {
+   "id": "02c14672-567e-435c-882b-a069f204e8f7",
+   "slug": "moneen-2067c605",
+   "title": "Moneen",
+   "act": "Moneen",
+   "name": "Moneen",
+   "description": "Canadian indie rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Moneen",
+   "extract": "Moneen is a Canadian indie rock band from Brampton, Ontario."
+  },
+  {
+   "id": "3ffe1e22-4e15-4985-ba5d-820faa3672d9",
+   "slug": "a-boogie-wit-da-hoodie-10-years-of-artist-76bf90fc",
+   "title": "A BOOGIE WIT DA HOODIE: 10 YEARS OF ARTIST",
+   "act": "A BOOGIE WIT DA HOODIE",
+   "name": "A Boogie wit da Hoodie",
+   "description": "American rapper (born 1995)",
+   "source_url": "https://en.wikipedia.org/wiki/A_Boogie_wit_da_Hoodie",
+   "extract": "Artist Julius Dubose, known professionally as A Boogie wit da Hoodie or simply A Boogie, is an American rapper. He signed with Atlantic Records to release his debut studio album, The Bigger Artist (2017). Led by the Billboard Hot 100-top 20 single \"Drowning\", the album was met with critical praise and peaked at number four on the Billboard 200."
+  }
+ ]
+}

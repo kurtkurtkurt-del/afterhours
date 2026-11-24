@@ -1,0 +1,26 @@
+{
+ "city": "nashville",
+ "day": "2026-11-24",
+ "nights": [
+  {
+   "id": "5873783c-ae8d-407e-a74b-c80434508f4e",
+   "slug": "catch-your-breath-not-broken-enough-tour-cc460796",
+   "title": "Catch Your Breath - Not Broken Enough Tour",
+   "act": "Catch Your Breath",
+   "name": "Catch Your Breath",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Catch_Your_Breath_(band)",
+   "extract": "Catch Your Breath is an American rock band based in Austin, Texas."
+  },
+  {
+   "id": "762958f1-7152-447b-ae3a-babc0250d104",
+   "slug": "victoria-monet-frequency-of-love-tour-7bb38c19",
+   "title": "Victoria Monét: Frequency Of Love Tour",
+   "act": "Victoria Monét",
+   "name": "Victoria Monét",
+   "description": "American singer-songwriter (born 1989)",
+   "source_url": "https://en.wikipedia.org/wiki/Victoria_Mon%C3%A9t",
+   "extract": "Victoria Monét McCants is an American singer-songwriter. First gaining recognition for her songwriting work, Monét pursued a recording career with the release of a series of extended plays (EPs); her fifth, Jaguar (2020) was met with critical acclaim. Her debut studio album, Jaguar II (2023), became her commercial breakthrough and was supported by the hit single \"On My Mama\", which peaked within the top 40 of the Billboard Hot 100 and earned a Grammy Award nomination for Record of the Year. The nomination was among seven she received at the 66th Annual Grammy Awards, from which she won Best New Artist, Best R&B Album and Best Engineered Album, Non-Classical."
+  }
+ ]
+}

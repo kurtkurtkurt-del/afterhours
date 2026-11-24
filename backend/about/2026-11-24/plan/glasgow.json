@@ -1,0 +1,36 @@
+{
+ "city": "glasgow",
+ "day": "2026-11-24",
+ "nights": [
+  {
+   "id": "9053be3a-72b2-4399-b586-19b965b35582",
+   "slug": "the-almighty-05b11d77",
+   "title": "The Almighty",
+   "act": "The Almighty",
+   "name": "The Almighty",
+   "description": "Scottish rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Almighty_(band)",
+   "extract": "The Almighty are a Scottish hard rock/heavy metal band from Glasgow formed in 1988. After disbanding for the first time in 1996, they were reunited from 1999 to 2002, again from 2006 to 2009 and reformed for the third time in 2023. Three of the founding members, Ricky Warwick, Stump Monroe and Floyd London were friends who met at school. Although the band members musical roots were in punk, the Almighty adopted a more heavy metal/hard rock oriented musical direction in their early years. Later albums saw the band's musical style move towards the band members' original punk roots. They have released seven studio albums, two anthologies and three live albums."
+  },
+  {
+   "id": "22fa99ca-158a-4611-b5d8-f19471521463",
+   "slug": "tinie-tempah-ea6adcad",
+   "title": "Tinie Tempah",
+   "act": "Tinie Tempah",
+   "name": "Tinie Tempah",
+   "description": "British rapper and singer (born 1988)",
+   "source_url": "https://en.wikipedia.org/wiki/Tinie_Tempah",
+   "extract": "Patrick Chukwuemeka Okogwu, better known by his stage name Tinie Tempah, is an English rapper, singer and television presenter. Born and raised in London, he created his own entertainment company Disturbing London in 2006, alongside Dumi Oburota. After signing with Parlophone in 2009 and releasing several mixtapes, he rose to fame with the UK number-one singles \"Pass Out\" and \"Written in the Stars\" in 2010."
+  },
+  {
+   "id": "42b9c107-7f6f-4924-aa86-21d239b821a8",
+   "slug": "evergrey-86b84e31",
+   "title": "Evergrey",
+   "act": "Evergrey",
+   "name": "Evergrey",
+   "description": "Swedish progressive metal band",
+   "source_url": "https://en.wikipedia.org/wiki/Evergrey",
+   "extract": "Evergrey is a Swedish progressive metal band from Gothenburg, formed in 1993 by guitarist and vocalist Tom S. Englund and guitarist Dan Bronell. The band is known for combining progressive metal and power metal with dark lyrical themes and imagery."
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "city": "chicago",
+ "day": "2026-11-24",
+ "nights": [
+  {
+   "id": "fe3ac68d-5f33-44bc-b780-28018f1167ff",
+   "slug": "bonobo-ages-18-0a4b1126",
+   "title": "Bonobo - Ages 18+",
+   "act": "Bonobo",
+   "name": "Bonobo",
+   "description": "English musician, producer, and DJ (born 1976)",
+   "source_url": "https://en.wikipedia.org/wiki/Bonobo_(musician)",
+   "extract": "Simon Charles Green, known by his stage name Bonobo, is an English musician, producer, and DJ based in Los Angeles. He debuted with a trip hop aesthetic and has since explored more upbeat approaches as well as jazz and world music influences. His electronic sound incorporates the use of organic instrumentation and is recreated by a full band in live performances."
+  },
+  {
+   "id": "f4e28293-1024-4f45-9ccd-e2231c16bc49",
+   "slug": "turnover-down-on-earth-tour-ffd9d1f6",
+   "title": "Turnover - Down On Earth Tour",
+   "act": "Turnover",
+   "name": "Turnover",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Turnover_(band)",
+   "extract": "Turnover is an American rock band from Virginia Beach, Virginia. The band were formed in 2009 by brothers Austin and Casey (drums) Getz alongside longtime friend Danny Dempsey (bass); the three have gone on to oversee every iteration of the band to date. The three are currently joined in the band by lead guitarist Nick Rayfield, who began touring with the band in 2017 and was later officially inducted as a full-time member in 2022. Turnover have released six studio albums and four EPs across their career. Their most recent album, Down on Earth, was released on May 29th 2026."
+  }
+ ]
+}

@@ -1,0 +1,36 @@
+{
+ "city": "new-york",
+ "day": "2026-11-24",
+ "nights": [
+  {
+   "id": "97392e9e-1ec4-42b5-99f7-0e84e5e11ba2",
+   "slug": "sombr-you-are-the-reason-tour-47e654e0",
+   "title": "SOMBR - You Are The Reason Tour",
+   "act": "SOMBR",
+   "name": "Sombr",
+   "description": "American singer and songwriter (born 2005)",
+   "source_url": "https://en.wikipedia.org/wiki/Sombr",
+   "extract": "Shane Michael Boose, known professionally as Sombr, is an American singer-songwriter and musician."
+  },
+  {
+   "id": "03ebbbe5-4e63-4053-840b-712939f997ff",
+   "slug": "arlo-mckinley-110638d8",
+   "title": "Arlo McKinley",
+   "act": "Arlo McKinley",
+   "name": "Arlo McKinley",
+   "description": "American country musician",
+   "source_url": "https://en.wikipedia.org/wiki/Arlo_McKinley",
+   "extract": "Arlo McKinley is an American country singer and singer/songwriter. He has released three albums, the most recent release being This Mess We're In on John Prine’s record label Oh Boy Records, released July 15, 2022."
+  },
+  {
+   "id": "34672b28-e90d-46dc-a42b-2dafd7a10288",
+   "slug": "alyssa-grace-dadb6599",
+   "title": "Alyssa Grace",
+   "act": "Alyssa Grace",
+   "name": "Alyssa Grace",
+   "description": "American singer (born 2007)",
+   "source_url": "https://en.wikipedia.org/wiki/Alyssa_Grace",
+   "extract": "Alyssa Grace Proffitt is an American singer-songwriter based in California. She made her recording debut in 2026 with \"Dog with a Bone\" and gained wider recognition through the singles \"Picking Petals\" and \"Bloodstream\"."
+  }
+ ]
+}

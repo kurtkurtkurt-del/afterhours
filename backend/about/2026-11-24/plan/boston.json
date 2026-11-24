@@ -1,0 +1,36 @@
+{
+ "city": "boston",
+ "day": "2026-11-24",
+ "nights": [
+  {
+   "id": "60c7c26d-040d-40e3-b153-675ab2c12f56",
+   "slug": "tyla-the-a-pop-world-tour-e99d9f68",
+   "title": "TYLA - THE A*POP WORLD TOUR",
+   "act": "TYLA",
+   "name": "Tyla",
+   "description": "South African singer-songwriter (born 2002)",
+   "source_url": "https://en.wikipedia.org/wiki/Tyla",
+   "extract": "Tyla Laura Seethal known mononymously as Tyla, is a South African singer-songwriter. Dubbed the \"Queen of Popiano\", her musical style is characterised by a fusion of pop and amapiano."
+  },
+  {
+   "id": "65e969b9-8d18-4220-ba12-ddfd60ab99cf",
+   "slug": "josh-fawaz-f826507e",
+   "title": "Josh Fawaz",
+   "act": "Josh Fawaz",
+   "name": "Josh Fawaz",
+   "description": "Australian DJ and producer",
+   "source_url": "https://en.wikipedia.org/wiki/Josh_Fawaz",
+   "extract": "Josh Fawaz is an Australian music producer and disc jockey."
+  },
+  {
+   "id": "9f174322-792c-4e13-b199-298d57227da2",
+   "slug": "nghtmre-the-nghtmre-before-xmas-tour-21-175388d8",
+   "title": "NGHTMRE: The NGHTMRE Before Xmas Tour ( 21+ )",
+   "act": "NGHTMRE",
+   "name": "Nghtmre",
+   "description": "American DJ and producer (born 1990)",
+   "source_url": "https://en.wikipedia.org/wiki/Nghtmre",
+   "extract": "Tyler Marenyi, better known by his stage name Nghtmre, is an American DJ and electronic dance music producer from Raleigh, North Carolina."
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "city": "birmingham",
+ "day": "2026-11-24",
+ "nights": [
+  {
+   "id": "07ff004a-d472-4527-b7b8-292b9f0ad722",
+   "slug": "westside-cowboy-4db72f48",
+   "title": "Westside Cowboy",
+   "act": "Westside Cowboy",
+   "name": "Westside Cowboy",
+   "description": "English rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Westside_Cowboy",
+   "extract": "Westside Cowboy are an English rock band formed in Manchester in 2023. The band members are Jimmy Bradbury, Reuben Haycocks, Aoife Anson O'Connell and Paddy Murphy."
+  }
+ ]
+}

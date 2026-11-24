@@ -1,0 +1,36 @@
+{
+ "city": "amsterdam",
+ "day": "2026-11-24",
+ "nights": [
+  {
+   "id": "53337189-d25c-452d-8a93-ba23b69a8723",
+   "slug": "the-script-wine-and-dine-ticket-not-included-f83e228a",
+   "title": "The Script | Wine & Dine (TICKET NOT INCLUDED)",
+   "act": "The Script",
+   "name": "The Script",
+   "description": "Irish rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Script",
+   "extract": "The Script are an Irish pop rock band formed in 2001 in Dublin by lead vocalist and keyboardist Danny O'Donoghue, lead guitarist Mark Sheehan and drummer Glen Power. The band currently consists of O'Donoghue, Power, Benjamin Sargeant and Ben Weaver (guitar). Sheehan was a member of the band up until his death in 2023. The band moved to London after signing to Sony Label Group imprint Phonogenic and released their first album The Script in August 2008, preceded by the debut single \"We Cry\" as well as other singles such as \"The Man Who Can't Be Moved\", \"Breakeven\" and \"Before the Worst\". The album peaked at number one in both Ireland and the UK."
+  },
+  {
+   "id": "810b4532-04b7-4f1e-89a0-7b55c477a08f",
+   "slug": "noisia-2b3faadb",
+   "title": "NOISIA",
+   "act": "NOISIA",
+   "name": "Noisia",
+   "description": "Dutch electronic music band",
+   "source_url": "https://en.wikipedia.org/wiki/Noisia",
+   "extract": "Noisia is a Dutch electronic music trio from Groningen. The trio is composed of Nik Roos, Martijn van Sonderen, and Thijs de Vlieger. Their music spans several genres, including drum and bass, dubstep, breakbeat, and house. They released music on labels such as Skrillex's Owsla, deadmau5's mau5trap, and Jay-Z's Roc Nation. Noisia collaborated with Foreign Beggars on the supergroup project I Am Legion, releasing a self-titled album on 2 September 2013. They also worked under the pseudonym Nightwatch, contributing to projects with artists like Alexis Jordan, Hadouken!, Wiley, and Wretch 32. Their production work on Hadouken!'s album, For the Masses, resulted in a number 19 placement on the UK Albums Chart."
+  },
+  {
+   "id": "c08f883d-a7d4-40c7-a14f-e469d45054f7",
+   "slug": "artemas-663463e4",
+   "title": "Artemas",
+   "act": "Artemas",
+   "name": "Artemas",
+   "description": "English-Cypriot singer-songwriter (born 1999)",
+   "source_url": "https://en.wikipedia.org/wiki/Artemas_(musician)",
+   "extract": "Artemas Diamandis, known mononymously as Artemas, is an English singer, songwriter and record producer. He is best known for his singles \"If U Think I'm Pretty\" and the viral \"I Like the Way You Kiss Me\". He is signed to the record label 10K Projects."
+  }
+ ]
+}

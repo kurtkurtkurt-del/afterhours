@@ -1,0 +1,26 @@
+{
+ "city": "denver",
+ "day": "2026-11-24",
+ "nights": [
+  {
+   "id": "ee637c45-b71d-4b49-8912-06b4763bd1a9",
+   "slug": "celtic-woman-0abd3d39",
+   "title": "Celtic Woman",
+   "act": "Celtic Woman",
+   "name": "Celtic Woman",
+   "description": "All-female Irish musical ensemble",
+   "source_url": "https://en.wikipedia.org/wiki/Celtic_Woman",
+   "extract": "Celtic Woman is an all-female Irish musical ensemble, formed in 2004 for a one-time event held in Dublin, Ireland. They started touring internationally as a group after multiple airings on PBS helped to boost the group's popularity."
+  },
+  {
+   "id": "5f91b83e-cd2d-4158-829b-b1d70f2f3038",
+   "slug": "gracie-abrams-the-look-at-my-life-tour-presented-bc219c2f",
+   "title": "Gracie Abrams: The Look at My Life Tour presented by Capital One",
+   "act": "Gracie Abrams",
+   "name": "Gracie Abrams",
+   "description": "American singer and songwriter (born 1999)",
+   "source_url": "https://en.wikipedia.org/wiki/Gracie_Abrams",
+   "extract": "Gracie Madigan Abrams is an American singer and songwriter. She signed with Interscope Records in 2019 and gained recognition after releasing her debut extended play, Minor (2020), and its follow-up, This Is What It Feels Like (2021), alongside various singles including \"I Miss You, I'm Sorry\". Abrams released her debut album, Good Riddance (2023), and was nominated for the Grammy Award for Best New Artist. She also performed as an opening act on Olivia Rodrigo's Sour Tour (2022) and Taylor Swift's Eras Tour (2023–2024)."
+  }
+ ]
+}

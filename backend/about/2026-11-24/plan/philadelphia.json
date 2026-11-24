@@ -1,0 +1,16 @@
+{
+ "city": "philadelphia",
+ "day": "2026-11-24",
+ "nights": [
+  {
+   "id": "bc1adb22-c53e-4c3c-b3f0-74bbb1683faa",
+   "slug": "carbon-leaf-8250c797",
+   "title": "Carbon Leaf",
+   "act": "Carbon Leaf",
+   "name": "Carbon Leaf",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Carbon_Leaf",
+   "extract": "Carbon Leaf is an American musical quintet from Richmond, Virginia, known for their alt-country, Celtic and folk-infused indie rock. Though some of the band members have changed through the years, Carbon Leaf has been consistently creating and performing music since the early 1990s. The band currently consists of founding members Barry Privett, Carter Gravatt, and Terry Clark, as well as Jon Markel and Jesse Humphrey. Carbon Leaf is best known for the song \"Life Less Ordinary\", which debuted in 2004 and reached number five on Billboard's Adult Alternative charts."
+  }
+ ]
+}

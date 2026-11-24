@@ -1,0 +1,26 @@
+{
+ "city": "warszawa",
+ "day": "2026-11-24",
+ "nights": [
+  {
+   "id": "fd109ab2-1398-4adb-9eaa-690352a83914",
+   "slug": "alex-henry-foster-defying-gravity-tour-aabe22f0",
+   "title": "Alex Henry Foster - Defying Gravity Tour",
+   "act": "Alex Henry Foster",
+   "name": "Alex Henry Foster",
+   "description": "Canadian singer-songwriter and musician",
+   "source_url": "https://en.wikipedia.org/wiki/Alex_Henry_Foster",
+   "extract": "Alex Henry Foster is a Canadian artist, singer, musician, writer and activist, best known for being the singer and frontman of the Montreal band Your Favorite Enemies. The band was founded in 2006 and nominated for a Juno Award for their album Between Illness and Migration in 2015. In 2018, Foster announced the release of a first solo project, Windows in the Sky, through Hopeful Tragedy Records and Sony Music / The Orchard. His first solo album reached number 6 on the Billboard Canadian Albums Chart on the second week of its release. Alex Henry Foster was nominated at ADISQ for the first time in 2019 with his first solo effort \"Windows in the Sky\" for Anglophone album of the year."
+  },
+  {
+   "id": "33573862-e756-409a-aea4-dcd62d047377",
+   "slug": "the-ocean-e6233a23",
+   "title": "THE OCEAN",
+   "act": "THE OCEAN",
+   "name": "The Ocean",
+   "description": "German post-metal band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Ocean_(band)",
+   "extract": "The Ocean is a German post-metal band formed in 2001 by German guitarist Robin Staps."
+  }
+ ]
+}

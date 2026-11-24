@@ -1,0 +1,16 @@
+{
+ "city": "montreal",
+ "day": "2026-11-24",
+ "nights": [
+  {
+   "id": "f2ff5c2a-fa6c-4f66-8974-bddc447b0a02",
+   "slug": "magi-merlin-b21d46ab",
+   "title": "Magi Merlin",
+   "act": "Magi Merlin",
+   "name": "Magi Merlin",
+   "description": "Canadian musician and actress",
+   "source_url": "https://en.wikipedia.org/wiki/Magi_Merlin",
+   "extract": "Magi Merlin is a Canadian musician and actress."
+  }
+ ]
+}

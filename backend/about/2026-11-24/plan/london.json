@@ -1,0 +1,46 @@
+{
+ "city": "london",
+ "day": "2026-11-24",
+ "nights": [
+  {
+   "id": "aceaad28-00c3-4ca0-95fa-8b255bfc0585",
+   "slug": "jungle-078fcda1",
+   "title": "Jungle",
+   "act": "Jungle",
+   "name": "Jungle",
+   "description": "English modern soul band",
+   "source_url": "https://en.wikipedia.org/wiki/Jungle_(band)",
+   "extract": "Jungle are a British band formed in early 2013 by London-based producers Josh Lloyd-Watson and Tom McFarland. Jungle have released five studio albums: Jungle (2014), which was shortlisted for the Mercury Prize; For Ever (2018); Loving in Stereo (2021); Volcano (2023); and Sunshine (2026). The first two albums were released through XL Recordings while the latter three via their independent label Caiola Records."
+  },
+  {
+   "id": "9ef538f1-2386-491c-99ae-6ad49310037f",
+   "slug": "president-blood-of-your-empire-united-kingdom-ca-d9ddadd3",
+   "title": "PRESIDENT - Blood of Your Empire: United Kingdom Campaign 2026",
+   "act": "PRESIDENT",
+   "name": "President",
+   "description": "British metalcore band",
+   "source_url": "https://en.wikipedia.org/wiki/President_(band)",
+   "extract": "President are an anonymous English band formed in 2025, who blend metalcore with electronica. The band had released no music and were unknown until they were announced to play at that year's Download Festival, sparking speculation about their identity. Their frontman, the eponymous President, is described by Revolver as \"silver-haired, wearing an eerie, not-quite-lifelike mask etched with deep wrinkles and radiating wax-figure unease\". They released their debut EP, King of Terrors, in 2025. Their debut studio album, Blood of Your Empire, was released on 4 September 2026."
+  },
+  {
+   "id": "180e833d-1d14-4b2f-9698-aac1a701bd23",
+   "slug": "julia-wolf-2a23afd9",
+   "title": "Julia Wolf",
+   "act": "Julia Wolf",
+   "name": "Julia Wolf",
+   "description": "American singer",
+   "source_url": "https://en.wikipedia.org/wiki/Julia_Wolf_(musician)",
+   "extract": "Julia Jade Capello, known professionally as Julia Wolf, is an American singer. Known for her ethereal vocals and self-produced alt-pop sound, she blends elements of indie pop, alternative rock, and R&B. Capello gained early attention on TikTok before releasing her debut EP Girls in Purgatory (2021) and her studio albums Good Thing We Stayed (2023) and Pressure (2025)."
+  },
+  {
+   "id": "8637cc35-28f8-4fe4-9bec-716c48e883e6",
+   "slug": "ibeyi-101604f3",
+   "title": "IBEYI",
+   "act": "IBEYI",
+   "name": "Ibeyi",
+   "description": "French musical duo",
+   "source_url": "https://en.wikipedia.org/wiki/Ibeyi",
+   "extract": "Ibeyi is a French musical duo consisting of twin sisters Lisa-Kaindé Diaz and Naomi Diaz. The duo sings in English, French, Spanish and Yoruba, In Yoruba, Ibeyi (Ìbejì) means \"twins\"."
+  }
+ ]
+}

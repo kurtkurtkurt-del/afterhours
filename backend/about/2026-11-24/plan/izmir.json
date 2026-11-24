@@ -1,0 +1,26 @@
+{
+ "city": "izmir",
+ "day": "2026-11-24",
+ "nights": [
+  {
+   "id": "084b837f-91db-4caf-85b6-79ece19f7321",
+   "slug": "buyuk-ev-ablukada-a55847b4",
+   "title": "Büyük Ev Ablukada",
+   "act": "Büyük Ev Ablukada",
+   "name": "Büyük Ev Ablukada",
+   "description": "Turkish rock band",
+   "source_url": "https://en.wikipedia.org/wiki/B%C3%BCy%C3%BCk_Ev_Ablukada",
+   "extract": "Büyük Ev Ablukada is a Turkish rock band founded in Istanbul in 2008. The band was started by Cem Yılmazer and Bartu Küçükçağlayan After some time the band turned into an electrical version, which is described by Full Faça. Büyük Ev Ablukada became well-known in a very short time with the help of their own songs and special concerts. The band members use aliases instead of their own names and some of the original names of the members are still unknown. They first released a concert record named \"Ay Şuram Ağrıyo\" and an album named \"Olmadı Kaçarız\", and then on 21 December 2012, they released their debut album \"Full Faça,\" which was issued in both CD and vinyl by their own record company, Olmadı Kaçarız."
+  },
+  {
+   "id": "79312833-6a25-43d0-9da3-dd8743fa59f1",
+   "slug": "fatih-erkoc-dfc84f53",
+   "title": "Fatih Erkoç",
+   "act": "Fatih Erkoç",
+   "name": "Fatih Erkoç",
+   "description": "Turkish singer and composer",
+   "source_url": "https://en.wikipedia.org/wiki/Fatih_Erko%C3%A7",
+   "extract": "Mehmet Fatih Erkoç is a Turkish jazz and pop music singer, multi-instrumentalist and composer."
+  }
+ ]
+}

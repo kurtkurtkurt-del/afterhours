@@ -1,0 +1,36 @@
+{
+ "city": "houston",
+ "day": "2026-11-24",
+ "nights": [
+  {
+   "id": "84deddaa-bdac-4525-b11c-101a3589e5fc",
+   "slug": "for-king-and-country-12a6bbac",
+   "title": "For King & Country",
+   "act": "For King & Country",
+   "name": "For King & Country",
+   "description": "Australian-American pop duo",
+   "source_url": "https://en.wikipedia.org/wiki/For_King_%26_Country_(band)",
+   "extract": "For King & Country, formerly known as Joel & Luke as well as Austoville, is a Christian pop duo composed of brothers Joel and Luke Smallbone. The brothers were born in Australia and immigrated to the United States as children, settling in the Nashville area."
+  },
+  {
+   "id": "2e21619c-96a2-4cf9-b122-614c2a321386",
+   "slug": "the-black-angels-37d4df0f",
+   "title": "The Black Angels",
+   "act": "The Black Angels",
+   "name": "The Black Angels",
+   "description": "American psychedelic rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Black_Angels_(band)",
+   "extract": "The Black Angels are an American psychedelic rock band from Austin, Texas. Formed in May 2004, they took their name from the Velvet Underground's \"The Black Angel's Death Song\". They have released six studio albums and one compilation album."
+  },
+  {
+   "id": "2bc6eb4f-e1f6-4cbf-af23-f6c432845fc4",
+   "slug": "eric-benet-you-do-tour-c4948435",
+   "title": "Eric Benet - You Do Tour",
+   "act": "Eric Benet",
+   "name": "Eric Benét",
+   "description": "American musician (born 1966)",
+   "source_url": "https://en.wikipedia.org/wiki/Eric_Ben%C3%A9t",
+   "extract": "Eric Benét Jordan is an American R&B singer-songwriter and musician. He has been nominated for four Grammy Awards."
+  }
+ ]
+}

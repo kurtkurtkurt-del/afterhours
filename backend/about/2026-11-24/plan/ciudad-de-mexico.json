@@ -1,0 +1,16 @@
+{
+ "city": "ciudad-de-mexico",
+ "day": "2026-11-24",
+ "nights": [
+  {
+   "id": "dda297ff-56c9-4f83-91d2-53f23ed1c7de",
+   "slug": "caloncho-6fd71501",
+   "title": "Caloncho",
+   "act": "Caloncho",
+   "name": "Caloncho",
+   "description": "Mexican musician and singer",
+   "source_url": "https://en.wikipedia.org/wiki/Caloncho",
+   "extract": "Óscar Alfonso Castro, better known as Caloncho, is a Mexican musician and singer."
+  }
+ ]
+}
