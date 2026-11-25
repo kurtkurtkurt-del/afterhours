@@ -1,0 +1,14 @@
+{
+  "city": "brussel",
+  "day": "2026-11-27",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "winter wonders opens on the grand-place.", "de": "winter wonders öffnet am grand-place.", "tr": "winter wonders grand-place'de açılıyor." },
+      "line": { "en": "the christmas market opens with a tree lighting and a sound-and-light show at 18:00. the square is free to walk; the chalets run until early january.", "de": "der weihnachtsmarkt öffnet um 18 uhr mit baumbeleuchtung und licht-und-ton-show. der platz ist frei zugänglich; die hütten laufen bis anfang januar.", "tr": "noel pazarı 18:00'de ağaç ışıklandırma ve ışık-ses gösterisiyle açılıyor. meydan ücretsiz gezilebilir; kulübeler ocak başına kadar açık." },
+      "place": { "en": "grand-place", "de": "grand-place", "tr": "grand-place" },
+      "hour": 18, "minute": 0,
+      "why": "Winter Wonders inauguration on the Grand-Place, Fri 27 Nov 18:00, with tree lighting and show (brussels.be, winter-wonders-2026-opening); chalet hours not confirmed."
+    }
+  ]
+}
