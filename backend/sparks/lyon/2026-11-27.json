@@ -1,0 +1,14 @@
+{
+  "city": "lyon",
+  "day": "2026-11-27",
+  "sparks": [
+    {
+      "kind": "walk",
+      "title": { "en": "the place carnot christmas market, friday evening.", "de": "der weihnachtsmarkt auf der place carnot, freitagabend.", "tr": "place carnot noel pazarı'nda cuma akşamı." },
+      "line": { "en": "the christmas market runs every day until 24 december, free to enter. walk through the chalets in lyon 2e, then get a drink nearby.", "de": "der weihnachtsmarkt läuft täglich bis 24. dezember, der eintritt ist frei. durch die hütten in lyon 2e schlendern, danach etwas trinken gehen.", "tr": "noel pazarı 24 aralık'a kadar her gün açık, giriş ücretsiz. lyon 2e'deki kulübeleri gezin, sonra yakındaki bir yerde içecek alın." },
+      "place": { "en": "place carnot", "de": "place carnot", "tr": "place carnot" },
+      "hour": 18, "minute": 0,
+      "why": "Marché de Noël de la place Carnot, Lyon 2e, 20 Nov to 24 Dec 2026, free entry, per the Ville de Lyon (lyon.fr); 2026 opening hours not yet published, so the 18:00 start is a suggestion."
+    }
+  ]
+}

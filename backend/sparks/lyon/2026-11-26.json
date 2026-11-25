@@ -1,0 +1,14 @@
+{
+  "city": "lyon",
+  "day": "2026-11-26",
+  "sparks": [
+    {
+      "kind": "football",
+      "title": { "en": "ol – lillestrøm, europa league, thursday night.", "de": "ol – lillestrøm, europa league, donnerstagabend.", "tr": "ol – lillestrøm, avrupa ligi, perşembe gecesi." },
+      "line": { "en": "europa league league phase, matchday 5, kick-off 21:00 at the groupama stadium. eat before you go, the stadium area is quiet after.", "de": "europa league ligaphase, spieltag 5, anpfiff 21:00 im groupama stadium. vorher essen, das stadiongelände ist danach ruhig.", "tr": "avrupa ligi lig aşaması, 5. hafta, başlama 21:00, groupama stadium'da. gitmeden önce yemek yiyin, maçtan sonra stadyum çevresi sakin olur." },
+      "place": { "en": "groupama stadium", "de": "groupama stadium", "tr": "groupama stadium" },
+      "hour": 21, "minute": 0,
+      "why": "OL vs Lillestrøm, UEFA Europa League league phase matchday 5, Thu 26 Nov at Groupama Stadium, 21:00 Paris time per sport-flash.com and foresportia.com; the time is shown as provisional by one source, so check ol.org before going."
+    }
+  ]
+}
