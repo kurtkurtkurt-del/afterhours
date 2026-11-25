@@ -1,0 +1,38 @@
+{
+ "city": "london",
+ "day": "2026-11-25",
+ "nights": [
+  {
+   "id": "d77f7764-42e3-4c7f-9b35-d651555c0204",
+   "slug": "atrophy-cbf15e55",
+   "title": "Atrophy",
+   "name": "Atrophy",
+   "source_url": "https://en.wikipedia.org/wiki/Atrophy_(band)",
+   "extract": "Atrophy is an American thrash metal band formed in Tucson, Arizona in 1986. The band released two studio albums in their initial stint before disbanding. In the latter half of the 2010s, the band went on a European tour before vocalist Brian Zimmerman left the band due to COVID-19. The original band members continued and recruited a new vocalist, changing the band name to Scars of Atrophy. In 2021, Brian Zimmerman reformed the band without any of its original members, and released the band's third studio album, Asylum, in 2024.",
+   "en": {
+    "kicker": "american thrash metal band · tucson, arizona, 1986",
+    "who": "Atrophy is an american thrash metal band formed in Tucson, Arizona, in 1986. the band released two studio albums in their initial stint before disbanding. in the latter half of the 2010s the band went on a european tour before vocalist Brian Zimmerman left due to COVID-19.",
+    "facts": [
+     "the band released two studio albums in their initial stint before disbanding.",
+     "in 2021, Brian Zimmerman reformed the band without any of its original members and released the band's third studio album, Asylum, in 2024."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische thrash-metal-band · tucson, arizona, 1986",
+    "who": "Atrophy ist eine amerikanische thrash-metal-band, die 1986 in Tucson, Arizona, gegründet wurde. die band veröffentlichte in ihrer ersten phase zwei studioalben, bevor sie sich auflöste. in der zweiten hälfte der 2010er jahre ging die band auf europatournee, bevor sänger Brian Zimmerman wegen COVID-19 ausstieg.",
+    "facts": [
+     "die band veröffentlichte in ihrer ersten phase zwei studioalben, bevor sie sich auflöste.",
+     "im jahr 2021 gründete Brian Zimmerman die band ohne ihre ursprünglichen mitglieder neu und veröffentlichte 2024 das dritte studioalbum Asylum."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikan thrash metal grubu · tucson, arizona, 1986",
+    "who": "Atrophy, 1986 yılında Tucson, Arizona'da kurulmuş bir amerikan thrash metal grubudur. grup ilk döneminde iki stüdyo albümü yayımladı, ardından dağıldı. 2010'ların ikinci yarısında grup avrupa turnesine çıktı, ardından vokalist Brian Zimmerman COVID-19 nedeniyle gruptan ayrıldı.",
+    "facts": [
+     "grup, ilk döneminde dağılmadan önce iki stüdyo albümü yayımladı.",
+     "2021'de Brian Zimmerman, orijinal üyelerin hiçbiri olmadan grubu yeniden kurdu ve 2024'te grubun üçüncü stüdyo albümü Asylum'ı yayımladı."
+    ]
+   }
+  }
+ ]
+}

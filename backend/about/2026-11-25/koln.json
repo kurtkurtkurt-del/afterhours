@@ -1,0 +1,38 @@
+{
+ "city": "koln",
+ "day": "2026-11-25",
+ "nights": [
+  {
+   "id": "742a7d90-a105-42e1-bd7d-243fa14692c6",
+   "slug": "yendry-como-agua-tour-723ee035",
+   "title": "YENDRY - Como agua Tour",
+   "name": "Yendry",
+   "source_url": "https://en.wikipedia.org/wiki/Yendry",
+   "extract": "Yendry Cony Fiorentino  known mononymously as Yendry is a Dominican-Italian singer and songwriter. Yendry first achieved popularity in Italy in 2012 thanks to her participation in the sixth edition of X Factor Italy which earned her a record deal with Sony Music Italy. From 2015 to 2018 she was the frontwoman of the group Materianera. In 2020 after the release of the singles Barrio and Nena she achieved international popularity and she signed a double record deal contract with RCA Records and Sony Music Latin. On April 15, 2021, she was one of the performers for the Latin American Music Awards of 2021. On June 7, 2021, she was nominated as Best New Artist at the 2021 MTV Millennial Awards. O",
+   "en": {
+    "kicker": "dominican-italian singer and songwriter · italy, 2012",
+    "who": "Known mononymously as Yendry, Yendry Cony Fiorentino is a Dominican-Italian singer and songwriter. She first gained popularity in Italy in 2012, and from 2015 to 2018 she was the frontwoman of the group Materianera.",
+    "facts": [
+     "Yendry first achieved popularity in Italy in 2012 thanks to her participation in the sixth edition of X Factor Italy.",
+     "In 2020, after the release of the singles Barrio and Nena, she achieved international popularity."
+    ]
+   },
+   "de": {
+    "kicker": "dominikanisch-italienische sängerin · italien, 2012",
+    "who": "Yendry, mit vollem Namen Yendry Cony Fiorentino, ist eine dominikanisch-italienische Sängerin und Songwriterin. In Italien wurde sie 2012 bekannt, und von 2015 bis 2018 war sie Frontfrau der Gruppe Materianera.",
+    "facts": [
+     "Yendry wurde 2012 in Italien durch ihre Teilnahme an der sechsten Staffel von X Factor Italy erstmals bekannt.",
+     "Nach der Veröffentlichung der Singles Barrio und Nena erlangte sie 2020 internationale Bekanntheit."
+    ]
+   },
+   "tr": {
+    "kicker": "dominikli-italyan şarkıcı ve söz yazarı · italya, 2012",
+    "who": "Yendry olarak tanınan Yendry Cony Fiorentino, dominikli-italyan bir şarkıcı ve söz yazarıdır. 2012 yılında İtalya'da ilk kez ün kazandı; 2015 ile 2018 arasında ise Materianera grubunun solisti oldu.",
+    "facts": [
+     "Yendry, 2012 yılında İtalya'da X Factor Italy'nin altıncı sezonuna katılmasıyla ilk kez ün kazandı.",
+     "2020 yılında Barrio ve Nena tekillerinin yayımlanmasının ardından uluslararası çapta ün kazandı."
+    ]
+   }
+  }
+ ]
+}

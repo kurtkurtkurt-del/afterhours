@@ -1,0 +1,38 @@
+{
+ "city": "los-angeles",
+ "day": "2026-11-25",
+ "nights": [
+  {
+   "id": "aaf0516c-ba45-4a90-97a3-3b2f5dc369a5",
+   "slug": "imminence-axis-mundi-tour-north-america-2026-1d5e6c91",
+   "title": "Imminence - Axis Mundi Tour: North America 2026",
+   "name": "Imminence",
+   "source_url": "https://en.wikipedia.org/wiki/Imminence_(band)",
+   "extract": "Imminence is a Swedish metalcore band formed in Trelleborg. The group consists of vocalist Eddie Berg, rhythm guitarist Harald Barrett, lead guitarist Alex Arnoldsson, and bassist Christian Höijer.",
+   "en": {
+    "kicker": "swedish metalcore band · trelleborg",
+    "who": "Imminence is a Swedish metalcore band formed in Trelleborg. Its lineup includes vocalist Eddie Berg, rhythm guitarist Harald Barrett, lead guitarist Alex Arnoldsson and bassist Christian Höijer.",
+    "facts": [
+     "Imminence was formed in Trelleborg.",
+     "The group consists of vocalist Eddie Berg, rhythm guitarist Harald Barrett, lead guitarist Alex Arnoldsson, and bassist Christian Höijer."
+    ]
+   },
+   "de": {
+    "kicker": "schwedische metalcore-band · trelleborg",
+    "who": "Imminence ist eine schwedische Metalcore-Band, die in Trelleborg gegründet wurde. Zur Besetzung gehören Sänger Eddie Berg, Rhythmusgitarrist Harald Barrett, Leadgitarrist Alex Arnoldsson und Bassist Christian Höijer.",
+    "facts": [
+     "Imminence wurde in Trelleborg gegründet.",
+     "Die Gruppe besteht aus Sänger Eddie Berg, Rhythmusgitarrist Harald Barrett, Leadgitarrist Alex Arnoldsson und Bassist Christian Höijer."
+    ]
+   },
+   "tr": {
+    "kicker": "isveçli metalcore grubu · trelleborg",
+    "who": "Imminence, Trelleborg'da kurulmuş bir İsveçli metalcore grubudur. Grubun kadrosunda vokalist Eddie Berg, ritim gitaristi Harald Barrett, lead gitarist Alex Arnoldsson ve basçı Christian Höijer yer alıyor.",
+    "facts": [
+     "Imminence, Trelleborg'da kurulmuştur.",
+     "Grup; vokalist Eddie Berg, ritim gitaristi Harald Barrett, lead gitarist Alex Arnoldsson ve basçı Christian Höijer'den oluşmaktadır."
+    ]
+   }
+  }
+ ]
+}

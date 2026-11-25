@@ -1,0 +1,38 @@
+{
+ "city": "new-orleans",
+ "day": "2026-11-25",
+ "nights": [
+  {
+   "id": "f7a026dc-ee2c-48f7-aff4-a2396be8e5c7",
+   "slug": "kristin-diable-e1fa8905",
+   "title": "Kristin Diable",
+   "name": "Kristin Diable",
+   "source_url": "https://en.wikipedia.org/wiki/Kristin_Diable",
+   "extract": "Kristin Diable is an American musician, songwriter, and singer from New Orleans, Louisiana.",
+   "en": {
+    "kicker": "american musician and singer · new orleans, louisiana",
+    "who": "Kristin Diable is an American musician, songwriter, and singer. Kristin Diable is from New Orleans, Louisiana.",
+    "facts": [
+     "Kristin Diable is an American musician, songwriter, and singer.",
+     "Kristin Diable is from New Orleans, Louisiana."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische:r musiker:in · new orleans, louisiana",
+    "who": "Kristin Diable ist amerikanische:r musiker:in, songwriter:in und sänger:in. Kristin Diable stammt aus New Orleans, Louisiana.",
+    "facts": [
+     "Kristin Diable ist amerikanische:r musiker:in, songwriter:in und sänger:in.",
+     "Kristin Diable stammt aus New Orleans, Louisiana."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı müzisyen ve şarkıcı · new orleans, louisiana",
+    "who": "Kristin Diable Amerikalı bir müzisyen, söz yazarı ve şarkıcıdır. Kristin Diable, New Orleans, Louisiana'dan gelmektedir.",
+    "facts": [
+     "Kristin Diable Amerikalı bir müzisyen, söz yazarı ve şarkıcıdır.",
+     "Kristin Diable, New Orleans, Louisiana'dan gelmektedir."
+    ]
+   }
+  }
+ ]
+}

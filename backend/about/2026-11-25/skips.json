@@ -1422,6 +1422,138 @@
    "slug": "jacob-banks-uk-66cb3556",
    "city": "zurich",
    "why": "no page of that name (nearest: Jacob Banks)"
+  },
+  {
+   "id": "7a7b1a76-58e9-49f3-b11d-b26eb2ccf13e",
+   "slug": "almost-monday-thank-god-it-s-almost-monday-tour-520b77b4",
+   "city": "hamburg",
+   "why": "writer: extract is 74 characters, under the 80-character minimum for usable content"
+  },
+  {
+   "id": "72c2f295-8f35-402a-a3ab-ef4eef5de16e",
+   "slug": "bodysnatcher-hell-is-here-hell-is-home-tour-4a24ed63",
+   "city": "detroit",
+   "why": "writer: extract is under 80 characters of usable content (72 characters)"
+  },
+  {
+   "id": "eed62331-ae5f-417a-994c-1027949c78e4",
+   "slug": "chris-botti-fa8a1de2",
+   "city": "boston",
+   "why": "writer: extract under 80 characters of usable content (65 characters)"
+  },
+  {
+   "id": "f7ee8f18-5c40-4d21-bc99-1ea2dc30879a",
+   "slug": "the-veils-3f0ef354",
+   "city": "manchester",
+   "why": "writer: extract states only one fact, so two facts cannot be stated from it"
+  },
+  {
+   "id": "e7b5b6ad-00a1-4adc-8f92-6e8433bbb23a",
+   "slug": "the-prodigy-european-tour-5f78da3b",
+   "city": "amsterdam",
+   "why": "check: later joined claim has no timing in extract"
+  },
+  {
+   "id": "d67bc42f-8e26-4d86-9613-a6cdb8c6f056",
+   "slug": "kehlani-wine-and-dine-ticket-not-included-5280460d",
+   "city": "amsterdam",
+   "why": "check: title is a dinner listing, not a music show; de/tr facts disagree with en"
+  },
+  {
+   "id": "2627b668-c0c3-4b34-a54a-07767c8a625b",
+   "slug": "ogun-sanl-soy-f6e4c780",
+   "city": "ankara",
+   "why": "check: demonym lowercase in en who; extract capitalises Turkish"
+  },
+  {
+   "id": "3bdc40f9-0d70-487a-8ffc-8f7b48d14f09",
+   "slug": "trans-siberian-orchestra-the-ghosts-of-christmas-2975c161",
+   "city": "austin",
+   "why": "check: en who claims charity work and concert style not in extract"
+  },
+  {
+   "id": "4d89ca7c-0d66-4171-ad85-f547e1f05c40",
+   "slug": "blanco-white-0b012e97",
+   "city": "brussel",
+   "why": "check: source url is an ambiguous bare title; could not verify the page is the act"
+  },
+  {
+   "id": "68addaf6-0a9c-4721-a434-18e0fbdd5ba0",
+   "slug": "american-aquarium-2077c9f6",
+   "city": "houston",
+   "why": "check: de kicker drops alternative; en and tr keep it"
+  },
+  {
+   "id": "1bfeff2a-59b8-46e0-aa2d-dc81576e9fc2",
+   "slug": "jpegmafia-experimental-rap-tour-df13c8e4",
+   "city": "koln",
+   "why": "check: album title and most recent claim not in extract"
+  },
+  {
+   "id": "3e1cffb6-fea6-4888-b3ea-e36a4045492a",
+   "slug": "taylor-dayne-official-caesars-ticket-hotel-packa-37dbceaa",
+   "city": "las-vegas",
+   "why": "check: who cites Rolling Stone and Billboard rankings not in extract"
+  },
+  {
+   "id": "1cea1572-852e-4347-addd-9d6270fad89e",
+   "slug": "take-that-dreamers-tour-26589816",
+   "city": "malmo",
+   "why": "check: sentence-initial capitals on non-name words"
+  },
+  {
+   "id": "af1540fb-d727-46d0-b9f3-3bab5aa79aa7",
+   "slug": "take-that-dreamers-tour-premium-9c8254ec",
+   "city": "malmo",
+   "why": "check: sentence-initial capitals on non-name words"
+  },
+  {
+   "id": "1505ea10-3a73-4237-b901-4e26ba818a7f",
+   "slug": "hermanos-gutierrez-ac438d78",
+   "city": "manchester",
+   "why": "check: kicker capitalises Latin"
+  },
+  {
+   "id": "eac7d0ab-79a1-4b18-b1b1-bcda2fa1bd28",
+   "slug": "bleachers-f7edf561",
+   "city": "manchester",
+   "why": "check: en who has a 2023 clause the de and tr who texts lack"
+  },
+  {
+   "id": "57f1a603-b0c0-4dc1-9d99-3a39779c7fbf",
+   "slug": "sace6-49d59fa8",
+   "city": "milano",
+   "why": "check: en who and facts capitalise non-name words; kicker and other languages are lowercase"
+  },
+  {
+   "id": "8e9f29e1-3b4c-4d17-941e-4c3aed67d668",
+   "slug": "darkest-hour-221f0dc5",
+   "city": "montreal",
+   "why": "check: tr who omits Washington D.C. that en and de carry"
+  },
+  {
+   "id": "eace14ec-b246-4494-9022-debd9ba1b132",
+   "slug": "lauren-daigle-c305f359",
+   "city": "nashville",
+   "why": "check: en and tr capitalise genre/nationality words in kicker and who"
+  },
+  {
+   "id": "b83ede5c-ab09-420b-9c20-84ecf0d984ff",
+   "slug": "trans-siberian-orchestra-the-ghosts-of-christmas-10c570d0",
+   "city": "nashville",
+   "why": "check: light show, lasers and video screens are not in the extract; show name not in extract; tr capitalises Grup"
+  },
+  {
+   "id": "c2e2425e-841b-44e2-953c-44931a12fe0d",
+   "slug": "buena-vista-social-club-3575eef6",
+   "city": "new-york",
+   "why": "check: de and tr who capitalise common nouns"
+  },
+  {
+   "id": "fa25a359-6422-4bf8-b72c-ad72aed01e13",
+   "slug": "kaleo-way-down-we-go-tour-c6e7ef0a",
+   "city": "zurich",
+   "why": "check: tr fact names A/B (2016) among the albums; en and de facts do not"
   }
  ]
 }

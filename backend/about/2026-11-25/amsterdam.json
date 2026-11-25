@@ -1,0 +1,38 @@
+{
+ "city": "amsterdam",
+ "day": "2026-11-25",
+ "nights": [
+  {
+   "id": "d031c754-e2db-40b3-ac7d-cbf8028c7b26",
+   "slug": "blondshell-694b8292",
+   "title": "Blondshell",
+   "name": "Blondshell",
+   "source_url": "https://en.wikipedia.org/wiki/Blondshell",
+   "extract": "Sabrina Mae Teitelbaum, better known as Blondshell, is an American indie rock singer, songwriter and musician based in Los Angeles, California. Following an early pop-leaning career under the name BAUM, she debuted as Blondshell in June 2022 with the single \"Olympus\". She has toured with acts including Suki Waterhouse, Horsegirl, and Porridge Radio and has performed at South by Southwest, Austin City Limits Music Festival, and on The Tonight Show Starring Jimmy Fallon. Her self-titled debut album was released on April 7, 2023, via Partisan Records, receiving positive reviews.",
+   "en": {
+    "kicker": "american indie rock singer · los angeles, california",
+    "who": "Sabrina Mae Teitelbaum, better known as Blondshell, is an American indie rock singer, songwriter and musician based in Los Angeles, California. She had an early pop-leaning career under the name BAUM. Her self-titled debut album was released on April 7, 2023, via Partisan Records.",
+    "facts": [
+     "She debuted as Blondshell in June 2022 with the single \"Olympus\".",
+     "She has toured with acts including Suki Waterhouse, Horsegirl, and Porridge Radio."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische indie-rocksängerin · los angeles, california",
+    "who": "Sabrina Mae Teitelbaum, besser bekannt als Blondshell, ist eine amerikanische Indie-Rocksängerin, Songwriterin und Musikerin mit Sitz in Los Angeles, California. Zuvor hatte sie eine frühe, eher poporientierte Karriere unter dem Namen BAUM. Ihr selbstbetiteltes Debütalbum erschien am 7. April 2023 bei Partisan Records.",
+    "facts": [
+     "Im Juni 2022 debütierte sie als Blondshell mit der Single „Olympus“.",
+     "Sie ist unter anderem mit Suki Waterhouse, Horsegirl und Porridge Radio getourt."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı indie rock şarkıcısı · los angeles, california",
+    "who": "Sabrina Mae Teitelbaum, Blondshell adıyla tanınan, Los Angeles, California merkezli Amerikalı bir indie rock şarkıcısı, söz yazarı ve müzisyendir. Daha önce BAUM adıyla pop eğilimli bir kariyeri olmuştu. Kendi adını taşıyan ilk albümü 7 Nisan 2023'te Partisan Records aracılığıyla yayımlandı.",
+    "facts": [
+     "Haziran 2022'de \"Olympus\" single'ı ile Blondshell olarak debut yaptı.",
+     "Suki Waterhouse, Horsegirl ve Porridge Radio gibi isimlerle tura çıktı."
+    ]
+   }
+  }
+ ]
+}

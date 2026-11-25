@@ -1,0 +1,38 @@
+{
+ "city": "birmingham",
+ "day": "2026-11-25",
+ "nights": [
+  {
+   "id": "025bd609-2ff0-4c58-9a5d-e88838cbf663",
+   "slug": "the-wonder-stuff-2d3ed176",
+   "title": "The Wonder Stuff",
+   "name": "The Wonder Stuff",
+   "source_url": "https://en.wikipedia.org/wiki/The_Wonder_Stuff",
+   "extract": "The Wonder Stuff are a British alternative rock band. Originally based in Stourbridge in the West Midlands, England, the band's first lineup released four albums and nearly 20 singles and EPs, enjoying considerable chart and live success in the UK. The band have continued to tour and record since 2000.",
+   "en": {
+    "kicker": "british alternative rock band · stourbridge, england",
+    "who": "The Wonder Stuff are a British alternative rock band. Originally based in Stourbridge in the West Midlands, England, they enjoyed considerable chart and live success in the UK. They have continued to tour and record since 2000.",
+    "facts": [
+     "The band's first lineup released four albums and nearly 20 singles and EPs.",
+     "The band have continued to tour and record since 2000."
+    ]
+   },
+   "de": {
+    "kicker": "britische alternative-rock-band · stourbridge, england",
+    "who": "The Wonder Stuff sind eine britische Alternative-Rock-Band. Ursprünglich in Stourbridge in den West Midlands in England ansässig, hatten sie beträchtlichen Erfolg in den Charts und live im Vereinigten Königreich. Seit 2000 sind sie weiterhin auf Tournee und nehmen weiterhin Musik auf.",
+    "facts": [
+     "Die erste Besetzung der Band veröffentlichte vier Alben und fast 20 Singles und EPs.",
+     "Die Band ist seit 2000 weiterhin auf Tournee und nimmt weiterhin Platten auf."
+    ]
+   },
+   "tr": {
+    "kicker": "ingiliz alternatif rock grubu · stourbridge, england",
+    "who": "The Wonder Stuff, İngiliz bir alternatif rock grubudur. Başlangıçta İngiltere'nin West Midlands bölgesindeki Stourbridge kentinde merkezliydiler; Birleşik Krallık'ta listelerde ve canlı performanslarda büyük başarı kazandılar. 2000'den beri turne yapmaya ve kayıt yapmaya devam ediyorlar.",
+    "facts": [
+     "Grubun ilk kadrosu dört albüm ve neredeyse 20 single ile EP yayımladı.",
+     "Grup 2000'den beri turnelerine ve kayıt çalışmalarına devam ediyor."
+    ]
+   }
+  }
+ ]
+}

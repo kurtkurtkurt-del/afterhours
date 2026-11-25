@@ -1,0 +1,38 @@
+{
+ "city": "monterrey",
+ "day": "2026-11-25",
+ "nights": [
+  {
+   "id": "be6b1a19-7e20-4e45-8e3a-b66d0bceb026",
+   "slug": "vilma-palma-e-vampiros-b5a401a8",
+   "title": "Vilma Palma e Vampiros",
+   "name": "Vilma Palma e Vampiros",
+   "source_url": "https://en.wikipedia.org/wiki/Vilma_Palma_e_Vampiros",
+   "extract": "Vilma Palma e Vampiros is an Argentine new wave indie rock en español band from Rosario. They came to prominence in 1992 after the release of the hits \"Bye, Bye\" and \"La Pachanga\".",
+   "en": {
+    "kicker": "argentine new wave indie rock band · rosario",
+    "who": "Vilma Palma e Vampiros is an argentine new wave indie rock band from Rosario. The band came to prominence in 1992 with the hits \"Bye, Bye\" and \"La Pachanga\".",
+    "facts": [
+     "they came to prominence in 1992 after the release of the hits \"Bye, Bye\" and \"La Pachanga\".",
+     "Vilma Palma e Vampiros is an argentine new wave indie rock band from Rosario."
+    ]
+   },
+   "de": {
+    "kicker": "argentinische new-wave-indie-rockband · aus rosario",
+    "who": "Vilma Palma e Vampiros ist eine argentinische New-Wave-Indie-Rockband aus Rosario. Mit den Hits „Bye, Bye“ und „La Pachanga“ kam die Band 1992 zu Bekanntheit.",
+    "facts": [
+     "Sie kamen 1992 nach der Veröffentlichung der Hits „Bye, Bye“ und „La Pachanga“ zu Bekanntheit.",
+     "Vilma Palma e Vampiros ist eine argentinische New-Wave-Indie-Rockband aus Rosario."
+    ]
+   },
+   "tr": {
+    "kicker": "arjantinli new wave indie rock grubu · rosario",
+    "who": "Vilma Palma e Vampiros, Rosario'dan bir Arjantin new wave indie rock grubudur. Grup, „Bye, Bye“ ve „La Pachanga“ hitleriyle 1992'de öne çıktı.",
+    "facts": [
+     "Grup, 1992'de „Bye, Bye“ ve „La Pachanga“ hitlerinin yayımlanmasının ardından öne çıktı.",
+     "Vilma Palma e Vampiros, Rosario'dan bir Arjantin new wave indie rock grubudur."
+    ]
+   }
+  }
+ ]
+}

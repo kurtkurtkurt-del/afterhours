@@ -1,0 +1,38 @@
+{
+ "city": "zurich",
+ "day": "2026-11-25",
+ "nights": [
+  {
+   "id": "b8e2f161-1447-4c13-b729-74673c8f6843",
+   "slug": "paris-jackson-c4f5f3cd",
+   "title": "Paris Jackson",
+   "name": "Paris Jackson",
+   "source_url": "https://en.wikipedia.org/wiki/Paris_Jackson",
+   "extract": "Paris-Michael Katherine Jackson is an American model, actress, and singer. The second child and daughter of Michael Jackson and Debbie Rowe, Jackson signed a deal with Republic Records in 2020. Her debut album, Wilted, was released that year.",
+   "en": {
+    "kicker": "american model, actress and singer",
+    "who": "Paris-Michael Katherine Jackson is an American model, actress and singer. She is the second child and daughter of Michael Jackson and Debbie Rowe.",
+    "facts": [
+     "Jackson signed a deal with Republic Records in 2020.",
+     "Her debut album, Wilted, was released that year."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanisches model, schauspielerin und sängerin",
+    "who": "Paris-Michael Katherine Jackson ist ein amerikanisches model, schauspielerin und sängerin. Sie ist das zweite kind und die tochter von Michael Jackson und Debbie Rowe.",
+    "facts": [
+     "Jackson unterzeichnete 2020 einen vertrag mit Republic Records.",
+     "Ihr debütalbum Wilted erschien im selben jahr."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı model, oyuncu ve şarkıcı",
+    "who": "Paris-Michael Katherine Jackson, amerikalı bir model, oyuncu ve şarkıcıdır. Michael Jackson ve Debbie Rowe'un ikinci çocuğu ve kızıdır.",
+    "facts": [
+     "Jackson, 2020'de Republic Records ile bir anlaşma imzaladı.",
+     "Debut albümü Wilted o yıl yayımlandı."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,38 @@
+{
+ "city": "montreal",
+ "day": "2026-11-25",
+ "nights": [
+  {
+   "id": "37bd7dfc-3509-476d-9fb8-2ce4a5af6e58",
+   "slug": "korpiklaani-336008ea",
+   "title": "KORPIKLAANI",
+   "name": "Korpiklaani",
+   "source_url": "https://en.wikipedia.org/wiki/Korpiklaani",
+   "extract": "Korpiklaani is a Finnish folk metal band from Lahti that was formerly known as Shamaani Duo and Shaman.",
+   "en": {
+    "kicker": "finnish folk metal band · from lahti",
+    "who": "Korpiklaani is a Finnish folk metal band from Lahti. The band was formerly known as Shamaani Duo and Shaman.",
+    "facts": [
+     "Korpiklaani is a Finnish folk metal band from Lahti.",
+     "The band was formerly known as Shamaani Duo and Shaman."
+    ]
+   },
+   "de": {
+    "kicker": "finnische folk-metal-band · aus lahti",
+    "who": "Korpiklaani ist eine finnische folk-metal-band aus Lahti. Die band war früher unter den namen Shamaani Duo und Shaman bekannt.",
+    "facts": [
+     "Korpiklaani ist eine finnische folk-metal-band aus Lahti.",
+     "Die band war früher unter den namen Shamaani Duo und Shaman bekannt."
+    ]
+   },
+   "tr": {
+    "kicker": "fin folk metal grubu · lahti",
+    "who": "Korpiklaani, Lahti'den bir Fin folk metal grubudur. Grup daha önce Shamaani Duo ve Shaman adlarıyla biliniyordu.",
+    "facts": [
+     "Korpiklaani, Lahti'den bir Fin folk metal grubudur.",
+     "Grup daha önce Shamaani Duo ve Shaman adlarıyla biliniyordu."
+    ]
+   }
+  }
+ ]
+}

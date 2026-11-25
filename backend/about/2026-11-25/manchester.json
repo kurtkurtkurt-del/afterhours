@@ -1,0 +1,134 @@
+{
+ "city": "manchester",
+ "day": "2026-11-25",
+ "nights": [
+  {
+   "id": "619c14cd-69d5-49ad-91fa-b4a9c4590c07",
+   "slug": "gang-of-youths-28e62314",
+   "title": "Gang of Youths",
+   "name": "Gang of Youths",
+   "source_url": "https://en.wikipedia.org/wiki/Gang_of_Youths",
+   "extract": "Gang of Youths are an Australian alternative rock band from Sydney that formed in 2012. The band was founded by chief songwriter and lead vocalist David Le'aupepe; he has been joined by Jung Kim on guitar and keyboards since the band's inception, as well as Donnie Borzestowski on drums since 2014 and Tom Hobden on violin, rhythm guitar and keyboards since 2020. The band's debut studio album The Positions (2015) received multiple ARIA Award nominations and peaked at number five on the Australian albums chart. It provided the single \"Magnolia\", which has been described as their breakthrough hit and was certified platinum in 2018.",
+   "en": {
+    "kicker": "australian alternative rock band · sydney, 2012",
+    "who": "Gang of Youths are an Australian alternative rock band from Sydney that formed in 2012. The band was founded by chief songwriter and lead vocalist David Le'aupepe.",
+    "facts": [
+     "The band's debut studio album The Positions (2015) received multiple ARIA Award nominations and peaked at number five on the Australian albums chart.",
+     "The single Magnolia was certified platinum in 2018."
+    ]
+   },
+   "de": {
+    "kicker": "australische alternative-rock-band · sydney, 2012",
+    "who": "Gang of Youths sind eine australische Alternative-Rock-Band aus Sydney, die sich 2012 gründete. Gründer und Leadsänger ist David Le'aupepe, der als Chefsongwriter die Band aufbaute.",
+    "facts": [
+     "Das Debütalbum der Band, The Positions (2015), erhielt mehrere ARIA-Award-Nominierungen und erreichte Platz fünf der australischen Albumcharts.",
+     "Die Single Magnolia wurde 2018 mit Platin ausgezeichnet."
+    ]
+   },
+   "tr": {
+    "kicker": "avustralyalı alternatif rock grubu · Sidney, 2012",
+    "who": "Gang of Youths, 2012'de Sidney'de kurulmuş bir Avustralyalı alternatif rock grubudur. Grubun baş söz yazarı ve baş vokalisti David Le'aupepe'dir.",
+    "facts": [
+     "Grubun The Positions (2015) adlı ilk stüdyo albümü birçok ARIA Ödülü adaylığı aldı ve Avustralya albüm listesinde beşinci sıraya kadar yükseldi.",
+     "Magnolia adlı single 2018'de platin sertifikası aldı."
+    ]
+   }
+  },
+  {
+   "id": "789609d7-3b02-4bcf-99ab-76738cabaeb8",
+   "slug": "genesis-owusu-1f42de07",
+   "title": "Genesis Owusu",
+   "name": "Genesis Owusu",
+   "source_url": "https://en.wikipedia.org/wiki/Genesis_Owusu",
+   "extract": "Kofi Owusu-Ansah, known professionally as Genesis Owusu, is a Ghanaian-Australian rapper and singer from Canberra. He is the younger brother of fellow hip hop rapper Citizen Kay. Owusu's debut studio album, Smiling with No Teeth, reached the ARIA Albums Chart top 30. At the 2021 ARIA Music Awards he won four trophies for Album of the Year, Best Hip Hop Release, Best Independent Release and Best Cover Art. He released a critically acclaimed follow-up, Struggler, in 2023. Genesis Owusu's third studio album, Redstar Wu & the Worldwide Scourge, was released in 2026.",
+   "en": {
+    "kicker": "ghanaian-australian rapper and singer · canberra",
+    "who": "Kofi Owusu-Ansah, known professionally as Genesis Owusu, is a Ghanaian-Australian rapper and singer from Canberra. He is the younger brother of fellow hip hop rapper Citizen Kay.",
+    "facts": [
+     "Owusu's debut studio album, Smiling with No Teeth, reached the ARIA Albums Chart top 30.",
+     "At the 2021 ARIA Music Awards he won four trophies for Album of the Year, Best Hip Hop Release, Best Independent Release and Best Cover Art."
+    ]
+   },
+   "de": {
+    "kicker": "ghanaisch-australischer rapper und sänger · canberra",
+    "who": "Kofi Owusu-Ansah, professionell bekannt als Genesis Owusu, ist ein ghanaisch-australischer Rapper und Sänger aus Canberra. Er ist der jüngere Bruder des Hip-Hop-Rappers Citizen Kay.",
+    "facts": [
+     "Owusus Debütalbum Smiling with No Teeth erreichte die Top 30 der ARIA-Albumcharts.",
+     "Bei den ARIA Music Awards 2021 gewann er vier Trophäen: für das Album des Jahres, das beste Hip-Hop-Release, das beste unabhängige Release und das beste Cover."
+    ]
+   },
+   "tr": {
+    "kicker": "ganalı avustralyalı rapçi ve şarkıcı · Canberra",
+    "who": "Kofi Owusu-Ansah, sahne adı Genesis Owusu olan, Canberra'lı bir Gana-Avustralyalı rapçi ve şarkıcıdır. Hip hop rapçisi Citizen Kay'in küçük erkek kardeşidir.",
+    "facts": [
+     "Owusu'nun ilk stüdyo albümü Smiling with No Teeth, ARIA Albüm Listesi'nin ilk 30'una girdi.",
+     "2021 ARIA Müzik Ödülleri'nde dört ödül kazandı: Yılın Albümü, En İyi Hip Hop Yapımı, En İyi Bağımsız Yapım ve En İyi Kapak Tasarımı."
+    ]
+   }
+  },
+  {
+   "id": "c8dd856f-3ab5-4cd8-bad2-9ed63f0bc2c0",
+   "slug": "dayseeker-d98b37b6",
+   "title": "Dayseeker",
+   "name": "Dayseeker",
+   "source_url": "https://en.wikipedia.org/wiki/Dayseeker",
+   "extract": "Dayseeker is an American post-hardcore band formed in Orange County, California, in 2012. The group consists of vocalist Rory Rodriguez, bassist Ramone Valerio and drummer Zac Mayfield. They are currently signed to Spinefarm Records and have released six studio albums. Their most recent studio album, Creature in the Black Night, was released on October 24, 2025 with a Redux deluxe edition scheduled to release on February 26, 2027.",
+   "en": {
+    "kicker": "american post-hardcore band · orange county, 2012",
+    "who": "Dayseeker is an American post-hardcore band formed in Orange County, California, in 2012. The group consists of vocalist Rory Rodriguez, bassist Ramone Valerio and drummer Zac Mayfield.",
+    "facts": [
+     "They are currently signed to Spinefarm Records and have released six studio albums.",
+     "Their most recent studio album, Creature in the Black Night, was released on October 24, 2025."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische post-hardcore-band · orange county, 2012",
+    "who": "Dayseeker ist eine amerikanische Post-Hardcore-Band, die 2012 in Orange County, Kalifornien, gegründet wurde. Zur Gruppe gehören Sänger Rory Rodriguez, Bassist Ramone Valerio und Schlagzeuger Zac Mayfield.",
+    "facts": [
+     "Dayseeker ist derzeit bei Spinefarm Records unter Vertrag und hat sechs Studioalben veröffentlicht.",
+     "Ihr jüngstes Studioalbum, Creature in the Black Night, erschien am 24. Oktober 2025."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı post-hardcore grubu · orange county, 2012",
+    "who": "Dayseeker, 2012'de Orange County, Kaliforniya'da kurulan Amerikalı bir post-hardcore grubudur. Grubun kadrosunda vokalist Rory Rodriguez, bassist Ramone Valerio ve davulcu Zac Mayfield yer alıyor.",
+    "facts": [
+     "Grup şu anda Spinefarm Records ile sözleşmeli ve altı stüdyo albümü yayımladı.",
+     "En son stüdyo albümleri Creature in the Black Night, 24 Ekim 2025'te yayımlandı."
+    ]
+   }
+  },
+  {
+   "id": "5f8c6691-277e-4f80-813e-1906537fbce6",
+   "slug": "mariah-carey-1d0dbb31",
+   "title": "Mariah Carey",
+   "name": "Mariah Carey",
+   "source_url": "https://en.wikipedia.org/wiki/Mariah_Carey",
+   "extract": "Mariah Carey is an American singer-songwriter, record producer, and actress. Dubbed the \"Songbird Supreme\", Carey is known for her five-octave vocal range, melismatic singing style, signature use of the whistle register, and diva persona. An influential figure in popular culture, she was ranked as the fifth-greatest singer of all time by Rolling Stone in 2023.",
+   "en": {
+    "kicker": "american singer-songwriter and record producer",
+    "who": "Mariah Carey is an American singer-songwriter, record producer, and actress. She is an influential figure in popular culture.",
+    "facts": [
+     "Carey was ranked as the fifth-greatest singer of all time by Rolling Stone in 2023.",
+     "Carey is known for her five-octave vocal range, melismatic singing style, signature use of the whistle register, and diva persona."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische singer-songwriterin und musikproduzentin",
+    "who": "Mariah Carey ist eine amerikanische Singer-Songwriterin, Musikproduzentin und Schauspielerin. Sie gilt als einflussreiche Figur der Popkultur.",
+    "facts": [
+     "Rolling Stone stufte sie 2023 als fünftbeste Sängerin aller Zeiten ein.",
+     "Carey ist bekannt für ihren Fünf-Oktaven-Stimmumfang, ihren melismatischen Gesangsstil, den charakteristischen Einsatz der Pfeifstimme und ihre Diva-Persona."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı şarkıcı-söz yazarı ve plak yapımcısı",
+    "who": "Mariah Carey, Amerikalı bir şarkıcı-söz yazarı, plak yapımcısı ve oyuncudur. Popüler kültürde etkili bir isim olarak kabul edilir.",
+    "facts": [
+     "Rolling Stone, 2023'te onu tüm zamanların beşinci en iyi şarkıcısı olarak sıraladı.",
+     "Carey; beş oktavlık vokal aralığı, melizmatik şarkı söyleme tarzı, imza niteliğindeki ıslık registeri kullanımı ve diva kişiliğiyle tanınır."
+    ]
+   }
+  }
+ ]
+}
