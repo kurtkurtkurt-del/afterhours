@@ -1,0 +1,14 @@
+{
+  "city": "gent",
+  "day": "2026-11-28",
+  "sparks": [
+    {
+      "kind": "walk",
+      "title": { "en": "the g.an.d.a. art route, free, saturday and sunday.", "de": "die g.an.d.a.-kunstroute, kostenlos, samstag und sonntag.", "tr": "g.an.d.a. sanat rotası, ücretsiz, cumartesi ve pazar." },
+      "line": { "en": "a free art route through the city, 11:00 to 18:00 on saturday and sunday. go at your own pace and stop wherever a door is open.", "de": "eine kostenlose kunstroute durch die stadt, samstag und sonntag von 11:00 bis 18:00 uhr. in deinem tempo gehen und dort stoppen, wo eine tür offen steht.", "tr": "şehirden geçen ücretsiz bir sanat rotası, cumartesi ve pazar 11:00 ile 18:00 arası. kendi hızında yürü, kapısı açık olan yerlerde dur." },
+      "place": { "en": "g.an.d.a. kunstroute", "de": "g.an.d.a. kunstroute", "tr": "g.an.d.a. kunstroute" },
+      "hour": 13, "minute": 0,
+      "why": "G.AN.D.A. Kunstroute on visit.gent.be: sat 28 and sun 29 Nov, 11:00 to 18:00, free of charge."
+    }
+  ]
+}
