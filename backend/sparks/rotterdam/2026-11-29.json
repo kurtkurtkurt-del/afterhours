@@ -1,0 +1,27 @@
+{
+  "city": "rotterdam",
+  "day": "2026-11-29",
+  "sparks": [
+    {
+      "kind": "derby",
+      "title": {
+        "en": "feyenoord – ajax, the klassieker in de kuip.",
+        "de": "feyenoord – ajax, die klassieker in de kuip.",
+        "tr": "de kuip'te feyenoord – ajax, klasik."
+      },
+      "line": {
+        "en": "the klassieker at de kuip, kick-off 14:30 on sunday. check the club's ticket page before you go; tickets go fast for this one.",
+        "de": "die klassieker in de kuip, anpfiff sonntag 14:30. vorher auf der vereinsseite nach tickets schauen; früh buchen lohnt sich.",
+        "tr": "de kuip'te klasik, pazar 14:30'da başlıyor. gitmeden önce kulübün bilet sayfasına bak; erken al."
+      },
+      "place": {
+        "en": "de kuip",
+        "de": "de kuip",
+        "tr": "de kuip"
+      },
+      "hour": 14,
+      "minute": 30,
+      "why": "Feyenoord vs Ajax, Eredivisie matchday 14, Sun 29.11 14:30 at De Kuip (fr12.nl headline on the date; kick-off from the 2026/27 concept schedule on fcupdate.nl)."
+    }
+  ]
+}

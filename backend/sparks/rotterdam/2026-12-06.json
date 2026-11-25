@@ -1,0 +1,27 @@
+{
+  "city": "rotterdam",
+  "day": "2026-12-06",
+  "sparks": [
+    {
+      "kind": "flea",
+      "title": {
+        "en": "waluw vintage and design market, christmas edition.",
+        "de": "waluw vintage- und design-markt, weihnachtsausgabe.",
+        "tr": "waluw vintage ve tasarım pazarı, noel sürümü."
+      },
+      "line": {
+        "en": "vintage and design stalls at edge on coolsingel, 10:30 to 16:30, entry €7.50 in advance or €8 at the door. a slow sunday morning with a coffee in hand.",
+        "de": "vintage- und designstände im edge am coolsingel, 10:30 bis 16:30, eintritt 7,50 euro im vorverkauf oder 8 euro an der tür. ein ruhiger sonntagvormittag mit kaffee.",
+        "tr": "edge coolsingel'de vintage ve tasarım tezgahları, 10:30-16:30. ön satış 7,50 euro, kapıda 8 euro. kahveyle yavaş bir pazar sabahı."
+      },
+      "place": {
+        "en": "edge coolsingel",
+        "de": "edge coolsingel",
+        "tr": "edge coolsingel"
+      },
+      "hour": 10,
+      "minute": 30,
+      "why": "Waluw Vintage & Design Market, Christmas edition, Sun 6.12 10:30-16:30 at EDGE Coolsingel 75, with entry prices, from search results citing the Waluw listing; the organiser page itself was not opened."
+    }
+  ]
+}
