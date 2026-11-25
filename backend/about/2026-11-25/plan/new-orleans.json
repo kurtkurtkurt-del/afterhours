@@ -1,0 +1,16 @@
+{
+ "city": "new-orleans",
+ "day": "2026-11-25",
+ "nights": [
+  {
+   "id": "f7a026dc-ee2c-48f7-aff4-a2396be8e5c7",
+   "slug": "kristin-diable-e1fa8905",
+   "title": "Kristin Diable",
+   "act": "Kristin Diable",
+   "name": "Kristin Diable",
+   "description": "American songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Kristin_Diable",
+   "extract": "Kristin Diable is an American musician, songwriter, and singer from New Orleans, Louisiana."
+  }
+ ]
+}

@@ -1,0 +1,76 @@
+{
+ "city": "manchester",
+ "day": "2026-11-25",
+ "nights": [
+  {
+   "id": "619c14cd-69d5-49ad-91fa-b4a9c4590c07",
+   "slug": "gang-of-youths-28e62314",
+   "title": "Gang of Youths",
+   "act": "Gang of Youths",
+   "name": "Gang of Youths",
+   "description": "Australian rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Gang_of_Youths",
+   "extract": "Gang of Youths are an Australian alternative rock band from Sydney that formed in 2012. The band was founded by chief songwriter and lead vocalist David Le'aupepe; he has been joined by Jung Kim on guitar and keyboards since the band's inception, as well as Donnie Borzestowski on drums since 2014 and Tom Hobden on violin, rhythm guitar and keyboards since 2020. The band's debut studio album The Positions (2015) received multiple ARIA Award nominations and peaked at number five on the Australian albums chart. It provided the single \"Magnolia\", which has been described as their breakthrough hit and was certified platinum in 2018."
+  },
+  {
+   "id": "f7ee8f18-5c40-4d21-bc99-1ea2dc30879a",
+   "slug": "the-veils-3f0ef354",
+   "title": "The Veils",
+   "act": "The Veils",
+   "name": "The Veils",
+   "description": "English/New Zealand rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Veils",
+   "extract": "The Veils are an English/New Zealand indie/rock band fronted by singer and songwriter Finn Andrews."
+  },
+  {
+   "id": "789609d7-3b02-4bcf-99ab-76738cabaeb8",
+   "slug": "genesis-owusu-1f42de07",
+   "title": "Genesis Owusu",
+   "act": "Genesis Owusu",
+   "name": "Genesis Owusu",
+   "description": "Ghanaian-Australian singer (born 1998)",
+   "source_url": "https://en.wikipedia.org/wiki/Genesis_Owusu",
+   "extract": "Kofi Owusu-Ansah, known professionally as Genesis Owusu, is a Ghanaian-Australian rapper and singer from Canberra. He is the younger brother of fellow hip hop rapper Citizen Kay. Owusu's debut studio album, Smiling with No Teeth, reached the ARIA Albums Chart top 30. At the 2021 ARIA Music Awards he won four trophies for Album of the Year, Best Hip Hop Release, Best Independent Release and Best Cover Art. He released a critically acclaimed follow-up, Struggler, in 2023. Genesis Owusu's third studio album, Redstar Wu & the Worldwide Scourge, was released in 2026."
+  },
+  {
+   "id": "c8dd856f-3ab5-4cd8-bad2-9ed63f0bc2c0",
+   "slug": "dayseeker-d98b37b6",
+   "title": "Dayseeker",
+   "act": "Dayseeker",
+   "name": "Dayseeker",
+   "description": "American post-hardcore band",
+   "source_url": "https://en.wikipedia.org/wiki/Dayseeker",
+   "extract": "Dayseeker is an American post-hardcore band formed in Orange County, California, in 2012. The group consists of vocalist Rory Rodriguez, bassist Ramone Valerio and drummer Zac Mayfield. They are currently signed to Spinefarm Records and have released six studio albums. Their most recent studio album, Creature in the Black Night, was released on October 24, 2025 with a Redux deluxe edition scheduled to release on February 26, 2027."
+  },
+  {
+   "id": "1505ea10-3a73-4237-b901-4e26ba818a7f",
+   "slug": "hermanos-gutierrez-ac438d78",
+   "title": "Hermanos Gutiérrez",
+   "act": "Hermanos Gutiérrez",
+   "name": "Hermanos Gutiérrez",
+   "description": "Ecuadorian-Swiss band",
+   "source_url": "https://en.wikipedia.org/wiki/Hermanos_Guti%C3%A9rrez",
+   "extract": "Hermanos Gutiérrez is a Latin instrumental band formed in 2015 in Zürich by Ecuadorian-Swiss brothers Alejandro Gutiérrez and Estevan Gutiérrez. The US label Easy Eye Sound has released the band's fifth album El Bueno y el Malo in 2022, their sixth album Sonido Cósmico in 2024, and their seventh album Los Ojos Del Cóndor in 2026."
+  },
+  {
+   "id": "eac7d0ab-79a1-4b18-b1b1-bcda2fa1bd28",
+   "slug": "bleachers-f7edf561",
+   "title": "Bleachers",
+   "act": "Bleachers",
+   "name": "Bleachers",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Bleachers_(band)",
+   "extract": "Bleachers is an American rock band from New Jersey, formed in 2013 by musician Jack Antonoff. Antonoff was the only permanent member of the group until 2023, when longtime touring musicians Mikey Freedom Hart, Sean Hutchinson, Evan Smith, Michael Riddleberger, and Zem Audu became official members."
+  },
+  {
+   "id": "5f8c6691-277e-4f80-813e-1906537fbce6",
+   "slug": "mariah-carey-1d0dbb31",
+   "title": "Mariah Carey",
+   "act": "Mariah Carey",
+   "name": "Mariah Carey",
+   "description": "American singer-songwriter (born 1969)",
+   "source_url": "https://en.wikipedia.org/wiki/Mariah_Carey",
+   "extract": "Mariah Carey is an American singer-songwriter, record producer, and actress. Dubbed the \"Songbird Supreme\", Carey is known for her five-octave vocal range, melismatic singing style, signature use of the whistle register, and diva persona. An influential figure in popular culture, she was ranked as the fifth-greatest singer of all time by Rolling Stone in 2023."
+  }
+ ]
+}

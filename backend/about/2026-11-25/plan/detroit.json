@@ -1,0 +1,16 @@
+{
+ "city": "detroit",
+ "day": "2026-11-25",
+ "nights": [
+  {
+   "id": "72c2f295-8f35-402a-a3ab-ef4eef5de16e",
+   "slug": "bodysnatcher-hell-is-here-hell-is-home-tour-4a24ed63",
+   "title": "Bodysnatcher: Hell Is Here, Hell Is Home Tour",
+   "act": "Bodysnatcher",
+   "name": "Bodysnatcher",
+   "description": "American deathcore band",
+   "source_url": "https://en.wikipedia.org/wiki/Bodysnatcher_(band)",
+   "extract": "Bodysnatcher is an American deathcore band from Florida founded in 2014."
+  }
+ ]
+}

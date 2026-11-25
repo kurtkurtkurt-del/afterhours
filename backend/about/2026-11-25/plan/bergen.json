@@ -1,0 +1,16 @@
+{
+ "city": "bergen",
+ "day": "2026-11-25",
+ "nights": [
+  {
+   "id": "b4dd97f5-0d9f-4b70-9ac5-d23849fcacd2",
+   "slug": "brad-paisley-420087e3",
+   "title": "Brad Paisley",
+   "act": "Brad Paisley",
+   "name": "Brad Paisley",
+   "description": "American country musician (born 1972)",
+   "source_url": "https://en.wikipedia.org/wiki/Brad_Paisley",
+   "extract": "Brad Douglas Paisley is an American country music singer, songwriter, and guitarist. His first success came in 1997 as the writer of David Kersh's \"Another You\". After this, he signed with Arista Nashville in 1998, and released his debut album Who Needs Pictures in 1999. This was the first of 12 studio albums he released for the label before its closure in 2023, after which he transferred to EMI Nashville. His most commercially successful albums are Mud on the Tires (2003) and Time Well Wasted (2005), both certified double platinum by the Recording Industry Association of America."
+  }
+ ]
+}

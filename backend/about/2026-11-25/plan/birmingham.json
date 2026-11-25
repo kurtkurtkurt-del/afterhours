@@ -1,0 +1,16 @@
+{
+ "city": "birmingham",
+ "day": "2026-11-25",
+ "nights": [
+  {
+   "id": "025bd609-2ff0-4c58-9a5d-e88838cbf663",
+   "slug": "the-wonder-stuff-2d3ed176",
+   "title": "The Wonder Stuff",
+   "act": "The Wonder Stuff",
+   "name": "The Wonder Stuff",
+   "description": "British alternative rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Wonder_Stuff",
+   "extract": "The Wonder Stuff are a British alternative rock band. Originally based in Stourbridge in the West Midlands, England, the band's first lineup released four albums and nearly 20 singles and EPs, enjoying considerable chart and live success in the UK. The band have continued to tour and record since 2000."
+  }
+ ]
+}

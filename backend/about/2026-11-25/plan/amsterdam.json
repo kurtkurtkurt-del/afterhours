@@ -1,0 +1,36 @@
+{
+ "city": "amsterdam",
+ "day": "2026-11-25",
+ "nights": [
+  {
+   "id": "e7b5b6ad-00a1-4adc-8f92-6e8433bbb23a",
+   "slug": "the-prodigy-european-tour-5f78da3b",
+   "title": "The Prodigy - European Tour",
+   "act": "The Prodigy",
+   "name": "The Prodigy",
+   "description": "English electronic rave music group",
+   "source_url": "https://en.wikipedia.org/wiki/The_Prodigy",
+   "extract": "The Prodigy are an English electronic music band formed in Braintree in 1990 by producer, keyboardist, and songwriter Liam Howlett and dancers Keith Flint and Leeroy Thornhill, who respectively went on to contribute vocals and live keyboards on occasion. They were joined by MC and lead vocalist Maxim. AllMusic described the Prodigy as \"the premiere dance act for the alternative masses\" and \"the Godfathers of Rave\". They are considered to be pioneers of big beat and in a number of breakbeat led musical genres including breaks and breakbeat hardcore. Liam Howlett describes their style as electronic punk."
+  },
+  {
+   "id": "d031c754-e2db-40b3-ac7d-cbf8028c7b26",
+   "slug": "blondshell-694b8292",
+   "title": "Blondshell",
+   "act": "Blondshell",
+   "name": "Blondshell",
+   "description": "American indie rock musician",
+   "source_url": "https://en.wikipedia.org/wiki/Blondshell",
+   "extract": "Sabrina Mae Teitelbaum, better known as Blondshell, is an American indie rock singer, songwriter and musician based in Los Angeles, California. Following an early pop-leaning career under the name BAUM, she debuted as Blondshell in June 2022 with the single \"Olympus\". She has toured with acts including Suki Waterhouse, Horsegirl, and Porridge Radio and has performed at South by Southwest, Austin City Limits Music Festival, and on The Tonight Show Starring Jimmy Fallon. Her self-titled debut album was released on April 7, 2023, via Partisan Records, receiving positive reviews."
+  },
+  {
+   "id": "d67bc42f-8e26-4d86-9613-a6cdb8c6f056",
+   "slug": "kehlani-wine-and-dine-ticket-not-included-5280460d",
+   "title": "Kehlani | Wine & Dine (TICKET NOT INCLUDED)",
+   "act": "Kehlani",
+   "name": "Kehlani",
+   "description": "American singer-songwriter (born 1995)",
+   "source_url": "https://en.wikipedia.org/wiki/Kehlani",
+   "extract": "Kehlani Ashley Parrish is an American singer, songwriter and dancer. They initially started as a member of the teen pop group PopLyfe in 2011 as a contestant on America's Got Talent. After leaving the group, Parrish self-released the mixtapes Cloud 19 (2014) and You Should Be Here (2015), both of which were critically acclaimed and received gold certifications by the Recording Industry Association of America (RIAA), while the latter marked their first entry on the US Billboard 200 and was nominated for Best Urban Contemporary Album at the 58th Annual Grammy Awards."
+  }
+ ]
+}

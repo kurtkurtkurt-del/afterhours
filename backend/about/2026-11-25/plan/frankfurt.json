@@ -1,0 +1,16 @@
+{
+ "city": "frankfurt",
+ "day": "2026-11-25",
+ "nights": [
+  {
+   "id": "38002b4b-ae00-41f1-b200-c883407b9e48",
+   "slug": "the-meteors-f8dbfdc5",
+   "title": "THE METEORS",
+   "act": "THE METEORS",
+   "name": "The Meteors",
+   "description": "English psychobilly band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Meteors",
+   "extract": "The Meteors are an English psychobilly band formed in 1980. Originally from London, England, they are one of the pioneers of the psychobilly subgenre — which fuses punk rock with rockabilly — its distinctive sound and style. \"Starting in the neo-rockabilly scene, the Meteors were initially shunned for being too spooky and mean. Excuses for exclusion from rockabilly concerts varied from the band having too extreme of a sound to their drummer having green hair.\" The Meteors blended elements of punk rock, 1960s garage band surf music, rockabilly, and horror film themes in their music and are thought to be one of the first bands to use the label 'Psychobilly' to define a genre and musical style, though the term is used as a lyrical motif as part of the narrative in the Johnny Cash and The Tennessee Three song, \"One Piece at a Time\"."
+  }
+ ]
+}

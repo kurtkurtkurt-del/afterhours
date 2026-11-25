@@ -1,0 +1,16 @@
+{
+ "city": "monterrey",
+ "day": "2026-11-25",
+ "nights": [
+  {
+   "id": "be6b1a19-7e20-4e45-8e3a-b66d0bceb026",
+   "slug": "vilma-palma-e-vampiros-b5a401a8",
+   "title": "Vilma Palma e Vampiros",
+   "act": "Vilma Palma e Vampiros",
+   "name": "Vilma Palma e Vampiros",
+   "description": "Argentine new wave rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Vilma_Palma_e_Vampiros",
+   "extract": "Vilma Palma e Vampiros is an Argentine new wave indie rock en español band from Rosario. They came to prominence in 1992 after the release of the hits \"Bye, Bye\" and \"La Pachanga\"."
+  }
+ ]
+}

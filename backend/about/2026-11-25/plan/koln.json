@@ -1,0 +1,26 @@
+{
+ "city": "koln",
+ "day": "2026-11-25",
+ "nights": [
+  {
+   "id": "742a7d90-a105-42e1-bd7d-243fa14692c6",
+   "slug": "yendry-como-agua-tour-723ee035",
+   "title": "YENDRY - Como agua Tour",
+   "act": "YENDRY",
+   "name": "Yendry",
+   "description": "Dominican singer-songwriter (born 1993)",
+   "source_url": "https://en.wikipedia.org/wiki/Yendry",
+   "extract": "Yendry Cony Fiorentino  known mononymously as Yendry is a Dominican-Italian singer and songwriter. Yendry first achieved popularity in Italy in 2012 thanks to her participation in the sixth edition of X Factor Italy which earned her a record deal with Sony Music Italy. From 2015 to 2018 she was the frontwoman of the group Materianera. In 2020 after the release of the singles Barrio and Nena she achieved international popularity and she signed a double record deal contract with RCA Records and Sony Music Latin. On April 15, 2021, she was one of the performers for the Latin American Music Awards of 2021. On June 7, 2021, she was nominated as Best New Artist at the 2021 MTV Millennial Awards. On January 25, 2022, she received the nomination as Best New Female artist for the 2022 Premio Lo Nuestro."
+  },
+  {
+   "id": "1bfeff2a-59b8-46e0-aa2d-dc81576e9fc2",
+   "slug": "jpegmafia-experimental-rap-tour-df13c8e4",
+   "title": "JPEGMAFIA - \"Experimental Rap\" tour",
+   "act": "JPEGMAFIA",
+   "name": "JPEGMafia",
+   "description": "American rapper and record producer (born 1989)",
+   "source_url": "https://en.wikipedia.org/wiki/JPEGMafia",
+   "extract": "Barrington DeVaughn Hendricks, known professionally as JPEGMafia, is an American rapper, singer, and record producer. Born in Flatbush, Brooklyn, he released his debut studio album, Black Ben Carson (2016) independently as well as his second album Veteran (2018), which received widespread critical acclaim. His third album, All My Heroes Are Cornballs (2019) entered the Billboard 200, and had signed to Republic for the release of his fourth album LP! (2021); both were met with continued critical acclaim. In 2023, he released his collaborative studio album Scaring the Hoes (2023) through AWAL. In 2024, he released his fifth studio album I Lay Down My Life for You (2024). On May 21, 2026, he released his sixth studio album Experimental Rap."
+  }
+ ]
+}

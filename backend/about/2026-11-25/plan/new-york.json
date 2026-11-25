@@ -1,0 +1,16 @@
+{
+ "city": "new-york",
+ "day": "2026-11-25",
+ "nights": [
+  {
+   "id": "c2e2425e-841b-44e2-953c-44931a12fe0d",
+   "slug": "buena-vista-social-club-3575eef6",
+   "title": "Buena Vista Social Club",
+   "act": "Buena Vista Social Club",
+   "name": "Buena Vista Social Club",
+   "description": "Cuban musical ensemble",
+   "source_url": "https://en.wikipedia.org/wiki/Buena_Vista_Social_Club",
+   "extract": "Buena Vista Social Club was a musical ensemble primarily made up of Cuban musicians, formed in 1996. The project was organized by World Circuit executive Nick Gold, produced by American guitarist Ry Cooder and directed by Juan de Marcos González. They named the group after the members' club of the same name in the Buenavista quarter of Havana, a popular music venue in the 1940s. To showcase the popular styles of the time, such as son, bolero and danzón, they recruited a dozen veteran musicians, some of whom had been retired for many years."
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "city": "montreal",
+ "day": "2026-11-25",
+ "nights": [
+  {
+   "id": "37bd7dfc-3509-476d-9fb8-2ce4a5af6e58",
+   "slug": "korpiklaani-336008ea",
+   "title": "KORPIKLAANI",
+   "act": "KORPIKLAANI",
+   "name": "Korpiklaani",
+   "description": "Finnish folk metal band",
+   "source_url": "https://en.wikipedia.org/wiki/Korpiklaani",
+   "extract": "Korpiklaani is a Finnish folk metal band from Lahti that was formerly known as Shamaani Duo and Shaman."
+  },
+  {
+   "id": "8e9f29e1-3b4c-4d17-941e-4c3aed67d668",
+   "slug": "darkest-hour-221f0dc5",
+   "title": "DARKEST HOUR",
+   "act": "DARKEST HOUR",
+   "name": "Darkest Hour",
+   "description": "American metal band",
+   "source_url": "https://en.wikipedia.org/wiki/Darkest_Hour_(band)",
+   "extract": "Darkest Hour is an American heavy metal band from Washington, D.C., formed in 1995. Though failing to break through early in their tenure, the band has received acclaim for their albums Undoing Ruin, Deliver Us, and The Eternal Return. Deliver Us debuted at number 110 on the Billboard album charts, with sales of 6,600, and their more recent effort, The Eternal Return, reached a higher position in the Billboard album charts at number 104. Their album Godless Prophets & the Migrant Flora charted at 42 on the Billboard 200, a peak for the band, and it marked a stylistic shift in the band's discography."
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "city": "istanbul",
+ "day": "2026-11-25",
+ "nights": [
+  {
+   "id": "66f99284-fc3a-4cb9-8d55-454da2524065",
+   "slug": "demet-akal-n-ab4ff58a",
+   "title": "Demet Akalın",
+   "act": "Demet Akalın",
+   "name": "Demet Akalın",
+   "description": "Turkish singer",
+   "source_url": "https://en.wikipedia.org/wiki/Demet_Akal%C4%B1n",
+   "extract": "Demet Akalın is a Turkish singer and former model. Due to the popular songs she has released since the middle of the 2000s, she has become a prominent figure in Turkish pop music."
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "city": "boston",
+ "day": "2026-11-25",
+ "nights": [
+  {
+   "id": "eed62331-ae5f-417a-994c-1027949c78e4",
+   "slug": "chris-botti-fa8a1de2",
+   "title": "Chris Botti",
+   "act": "Chris Botti",
+   "name": "Chris Botti",
+   "description": "American trumpeter and composer (born 1962)",
+   "source_url": "https://en.wikipedia.org/wiki/Chris_Botti",
+   "extract": "Christopher Stephen Botti is an American trumpeter and composer."
+  },
+  {
+   "id": "162746f4-ab67-45a3-aa06-e7e16b7fdc13",
+   "slug": "jalen-ngonda-doctorine-of-love-tour-18-65e925f3",
+   "title": "Jalen Ngonda: Doctorine of Love Tour (18+)",
+   "act": "Jalen Ngonda",
+   "name": "Jalen Ngonda",
+   "description": "American soul musician",
+   "source_url": "https://en.wikipedia.org/wiki/Jalen_Ngonda",
+   "extract": "Jalen N'Gonda is an American musician based in England. He came to prominence with the release of his debut studio album Come Around and Love Me (2023), and is known for his Motown-inspired soul music. N'Gonda is primarily a singer, but also plays various instruments during live performances."
+  }
+ ]
+}

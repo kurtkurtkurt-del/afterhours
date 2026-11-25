@@ -1,0 +1,16 @@
+{
+ "city": "ankara",
+ "day": "2026-11-25",
+ "nights": [
+  {
+   "id": "2627b668-c0c3-4b34-a54a-07767c8a625b",
+   "slug": "ogun-sanl-soy-f6e4c780",
+   "title": "Ogün Sanlısoy",
+   "act": "Ogün Sanlısoy",
+   "name": "Ogün Sanlısoy",
+   "description": "Turkish musician (born 1971)",
+   "source_url": "https://en.wikipedia.org/wiki/Og%C3%BCn_Sanl%C4%B1soy",
+   "extract": "Ogün Sanlısoy is a Turkish musician, vocalist and guitarist for thrash metal band Mezarkabul."
+  }
+ ]
+}

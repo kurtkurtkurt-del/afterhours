@@ -1,0 +1,26 @@
+{
+ "city": "malmo",
+ "day": "2026-11-25",
+ "nights": [
+  {
+   "id": "1cea1572-852e-4347-addd-9d6270fad89e",
+   "slug": "take-that-dreamers-tour-26589816",
+   "title": "Take that - Dreamers Tour",
+   "act": "Take that",
+   "name": "Take That",
+   "description": "English pop group",
+   "source_url": "https://en.wikipedia.org/wiki/Take_That",
+   "extract": "Take That are an English pop group formed in Manchester in 1990. The group currently consists of Gary Barlow, Howard Donald and Mark Owen. The original line-up also featured Jason Orange and Robbie Williams. Barlow is the group's lead singer and primary songwriter, with Owen and Williams initially providing backing vocals, and Donald and Orange serving primarily as dancers."
+  },
+  {
+   "id": "af1540fb-d727-46d0-b9f3-3bab5aa79aa7",
+   "slug": "take-that-dreamers-tour-premium-9c8254ec",
+   "title": "Take that - Dreamers Tour | Premium",
+   "act": "Take that",
+   "name": "Take That",
+   "description": "English pop group",
+   "source_url": "https://en.wikipedia.org/wiki/Take_That",
+   "extract": "Take That are an English pop group formed in Manchester in 1990. The group currently consists of Gary Barlow, Howard Donald and Mark Owen. The original line-up also featured Jason Orange and Robbie Williams. Barlow is the group's lead singer and primary songwriter, with Owen and Williams initially providing backing vocals, and Donald and Orange serving primarily as dancers."
+  }
+ ]
+}

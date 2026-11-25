@@ -1,0 +1,16 @@
+{
+ "city": "toronto",
+ "day": "2026-11-25",
+ "nights": [
+  {
+   "id": "94632d72-53c1-4d8e-9080-73933e7f2ffb",
+   "slug": "kingdom-of-giants-8e92c864",
+   "title": "Kingdom of Giants",
+   "act": "Kingdom of Giants",
+   "name": "Kingdom of Giants",
+   "description": "American metalcore band",
+   "source_url": "https://en.wikipedia.org/wiki/Kingdom_of_Giants",
+   "extract": "Kingdom of Giants is an American metalcore band from Sacramento, California. It was formed in 2010 from the remnants of other bands by Julian Perez, Max Bremer, Levi Norris, Dana Willax, Red Martin, and Stephen Rezza."
+  }
+ ]
+}

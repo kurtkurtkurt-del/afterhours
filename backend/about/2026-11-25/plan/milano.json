@@ -1,0 +1,16 @@
+{
+ "city": "milano",
+ "day": "2026-11-25",
+ "nights": [
+  {
+   "id": "57f1a603-b0c0-4dc1-9d99-3a39779c7fbf",
+   "slug": "sace6-49d59fa8",
+   "title": "SACE6",
+   "act": "SACE6",
+   "name": "Sace6",
+   "description": "American alternative metal duo",
+   "source_url": "https://en.wikipedia.org/wiki/Sace6",
+   "extract": "Sace6 is an American alternative metal duo consisting of lead vocalist Sace and guitarist-vocalist Noah Thomas. Originally the solo project of Sace, the project developed into a duo in 2024. Sonically, their music offers contrasting melodic vocals and pop-oriented hooks with heavy guitar-driven instrumentation."
+  }
+ ]
+}

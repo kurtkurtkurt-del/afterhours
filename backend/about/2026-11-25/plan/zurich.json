@@ -1,0 +1,26 @@
+{
+ "city": "zurich",
+ "day": "2026-11-25",
+ "nights": [
+  {
+   "id": "b8e2f161-1447-4c13-b729-74673c8f6843",
+   "slug": "paris-jackson-c4f5f3cd",
+   "title": "Paris Jackson",
+   "act": "Paris Jackson",
+   "name": "Paris Jackson",
+   "description": "American model, actress and singer (born 1998)",
+   "source_url": "https://en.wikipedia.org/wiki/Paris_Jackson",
+   "extract": "Paris-Michael Katherine Jackson is an American model, actress, and singer. The second child and daughter of Michael Jackson and Debbie Rowe, Jackson signed a deal with Republic Records in 2020. Her debut album, Wilted, was released that year."
+  },
+  {
+   "id": "fa25a359-6422-4bf8-b72c-ad72aed01e13",
+   "slug": "kaleo-way-down-we-go-tour-c6e7ef0a",
+   "title": "KALEO - Way Down We Go Tour",
+   "act": "KALEO",
+   "name": "Kaleo",
+   "description": "Icelandic rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Kaleo_(band)",
+   "extract": "KALEO is an Icelandic blues rock band which formed in Mosfellsbær in 2012. It consists of lead vocalist and guitarist Jökull Júlíusson, drummer Davíð Antonsson, bassist Daniel Kristjánsson, lead guitarist Rubin Pollock and harmonicist Þorleifur Gaukur Davíðsson. They have released four studio albums, Kaleo (2013), A/B (2016), Surface Sounds (2021), and Mixed Emotions (2025), as well as the EP Glasshouse (2013)."
+  }
+ ]
+}
