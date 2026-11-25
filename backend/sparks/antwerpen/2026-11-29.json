@@ -1,0 +1,14 @@
+{
+  "city": "antwerpen",
+  "day": "2026-11-29",
+  "sparks": [
+    {
+      "kind": "derby",
+      "title": { "en": "antwerp – anderlecht at the bosuil.", "de": "antwerp – anderlecht im bosuil.", "tr": "bosuil'de antwerp – anderlecht." },
+      "line": { "en": "the local derby at the bosuilstadion, kick-off 16:00. a cold, grey afternoon is forecast, so warm clothes and an early start.", "de": "das lokalderby im bosuilstadion, anpfiff 16:00 uhr. ein kalter, grauer nachmittag ist angesagt, also warm anziehen und früh losgehen.", "tr": "bosuilstadion'da yerel derbi, başlama saat 16:00. soğuk ve gri bir öğleden sonra bekleniyor; sıcak giyin ve erken çık." },
+      "place": { "en": "bosuilstadion", "de": "bosuilstadion", "tr": "bosuilstadion" },
+      "hour": 16, "minute": 0,
+      "why": "Antwerp vs Anderlecht, Jupiler Pro League round 13, Bosuilstadion, Sun 29 Nov 2026 16:00 (voetbalprimeur.be; 365scores and thesportsdb agree on the date)."
+    }
+  ]
+}
