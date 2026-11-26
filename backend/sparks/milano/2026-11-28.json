@@ -1,0 +1,27 @@
+{
+  "city": "milano",
+  "day": "2026-11-28",
+  "sparks": [
+    {
+      "kind": "flea",
+      "title": {
+        "en": "cotoletta vintage market, department 184.",
+        "de": "cotoletta vintage market, department 184.",
+        "tr": "cotoletta vintage market, department 184'te."
+      },
+      "line": {
+        "en": "second edition of the vintage and modernariato market at department 184, via varesina 184, 10:00 to 20:00. it is open sunday 29 too.",
+        "de": "zweite ausgabe des vintage- und modernariato-marktes im department 184, via varesina 184, 10 bis 20 uhr. geöffnet auch am sonntag, 29.",
+        "tr": "department 184'te, via varesina 184, vintage ve modernariato pazarının ikinci edisyonu; 10:00 ile 20:00 arası. pazar 29 de açık."
+      },
+      "place": {
+        "en": "department 184",
+        "de": "department 184",
+        "tr": "department 184"
+      },
+      "hour": 10,
+      "minute": 0,
+      "why": "Cotoletta Vintage Market, second edition, Sat 28 and Sun 29 Nov 2026, 10:00 to 20:00 at Department 184, via Varesina 184 (mentelocale.it listing found by search)."
+    }
+  ]
+}

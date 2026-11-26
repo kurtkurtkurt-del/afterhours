@@ -1,0 +1,14 @@
+{
+  "city": "milano",
+  "day": "2026-11-29",
+  "sparks": [
+    {
+      "kind": "flea",
+      "title": { "en": "mercatone dell'antiquariato, naviglio grande.", "de": "mercatone dell'antiquariato am naviglio grande.", "tr": "naviglio grande'de mercatone dell'antiquariato." },
+      "line": { "en": "the antiques market along the naviglio grande, sunday 29 nov. usually free to walk, around 9 to 18; start at viale gorizia and walk toward the darsena. check the hours with the naviglio grande association.", "de": "der antiquitätenmarkt am naviglio grande, sonntag 29. nov. meist freier eintritt, etwa 9 bis 18 uhr; vom viale gorizia Richtung darsena. zeiten bitte bei der naviglio-grande-vereinigung prüfen.", "tr": "naviglio grande boyunca antika pazarı, pazar 29 kasım. genellikle girişi ücretsiz, yaklaşık 9 ile 18 arası; viale gorizia'dan darsena yönüne yürünür. saatleri naviglio grande derneğinden kontrol et." },
+      "place": { "en": "naviglio grande", "de": "naviglio grande", "tr": "naviglio grande" },
+      "hour": 9, "minute": 0,
+      "why": "Mercatone dell'Antiquariato sul Naviglio Grande, Sun 29 Nov 2026 per the milanofree.it 2026 calendar and a zero.eu listing; hours 9 to 18 from whereisthemarket.com, not confirmed for this edition."
+    }
+  ]
+}
