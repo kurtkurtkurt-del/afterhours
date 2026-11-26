@@ -1,0 +1,15 @@
+{
+  "city": "sevilla",
+  "day": "2026-12-03",
+  "sparks": [
+    {
+      "kind": "flea",
+      "title": { "en": "the thursday antiques market on calle feria.", "de": "der donnerstagsmarkt mit antiquitäten in der calle feria.", "tr": "calle feria'da perşembe antika pazarı." },
+      "line": { "en": "antiques and second-hand stalls along calle feria every thursday morning. cafés and restaurants on the surrounding streets for after.", "de": "antiquitäten und gebrauchtwaren entlang der calle feria, jeden donnerstagvormittag. cafés und restaurants in den umliegenden straßen für danach.", "tr": "her perşembe sabahı calle feria boyunca antika ve ikinci el tezgâhlar. sonrası için çevredeki sokaklarda kafeler ve restoranlar." },
+      "place": { "en": "calle feria, casco antiguo", "de": "calle feria, casco antiguo", "tr": "calle feria, casco antiguo" },
+      "hour": 9,
+      "minute": 0,
+      "why": "El Mercadillo del Jueves on calle Feria 109 (Casco Antiguo), Thursdays from 08:30 per hotel and mercadillos.org listings; one hotel listing gives a 19:30 close, so the closing time is unconfirmed. 3 Dec 2026 is a Thursday."
+    }
+  ]
+}
