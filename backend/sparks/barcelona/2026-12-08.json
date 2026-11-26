@@ -1,0 +1,14 @@
+{
+  "city": "barcelona",
+  "day": "2026-12-08",
+  "sparks": [
+    {
+      "kind": "football",
+      "title": { "en": "barça v manchester city at camp nou, 21:00.", "de": "barça – manchester city im camp nou, 21:00.", "tr": "camp nou'da barça – manchester city, 21:00." },
+      "line": { "en": "champions league, league phase matchday 6, on a tuesday that is a public holiday in spain. find a bar with a screen and a group.", "de": "champions league, spieltag 6, an einem dienstag, der in spanien feiertag ist. eine bar mit leinwand und einer gruppe finden.", "tr": "şampiyonlar ligi, 6. hafta; İspanya'da resmi tatil olan bir salı. ekranlı bir bar bulup grupla izleyin." },
+      "place": { "en": "spotify camp nou", "de": "spotify camp nou", "tr": "spotify camp nou" },
+      "hour": 21, "minute": 0,
+      "why": "FC Barcelona v Manchester City, UCL league phase matchday 6, Tue 08.12 21:00 CET at Spotify Camp Nou (fcbarcelona.com match page; sportscafe.in confirms date)."
+    }
+  ]
+}

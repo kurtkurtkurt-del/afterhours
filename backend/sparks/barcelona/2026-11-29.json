@@ -1,0 +1,14 @@
+{
+  "city": "barcelona",
+  "day": "2026-11-29",
+  "sparks": [
+    {
+      "kind": "flea",
+      "title": { "en": "sant antoni sunday book market.", "de": "bücher-sonntagsmarkt sant antoni.", "tr": "sant antoni pazar günü kitap pazarı." },
+      "line": { "en": "old and second-hand books, stickers, postcards, stamps and games, open sunday mornings until about 14:00. go early.", "de": "alte und gebrauchte bücher, sticker, postkarten, briefmarken und spiele, sonntagvormittags bis etwa 14:00. früh hingehen.", "tr": "eski ve ikinci el kitaplar, çıkartmalar, kartpostallar, pullar ve oyunlar; pazar sabahları yaklaşık 14:00'a kadar açık. erken gidin." },
+      "place": { "en": "mercat dominical de sant antoni", "de": "mercat dominical de sant antoni", "tr": "mercat dominical de sant antoni" },
+      "hour": 9, "minute": 0,
+      "why": "Sant Antoni Sunday book market, Comte d'Urgell 1, open Sundays 08:30-14:00 per Barcelona city council markets page; Sun 29.11."
+    }
+  ]
+}
