@@ -1,0 +1,27 @@
+{
+  "city": "roma",
+  "day": "2026-11-29",
+  "sparks": [
+    {
+      "kind": "flea",
+      "title": {
+        "en": "porta portese, sunday morning.",
+        "de": "porta portese, sonntagmorgen.",
+        "tr": "porta portese, pazar sabahı."
+      },
+      "line": {
+        "en": "the flea market runs from via portuense toward viale trastevere, roughly 6 to 14. go early, bring cash, leave room for a vintage coat.",
+        "de": "der flohmarkt zieht sich von der via portuense Richtung viale trastevere, etwa 6 bis 14 uhr. früh kommen, bar zahlen, platz für einen vintage-mantel lassen.",
+        "tr": "pazar via portuense'den viale trastevere yönüne uzanıyor, yaklaşık 6 ile 14 arası. erken gel, nakit getir, vintage bir ceket için yer bırak."
+      },
+      "place": {
+        "en": "porta portese",
+        "de": "porta portese",
+        "tr": "porta portese"
+      },
+      "hour": 8,
+      "minute": 0,
+      "why": "Turismo Roma's Porta Portese page and a 2026 listing (4 Jan to 27 Dec) confirm the Sunday market; the 6 to 14 hours come from a 2025 source, so check the day."
+    }
+  ]
+}
