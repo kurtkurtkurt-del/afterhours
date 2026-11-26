@@ -1,0 +1,46 @@
+{
+ "city": "nashville",
+ "day": "2026-11-26",
+ "nights": [
+  {
+   "id": "7dba42d6-aa13-4924-9db4-677cd0ac70ab",
+   "slug": "the-time-jumpers-368a1e44",
+   "title": "THE TIME JUMPERS",
+   "act": "THE TIME JUMPERS",
+   "name": "The Time Jumpers",
+   "description": "Musical group",
+   "source_url": "https://en.wikipedia.org/wiki/The_Time_Jumpers",
+   "extract": "The Time Jumpers is a Western swing band formed in 1998 by a group of Nashville studio musicians who enjoyed jamming together. Country star Vince Gill was a member of the group between 2010 and 2020. The 11–member group started playing occasional local gigs until they agreed to take a regular slot playing at the Station Inn, a venerable Nashville bluegrass venue. They later moved to a larger venue, Nashville's \"3rd & Lindsley\", and were called by Tennessean writer Juli Thanki, \"One of the hottest shows in town\". Some of their guest artists on the weekly live show have included Joe Walsh, Robert Plant, Norah Jones, Bonnie Raitt, Reba McEntire, Jimmy Buffett, Kings of Leon, and Toby Keith. Amy Grant said, \"You can't hear that caliber of musicians every Monday night for a cover charge in any town in America except here\". The group rarely travels, but in 2010 they performed at New York's Lincoln Center. In 2007, they recorded a live album entitled Jumpin' Time and in 2012 recorded The Time Jumpers. At the 2017 Grammy Awards the group won \"Best American Roots Song\" for Vince Gill's composition \"Kid Sister\"."
+  },
+  {
+   "id": "1c2a20ad-142d-4ea1-b478-3d91c6045e00",
+   "slug": "katie-pruitt-fools-for-the-fleeting-tour-w-antho-0169ce57",
+   "title": "Katie Pruitt -  Fools for the Fleeting Tour w/ Anthony da Costa and BAERD",
+   "act": "Katie Pruitt",
+   "name": "Katie Pruitt",
+   "description": "American singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Katie_Pruitt",
+   "extract": "Katherine Nicole Pruitt is an American singer-songwriter based in Nashville, Tennessee. Her debut album, Expectations, was released in 2020 by Rounder Records. Her second album, Mantras, was released in 2024."
+  },
+  {
+   "id": "c296cffb-6c9e-4357-aed8-9a22216ae284",
+   "slug": "state-champs-around-the-world-and-back-again-tou-dfba2ffa",
+   "title": "State Champs - Around The World And Back Again Tour",
+   "act": "State Champs",
+   "name": "State Champs",
+   "description": "American pop-punk band",
+   "source_url": "https://en.wikipedia.org/wiki/State_Champs",
+   "extract": "State Champs is an American pop-punk band from Albany, New York, formed in 2010. They are currently signed to Pure Noise Records and have released three EPs and five full-length albums. Their 2013 debut album The Finer Things debuted at number 2 on the Billboard Heatseekers Albums chart. They released an acoustic EP titled The Acoustic Things in October 2014 and their second studio album Around the World and Back one year later, in October 2015. In May 2017, they released a deluxe version of the album. Their third album, Living Proof, was released in 2018. In May 2022, the band released their fourth studio album, Kings of the New Age. In November 2024, their self-titled fifth album was released."
+  },
+  {
+   "id": "3e108981-6075-48ec-abca-633ed978ac62",
+   "slug": "scotty-mccreery-c7e33213",
+   "title": "Scotty McCreery",
+   "act": "Scotty McCreery",
+   "name": "Scotty McCreery",
+   "description": "American country singer (born 1993)",
+   "source_url": "https://en.wikipedia.org/wiki/Scotty_McCreery",
+   "extract": "Scott Cooke McCreery is an American country singer. He rose to fame after winning the tenth season of American Idol in May 2011."
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "city": "milano",
+ "day": "2026-11-26",
+ "nights": [
+  {
+   "id": "3c536f9f-4811-44da-a2d7-1df3f90d76d6",
+   "slug": "cage-the-elephant-38465c06",
+   "title": "CAGE THE ELEPHANT",
+   "act": "CAGE THE ELEPHANT",
+   "name": "Cage the Elephant",
+   "description": "American rock band from Kentucky",
+   "source_url": "https://en.wikipedia.org/wiki/Cage_the_Elephant",
+   "extract": "Cage the Elephant is an American rock band formed in 2006 in Bowling Green, Kentucky. They moved to England and settled in London in 2008, shortly before their self-titled first album was released. As of 2017, the band's personnel were Matt Shultz (vocals), his older brother Brad Shultz, Nick Bockrath, Matthan Minster, Daniel Tichenor (bass), and Jared Champion (drums). The band's self-titled debut album was released in 2008 and included several radio singles in the United States and the United Kingdom. It was influenced by classic rock, '90s alternative, blues, punk rock, and funk music. Lincoln Parish served as the band's lead guitarist from 2006 until 2013, when he left to pursue a career in production."
+  }
+ ]
+}

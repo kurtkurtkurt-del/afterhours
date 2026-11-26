@@ -1,0 +1,26 @@
+{
+ "city": "roma",
+ "day": "2026-11-26",
+ "nights": [
+  {
+   "id": "1b0e2dfa-530b-44eb-8515-30719d80e863",
+   "slug": "tedua-palasport-2027-5e2f6373",
+   "title": "Tedua - Palasport 2027",
+   "act": "Tedua",
+   "name": "Tedua",
+   "description": "Italian singer-songwriter, rapper and actor (born 1994)",
+   "source_url": "https://en.wikipedia.org/wiki/Tedua",
+   "extract": "Mario Molinari better known professionally as Tedua, is an Italian rapper, singer, and songwriter."
+  },
+  {
+   "id": "aa15fcfb-5c59-4baa-9409-e6226086ef1e",
+   "slug": "gabry-ponte-circotron-the-dance-show-86649744",
+   "title": "Gabry Ponte - CIRCOTRON - The dance show",
+   "act": "Gabry Ponte",
+   "name": "Gabry Ponte",
+   "description": "Italian musician, DJ and producer (born 1973)",
+   "source_url": "https://en.wikipedia.org/wiki/Gabry_Ponte",
+   "extract": "Gabriele \"Gabry\" Ponte is an Italian musician, DJ and producer, best known as a member of Eiffel 65."
+  }
+ ]
+}

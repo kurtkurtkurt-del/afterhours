@@ -1,0 +1,66 @@
+{
+ "city": "glasgow",
+ "day": "2026-11-26",
+ "nights": [
+  {
+   "id": "f7cf1cff-c2ec-4fb1-aac9-ec4fbf7a0872",
+   "slug": "bill-bailey-vaudevillean-d24555e5",
+   "title": "Bill Bailey - Vaudevillean",
+   "act": "Bill Bailey",
+   "name": "Bill Bailey",
+   "description": "British musician and comedian (born 1965)",
+   "source_url": "https://en.wikipedia.org/wiki/Bill_Bailey",
+   "extract": "Mark Robert \"Bill\" Bailey is an English musician, comedian, actor and television presenter. He is known for his role as Manny in the sitcom Black Books (2000–2004), and for his regular appearances on the panel shows Never Mind the Buzzcocks, Have I Got News for You, and QI, as well as for his stand-up comedy work. He plays a variety of musical instruments and incorporates music into his performances."
+  },
+  {
+   "id": "b7888dea-23f7-4a7b-8127-ba17cbb98515",
+   "slug": "when-rivers-meet-the-backbone-tour-c4d15e19",
+   "title": "When Rivers Meet: The Backbone Tour",
+   "act": "When Rivers Meet",
+   "name": "When Rivers Meet",
+   "description": "English blues/rock band formed in 2016",
+   "source_url": "https://en.wikipedia.org/wiki/When_Rivers_Meet",
+   "extract": "When Rivers Meet is an English blues / rock band formed in 2016 in Essex, England, by husband-and-wife duo Grace and Aaron Bond."
+  },
+  {
+   "id": "cc8cebf8-ed86-4e8f-9154-336c1f97c8a3",
+   "slug": "the-hara-715c6efe",
+   "title": "The Hara",
+   "act": "The Hara",
+   "name": "The Hara",
+   "description": "British alternative rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Hara",
+   "extract": "The Hara is an English rock band from Manchester. The band was formed by Josh Taylor, Zack Breen (guitar), and Jack Kennedy (drums) in 2017."
+  },
+  {
+   "id": "f6a497c1-c862-468e-a43b-0eecf6dd30bd",
+   "slug": "the-pretty-reckless-71f2ef5e",
+   "title": "The Pretty Reckless",
+   "act": "The Pretty Reckless",
+   "name": "The Pretty Reckless",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Pretty_Reckless",
+   "extract": "The Pretty Reckless is an American rock band from New York City, formed in 2009. The band consists of Taylor Momsen, Ben Phillips, Mark Damon (bass), and Jamie Perkins (drums). In August 2010, the band released their debut studio album, Light Me Up. The album spawned three moderately successful singles, most notably \"Make Me Wanna Die\". The band released the Hit Me Like a Man EP in early 2012. In March 2014, the band released their second studio album, Going to Hell, which included the singles \"Heaven Knows\" and \"Messed Up World \", both of which topped the US and UK rock charts."
+  },
+  {
+   "id": "3a8d09ca-f92f-47c4-a947-452f72deb1ec",
+   "slug": "nicko-mcbrain-an-evening-in-conversation-with-27133eab",
+   "title": "Nicko McBrain - an Evening In Conversation with",
+   "act": "Nicko McBrain",
+   "name": "Nicko McBrain",
+   "description": "English drummer (born 1952)",
+   "source_url": "https://en.wikipedia.org/wiki/Nicko_McBrain",
+   "extract": "Michael Henry \"Nicko\" McBrain is an English musician, best known as the drummer of the heavy metal band Iron Maiden since 1982. He is the third-longest serving member of the band, having appeared on each Iron Maiden album since Piece of Mind (1983). McBrain retired from touring in 2024, although he remains a member of the band for studio projects. Having played in small pub bands since 1966 from the age of 14, after leaving school, McBrain did session work before joining a variety of artists, such as Streetwalkers in 1975, Pat Travers, and the French hard rock band Trust. By 2026, the band's albums with Nicko McBrain had sold well over 100 million copies."
+  },
+  {
+   "id": "f3581c28-8acd-463c-b593-451f575d2a6c",
+   "slug": "genesis-owusu-55c158c0",
+   "title": "Genesis Owusu",
+   "act": "Genesis Owusu",
+   "name": "Genesis Owusu",
+   "description": "Ghanaian-Australian singer (born 1998)",
+   "source_url": "https://en.wikipedia.org/wiki/Genesis_Owusu",
+   "extract": "Kofi Owusu-Ansah, known professionally as Genesis Owusu, is a Ghanaian-Australian rapper and singer from Canberra. He is the younger brother of fellow hip hop rapper Citizen Kay. Owusu's debut studio album, Smiling with No Teeth, reached the ARIA Albums Chart top 30. At the 2021 ARIA Music Awards he won four trophies for Album of the Year, Best Hip Hop Release, Best Independent Release and Best Cover Art. He released a critically acclaimed follow-up, Struggler, in 2023. Genesis Owusu's third studio album, Redstar Wu & the Worldwide Scourge, was released in 2026."
+  }
+ ]
+}

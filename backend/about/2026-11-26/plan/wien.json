@@ -1,0 +1,16 @@
+{
+ "city": "wien",
+ "day": "2026-11-26",
+ "nights": [
+  {
+   "id": "cf153729-7134-48fc-9cbb-ea2981253e0b",
+   "slug": "chase-atlantic-don-t-look-down-tour-0d1bfb85",
+   "title": "Chase Atlantic — DON’T LOOK DOWN TOUR",
+   "act": "Chase Atlantic",
+   "name": "Chase Atlantic",
+   "description": "Australian band",
+   "source_url": "https://en.wikipedia.org/wiki/Chase_Atlantic",
+   "extract": "Chase Atlantic is an Australian R&B band from Cairns, Queensland, formed in 2014. The band consists of three members: Christian Anthony and brothers Mitchel and Clinton Cave, and have released seven EPs and four albums since their formation. They are most recognised for their 2017 hit single, \"Swim\"."
+  }
+ ]
+}

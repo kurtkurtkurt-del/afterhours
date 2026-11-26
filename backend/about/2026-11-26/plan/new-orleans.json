@@ -1,0 +1,16 @@
+{
+ "city": "new-orleans",
+ "day": "2026-11-26",
+ "nights": [
+  {
+   "id": "447d657b-7707-431f-9b9b-0989a258a138",
+   "slug": "lauren-daigle-ca730303",
+   "title": "Lauren Daigle",
+   "act": "Lauren Daigle",
+   "name": "Lauren Daigle",
+   "description": "American singer and songwriter (born 1991)",
+   "source_url": "https://en.wikipedia.org/wiki/Lauren_Daigle",
+   "extract": "Lauren Ashley Daigle is an American contemporary Christian music singer and songwriter. After being signed to the label Centricity Music, she released her debut album, How Can It Be, in 2015. It reached No. 1 on the Billboard Top Christian Albums chart, has been certified Platinum by the RIAA and produced three No. 1 singles on the Billboard Christian Airplay chart."
+  }
+ ]
+}

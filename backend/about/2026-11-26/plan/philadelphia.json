@@ -1,0 +1,26 @@
+{
+ "city": "philadelphia",
+ "day": "2026-11-26",
+ "nights": [
+  {
+   "id": "101387f0-43bf-4a5f-85a7-135951861457",
+   "slug": "bonobo-700de0bc",
+   "title": "Bonobo",
+   "act": "Bonobo",
+   "name": "Bonobo",
+   "description": "English musician, producer, and DJ (born 1976)",
+   "source_url": "https://en.wikipedia.org/wiki/Bonobo_(musician)",
+   "extract": "Simon Charles Green, known by his stage name Bonobo, is an English musician, producer, and DJ based in Los Angeles. He debuted with a trip hop aesthetic and has since explored more upbeat approaches as well as jazz and world music influences. His electronic sound incorporates the use of organic instrumentation and is recreated by a full band in live performances."
+  },
+  {
+   "id": "ff504667-ae0a-42c4-aa04-19b12805cc11",
+   "slug": "nimino-keep-me-awake-tour-7ab5f7dc",
+   "title": "nimino: keep me awake tour",
+   "act": "nimino",
+   "name": "Nimino",
+   "description": "British musician and DJ",
+   "source_url": "https://en.wikipedia.org/wiki/Nimino",
+   "extract": "Nimino, born Milo Evans, is a British producer and DJ. Nimino's music sits in the intersection of house, hip-hop, and garage music."
+  }
+ ]
+}

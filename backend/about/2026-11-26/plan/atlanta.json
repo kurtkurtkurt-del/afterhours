@@ -1,0 +1,26 @@
+{
+ "city": "atlanta",
+ "day": "2026-11-26",
+ "nights": [
+  {
+   "id": "f416582c-5f61-4a89-bee5-cd22318021de",
+   "slug": "state-champs-aa651f5c",
+   "title": "State Champs",
+   "act": "State Champs",
+   "name": "State Champs",
+   "description": "American pop-punk band",
+   "source_url": "https://en.wikipedia.org/wiki/State_Champs",
+   "extract": "State Champs is an American pop-punk band from Albany, New York, formed in 2010. They are currently signed to Pure Noise Records and have released three EPs and five full-length albums. Their 2013 debut album The Finer Things debuted at number 2 on the Billboard Heatseekers Albums chart. They released an acoustic EP titled The Acoustic Things in October 2014 and their second studio album Around the World and Back one year later, in October 2015. In May 2017, they released a deluxe version of the album. Their third album, Living Proof, was released in 2018. In May 2022, the band released their fourth studio album, Kings of the New Age. In November 2024, their self-titled fifth album was released."
+  },
+  {
+   "id": "5e7dec35-0cc8-4bac-a2ad-775caf7984ea",
+   "slug": "babyfxce-e-the-xperience-tour-7490575c",
+   "title": "Babyfxce E - The Xperience Tour",
+   "act": "Babyfxce E",
+   "name": "Babyfxce E",
+   "description": "American rapper",
+   "source_url": "https://en.wikipedia.org/wiki/Babyfxce_E",
+   "extract": "Efrem Jamaar Blackwell Jr., known professionally as Babyfxce E, is an American rapper from Flint, Michigan. He gained online traction with his 2022 single \"Six Flags,\" and in 2024, secured a label contract with Atlantic Records. He released his debut album, Da Realest, in February 2026."
+  }
+ ]
+}

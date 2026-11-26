@@ -1,0 +1,26 @@
+{
+ "city": "vancouver",
+ "day": "2026-11-26",
+ "nights": [
+  {
+   "id": "46db409d-bbb5-45fe-9c43-4d52ede0b0c8",
+   "slug": "new-constellations-it-comes-in-waves-tour-22bc424e",
+   "title": "New Constellations: It Comes In Waves Tour",
+   "act": "New Constellations",
+   "name": "New Constellations",
+   "description": "American dream pop band",
+   "source_url": "https://en.wikipedia.org/wiki/New_Constellations",
+   "extract": "New Constellations is an American dream pop and synthwave duo based out of Portland, Oregon."
+  },
+  {
+   "id": "4350281a-570f-49de-b2e7-fbd118dfbb94",
+   "slug": "bryce-alakai-2nd-show-added-be041f72",
+   "title": "Bryce Alakai - 2nd Show Added",
+   "act": "Bryce Alakai",
+   "name": "Bryce Alakai",
+   "description": "American DJ (born 1996)",
+   "source_url": "https://en.wikipedia.org/wiki/Bryce_Alakai",
+   "extract": "Bryce Alakai is an American DJ, music producer, model and television personality, known for winning the eighth season of the Peacock dating show Love Island USA in 2026."
+  }
+ ]
+}

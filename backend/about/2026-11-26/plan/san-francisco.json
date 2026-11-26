@@ -1,0 +1,16 @@
+{
+ "city": "san-francisco",
+ "day": "2026-11-26",
+ "nights": [
+  {
+   "id": "7e17691d-5571-49bf-b019-1c6481b44300",
+   "slug": "the-buttertones-85ccb770",
+   "title": "The Buttertones",
+   "act": "The Buttertones",
+   "name": "The Buttertones",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Buttertones",
+   "extract": "The Buttertones are an American rock band from Los Angeles, California. Formed in 2012, the band currently consists of Richard Araiza, Karly Low (bass), Brandon Gold (drums), and Carlos Sánchez (saxophone). Their music draws upon and straddles multiple genres, including surf rock, garage rock, doo-wop, and post-punk rock, and has been described as 'cinematic rock'."
+  }
+ ]
+}

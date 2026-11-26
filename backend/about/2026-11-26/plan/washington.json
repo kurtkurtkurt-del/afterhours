@@ -1,0 +1,16 @@
+{
+ "city": "washington",
+ "day": "2026-11-26",
+ "nights": [
+  {
+   "id": "33c3ab7e-c669-44e3-a4bf-f33f980ee8e9",
+   "slug": "kyle-gordon-ab14722d",
+   "title": "Kyle Gordon",
+   "act": "Kyle Gordon",
+   "name": "Kyle Gordon",
+   "description": "American comedy musician (born 1992)",
+   "source_url": "https://en.wikipedia.org/wiki/Kyle_Gordon",
+   "extract": "Kyle Harris Gordon is an American comedian, actor, musician, singer-songwriter and YouTuber. Gordon gained popularity through his music in which he portrays satirical characters and parodies popular music from various eras."
+  }
+ ]
+}

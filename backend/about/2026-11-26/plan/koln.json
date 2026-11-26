@@ -1,0 +1,36 @@
+{
+ "city": "koln",
+ "day": "2026-11-26",
+ "nights": [
+  {
+   "id": "a090c5e7-bd06-4005-90ac-7e044b2bb005",
+   "slug": "pa-sheehy-the-magic-we-found-tour-9e5ff76c",
+   "title": "Pa Sheehy - The Magic We Found Tour",
+   "act": "Pa Sheehy",
+   "name": "Pa Sheehy",
+   "description": "Irish singer-songwriter (born 1986/87)",
+   "source_url": "https://en.wikipedia.org/wiki/Pa_Sheehy",
+   "extract": "Patrick \"Pa\" Sheehy is an Irish singer-songwriter from Dingle, County Kerry."
+  },
+  {
+   "id": "71c1a260-e90d-4e2b-9e01-7984e3ee587e",
+   "slug": "ayra-starr-starrgirl-world-tour-1122a2ef",
+   "title": "Ayra Starr: Starrgirl World Tour",
+   "act": "Ayra Starr",
+   "name": "Ayra Starr",
+   "description": "Beninese-born Nigerian singer (born 2002)",
+   "source_url": "https://en.wikipedia.org/wiki/Ayra_Starr",
+   "extract": "Oyinkansola Sarah Aderibigbe, known professionally as Ayra Starr, is a Beninese-born Nigerian singer-songwriter and producer."
+  },
+  {
+   "id": "8d263d0b-9796-4d8f-b07c-d4afc34a923c",
+   "slug": "masego-fix-your-face-tour-3b9e4f18",
+   "title": "Masego - Fix Your Face Tour",
+   "act": "Masego",
+   "name": "Masego",
+   "description": "Jamaican musician (born 1993)",
+   "source_url": "https://en.wikipedia.org/wiki/Masego_(musician)",
+   "extract": "Micah Davis, known professionally as Masego, is a Jamaican and American musician and singer, known for incorporating the saxophone into his music. Masego released two EPs in 2016, The Pink Polo EP with Medasin, and Loose Thoughts. He gained widespread attention with his collaborative record with FKJ called \"Tadow\" released in 2017. In 2018, he released his debut album Lady Lady. His album Studying Abroad: Extended Stay was nominated for the 2022 Grammy Awards in the \"Best Progressive R&B Album\" category."
+  }
+ ]
+}
