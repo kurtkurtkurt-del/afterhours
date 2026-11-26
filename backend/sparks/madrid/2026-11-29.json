@@ -1,0 +1,27 @@
+{
+  "city": "madrid",
+  "day": "2026-11-29",
+  "sparks": [
+    {
+      "kind": "flea",
+      "title": {
+        "en": "el rastro, the sunday market.",
+        "de": "el rastro, der sonntagsmarkt.",
+        "tr": "el rastro, pazar günü pazarı."
+      },
+      "line": {
+        "en": "antiques, vintage and old records around la latina, roughly 9 to 15. come by metro, not car.",
+        "de": "antiquitäten, vintage und alte platten rund um la latina, etwa 9 bis 15 uhr. mit der u-bahn kommen, nicht mit dem auto.",
+        "tr": "la latina çevresinde antikalar, vintage ve eski plaklar, yaklaşık 9 ile 15 arası. arabayla değil metroyla gel."
+      },
+      "place": {
+        "en": "el rastro (la latina)",
+        "de": "el rastro (la latina)",
+        "tr": "el rastro (la latina)"
+      },
+      "hour": 10,
+      "minute": 0,
+      "why": "El Rastro is held every Sunday roughly 9:00-15:00 in La Latina; described in the lamaletainquieta.com Rastro guide and on esmadrid.com (anticuarios y almonedas). No special schedule for 29.11 was found."
+    }
+  ]
+}
