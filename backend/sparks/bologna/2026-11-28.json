@@ -1,0 +1,14 @@
+{
+  "city": "bologna",
+  "day": "2026-11-28",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "festivamente opens at piazza del nettuno.", "de": "festivamente beginnt auf der piazza del nettuno.", "tr": "festivamente piazza del nettuno'da açılıyor." },
+      "line": { "en": "the christmas tree is lit in piazza del nettuno at 18:00, opening festivamente. the programme runs to 6 january, so the square is an easy place to start the night.", "de": "um 18:00 wird der weihnachtsbaum auf der piazza del nettuno angezündet und festivamente eröffnet. das programm läuft bis 6. januar, der platz ist ein einfacher start für den abend.", "tr": "saat 18:00'de piazza del nettuno'daki çam ışıklandırılıp festivamente açılıyor. program 6 ocak'a kadar sürüyor, geceye başlamak için kolay bir meydan." },
+      "place": { "en": "piazza del nettuno", "de": "piazza del nettuno", "tr": "piazza del nettuno" },
+      "hour": 18, "minute": 0,
+      "why": "Bologna Welcome festivamente programme: tree lighting in piazza del nettuno from 18:00 on saturday 28 november, programme running to 6 january (bolognawelcome.com)."
+    }
+  ]
+}
