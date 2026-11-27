@@ -4,11 +4,45 @@
   "sparks": [
     {
       "kind": "festival",
-      "title": { "en": "open art fest, the family art show at letňany.", "de": "open art fest, die familien-kunstschau in letňany.", "tr": "letňany'de open art fest, aile sanat gösterisi." },
-      "line": { "en": "a big family art show in hall 1 at pva letňany on 28 and 29 november. a day trip out to letňany.", "de": "eine große familien-kunstschau in halle 1 der pva letňany am 28. und 29. november. ein tagesausflug nach letňany.", "tr": "28 ve 29 kasım'da pva letňany 1 numaralı salonda büyük bir aile sanat gösterisi. letňany'ye gündüz bir gezi." },
-      "place": { "en": "pva letňany, hala 1", "de": "pva letňany, hala 1", "tr": "pva letňany, hala 1" },
-      "hour": 10, "minute": 0,
-      "why": "Open ART Fest 2026 at PVA Letňany hall 1, 28–29.11.2026 (goout.net listing). Opening hours not confirmed; 10:00 is a suggestion. Further-week item."
+      "title": {
+        "en": "open art fest, the family art show at letňany.",
+        "de": "open art fest, die familien-kunstschau in letňany.",
+        "tr": "letňany'de open art fest, aile sanat gösterisi."
+      },
+      "line": {
+        "en": "a big family art show in hall 1 at pva letňany on 28 and 29 november. a day trip out to letňany.",
+        "de": "eine große familien-kunstschau in halle 1 der pva letňany am 28. und 29. november. ein tagesausflug nach letňany.",
+        "tr": "28 ve 29 kasım'da pva letňany 1 numaralı salonda büyük bir aile sanat gösterisi. letňany'ye gündüz bir gezi."
+      },
+      "place": {
+        "en": "pva letňany, hala 1",
+        "de": "pva letňany, hala 1",
+        "tr": "pva letňany, hala 1"
+      },
+      "hour": 10,
+      "minute": 0,
+      "why": "Open ART Fest 2026 at PVA Letňany hall 1, 28–29.11.2026 (goout.net listing). Opening hours not confirmed; 10:00 is a suggestion."
+    },
+    {
+      "kind": "walk",
+      "title": {
+        "en": "the castle's free open day and south gardens.",
+        "de": "der gratis tag der offenen tür auf der burg.",
+        "tr": "pražský hrad'ta ücretsiz açık gün."
+      },
+      "line": {
+        "en": "the christmas-decorated state rooms are free to enter from 09:00 to 17:00, and the south gardens are open for the day. go in the morning and walk the terraces.",
+        "de": "die weihnachtlich geschmückten repräsentationsräume sind von 9 bis 17 uhr kostenlos. die südlichen gärten sind an diesem tag ebenfalls geöffnet. am vormittag hingehen und die terrassen ablaufen.",
+        "tr": "noel süslemeli temsil odaları 09:00 ile 17:00 arası ücretsiz. güney bahçeleri de bu gün açık. sabah git ve teraslarda yürü."
+      },
+      "place": {
+        "en": "pražský hrad, south gardens",
+        "de": "pražský hrad, südgärten",
+        "tr": "pražský hrad, güney bahçeleri"
+      },
+      "hour": 10,
+      "minute": 0,
+      "why": "Prague Castle open day, sat 28.11 09:00 to 17:00, free state rooms and south gardens (prague.eu listing, seen in search snippet; page not fetched)."
     }
   ]
 }
