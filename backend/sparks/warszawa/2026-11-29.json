@@ -1,0 +1,27 @@
+{
+  "city": "warszawa",
+  "day": "2026-11-29",
+  "sparks": [
+    {
+      "kind": "flea",
+      "title": {
+        "en": "old things market at bazar na kole.",
+        "de": "trödelmarkt am bazar na kole.",
+        "tr": "bazar na kole'de eski eşya pazarı."
+      },
+      "line": {
+        "en": "sunday old-things market in the wola district, obozowa 99. free entry, trams 12, 13 or 24 to dalibora. the busy part is the morning, so go early.",
+        "de": "sonntäglicher trödelmarkt im stadtteil wola, obozowa 99. eintritt frei, straßenbahn 12, 13 oder 24 bis dalibora. das meiste passiert am morgen, also früh hin.",
+        "tr": "pazar günü wola bölgesinde, obozowa 99'da eski eşya pazarı. giriş ücretsiz, 12, 13 ya da 24 numaralı tramvayla dalibora durağına. en yoğun saatler sabah."
+      },
+      "place": {
+        "en": "bazar na kole",
+        "de": "bazar na kole",
+        "tr": "bazar na kole"
+      },
+      "hour": 8,
+      "minute": 0,
+      "why": "Bazar na Kole, Obozowa 99, open every Saturday and Sunday per In Your Pocket and other Warsaw listings; hours differ by source (about 6:00-15:00 or 8:00-15:00), so 08:00 is a suggestion. No special November 2026 notice found."
+    }
+  ]
+}
