@@ -1,0 +1,27 @@
+{
+  "city": "porto",
+  "day": "2026-11-28",
+  "sparks": [
+    {
+      "kind": "jazz",
+      "title": {
+        "en": "youn sun nah at casa da música.",
+        "de": "youn sun nah im casa da música.",
+        "tr": "casa da música'da youn sun nah."
+      },
+      "line": {
+        "en": "misty fest concert at the casa da música, 22:00. no porto price found, so check the venue's site before you go.",
+        "de": "misty-fest-konzert im casa da música, 22:00. kein preis für porto gefunden, daher vorher auf der seite des hauses nachsehen.",
+        "tr": "casa da música'da misty fest konseri, 22:00. porto için fiyat bulunamadı, gitmeden önce mekanın sitesine bakın."
+      },
+      "place": {
+        "en": "casa da música",
+        "de": "casa da música",
+        "tr": "casa da música"
+      },
+      "hour": 22,
+      "minute": 0,
+      "why": "Youn Sun Nah, Misty Fest, Casa da Música Porto, sat 28.11 at 22:00 (iporto.amp.pt listing); the date also appears on visitportugal.com."
+    }
+  ]
+}
