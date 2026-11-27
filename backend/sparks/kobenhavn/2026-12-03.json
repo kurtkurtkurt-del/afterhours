@@ -1,0 +1,14 @@
+{
+  "city": "kobenhavn",
+  "day": "2026-12-03",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "the christmas market on nytorv.", "de": "julemarkt am nytorv.", "tr": "nytorv'da noel pazarı." },
+      "line": { "en": "the julemarked on nytorv and gammeltorv runs 6 november to 21 december, free to enter. stalls, glögg and food; come after work before it gets dark and cold.", "de": "der julemarkt auf nytorv und gammeltorv läuft vom 6. november bis 21. dezember, der eintritt ist frei. buden, glühwein und essen; am besten direkt nach der arbeit hin.", "tr": "nytorv ve gammeltorv'daki noel pazarı 6 kasım ile 21 aralık arası açık, giriş ücretsiz. tezgahlar, glögg ve yemek var; iş çıkışı uğra." },
+      "place": { "en": "nytorv", "de": "nytorv", "tr": "nytorv" },
+      "hour": 16, "minute": 0,
+      "why": "Nytorv and Gammeltorv Christmas market 6 Nov to 21 Dec 2026, free entry, per Visit Copenhagen and StoryHunt; the daily hours were not checked."
+    }
+  ]
+}

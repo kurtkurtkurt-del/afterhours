@@ -1,0 +1,14 @@
+{
+  "city": "kobenhavn",
+  "day": "2026-11-28",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "tivoli's christmas season is on.", "de": "der tivoli-weihnachtszauber ist da.", "tr": "tivoli'de noel sezonu açık." },
+      "line": { "en": "the christmas season at tivoli runs 13 november to 3 january, with later closing on fridays and saturdays. the lit tree and the rides are the thing to see; check tivoli.dk for the day's hours and the ticket price.", "de": "die weihnachtszeit im tivoli läuft vom 13. november bis 3. januar, freitags und samstags länger geöffnet. der leuchtende baum und die fahrgeschäfte sind das richtige ziel; die tageszeiten und den eintrittspreis auf tivoli.dk prüfen.", "tr": "tivoli'nin noel sezonu 13 kasım ile 3 ocak arası sürüyor, cuma ve cumartesileri daha geç kapanıyor. ışıklı ağaç ve atlıkarıncalar asıl görülecek yer; günlük saatleri ve giriş ücretini tivoli.dk'den kontrol et." },
+      "place": { "en": "tivoli gardens", "de": "tivoli gardens", "tr": "tivoli gardens" },
+      "hour": 17, "minute": 0,
+      "why": "Tivoli Christmas season 13 Nov 2026 to 3 Jan 2027, with later Friday and Saturday closing, per Visit Copenhagen and several travel guides; the day's hours were not checked on tivoli.dk."
+    }
+  ]
+}
