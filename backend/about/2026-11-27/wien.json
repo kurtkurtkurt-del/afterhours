@@ -1,0 +1,38 @@
+{
+  "city": "wien",
+  "day": "2026-11-27",
+  "nights": [
+    {
+      "id": "cf153729-7134-48fc-9cbb-ea2981253e0b",
+      "slug": "chase-atlantic-don-t-look-down-tour-0d1bfb85",
+      "title": "Chase Atlantic — DON’T LOOK DOWN TOUR",
+      "name": "Chase Atlantic",
+      "source_url": "https://en.wikipedia.org/wiki/Chase_Atlantic",
+      "extract": "Chase Atlantic is an Australian R&B band from Cairns, Queensland, formed in 2014. The band consists of three members: Christian Anthony and brothers Mitchel and Clinton Cave, and have released seven EPs and four albums since their formation. They are most recognised for their 2017 hit single, \"Swim\".",
+      "en": {
+        "kicker": "Australian R&B band · formed 2014, Cairns, Queensland",
+        "who": "Chase Atlantic is an Australian R&B band from Cairns, Queensland, formed in 2014. the band consists of three members: Christian Anthony and brothers Mitchel and Clinton Cave, and have released seven EPs and four albums since their formation.",
+        "facts": [
+          "Chase Atlantic have released seven EPs and four albums since their formation.",
+          "they are most recognised for their 2017 hit single, \"Swim\"."
+        ]
+      },
+      "de": {
+        "kicker": "australische R&B-band · gegründet 2014, Cairns, Queensland",
+        "who": "Chase Atlantic ist eine australische R&B-Band aus Cairns, Queensland, gegründet 2014. die band besteht aus drei mitgliedern: christian anthony und den brüdern mitchel und clinton cave, und seit ihrer gründung haben sie sieben EPs und vier alben veröffentlicht.",
+        "facts": [
+          "seit ihrer gründung haben chase atlantic sieben EPs und vier alben veröffentlicht.",
+          "sie sind vor allem für die hit-single \"Swim\" aus dem jahr 2017 bekannt."
+        ]
+      },
+      "tr": {
+        "kicker": "Avustralyalı R&B grubu · 2014'te kuruldu, Cairns, Queensland",
+        "who": "Chase Atlantic, Queensland'in Cairns kentinden, 2014'te kurulmuş bir Avustralyalı R&B grubudur. grup üç üyeden oluşur: Christian Anthony ve kardeşler Mitchel ile Clinton Cave; kuruluşlarından bu yana yedi EP ve dört albüm yayımladılar.",
+        "facts": [
+          "kuruluşlarından bu yana yedi EP ve dört albüm yayımladılar.",
+          "en çok 2017 yılının hit şarkısı \"Swim\" ile tanınıyorlar."
+        ]
+      }
+    }
+  ]
+}

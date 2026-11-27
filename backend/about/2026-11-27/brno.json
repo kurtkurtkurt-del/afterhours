@@ -1,0 +1,38 @@
+{
+  "city": "brno",
+  "day": "2026-11-27",
+  "nights": [
+    {
+      "id": "6af4b76b-2877-40cf-bab2-6d0276870d7e",
+      "slug": "mastodon-38c6d61e",
+      "title": "MASTODON",
+      "name": "Mastodon",
+      "source_url": "https://en.wikipedia.org/wiki/Mastodon_(band)",
+      "extract": "Mastodon is an American heavy metal band from Atlanta, Georgia. Formed in 2000, the band's lineup of Troy Sanders (bass/vocals), Brent Hinds, Bill Kelliher, and Brann Dailor (drums/vocals) remained unchanged for 24 years. Hinds departed Mastodon in March 2025, and died five months later in a motorcycle accident in Atlanta, Georgia.",
+      "en": {
+        "kicker": "american heavy metal band · 2000, Atlanta, Georgia",
+        "who": "Mastodon is an American heavy metal band from Atlanta, Georgia. Formed in 2000, the band's lineup of Troy Sanders (bass/vocals), Brent Hinds, Bill Kelliher, and Brann Dailor (drums/vocals) remained unchanged for 24 years.",
+        "facts": [
+          "Hinds departed Mastodon in March 2025, and died five months later in a motorcycle accident in Atlanta, Georgia.",
+          "Formed in 2000, the band's lineup remained unchanged for 24 years."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische Metal-Band · 2000, Atlanta, Georgia",
+        "who": "Mastodon ist eine amerikanische Metal-Band aus Atlanta, Georgia. Gegründet 2000, blieb die Besetzung mit Troy Sanders (Bass/Gesang), Brent Hinds, Bill Kelliher und Brann Dailor (Schlagzeug/Gesang) 24 Jahre lang unverändert.",
+        "facts": [
+          "Hinds verließ Mastodon im März 2025 und starb fünf Monate später bei einem Motorradunfall in Atlanta, Georgia.",
+          "Gegründet 2000, blieb die Besetzung 24 Jahre lang unverändert."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikan metal grubu · 2000, Atlanta, Georgia",
+        "who": "Mastodon, Atlanta, Georgia'dan Amerikalı bir metal grubudur. 2000 yılında kurulan grubun Troy Sanders (bas/vokal), Brent Hinds, Bill Kelliher ve Brann Dailor (davul/vokal) kadrosu 24 yıl boyunca değişmedi.",
+        "facts": [
+          "Hinds, Mastodon'dan Mart 2025'te ayrıldı ve beş ay sonra Atlanta, Georgia'da bir motosiklet kazasında öldü.",
+          "2000 yılında kurulan grubun kadrosu 24 yıl boyunca değişmedi."
+        ]
+      }
+    }
+  ]
+}

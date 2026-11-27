@@ -1,0 +1,70 @@
+{
+ "city": "toronto",
+ "day": "2026-11-27",
+ "nights": [
+  {
+   "id": "a5858b9f-3f0c-4821-a35a-aa299367888c",
+   "slug": "turnover-down-on-earth-tour-ba4156e3",
+   "title": "Turnover - Down On Earth Tour",
+   "name": "Turnover",
+   "source_url": "https://en.wikipedia.org/wiki/Turnover_(band)",
+   "extract": "Turnover is an American rock band from Virginia Beach, Virginia. The band were formed in 2009 by brothers Austin and Casey (drums) Getz alongside longtime friend Danny Dempsey (bass); the three have gone on to oversee every iteration of the band to date. The three are currently joined in the band by lead guitarist Nick Rayfield, who began touring with the band in 2017 and was later officially inducted as a full-time member in 2022. Turnover have released six studio albums and four EPs across their career. Their most recent album, Down on Earth, was released on May 29th 2026.",
+   "en": {
+    "kicker": "American rock band · 2009, Virginia Beach",
+    "who": "Turnover is an American rock band from Virginia Beach, Virginia. Turnover have released six studio albums and four EPs across their career.",
+    "facts": [
+     "the band were formed in 2009 by brothers Austin and Casey Getz alongside longtime friend Danny Dempsey.",
+     "their most recent album, Down on Earth, was released on May 29th 2026."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische rockband · 2009, Virginia Beach",
+    "who": "Turnover ist eine amerikanische rockband aus Virginia Beach, Virginia. Turnover haben im laufe ihrer karriere sechs studioalben und vier eps veröffentlicht.",
+    "facts": [
+     "die band wurde 2009 von den brüdern Austin und Casey Getz zusammen mit dem langjährigen freund Danny Dempsey gegründet.",
+     "ihr neuestes album, Down on Earth, erschien am 29. mai 2026."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikan rock grubu · 2009, Virginia Beach",
+    "who": "Turnover, Virginia Beach, Virginia'dan çıkan amerikan bir rock grubudur. Turnover kariyeri boyunca altı stüdyo albümü ve dört EP yayımladı.",
+    "facts": [
+     "grup 2009 yılında kardeşler Austin ve Casey Getz ile uzun süreli arkadaşları Danny Dempsey tarafından kuruldu.",
+     "en son albümleri Down on Earth, 29 mayıs 2026'da yayımlandı."
+    ]
+   }
+  },
+  {
+   "id": "82df12a1-22a8-4892-a578-ec2cbc6ed1c8",
+   "slug": "jubin-nautiyal-b1e877cf",
+   "title": "Jubin Nautiyal",
+   "name": "Jubin Nautiyal",
+   "source_url": "https://en.wikipedia.org/wiki/Jubin_Nautiyal",
+   "extract": "Jubin Nautiyal is an Indian playback singer. In June 2022, he won the IIFA award for \"Playback Singer (Male)\" for the song \"Raataan Lambiyan\" from Shershaah and \"Upcoming Male Vocalist of the Year\" at 8th Mirchi Music Awards for his song \"Zindagi Kuch Toh Bata (Reprise)\" from Bajrangi Bhaijaan. He also won the Rising Musical Star Award at Zee Business Awards. He has since recorded songs for films in various Indian languages, predominantly Hindi. He is signed on by T-Series.",
+   "en": {
+    "kicker": "Indian playback singer",
+    "who": "Jubin Nautiyal is an Indian playback singer. he has since recorded songs for films in various Indian languages, predominantly Hindi. he is signed on by T-Series.",
+    "facts": [
+     "in June 2022, he won the IIFA award for \"Playback Singer (Male)\" for the song \"Raataan Lambiyan\" from Shershaah.",
+     "he also won the Rising Musical Star Award at Zee Business Awards."
+    ]
+   },
+   "de": {
+    "kicker": "indischer playback-sänger",
+    "who": "Jubin Nautiyal ist ein indischer Playback-Sänger. er hat seitdem songs für filme in verschiedenen indischen sprachen aufgenommen, überwiegend auf Hindi. er steht bei T-Series unter vertrag.",
+    "facts": [
+     "im juni 2022 gewann er den IIFA-Award für „Playback Singer (Male)“ mit dem song „Raataan Lambiyan“ aus Shershaah.",
+     "außerdem gewann er den Rising Musical Star Award bei den Zee Business Awards."
+    ]
+   },
+   "tr": {
+    "kicker": "Hint playback şarkıcısı",
+    "who": "Jubin Nautiyal bir Hint playback şarkıcısıdır. son dönemde çeşitli Hint dillerinde, ağırlıklı olarak Hintçe, filmler için şarkılar kaydetti. kendisi T-Series ile sözleşmelidir.",
+    "facts": [
+     "haziran 2022'de, Shershaah filmindeki \"Raataan Lambiyan\" şarkısıyla IIFA ödülünü \"Playback Singer (Male)\" kategorisinde kazandı.",
+     "ayrıca Zee Business Awards'ta Rising Musical Star Award'ı kazandı."
+    ]
+   }
+  }
+ ]
+}

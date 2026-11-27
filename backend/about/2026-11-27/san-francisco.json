@@ -1,0 +1,70 @@
+{
+  "city": "san-francisco",
+  "day": "2026-11-27",
+  "nights": [
+    {
+      "id": "7e17691d-5571-49bf-b019-1c6481b44300",
+      "slug": "the-buttertones-85ccb770",
+      "title": "The Buttertones",
+      "name": "The Buttertones",
+      "source_url": "https://en.wikipedia.org/wiki/The_Buttertones",
+      "extract": "The Buttertones are an American rock band from Los Angeles, California. Formed in 2012, the band currently consists of Richard Araiza, Karly Low (bass), Brandon Gold (drums), and Carlos Sánchez (saxophone). Their music draws upon and straddles multiple genres, including surf rock, garage rock, doo-wop, and post-punk rock, and has been described as 'cinematic rock'.",
+      "en": {
+        "kicker": "rock band · Los Angeles, California",
+        "who": "The Buttertones are an American rock band from Los Angeles, California. Their music draws upon and straddles multiple genres, including surf rock, garage rock, doo-wop, and post-punk rock.",
+        "facts": [
+          "Formed in 2012, the band currently consists of Richard Araiza, Karly Low (bass), Brandon Gold (drums), and Carlos Sánchez (saxophone).",
+          "Their music has been described as 'cinematic rock'."
+        ]
+      },
+      "de": {
+        "kicker": "rockband · Los Angeles, California",
+        "who": "The Buttertones sind eine amerikanische rockband aus Los Angeles, California. Ihre musik greift auf mehrere genres zurück und bewegt sich zwischen ihnen, darunter surf rock, garage rock, doo-wop und post-punk rock.",
+        "facts": [
+          "Die band wurde 2012 gegründet und besteht derzeit aus Richard Araiza, Karly Low (bass), Brandon Gold (schlagzeug) und Carlos Sánchez (saxophon).",
+          "Ihre musik wurde als 'cinematic rock' beschrieben."
+        ]
+      },
+      "tr": {
+        "kicker": "rock grubu · Los Angeles, California",
+        "who": "The Buttertones, Los Angeles, California'dan gelen bir amerikan rock grubudur. Müzikleri birden çok türden beslenir ve surf rock, garage rock, doo-wop ve post-punk rock gibi türler arasında gidip gelir.",
+        "facts": [
+          "2012 yılında kurulan grup, şu an Richard Araiza, Karly Low (bas), Brandon Gold (davul) ve Carlos Sánchez (saksafon) kadrosundan oluşuyor.",
+          "Müzikleri 'cinematic rock' olarak tanımlanmıştır."
+        ]
+      }
+    },
+    {
+      "id": "6ed0a111-d223-4ce1-9334-52f236434770",
+      "slug": "fetty-wap-nostalgia-tour-f3c696a8",
+      "title": "Fetty Wap: Nostalgia Tour",
+      "name": "Fetty Wap",
+      "source_url": "https://en.wikipedia.org/wiki/Fetty_Wap",
+      "extract": "Willie Junior Maxwell II, better known by his stage name Fetty Wap, is an American rapper, singer, and songwriter. He quickly rose to mainstream prominence after his 2014 song \"Trap Queen\" peaked at number two on the Billboard Hot 100 and led him to sign with 300 Entertainment, an imprint of Atlantic Records. Two of his 2015 singles, \"679\" and \"My Way\", peaked within the top ten of the chart; all three—as well as the top 40 single \"Again\"—preceded his eponymous debut studio album (2015), which peaked atop the Billboard 200. During this time, he became distinctive for his melodic blending of singing and rapping, lighthearted lyrics, \"bouncy\" production, and exclamation of various catchphrases",
+      "en": {
+        "kicker": "rapper, singer, and songwriter",
+        "who": "Willie Junior Maxwell II, better known by his stage name Fetty Wap, is an American rapper, singer, and songwriter. He quickly rose to mainstream prominence after his 2014 song \"Trap Queen\" peaked at number two on the Billboard Hot 100.",
+        "facts": [
+          "Two of his 2015 singles, \"679\" and \"My Way\", peaked within the top ten of the chart.",
+          "His eponymous debut studio album peaked atop the Billboard 200."
+        ]
+      },
+      "de": {
+        "kicker": "rapper, sänger und songwriter",
+        "who": "Willie Junior Maxwell II, besser bekannt unter seinem künstlernamen Fetty Wap, ist ein amerikanischer rapper, sänger und songwriter. Er stieg schnell zu großer bekanntheit auf, nachdem sein 2014 erschienener song \"Trap Queen\" auf platz zwei der Billboard Hot 100 kam.",
+        "facts": [
+          "Zwei seiner singles aus dem jahr 2015, \"679\" und \"My Way\", erreichten innerhalb der top ten der charts.",
+          "Sein gleichnamiges debüt-studioalbum erreichte die spitze der Billboard 200."
+        ]
+      },
+      "tr": {
+        "kicker": "rapçi, şarkıcı ve söz yazarı",
+        "who": "Willie Junior Maxwell II, sahne adı Fetty Wap olarak daha çok tanınan, amerikalı bir rapçi, şarkıcı ve söz yazarıdır. 2014 yılında çıkan \"Trap Queen\" şarkısı Billboard Hot 100 listesinde ikinci sıraya yükselince ana akım şöhrete hızla ulaştı.",
+        "facts": [
+          "2015 yılına ait iki single'ı, \"679\" ve \"My Way\", listenin ilk on içinde zirve yaptı.",
+          "Adını taşıyan ilk stüdyo albümü Billboard 200 listesinin zirvesine yerleşti."
+        ]
+      }
+    }
+  ]
+}

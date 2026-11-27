@@ -1,0 +1,38 @@
+{
+  "city": "detroit",
+  "day": "2026-11-27",
+  "nights": [
+    {
+      "id": "5e3a0fe8-f219-4c1c-9539-47e72057c85e",
+      "slug": "rick-springfield-a8ddb073",
+      "title": "Rick Springfield",
+      "name": "Rick Springfield",
+      "source_url": "https://en.wikipedia.org/wiki/Rick_Springfield",
+      "extract": "Richard Lewis Springthorpe, known professionally as Rick Springfield, is an Australian-American musician and actor. He was a member of the pop rock group Zoot from 1969–71, then started his solo career with his debut single, \"Speak to the Sky\", which reached the top-ten in Australia in mid-1972. When he moved to the United States, he had a number-one hit with \"Jessie's Girl\" in 1981 in both Australia and the United States, for which he received the Grammy Award for Best Male Rock Vocal Performance. He followed with four more top-ten US hits: \"I've Done Everything for You\", \"Don't Talk to Strangers\", \"Affair of the Heart\" and \"Love Somebody\". Springfield's two top-ten US albums are Working Cl",
+      "en": {
+        "kicker": "Australian-American musician and actor",
+        "who": "Richard Lewis Springthorpe, known professionally as Rick Springfield, is an Australian-American musician and actor. He was a member of the pop rock group Zoot from 1969–71, then started his solo career with his debut single, \"Speak to the Sky\". When he moved to the United States, he had a number-one hit with \"Jessie's Girl\" in 1981.",
+        "facts": [
+          "His debut single, \"Speak to the Sky\", reached the top-ten in Australia in mid-1972.",
+          "He received the Grammy Award for Best Male Rock Vocal Performance for the number-one hit \"Jessie's Girl\"."
+        ]
+      },
+      "de": {
+        "kicker": "australisch-amerikanischer Musiker und Schauspieler",
+        "who": "Richard Lewis Springthorpe, beruflich bekannt als Rick Springfield, ist ein australisch-amerikanischer Musiker und Schauspieler. Er war von 1969 bis 1971 Mitglied der Poprockgruppe Zoot und startete danach seine Solokarriere mit der Debütsingle \"Speak to the Sky\". Als er in die Vereinigten Staaten zog, hatte er 1981 mit \"Jessie's Girl\" einen Nummer-eins-Hit.",
+        "facts": [
+          "Seine Debütsingle \"Speak to the Sky\" erreichte Mitte 1972 in Australien die Top 10.",
+          "Für den Nummer-eins-Hit \"Jessie's Girl\" erhielt er den Grammy für die beste männliche Rock-Gesangsdarbietung."
+        ]
+      },
+      "tr": {
+        "kicker": "Avustralyalı-Amerikalı müzisyen ve oyuncu",
+        "who": "Richard Lewis Springthorpe, sahne adıyla Rick Springfield, Avustralyalı-Amerikalı bir müzisyen ve oyuncudur. 1969–1971 yılları arasında pop rock grubu Zoot'un üyesiydi, ardından ilk single'ı \"Speak to the Sky\" ile solo kariyerine başladı. Birleşik Devletler'e taşındığında 1981'de \"Jessie's Girl\" ile bir numaralı hit yakaladı.",
+        "facts": [
+          "Debüt single'ı \"Speak to the Sky\", 1972 yılının ortalarında Avustralya'da ilk on listesine girdi.",
+          "\"Jessie's Girl\" için En İyi Erkek Rock Vokal Performansı dalında Grammy Ödülü aldı."
+        ]
+      }
+    }
+  ]
+}

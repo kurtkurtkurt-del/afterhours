@@ -1,0 +1,38 @@
+{
+  "city": "dallas",
+  "day": "2026-11-27",
+  "nights": [
+    {
+      "id": "24fa7cf1-2a94-4e15-8ae3-323058984f24",
+      "slug": "wooli-ages-18-33b364d0",
+      "title": "Wooli - Ages 18+",
+      "name": "Wooli",
+      "source_url": "https://en.wikipedia.org/wiki/Wooli",
+      "extract": "Adam Louis Puleo, better known by his alias Wooli, is an American briddim, riddim and dubstep DJ and producer. He is known for the songs \"Island\" and \"Another Me\", with the prior being a collaboration with American dubstep producers Seven Lions and Trivecta and the latter being a collaboration with Seven Lions and Canadian producer and DJ Excision. \"Island\" peaked at the No. 20 position on Billboard's Dance/Electronic Digital Song Sales chart in early 2019. \"Another Me\" peaked on the Hot Dance/Electronic Songs at the No. 46 position in late 2019.",
+      "en": {
+        "kicker": "riddim and dubstep dj and producer",
+        "who": "Adam Louis Puleo, better known by his alias Wooli, is an american riddim and dubstep dj and producer. he is known for the songs \"Island\" and \"Another Me\". \"Another Me\" is a collaboration with Seven Lions and canadian producer and dj Excision.",
+        "facts": [
+          "\"Island\" peaked at the no. 20 position on Billboard's Dance/Electronic Digital Song Sales chart in early 2019.",
+          "\"Another Me\" peaked on the Hot Dance/Electronic Songs at the no. 46 position in late 2019."
+        ]
+      },
+      "de": {
+        "kicker": "riddim- und dubstep-dj und produzent",
+        "who": "Adam Louis Puleo, besser bekannt unter seinem alias Wooli, ist ein amerikanischer riddim- und dubstep-dj und produzent. er ist bekannt für die Lieder \"Island\" und \"Another Me\". \"Another Me\" ist eine zusammenarbeit mit Seven Lions und dem kanadischen produzenten und dj Excision.",
+        "facts": [
+          "\"Island\" erreichte anfang 2019 auf Billboards Liste Dance/Electronic Digital Song Sales die position nr. 20.",
+          "\"Another Me\" erreichte ende 2019 auf den Hot Dance/Electronic Songs die position nr. 46."
+        ]
+      },
+      "tr": {
+        "kicker": "riddim ve dubstep dj ve yapımcısı",
+        "who": "Adam Louis Puleo, \"Wooli\" takma adıyla daha çok tanınan, amerikalı bir riddim ve dubstep dj ve yapımcısıdır. \"Island\" ve \"Another Me\" şarkılarıyla tanınır. \"Another Me\", Seven Lions ve kanadalı yapımcı ve DJ Excision ile yapılan bir işbirliğidir.",
+        "facts": [
+          "\"Island\", 2019'un başında Billboard'un Dance/Electronic Digital Song Sales listesinde 20. sıraya ulaştı.",
+          "\"Another Me\", 2019'un sonlarında Hot Dance/Electronic Songs listesinde 46. sıraya ulaştı."
+        ]
+      }
+    }
+  ]
+}

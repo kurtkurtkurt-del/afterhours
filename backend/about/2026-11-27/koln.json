@@ -1,0 +1,38 @@
+{
+ "city": "koln",
+ "day": "2026-11-27",
+ "nights": [
+  {
+   "id": "8d263d0b-9796-4d8f-b07c-d4afc34a923c",
+   "slug": "masego-fix-your-face-tour-3b9e4f18",
+   "title": "Masego - Fix Your Face Tour",
+   "name": "Masego",
+   "source_url": "https://en.wikipedia.org/wiki/Masego_(musician)",
+   "extract": "Micah Davis, known professionally as Masego, is a Jamaican and American musician and singer, known for incorporating the saxophone into his music. Masego released two EPs in 2016, The Pink Polo EP with Medasin, and Loose Thoughts. He gained widespread attention with his collaborative record with FKJ called \"Tadow\" released in 2017. In 2018, he released his debut album Lady Lady. His album Studying Abroad: Extended Stay was nominated for the 2022 Grammy Awards in the \"Best Progressive R&B Album\" category.",
+   "en": {
+    "kicker": "Jamaican and American musician and singer",
+    "who": "Micah Davis, known professionally as Masego, is a Jamaican and American musician and singer, known for incorporating the saxophone into his music. He gained widespread attention with his collaborative record with FKJ called \"Tadow\" released in 2017. In 2018, he released his debut album Lady Lady.",
+    "facts": [
+     "Masego released two EPs in 2016, The Pink Polo EP with Medasin, and Loose Thoughts.",
+     "His album Studying Abroad: Extended Stay was nominated for the 2022 Grammy Awards in the \"Best Progressive R&B Album\" category."
+    ]
+   },
+   "de": {
+    "kicker": "jamaikanischer und amerikanischer musiker und sänger",
+    "who": "Micah Davis, unter dem namen Masego bekannt, ist ein jamaikanischer und amerikanischer musiker und sänger, bekannt dafür, das saxofon in seine musik einzubauen. Durch die gemeinsame aufnahme mit FKJ namens \"Tadow\", die 2017 erschien, erlangte er breite aufmerksamkeit. 2018 veröffentlichte er sein debütalbum Lady Lady.",
+    "facts": [
+     "Masego veröffentlichte 2016 zwei EPs, The Pink Polo EP mit Medasin und Loose Thoughts.",
+     "Sein album Studying Abroad: Extended Stay wurde 2022 für die Grammy Awards in der kategorie \"Best Progressive R&B Album\" nominiert."
+    ]
+   },
+   "tr": {
+    "kicker": "jamaikalı ve amerikalı müzisyen ve şarkıcı",
+    "who": "Micah Davis, Masego adıyla tanınır, jamaikalı ve amerikalı bir müzisyen ve şarkıcıdır; müziğine saksafonu dahil etmesiyle bilinir. FKJ ile yaptığı ortak \"Tadow\" kaydıyla, 2017'de yayımlanan bu çalışmayla geniş ilgi kazandı. 2018'de ilk albümü Lady Lady'yi yayımladı.",
+    "facts": [
+     "Masego 2016'da iki EP yayımladı: The Pink Polo EP, Medasin ile birlikte, ve Loose Thoughts.",
+     "Studying Abroad: Extended Stay adlı albümü, 2022 Grammy Ödülleri'nde \"Best Progressive R&B Album\" kategorisinde aday gösterildi."
+    ]
+   }
+  }
+ ]
+}

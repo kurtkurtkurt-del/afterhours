@@ -1,0 +1,70 @@
+{
+  "city": "denver",
+  "day": "2026-11-27",
+  "nights": [
+    {
+      "id": "6568cc97-c6b0-4ef3-9be3-3ade6fd8aa46",
+      "slug": "imminence-axis-mundi-tour-north-america-2026-526dfaa9",
+      "title": "Imminence - Axis Mundi Tour: North America 2026",
+      "name": "Imminence",
+      "source_url": "https://en.wikipedia.org/wiki/Imminence_(band)",
+      "extract": "Imminence is a Swedish metalcore band formed in Trelleborg. The group consists of vocalist Eddie Berg, rhythm guitarist Harald Barrett, lead guitarist Alex Arnoldsson, and bassist Christian Höijer.",
+      "en": {
+        "kicker": "Swedish metalcore band · formed in Trelleborg",
+        "who": "Imminence is a Swedish metalcore band formed in Trelleborg. The group consists of vocalist Eddie Berg, rhythm guitarist Harald Barrett, lead guitarist Alex Arnoldsson, and bassist Christian Höijer.",
+        "facts": [
+          "Imminence is a Swedish metalcore band formed in Trelleborg.",
+          "The group consists of vocalist Eddie Berg, rhythm guitarist Harald Barrett, lead guitarist Alex Arnoldsson, and bassist Christian Höijer."
+        ]
+      },
+      "de": {
+        "kicker": "schwedische metalcore-band · in Trelleborg gegründet",
+        "who": "Imminence ist eine schwedische metalcore-band, die in Trelleborg gegründet wurde. die gruppe besteht aus dem sänger Eddie Berg, dem rhythmusgitarristen Harald Barrett, dem leadgitarristen Alex Arnoldsson und dem bassisten Christian Höijer.",
+        "facts": [
+          "Imminence ist eine schwedische metalcore-band, die in Trelleborg gegründet wurde.",
+          "die gruppe besteht aus dem sänger Eddie Berg, dem rhythmusgitarristen Harald Barrett, dem leadgitarristen Alex Arnoldsson und dem bassisten Christian Höijer."
+        ]
+      },
+      "tr": {
+        "kicker": "isveçli metalcore grubu · Trelleborg'da kuruldu",
+        "who": "Imminence, Trelleborg'da kurulmuş bir isveçli metalcore grubudur. grup şunlardan oluşuyor: vokalist Eddie Berg, ritim gitaristi Harald Barrett, lead gitarist Alex Arnoldsson ve basçı Christian Höijer.",
+        "facts": [
+          "Imminence, Trelleborg'da kurulmuş bir isveçli metalcore grubudur.",
+          "grup şunlardan oluşuyor: vokalist Eddie Berg, ritim gitaristi Harald Barrett, lead gitarist Alex Arnoldsson ve basçı Christian Höijer."
+        ]
+      }
+    },
+    {
+      "id": "421be70c-6393-4cda-8044-a493374b0aba",
+      "slug": "the-pineapple-thief-0d53575d",
+      "title": "The Pineapple Thief",
+      "name": "The Pineapple Thief",
+      "source_url": "https://en.wikipedia.org/wiki/The_Pineapple_Thief",
+      "extract": "The Pineapple Thief are an English progressive rock band founded in 1999 by Bruce Soord in Yeovil, Somerset. As of June 2024, the group consists of Soord on vocals, guitars, and keyboards, Jon Sykes on bass, Steve Kitch on keyboards, and Gavin Harrison on drums. They have released 16 studio albums, 6 EPs, and several live and compilation albums.",
+      "en": {
+        "kicker": "English progressive rock band · founded 1999 in Yeovil",
+        "who": "The Pineapple Thief are an English progressive rock band founded in 1999 by Bruce Soord in Yeovil, Somerset. As of June 2024, the group consists of Soord on vocals, guitars, and keyboards, Jon Sykes on bass, Steve Kitch on keyboards, and Gavin Harrison on drums.",
+        "facts": [
+          "The Pineapple Thief are an English progressive rock band founded in 1999 by Bruce Soord in Yeovil, Somerset.",
+          "They have released 16 studio albums, 6 EPs, and several live and compilation albums."
+        ]
+      },
+      "de": {
+        "kicker": "englische prog-rock-band · 1999 in Yeovil gegründet",
+        "who": "The Pineapple Thief ist eine englische progressive-rock-band, die 1999 von Bruce Soord in Yeovil, Somerset, gegründet wurde. seit juni 2024 besteht die gruppe aus Soord an gesang, gitarren und keyboards, Jon Sykes am bass, Steve Kitch an den keyboards und Gavin Harrison am schlagzeug.",
+        "facts": [
+          "The Pineapple Thief ist eine englische progressive-rock-band, die 1999 von Bruce Soord in Yeovil, Somerset, gegründet wurde.",
+          "sie haben 16 studioalben, 6 eps und mehrere live- und compilation-alben veröffentlicht."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz progressive rock grubu · 1999, Yeovil",
+        "who": "The Pineapple Thief, 1999'da Bruce Soord tarafından Yeovil, Somerset'te kurulmuş bir ingiliz progressive rock grubudur. haziran 2024 itibarıyla grup şunlardan oluşuyor: vokal, gitar ve klavyede Soord, basta Jon Sykes, klavyede Steve Kitch ve davulda Gavin Harrison.",
+        "facts": [
+          "The Pineapple Thief, 1999'da Bruce Soord tarafından Yeovil, Somerset'te kurulmuş bir ingiliz progressive rock grubudur.",
+          "16 stüdyo albümü, 6 EP ve birkaç canlı ve derleme albüm yayımladılar."
+        ]
+      }
+    }
+  ]
+}

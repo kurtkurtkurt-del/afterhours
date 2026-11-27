@@ -1,0 +1,38 @@
+{
+ "city": "stockholm",
+ "day": "2026-11-27",
+ "nights": [
+  {
+   "id": "a0b0098b-4d27-4b0f-8cd8-4bbc03aa2341",
+   "slug": "jake-bugg-alamo-uk-and-european-tour-99a87e0c",
+   "title": "Jake Bugg -  Alamo - UK & European Tour",
+   "name": "Jake Bugg",
+   "source_url": "https://en.wikipedia.org/wiki/Jake_Bugg",
+   "extract": "Jake Edwin Charles Kennedy, known professionally as Jake Bugg, is an English singer-songwriter. His self-titled debut album, Jake Bugg, some of which was co-written with songwriter Iain Archer, was released in October 2012 and reached number one on the UK Albums Chart. His second album, Shangri La, was released in November 2013, and his third, largely self-produced album, On My One, in June 2016. His fourth album, Hearts That Strain, a largely acoustic effort produced by Dan Auerbach, was released in September 2017.",
+   "en": {
+    "kicker": "English singer-songwriter",
+    "who": "Jake Edwin Charles Kennedy, known professionally as Jake Bugg, is an English singer-songwriter. His self-titled debut album, Jake Bugg, was released in October 2012 and reached number one on the UK Albums Chart.",
+    "facts": [
+     "His second album, Shangri La, was released in November 2013.",
+     "His fourth album, Hearts That Strain, a largely acoustic effort produced by Dan Auerbach, was released in September 2017."
+    ]
+   },
+   "de": {
+    "kicker": "englischer singer-songwriter",
+    "who": "Jake Edwin Charles Kennedy, unter dem künstlernamen Jake Bugg bekannt, ist ein englischer singer-songwriter. Sein selbstbetiteltes debütalbum Jake Bugg erschien im oktober 2012 und erreichte auf platz eins der UK Albums Chart.",
+    "facts": [
+     "Sein zweites album Shangri La erschien im november 2013.",
+     "Sein viertes album Hearts That Strain, ein weitgehend akustisches werk unter der produktion von Dan Auerbach, erschien im september 2017."
+    ]
+   },
+   "tr": {
+    "kicker": "İngiliz şarkıcı ve söz yazarı",
+    "who": "Jake Edwin Charles Kennedy, Jake Bugg adıyla tanınan İngiliz bir şarkıcı ve söz yazarıdır. Kendi adını taşıyan ilk albümü Jake Bugg, ekim 2012'de yayımlandı ve UK Albums Chart'ta birinci sıraya ulaştı.",
+    "facts": [
+     "İkinci albümü Shangri La, kasım 2013'te yayımlandı.",
+     "Dördüncü albümü Hearts That Strain, Dan Auerbach'ın prodüksiyonuyla hazırlanan büyük ölçüde akustik bir çalışma olarak eylül 2017'de yayımlandı."
+    ]
+   }
+  }
+ ]
+}

@@ -1980,6 +1980,396 @@
    "slug": "rapk-603ce78e",
    "city": "zurich",
    "why": "no page of that name (nearest: Louis Rapkine)"
+  },
+  {
+   "id": "6f60fb5b-caf0-4be8-a597-7b0fb5f37599",
+   "slug": "deorro-ages-18-a34e4096",
+   "city": "dallas",
+   "why": "check: exclamation mark in the act's former name (TON!C)"
+  },
+  {
+   "id": "514c1d27-cfef-4de9-9122-c04e43e34930",
+   "slug": "tarkan-d5b28834",
+   "city": "abu-dhabi",
+   "why": "extract too thin: one sentence, cannot support who (2-3 sentences) plus two facts"
+  },
+  {
+   "id": "24dd7234-17bb-40ab-ab81-1574eceacadf",
+   "slug": "horsegiirl-304aea6b",
+   "city": "amsterdam",
+   "why": "extract is one sentence, too thin for a who text"
+  },
+  {
+   "id": "b8e2262e-c53d-41b1-8b39-2f3ef7f07d6f",
+   "slug": "david-garrett-immortal-classic-tour-2027-3ee7890d",
+   "city": "basel",
+   "why": "extract is one sentence; cannot support two distinct facts"
+  },
+  {
+   "id": "c6ad4042-bca1-4336-9184-8d74ee221afb",
+   "slug": "vincent-niclo-7b3d380a",
+   "city": "brussel",
+   "why": "extract too thin: one sentence, no facts beyond name and genre"
+  },
+  {
+   "id": "e8ace678-4749-40be-9f32-6eb956dd45bd",
+   "slug": "jesse-and-joy-04654cd4",
+   "city": "ciudad-de-mexico",
+   "why": "extract too thin: two sentences, no more than the facts would repeat"
+  },
+  {
+   "id": "16467e84-c4d6-4b0f-838b-9404c73635f0",
+   "slug": "alexandra-kay-cbbb7b4c",
+   "city": "cork",
+   "why": "extract is one sentence, too thin for kicker, who and two facts"
+  },
+  {
+   "id": "d410756e-21b6-4592-b97e-0c5a46da99a6",
+   "slug": "mario-rosenstock-cff53dbe",
+   "city": "cork",
+   "why": "page is a comedian and impressionist, not clearly the music act; extract also one sentence"
+  },
+  {
+   "id": "fac1c16e-ba67-4758-aff5-91acfb490f4c",
+   "slug": "pa-sheehy-the-magic-we-found-tour-901c712f",
+   "city": "frankfurt",
+   "why": "extract is one sentence, too thin"
+  },
+  {
+   "id": "e8553885-4e4a-470c-a26c-358defe88509",
+   "slug": "the-silos-cb79c4ad",
+   "city": "frankfurt",
+   "why": "extract is one sentence, too thin"
+  },
+  {
+   "id": "f1af9377-6168-409e-bce8-1ca7a645d141",
+   "slug": "bombargo-love-in-spite-of-everything-tour-69993976",
+   "city": "frankfurt",
+   "why": "extract is one sentence, too thin"
+  },
+  {
+   "id": "8f4e0063-98b3-46d4-b20b-e4fe1e9a4685",
+   "slug": "kommil-foo-babel-b45ddafa",
+   "city": "gent",
+   "why": "extract too thin: one sentence cannot support a who text and two facts; title mentions Babel, not in extract"
+  },
+  {
+   "id": "b7888dea-23f7-4a7b-8127-ba17cbb98515",
+   "slug": "when-rivers-meet-the-backbone-tour-c4d15e19",
+   "city": "glasgow",
+   "why": "extract is one sentence, too thin"
+  },
+  {
+   "id": "cc8cebf8-ed86-4e8f-9154-336c1f97c8a3",
+   "slug": "the-hara-715c6efe",
+   "city": "glasgow",
+   "why": "extract only gives origin and founders, too thin"
+  },
+  {
+   "id": "34e8c797-485b-469b-ada8-aba9fd2033b1",
+   "slug": "carlos-sadness-e81082e6",
+   "city": "guadalajara",
+   "why": "extract is one sentence; no second fact or detail to write from"
+  },
+  {
+   "id": "b01476b9-383d-4cb6-9add-8286d2b25ddf",
+   "slug": "green-lung-0f7cf7d3",
+   "city": "hamburg",
+   "why": "extract is one sentence, too thin for a who text of 2 or 3 sentences"
+  },
+  {
+   "id": "fb2eefe8-b3a9-449b-81f0-37fc4abdb695",
+   "slug": "getter-live-in-houston-ages-18-90bd92f8",
+   "city": "houston",
+   "why": "extract is one sentence, too thin for two facts"
+  },
+  {
+   "id": "2b1352eb-e714-4758-a9b2-ed255054f6c7",
+   "slug": "y-ld-z-tilbe-a2b5f0b4",
+   "city": "istanbul",
+   "why": "one-sentence extract, too thin for who plus two facts"
+  },
+  {
+   "id": "3e27617b-e6b6-4fbb-b482-885bbfcc3ad1",
+   "slug": "gokhan-turkmen-2e15d7ae",
+   "city": "izmir",
+   "why": "extract is one sentence, too thin"
+  },
+  {
+   "id": "1cb27b49-2b33-4989-a14f-800f14cadc50",
+   "slug": "soner-sar-kabaday-623646f6",
+   "city": "izmir",
+   "why": "extract is one sentence, too thin"
+  },
+  {
+   "id": "70f23bae-2e0e-4804-9ca2-312187562997",
+   "slug": "rafet-el-roman-e5706155",
+   "city": "izmir",
+   "why": "extract is two sentences, too thin for who plus two facts"
+  },
+  {
+   "id": "60cc4eca-f778-4436-a55e-2218715de46e",
+   "slug": "aysegul-aldinc-1f54560a",
+   "city": "izmir",
+   "why": "extract is one sentence, too thin"
+  },
+  {
+   "id": "39d3a567-e730-419d-b7d9-8c7a1b238d4c",
+   "slug": "ilkay-akkaya-9442ef7a",
+   "city": "izmir",
+   "why": "extract is one sentence, too thin"
+  },
+  {
+   "id": "2afcfadb-9908-440a-8267-9cd9a793e64c",
+   "slug": "ogun-sanl-soy-fdf3f4e4",
+   "city": "izmir",
+   "why": "extract is one sentence, too thin"
+  },
+  {
+   "id": "a090c5e7-bd06-4005-90ac-7e044b2bb005",
+   "slug": "pa-sheehy-the-magic-we-found-tour-9e5ff76c",
+   "city": "koln",
+   "why": "extract is one sentence, too thin for who plus two facts"
+  },
+  {
+   "id": "71c1a260-e90d-4e2b-9e01-7984e3ee587e",
+   "slug": "ayra-starr-starrgirl-world-tour-1122a2ef",
+   "city": "koln",
+   "why": "extract is one sentence, too thin for who plus two facts"
+  },
+  {
+   "id": "8db4f96f-3daf-4050-a97c-1ba62c61432e",
+   "slug": "strangelove-the-depeche-mode-experience-e7504067",
+   "city": "krakow",
+   "why": "tribute show (Depeche Mode experience); source page is the band Strangelove, not the act on this night"
+  },
+  {
+   "id": "9638363a-ed6f-43cb-a590-d50028f20ab1",
+   "slug": "schandmaul-sternensegler-tour-2027-b1e05410",
+   "city": "leipzig",
+   "why": "extract is one sentence, too thin for who plus two facts"
+  },
+  {
+   "id": "699880a9-e9b3-4aaf-bd43-19946229cdc9",
+   "slug": "benny-benassi-94874c9f",
+   "city": "los-angeles",
+   "why": "extract is only two sentences; facts would repeat who"
+  },
+  {
+   "id": "749547fd-8bd4-43c7-aa26-079a68d41584",
+   "slug": "bill-bailey-vaudevillean-a8511bc7",
+   "city": "manchester",
+   "why": "comedy show, comedian page, not a concert night"
+  },
+  {
+   "id": "bc97ecd1-0388-489b-bfd1-56cda7b3d87d",
+   "slug": "say-now-20241cb5",
+   "city": "manchester",
+   "why": "extract too thin, two sentences"
+  },
+  {
+   "id": "0cc4a6d0-d454-442e-868e-17795f272703",
+   "slug": "the-hara-a92c5319",
+   "city": "manchester",
+   "why": "extract too thin, two sentences"
+  },
+  {
+   "id": "ceea3a36-e77a-4727-a328-ba798a65dc37",
+   "slug": "placebo-30th-anniversary-tour-811ae42a",
+   "city": "manchester",
+   "why": "extract too thin, one sentence"
+  },
+  {
+   "id": "fc7c016b-64cc-4459-8ced-ac7b045c3823",
+   "slug": "lagwagon-4405a648",
+   "city": "milano",
+   "why": "extract is two sentences, too thin for who plus two facts"
+  },
+  {
+   "id": "663a2d2d-ceb6-4d30-a32a-c60ed2b0a6cb",
+   "slug": "la-gusana-ciega-claroscuro-07996f44",
+   "city": "monterrey",
+   "why": "extract is one sentence, too thin"
+  },
+  {
+   "id": "70786493-9fb4-4e7e-8a69-ed5e1a0c9d37",
+   "slug": "carlos-sadness-20eb72c8",
+   "city": "monterrey",
+   "why": "extract is one sentence, too thin"
+  },
+  {
+   "id": "676038ba-6bcb-40eb-b5df-f270207808b0",
+   "slug": "espinoza-paz-7a59af8c",
+   "city": "monterrey",
+   "why": "extract is one sentence, too thin"
+  },
+  {
+   "id": "4e9a9e84-3dc3-45bb-8bd1-0afefbaa3ec6",
+   "slug": "silvio-rodriguez-13c5bac8",
+   "city": "monterrey",
+   "why": "extract is one sentence, too thin"
+  },
+  {
+   "id": "1c2a20ad-142d-4ea1-b478-3d91c6045e00",
+   "slug": "katie-pruitt-fools-for-the-fleeting-tour-w-antho-0169ce57",
+   "city": "nashville",
+   "why": "extract too thin: three short sentences, not enough for who plus two distinct facts"
+  },
+  {
+   "id": "3e108981-6075-48ec-abca-633ed978ac62",
+   "slug": "scotty-mccreery-c7e33213",
+   "city": "nashville",
+   "why": "extract too thin: two sentences, not enough for who plus two facts"
+  },
+  {
+   "id": "1e4db758-2f26-43e5-957d-65072282495b",
+   "slug": "stein-torleif-bjella-innegubbens-dr-ymejul-10db9651",
+   "city": "oslo",
+   "why": "extract is one sentence, too thin for who plus two facts"
+  },
+  {
+   "id": "ecc5fb8f-0b2d-4b7c-b2fd-9f153ea2b2c7",
+   "slug": "death-by-unga-bunga-1450561a",
+   "city": "oslo",
+   "why": "extract is one sentence, too thin for who plus two facts"
+  },
+  {
+   "id": "0c25b28d-e96c-41d3-a5db-340d9b1e45f9",
+   "slug": "shakey-graves-fondness-etc-tour-1e571ceb",
+   "city": "ottawa",
+   "why": "extract is one sentence, too thin for who plus two facts"
+  },
+  {
+   "id": "32df9cb1-1f71-4e07-8ce9-622a3114b0d3",
+   "slug": "burton-cummings-fcf62df7",
+   "city": "ottawa",
+   "why": "extract is two sentences, too thin for who plus two facts"
+  },
+  {
+   "id": "ff504667-ae0a-42c4-aa04-19b12805cc11",
+   "slug": "nimino-keep-me-awake-tour-7ab5f7dc",
+   "city": "philadelphia",
+   "why": "extract too thin: two sentences, not enough for who plus two facts"
+  },
+  {
+   "id": "1b0e2dfa-530b-44eb-8515-30719d80e863",
+   "slug": "tedua-palasport-2027-5e2f6373",
+   "city": "roma",
+   "why": "extract is one sentence, too thin for who plus two facts"
+  },
+  {
+   "id": "aa15fcfb-5c59-4baa-9409-e6226086ef1e",
+   "slug": "gabry-ponte-circotron-the-dance-show-86649744",
+   "city": "roma",
+   "why": "extract is one sentence, too thin for who plus two facts"
+  },
+  {
+   "id": "64d08e9b-c21b-4c97-99bb-43f51575ad7b",
+   "slug": "gibby-haynes-0a9b0ccd",
+   "city": "seattle",
+   "why": "extract is one sentence, too thin for who plus two facts"
+  },
+  {
+   "id": "2d686c9e-4888-438a-b4e3-3e185500d4d0",
+   "slug": "noah-gundersen-a336be8c",
+   "city": "stockholm",
+   "why": "extract is one sentence, too thin"
+  },
+  {
+   "id": "fcd44d7a-2c20-43c4-bd92-c7e57cd7fc7a",
+   "slug": "dea-matrona-d0b65e4f",
+   "city": "stockholm",
+   "why": "extract is one sentence, too thin"
+  },
+  {
+   "id": "0603109c-f515-411b-9306-51c884c53358",
+   "slug": "dead-poet-society-1fe0921d",
+   "city": "stockholm",
+   "why": "extract is one sentence, too thin"
+  },
+  {
+   "id": "579266f6-a7cd-47ad-84e0-2523b35b7d18",
+   "slug": "marika-hackman-3501f9c2",
+   "city": "stockholm",
+   "why": "extract is one sentence, too thin"
+  },
+  {
+   "id": "17ee822b-df41-46b0-85f2-4ad0125d5475",
+   "slug": "andreas-gabalier-arena-tour-2027-1abf0d22",
+   "city": "stuttgart",
+   "why": "extract is one sentence, too thin for who plus two facts"
+  },
+  {
+   "id": "a624c260-49f9-476d-83e3-f3820438ec56",
+   "slug": "gabry-ponte-circotron-the-dance-show-49eea527",
+   "city": "torino",
+   "why": "extract is one sentence, too thin for who plus two facts"
+  },
+  {
+   "id": "67cbb99c-2930-45d9-9aaf-18939568bb66",
+   "slug": "tyson-yoshi-ee82c534",
+   "city": "toronto",
+   "why": "extract too thin: two sentences, no room for who plus two facts"
+  },
+  {
+   "id": "46db409d-bbb5-45fe-9c43-4d52ede0b0c8",
+   "slug": "new-constellations-it-comes-in-waves-tour-22bc424e",
+   "city": "vancouver",
+   "why": "extract is one sentence, too thin"
+  },
+  {
+   "id": "4350281a-570f-49de-b2e7-fbd118dfbb94",
+   "slug": "bryce-alakai-2nd-show-added-be041f72",
+   "city": "vancouver",
+   "why": "extract is one sentence, too thin"
+  },
+  {
+   "id": "75e9af84-c8ed-4b38-9404-2648d07cb81d",
+   "slug": "bryce-alakai-04239bef",
+   "city": "vancouver",
+   "why": "extract is one sentence, too thin"
+  },
+  {
+   "id": "f74c3aa3-843a-4be0-a465-4562573c6085",
+   "slug": "strangelove-the-depeche-mode-experience-e821b693",
+   "city": "warszawa",
+   "why": "tribute show: the page is the band Strangelove, the night is a Depeche Mode experience"
+  },
+  {
+   "id": "a1751d0b-8a9f-4a70-a9ec-995715da9942",
+   "slug": "maryla-rodowicz-01c8ff97",
+   "city": "warszawa",
+   "why": "extract is one sentence, too thin"
+  },
+  {
+   "id": "33c3ab7e-c669-44e3-a4bf-f33f980ee8e9",
+   "slug": "kyle-gordon-ab14722d",
+   "city": "washington",
+   "why": "comedian page and extract too thin (two sentences)"
+  },
+  {
+   "id": "6323baf4-1f49-4029-b565-95009063884e",
+   "slug": "too-many-zooz-audio-lipstick-tour-cfce1750",
+   "city": "wroclaw",
+   "why": "extract is one sentence, too thin for who plus two facts"
+  },
+  {
+   "id": "16d8d826-b8d7-481f-baaa-ca82d87ffef3",
+   "slug": "the-scratch-856a6663",
+   "city": "zurich",
+   "why": "extract is one sentence, too thin for who plus two facts"
+  },
+  {
+   "id": "d5ca4a0c-6aff-40ce-a629-8c6c31778d92",
+   "slug": "ayra-starr-starrgirl-world-tour-642e6389",
+   "city": "zurich",
+   "why": "extract is one sentence, too thin; bio only, no tour facts"
+  },
+  {
+   "id": "7a85378c-cac6-4464-90e3-b892769328c1",
+   "slug": "almost-monday-46eb0864",
+   "city": "zurich",
+   "why": "extract is one sentence, too thin for who plus two facts"
   }
  ]
 }

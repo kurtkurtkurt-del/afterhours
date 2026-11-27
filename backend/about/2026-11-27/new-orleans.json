@@ -1,0 +1,38 @@
+{
+  "city": "new-orleans",
+  "day": "2026-11-27",
+  "nights": [
+    {
+      "id": "447d657b-7707-431f-9b9b-0989a258a138",
+      "slug": "lauren-daigle-ca730303",
+      "title": "Lauren Daigle",
+      "name": "Lauren Daigle",
+      "source_url": "https://en.wikipedia.org/wiki/Lauren_Daigle",
+      "extract": "Lauren Ashley Daigle is an American contemporary Christian music singer and songwriter. After being signed to the label Centricity Music, she released her debut album, How Can It Be, in 2015. It reached No. 1 on the Billboard Top Christian Albums chart, has been certified Platinum by the RIAA and produced three No. 1 singles on the Billboard Christian Airplay chart.",
+      "en": {
+        "kicker": "contemporary christian music singer and songwriter",
+        "who": "Lauren Ashley Daigle is an American contemporary christian music singer and songwriter. After being signed to the label Centricity Music, she released her debut album, How Can It Be, in 2015.",
+        "facts": [
+          "It reached No. 1 on the Billboard Top Christian Albums chart.",
+          "It has been certified Platinum by the RIAA and produced three No. 1 singles on the Billboard Christian Airplay chart."
+        ]
+      },
+      "de": {
+        "kicker": "sängerin und songwriterin für christliche musik",
+        "who": "Lauren Ashley Daigle ist eine amerikanische sängerin und songwriterin zeitgenössischer christlicher musik. Nachdem sie beim label Centricity Music unter vertrag genommen wurde, veröffentlichte sie 2015 ihr debütalbum How Can It Be.",
+        "facts": [
+          "Das Album erreichte Platz 1 der Billboard Top Christian Albums chart.",
+          "Es wurde von der RIAA mit Platin zertifiziert und brachte drei Nummer-1-Singles in den Billboard Christian Airplay chart hervor."
+        ]
+      },
+      "tr": {
+        "kicker": "çağdaş hristiyan müziği şarkıcısı ve söz yazarı",
+        "who": "Lauren Ashley Daigle, çağdaş hristiyan müziği yapan amerikalı bir şarkıcı ve söz yazarıdır. Centricity Music plak şirketi ile sözleşme imzalamasının ardından, 2015'te ilk albümü How Can It Be'yi yayımladı.",
+        "facts": [
+          "Albüm, Billboard Top Christian Albums listesinde 1 numaraya ulaştı.",
+          "Albüm RIAA tarafından platin sertifikalandırıldı ve Billboard Christian Airplay listesinde üç 1 numaralı single çıkardı."
+        ]
+      }
+    }
+  ]
+}

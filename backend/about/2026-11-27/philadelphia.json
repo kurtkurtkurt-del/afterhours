@@ -1,0 +1,70 @@
+{
+  "city": "philadelphia",
+  "day": "2026-11-27",
+  "nights": [
+    {
+      "id": "101387f0-43bf-4a5f-85a7-135951861457",
+      "slug": "bonobo-700de0bc",
+      "title": "Bonobo",
+      "name": "Bonobo",
+      "source_url": "https://en.wikipedia.org/wiki/Bonobo_(musician)",
+      "extract": "Simon Charles Green, known by his stage name Bonobo, is an English musician, producer, and DJ based in Los Angeles. He debuted with a trip hop aesthetic and has since explored more upbeat approaches as well as jazz and world music influences. His electronic sound incorporates the use of organic instrumentation and is recreated by a full band in live performances.",
+      "en": {
+        "kicker": "English musician, producer, and DJ · based in Los Angeles",
+        "who": "Simon Charles Green, known by his stage name Bonobo, is an English musician, producer, and DJ based in Los Angeles. His electronic sound incorporates the use of organic instrumentation.",
+        "facts": [
+          "He debuted with a trip hop aesthetic and has since explored more upbeat approaches as well as jazz and world music influences.",
+          "His electronic sound is recreated by a full band in live performances."
+        ]
+      },
+      "de": {
+        "kicker": "englischer musiker, produzent und dj · ansässig in Los Angeles",
+        "who": "Simon Charles Green, bekannt unter dem künstlernamen Bonobo, ist ein englischer musiker, produzent und dj, ansässig in Los Angeles. Sein elektronischer klang setzt auf organische instrumentierung.",
+        "facts": [
+          "Er debütierte mit einer trip-hop-ästhetik und hat seitdem auch upbeat-ansätze erkundet sowie einflüsse aus jazz und weltmusik aufgegriffen.",
+          "Sein elektronischer klang wird bei livekonzerten von einer kompletten band nachgebildet."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz müzisyen, yapımcı ve dj · Los Angeles'ta yaşıyor",
+        "who": "Simon Charles Green, Bonobo sahne adıyla tanınan, Los Angeles'ta yaşayan bir ingiliz müzisyen, yapımcı ve dj'dir. Elektronik sesi, organik enstrümantasyon kullanımını içerir.",
+        "facts": [
+          "Trip hop estetiğiyle başladı ve o zamandan beri daha canlı yaklaşımların yanı sıra caz ve dünya müziği etkilerini keşfetti.",
+          "Elektronik sesi, canlı performanslarda tam bir grup tarafından yeniden üretilir."
+        ]
+      }
+    },
+    {
+      "id": "bb2cc914-566e-4bcd-b936-ac5ef755ff9d",
+      "slug": "static-dress-52f7c8fa",
+      "title": "Static Dress",
+      "name": "Static Dress",
+      "source_url": "https://en.wikipedia.org/wiki/Static_Dress",
+      "extract": "Static Dress are an English rock band from Leeds, West Yorkshire. Formed in 2018, Static Dress are a concept band with their material following a continuous story. They currently consist of lead vocalist Olli Appleyard, drummer Sam Ogden, guitarist Vincent Weight and bassist George Holding. They have released two full-length studio albums, three EPs and various standalone singles, as well as a comic book and three video games.",
+      "en": {
+        "kicker": "English rock band · 2018, Leeds",
+        "who": "Static Dress are an English rock band from Leeds, West Yorkshire, formed in 2018. They currently consist of lead vocalist Olli Appleyard, drummer Sam Ogden, guitarist Vincent Weight and bassist George Holding.",
+        "facts": [
+          "Static Dress are a concept band with their material following a continuous story.",
+          "They have released two full-length studio albums, three EPs and various standalone singles, as well as a comic book and three video games."
+        ]
+      },
+      "de": {
+        "kicker": "englische rock-band · 2018, Leeds",
+        "who": "Static Dress sind eine englische rockband aus Leeds, West Yorkshire, gegründet 2018. Derzeit bestehen sie aus leadsänger Olli Appleyard, schlagzeuger Sam Ogden, gitarrist Vincent Weight und bassist George Holding.",
+        "facts": [
+          "Static Dress sind eine concept-band, deren material einer durchgehenden geschichte folgt.",
+          "Sie haben zwei full-length-studioalben, drei eps und verschiedene einzelsingles veröffentlicht, dazu einen comic und drei videospiele."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz rock grubu · 2018, Leeds",
+        "who": "West Yorkshire'daki Leeds'ten çıkan bir ingiliz rock grubu olan Static Dress, 2018'de kuruldu. Şu anda vokalist Olli Appleyard, davulcu Sam Ogden, gitarist Vincent Weight ve basçı George Holding'den oluşuyor.",
+        "facts": [
+          "Static Dress, materyalleri sürekli bir hikayeyi takip eden bir konsept gruptur.",
+          "İki tam uzunluklu stüdyo albümü, üç EP ve çeşitli tekli şarkılar yayımladılar; ayrıca bir çizgi roman ve üç video oyunu da çıkardılar."
+        ]
+      }
+    }
+  ]
+}

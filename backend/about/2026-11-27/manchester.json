@@ -1,0 +1,70 @@
+{
+ "city": "manchester",
+ "day": "2026-11-27",
+ "nights": [
+  {
+   "id": "b38decb4-b225-4af7-bad8-c92da70453ab",
+   "slug": "razorlight-america-20th-anniversary-tour-6bb9b6e4",
+   "title": "Razorlight - 'America' 20th Anniversary Tour",
+   "name": "Razorlight",
+   "source_url": "https://en.wikipedia.org/wiki/Razorlight",
+   "extract": "Razorlight are an English indie rock band, formed in 2002 in London by lead singer and guitarist Johnny Borrell. Along with Borrell, the current line-up of the band is composed of founding members Björn Ågren on guitar and bassist Carl Dalemo, as well as drummer Andy Burrows. This lineup is a reunion of the lineup from the band's second and third albums.",
+   "en": {
+    "kicker": "English indie rock band · formed 2002, London",
+    "who": "razorlight are an English indie rock band, formed in 2002 in London by lead singer and guitarist Johnny Borrell. along with Borrell, the current line-up of the band is composed of founding members Björn Ågren on guitar and bassist Carl Dalemo, as well as drummer Andy Burrows.",
+    "facts": [
+     "this lineup is a reunion of the lineup from the band's second and third albums.",
+     "the band was formed in 2002 in London by lead singer and guitarist Johnny Borrell."
+    ]
+   },
+   "de": {
+    "kicker": "englische indie-rock-band · gegründet 2002, London",
+    "who": "razorlight sind eine englische indie-rock-band, die 2002 in london von dem leadsänger und gitarristen johnny borrell gegründet wurde. zusammen mit borrell besteht die aktuelle besetzung der band aus den gründungsmitgliedern björn ågren an der gitarre und dem bassisten carl dalemo sowie dem schlagzeuger andy burrows.",
+    "facts": [
+     "diese besetzung ist eine wiedervereinigung der besetzung aus dem zweiten und dritten album der band.",
+     "die band wurde 2002 in London von leadsänger und gitarist johnny borrell gegründet."
+    ]
+   },
+   "tr": {
+    "kicker": "İngiliz indie rock grubu · 2002, Londra",
+    "who": "razorlight, 2002'de Londra'da baş vokalist ve gitarist Johnny Borrell tarafından kurulan bir İngiliz indie rock grubudur. borrell ile birlikte grubun mevcut kadrosu; kurucu üyeler björn ågren (gitar), basçı carl dalemo ve davulcu andy burrows'tan oluşuyor.",
+    "facts": [
+     "bu kadro, grubun ikinci ve üçüncü albümündeki kadronun yeniden bir araya gelişidir.",
+     "grup 2002'de Londra'da baş vokalist ve gitarist Johnny Borrell tarafından kuruldu."
+    ]
+   }
+  },
+  {
+   "id": "2de1bf34-9603-42d9-8de7-6c9eaf9eb59d",
+   "slug": "the-snuts-5562055d",
+   "title": "The Snuts",
+   "name": "The Snuts",
+   "source_url": "https://en.wikipedia.org/wiki/The_Snuts",
+   "extract": "The Snuts are a Scottish indie rock band formed in 2015, originating from West Lothian, Scotland. They have performed across the United Kingdom and Ireland. The band consists of Jack Cochrane, Joe McGillveray (guitar), Callum '29' Wilson (bass) and Jordan 'Joko' Mackay (drums) and was formed when the members were in school.",
+   "en": {
+    "kicker": "Scottish indie rock band · formed 2015, West Lothian",
+    "who": "The Snuts are a Scottish indie rock band formed in 2015, originating from West Lothian, Scotland. they have performed across the United Kingdom and Ireland.",
+    "facts": [
+     "the band consists of Jack Cochrane, Joe McGillveray (guitar), Callum '29' Wilson (bass) and Jordan 'Joko' Mackay (drums).",
+     "the band was formed when the members were in school."
+    ]
+   },
+   "de": {
+    "kicker": "schottische indie-rock-band · gegründet 2015, West Lothian",
+    "who": "The Snuts sind eine schottische indie-rock-band, die 2015 gegründet wurde und aus West Lothian, Schottland stammt. sie sind in Großbritannien und Irland aufgetreten.",
+    "facts": [
+     "die band besteht aus jack cochrane, joe mcgillveray (gitarre), callum '29' wilson (bass) und jordan 'joko' mackay (schlagzeug).",
+     "die band wurde gegründet, als die mitglieder noch in der schule waren."
+    ]
+   },
+   "tr": {
+    "kicker": "İskoç indie rock grubu · 2015, West Lothian",
+    "who": "The Snuts, 2015 yılında kurulmuş, kökeni West Lothian, İskoçya'da olan bir İskoç indie rock grubudur. Birleşik Krallık ve İrlanda genelinde sahne aldılar.",
+    "facts": [
+     "grup, Jack Cochrane, Joe McGillveray (gitar), Callum '29' Wilson (bas) ve Jordan 'Joko' Mackay (davul) üyelerinden oluşuyor.",
+     "grup, üyeler okuldayken kuruldu."
+    ]
+   }
+  }
+ ]
+}

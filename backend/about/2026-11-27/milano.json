@@ -1,0 +1,70 @@
+{
+  "city": "milano",
+  "day": "2026-11-27",
+  "nights": [
+    {
+      "id": "3c536f9f-4811-44da-a2d7-1df3f90d76d6",
+      "slug": "cage-the-elephant-38465c06",
+      "title": "CAGE THE ELEPHANT",
+      "name": "Cage the Elephant",
+      "source_url": "https://en.wikipedia.org/wiki/Cage_the_Elephant",
+      "extract": "Cage the Elephant is an American rock band formed in 2006 in Bowling Green, Kentucky. They moved to England and settled in London in 2008, shortly before their self-titled first album was released. As of 2017, the band's personnel were Matt Shultz (vocals), his older brother Brad Shultz, Nick Bockrath, Matthan Minster, Daniel Tichenor (bass), and Jared Champion (drums). The band's self-titled debut album was released in 2008 and included several radio singles in the United States and the United Kingdom. It was influenced by classic rock, '90s alternative, blues, punk rock, and funk music. Lincoln Parish served as the band's lead guitarist from 2006 until 2013, when he left to pursue a career",
+      "en": {
+        "kicker": "rock band · formed 2006 in Bowling Green, Kentucky",
+        "who": "Cage the Elephant is an American rock band formed in 2006 in Bowling Green, Kentucky. they moved to England and settled in London in 2008, shortly before their self-titled first album was released.",
+        "facts": [
+          "the band's self-titled debut album was released in 2008 and included several radio singles in the United States and the United Kingdom.",
+          "it was influenced by classic rock, '90s alternative, blues, punk rock, and funk music."
+        ]
+      },
+      "de": {
+        "kicker": "rockband · gegründet 2006 in Bowling Green, Kentucky",
+        "who": "Cage the Elephant ist eine amerikanische rockband, die 2006 in Bowling Green, Kentucky, gegründet wurde. die band zog 2008 nach England und ließ sich kurz vor der veröffentlichung ihres gleichnamigen ersten albums in London nieder.",
+        "facts": [
+          "das gleichnamige debütalbum der band erschien 2008 und enthielt mehrere radiosingles in den Vereinigten Staaten und im Vereinigten Königreich.",
+          "die musik wurde von classic rock, alternative der 90er, blues, punk rock und funk beeinflusst."
+        ]
+      },
+      "tr": {
+        "kicker": "rock grubu · 2006'da Bowling Green, Kentucky'de kuruldu",
+        "who": "Cage the Elephant, 2006'da Bowling Green, Kentucky'de kurulan Amerikan bir rock grubudur. grup 2008'de İngiltere'ye taşındı ve kendi adını taşıyan ilk albümleri çıkmadan kısa süre önce Londra'da yerleşti.",
+        "facts": [
+          "grubun kendi adını taşıyan ilk albümü 2008'de çıktı ve Birleşik Devletler ile Birleşik Krallık'ta birkaç radyo single'ı yer aldı.",
+          "müzikleri klasik rock, '90lar alternatifi, blues, punk rock ve funk müziğinden etkilenmişti."
+        ]
+      }
+    },
+    {
+      "id": "5f013997-1a38-4fd7-91b0-ffb8d62874dd",
+      "slug": "the-tallest-man-on-earth-just-beyond-endless-mou-d585fcde",
+      "title": "The Tallest Man on Earth - Just Beyond Endless Mountain",
+      "name": "The Tallest Man on Earth",
+      "source_url": "https://en.wikipedia.org/wiki/The_Tallest_Man_on_Earth",
+      "extract": "Kristian Matsson is a Swedish singer-songwriter who performs under the stage name The Tallest Man on Earth. Matsson grew up in Leksand, and began his solo career in 2006, having previously been the lead singer of the indie band Montezumas. His music has often drawn comparisons to the music of Bob Dylan.",
+      "en": {
+        "kicker": "swedish singer-songwriter · solo career from 2006",
+        "who": "Kristian Matsson is a Swedish singer-songwriter who performs under the stage name The Tallest Man on Earth. his music has often drawn comparisons to the music of Bob Dylan.",
+        "facts": [
+          "Matsson grew up in Leksand and began his solo career in 2006.",
+          "he was previously the lead singer of the indie band Montezumas."
+        ]
+      },
+      "de": {
+        "kicker": "schwedischer singer-songwriter · solokarriere seit 2006",
+        "who": "Kristian Matsson ist ein schwedischer singer-songwriter, der unter dem künstlernamen The Tallest Man on Earth auftritt. seine musik wurde oft mit der musik von Bob Dylan verglichen.",
+        "facts": [
+          "Matsson wuchs in Leksand auf und begann 2006 seine solokarriere.",
+          "zuvor war er der leadsänger der indie-band Montezumas."
+        ]
+      },
+      "tr": {
+        "kicker": "İsveçli şarkıcı-söz yazarı · 2006'dan beri solo",
+        "who": "Kristian Matsson, The Tallest Man on Earth adı altında sahne alan bir İsveçli şarkıcı ve söz yazarıdır. müziği sıklıkla Bob Dylan'ın müziğiyle karşılaştırılmıştır.",
+        "facts": [
+          "Matsson, Leksand'da büyüdü ve 2006'da solo kariyerine başladı.",
+          "daha önce indie grup Montezumas'ın baş vokalistiydi."
+        ]
+      }
+    }
+  ]
+}

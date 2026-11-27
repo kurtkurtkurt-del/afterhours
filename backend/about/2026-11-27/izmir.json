@@ -1,0 +1,38 @@
+{
+  "city": "izmir",
+  "day": "2026-11-27",
+  "nights": [
+    {
+      "id": "600aa548-bb70-4842-97ea-ab4d98776703",
+      "slug": "demir-demirkan-6bfd6591",
+      "title": "Demir Demirkan",
+      "name": "Demir Demirkan",
+      "source_url": "https://en.wikipedia.org/wiki/Demir_Demirkan",
+      "extract": "Demir Demirkan is a Turkish musician, Eurovision Song Contest winning composer, guitarist for thrash metal band Mezarkabul and writer. Demirkan started playing music when he was 13 and played guitar with various groups in college. He also wrote television jingles and composed soundtracks for television and films.",
+      "en": {
+        "kicker": "Turkish musician, Eurovision Song Contest winning composer",
+        "who": "Demir Demirkan is a Turkish musician, Eurovision Song Contest winning composer, guitarist for thrash metal band Mezarkabul and writer. Demirkan started playing music when he was 13 and played guitar with various groups in college.",
+        "facts": [
+          "Demirkan started playing music when he was 13.",
+          "He also wrote television jingles and composed soundtracks for television and films."
+        ]
+      },
+      "de": {
+        "kicker": "türkischer musiker, komponist des Eurovision-Siegertitels",
+        "who": "Demir Demirkan ist ein türkischer Musiker, Komponist des Siegertitels beim Eurovision Song Contest, Gitarrist der Thrash-Metal-Band Mezarkabul und Autor. Demirkan begann mit 13 Jahren Musik zu machen und spielte während seines Studiums Gitarre in verschiedenen Gruppen.",
+        "facts": [
+          "Demirkan begann mit 13 Jahren Musik zu machen.",
+          "Er schrieb außerdem Erkennungsmelodien fürs Fernsehen und komponierte Filmmusik für Fernsehen und Kino."
+        ]
+      },
+      "tr": {
+        "kicker": "türk müzisyen, Eurovision Şarkı Yarışması kazanan besteci",
+        "who": "Demir Demirkan bir Türk müzisyen, Eurovision Şarkı Yarışması kazanan besteci, Mezarkabul thrash metal grubunun gitaristi ve yazar. Demirkan 13 yaşında müzik yapmaya başladı ve üniversitede çeşitli gruplarla gitar çaldı.",
+        "facts": [
+          "Demirkan 13 yaşında müzik yapmaya başladı.",
+          "Ayrıca televizyon jenerikleri yazdı ve televizyon ile filmler için film müzikleri besteledi."
+        ]
+      }
+    }
+  ]
+}

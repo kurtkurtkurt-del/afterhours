@@ -1,0 +1,38 @@
+{
+  "city": "goteborg",
+  "day": "2026-11-27",
+  "nights": [
+    {
+      "id": "b31d9ca1-7bf8-4f98-addc-822328f27264",
+      "slug": "mastodon-7e436810",
+      "title": "Mastodon",
+      "name": "Mastodon",
+      "source_url": "https://en.wikipedia.org/wiki/Mastodon_(band)",
+      "extract": "Mastodon is an American heavy metal band from Atlanta, Georgia. Formed in 2000, the band's lineup of Troy Sanders (bass/vocals), Brent Hinds, Bill Kelliher, and Brann Dailor (drums/vocals) remained unchanged for 24 years. Hinds departed Mastodon in March 2025, and died five months later in a motorcycle accident in Atlanta, Georgia.",
+      "en": {
+        "kicker": "heavy metal band · formed 2000, Atlanta, Georgia",
+        "who": "Mastodon is an American heavy metal band from Atlanta, Georgia. the band was formed in 2000, and its lineup of Troy Sanders, Brent Hinds, Bill Kelliher and Brann Dailor remained unchanged for 24 years.",
+        "facts": [
+          "Hinds departed Mastodon in March 2025.",
+          "Troy Sanders is listed on bass and vocals, and Brann Dailor on drums and vocals."
+        ]
+      },
+      "de": {
+        "kicker": "Metal-Band · gegründet 2000, Atlanta, Georgia",
+        "who": "Mastodon ist eine amerikanische Metal-Band aus Atlanta, Georgia. die band wurde 2000 gegründet, und ihre besetzung mit Troy Sanders, Brent Hinds, Bill Kelliher und Brann Dailor blieb 24 jahre lang unverändert.",
+        "facts": [
+          "Hinds verließ Mastodon im März 2025.",
+          "Troy Sanders spielt Bass und singt, Brann Dailor spielt Schlagzeug und singt."
+        ]
+      },
+      "tr": {
+        "kicker": "ağır metal grubu · 2000 yılında kuruldu, Atlanta, Georgia",
+        "who": "Mastodon, Atlanta, Georgia'dan çıkan bir Amerikan ağır metal grubudur. grup 2000 yılında kuruldu ve Troy Sanders, Brent Hinds, Bill Kelliher ile Brann Dailor'dan oluşan kadrosu 24 yıl boyunca değişmedi.",
+        "facts": [
+          "Hinds, Mastodon'dan Mart 2025'te ayrıldı.",
+          "Troy Sanders bas ve vokallerde, Brann Dailor ise davul ve vokallerde yer alıyor."
+        ]
+      }
+    }
+  ]
+}

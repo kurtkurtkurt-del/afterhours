@@ -1,0 +1,70 @@
+{
+  "city": "istanbul",
+  "day": "2026-11-27",
+  "nights": [
+    {
+      "id": "6b734c78-c973-400b-80dd-4cccc4270bfc",
+      "slug": "karsu-d39be791",
+      "title": "Karsu",
+      "name": "Karsu",
+      "source_url": "https://en.wikipedia.org/wiki/Karsu",
+      "extract": "Karsu Dönmez, known mononymously as Karsu, is a Turkish-Dutch singer, pianist and composer. While her music style is a blend of various genres, jazz pop is probably the best description for it. She has songs in Dutch, English, and Turkish.",
+      "en": {
+        "kicker": "Turkish-Dutch singer, pianist and composer",
+        "who": "Karsu Dönmez, known mononymously as Karsu, is a Turkish-Dutch singer, pianist and composer. while her music style is a blend of various genres, jazz pop is probably the best description for it.",
+        "facts": [
+          "her music style is a blend of various genres.",
+          "she has songs in Dutch, English, and Turkish."
+        ]
+      },
+      "de": {
+        "kicker": "türkisch-niederländische sängerin, pianistin, komponistin",
+        "who": "Karsu Dönmez, einnamig als Karsu bekannt, ist eine türkisch-niederländische sängerin, pianistin und komponistin. während ihr musikstil eine mischung verschiedener genres ist, ist jazzpop wohl die beste beschreibung dafür.",
+        "facts": [
+          "ihr musikstil ist eine mischung aus verschiedenen genres.",
+          "sie hat lieder auf niederländisch, englisch und türkisch."
+        ]
+      },
+      "tr": {
+        "kicker": "Türk-Hollandalı şarkıcı, piyanist ve besteci",
+        "who": "Karsu Dönmez, tek adıyla Karsu olarak bilinen, Türk-Hollandalı bir şarkıcı, piyanist ve bestecidir. müzik tarzı çeşitli türlerin bir karışımı olsa da, bunun en iyi tanımı muhtemelen caz pop'tur.",
+        "facts": [
+          "müzik tarzı çeşitli türlerin bir karışımıdır.",
+          "şarkıları Hollandaca, İngilizce ve Türkçe dillerindedir."
+        ]
+      }
+    },
+    {
+      "id": "289a9e1b-9c08-4908-9914-25f79e21ffa3",
+      "slug": "bulent-ersoy-817dc8e3",
+      "title": "Bülent Ersoy",
+      "name": "Bülent Ersoy",
+      "source_url": "https://en.wikipedia.org/wiki/B%C3%BClent_Ersoy",
+      "extract": "Bülent Ersoy is a Turkish singer, actress, and media personality. She is known as one of the most popular singers of Turkish music. Ersoy has many famous hits such as \"Ümit Hırsızı\" (Hope Thief), \"Geceler\" (Nights), \"Beddua\" (Curse), \"Maazallah\" (God Forbid), \"Biz Ayrılamayız\" (We Cannot Break Up), and \"Sefam Olsun\" (I Enjoy Myself). Ersoy has published more than thirty albums so far and has made a name for herself in Turkish music history. She remains an icon of the LGBTQ+ community in Turkey.",
+      "en": {
+        "kicker": "Turkish singer, actress, and media personality",
+        "who": "Bülent Ersoy is a Turkish singer, actress, and media personality. she is known as one of the most popular singers of Turkish music.",
+        "facts": [
+          "Ersoy has published more than thirty albums so far and has made a name for herself in Turkish music history.",
+          "she remains an icon of the LGBTQ+ community in Turkey."
+        ]
+      },
+      "de": {
+        "kicker": "türkische sängerin, schauspielerin, medienpersönlichkeit",
+        "who": "Bülent Ersoy ist eine türkische sängerin, schauspielerin und medienpersönlichkeit. sie gilt als eine der beliebtesten sängerinnen der türkischen musik.",
+        "facts": [
+          "Ersoy hat mehr als dreißig alben veröffentlicht und sich in der türkischen musikgeschichte einen namen gemacht.",
+          "sie bleibt eine ikone der LGBTQ+-gemeinschaft in der Türkei."
+        ]
+      },
+      "tr": {
+        "kicker": "Türk şarkıcı, oyuncu ve medya kişiliği",
+        "who": "Bülent Ersoy bir Türk şarkıcı, oyuncu ve medya kişiliğidir. Ersoy, Türk müziğinin en popüler şarkıcılarından biri olarak tanınır.",
+        "facts": [
+          "Ersoy şimdiye kadar otuzdan fazla albüm yayımlamış ve Türk müziği tarihinde kendine bir isim yapmıştır.",
+          "Türkiye'de LGBTQ+ topluluğunun bir simgesi olmaya devam etmektedir."
+        ]
+      }
+    }
+  ]
+}

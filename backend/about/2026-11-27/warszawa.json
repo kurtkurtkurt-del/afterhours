@@ -1,0 +1,70 @@
+{
+  "city": "warszawa",
+  "day": "2026-11-27",
+  "nights": [
+    {
+      "id": "0b225136-2355-4bc9-b2b5-8100c446cf11",
+      "slug": "katarsis-bed72125",
+      "title": "KATARSIS",
+      "name": "Katarsis",
+      "source_url": "https://en.wikipedia.org/wiki/Katarsis_(band)",
+      "extract": "Katarsis is a Lithuanian alternative rock band formed in Vilnius currently consisting of Lukas Radzevičius, Alanas Brasas and Jokūbas Andriulis (drummer). They represented Lithuania in the Eurovision Song Contest 2025 with the song \"Tavo akys\", finishing in 16th place in the final with 96 points.",
+      "en": {
+        "kicker": "Lithuanian alternative rock band · Vilnius",
+        "who": "Katarsis is a Lithuanian alternative rock band formed in Vilnius currently consisting of Lukas Radzevičius, Alanas Brasas and Jokūbas Andriulis (drummer). they represented Lithuania in the Eurovision Song Contest 2025 with the song \"Tavo akys\", finishing in 16th place in the final with 96 points.",
+        "facts": [
+          "they represented Lithuania in the Eurovision Song Contest 2025 with the song \"Tavo akys\", finishing in 16th place in the final with 96 points.",
+          "Katarsis is a Lithuanian alternative rock band formed in Vilnius."
+        ]
+      },
+      "de": {
+        "kicker": "litauische alternative rock band · Vilnius",
+        "who": "Katarsis ist eine litauische alternative-rock-band, die in Vilnius gegründet wurde und derzeit aus Lukas Radzevičius, Alanas Brasas und Jokūbas Andriulis (schlagzeug) besteht. sie vertraten Litauen beim Eurovision Song Contest 2025 mit dem lied \"Tavo akys\" und belegten im finale mit 96 punkten den 16. platz.",
+        "facts": [
+          "sie vertraten Litauen beim Eurovision Song Contest 2025 mit dem lied \"Tavo akys\" und belegten im finale mit 96 punkten den 16. platz.",
+          "Katarsis ist eine litauische alternative-rock-band, die in Vilnius gegründet wurde."
+        ]
+      },
+      "tr": {
+        "kicker": "Litvanyalı alternatif rock grubu · Vilnius",
+        "who": "Katarsis, Vilnius'ta kurulmuş Litvanyalı bir alternatif rock grubudur ve şu anda Lukas Radzevičius, Alanas Brasas ve Jokūbas Andriulis (davul) üyelerinden oluşmaktadır. grup, 2025 Eurovision Şarkı Yarışması'nda \"Tavo akys\" şarkısıyla Litvanya'yı temsil etti ve finalde 96 puanla 16. sırada yer aldı.",
+        "facts": [
+          "grup, 2025 Eurovision Şarkı Yarışması'nda \"Tavo akys\" şarkısıyla Litvanya'yı temsil etti ve finalde 96 puanla 16. sırada yer aldı.",
+          "Katarsis, Vilnius'ta kurulmuş Litvanyalı bir alternatif rock grubudur."
+        ]
+      }
+    },
+    {
+      "id": "5bab3d92-7704-46fe-b4fa-3be59704226c",
+      "slug": "karolina-czarnecka-potupaja-7bea5f3a",
+      "title": "Karolina Czarnecka - Potupaja",
+      "name": "Karolina Czarnecka",
+      "source_url": "https://en.wikipedia.org/wiki/Karolina_Czarnecka",
+      "extract": "Karolina Czarnecka is a Polish singer and actress. She rose to prominence in 2014 with her Polish cover of \"Heroin and Cocaine\" by The Tiger Lillies.",
+      "en": {
+        "kicker": "Polish singer and actress",
+        "who": "Karolina Czarnecka is a Polish singer and actress. she rose to prominence in 2014 with her Polish cover of \"Heroin and Cocaine\" by The Tiger Lillies.",
+        "facts": [
+          "she rose to prominence in 2014 with her Polish cover of \"Heroin and Cocaine\" by The Tiger Lillies.",
+          "Karolina Czarnecka is a Polish singer and actress."
+        ]
+      },
+      "de": {
+        "kicker": "polnische sängerin und schauspielerin",
+        "who": "Karolina Czarnecka ist eine polnische sängerin und schauspielerin. sie wurde 2014 mit ihrer polnischen coverversion von \"Heroin and Cocaine\" von The Tiger Lillies bekannt.",
+        "facts": [
+          "sie wurde 2014 mit ihrer polnischen coverversion von \"Heroin and Cocaine\" von The Tiger Lillies bekannt.",
+          "Karolina Czarnecka ist eine polnische sängerin und schauspielerin."
+        ]
+      },
+      "tr": {
+        "kicker": "Polonyalı şarkıcı ve oyuncu",
+        "who": "Karolina Czarnecka bir Polonyalı şarkıcı ve oyuncudur. 2014 yılında The Tiger Lillies'in \"Heroin and Cocaine\" şarkısının Lehçe versiyonuyla ön plana çıktı.",
+        "facts": [
+          "2014 yılında The Tiger Lillies'in \"Heroin and Cocaine\" şarkısının Lehçe versiyonuyla ön plana çıktı.",
+          "Karolina Czarnecka bir Polonyalı şarkıcı ve oyuncudur."
+        ]
+      }
+    }
+  ]
+}

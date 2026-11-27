@@ -1,0 +1,38 @@
+{
+  "city": "brussel",
+  "day": "2026-11-27",
+  "nights": [
+    {
+      "id": "b67fe5e3-3466-408d-b8a7-de5589514380",
+      "slug": "the-last-internationale-dde5e1cd",
+      "title": "The Last Internationale",
+      "name": "The Last Internationale",
+      "source_url": "https://en.wikipedia.org/wiki/The_Last_Internationale",
+      "extract": "The Last Internationale (TLI) is an American rock band formed by New York City guitarist Edgey Pires and vocalist Delila Paz.",
+      "en": {
+        "kicker": "American rock band",
+        "who": "The Last Internationale (TLI) is an American rock band. it was formed by New York City guitarist Edgey Pires and vocalist Delila Paz.",
+        "facts": [
+          "The Last Internationale is an American rock band.",
+          "the band was formed by New York City guitarist Edgey Pires and vocalist Delila Paz."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische rockband",
+        "who": "The Last Internationale (TLI) ist eine amerikanische rockband. sie wurde von dem gitarristen edgey pires aus new york city und der sängerin delila paz gegründet.",
+        "facts": [
+          "The Last Internationale ist eine amerikanische rockband.",
+          "die band wurde von dem gitarristen edgey pires aus new york city und der sängerin delila paz gegründet."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı rock grubu",
+        "who": "The Last Internationale (TLI) amerikalı bir rock grubudur. grup, new york city gitaristi edgey pires ve vokalist delila paz tarafından kuruldu.",
+        "facts": [
+          "The Last Internationale amerikalı bir rock grubudur.",
+          "grup, new york city gitaristi edgey pires ve vokalist delila paz tarafından kuruldu."
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+ "city": "vancouver",
+ "day": "2026-11-27",
+ "nights": [
+  {
+   "id": "8c52d275-1304-4b63-a3fe-cbb3124c0ac3",
+   "slug": "cory-henry-1a4f3554",
+   "title": "Cory Henry",
+   "name": "Cory Henry",
+   "source_url": "https://en.wikipedia.org/wiki/Cory_Henry",
+   "extract": "Cory Alexander Henry is an American jazz organist, pianist, gospel musician, and producer. A former member of Snarky Puppy, Henry launched his solo artist career in 2018 with Art of Love, his first independent release. In 2020, he released his sophomore full-length project, called Something to Say, which included the Marc E. Bassy-written track \"No Guns\". That same year he released Art of Love Live and Christmas with You, both under Culture Collective management and records.",
+   "en": {
+    "kicker": "American jazz organist, pianist, gospel musician",
+    "who": "Cory Alexander Henry is an American jazz organist, pianist, gospel musician, and producer. a former member of Snarky Puppy, Henry launched his solo artist career in 2018 with Art of Love, his first independent release.",
+    "facts": [
+     "in 2020, he released his sophomore full-length project, called Something to Say, which included the Marc E. Bassy-written track \"No Guns\".",
+     "that same year he released Art of Love Live and Christmas with You, both under Culture Collective management and records."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer jazz-organist, pianist, gospelmusiker",
+    "who": "Cory Alexander Henry ist ein amerikanischer jazz-organist, pianist, gospelmusiker und produzent. Henry war früher mitglied von Snarky Puppy und startete 2018 seine solokarriere mit Art of Love, seiner ersten unabhängigen veröffentlichung.",
+    "facts": [
+     "2020 veröffentlichte er sein zweites album, Something to Say, das den von Marc E. Bassy geschriebenen titel \"No Guns\" enthielt.",
+     "im selben jahr veröffentlichte er Art of Love Live und Christmas with You, beide unter dem management und dem label von Culture Collective erschienen."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı caz orgcusu, piyanist, gospel müzisyeni",
+    "who": "Cory Alexander Henry, amerikalı bir caz orgcusu, piyanist, gospel müzisyeni ve yapımcıdır. Snarky Puppy'nin eski bir üyesi olan Henry, 2018'de ilk bağımsız yayını Art of Love ile solo kariyerine başladı.",
+    "facts": [
+     "2020'de, ikinci tam uzunluktaki projesi olan Something to Say'i yayımladı; bu projede Marc E. Bassy'nin yazdığı \"No Guns\" parçası da yer aldı.",
+     "aynı yıl Art of Love Live ve Christmas with You'yu da yayımladı; ikisi de Culture Collective yönetimi ve kayıtları altında çıktı."
+    ]
+   }
+  }
+ ]
+}

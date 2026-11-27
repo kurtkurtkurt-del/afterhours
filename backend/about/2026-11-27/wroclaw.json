@@ -1,0 +1,38 @@
+{
+ "city": "wroclaw",
+ "day": "2026-11-27",
+ "nights": [
+  {
+   "id": "ae22ffdb-dfad-4668-b11d-f25b95f214da",
+   "slug": "joker-out-b4fa6eb1",
+   "title": "Joker Out",
+   "name": "Joker Out",
+   "source_url": "https://en.wikipedia.org/wiki/Joker_Out",
+   "extract": "Joker Out is a Slovenian indie rock band formed in Ljubljana in 2016. They represented Slovenia in the Eurovision Song Contest 2023 with the song \"Carpe Diem\", placing 21st. Their discography includes three studio albums: Umazane misli (2021), Demoni (2022), and Souvenir Pop (2024).",
+   "en": {
+    "kicker": "Slovenian indie rock band · formed in Ljubljana in 2016",
+    "who": "Joker Out is a Slovenian indie rock band formed in Ljubljana in 2016. They represented Slovenia in the Eurovision Song Contest 2023 with the song \"Carpe Diem\", placing 21st.",
+    "facts": [
+     "Their discography includes three studio albums: Umazane misli (2021), Demoni (2022), and Souvenir Pop (2024).",
+     "They represented Slovenia in the Eurovision Song Contest 2023 with the song \"Carpe Diem\", placing 21st."
+    ]
+   },
+   "de": {
+    "kicker": "slowenische indie-rock-band · gegründet 2016 in Ljubljana",
+    "who": "Joker Out ist eine slowenische indie-rock-band, die 2016 in Ljubljana gegründet wurde. sie traten 2023 beim Eurovision Song Contest mit dem song \"Carpe Diem\" für Slowenien an und belegten den 21. platz.",
+    "facts": [
+     "ihre diskografie umfasst drei studioalben: Umazane misli (2021), Demoni (2022) und Souvenir Pop (2024).",
+     "sie traten 2023 beim Eurovision Song Contest mit dem song \"Carpe Diem\" für Slowenien an und belegten den 21. platz."
+    ]
+   },
+   "tr": {
+    "kicker": "Slovenyalı indie rock grubu · 2016'da Ljubljana'da kuruldu",
+    "who": "Joker Out, 2016'da Ljubljana'da kurulan Slovenyalı bir indie rock grubudur. 2023 Eurovision Şarkı Yarışması'nda \"Carpe Diem\" şarkısıyla Slovenya'yı temsil ettiler ve 21. sırada yer aldılar.",
+    "facts": [
+     "Diskografileri üç stüdyo albümü içeriyor: Umazane misli (2021), Demoni (2022) ve Souvenir Pop (2024).",
+     "2023 Eurovision Şarkı Yarışması'nda \"Carpe Diem\" şarkısıyla Slovenya'yı temsil ettiler ve 21. sırada yer aldılar."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,134 @@
+{
+  "city": "amsterdam",
+  "day": "2026-11-27",
+  "nights": [
+    {
+      "id": "9893478d-1cd4-4a5f-a91c-c3af0ad0f13a",
+      "slug": "kadavar-ab38ad6e",
+      "title": "Kadavar",
+      "name": "Kadavar",
+      "source_url": "https://en.wikipedia.org/wiki/Kadavar",
+      "extract": "Kadavar is a German rock band from Berlin, founded in 2010. It currently consists of guitarist/lead vocalist Christoph \"Lupus\" Lindemann, drummer Christoph \"Tiger\" Bartelt, bassist Simon \"Dragon\" Bouteloup, and guitarist and keyboardist Jascha Kreft. Their retro style, incorporating psychedelic rock and stoner rock, has been compared to bands of the 1970s hard rock/heavy metal era such as Led Zeppelin and Black Sabbath. Bartelt and Lindemann formed Kadavar as a trio with bassist Philipp \"Mammut\" Lippitz. When Lippitz left the band in July 2013, he was replaced by Bouteloup. After releasing six studio albums, Kadavar became a quartet in March 2023 with the addition of Kreft.",
+      "en": {
+        "kicker": "German rock band · 2010, Berlin",
+        "who": "Kadavar is a German rock band from Berlin, founded in 2010. their retro style, incorporating psychedelic rock and stoner rock, has been compared to bands of the 1970s hard rock/heavy metal era such as Led Zeppelin and Black Sabbath.",
+        "facts": [
+          "Bartelt and Lindemann formed Kadavar as a trio with bassist Philipp \"Mammut\" Lippitz.",
+          "when Lippitz left the band in July 2013, he was replaced by Bouteloup."
+        ]
+      },
+      "de": {
+        "kicker": "deutsche rockband · 2010, Berlin",
+        "who": "Kadavar ist eine deutsche rockband aus Berlin, gegründet 2010. ihr retro-stil, der psychedelic rock und stoner rock einbezieht, wurde mit bands der hard-rock- und heavy-metal-ära der 1970er jahre verglichen, etwa Led Zeppelin und Black Sabbath.",
+        "facts": [
+          "Bartelt und Lindemann gründeten Kadavar als trio mit bassist Philipp \"Mammut\" Lippitz.",
+          "als Lippitz im juli 2013 die band verließ, wurde er durch Bouteloup ersetzt."
+        ]
+      },
+      "tr": {
+        "kicker": "Alman rock grubu · 2010, Berlin",
+        "who": "Kadavar, 2010'da kurulan, Berlin'den bir Alman rock grubudur. retro tarzları; psychedelic rock ve stoner rock'ı içeren yapılarıyla, 1970'lerin hard rock/heavy metal döneminden Led Zeppelin ve Black Sabbath gibi gruplarla karşılaştırılmıştır.",
+        "facts": [
+          "Bartelt ve Lindemann, Kadavar'ı basçı Philipp \"Mammut\" Lippitz ile birlikte bir trio olarak kurdu.",
+          "Lippitz 2013 temmuzunda gruptan ayrılınca yerine Bouteloup getirildi."
+        ]
+      }
+    },
+    {
+      "id": "db9fae3a-7a3f-46d8-862b-50bd61360798",
+      "slug": "sekou-9c9ce276",
+      "title": "Sekou",
+      "name": "Sekou",
+      "source_url": "https://en.wikipedia.org/wiki/Sekou_(singer)",
+      "extract": "Sekou Sylla is a British-Ivorian singer from Leicestershire. He was nominated for the Brit Award for Rising Star in 2024.",
+      "en": {
+        "kicker": "British-Ivorian singer · Leicestershire",
+        "who": "Sekou Sylla is a British-Ivorian singer from Leicestershire. he was nominated for the Brit Award for Rising Star in 2024.",
+        "facts": [
+          "he was nominated for the Brit Award for Rising Star in 2024.",
+          "Sekou Sylla is a British-Ivorian singer from Leicestershire."
+        ]
+      },
+      "de": {
+        "kicker": "britisch-ivorischer sänger · Leicestershire",
+        "who": "Sekou Sylla ist ein britisch-ivorischer sänger aus Leicestershire. er wurde 2024 für den Brit Award in der kategorie Rising Star nominiert.",
+        "facts": [
+          "er wurde 2024 für den Brit Award in der kategorie Rising Star nominiert.",
+          "Sekou Sylla ist ein britisch-ivorischer sänger aus Leicestershire."
+        ]
+      },
+      "tr": {
+        "kicker": "Britanyalı-Fildişili şarkıcı · Leicestershire",
+        "who": "Sekou Sylla, Leicestershire'dan Britanyalı-Fildişili bir şarkıcıdır. 2024'te Brit Award'ın Rising Star dalında aday gösterildi.",
+        "facts": [
+          "2024'te Brit Award'ın Rising Star dalında aday gösterildi.",
+          "Sekou Sylla, Leicestershire'dan Britanyalı-Fildişili bir şarkıcıdır."
+        ]
+      }
+    },
+    {
+      "id": "13e0d9f2-3977-4517-b1a4-41c7ac4ad350",
+      "slug": "seb-lowe-937392ce",
+      "title": "Seb Lowe",
+      "name": "Seb Lowe",
+      "source_url": "https://en.wikipedia.org/wiki/Seb_Lowe",
+      "extract": "Sebastian Lowe is an English singer-songwriter from Saddleworth, Greater Manchester. He is known for incorporating politics into his music, having started out uploading videos of his songs to TikTok.",
+      "en": {
+        "kicker": "English singer-songwriter · Saddleworth",
+        "who": "Sebastian Lowe is an English singer-songwriter from Saddleworth, Greater Manchester. he is known for incorporating politics into his music, having started out uploading videos of his songs to TikTok.",
+        "facts": [
+          "he started out uploading videos of his songs to TikTok.",
+          "he is known for incorporating politics into his music."
+        ]
+      },
+      "de": {
+        "kicker": "englischer singer-songwriter · Saddleworth",
+        "who": "Sebastian Lowe ist ein englischer singer-songwriter aus Saddleworth, Greater Manchester. er ist dafür bekannt, politik in seine musik einfließen zu lassen, und hatte zunächst videos seiner songs auf TikTok hochgeladen.",
+        "facts": [
+          "er begann zunächst, videos seiner songs auf TikTok hochzuladen.",
+          "er ist dafür bekannt, politik in seine musik einfließen zu lassen."
+        ]
+      },
+      "tr": {
+        "kicker": "İngiliz şarkıcı-söz yazarı · Saddleworth",
+        "who": "Sebastian Lowe, Greater Manchester'ın Saddleworth bölgesinden bir İngiliz şarkıcı-söz yazarıdır. müziğine siyaseti dahil etmesiyle tanınıyor; önce şarkılarının videolarını TikTok'a yükleyerek başlamıştı.",
+        "facts": [
+          "önce şarkılarının videolarını TikTok'a yüklemeye başladı.",
+          "müziğine siyaseti dahil etmesiyle tanınıyor."
+        ]
+      }
+    },
+    {
+      "id": "cd1387a7-7356-4d1b-abec-6a7b6b68a8b1",
+      "slug": "j-bernardt-47768fd8",
+      "title": "J. Bernardt",
+      "name": "J. Bernardt",
+      "source_url": "https://en.wikipedia.org/wiki/J._Bernardt",
+      "extract": "J. Bernardt is a side project of Belgian musician Jinte Deprez, which he launched in 2016 when his band Balthazar took a break. His debut album Running Days was released in 2017, and includes contributions from Adriaan Van De Velde on synths and drummer Klaas De Somer. The album is a blend of different styles, including R&B, soul, hip hop, and electronica.",
+      "en": {
+        "kicker": "Belgian side project · 2016",
+        "who": "J. Bernardt is a side project of Belgian musician Jinte Deprez, which he launched in 2016 when his band Balthazar took a break. his debut album Running Days was released in 2017, and includes contributions from Adriaan Van De Velde on synths and drummer Klaas De Somer.",
+        "facts": [
+          "the album is a blend of different styles, including R&B, soul, hip hop, and electronica.",
+          "his debut album Running Days was released in 2017."
+        ]
+      },
+      "de": {
+        "kicker": "belgisches nebenprojekt · 2016",
+        "who": "J. Bernardt ist ein nebenprojekt des belgischen musikers Jinte Deprez, das er 2016 startete, als seine band Balthazar eine pause einlegte. sein debütalbum Running Days erschien 2017 und enthält beiträge von Adriaan Van De Velde an den synths und schlagzeuger Klaas De Somer.",
+        "facts": [
+          "das album ist eine mischung verschiedener stile, darunter R&B, soul, hip hop und electronica.",
+          "sein debütalbum Running Days erschien 2017."
+        ]
+      },
+      "tr": {
+        "kicker": "Belçikalı yan proje · 2016",
+        "who": "J. Bernardt, Belçikalı müzisyen Jinte Deprez'in bir yan projesidir; Deprez bu projeyi, grubu Balthazar ara verdiğinde 2016'da başlattı. debüt albümü Running Days 2017'de yayımlandı ve synthlerde Adriaan Van De Velde ile davulcu Klaas De Somer'in katkılarını içeriyor.",
+        "facts": [
+          "albüm, R&B, soul, hip hop ve electronica dahil olmak üzere farklı tarzların bir karışımıdır.",
+          "debüt albümü Running Days 2017'de yayımlandı."
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "city": "frankfurt",
+  "day": "2026-11-27",
+  "nights": [
+    {
+      "id": "1447a6c6-0042-4e0f-99e4-61ae80d53463",
+      "slug": "chase-atlantic-don-t-look-down-tour-10e537a3",
+      "title": "Chase Atlantic — DON’T LOOK DOWN TOUR",
+      "name": "Chase Atlantic",
+      "source_url": "https://en.wikipedia.org/wiki/Chase_Atlantic",
+      "extract": "Chase Atlantic is an Australian R&B band from Cairns, Queensland, formed in 2014. The band consists of three members: Christian Anthony and brothers Mitchel and Clinton Cave, and have released seven EPs and four albums since their formation. They are most recognised for their 2017 hit single, \"Swim\".",
+      "en": {
+        "kicker": "Australian R&B band · formed 2014, Cairns, Queensland",
+        "who": "The band consists of three members: Christian Anthony and brothers Mitchel and Clinton Cave, and have released seven EPs and four albums since their formation. They are most recognised for their 2017 hit single, \"Swim\".",
+        "facts": [
+          "Chase Atlantic is an Australian R&B band from Cairns, Queensland, formed in 2014.",
+          "They are most recognised for their 2017 hit single, \"Swim\"."
+        ]
+      },
+      "de": {
+        "kicker": "australische R&B-Band · gegründet 2014, Cairns, Queensland",
+        "who": "Die Band besteht aus drei Mitgliedern, Christian Anthony sowie den Brüdern Mitchel und Clinton Cave, und hat seit ihrer Gründung sieben EPs und vier Alben veröffentlicht. Sie ist vor allem für ihren Hit „Swim“ von 2017 bekannt.",
+        "facts": [
+          "Chase Atlantic ist eine australische R&B-Band aus Cairns, Queensland, die 2014 gegründet wurde.",
+          "Sie ist vor allem für ihren Hit „Swim“ von 2017 bekannt."
+        ]
+      },
+      "tr": {
+        "kicker": "Avustralyalı R&B grubu · 2014, Cairns, Queensland",
+        "who": "Üyeleri Christian Anthony ile kardeşler Mitchel ve Clinton Cave olmak üzere üç kişiden oluşan grup, kuruluşundan bu yana yedi EP ve dört albüm yayımladı. Grup en çok 2017 yılındaki „Swim“ adlı hit şarkısıyla tanınıyor.",
+        "facts": [
+          "Chase Atlantic, Cairns, Queensland'den 2014'te kurulan bir Avustralyalı R&B grubudur.",
+          "Grup en çok 2017 yılındaki „Swim“ adlı hit şarkısıyla tanınıyor."
+        ]
+      }
+    }
+  ]
+}
