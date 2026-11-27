@@ -1,0 +1,15 @@
+{
+  "city": "wroclaw",
+  "day": "2026-11-28",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "kraina koni, the christmas fair at partynice.", "de": "kraina koni, der weihnachtsmarkt in partynice.", "tr": "partynice'de kraina koni noel pazarı." },
+      "line": { "en": "the horse-themed christmas fair opens at the partynice racecourse at 10:00 and runs until 20 december, thursday to sunday.", "de": "der pferdethemen-weihnachtsmarkt öffnet um 10:00 auf der rennbahn partynice und läuft bis 20. dezember, donnerstag bis sonntag.", "tr": "at temalı noel pazarı saat 10:00'da partynice hipodromunda açılıyor ve 20 aralık'a kadar perşembeden pazara açık." },
+      "place": { "en": "tor partynice", "de": "tor partynice", "tr": "tor partynice" },
+      "hour": 10,
+      "minute": 0,
+      "why": "Kraina Koni christmas fair at Wrocławski Tor Wyścigów Konnych Partynice, starts Sat 28.11 at 10:00, runs to 20.12 Thu-Sun (wroclaw.pl event listing 1417516)."
+    }
+  ]
+}
