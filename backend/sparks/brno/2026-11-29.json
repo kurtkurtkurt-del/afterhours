@@ -1,0 +1,14 @@
+{
+  "city": "brno",
+  "day": "2026-11-29",
+  "sparks": [
+    {
+      "kind": "walk",
+      "title": { "en": "the first advent walk through the brno markets.", "de": "der erste adventsspaziergang über die brünner märkte.", "tr": "brno pazarlarında ilk advent yürüyüşü." },
+      "line": { "en": "the christmas markets are open on the first advent sunday. start on zelný trh at 15:30, then walk to náměstí svobody and the square at dominikánské náměstí.", "de": "die weihnachtsmärkte sind am ersten adventssonntag geöffnet. beginne um 15:30 am zelný trh, dann weiter zum náměstí svobody und zum dominikánské náměstí.", "tr": "noel pazarları ilk advent pazarında açık. 15:30'da zelný trh'ten başla, sonra náměstí svobody'ye ve dominikánské náměstí'ye yürü." },
+      "place": { "en": "zelný trh", "de": "zelný trh", "tr": "zelný trh" },
+      "hour": 15, "minute": 30,
+      "why": "Brno Christmas market at Zelný trh listed as running 13 Nov to 31 Dec 2026 (visitczechia.com, Brno Zelný trh listing); the other squares start 21 Nov (kudyznudy.cz, ct24.ceskatelevize.cz). Advent starts Sun 29 Nov. Hours are from earlier editions, so check the official programme before going."
+    }
+  ]
+}
