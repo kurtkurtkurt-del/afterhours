@@ -1,0 +1,36 @@
+{
+ "city": "birmingham",
+ "day": "2026-11-27",
+ "nights": [
+  {
+   "id": "6c0d1565-5733-406b-b3bf-cd1eeed5e1ee",
+   "slug": "ledbyher-08bfb190",
+   "title": "Ledbyher",
+   "act": "Ledbyher",
+   "name": "Ledbyher",
+   "description": "British rapper and record producer",
+   "source_url": "https://en.wikipedia.org/wiki/Ledbyher",
+   "extract": "Rachel Aisyah Diack, known professionally as Ledbyher, is a British rapper, songwriter and record producer. Cited by The Guardian as a member of the UK underground rap scene, she describes her musical style as \"bedroom drill\". Her work is characterized by a \"wispy, sung-spoken\" delivery and ethereal, lo-fi instrumentals. Her debut extended play Cunch was released in 2023, before she signed to Island Records and released the mixtape The Elephant in 2026."
+  },
+  {
+   "id": "22fa9a9b-a0fc-41cb-a216-86a56631a160",
+   "slug": "barenaked-ladies-543c111a",
+   "title": "Barenaked Ladies",
+   "act": "Barenaked Ladies",
+   "name": "Barenaked Ladies",
+   "description": "Canadian rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Barenaked_Ladies",
+   "extract": "Barenaked Ladies are a Canadian rock band formed in Scarborough, Ontario, in 1988. The group began as a duo of singer-guitarists Ed Robertson and Steven Page and expanded to a quintet with bassist Jim Creeggan, percussionist and keyboardist Andy Creeggan, and drummer Tyler Stewart. Multi-instrumentalist Kevin Hearn replaced Andy Creeggan in 1995. Page left the band in 2009; Robertson, Jim Creeggan, Stewart and Hearn have continued as a quartet."
+  },
+  {
+   "id": "e259c7e7-1292-413f-89ed-8421ecf2ef31",
+   "slug": "kasabian-nothing-better-than-this-tour-2026-67ea2289",
+   "title": "Kasabian: Nothing Better Than This Tour 2026",
+   "act": "Kasabian",
+   "name": "Kasabian",
+   "description": "English rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Kasabian",
+   "extract": "Kasabian are an English rock band formed in Leicester in 1997 by lead vocalist Tom Meighan, guitarist and second vocalist Sergio Pizzorno, guitarist Chris Karloff and bassist Chris Edwards. Drummer Ian Matthews joined in 2004. Karloff left the band in 2006 and founded a new band called Black Onassis. Jay Mehler joined as touring lead guitarist in 2006, leaving for Liam Gallagher's Beady Eye in 2013, to be replaced by Tim Carter, who later became a full-time band member in 2021. Meighan left the band in July 2020, with Pizzorno stepping up as full-time lead vocalist."
+  }
+ ]
+}

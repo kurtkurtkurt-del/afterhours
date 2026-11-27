@@ -1,0 +1,36 @@
+{
+ "city": "toronto",
+ "day": "2026-11-27",
+ "nights": [
+  {
+   "id": "a5858b9f-3f0c-4821-a35a-aa299367888c",
+   "slug": "turnover-down-on-earth-tour-ba4156e3",
+   "title": "Turnover - Down On Earth Tour",
+   "act": "Turnover",
+   "name": "Turnover",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Turnover_(band)",
+   "extract": "Turnover is an American rock band from Virginia Beach, Virginia. The band were formed in 2009 by brothers Austin and Casey (drums) Getz alongside longtime friend Danny Dempsey (bass); the three have gone on to oversee every iteration of the band to date. The three are currently joined in the band by lead guitarist Nick Rayfield, who began touring with the band in 2017 and was later officially inducted as a full-time member in 2022. Turnover have released six studio albums and four EPs across their career. Their most recent album, Down on Earth, was released on May 29th 2026."
+  },
+  {
+   "id": "67cbb99c-2930-45d9-9aaf-18939568bb66",
+   "slug": "tyson-yoshi-ee82c534",
+   "title": "TYSON YOSHI",
+   "act": "TYSON YOSHI",
+   "name": "Tyson Yoshi",
+   "description": "Hong Kong singer-songwriter (born 1994)",
+   "source_url": "https://en.wikipedia.org/wiki/Tyson_Yoshi",
+   "extract": "Ben Cheng Tsun Yin, better known by his stage name Tyson Yoshi, is a Hong Kong singer-songwriter, and MV director. He made his debut in 2018 with his single \"To My Queen\"."
+  },
+  {
+   "id": "82df12a1-22a8-4892-a578-ec2cbc6ed1c8",
+   "slug": "jubin-nautiyal-b1e877cf",
+   "title": "Jubin Nautiyal",
+   "act": "Jubin Nautiyal",
+   "name": "Jubin Nautiyal",
+   "description": "Indian playback singer (born 1989)",
+   "source_url": "https://en.wikipedia.org/wiki/Jubin_Nautiyal",
+   "extract": "Jubin Nautiyal is an Indian playback singer. In June 2022, he won the IIFA award for \"Playback Singer (Male)\" for the song \"Raataan Lambiyan\" from Shershaah and \"Upcoming Male Vocalist of the Year\" at 8th Mirchi Music Awards for his song \"Zindagi Kuch Toh Bata (Reprise)\" from Bajrangi Bhaijaan. He also won the Rising Musical Star Award at Zee Business Awards. He has since recorded songs for films in various Indian languages, predominantly Hindi. He is signed on by T-Series."
+  }
+ ]
+}

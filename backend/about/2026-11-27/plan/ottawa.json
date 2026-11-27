@@ -1,0 +1,36 @@
+{
+ "city": "ottawa",
+ "day": "2026-11-27",
+ "nights": [
+  {
+   "id": "0c25b28d-e96c-41d3-a5db-340d9b1e45f9",
+   "slug": "shakey-graves-fondness-etc-tour-1e571ceb",
+   "title": "Shakey Graves - Fondness, Etc. Tour",
+   "act": "Shakey Graves",
+   "name": "Shakey Graves",
+   "description": "American Americana musician",
+   "source_url": "https://en.wikipedia.org/wiki/Shakey_Graves",
+   "extract": "Shakey Graves is an American musician and actor from Austin, Texas."
+  },
+  {
+   "id": "0b4e292d-f32a-496f-99b6-eef2e0bff6d7",
+   "slug": "kt-tunstall-20th-anniversary-eye-to-the-telescop-b437a691",
+   "title": "KT Tunstall: 20th Anniversary \"Eye To the Telescope\" Tour",
+   "act": "KT Tunstall",
+   "name": "KT Tunstall",
+   "description": "Scottish singer-songwriter (born 1975)",
+   "source_url": "https://en.wikipedia.org/wiki/KT_Tunstall",
+   "extract": "Kate Victoria \"KT\" Tunstall is a Scottish singer-songwriter and musician. She first gained attention with a 2004 live solo performance of her song \"Black Horse and the Cherry Tree\" on Later... with Jools Holland and has subsequently also appeared in two episodes of the comedy series This Is Jinsy on Sky Atlantic. In 2025 it was estimated that Tunstall's accumulated record sales totalled seven million. Her accolades include a Q Award, European Border Breakers Award, two Ivor Novello Awards, a UK Music Video Award, and a BRIT Award for Best British Female Artist. Additionally, she has been nominated for a Grammy Award, Mercury Prize, World Music Award, and a Hollywood Music in Media Award."
+  },
+  {
+   "id": "32df9cb1-1f71-4e07-8ce9-622a3114b0d3",
+   "slug": "burton-cummings-fcf62df7",
+   "title": "Burton Cummings",
+   "act": "Burton Cummings",
+   "name": "Burton Cummings",
+   "description": "Canadian musician (b. 1947)",
+   "source_url": "https://en.wikipedia.org/wiki/Burton_Cummings",
+   "extract": "Burton Lorne Cummings is a Canadian musician and songwriter. He led the Guess Who during the band's most successful period from 1965 to 1975, and has since had a lengthy solo career."
+  }
+ ]
+}

@@ -1,0 +1,56 @@
+{
+ "city": "stockholm",
+ "day": "2026-11-27",
+ "nights": [
+  {
+   "id": "2d686c9e-4888-438a-b4e3-3e185500d4d0",
+   "slug": "noah-gundersen-a336be8c",
+   "title": "Noah Gundersen",
+   "act": "Noah Gundersen",
+   "name": "Noah Gundersen",
+   "description": "American singer-songwriter (born 1989)",
+   "source_url": "https://en.wikipedia.org/wiki/Noah_Gundersen",
+   "extract": "Noah Gundersen is an American indie folk singer-songwriter from Seattle."
+  },
+  {
+   "id": "fcd44d7a-2c20-43c4-bd92-c7e57cd7fc7a",
+   "slug": "dea-matrona-d0b65e4f",
+   "title": "Dea Matrona",
+   "act": "Dea Matrona",
+   "name": "Dea Matrona",
+   "description": "Irish rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Dea_Matrona_(band)",
+   "extract": "Dea Matrona are an Irish rock band based in Belfast and led by Orláith Forsythe and Mollie McGinn."
+  },
+  {
+   "id": "0603109c-f515-411b-9306-51c884c53358",
+   "slug": "dead-poet-society-1fe0921d",
+   "title": "Dead Poet Society",
+   "act": "Dead Poet Society",
+   "name": "Dead Poet Society",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Dead_Poet_Society",
+   "extract": "Dead Poet Society is an American rock band formed in Boston, Massachusetts in 2013."
+  },
+  {
+   "id": "579266f6-a7cd-47ad-84e0-2523b35b7d18",
+   "slug": "marika-hackman-3501f9c2",
+   "title": "Marika Hackman",
+   "act": "Marika Hackman",
+   "name": "Marika Hackman",
+   "description": "British singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Marika_Hackman",
+   "extract": "Marika Louise Hackman is an English vocalist, multi-instrumentalist and songwriter."
+  },
+  {
+   "id": "a0b0098b-4d27-4b0f-8cd8-4bbc03aa2341",
+   "slug": "jake-bugg-alamo-uk-and-european-tour-99a87e0c",
+   "title": "Jake Bugg -  Alamo - UK & European Tour",
+   "act": "Jake Bugg",
+   "name": "Jake Bugg",
+   "description": "English singer-songwriter (born 1994)",
+   "source_url": "https://en.wikipedia.org/wiki/Jake_Bugg",
+   "extract": "Jake Edwin Charles Kennedy, known professionally as Jake Bugg, is an English singer-songwriter. His self-titled debut album, Jake Bugg, some of which was co-written with songwriter Iain Archer, was released in October 2012 and reached number one on the UK Albums Chart. His second album, Shangri La, was released in November 2013, and his third, largely self-produced album, On My One, in June 2016. His fourth album, Hearts That Strain, a largely acoustic effort produced by Dan Auerbach, was released in September 2017."
+  }
+ ]
+}

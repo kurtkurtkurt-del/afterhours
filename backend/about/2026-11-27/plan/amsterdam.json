@@ -1,0 +1,56 @@
+{
+ "city": "amsterdam",
+ "day": "2026-11-27",
+ "nights": [
+  {
+   "id": "24dd7234-17bb-40ab-ab81-1574eceacadf",
+   "slug": "horsegiirl-304aea6b",
+   "title": "horsegiirL",
+   "act": "horsegiirL",
+   "name": "HorsegiirL",
+   "description": "German DJ and singer (born 2000)",
+   "source_url": "https://en.wikipedia.org/wiki/HorsegiirL",
+   "extract": "HorsegiirL is a German DJ, singer, and songwriter, known for wearing a horse head mask."
+  },
+  {
+   "id": "9893478d-1cd4-4a5f-a91c-c3af0ad0f13a",
+   "slug": "kadavar-ab38ad6e",
+   "title": "Kadavar",
+   "act": "Kadavar",
+   "name": "Kadavar",
+   "description": "German rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Kadavar",
+   "extract": "Kadavar is a German rock band from Berlin, founded in 2010. It currently consists of guitarist/lead vocalist Christoph \"Lupus\" Lindemann, drummer Christoph \"Tiger\" Bartelt, bassist Simon \"Dragon\" Bouteloup, and guitarist and keyboardist Jascha Kreft. Their retro style, incorporating psychedelic rock and stoner rock, has been compared to bands of the 1970s hard rock/heavy metal era such as Led Zeppelin and Black Sabbath. Bartelt and Lindemann formed Kadavar as a trio with bassist Philipp \"Mammut\" Lippitz. When Lippitz left the band in July 2013, he was replaced by Bouteloup. After releasing six studio albums, Kadavar became a quartet in March 2023 with the addition of Kreft."
+  },
+  {
+   "id": "db9fae3a-7a3f-46d8-862b-50bd61360798",
+   "slug": "sekou-9c9ce276",
+   "title": "Sekou",
+   "act": "Sekou",
+   "name": "Sekou",
+   "description": "British singer-songwriter (born 2004)",
+   "source_url": "https://en.wikipedia.org/wiki/Sekou_(singer)",
+   "extract": "Sekou Sylla is a British-Ivorian singer from Leicestershire. He was nominated for the Brit Award for Rising Star in 2024."
+  },
+  {
+   "id": "13e0d9f2-3977-4517-b1a4-41c7ac4ad350",
+   "slug": "seb-lowe-937392ce",
+   "title": "Seb Lowe",
+   "act": "Seb Lowe",
+   "name": "Seb Lowe",
+   "description": "English musician (born 2003)",
+   "source_url": "https://en.wikipedia.org/wiki/Seb_Lowe",
+   "extract": "Sebastian Lowe is an English singer-songwriter from Saddleworth, Greater Manchester. He is known for incorporating politics into his music, having started out uploading videos of his songs to TikTok."
+  },
+  {
+   "id": "cd1387a7-7356-4d1b-abec-6a7b6b68a8b1",
+   "slug": "j-bernardt-47768fd8",
+   "title": "J. Bernardt",
+   "act": "J. Bernardt",
+   "name": "J. Bernardt",
+   "description": "Belgian musician (born 1987)",
+   "source_url": "https://en.wikipedia.org/wiki/J._Bernardt",
+   "extract": "J. Bernardt is a side project of Belgian musician Jinte Deprez, which he launched in 2016 when his band Balthazar took a break. His debut album Running Days was released in 2017, and includes contributions from Adriaan Van De Velde on synths and drummer Klaas De Somer. The album is a blend of different styles, including R&B, soul, hip hop, and electronica."
+  }
+ ]
+}

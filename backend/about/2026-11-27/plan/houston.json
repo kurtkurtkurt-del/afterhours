@@ -1,0 +1,26 @@
+{
+ "city": "houston",
+ "day": "2026-11-27",
+ "nights": [
+  {
+   "id": "dd8742a3-7c52-4b4b-9894-d83548fe2ada",
+   "slug": "svdden-death-ages-18-37569e88",
+   "title": "Svdden Death - Ages 18+",
+   "act": "Svdden Death",
+   "name": "Svdden Death",
+   "description": "American DJ and producer",
+   "source_url": "https://en.wikipedia.org/wiki/Svdden_Death",
+   "extract": "Daniel James \"Danny\" Howland, better known by his alias Svdden Death, is a Los Angeles DJ and producer from San Jose, California. He is known for his song \"Sell Out\", a collaboration with American multi-platinum artist Marshmello that peaked on Billboard's Hot Dance/Electronic Songs at the No. 36 position in early 2019. Howland makes high-energy music that falls into the genre of dubstep and riddim."
+  },
+  {
+   "id": "fb2eefe8-b3a9-449b-81f0-37fc4abdb695",
+   "slug": "getter-live-in-houston-ages-18-90bd92f8",
+   "title": "Getter Live in Houston - Ages 18+",
+   "act": "Getter",
+   "name": "Getter",
+   "description": "American DJ and music producer",
+   "source_url": "https://en.wikipedia.org/wiki/Getter_(DJ)",
+   "extract": "Tanner Stephen Petulla, known professionally as both Terror Reid and Getter, is an American DJ, rapper, and music producer from San Jose, California."
+  }
+ ]
+}

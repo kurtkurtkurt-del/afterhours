@@ -1,0 +1,16 @@
+{
+ "city": "gent",
+ "day": "2026-11-27",
+ "nights": [
+  {
+   "id": "8f4e0063-98b3-46d4-b20b-e4fe1e9a4685",
+   "slug": "kommil-foo-babel-b45ddafa",
+   "title": "Kommil Foo - Babel",
+   "act": "Kommil Foo",
+   "name": "Kommil Foo",
+   "description": "Belgian cabaret duo",
+   "source_url": "https://en.wikipedia.org/wiki/Kommil_Foo",
+   "extract": "Kommil Foo is a Flemish cabaret duo, existing of two brothers Raf and Mich Walschaerts."
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "city": "torino",
+ "day": "2026-11-27",
+ "nights": [
+  {
+   "id": "a624c260-49f9-476d-83e3-f3820438ec56",
+   "slug": "gabry-ponte-circotron-the-dance-show-49eea527",
+   "title": "Gabry Ponte - CIRCOTRON - The dance show",
+   "act": "Gabry Ponte",
+   "name": "Gabry Ponte",
+   "description": "Italian musician, DJ and producer (born 1973)",
+   "source_url": "https://en.wikipedia.org/wiki/Gabry_Ponte",
+   "extract": "Gabriele \"Gabry\" Ponte is an Italian musician, DJ and producer, best known as a member of Eiffel 65."
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "city": "oslo",
+ "day": "2026-11-27",
+ "nights": [
+  {
+   "id": "1e4db758-2f26-43e5-957d-65072282495b",
+   "slug": "stein-torleif-bjella-innegubbens-dr-ymejul-10db9651",
+   "title": "Stein Torleif Bjella - Innegubbens Drøymejul",
+   "act": "Stein Torleif Bjella",
+   "name": "Stein Torleif Bjella",
+   "description": "Norwegian songwriter, singer and guitarist",
+   "source_url": "https://en.wikipedia.org/wiki/Stein_Torleif_Bjella",
+   "extract": "Stein Torleif Bjella is a Norwegian songwriter, singer and guitarist."
+  },
+  {
+   "id": "ecc5fb8f-0b2d-4b7c-b2fd-9f153ea2b2c7",
+   "slug": "death-by-unga-bunga-1450561a",
+   "title": "Death By Unga Bunga",
+   "act": "Death By Unga Bunga",
+   "name": "Death by Unga Bunga",
+   "description": "Norwegian garage rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Death_by_Unga_Bunga",
+   "extract": "Death by Unga Bunga is a Norwegian garage rock band from Moss, Norway."
+  }
+ ]
+}

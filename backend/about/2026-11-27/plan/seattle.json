@@ -1,0 +1,16 @@
+{
+ "city": "seattle",
+ "day": "2026-11-27",
+ "nights": [
+  {
+   "id": "64d08e9b-c21b-4c97-99bb-43f51575ad7b",
+   "slug": "gibby-haynes-0a9b0ccd",
+   "title": "Gibby Haynes",
+   "act": "Gibby Haynes",
+   "name": "Gibby Haynes",
+   "description": "American musician",
+   "source_url": "https://en.wikipedia.org/wiki/Gibby_Haynes",
+   "extract": "Gibson Jerome Haynes is an American musician, radio personality, painter, author and the lead singer of the band Butthole Surfers."
+  }
+ ]
+}

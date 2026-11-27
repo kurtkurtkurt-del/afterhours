@@ -1,0 +1,36 @@
+{
+ "city": "chicago",
+ "day": "2026-11-27",
+ "nights": [
+  {
+   "id": "dce6f61e-9ac9-4c5e-ac30-64a568e3c2e1",
+   "slug": "josh-baker-ages-18-a840c2c4",
+   "title": "Josh Baker - Ages 18+",
+   "act": "Josh Baker",
+   "name": "Josh Baker",
+   "description": "British DJ and producer",
+   "source_url": "https://en.wikipedia.org/wiki/Josh_Baker_(musician)",
+   "extract": "Josh Baker is a British musician, DJ and record producer from Manchester, England. In 2024, he was named Breakthrough Producer at the DJ Mag Best of British awards, and several of his singles have charted on the UK Singles Chart. He is a co-founder of the record label and events series You&Me and of the Hide & Seek festival, and the founder of the electronic music-production education platform Syntho."
+  },
+  {
+   "id": "5ab145a3-f004-4a69-9c85-b18b6f32495a",
+   "slug": "the-pineapple-thief-ad8e8dae",
+   "title": "The Pineapple Thief",
+   "act": "The Pineapple Thief",
+   "name": "The Pineapple Thief",
+   "description": "British rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Pineapple_Thief",
+   "extract": "The Pineapple Thief are an English progressive rock band founded in 1999 by Bruce Soord in Yeovil, Somerset. As of June 2024, the group consists of Soord on vocals, guitars, and keyboards, Jon Sykes on bass, Steve Kitch on keyboards, and Gavin Harrison on drums. They have released 16 studio albums, 6 EPs, and several live and compilation albums."
+  },
+  {
+   "id": "b71330b4-7dc4-4eee-8dc5-e93c3dd8dbc3",
+   "slug": "the-werks-3844e606",
+   "title": "The Werks",
+   "act": "The Werks",
+   "name": "The Werks",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Werks",
+   "extract": "The Werks is an American rock band originating from Dayton, Ohio and noted for its musical improvisation and exploration of music across multiple genres. Founded in 2005 by Dave Bartoletti (keys), Rob Chafin (drummer), Chris Houser (guitar) and Chuck Love (bass), the band is best known for its quick rise into the jam band music scene and appearances at major festivals and events across the US and abroad. In early June 2011, the band rose to prominence when it hit the number 2 top searched artists on the leading online Jam Magazine, jambase.com, behind the band Phish and again in early 2012 when they hit number 1. Current members of the band are as follows; Rob Chafin- Drums, Vocals, Samples / Chucky Love- Bass, Vocals / Chris Houser- Guitar, Vocals / Dan Shaw- Keyboards, Vocals."
+  }
+ ]
+}

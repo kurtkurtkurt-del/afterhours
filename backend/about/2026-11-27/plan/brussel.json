@@ -1,0 +1,26 @@
+{
+ "city": "brussel",
+ "day": "2026-11-27",
+ "nights": [
+  {
+   "id": "b67fe5e3-3466-408d-b8a7-de5589514380",
+   "slug": "the-last-internationale-dde5e1cd",
+   "title": "The Last Internationale",
+   "act": "The Last Internationale",
+   "name": "The Last Internationale",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Last_Internationale",
+   "extract": "The Last Internationale (TLI) is an American rock band formed by New York City guitarist Edgey Pires and vocalist Delila Paz."
+  },
+  {
+   "id": "c6ad4042-bca1-4336-9184-8d74ee221afb",
+   "slug": "vincent-niclo-7b3d380a",
+   "title": "Vincent Niclo",
+   "act": "Vincent Niclo",
+   "name": "Vincent Niclo",
+   "description": "French pop opera tenor singer (born 1975)",
+   "source_url": "https://en.wikipedia.org/wiki/Vincent_Niclo",
+   "extract": "Vincent Niclo is a French pop opera tenor singer."
+  }
+ ]
+}

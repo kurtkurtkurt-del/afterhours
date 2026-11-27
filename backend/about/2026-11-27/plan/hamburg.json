@@ -1,0 +1,16 @@
+{
+ "city": "hamburg",
+ "day": "2026-11-27",
+ "nights": [
+  {
+   "id": "b01476b9-383d-4cb6-9add-8286d2b25ddf",
+   "slug": "green-lung-0f7cf7d3",
+   "title": "Green Lung",
+   "act": "Green Lung",
+   "name": "Green Lung",
+   "description": "British rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Green_Lung",
+   "extract": "Green Lung is a British stoner/doom metal band formed in 2017 in London, currently signed to Nuclear Blast Records."
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "city": "goteborg",
+ "day": "2026-11-27",
+ "nights": [
+  {
+   "id": "b31d9ca1-7bf8-4f98-addc-822328f27264",
+   "slug": "mastodon-7e436810",
+   "title": "Mastodon",
+   "act": "Mastodon",
+   "name": "Mastodon",
+   "description": "American heavy metal band",
+   "source_url": "https://en.wikipedia.org/wiki/Mastodon_(band)",
+   "extract": "Mastodon is an American heavy metal band from Atlanta, Georgia. Formed in 2000, the band's lineup of Troy Sanders (bass/vocals), Brent Hinds, Bill Kelliher, and Brann Dailor (drums/vocals) remained unchanged for 24 years. Hinds departed Mastodon in March 2025, and died five months later in a motorcycle accident in Atlanta, Georgia."
+  }
+ ]
+}

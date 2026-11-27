@@ -1,0 +1,46 @@
+{
+ "city": "warszawa",
+ "day": "2026-11-27",
+ "nights": [
+  {
+   "id": "f74c3aa3-843a-4be0-a465-4562573c6085",
+   "slug": "strangelove-the-depeche-mode-experience-e821b693",
+   "title": "Strangelove: The Depeche Mode Experience",
+   "act": "Strangelove",
+   "name": "Strangelove",
+   "description": "English alternative rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Strangelove_(band)",
+   "extract": "Strangelove were an English alternative rock band, formed in Bristol in 1991 comprising singer Patrick Duff, guitarists Alex Lee & Julian Poole, bassist Joe Allen and John Langley on drums. They released two EPs and three albums before disbanding in 1998."
+  },
+  {
+   "id": "a1751d0b-8a9f-4a70-a9ec-995715da9942",
+   "slug": "maryla-rodowicz-01c8ff97",
+   "title": "Maryla Rodowicz",
+   "act": "Maryla Rodowicz",
+   "name": "Maryla Rodowicz",
+   "description": "Polish singer, guitarist and actress",
+   "source_url": "https://en.wikipedia.org/wiki/Maryla_Rodowicz",
+   "extract": "Maria Antonina Rodowicz, known professionally as Maryla Rodowicz,, is a Polish singer, guitarist and actress."
+  },
+  {
+   "id": "0b225136-2355-4bc9-b2b5-8100c446cf11",
+   "slug": "katarsis-bed72125",
+   "title": "KATARSIS",
+   "act": "KATARSIS",
+   "name": "Katarsis",
+   "description": "Lithuanian post–punk band",
+   "source_url": "https://en.wikipedia.org/wiki/Katarsis_(band)",
+   "extract": "Katarsis is a Lithuanian alternative rock band formed in Vilnius currently consisting of Lukas Radzevičius, Alanas Brasas and Jokūbas Andriulis (drummer). They represented Lithuania in the Eurovision Song Contest 2025 with the song \"Tavo akys\", finishing in 16th place in the final with 96 points."
+  },
+  {
+   "id": "5bab3d92-7704-46fe-b4fa-3be59704226c",
+   "slug": "karolina-czarnecka-potupaja-7bea5f3a",
+   "title": "Karolina Czarnecka - Potupaja",
+   "act": "Karolina Czarnecka",
+   "name": "Karolina Czarnecka",
+   "description": "Polish singer and actress",
+   "source_url": "https://en.wikipedia.org/wiki/Karolina_Czarnecka",
+   "extract": "Karolina Czarnecka is a Polish singer and actress. She rose to prominence in 2014 with her Polish cover of \"Heroin and Cocaine\" by The Tiger Lillies."
+  }
+ ]
+}

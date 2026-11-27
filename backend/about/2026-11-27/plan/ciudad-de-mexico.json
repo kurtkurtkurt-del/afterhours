@@ -1,0 +1,16 @@
+{
+ "city": "ciudad-de-mexico",
+ "day": "2026-11-27",
+ "nights": [
+  {
+   "id": "e8ace678-4749-40be-9f32-6eb956dd45bd",
+   "slug": "jesse-and-joy-04654cd4",
+   "title": "Jesse & Joy",
+   "act": "Jesse & Joy",
+   "name": "Jesse & Joy",
+   "description": "Mexican pop duo",
+   "source_url": "https://en.wikipedia.org/wiki/Jesse_%26_Joy",
+   "extract": "Jesse & Joy is a Mexican pop duo. It was formed in 2005 in Mexico City by brother and sister Jesse and Joy Huerta."
+  }
+ ]
+}

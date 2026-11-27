@@ -1,0 +1,26 @@
+{
+ "city": "denver",
+ "day": "2026-11-27",
+ "nights": [
+  {
+   "id": "6568cc97-c6b0-4ef3-9be3-3ade6fd8aa46",
+   "slug": "imminence-axis-mundi-tour-north-america-2026-526dfaa9",
+   "title": "Imminence - Axis Mundi Tour: North America 2026",
+   "act": "Imminence",
+   "name": "Imminence",
+   "description": "Swedish metalcore band",
+   "source_url": "https://en.wikipedia.org/wiki/Imminence_(band)",
+   "extract": "Imminence is a Swedish metalcore band formed in Trelleborg. The group consists of vocalist Eddie Berg, rhythm guitarist Harald Barrett, lead guitarist Alex Arnoldsson, and bassist Christian Höijer."
+  },
+  {
+   "id": "421be70c-6393-4cda-8044-a493374b0aba",
+   "slug": "the-pineapple-thief-0d53575d",
+   "title": "The Pineapple Thief",
+   "act": "The Pineapple Thief",
+   "name": "The Pineapple Thief",
+   "description": "British rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Pineapple_Thief",
+   "extract": "The Pineapple Thief are an English progressive rock band founded in 1999 by Bruce Soord in Yeovil, Somerset. As of June 2024, the group consists of Soord on vocals, guitars, and keyboards, Jon Sykes on bass, Steve Kitch on keyboards, and Gavin Harrison on drums. They have released 16 studio albums, 6 EPs, and several live and compilation albums."
+  }
+ ]
+}

@@ -1,0 +1,36 @@
+{
+ "city": "los-angeles",
+ "day": "2026-11-27",
+ "nights": [
+  {
+   "id": "fa501bce-8687-454e-b1cf-4931ddc1edc0",
+   "slug": "infectious-grooves-f009e481",
+   "title": "Infectious Grooves",
+   "act": "Infectious Grooves",
+   "name": "Infectious Grooves",
+   "description": "American funk metal band",
+   "source_url": "https://en.wikipedia.org/wiki/Infectious_Grooves",
+   "extract": "Infectious Grooves is an American funk metal supergroup led by vocalist Mike Muir and initially a side project from his group Suicidal Tendencies. The current lineup also includes guitarists Dean Pleasants and Dave Kushner, bassist Robert Trujillo, and drummer Jay Weinberg. To date, the project released four albums between 1991 and 2000."
+  },
+  {
+   "id": "9ee4dbd5-4ab2-434f-a449-75d2a6abe9a9",
+   "slug": "cristian-castro-758c5dce",
+   "title": "Cristian Castro",
+   "act": "Cristian Castro",
+   "name": "Cristian Castro",
+   "description": "Mexican pop singer (born 1974)",
+   "source_url": "https://en.wikipedia.org/wiki/Cristian_Castro",
+   "extract": "Cristian Sáinz Castro is a Mexican pop singer. He is the son of actors Verónica Castro and Manuel \"El Loco\" Valdés, and nephew of actors Ramón Valdés and Germán \"Tin-Tan\" Valdés. Castro has sold over 12 million records, making him one of the best-selling Latin music artists of all-time."
+  },
+  {
+   "id": "699880a9-e9b3-4aaf-bd43-19946229cdc9",
+   "slug": "benny-benassi-94874c9f",
+   "title": "Benny Benassi",
+   "act": "Benny Benassi",
+   "name": "Benny Benassi",
+   "description": "Italian DJ and producer (born 1967)",
+   "source_url": "https://en.wikipedia.org/wiki/Benny_Benassi",
+   "extract": "Marco \"Benny\" Benassi is an Italian DJ and music producer. He is widely seen as a pioneer of electro house, a genre brought into the mainstream by his 2002 summer club hit \"Satisfaction\"."
+  }
+ ]
+}

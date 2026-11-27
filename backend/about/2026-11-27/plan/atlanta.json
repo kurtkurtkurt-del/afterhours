@@ -1,0 +1,46 @@
+{
+ "city": "atlanta",
+ "day": "2026-11-27",
+ "nights": [
+  {
+   "id": "4ca8fefe-d7d1-44a2-8b04-4b858d62e7c7",
+   "slug": "state-champs-moved-from-tabernacle-68dacf49",
+   "title": "State Champs - moved from Tabernacle",
+   "act": "State Champs",
+   "name": "State Champs",
+   "description": "American pop-punk band",
+   "source_url": "https://en.wikipedia.org/wiki/State_Champs",
+   "extract": "State Champs is an American pop-punk band from Albany, New York, formed in 2010. They are currently signed to Pure Noise Records and have released three EPs and five full-length albums. Their 2013 debut album The Finer Things debuted at number 2 on the Billboard Heatseekers Albums chart. They released an acoustic EP titled The Acoustic Things in October 2014 and their second studio album Around the World and Back one year later, in October 2015. In May 2017, they released a deluxe version of the album. Their third album, Living Proof, was released in 2018. In May 2022, the band released their fourth studio album, Kings of the New Age. In November 2024, their self-titled fifth album was released."
+  },
+  {
+   "id": "5e7dec35-0cc8-4bac-a2ad-775caf7984ea",
+   "slug": "babyfxce-e-the-xperience-tour-7490575c",
+   "title": "Babyfxce E - The Xperience Tour",
+   "act": "Babyfxce E",
+   "name": "Babyfxce E",
+   "description": "American rapper",
+   "source_url": "https://en.wikipedia.org/wiki/Babyfxce_E",
+   "extract": "Efrem Jamaar Blackwell Jr., known professionally as Babyfxce E, is an American rapper from Flint, Michigan. He gained online traction with his 2022 single \"Six Flags,\" and in 2024, secured a label contract with Atlantic Records. He released his debut album, Da Realest, in February 2026."
+  },
+  {
+   "id": "f416582c-5f61-4a89-bee5-cd22318021de",
+   "slug": "state-champs-aa651f5c",
+   "title": "State Champs",
+   "act": "State Champs",
+   "name": "State Champs",
+   "description": "American pop-punk band",
+   "source_url": "https://en.wikipedia.org/wiki/State_Champs",
+   "extract": "State Champs is an American pop-punk band from Albany, New York, formed in 2010. They are currently signed to Pure Noise Records and have released three EPs and five full-length albums. Their 2013 debut album The Finer Things debuted at number 2 on the Billboard Heatseekers Albums chart. They released an acoustic EP titled The Acoustic Things in October 2014 and their second studio album Around the World and Back one year later, in October 2015. In May 2017, they released a deluxe version of the album. Their third album, Living Proof, was released in 2018. In May 2022, the band released their fourth studio album, Kings of the New Age. In November 2024, their self-titled fifth album was released."
+  },
+  {
+   "id": "b3746608-e3fa-40cc-9018-8c37b4d6c99b",
+   "slug": "lil-baby-fresh-prince-of-atlanta-birthday-celebr-577279a9",
+   "title": "Lil Baby: Fresh Prince of Atlanta Birthday Celebration",
+   "act": "Lil Baby",
+   "name": "Lil Baby",
+   "description": "American rapper (born 1994)",
+   "source_url": "https://en.wikipedia.org/wiki/Lil_Baby",
+   "extract": "Dominique Armani Jones, known professionally as Lil Baby, is an American rapper, singer, and songwriter. He rose to prominence following the release of his 2017 mixtapes Harder than Hard and Too Hard — the former of which spawned his first Billboard Hot 100 entry with its lead single, \"My Dawg.\" He signed with Quality Control Music, an imprint of Motown and Capitol Records to release his debut studio album Harder Than Ever (2018), which peaked at number three on the Billboard 200 and was supported by the Billboard Hot 100-top ten single \"Yes Indeed\". Later that year, he released the collaborative mixtape Drip Harder with fellow Georgia-based rapper Gunna, and his solo mixtape Street Gossip; the former spawned his second top-ten single \"Drip Too Hard\", while the latter peaked at number two on the Billboard 200."
+  }
+ ]
+}

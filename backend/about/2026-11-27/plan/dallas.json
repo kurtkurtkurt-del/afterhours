@@ -1,0 +1,26 @@
+{
+ "city": "dallas",
+ "day": "2026-11-27",
+ "nights": [
+  {
+   "id": "6f60fb5b-caf0-4be8-a597-7b0fb5f37599",
+   "slug": "deorro-ages-18-a34e4096",
+   "title": "DEORRO - Ages 18+",
+   "act": "DEORRO",
+   "name": "Deorro",
+   "description": "American DJ (born 1991)",
+   "source_url": "https://en.wikipedia.org/wiki/Deorro",
+   "extract": "Erick Orrosquieta, commonly known by his stage name Deorro, is a Mexican and American DJ and record producer signed to Ultra Records. He formerly used the name TON!C."
+  },
+  {
+   "id": "24fa7cf1-2a94-4e15-8ae3-323058984f24",
+   "slug": "wooli-ages-18-33b364d0",
+   "title": "Wooli - Ages 18+",
+   "act": "Wooli",
+   "name": "Wooli",
+   "description": "American riddim and dubstep DJ and producer",
+   "source_url": "https://en.wikipedia.org/wiki/Wooli",
+   "extract": "Adam Louis Puleo, better known by his alias Wooli, is an American briddim, riddim and dubstep DJ and producer. He is known for the songs \"Island\" and \"Another Me\", with the prior being a collaboration with American dubstep producers Seven Lions and Trivecta and the latter being a collaboration with Seven Lions and Canadian producer and DJ Excision. \"Island\" peaked at the No. 20 position on Billboard's Dance/Electronic Digital Song Sales chart in early 2019. \"Another Me\" peaked on the Hot Dance/Electronic Songs at the No. 46 position in late 2019."
+  }
+ ]
+}

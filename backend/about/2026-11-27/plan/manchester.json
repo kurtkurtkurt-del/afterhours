@@ -1,0 +1,66 @@
+{
+ "city": "manchester",
+ "day": "2026-11-27",
+ "nights": [
+  {
+   "id": "749547fd-8bd4-43c7-aa26-079a68d41584",
+   "slug": "bill-bailey-vaudevillean-a8511bc7",
+   "title": "Bill Bailey: Vaudevillean",
+   "act": "Bill Bailey",
+   "name": "Bill Bailey",
+   "description": "British musician and comedian (born 1965)",
+   "source_url": "https://en.wikipedia.org/wiki/Bill_Bailey",
+   "extract": "Mark Robert \"Bill\" Bailey is an English musician, comedian, actor and television presenter. He is known for his role as Manny in the sitcom Black Books (2000–2004), and for his regular appearances on the panel shows Never Mind the Buzzcocks, Have I Got News for You, and QI, as well as for his stand-up comedy work. He plays a variety of musical instruments and incorporates music into his performances."
+  },
+  {
+   "id": "bc97ecd1-0388-489b-bfd1-56cda7b3d87d",
+   "slug": "say-now-20241cb5",
+   "title": "Say Now",
+   "act": "Say Now",
+   "name": "Say Now",
+   "description": "British girl group",
+   "source_url": "https://en.wikipedia.org/wiki/Say_Now",
+   "extract": "Say Now are a British girl group based in London. They consist of members Ysabelle Angeli Salvanera, Amelia Onuorah and Madeleine Haynes, known as Maddie."
+  },
+  {
+   "id": "b38decb4-b225-4af7-bad8-c92da70453ab",
+   "slug": "razorlight-america-20th-anniversary-tour-6bb9b6e4",
+   "title": "Razorlight - 'America' 20th Anniversary Tour",
+   "act": "Razorlight",
+   "name": "Razorlight",
+   "description": "English indie rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Razorlight",
+   "extract": "Razorlight are an English indie rock band, formed in 2002 in London by lead singer and guitarist Johnny Borrell. Along with Borrell, the current line-up of the band is composed of founding members Björn Ågren on guitar and bassist Carl Dalemo, as well as drummer Andy Burrows. This lineup is a reunion of the lineup from the band's second and third albums."
+  },
+  {
+   "id": "0cc4a6d0-d454-442e-868e-17795f272703",
+   "slug": "the-hara-a92c5319",
+   "title": "The Hara",
+   "act": "The Hara",
+   "name": "The Hara",
+   "description": "British alternative rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Hara",
+   "extract": "The Hara is an English rock band from Manchester. The band was formed by Josh Taylor, Zack Breen (guitar), and Jack Kennedy (drums) in 2017."
+  },
+  {
+   "id": "ceea3a36-e77a-4727-a328-ba798a65dc37",
+   "slug": "placebo-30th-anniversary-tour-811ae42a",
+   "title": "Placebo - 30th Anniversary Tour",
+   "act": "Placebo",
+   "name": "Placebo",
+   "description": "British alternative rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Placebo_(band)",
+   "extract": "Placebo are a British alternative rock band, formed in London in 1994 by vocalist-guitarist Brian Molko and bassist-guitarist Stefan Olsdal, who have remained the two constant members, with three full-time drummers throughout the band's existence."
+  },
+  {
+   "id": "2de1bf34-9603-42d9-8de7-6c9eaf9eb59d",
+   "slug": "the-snuts-5562055d",
+   "title": "The Snuts",
+   "act": "The Snuts",
+   "name": "The Snuts",
+   "description": "Scottish indie rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Snuts",
+   "extract": "The Snuts are a Scottish indie rock band formed in 2015, originating from West Lothian, Scotland. They have performed across the United Kingdom and Ireland. The band consists of Jack Cochrane, Joe McGillveray (guitar), Callum '29' Wilson (bass) and Jordan 'Joko' Mackay (drums) and was formed when the members were in school."
+  }
+ ]
+}

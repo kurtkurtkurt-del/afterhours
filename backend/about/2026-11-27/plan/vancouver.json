@@ -1,0 +1,46 @@
+{
+ "city": "vancouver",
+ "day": "2026-11-27",
+ "nights": [
+  {
+   "id": "46db409d-bbb5-45fe-9c43-4d52ede0b0c8",
+   "slug": "new-constellations-it-comes-in-waves-tour-22bc424e",
+   "title": "New Constellations: It Comes In Waves Tour",
+   "act": "New Constellations",
+   "name": "New Constellations",
+   "description": "American dream pop band",
+   "source_url": "https://en.wikipedia.org/wiki/New_Constellations",
+   "extract": "New Constellations is an American dream pop and synthwave duo based out of Portland, Oregon."
+  },
+  {
+   "id": "4350281a-570f-49de-b2e7-fbd118dfbb94",
+   "slug": "bryce-alakai-2nd-show-added-be041f72",
+   "title": "Bryce Alakai - 2nd Show Added",
+   "act": "Bryce Alakai",
+   "name": "Bryce Alakai",
+   "description": "American DJ (born 1996)",
+   "source_url": "https://en.wikipedia.org/wiki/Bryce_Alakai",
+   "extract": "Bryce Alakai is an American DJ, music producer, model and television personality, known for winning the eighth season of the Peacock dating show Love Island USA in 2026."
+  },
+  {
+   "id": "75e9af84-c8ed-4b38-9404-2648d07cb81d",
+   "slug": "bryce-alakai-04239bef",
+   "title": "Bryce Alakai",
+   "act": "Bryce Alakai",
+   "name": "Bryce Alakai",
+   "description": "American DJ (born 1996)",
+   "source_url": "https://en.wikipedia.org/wiki/Bryce_Alakai",
+   "extract": "Bryce Alakai is an American DJ, music producer, model and television personality, known for winning the eighth season of the Peacock dating show Love Island USA in 2026."
+  },
+  {
+   "id": "8c52d275-1304-4b63-a3fe-cbb3124c0ac3",
+   "slug": "cory-henry-1a4f3554",
+   "title": "Cory Henry",
+   "act": "Cory Henry",
+   "name": "Cory Henry",
+   "description": "American jazz and gospel musician (born 1987)",
+   "source_url": "https://en.wikipedia.org/wiki/Cory_Henry",
+   "extract": "Cory Alexander Henry is an American jazz organist, pianist, gospel musician, and producer. A former member of Snarky Puppy, Henry launched his solo artist career in 2018 with Art of Love, his first independent release. In 2020, he released his sophomore full-length project, called Something to Say, which included the Marc E. Bassy-written track \"No Guns\". That same year he released Art of Love Live and Christmas with You, both under Culture Collective management and records."
+  }
+ ]
+}
