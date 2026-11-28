@@ -1,0 +1,86 @@
+{
+ "city": "izmir",
+ "day": "2026-11-28",
+ "nights": [
+  {
+   "id": "9fdf5fd8-507c-4fe5-9387-7efaffc3878b",
+   "slug": "goksel-2aff5790",
+   "title": "Göksel",
+   "act": "Göksel",
+   "name": "Göksel",
+   "description": "Turkish singer-songwriter (born 1971)",
+   "source_url": "https://en.wikipedia.org/wiki/G%C3%B6ksel_(singer)",
+   "extract": "Göksel Demirpençe is a Turkish singer-songwriter."
+  },
+  {
+   "id": "1fbb91a6-884e-4d9c-acdd-08785adc0034",
+   "slug": "kalben-4664a51f",
+   "title": "Kalben",
+   "act": "Kalben",
+   "name": "Kalben",
+   "description": "Turkish musician (born 1986)",
+   "source_url": "https://en.wikipedia.org/wiki/Kalben",
+   "extract": "Kalben Sağdıç, known mononymously as Kalben, is a Turkish singer-songwriter."
+  },
+  {
+   "id": "4693dc31-ff95-43c8-acce-8fe8faefa2e3",
+   "slug": "yuksek-sadakat-7bc662b6",
+   "title": "Yüksek Sadakat",
+   "act": "Yüksek Sadakat",
+   "name": "Yüksek Sadakat",
+   "description": "Turkish rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Y%C3%BCksek_Sadakat",
+   "extract": "Yüksek Sadakat is a Turkish rock band that was formed in 1997 by Kutlu Özmakinacı, but became popular in early 2006 with their first album with the same name. The founder and bass player Kutlu Özmakinacı, used to be the editor of a music magazine called Blue Jean. Their music is a mix of pop rock with powerful beats utilizing Turkish instruments, keyboard and guitar solos. The name of the band is a literal translation of the term High Fidelity (Hi-Fi) into Turkish."
+  },
+  {
+   "id": "6c1a27b9-5819-45d1-8c95-301db383adc6",
+   "slug": "ceylan-ertem-sezen-aksu-tribute-yemekli-gala-kon-851105b4",
+   "title": "Ceylan Ertem - Sezen Aksu Tribute - Yemekli Gala Konseri",
+   "act": "Ceylan Ertem",
+   "name": "Ceylan Ertem",
+   "description": "Turkish singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Ceylan_Ertem",
+   "extract": "Ceylan Ertem, sometimes stylized as Ceyl'an Ertem is a Turkish singer-songwriter."
+  },
+  {
+   "id": "60805ac1-4384-4db0-b4b7-726529d9d6d6",
+   "slug": "zakkum-87fe0805",
+   "title": "Zakkum",
+   "act": "Zakkum",
+   "name": "Zakkum",
+   "description": "Turkish rock group",
+   "source_url": "https://en.wikipedia.org/wiki/Zakkum_(band)",
+   "extract": "Zakkum are a Turkish rock group. It was created in 1999 under the name Raindog in Ankara. Raindog had many stage performances, before they started working on an album and chose a Turkish name \"Zakkum\" for their band."
+  },
+  {
+   "id": "5a11e4e0-4525-4ed0-8249-1bf3137ebaaa",
+   "slug": "levent-yuksel-c4570b18",
+   "title": "Levent Yüksel",
+   "act": "Levent Yüksel",
+   "name": "Levent Yüksel",
+   "description": "Turkish musician (born 1964)",
+   "source_url": "https://en.wikipedia.org/wiki/Levent_Y%C3%BCksel",
+   "extract": "Levent Uğur Yüksel is a Turkish pop singer and multi instrumentalist. He has been active in live music industry since 1993."
+  },
+  {
+   "id": "456734a6-6c51-4287-9646-a2d1ef0f2d48",
+   "slug": "cem-adrian-d9553747",
+   "title": "Cem Adrian",
+   "act": "Cem Adrian",
+   "name": "Cem Adrian",
+   "description": "Turkish singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Cem_Adrian",
+   "extract": "Cem Filiz, better known by his stage name Cem Adrian, is a Turkish musician of Bosniak descent, singer-songwriter and record producer."
+  },
+  {
+   "id": "6b45a757-34d3-4a8f-ad5e-41cd2fbb6ac4",
+   "slug": "gripin-0faac6dd",
+   "title": "Gripin",
+   "act": "Gripin",
+   "name": "Gripin",
+   "description": "Turkish pop rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Gripin",
+   "extract": "Gripin is a Turkish rock band based in Istanbul. The members are Birol Namoğlu (vocals), Murat Başdoğan (guitar), Arda İnceoğlu, and İlker Baliç (drums). The band's name is derived from a flu medicine brand in Turkey."
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "city": "berlin",
+ "day": "2026-11-28",
+ "nights": [
+  {
+   "id": "236581b8-4d43-4912-99da-2f2f38e4abed",
+   "slug": "artemas-lovercore-getting-up-to-no-good-tour-ea867958",
+   "title": "Artemas - LOVERCORE / GETTING UP TO NO GOOD Tour",
+   "act": "Artemas",
+   "name": "Artemas",
+   "description": "English-Cypriot singer-songwriter (born 1999)",
+   "source_url": "https://en.wikipedia.org/wiki/Artemas_(musician)",
+   "extract": "Artemas Diamandis, known mononymously as Artemas, is an English singer, songwriter and record producer. He is best known for his singles \"If U Think I'm Pretty\" and the viral \"I Like the Way You Kiss Me\". He is signed to the record label 10K Projects."
+  },
+  {
+   "id": "7d84cf1c-a547-45b5-9f15-11655334e03d",
+   "slug": "dayseeker-creature-in-the-black-night-tour-995526b6",
+   "title": "Dayseeker - Creature In The Black Night Tour",
+   "act": "Dayseeker",
+   "name": "Dayseeker",
+   "description": "American post-hardcore band",
+   "source_url": "https://en.wikipedia.org/wiki/Dayseeker",
+   "extract": "Dayseeker is an American post-hardcore band formed in Orange County, California, in 2012. The group consists of vocalist Rory Rodriguez, bassist Ramone Valerio and drummer Zac Mayfield. They are currently signed to Spinefarm Records and have released six studio albums. Their most recent studio album, Creature in the Black Night, was released on October 24, 2025 with a Redux deluxe edition scheduled to release on February 26, 2027."
+  }
+ ]
+}

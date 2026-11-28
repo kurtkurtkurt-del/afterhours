@@ -1,0 +1,16 @@
+{
+ "city": "vancouver",
+ "day": "2026-11-28",
+ "nights": [
+  {
+   "id": "7a45274b-5b69-456a-9c38-eab31a775620",
+   "slug": "pokey-lafarge-a2bd55f5",
+   "title": "Pokey LaFarge",
+   "act": "Pokey LaFarge",
+   "name": "Pokey LaFarge",
+   "description": "American musician (born 1983)",
+   "source_url": "https://en.wikipedia.org/wiki/Pokey_LaFarge",
+   "extract": "Pokey LaFarge is an American musician and singer-songwriter."
+  }
+ ]
+}

@@ -1,0 +1,36 @@
+{
+ "city": "milano",
+ "day": "2026-11-28",
+ "nights": [
+  {
+   "id": "b81fb621-0b3b-41e9-9204-e837ba6c07e6",
+   "slug": "marco-mengoni-residency-allo-sbagliato-4ef4cb87",
+   "title": "Marco Mengoni - Residency Allo Sbagliato",
+   "act": "Marco Mengoni",
+   "name": "Marco Mengoni",
+   "description": "Italian singer (born 1988)",
+   "source_url": "https://en.wikipedia.org/wiki/Marco_Mengoni",
+   "extract": "Marco Mengoni is an Italian singer-songwriter who rose to fame in 2009 after winning the third season of the Italian talent show X Factor. Since then he has sold over 2.8 million records in Italy, peaking the Italian albums chart seven consecutive times and entering the Top 10 Italian Singles Chart fifteen times. He won the Sanremo Music Festival in 2013 and again in 2023, therefore representing Italy in the Eurovision Song Contest in both years."
+  },
+  {
+   "id": "e2636d80-475a-449d-8cd3-9cc6f36e421c",
+   "slug": "kid-francescoli-d6a06aef",
+   "title": "Kid Francescoli",
+   "act": "Kid Francescoli",
+   "name": "Kid Francescoli",
+   "description": "French musical group",
+   "source_url": "https://en.wikipedia.org/wiki/Kid_Francescoli",
+   "extract": "Kid Francescoli is an electropop project by French musician Mathieu Hocine. The project was founded by Hocine in 2002 in Marseille. The name is a tribute to Olympique de Marseille Uruguayan football player Enzo Francescoli. In 2009, Hocine began working with musician Julia Minkin, with whom he co-wrote songs, and drummer Mathieu Chrétien, who plays drums in live shows."
+  },
+  {
+   "id": "806a26ba-f55d-4372-8e6e-ffcef474e259",
+   "slug": "royal-blood-7523a2b1",
+   "title": "ROYAL BLOOD",
+   "act": "ROYAL BLOOD",
+   "name": "Royal Blood",
+   "description": "English rock duo",
+   "source_url": "https://en.wikipedia.org/wiki/Royal_Blood_(band)",
+   "extract": "Royal Blood are an English rock duo formed in Worthing in 2011. The lineup consists of Mike Kerr and Ben Thatcher (drums). Their signature sound is built around Kerr's bass playing style, which sees him using various effects pedals and amps to make his bass guitar sound like an electric guitar and bass guitar at the same time. The duo were signed by Warner Chappell Music in 2013 and have since released five studio albums: Royal Blood (2014), How Did We Get So Dark? (2017), Typhoons (2021), Back to the Water Below (2023) and Dead Company (2026)."
+  }
+ ]
+}

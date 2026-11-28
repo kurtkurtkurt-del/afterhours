@@ -1,0 +1,16 @@
+{
+ "city": "atlanta",
+ "day": "2026-11-28",
+ "nights": [
+  {
+   "id": "7736f790-9cd7-4a41-8b44-b8ddc3599fad",
+   "slug": "rush-fifty-something-463aca37",
+   "title": "RUSH: Fifty Something",
+   "act": "RUSH",
+   "name": "Rush",
+   "description": "Canadian rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Rush_(band)",
+   "extract": "Rush is a Canadian rock band, formed in Toronto in 1968. The band's original line-up included guitarist Alex Lifeson, drummer John Rutsey, and bassist and vocalist Jeff Jones, whom Geddy Lee replaced shortly after its formation. Rush went through a few lineup changes before settling on its classic power trio line-up with the addition of Neil Peart in July 1974, replacing Rutsey four months after the release of their self-titled debut album. The lineup of Lifeson, Lee, and Peart remained stable for the remainder of the band's initial run until 2015, when Peart retired from music. Lifeson and Lee occasionally worked together after Peart's death in 2020, and announced a 2026–2027 reunion tour as Rush in October 2025, with Anika Nilles filling in for Peart, and Loren Gold as the band's keyboardist."
+  }
+ ]
+}

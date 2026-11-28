@@ -1,0 +1,16 @@
+{
+ "city": "munchen",
+ "day": "2026-11-28",
+ "nights": [
+  {
+   "id": "f234ef73-5cfe-4c16-a564-2451c6110296",
+   "slug": "dead-poet-society-ba5449c8",
+   "title": "Dead Poet Society",
+   "act": "Dead Poet Society",
+   "name": "Dead Poet Society",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Dead_Poet_Society",
+   "extract": "Dead Poet Society is an American rock band formed in Boston, Massachusetts in 2013."
+  }
+ ]
+}

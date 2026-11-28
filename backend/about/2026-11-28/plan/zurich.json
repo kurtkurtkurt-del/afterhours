@@ -1,0 +1,26 @@
+{
+ "city": "zurich",
+ "day": "2026-11-28",
+ "nights": [
+  {
+   "id": "ebe6340c-6225-4ad8-ba29-f8f63b745086",
+   "slug": "our-mirage-e51cbe20",
+   "title": "Our Mirage",
+   "act": "Our Mirage",
+   "name": "Our Mirage",
+   "description": "German post-hardcore band",
+   "source_url": "https://en.wikipedia.org/wiki/Our_Mirage",
+   "extract": "Our Mirage is a German metalcore band from Marl, North Rhine-Westphalia."
+  },
+  {
+   "id": "49251bb9-55ea-480e-bb15-85b7c10c4b81",
+   "slug": "kingdom-of-giants-2af486f9",
+   "title": "Kingdom Of Giants",
+   "act": "Kingdom Of Giants",
+   "name": "Kingdom of Giants",
+   "description": "American metalcore band",
+   "source_url": "https://en.wikipedia.org/wiki/Kingdom_of_Giants",
+   "extract": "Kingdom of Giants is an American metalcore band from Sacramento, California. It was formed in 2010 from the remnants of other bands by Julian Perez, Max Bremer, Levi Norris, Dana Willax, Red Martin, and Stephen Rezza."
+  }
+ ]
+}

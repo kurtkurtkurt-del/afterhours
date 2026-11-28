@@ -1,0 +1,26 @@
+{
+ "city": "koln",
+ "day": "2026-11-28",
+ "nights": [
+  {
+   "id": "2b8cfdec-72e0-4adb-af0c-2411c81c3f0b",
+   "slug": "katie-gregson-macleod-the-albatross-tour-b2c8200e",
+   "title": "Katie Gregson-MacLeod - THE ALBATROSS TOUR",
+   "act": "Katie Gregson-MacLeod",
+   "name": "Katie Gregson-MacLeod",
+   "description": "Scottish musician",
+   "source_url": "https://en.wikipedia.org/wiki/Katie_Gregson-MacLeod",
+   "extract": "Katie Gregson-MacLeod is a Scottish musician. She rose to fame in 2022 when her song \"Complex\" went viral on TikTok."
+  },
+  {
+   "id": "0c7ff760-40c3-43e9-a591-378918b059de",
+   "slug": "john-summit-europe-ctrl-escape-tour-fea91ccc",
+   "title": "JOHN SUMMIT – EUROPE CTRL ESCAPE TOUR",
+   "act": "JOHN SUMMIT",
+   "name": "John Summit",
+   "description": "American DJ and record producer (born 1994)",
+   "source_url": "https://en.wikipedia.org/wiki/John_Summit",
+   "extract": "John Walter Schuster, better known by his stage name John Summit, is an American DJ and record producer, former accountant and current owner of the Experts Only label. His music includes original tracks and remixes, primarily focused in the genre of tech house."
+  }
+ ]
+}

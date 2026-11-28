@@ -1,0 +1,26 @@
+{
+ "city": "montreal",
+ "day": "2026-11-28",
+ "nights": [
+  {
+   "id": "50f8cafe-211c-4c2b-8da8-e1f8b59c49bd",
+   "slug": "michael-jackson-legacy-e958978e",
+   "title": "Michael Jackson  - Legacy",
+   "act": "Michael Jackson",
+   "name": "Michael Jackson",
+   "description": "American singer and songwriter (1958–2009)",
+   "source_url": "https://en.wikipedia.org/wiki/Michael_Jackson",
+   "extract": "Michael Joseph Jackson was an American singer, songwriter, dancer, and philanthropist. Dubbed the \"King of Pop\", he is widely regarded as one of the most significant cultural figures of the 20th century. His musical achievements broke American racial barriers and made him a dominant figure worldwide. Through his songs, music videos, concerts, and fashion, he transformed visual performance in popular music, popularizing street dance moves such as the moonwalk, the robot, and the anti-gravity lean. Jackson is often deemed the greatest entertainer of all time."
+  },
+  {
+   "id": "bb67193c-55c0-4428-9ef3-69397b4601d3",
+   "slug": "wolf-parade-d5713238",
+   "title": "Wolf Parade",
+   "act": "Wolf Parade",
+   "name": "Wolf Parade",
+   "description": "Canadian indie rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Wolf_Parade",
+   "extract": "Wolf Parade is a Canadian indie rock band formed in Montreal, in 2003. The band consists of Spencer Krug, Dan Boeckner and Arlen Thompson (drums). During live performances, the band are currently joined by Arcade Fire's Tim Kingsbury on various instruments. Multi-instrumentalist Dante DeCaro and synth-player Hadji Bakara are both recurring former members of the band."
+  }
+ ]
+}

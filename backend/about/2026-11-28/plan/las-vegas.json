@@ -1,0 +1,36 @@
+{
+ "city": "las-vegas",
+ "day": "2026-11-28",
+ "nights": [
+  {
+   "id": "d6040708-bf8c-452a-a48d-08f498d63a8b",
+   "slug": "ambrosia-d599653a",
+   "title": "Ambrosia",
+   "act": "Ambrosia",
+   "name": "Ambrosia",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Ambrosia_(band)",
+   "extract": "Ambrosia is an American rock band formed in Los Angeles in 1970. Ambrosia had five top 40 hit singles released between 1975 and 1980, including the top 5 hits \"How Much I Feel\" and \"Biggest Part of Me\", and top 20 hits \"You're the Only Woman \" and \"Holdin' on to Yesterday\". In 1989, the group's original lineup reunited, and following the departure of guitarist and frontman David Pack in 2000, the group has been augmented by various singers and led by fellow founders Joe Puerta (bass/vocals) and drummer Burleigh Drummond. Original keyboardist Christopher North also performed with Ambrosia until his death in 2026."
+  },
+  {
+   "id": "63075520-9a65-45b3-9c40-f8f3871314dd",
+   "slug": "taylor-dayne-official-caesars-ticket-hotel-packa-e8d81f78",
+   "title": "Taylor Dayne | Official Caesars Ticket + Hotel Packages",
+   "act": "Taylor Dayne",
+   "name": "Taylor Dayne",
+   "description": "American singer (born 1962)",
+   "source_url": "https://en.wikipedia.org/wiki/Taylor_Dayne",
+   "extract": "Taylor Dayne is an American singer who rose to fame after her first two albums were both certified 2× Platinum by the Recording Industry Association of America (RIAA). Dayne achieved seven US Top 10 singles, including \"Tell It to My Heart\", \"Prove Your Love\", \"I'll Always Love You\", \"Don't Rush Me\", \"With Every Beat of My Heart\", \"Love Will Lead You Back\", and \"I'll Be Your Shelter\". Dayne also scored the US Top 20 hits \"Heart of Stone\" and \"Can't Get Enough of Your Love\". In the United States, she achieved three gold singles and has sold over 75 million albums and singles worldwide. Dayne has received two Grammy Award nominations, an American Music Award and multiple New York Music Awards. She has also been ranked by both Rolling Stone and Billboard on their lists of the most successful dance artists of all time."
+  },
+  {
+   "id": "44f7634d-a1dc-420d-9700-3f155dac3031",
+   "slug": "eagles-suite-reservation-7bb26708",
+   "title": "Eagles - Suite Reservation",
+   "act": "Eagles",
+   "name": "Eagles",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Eagles_(band)",
+   "extract": "The Eagles are an American rock band formed in Los Angeles in 1971. With five number-one singles, six number-one albums, six Grammy Awards and five American Music Awards, the Eagles were one of the most successful musical acts of the 1970s in North America. In addition, they are one of the world's best-selling music artists, having sold more than 200 million records worldwide, including 100 million sold in the US alone. They were inducted into the Rock and Roll Hall of Fame in 1998 and were ranked number 75 on Rolling Stone's 2010 list of the \"100 Greatest Artists of All Time\"."
+  }
+ ]
+}

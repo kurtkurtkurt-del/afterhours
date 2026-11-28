@@ -1,0 +1,16 @@
+{
+ "city": "seattle",
+ "day": "2026-11-28",
+ "nights": [
+  {
+   "id": "c9025f4d-a2e6-4010-bfef-b6cf68adcda3",
+   "slug": "bodysnatcher-6a8832e8",
+   "title": "Bodysnatcher",
+   "act": "Bodysnatcher",
+   "name": "Bodysnatcher",
+   "description": "American deathcore band",
+   "source_url": "https://en.wikipedia.org/wiki/Bodysnatcher_(band)",
+   "extract": "Bodysnatcher is an American deathcore band from Florida founded in 2014."
+  }
+ ]
+}
