@@ -1,0 +1,14 @@
+{
+  "city": "helsinki",
+  "day": "2026-12-05",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "helsinki christmas market at senate square.", "de": "helsinki weihnachtsmarkt am senatsplatz.", "tr": "senato meydanı'nda helsinki noel pazarı." },
+      "line": { "en": "the christmas market on senate square runs until 22 december, free entry, open 11:00 to 20:00 on saturdays. come before dark for the stalls and the cathedral steps.", "de": "der weihnachtsmarkt am senatsplatz läuft bis zum 22. dezember, der eintritt ist frei, samstags ist er von 11 bis 20 uhr geöffnet. am besten vor der dunkelheit kommen, für die stände und die treppe des domes.", "tr": "senato meydanı'ndaki noel pazarı 22 aralık'a kadar açık, giriş ücretsiz, cumartesileri 11:00 ile 20:00 arası. karanlık basmadan gel; tezgahlar ve katedralin basamakları için." },
+      "place": { "en": "senate square", "de": "senatsplatz", "tr": "senato meydanı" },
+      "hour": 15, "minute": 0,
+      "why": "City of Helsinki news and MyHelsinki listing: Senate Square Christmas market 27 Nov to 22 Dec 2026, free entry, Fri and Sat 11:00 to 20:00; Saturday 5 Dec chosen for the first week."
+    }
+  ]
+}
