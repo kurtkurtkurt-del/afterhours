@@ -1,0 +1,14 @@
+{
+  "city": "malmo",
+  "day": "2026-11-29",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "jul på slottet, the christmas market at malmöhus.", "de": "jul på slottet, der weihnachtsmarkt im malmöhus.", "tr": "jul på slottet, malmöhus'ta noel pazarı." },
+      "line": { "en": "malmö museum's christmas market at the castle, 10:00 to 17:00. craft stalls, music, a lucia celebration and family activities, several of them free.", "de": "der weihnachtsmarkt des malmö museums im schloss, 10 bis 17 uhr. kunsthandwerk, musik, ein luciafest und familienangebote, viele davon kostenlos.", "tr": "malmö müzesi'nin şatodaki noel pazarı, 10:00 ile 17:00 arası. el sanatları standları, müzik, lucia kutlaması ve aile etkinlikleri; birçoğu ücretsiz." },
+      "place": { "en": "malmöhus slott", "de": "malmöhus slott", "tr": "malmöhus slott" },
+      "hour": 10, "minute": 0,
+      "why": "Jul på slottet, Malmö museum's christmas market, Sunday 29 Nov 10:00 to 17:00 at Malmöhus slott (malmo.se news item dated 17 Nov 2026)."
+    }
+  ]
+}
