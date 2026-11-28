@@ -1,0 +1,27 @@
+{
+  "city": "bergen",
+  "day": "2026-12-07",
+  "sparks": [
+    {
+      "kind": "jazz",
+      "title": {
+        "en": "christmas jazz with trygve seim and andreas utnem.",
+        "de": "weihnachtsjazz mit trygve seim und andreas utnem.",
+        "tr": "trygve seim ve andreas utnem ile noel caz'ı."
+      },
+      "line": {
+        "en": "a christmas jazz concert with trygve seim and andreas utnem at åsane kulturhus, from 19:00. a quiet monday option in the north of the city.",
+        "de": "ein weihnachtliches jazzkonzert mit trygve seim und andreas utnem im åsane kulturhus, ab 19 uhr. eine ruhige montagsoption im norden der stadt.",
+        "tr": "åsane kulturhus'ta, 19:00'dan itibaren trygve seim ve andreas utnem ile noel caz konseri. şehrin kuzeyinde, sakin bir pazartesi seçeneği."
+      },
+      "place": {
+        "en": "åsane kulturhus",
+        "de": "åsane kulturhus",
+        "tr": "åsane kulturhus"
+      },
+      "hour": 19,
+      "minute": 0,
+      "why": "Christmas jazz with Trygve Seim and Andreas Utnem at Åsane kulturhus, Mon 7 Dec 2026 19:00, per a Fjord Norway listing; a week-two fallback, since the first week is thin."
+    }
+  ]
+}

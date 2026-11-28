@@ -3,25 +3,25 @@
   "day": "2026-11-29",
   "sparks": [
     {
-      "kind": "football",
+      "kind": "flea",
       "title": {
-        "en": "brann – kristiansund at brann stadion.",
-        "de": "brann – kristiansund im brann stadion.",
-        "tr": "brann stadion'da brann – kristiansund."
+        "en": "christmas market on festplassen.",
+        "de": "weihnachtsmarkt auf dem festplassen.",
+        "tr": "festplassen'de noel pazarı."
       },
       "line": {
-        "en": "eliteserien, sunday 17:00 at brann stadion. check the ticket page first, as kickoff times differ between listings.",
-        "de": "eliteserien, sonntag 17:00 im brann stadion. vorher die ticketseite prüfen, die anstoßzeiten weichen zwischen den listen ab.",
-        "tr": "eliteserien, pazar 17:00'de brann stadion'da. önce bilet sayfasına bak; başlama saatleri listelere göre değişiyor."
+        "en": "the bergen julemarked on festplassen is open 10:00 to 21:00 on sundays, free entry, until 22 december. first sunday of advent, so a good start.",
+        "de": "der bergener julemarkt auf dem festplassen hat sonntags von 10 bis 21 uhr geöffnet, der eintritt ist frei, bis 22. dezember. erster advent, ein guter start.",
+        "tr": "festplassen'deki bergen julemarkt'i pazar günleri 10:00 ile 21:00 arası açık, giriş ücretsiz, 22 aralık'a kadar sürüyor. ilk advent pazarı, iyi bir başlangıç."
       },
       "place": {
-        "en": "brann stadion",
-        "de": "brann stadion",
-        "tr": "brann stadion"
+        "en": "festplassen",
+        "de": "festplassen",
+        "tr": "festplassen"
       },
-      "hour": 17,
+      "hour": 12,
       "minute": 0,
-      "why": "Brann vs Kristiansund, Eliteserien on sun 29 Nov 2026, 17:00 per visitnorway.com and planetsport.com; one listing gives 16:00. Days eight to fourteen of the window."
+      "why": "Bergen Julemarked on Festplassen, Sat and Sun 10:00 to 21:00, free entry, 20 Nov to 22 Dec, per Visit Bergen and Visit Norway listings; the 12:00 start is a suggestion. The stalls are a Christmas market, so it is filed under flea."
     }
   ]
 }

@@ -1,0 +1,48 @@
+{
+  "city": "bergen",
+  "day": "2026-12-05",
+  "sparks": [
+    {
+      "kind": "jazz",
+      "title": {
+        "en": "luna horns at kulturhuset.",
+        "de": "luna horns im kulturhuset.",
+        "tr": "kulturhuset'te luna horns."
+      },
+      "line": {
+        "en": "the oslo band luna horns plays the lillesalen hall at 19:00, on tour with their debut album afro space hotel. a six-piece horn group, booking open.",
+        "de": "die oslo-band luna horns spielt um 19 uhr im lillesalen, auf tour mit ihrem debütalbum afro space hotel. eine sechsköpfige bläsergruppe, buchung offen.",
+        "tr": "oslo'lu grup luna horns, saat 19:00'da lillesalen salonunda çalıyor; ilk albümleri afro space hotel ile turne. altı kişilik üfleme grubu, rezervasyon açık."
+      },
+      "place": {
+        "en": "kulturhuset i bergen, lillesalen",
+        "de": "kulturhuset i bergen, lillesalen",
+        "tr": "kulturhuset i bergen, lillesalen"
+      },
+      "hour": 19,
+      "minute": 0,
+      "why": "Luna Horns at Kulturhuset i Bergen, Lillesalen, Sat 5 Dec 2026 19:00, per Fjord Norway and Visit Bergen listings; address Vaskerelven 8."
+    },
+    {
+      "kind": "flea",
+      "title": {
+        "en": "christmas market at lystgården.",
+        "de": "julemarkt am lystgården.",
+        "tr": "lystgården'de noel pazarı."
+      },
+      "line": {
+        "en": "the lystgården christmas market is open saturday 12:00 to 16:00, a small local market. the listing shows this day only, so check before you go.",
+        "de": "der julemarkt am lystgården ist samstag von 12 bis 16 uhr offen, ein kleiner lokaler markt. die anzeige nennt nur diesen tag, bitte vorher prüfen.",
+        "tr": "lystgården noel pazarı cumartesi 12:00 ile 16:00 arası açık; küçük bir yerel pazar. ilanda yalnızca bu gün var, gitmeden önce kontrol edin."
+      },
+      "place": {
+        "en": "lystgården",
+        "de": "lystgården",
+        "tr": "lystgården"
+      },
+      "hour": 12,
+      "minute": 0,
+      "why": "Lystgården christmas market, Sat 5 Dec 2026 12:00 to 16:00, per a Fjord Norway listing; Visit Norway lists 5 and 6 Dec, so it may run Sunday too. Filed under flea as a stall market."
+    }
+  ]
+}
