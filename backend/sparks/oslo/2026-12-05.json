@@ -1,0 +1,14 @@
+{
+  "city": "oslo",
+  "day": "2026-12-05",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "norsk folkemuseum christmas fair on bygdøy.", "de": "weihnachtsmarkt im norsk folkemuseum auf bygdøy.", "tr": "norsk folkemuseum'da noel pazarı, bygdøy'de." },
+      "line": { "en": "over 100 stalls with handmade gifts, and decorated historic houses from all over norway to walk through. 10:00 to 16:00.", "de": "über 100 stände mit handgemachten geschenken und geschmückte historische häuser aus ganz norwegen zum durchgehen. 10 bis 16 uhr.", "tr": "handmade hediyeler satan 100'den fazla tezgah ve tüm norveç'ten gelen süslü tarihi evler var. 10:00 ile 16:00 arası." },
+      "place": { "en": "norsk folkemuseum, bygdøy", "de": "norsk folkemuseum, bygdøy", "tr": "norsk folkemuseum, bygdøy" },
+      "hour": 10, "minute": 0,
+      "why": "Norsk Folkemuseum Christmas fair, Bygdøy, Sat 5 and Sun 6 December 10:00 to 16:00, over 100 stalls (visitoslo.com and norskfolkemuseum.no)."
+    }
+  ]
+}

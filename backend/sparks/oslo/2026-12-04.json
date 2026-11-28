@@ -1,0 +1,14 @@
+{
+  "city": "oslo",
+  "day": "2026-12-04",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "kirkeristen christmas market, free entry.", "de": "weihnachtsmarkt am kirkeristen, eintritt frei.", "tr": "kirkeristen noel pazarı, giriş ücretsiz." },
+      "line": { "en": "the advent market at kirkeristen is open friday and saturday from 11:00 to 18:00, with free entry. it runs over three advent weekends, the first of them 4 to 6 december.", "de": "der adventsmarkt am kirkeristen ist freitags und samstags von 11 bis 18 uhr geöffnet, der eintritt ist frei. er läuft über drei adventswochenenden, das erste ist der 4. bis 6. dezember.", "tr": "kirkeristen'deki advent pazarı cuma ve cumartesi 11:00 ile 18:00 arası açık, giriş ücretsiz. üç advent hafta sonuna yayılıyor; ilki 4 ile 6 aralık." },
+      "place": { "en": "kirkeristen", "de": "kirkeristen", "tr": "kirkeristen" },
+      "hour": 11, "minute": 0,
+      "why": "Kirkeristen Christmas market on Visit Oslo (visitoslo.com): market weekend 4 to 6 December, Friday and Saturday 11:00 to 18:00, free entry; Sunday hours not listed."
+    }
+  ]
+}

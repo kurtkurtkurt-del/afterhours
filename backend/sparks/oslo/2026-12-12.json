@@ -1,0 +1,14 @@
+{
+  "city": "oslo",
+  "day": "2026-12-12",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "norsk folkemuseum christmas fair, second weekend.", "de": "weihnachtsmarkt im norsk folkemuseum, zweites wochenende.", "tr": "norsk folkemuseum noel pazarı, ikinci hafta sonu." },
+      "line": { "en": "the second weekend of the christmas fair on bygdøy, 10:00 to 16:00, with stalls and decorated historic houses.", "de": "das zweite wochenende des weihnachtsmarkts auf bygdøy, 10 bis 16 uhr, mit ständen und geschmückten historischen häusern.", "tr": "bygdøy'de noel pazarının ikinci hafta sonu, 10:00 ile 16:00 arası; tezgahlar ve süslü tarihi evler var." },
+      "place": { "en": "norsk folkemuseum, bygdøy", "de": "norsk folkemuseum, bygdøy", "tr": "norsk folkemuseum, bygdøy" },
+      "hour": 10, "minute": 0,
+      "why": "Norsk Folkemuseum Christmas fair second weekend, 12 and 13 December 10:00 to 16:00 (norskfolkemuseum.no and visitoslo.com)."
+    }
+  ]
+}
