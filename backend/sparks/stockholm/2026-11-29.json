@@ -1,0 +1,27 @@
+{
+  "city": "stockholm",
+  "day": "2026-11-29",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": {
+        "en": "christmas market at skansen.",
+        "de": "weihnachtsmarkt auf skansen.",
+        "tr": "skansen'de noel pazarı."
+      },
+      "line": {
+        "en": "the christmas market at skansen is open 10:00 to 16:00 on sunday, inside the usual skansen entry. it runs until 20 december.",
+        "de": "der weihnachtsmarkt auf skansen ist am sonntag von 10 bis 16 uhr geöffnet, im normalen skansen-eintritt. er läuft bis zum 20. dezember.",
+        "tr": "skansen'deki noel pazarı pazar günü 10:00 ile 16:00 arası açık, skansen'in normal girişiyle. 20 aralık'a kadar sürüyor."
+      },
+      "place": {
+        "en": "skansen",
+        "de": "skansen",
+        "tr": "skansen"
+      },
+      "hour": 10,
+      "minute": 0,
+      "why": "Skansen's christmas market press release gives 27 Nov to 20 Dec 2026, and the Visit Stockholm listing for 29 Nov shows 10:00 to 16:00."
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "city": "stockholm",
+  "day": "2026-12-03",
+  "sparks": [
+    {
+      "kind": "walk",
+      "title": {
+        "en": "free thursday evening at nationalmuseum.",
+        "de": "gratis donnerstagabend im nationalmuseum.",
+        "tr": "nationalmuseum'da ücretsiz perşembe akşamı."
+      },
+      "line": {
+        "en": "the national museum is free from 17:00 to 20:00 on thursdays until 17 december. walk over from the city centre and look round at your own pace.",
+        "de": "das nationalmuseum ist donnerstags bis 17. dezember von 17 bis 20 uhr kostenlos. zu fuß aus der innenstadt hinübergehen und in ruhe schauen.",
+        "tr": "nationalmuseum perşembeleri 17 aralık'a kadar 17:00 ile 20:00 arası ücretsiz. şehir merkezinden yürüyerek gidip kendi hızında gezin."
+      },
+      "place": {
+        "en": "nationalmuseum",
+        "de": "nationalmuseum",
+        "tr": "nationalmuseum"
+      },
+      "hour": 17,
+      "minute": 0,
+      "why": "Nationalmuseum's thursday evenings are free 17:00 to 20:00 from 3 Sep to 17 Dec 2026 per the museum and Visit Stockholm; the programme varies, so no particular event is promised."
+    }
+  ]
+}
