@@ -1,0 +1,38 @@
+{
+  "city": "zurich",
+  "day": "2026-11-28",
+  "nights": [
+    {
+      "id": "49251bb9-55ea-480e-bb15-85b7c10c4b81",
+      "slug": "kingdom-of-giants-2af486f9",
+      "title": "Kingdom Of Giants",
+      "name": "Kingdom of Giants",
+      "source_url": "https://en.wikipedia.org/wiki/Kingdom_of_Giants",
+      "extract": "Kingdom of Giants is an American metalcore band from Sacramento, California. It was formed in 2010 from the remnants of other bands by Julian Perez, Max Bremer, Levi Norris, Dana Willax, Red Martin, and Stephen Rezza.",
+      "en": {
+        "kicker": "american metalcore band · sacramento, 2010",
+        "who": "Kingdom of Giants is an american metalcore band from Sacramento, California. It was formed in 2010 from the remnants of other bands.",
+        "facts": [
+          "Kingdom of Giants is an American metalcore band from Sacramento, California.",
+          "It was formed in 2010 from the remnants of other bands by Julian Perez, Max Bremer, Levi Norris, Dana Willax, Red Martin, and Stephen Rezza."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische metalcore-band · sacramento, 2010",
+        "who": "Kingdom of Giants sind eine amerikanische metalcore-band aus Sacramento, Kalifornien. gegründet wurde sie 2010 aus den resten anderer bands.",
+        "facts": [
+          "Kingdom of Giants sind eine amerikanische metalcore-band aus Sacramento, Kalifornien.",
+          "sie wurde 2010 aus den resten anderer bands gegründet, von Julian Perez, Max Bremer, Levi Norris, Dana Willax, Red Martin und Stephen Rezza."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı metalcore grubu · sacramento, 2010",
+        "who": "Kingdom of Giants, kaliforniya'nın sacramento kentinden amerikalı bir metalcore grubudur. 2010'da diğer grupların kalıntılarından kuruldu.",
+        "facts": [
+          "Kingdom of Giants, kaliforniya'nın sacramento kentinden amerikalı bir metalcore grubudur.",
+          "grup 2010'da diğer grupların kalıntılarından Julian Perez, Max Bremer, Levi Norris, Dana Willax, Red Martin ve Stephen Rezza tarafından kuruldu."
+        ]
+      }
+    }
+  ]
+}

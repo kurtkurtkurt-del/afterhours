@@ -1,0 +1,134 @@
+{
+  "city": "izmir",
+  "day": "2026-11-28",
+  "nights": [
+    {
+      "id": "4693dc31-ff95-43c8-acce-8fe8faefa2e3",
+      "slug": "yuksek-sadakat-7bc662b6",
+      "title": "Yüksek Sadakat",
+      "name": "Yüksek Sadakat",
+      "source_url": "https://en.wikipedia.org/wiki/Y%C3%BCksek_Sadakat",
+      "extract": "Yüksek Sadakat is a Turkish rock band that was formed in 1997 by Kutlu Özmakinacı, but became popular in early 2006 with their first album with the same name. The founder and bass player Kutlu Özmakinacı, used to be the editor of a music magazine called Blue Jean. Their music is a mix of pop rock with powerful beats utilizing Turkish instruments, keyboard and guitar solos. The name of the band is a literal translation of the term High Fidelity (Hi-Fi) into Turkish.",
+      "en": {
+        "kicker": "turkish rock band · formed 1997",
+        "who": "Yüksek Sadakat is a turkish rock band formed in 1997 by Kutlu Özmakinacı. Its music mixes pop rock with powerful beats, Turkish instruments, keyboard and guitar solos.",
+        "facts": [
+          "Yüksek Sadakat is a Turkish rock band that was formed in 1997 by Kutlu Özmakinacı, but became popular in early 2006 with their first album with the same name.",
+          "The name of the band is a literal translation of the term High Fidelity (Hi-Fi) into Turkish."
+        ]
+      },
+      "de": {
+        "kicker": "türkische rockband · gegründet 1997",
+        "who": "Yüksek Sadakat ist eine türkische rockband, die 1997 von Kutlu Özmakinacı gegründet wurde. ihre musik verbindet pop rock mit kraftvollen beats, türkischen instrumenten sowie keyboard- und gitarrensoli.",
+        "facts": [
+          "Yüksek Sadakat ist eine türkische rockband, die 1997 von Kutlu Özmakinacı gegründet wurde und Anfang 2006 mit ihrem gleichnamigen ersten album bekannt wurde.",
+          "der name der band ist eine wörtliche übersetzung des begriffs High Fidelity (Hi-Fi) ins türkische."
+        ]
+      },
+      "tr": {
+        "kicker": "türk rock grubu · 1997'de kuruldu",
+        "who": "Yüksek Sadakat, 1997'de Kutlu Özmakinacı tarafından kurulmuş bir türk rock grubudur. müzikleri pop rock'ı güçlü ritimler, türk enstrümanları, klavye ve gitar sololarıyla harmanlar.",
+        "facts": [
+          "Yüksek Sadakat, 1997'de Kutlu Özmakinacı tarafından kurulan bir türk rock grubudur; 2006 başında aynı adlı ilk albümüyle ünlendi.",
+          "grubun adı, High Fidelity (Hi-Fi) teriminin türkçeye birebir çevirisidir."
+        ]
+      }
+    },
+    {
+      "id": "60805ac1-4384-4db0-b4b7-726529d9d6d6",
+      "slug": "zakkum-87fe0805",
+      "title": "Zakkum",
+      "name": "Zakkum",
+      "source_url": "https://en.wikipedia.org/wiki/Zakkum_(band)",
+      "extract": "Zakkum are a Turkish rock group. It was created in 1999 under the name Raindog in Ankara. Raindog had many stage performances, before they started working on an album and chose a Turkish name \"Zakkum\" for their band.",
+      "en": {
+        "kicker": "turkish rock group · ankara, 1999",
+        "who": "Zakkum are a turkish rock group. It was created in 1999 in Ankara under the name Raindog, before the band chose the Turkish name \"Zakkum\".",
+        "facts": [
+          "Zakkum are a Turkish rock group.",
+          "It was created in 1999 under the name Raindog in Ankara."
+        ]
+      },
+      "de": {
+        "kicker": "türkische rockgruppe · ankara, 1999",
+        "who": "Zakkum sind eine türkische rockgruppe. sie entstand 1999 in Ankara unter dem namen Raindog, bevor die band den türkischen namen \"Zakkum\" wählte.",
+        "facts": [
+          "Zakkum sind eine türkische rockgruppe.",
+          "sie entstand 1999 unter dem namen Raindog in Ankara."
+        ]
+      },
+      "tr": {
+        "kicker": "türk rock grubu · ankara, 1999",
+        "who": "Zakkum bir türk rock grubudur. 1999'da ankara'da Raindog adıyla kuruldu; grup daha sonra türkçe \"Zakkum\" adını seçti.",
+        "facts": [
+          "Zakkum bir türk rock grubudur.",
+          "1999'da ankara'da Raindog adıyla kuruldu."
+        ]
+      }
+    },
+    {
+      "id": "5a11e4e0-4525-4ed0-8249-1bf3137ebaaa",
+      "slug": "levent-yuksel-c4570b18",
+      "title": "Levent Yüksel",
+      "name": "Levent Yüksel",
+      "source_url": "https://en.wikipedia.org/wiki/Levent_Y%C3%BCksel",
+      "extract": "Levent Uğur Yüksel is a Turkish pop singer and multi instrumentalist. He has been active in live music industry since 1993.",
+      "en": {
+        "kicker": "turkish pop singer · active since 1993",
+        "who": "Levent Uğur Yüksel is a turkish pop singer and multi-instrumentalist. He has been active in the live music industry since 1993.",
+        "facts": [
+          "Levent Uğur Yüksel is a Turkish pop singer and multi instrumentalist.",
+          "He has been active in live music industry since 1993."
+        ]
+      },
+      "de": {
+        "kicker": "türkischer popsänger · aktiv seit 1993",
+        "who": "Levent Uğur Yüksel ist ein türkischer popsänger und multiinstrumentalist. er ist seit 1993 in der live-musikbranche aktiv.",
+        "facts": [
+          "Levent Uğur Yüksel ist ein türkischer popsänger und multiinstrumentalist.",
+          "er ist seit 1993 in der live-musikbranche aktiv."
+        ]
+      },
+      "tr": {
+        "kicker": "türk pop şarkıcısı · 1993'ten beri aktif",
+        "who": "Levent Uğur Yüksel bir türk pop şarkıcısı ve çok enstrümantalisttir. 1993'ten beri canlı müzik sektöründe aktif.",
+        "facts": [
+          "Levent Uğur Yüksel bir türk pop şarkıcısı ve çok enstrümantalisttir.",
+          "1993'ten beri canlı müzik sektöründe aktif."
+        ]
+      }
+    },
+    {
+      "id": "6b45a757-34d3-4a8f-ad5e-41cd2fbb6ac4",
+      "slug": "gripin-0faac6dd",
+      "title": "Gripin",
+      "name": "Gripin",
+      "source_url": "https://en.wikipedia.org/wiki/Gripin",
+      "extract": "Gripin is a Turkish rock band based in Istanbul. The members are Birol Namoğlu (vocals), Murat Başdoğan (guitar), Arda İnceoğlu, and İlker Baliç (drums). The band's name is derived from a flu medicine brand in Turkey.",
+      "en": {
+        "kicker": "turkish rock band · istanbul",
+        "who": "Gripin is a turkish rock band based in Istanbul. Its members include Birol Namoğlu on vocals and Murat Başdoğan on guitar, with Arda İnceoğlu and İlker Baliç also in the lineup.",
+        "facts": [
+          "Gripin is a Turkish rock band based in Istanbul.",
+          "The band's name is derived from a flu medicine brand in Turkey."
+        ]
+      },
+      "de": {
+        "kicker": "türkische rockband · istanbul",
+        "who": "Gripin ist eine türkische rockband mit sitz in Istanbul. zur band gehören Birol Namoğlu (gesang) und Murat Başdoğan (gitarre), dazu kommen Arda İnceoğlu und İlker Baliç.",
+        "facts": [
+          "Gripin ist eine türkische rockband mit sitz in Istanbul.",
+          "der name der band leitet sich von einer grippemedizin-marke in der türkei ab."
+        ]
+      },
+      "tr": {
+        "kicker": "türk rock grubu · istanbul",
+        "who": "Gripin, istanbul merkezli bir türk rock grubudur. üyeleri arasında vokalde Birol Namoğlu ve gitarda Murat Başdoğan var; kadroda ayrıca Arda İnceoğlu ve İlker Baliç de yer alıyor.",
+        "facts": [
+          "Gripin, istanbul merkezli bir türk rock grubudur.",
+          "grubun adı türkiye'deki bir grip ilacı markasından gelir."
+        ]
+      }
+    }
+  ]
+}

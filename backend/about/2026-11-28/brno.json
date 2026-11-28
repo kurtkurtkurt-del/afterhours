@@ -1,0 +1,38 @@
+{
+  "city": "brno",
+  "day": "2026-11-28",
+  "nights": [
+    {
+      "id": "0a052887-bfa1-4506-9dcb-594de1aa8700",
+      "slug": "mika-live-in-cartoon-motion-5448baa0",
+      "title": "MIKA - Live In Cartoon Motion",
+      "name": "Mika",
+      "source_url": "https://en.wikipedia.org/wiki/Mika_(singer)",
+      "extract": "Michael Holbrook Penniman Jr., known professionally as Mika, is a Lebanese-British singer-songwriter based in Paris and London. Mika rose to prominence after the release of his first extended play, Dodgy Holiday (2006), which contained his debut single \"Relax, Take It Easy\". The track was released in October 2006, and topped the charts throughout Europe. His first full-length studio album, Life in Cartoon Motion (2007), released on Island Records, was led by the single \"Grace Kelly\" which topped the UK Singles Chart for five weeks starting in January 2007. The album reached number one on the UK Albums Chart, and sold more than 8 million copies worldwide. Life in Cartoon Motion helped Mika wi",
+      "en": {
+        "kicker": "lebanese-british singer-songwriter · paris and london",
+        "who": "Mika is a lebanese-british singer-songwriter based in Paris and London. His first extended play, Dodgy Holiday, released in 2006, introduced the debut single \"Relax, Take It Easy\".",
+        "facts": [
+          "Mika rose to prominence after the release of his first extended play, Dodgy Holiday (2006), which contained his debut single \"Relax, Take It Easy\".",
+          "His first full-length studio album, Life in Cartoon Motion (2007), released on Island Records, was led by the single \"Grace Kelly\" which topped the UK Singles Chart for five weeks starting in January 2007."
+        ]
+      },
+      "de": {
+        "kicker": "libanesisch-britischer singer-songwriter · paris und london",
+        "who": "Mika ist ein libanesisch-britischer singer-songwriter mit wohnsitz in Paris und London. sein erstes extended play Dodgy Holiday (2006) enthielt die debütsingle \"Relax, Take It Easy\".",
+        "facts": [
+          "Mika wurde mit der veröffentlichung seiner ersten extended play Dodgy Holiday (2006) bekannt, die seine debütsingle \"Relax, Take It Easy\" enthielt.",
+          "sein erstes album Life in Cartoon Motion (2007) bei Island Records wurde von der single \"Grace Kelly\" angeführt, die ab januar 2007 fünf wochen lang auf platz eins der britischen singlecharts stand."
+        ]
+      },
+      "tr": {
+        "kicker": "lübnanlı-ingiliz şarkıcı, söz yazarı · paris ve londra",
+        "who": "Mika, paris ve londra'da yaşayan lübnanlı-ingiliz bir şarkıcı ve söz yazarıdır. 2006'da çıkan ilk uzun oynatımlı kaydı Dodgy Holiday, \"Relax, Take It Easy\" debut single'ını tanıttı.",
+        "facts": [
+          "Mika, ilk uzun oynatımlı kaydı Dodgy Holiday (2006) ile öne çıktı; bu kayıt debut single'ı \"Relax, Take It Easy\"yi içeriyordu.",
+          "Island Records'ta çıkan ilk stüdyo albümü Life in Cartoon Motion (2007), ocak 2007'den itibaren beş hafta boyunca İngiltere single listesinin zirvesinde olan \"Grace Kelly\" ile öne çıktı."
+        ]
+      }
+    }
+  ]
+}

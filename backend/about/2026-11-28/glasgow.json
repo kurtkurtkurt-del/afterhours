@@ -1,0 +1,102 @@
+{
+  "city": "glasgow",
+  "day": "2026-11-28",
+  "nights": [
+    {
+      "id": "a171b47a-af8e-42c4-82c3-964ba805dddb",
+      "slug": "the-clause-5f344694",
+      "title": "The Clause",
+      "name": "The Clause",
+      "source_url": "https://en.wikipedia.org/wiki/The_Clause",
+      "extract": "The Clause are a British alternative rock band from Birmingham, England, formed in the 2010s. The group consists of Pearce “Macca”, Liam Deakin (guitar), Jonny Fyffe (bass), and Niall Fennell (drums). Their music blends elements of indie rock, funk, rhythm and blues, drawing influences from 1960s swagger, 1980s groove, and 1990s attitude. The band released their debut studio album, Victim of a Casual Thing, in October 2025.",
+      "en": {
+        "kicker": "british alternative rock band · birmingham",
+        "who": "The Clause are a british alternative rock band from Birmingham, formed in the 2010s. Their music blends indie rock, funk, rhythm and blues, and their debut studio album, Victim of a Casual Thing, came out in October 2025.",
+        "facts": [
+          "The Clause are a British alternative rock band from Birmingham, England, formed in the 2010s.",
+          "The band released their debut studio album, Victim of a Casual Thing, in October 2025."
+        ]
+      },
+      "de": {
+        "kicker": "britische alternative-rockband · birmingham",
+        "who": "The Clause sind eine britische alternative-rockband aus Birmingham, gegründet in den 2010er jahren. ihre musik verbindet indie rock, funk sowie rhythm and blues, ihr debütalbum Victim of a Casual Thing erschien im oktober 2025.",
+        "facts": [
+          "The Clause sind eine britische alternative-rockband aus Birmingham, England, die in den 2010er jahren gegründet wurde.",
+          "die band veröffentlichte ihr debütalbum Victim of a Casual Thing im oktober 2025."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz alternatif rock grubu · birmingham",
+        "who": "The Clause, 2010'larda kurulmuş, birmingham'lı bir ingiliz alternatif rock grubudur. müzikleri indie rock, funk ve rhythm and blues'u harmanlar; debut stüdyo albümleri Victim of a Casual Thing ekim 2025'te çıktı.",
+        "facts": [
+          "The Clause, 2010'larda kurulmuş birmingham'lı bir ingiliz alternatif rock grubudur.",
+          "grup debut stüdyo albümü Victim of a Casual Thing'i ekim 2025'te yayımladı."
+        ]
+      }
+    },
+    {
+      "id": "447d351a-39c7-416d-bb10-7a5b93c6a30c",
+      "slug": "blossoms-2b8d794b",
+      "title": "Blossoms",
+      "name": "Blossoms",
+      "source_url": "https://en.wikipedia.org/wiki/Blossoms_(band)",
+      "extract": "Blossoms are an English indie rock band from Stockport, Greater Manchester, England. Formed in 2013, the band consists of Tom Ogden, Charlie Salt, Josh Dewhurst, Joe Donovan (drums) and Myles Kellock.",
+      "en": {
+        "kicker": "english indie rock band · stockport, 2013",
+        "who": "Blossoms are an english indie rock band from Stockport, Greater Manchester. The band was formed in 2013 and consists of Tom Ogden, Charlie Salt, Josh Dewhurst, Joe Donovan on drums and Myles Kellock.",
+        "facts": [
+          "Blossoms are an English indie rock band from Stockport, Greater Manchester, England.",
+          "Formed in 2013, the band consists of Tom Ogden, Charlie Salt, Josh Dewhurst, Joe Donovan (drums) and Myles Kellock."
+        ]
+      },
+      "de": {
+        "kicker": "englische indie-rockband · stockport, 2013",
+        "who": "Blossoms sind eine englische indie-rockband aus Stockport, Greater Manchester. die band wurde 2013 gegründet und besteht aus Tom Ogden, Charlie Salt, Josh Dewhurst, Joe Donovan am schlagzeug und Myles Kellock.",
+        "facts": [
+          "Blossoms sind eine englische indie-rockband aus Stockport, Greater Manchester, England.",
+          "2013 gegründet, besteht die band aus Tom Ogden, Charlie Salt, Josh Dewhurst, Joe Donovan (schlagzeug) und Myles Kellock."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz indie rock grubu · stockport, 2013",
+        "who": "Blossoms, greater manchester'ın stockport kentinden bir ingiliz indie rock grubudur. 2013'te kurulan grup; Tom Ogden, Charlie Salt, Josh Dewhurst, davulcu Joe Donovan ve Myles Kellock'tan oluşuyor.",
+        "facts": [
+          "Blossoms, greater manchester'ın stockport kentinden bir ingiliz indie rock grubudur.",
+          "2013'te kurulan grup; Tom Ogden, Charlie Salt, Josh Dewhurst, Joe Donovan (davul) ve Myles Kellock'tan oluşuyor."
+        ]
+      }
+    },
+    {
+      "id": "a8c07578-02ae-480c-86b5-693ab39d9718",
+      "slug": "dayseeker-0a05b43b",
+      "title": "Dayseeker",
+      "name": "Dayseeker",
+      "source_url": "https://en.wikipedia.org/wiki/Dayseeker",
+      "extract": "Dayseeker is an American post-hardcore band formed in Orange County, California, in 2012. The group consists of vocalist Rory Rodriguez, bassist Ramone Valerio and drummer Zac Mayfield. They are currently signed to Spinefarm Records and have released six studio albums. Their most recent studio album, Creature in the Black Night, was released on October 24, 2025 with a Redux deluxe edition scheduled to release on February 26, 2027.",
+      "en": {
+        "kicker": "american post-hardcore band · orange county, 2012",
+        "who": "Dayseeker is an american post-hardcore band formed in Orange County, California, in 2012. The band consists of vocalist Rory Rodriguez, bassist Ramone Valerio and drummer Zac Mayfield.",
+        "facts": [
+          "Dayseeker is an american post-hardcore band formed in Orange County, California, in 2012.",
+          "They are currently signed to Spinefarm Records and have released six studio albums."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische post-hardcore band · orange county, 2012",
+        "who": "Dayseeker ist eine amerikanische post-hardcore band aus Orange County, Kalifornien, gegründet 2012. zur band gehören Sänger Rory Rodriguez, bassist Ramone Valerio und schlagzeuger Zac Mayfield.",
+        "facts": [
+          "Dayseeker ist eine amerikanische post-hardcore band, die 2012 in Orange County, Kalifornien, gegründet wurde.",
+          "die band steht bei Spinefarm Records unter vertrag und hat sechs studioalben veröffentlicht."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı post-hardcore grubu · orange county, 2012",
+        "who": "Dayseeker, 2012'de Kaliforniya'nın Orange County bölgesinde kurulmuş amerikalı bir post-hardcore grubudur. grupta vokalist Rory Rodriguez, basçı Ramone Valerio ve davulcu Zac Mayfield yer alıyor.",
+        "facts": [
+          "Dayseeker, 2012'de kurulmuş amerikalı bir post-hardcore grubudur.",
+          "grup şu anda Spinefarm Records ile çalışıyor ve altı stüdyo albümü yayımladı."
+        ]
+      }
+    }
+  ]
+}

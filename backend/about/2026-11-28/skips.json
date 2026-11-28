@@ -1380,6 +1380,84 @@
    "slug": "bhz-887e74f0",
    "city": "zurich",
    "why": "disambiguation or no summary"
+  },
+  {
+   "id": "b5ad00f7-63d5-46f7-b688-2136eb487184",
+   "slug": "gokhan-turkmen-unplugged-9c3c100f",
+   "city": "ankara",
+   "why": "thin extract: one sentence, no second fact"
+  },
+  {
+   "id": "f7af168e-a4e3-4300-bcee-b845bd49f5d4",
+   "slug": "half-me-38c1f946",
+   "city": "birmingham",
+   "why": "thin extract: one sentence, no second fact"
+  },
+  {
+   "id": "e6b683ca-1537-4695-af49-982e41b33c11",
+   "slug": "pa-sheehy-55978b93",
+   "city": "glasgow",
+   "why": "thin extract: one sentence, no second fact"
+  },
+  {
+   "id": "9fdf5fd8-507c-4fe5-9387-7efaffc3878b",
+   "slug": "goksel-2aff5790",
+   "city": "izmir",
+   "why": "thin extract: one sentence, no second fact"
+  },
+  {
+   "id": "1fbb91a6-884e-4d9c-acdd-08785adc0034",
+   "slug": "kalben-4664a51f",
+   "city": "izmir",
+   "why": "thin extract: one sentence, no second fact"
+  },
+  {
+   "id": "6c1a27b9-5819-45d1-8c95-301db383adc6",
+   "slug": "ceylan-ertem-sezen-aksu-tribute-yemekli-gala-kon-851105b4",
+   "city": "izmir",
+   "why": "tribute show: a sezen aksu tribute gala, not the act own night"
+  },
+  {
+   "id": "456734a6-6c51-4287-9646-a2d1ef0f2d48",
+   "slug": "cem-adrian-d9553747",
+   "city": "izmir",
+   "why": "thin extract: one sentence, no second fact"
+  },
+  {
+   "id": "50f8cafe-211c-4c2b-8da8-e1f8b59c49bd",
+   "slug": "michael-jackson-legacy-e958978e",
+   "city": "montreal",
+   "why": "tribute or legacy show: title reads as a tribute, not the artist own night"
+  },
+  {
+   "id": "f234ef73-5cfe-4c16-a564-2451c6110296",
+   "slug": "dead-poet-society-ba5449c8",
+   "city": "munchen",
+   "why": "thin extract: one sentence, no second fact"
+  },
+  {
+   "id": "c9025f4d-a2e6-4010-bfef-b6cf68adcda3",
+   "slug": "bodysnatcher-6a8832e8",
+   "city": "seattle",
+   "why": "thin extract: one sentence, no second fact"
+  },
+  {
+   "id": "7a45274b-5b69-456a-9c38-eab31a775620",
+   "slug": "pokey-lafarge-a2bd55f5",
+   "city": "vancouver",
+   "why": "thin extract: one sentence, no second fact"
+  },
+  {
+   "id": "22959782-00a1-46f0-a979-dadbfddeb26e",
+   "slug": "half-me-6231ba7c",
+   "city": "warszawa",
+   "why": "thin extract: one sentence, no second fact"
+  },
+  {
+   "id": "ebe6340c-6225-4ad8-ba29-f8f63b745086",
+   "slug": "our-mirage-e51cbe20",
+   "city": "zurich",
+   "why": "thin extract: one sentence, no second fact"
   }
  ]
 }

@@ -1,0 +1,38 @@
+{
+  "city": "warszawa",
+  "day": "2026-11-28",
+  "nights": [
+    {
+      "id": "cd1495ab-5826-4f6d-a35e-bef1f17e094a",
+      "slug": "comeback-kid-chosen-hell-euro-tour-2027-9144e85a",
+      "title": "Comeback Kid - CHOSEN HELL EURO TOUR 2027",
+      "name": "Comeback Kid",
+      "source_url": "https://en.wikipedia.org/wiki/Comeback_Kid_(band)",
+      "extract": "Comeback Kid is a Canadian hardcore punk band formed in March 2001 in Winnipeg, Manitoba. The band currently consists of vocalist Andrew Neufeld, guitarists Jeremy Hiebert and Stu Ross, bassist Chase Brenneman and drummer Terrance Pettitt. Since its formation, the band has released eight studio albums and seventeen music videos. Their eighth studio album, Chosen Hell, was released in November 2026.",
+      "en": {
+        "kicker": "canadian hardcore punk band · winnipeg, 2001",
+        "who": "Comeback Kid is a canadian hardcore punk band formed in March 2001 in Winnipeg, Manitoba. Since its formation the band has released eight studio albums.",
+        "facts": [
+          "Comeback Kid is a Canadian hardcore punk band formed in March 2001 in Winnipeg, Manitoba.",
+          "Their eighth studio album, Chosen Hell, was released in November 2026."
+        ]
+      },
+      "de": {
+        "kicker": "kanadische hardcore-punkband · winnipeg, 2001",
+        "who": "Comeback Kid ist eine kanadische hardcore-punkband, gegründet im märz 2001 in Winnipeg, Manitoba. seit der gründung hat die band acht studioalben veröffentlicht.",
+        "facts": [
+          "Comeback Kid ist eine kanadische hardcore-punkband, die im märz 2001 in Winnipeg, Manitoba, gegründet wurde.",
+          "ihr achtes studioalbum Chosen Hell erschien im november 2026."
+        ]
+      },
+      "tr": {
+        "kicker": "kanadalı hardcore punk grubu · winnipeg, 2001",
+        "who": "Comeback Kid, mart 2001'de manitoba'nın winnipeg kentinde kurulmuş kanadalı bir hardcore punk grubudur. kuruluşundan bu yana grup sekiz stüdyo albümü yayımladı.",
+        "facts": [
+          "Comeback Kid, mart 2001'de manitoba'nın winnipeg kentinde kurulmuş kanadalı bir hardcore punk grubudur.",
+          "sekizinci stüdyo albümü Chosen Hell kasım 2026'da yayımlandı."
+        ]
+      }
+    }
+  ]
+}

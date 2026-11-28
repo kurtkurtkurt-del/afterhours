@@ -1,0 +1,70 @@
+{
+  "city": "berlin",
+  "day": "2026-11-28",
+  "nights": [
+    {
+      "id": "236581b8-4d43-4912-99da-2f2f38e4abed",
+      "slug": "artemas-lovercore-getting-up-to-no-good-tour-ea867958",
+      "title": "Artemas - LOVERCORE / GETTING UP TO NO GOOD Tour",
+      "name": "Artemas",
+      "source_url": "https://en.wikipedia.org/wiki/Artemas_(musician)",
+      "extract": "Artemas Diamandis, known mononymously as Artemas, is an English singer, songwriter and record producer. He is best known for his singles \"If U Think I'm Pretty\" and the viral \"I Like the Way You Kiss Me\". He is signed to the record label 10K Projects.",
+      "en": {
+        "kicker": "english singer, songwriter and record producer",
+        "who": "Artemas Diamandis, known as Artemas, is an english singer, songwriter and record producer. He is known for the viral \"I Like the Way You Kiss Me\" and is signed to 10K Projects.",
+        "facts": [
+          "He is best known for his singles \"If U Think I'm Pretty\" and the viral \"I Like the Way You Kiss Me\".",
+          "He is signed to the record label 10K Projects."
+        ]
+      },
+      "de": {
+        "kicker": "englischer singer, songwriter und produzent",
+        "who": "Artemas Diamandis, bekannt als Artemas, ist ein englischer singer, songwriter und musikproduzent. er wurde durch den viralen hit \"I Like the Way You Kiss Me\" bekannt und steht beim label 10K Projects unter vertrag.",
+        "facts": [
+          "er ist vor allem für seine singles \"If U Think I'm Pretty\" und den viralen hit \"I Like the Way You Kiss Me\" bekannt.",
+          "er steht beim label 10K Projects unter vertrag."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz şarkıcı, söz yazarı ve yapımcı",
+        "who": "Artemas Diamandis, Artemas adıyla bilinen bir ingiliz şarkıcı, söz yazarı ve plak yapımcısıdır. \"I Like the Way You Kiss Me\" ile viral bir şöhret kazandı ve 10K Projects plak şirketiyle çalışıyor.",
+        "facts": [
+          "en çok \"If U Think I'm Pretty\" ve viral \"I Like the Way You Kiss Me\" şarkılarıyla bilinir.",
+          "10K Projects plak şirketiyle çalışıyor."
+        ]
+      }
+    },
+    {
+      "id": "7d84cf1c-a547-45b5-9f15-11655334e03d",
+      "slug": "dayseeker-creature-in-the-black-night-tour-995526b6",
+      "title": "Dayseeker - Creature In The Black Night Tour",
+      "name": "Dayseeker",
+      "source_url": "https://en.wikipedia.org/wiki/Dayseeker",
+      "extract": "Dayseeker is an American post-hardcore band formed in Orange County, California, in 2012. The group consists of vocalist Rory Rodriguez, bassist Ramone Valerio and drummer Zac Mayfield. They are currently signed to Spinefarm Records and have released six studio albums. Their most recent studio album, Creature in the Black Night, was released on October 24, 2025 with a Redux deluxe edition scheduled to release on February 26, 2027.",
+      "en": {
+        "kicker": "american post-hardcore band · orange county, 2012",
+        "who": "Dayseeker is an american post-hardcore band formed in Orange County, California, in 2012. The band consists of vocalist Rory Rodriguez, bassist Ramone Valerio and drummer Zac Mayfield.",
+        "facts": [
+          "Dayseeker is an american post-hardcore band formed in Orange County, California, in 2012.",
+          "They are currently signed to Spinefarm Records and have released six studio albums."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische post-hardcore band · orange county, 2012",
+        "who": "Dayseeker ist eine amerikanische post-hardcore band aus Orange County, Kalifornien, gegründet 2012. zur band gehören Sänger Rory Rodriguez, bassist Ramone Valerio und schlagzeuger Zac Mayfield.",
+        "facts": [
+          "Dayseeker ist eine amerikanische post-hardcore band, die 2012 in Orange County, Kalifornien, gegründet wurde.",
+          "die band steht bei Spinefarm Records unter vertrag und hat sechs studioalben veröffentlicht."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı post-hardcore grubu · orange county, 2012",
+        "who": "Dayseeker, 2012'de Kaliforniya'nın Orange County bölgesinde kurulmuş amerikalı bir post-hardcore grubudur. grupta vokalist Rory Rodriguez, basçı Ramone Valerio ve davulcu Zac Mayfield yer alıyor.",
+        "facts": [
+          "Dayseeker, 2012'de kurulmuş amerikalı bir post-hardcore grubudur.",
+          "grup şu anda Spinefarm Records ile çalışıyor ve altı stüdyo albümü yayımladı."
+        ]
+      }
+    }
+  ]
+}

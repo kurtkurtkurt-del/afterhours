@@ -1,0 +1,38 @@
+{
+  "city": "montreal",
+  "day": "2026-11-28",
+  "nights": [
+    {
+      "id": "bb67193c-55c0-4428-9ef3-69397b4601d3",
+      "slug": "wolf-parade-d5713238",
+      "title": "Wolf Parade",
+      "name": "Wolf Parade",
+      "source_url": "https://en.wikipedia.org/wiki/Wolf_Parade",
+      "extract": "Wolf Parade is a Canadian indie rock band formed in Montreal, in 2003. The band consists of Spencer Krug, Dan Boeckner and Arlen Thompson (drums). During live performances, the band are currently joined by Arcade Fire's Tim Kingsbury on various instruments. Multi-instrumentalist Dante DeCaro and synth-player Hadji Bakara are both recurring former members of the band.",
+      "en": {
+        "kicker": "canadian indie rock band · montreal, 2003",
+        "who": "Wolf Parade is a canadian indie rock band formed in Montreal in 2003. The band consists of Spencer Krug, Dan Boeckner and Arlen Thompson, and is joined in live performances by Arcade Fire's Tim Kingsbury.",
+        "facts": [
+          "Wolf Parade is a Canadian indie rock band formed in Montreal, in 2003.",
+          "The band consists of Spencer Krug, Dan Boeckner and Arlen Thompson (drums)."
+        ]
+      },
+      "de": {
+        "kicker": "kanadische indie-rockband · montreal, 2003",
+        "who": "Wolf Parade ist eine kanadische indie-rockband, gegründet 2003 in Montreal. zur band gehören Spencer Krug, Dan Boeckner und Arlen Thompson, bei live-auftritten wird sie von Tim Kingsbury von Arcade Fire unterstützt.",
+        "facts": [
+          "Wolf Parade ist eine kanadische indie-rockband, die 2003 in Montreal gegründet wurde.",
+          "zur band gehören Spencer Krug, Dan Boeckner und Arlen Thompson (schlagzeug)."
+        ]
+      },
+      "tr": {
+        "kicker": "kanadalı indie rock grubu · montreal, 2003",
+        "who": "Wolf Parade, 2003'te montreal'de kurulmuş kanadalı bir indie rock grubudur. grup Spencer Krug, Dan Boeckner ve Arlen Thompson'dan oluşuyor; canlı performanslarda Arcade Fire'dan Tim Kingsbury de gruba katılıyor.",
+        "facts": [
+          "Wolf Parade, 2003'te montreal'de kurulmuş kanadalı bir indie rock grubudur.",
+          "grup Spencer Krug, Dan Boeckner ve Arlen Thompson (davul)'dan oluşuyor."
+        ]
+      }
+    }
+  ]
+}

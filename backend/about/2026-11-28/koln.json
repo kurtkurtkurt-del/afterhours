@@ -1,0 +1,70 @@
+{
+  "city": "koln",
+  "day": "2026-11-28",
+  "nights": [
+    {
+      "id": "2b8cfdec-72e0-4adb-af0c-2411c81c3f0b",
+      "slug": "katie-gregson-macleod-the-albatross-tour-b2c8200e",
+      "title": "Katie Gregson-MacLeod - THE ALBATROSS TOUR",
+      "name": "Katie Gregson-MacLeod",
+      "source_url": "https://en.wikipedia.org/wiki/Katie_Gregson-MacLeod",
+      "extract": "Katie Gregson-MacLeod is a Scottish musician. She rose to fame in 2022 when her song \"Complex\" went viral on TikTok.",
+      "en": {
+        "kicker": "scottish musician · viral in 2022",
+        "who": "Katie Gregson-MacLeod is a scottish musician. She rose to fame in 2022 when her song \"Complex\" went viral on TikTok.",
+        "facts": [
+          "Katie Gregson-MacLeod is a Scottish musician.",
+          "She rose to fame in 2022 when her song \"Complex\" went viral on TikTok."
+        ]
+      },
+      "de": {
+        "kicker": "schottische musikerin · viral 2022",
+        "who": "Katie Gregson-MacLeod ist eine schottische musikerin. bekannt wurde sie 2022, als ihr song \"Complex\" auf TikTok viral ging.",
+        "facts": [
+          "Katie Gregson-MacLeod ist eine schottische musikerin.",
+          "bekannt wurde sie 2022, als ihr song \"Complex\" auf TikTok viral ging."
+        ]
+      },
+      "tr": {
+        "kicker": "iskoç müzisyen · 2022'de viral",
+        "who": "Katie Gregson-MacLeod, iskoç bir müzisyendir. 2022'de \"Complex\" şarkısının TikTok'ta viral olmasıyla ün kazandı.",
+        "facts": [
+          "Katie Gregson-MacLeod, iskoç bir müzisyendir.",
+          "2022'de \"Complex\" şarkısının TikTok'ta viral olmasıyla ün kazandı."
+        ]
+      }
+    },
+    {
+      "id": "0c7ff760-40c3-43e9-a591-378918b059de",
+      "slug": "john-summit-europe-ctrl-escape-tour-fea91ccc",
+      "title": "JOHN SUMMIT – EUROPE CTRL ESCAPE TOUR",
+      "name": "John Summit",
+      "source_url": "https://en.wikipedia.org/wiki/John_Summit",
+      "extract": "John Walter Schuster, better known by his stage name John Summit, is an American DJ and record producer, former accountant and current owner of the Experts Only label. His music includes original tracks and remixes, primarily focused in the genre of tech house.",
+      "en": {
+        "kicker": "american dj and record producer · tech house",
+        "who": "John Summit is the stage name of John Walter Schuster, an american DJ and record producer. He is also the owner of the Experts Only label, and his music focuses mainly on tech house.",
+        "facts": [
+          "John Walter Schuster, better known by his stage name John Summit, is an American DJ and record producer, former accountant and current owner of the Experts Only label.",
+          "His music includes original tracks and remixes, primarily focused in the genre of tech house."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer dj und musikproduzent · tech house",
+        "who": "John Summit ist das bühnenpseudonym von John Walter Schuster, einem amerikanischen dj und musikproduzenten. er ist außerdem inhaber des labels Experts Only, seine musik konzentriert sich vor allem auf tech house.",
+        "facts": [
+          "John Walter Schuster, besser bekannt unter seinem bühnennamen John Summit, ist ein amerikanischer dj und musikproduzent, früher buchhalter, sowie inhaber des labels Experts Only.",
+          "seine musik umfasst eigene tracks und remixe und ist vor allem im genre tech house angesiedelt."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı dj ve plak yapımcısı · tech house",
+        "who": "John Summit, amerikalı bir dj ve plak yapımcısı John Walter Schuster'ın sahne adıdır. ayrıca Experts Only plak şirketinin sahibi; müziği ağırlıklı olarak tech house üzerine kurulu.",
+        "facts": [
+          "John Walter Schuster, sahne adı John Summit ile daha çok tanınan, amerikalı bir dj ve plak yapımcısı; eski bir muhasebeci ve Experts Only plak şirketinin sahibi.",
+          "müziği orijinal parçalar ve remix'ler içerir; ağırlıklı olarak tech house türünde."
+        ]
+      }
+    }
+  ]
+}
