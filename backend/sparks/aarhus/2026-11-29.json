@@ -1,0 +1,22 @@
+{
+  "city": "aarhus",
+  "day": "2026-11-29",
+  "sparks": [
+    {
+      "kind": "walk",
+      "title": {
+        "en": "den gamle by in the christmas season.",
+        "de": "den gamle by in der weihnachtszeit.",
+        "tr": "noel sezonunda den gamle by."
+      },
+      "line": {
+        "en": "the open-air old town is open 10:00 to 17:00 until 31 december. brass bands play in the streets at weekends, so walk the lanes around 14:00.",
+        "de": "das freilichtmuseum hat bis 31. dezember von 10 bis 17 uhr offen. am wochenende spielen blasorchester in den gassen, also gegen 14 uhr durch die gassen gehen.",
+        "tr": "açık hava eski kent 31 aralığa kadar 10:00 ile 17:00 arası açık. hafta sonları sokaklarda bando çalıyor; 14 civarında sokaklarda yürü."
+      },
+      "place": { "en": "den gamle by", "de": "den gamle by", "tr": "den gamle by" },
+      "hour": 14, "minute": 0,
+      "why": "Christmas in Den Gamle By runs 14 Nov to 31 Dec 2026 with daily hours 10:00 to 17:00 (visitdenmark.com); brass bands at weekends (visitaarhus.com)."
+    }
+  ]
+}
