@@ -1,0 +1,14 @@
+{
+  "city": "tampere",
+  "day": "2026-12-01",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "the christmas market on keskustori.", "de": "der weihnachtsmarkt am keskustori.", "tr": "keskustori'de joulu pazarı." },
+      "line": { "en": "the christmas market is open daily from 11:00 to 19:00 until 22 december, the glühwein restaurant until 20:00. free entry. by 17:00 it is already dark, so the lights do the work.", "de": "der weihnachtsmarkt ist täglich von 11 bis 19 uhr offen, bis 22. dezember; das glühwein-restaurant bis 20 uhr. der eintritt ist frei. ab 17 uhr ist es schon dunkel, die lichter machen den rest.", "tr": "joulu pazarı 22 aralık'a kadar her gün 11:00 ile 19:00 arası açık; glühwein restoranı 20:00'ye kadar. giriş ücretsiz. saat 17:00'de hava çoktan kararmış olur, ışıklar işi görür." },
+      "place": { "en": "joulutori, keskustori", "de": "joulutori, keskustori", "tr": "joulutori, keskustori" },
+      "hour": 17, "minute": 0,
+      "why": "Tampere Christmas Market (joulutori) runs to 22 Dec 2026, daily 11:00-19:00, per the city of Tampere event listing and joulutori.tampere.fi; start dates differ between sources (21/22/28 Nov), but 1 Dec is inside the run on every version."
+    }
+  ]
+}
